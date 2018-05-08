@@ -1,0 +1,629 @@
+inherited form_impresoras_000: Tform_impresoras_000
+  Left = 350
+  Top = 112
+  Width = 756
+  ClientWidth = 756
+  inherited Panel_Barra_Superior: TPanel
+    Width = 756
+    ClientWidth = 756
+    inherited Panel9: TPanel
+      Left = 739
+    end
+    inherited Panel1: TPanel
+      Left = 534
+    end
+    object Image_Predeterminada: TImage[4]
+      Left = 482
+      Height = 30
+      Top = 8
+      Width = 27
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B47726170686963C404000089504E47
+        0D0A1A0A0000000D4948445200000018000000180806000000E0773DF8000000
+        06624B474400FF00FF00FFA0BDA793000000097048597300000B1300000B1301
+        009A9C180000000774494D4507DF0B10130B2A2E5A6FE0000004514944415448
+        C795954B685D551486BF75F639B97927C6364D4D5B62945022B6A4B6D6C6820F
+        6AD141C081E9487420B4B503C15175222882AD0341B08A8F41E9482842A094B6
+        A0485F121FB4D62208D636352658929AC7BDF7DC7BCED97B2F0749DA24BD89F5
+        9F6CCEDA87F5AFD7BFB6A8EA4A200F58C0731B0AA0AA0A2022CCC7AC994A7773
+        66201255AD01D24ACEE770F3E6CD03636363FBFF1C1EA69C94A9ABA9A5A3A383
+        CECE4E5986002010558D66A3D7C5B7D65A060707B5B9B999B6B6B6A3D6DA7EEF
+        3DDE7BD42B67CE9F65D70BFD1245114B322C8A7C018E1F3FAEDDDDDD7BEAEBEB
+        4992A4DF7BCFE4E4245E3D99B3F43EB68D63C78E29CB20586C505514181818D0
+        4D9B36313131F1699AA65CB87081952B574A575797AC5DB3562EFD7209803057
+        05AA0B7A321F61A5D208D0BEA69D388E49928442A1405F5F9FCC391111366ED8
+        C8C4C404A1314CE7F3343636DE5D0622C2E8E8A856E7AAF1DE3332324C6F6FAF
+        A877A88078C579258A0445B1D62ED764C24A46E71CAA8A730E6767A30E0C0260
+        64E6D4E8D67FCBA1220122A82ADE7B0AF99B5C3AF18EC637CE10FFF337415043
+        43EB1626A21E9A3AB6A0DE83CEF4AE522615098C317814BC23B2BFB15A0E92B5
+        E7687A32A2B64DD0E8774AD347988E5FE3C6D87AD224FDC937BACDA682BB8A04
+        D393E38804586B5175D46FACA1B645F1780211543D754D11758D1FD2D7AE9CFC
+        7CD523DBFB7FEDAC6F0EAFDE510C550D984D128462E6F8F193753ADDFE0685A9
+        29763EFD3E0D75025519C15C198CC363088D01F10439E5E4A1D53CB1F78A541B
+        8F88A9443033AEA7060EEB4335BB31554AD81252DDE808C21083A081230C0D23
+        5386862A4B43C38C330D945259B9FCF361B63EDB2FD1BCE10C66C71E802CB38C
+        0E1E84D092A58E501DAE0836EF480A19AE082FBE1271FFFA941D5B3D53430159
+        D9E1634F2EF05C3BF716C6EA026905F3BFB22CA535BA4E9A803A70258FCF7B5C
+        C1638B9EA4A45C1BC90065CF7390AB11DCA427C90379E5BED6BF282553BBE7C5
+        7C9B4055110FE37135611A400A5A546CACD8A2C7C78A9DCEF8F2A00155C23AC1
+        2565B218287A9262489A07ABE6B34A4A561121579D236EEC2389C196059B787C
+        E2F165C5C70271C0DB1F9501CFF7831E57107CEC70054F962F737DFC41C25CED
+        D2631A84860DCFECE3C6F9AF58D19AE1730E633C7E46BA180DF0E3C217FB0C3D
+        0F832B0A88C361B0654353CF5E72A1DC31A6B7B6A888E0D298431FBCABBDB903
+        343519EA5739D4CF451392858EC842468060510DC0849C3ABD8E9DAF7FC79AD5
+        2D02E6CE653727735355CBCBAFEE9733E537F9E38A901F3318115422AC38C481
+        453180AA101AE1DBB32D743C7F84F6B6150B9C2FC860319224E6F437837AF6EB
+        8F79A07482ED4F25DC532F9400E33CA10843C39E939777B0E3A5F7D8BCB54722
+        09A8A4E42537A1AAA7544AB83634A4177F38C7F0D58BA4D32388186A5BBAE8EE
+        799C47B7F51EBDB7A565D7522B5BFE6BDDCE7FE9B2CC92A66590805C5515CBBD
+        C5FF9BE02E20B39A5A90CABF22AB420602550CB50000000049454E44AE426082
+      }
+      Stretch = True
+      Visible = False
+    end
+  end
+  inherited GroupBox_Filtros: TGroupBox
+    Width = 756
+    ClientWidth = 752
+    inherited Panel13: TPanel
+      Left = 735
+    end
+    inherited Panel11: TPanel
+      Width = 718
+      ClientWidth = 718
+      inherited PageControl_Filtros: TPageControl
+        Width = 718
+        inherited TabSheet_Busqueda_Concreta: TTabSheet
+          ClientWidth = 710
+          object Label6: TLabel[0]
+            Left = 12
+            Height = 19
+            Top = 1
+            Width = 92
+            Caption = 'Descripción'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Edit_Descripcion: TEdit[1]
+            Left = 12
+            Height = 24
+            Top = 19
+            Width = 375
+            Color = clWhite
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clRed
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            ParentFont = False
+            TabOrder = 0
+          end
+        end
+        inherited TabSheet_Filtros_Generales: TTabSheet
+          ClientHeight = 204
+          ClientWidth = 710
+          inherited GroupBox1: TGroupBox
+            Width = 710
+            ClientWidth = 706
+            inherited Memo_Filtros: TMemo
+              Width = 706
+            end
+          end
+          inherited GroupBox3: TGroupBox
+            Width = 710
+            ClientWidth = 706
+            inherited Memo_OrderBy: TMemo
+              Width = 706
+            end
+          end
+        end
+      end
+    end
+  end
+  inherited Panel_de_Abajo: TPanel
+    Width = 756
+    ClientWidth = 756
+    inherited GroupBox_Registro: TGroupBox
+      Width = 754
+      ClientWidth = 750
+      inherited Panel21: TPanel
+        Left = 733
+      end
+      inherited Panel22: TPanel
+        Width = 716
+        ClientWidth = 716
+        inherited Panel23: TPanel
+          Width = 716
+          ClientWidth = 716
+          inherited ButtonPanel1: TButtonPanel
+            Width = 704
+          end
+          inherited Shape1: TShape
+            Width = 716
+          end
+        end
+        object Boton_Elegir_Impresora: TBitBtn[1]
+          Left = 7
+          Height = 47
+          Top = 13
+          Width = 38
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+            B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+            D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+            C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+            AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+            F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+            A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+            62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+            C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+            976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+            FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+            FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+            00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+            FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          }
+          OnClick = Boton_Elegir_ImpresoraClick
+          ParentFont = False
+          TabOrder = 1
+        end
+        object Label17: TLabel[2]
+          Left = 46
+          Height = 22
+          Top = 12
+          Width = 95
+          Caption = 'Impresora'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Impresora: TEdit[3]
+          Left = 46
+          Height = 26
+          Top = 33
+          Width = 341
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_ImpresoraClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 2
+        end
+        object Panel16: TPanel[4]
+          Left = 394
+          Height = 27
+          Top = 32
+          Width = 183
+          BevelInner = bvLowered
+          BevelOuter = bvLowered
+          ClientHeight = 27
+          ClientWidth = 183
+          Color = 7001047
+          ParentColor = False
+          TabOrder = 3
+          object DBCheckBox1: TDBCheckBox
+            Left = 6
+            Height = 23
+            Top = 1
+            Width = 168
+            Caption = 'Predeterminada'
+            DataField = 'predeterminada_SN'
+            DataSource = DataSource_Principal
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -19
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 0
+            ValueChecked = 'S'
+            ValueUnchecked = 'N'
+          end
+        end
+        object Label_Copias: TLabel[5]
+          Left = 582
+          Height = 22
+          Top = 32
+          Width = 65
+          Caption = 'Copias'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object SpinEdit_Copias: TSpinEdit[6]
+          Left = 653
+          Height = 26
+          Top = 32
+          Width = 56
+          Alignment = taRightJustify
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxValue = 99
+          MinValue = 1
+          ParentFont = False
+          TabOrder = 4
+          Value = 1
+        end
+      end
+    end
+    inherited GroupBox_Grid: TGroupBox
+      Width = 754
+      ClientWidth = 750
+      inherited Panel_Barra_Superior1: TPanel
+        Width = 750
+        ClientWidth = 750
+        inherited Panel4: TPanel
+          inherited Panel14: TPanel
+            inherited DBNavigatorPrincpal: TDBNavigator
+              Hints.Strings = (              )
+            end
+          end
+        end
+        inherited Panel15: TPanel
+          Left = 733
+        end
+        inherited Panel_Otros_Campos_no_Grid: TPanel
+          Width = 358
+          ClientWidth = 358
+          inherited Label_Ctdad_Rgtros: TLabel
+            Left = 260
+          end
+          object BitBtn_Considerar_como_cerrado: TBitBtn[1]
+            Left = 0
+            Height = 38
+            Top = 0
+            Width = 249
+            Caption = 'Elegir como predeterminada'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -13
+            Font.Name = 'Arial Black'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Glyph.Data = {
+              36090000424D3609000000000000360000002800000018000000180000000100
+              2000000000000009000064000000640000000000000000000000FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF01FFFFFF00FFFFFF01FFFFFF01FFFFFF01FFFFFF01FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FEFEFE00FAF9F900F2F3F300F4F4F300FAFAFA00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FDFEFE00F6F5F500D6D5
+              D4FF9A9FA3FF697D86FF4E6F80FF517081FF77828BFFB2B3B5FFECECEBAAFEFE
+              FE00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00F5F8F800BDB5B9FF53717CFF0A68
+              9FFF03A9DBFF04B5ECFF04B5E3FF02B2E6FF03B3EAFF0196CAFF456982FFCCC7
+              C6FFFDFEFA00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00F0F0F0007A868DFF0579B7FF049FD9FF02B3
+              E8FF06B3E4FF02B3E5FF02B3E5FF01B2E5FF04B2E7FF01B1E4FF03B4E8FF1877
+              A3FFC6C5BDFFFEFEFE00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FEFEFE00FFFFFF00F5F9FC00798791FF018ECBFF049DDAFF01B4E6FF01B2
+              E5FF01B2E5FF05B2E9FF02B6E4FF02B2E9FF04B2E4FF00B2E5FF02B1E4FF06B4
+              E4FF24759DFFEAE6E3FFFCFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF
+              FF00FFFFFF00FFFFFF00C8C5C4FF0B8AC3FF06A0D7FF03AEE4FF01B1E7FF01B2
+              E5FF02B2E5FF04B1E8FF06395CFF066A9CFF0697CDFF04B7E8FF00B8E8FF03B8
+              E8FF04B0E4FF96A1A6FFFBFEFB00FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF
+              FF00FFFFFF00FCFBFD005E8096FF03A5DAFF02A7DCFF00B4E6FF00B5E7FF01B6
+              E7FF03B7E8FF03B8E8FF054D5EFF030000FF063264FF03C2EBFF02C1EBFF03C1
+              EDFF01C4EBFF2E7097FFFAFAF400FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFF
+              FF01FEFEFE00F5F3F6001172A0FF03AFE1FF01AFE0FF02BBEAFF02BCE9FF02BE
+              E9FF02C1EAFF01C2E8FF0DB9DDFF050000FF086A9BFF02CEEEFF05CBEDFF05CD
+              F0FF09D1F0FF0A84B6FFF0F3F000FFFFFF00FFFFFF00FFFFFF00FFFFFF02FFFF
+              FF01FFFFFF00F5F5F500097CB4FF01B5DDFF01B5E0FF03C6EBFF03C6EDFF04C9
+              EDFF03CBECFF06D0ECFF0A3035FF060100FF075F97FF0AD5F1FF05D5F2FF07D8
+              F0FF05DCF7FF0A91BCFFEDF4F466FFFFFF00FFFFFF00FFFFFF00FFFFFF03FFFF
+              FF01FFFFFF00FBFAFA0028779EFF01BCE3FF01B8E1FF05CFEEFF05D3EFFF06D5
+              F0FF05D6F0FF07D9F3FF0F4B56FF070100FF071630FF09CCEAFF07E5F5FF07E5
+              F7FF06E9F7FF267BA2FFFCFBFD00FEFFFF00FFFFFF00FFFFFF00FFFFFF02FFFF
+              FF01FFFFFF00FFFFFF009FAFB8FF05B8E3FF04BEE6FF08D0EAFF05DEF2FF09E2
+              F4FF0AE2F7FF07E4F6FF0AE8FAFF0DD9DFFF09DFECFF07ECF9FF0AEDFAFF09EF
+              F9FF08E7F0FFA8B7C3FFFDFFFA00FFFFFF00FFFFFF00FFFFFF00FFFFFF02FFFF
+              FF01FEFFFF00FFFFFF00FCFAF4001A91BFFF92ACB1FF839DA5FF0DDFEBFF0EEA
+              F8FF09F0F8FF08EFFAFF09F0FBFF06F3FBFF09F3F9FF0CF6FDFF0AF7FDFF09FE
+              FFFF2293B7FFFEFBF600FCFEFE00FFFFFF00FFFFFF00FFFFFF00FFFFFF02FFFF
+              FF01FFFFFF00FFFFFF00FFFFFF00D2D6D7FFD1D1CFFFCBCCCBFF75A0ABFF0AE6
+              F5FF09F8FFFF0BF8FDFF0CF9FFFF0AFBFEFF0FFDFEFF0AFCFEFF09FFFFFF209A
+              B7FFF5EFF322FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF02FFFF
+              FF01FFFFFF00FFFFFF00FFFFFF00E6E6E5FFCFD0CEFFCDCFCEFF78A1ACFF01B7
+              E9FF08BAE4FF0DDFF3FF0EF7FDFF0FFCFCFF0BEEF3FF79E4E5FFA1B5B2FFECEA
+              ECCCFBFFFC00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF02FFFF
+              FF01FFFFFF00FFFFFF00FFFFFF00E3E3E2FFD0D0D0FFD1D1D1FFA0A5A7FF81B6
+              D0FF439FC6FF2B8DBCFF348FBEFF69A5CBFF9AAABAFFCFCAC9FFAFB0AFFFF2F1
+              F200FEFEFE00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF02FFFF
+              FF01FFFFFF00FFFFFF00FFFFFF00E2E2E2FFD1D1D1FFD3D3D3FFB3B2B3FFFFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFD00E4E2E2FFC9CAC9FFB1B2B0FFF2F2
+              F200FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF02FFFF
+              FF01FFFFFF00FFFFFF00FFFFFF00E5E5E5FFD2D2D2FFD6D6D6FFB4B6B6FFFFFF
+              FF00FCFDFE00FEFFFD00FDFCFF00FEFDFC00DFE3E2FFCCCDCCFFB2B3B1FFF2F2
+              F200FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF02FFFF
+              FF01FFFFFF00FFFFFF00FEFEFE00FFFFFF00CACBCAFFD8D8D8FFD1D1D1FFC5C5
+              C5FFFFFFFF00FEFEFE00FEFEFE00FFFFFF00DEDEDDFFCDCDCDFFB6B7B5FFF1F1
+              F100FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF03FFFF
+              FF01FFFFFF00FFFFFF00FEFEFE00FFFFFE00AFAFAFFFE2E2E2FFDCDCDCFFD9D9
+              D9FFB2B2B2FFFAFAFA00FBFBFB00FEFEFE00AFB0AEFFDEDEDEFFB3B4B1FFFEFE
+              FF00FEFEFE00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF03FFFF
+              FF01FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00B0B0B0FFEDEDED66DFDF
+              DFFFE4E4E4FFE5E5E5FFD5D5D5FFE1E2E1FFDEDEDDFFDEDEDEFFADADADFFFFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF05FFFF
+              FF01FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FBFBFB00C3C3C3FFD3D3
+              D3FFEBEBEBAAE7E7E7FFE5E5E5FFE3E3E3FFE2E1E2FFA5A6A4FFFAFAFA00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF09FFFF
+              FF03FFFFFF01FFFFFF01FFFFFF01FFFFFF00FFFFFF00FFFFFF00FFFFFF00ECEC
+              EC88D7D7D7FFBABAB9FFB2B3B1FFBCBCBCFFDCDCDCFFFEFEFE00FEFEFE00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF02FFFFFF15FFFF
+              FF08FFFFFF04FFFFFF02FFFFFF02FFFFFF02FFFFFF01FFFFFF01FEFEFE00FEFE
+              FE00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FEFEFE00FEFEFE00FEFEFE00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF01FFFFFF06
+            }
+            OnClick = BitBtn_Considerar_como_cerradoClick
+            ParentFont = False
+            ParentShowHint = False
+            Spacing = 2
+            TabOrder = 0
+          end
+        end
+      end
+      inherited Panel6: TPanel
+        Left = 733
+      end
+      inherited Panel7: TPanel
+        Width = 716
+        ClientWidth = 716
+        inherited DBGrid_Principal: TDBGrid
+          Width = 716
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Id'
+              Width = 50
+              FieldName = 'id'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Descripción'
+              Width = 500
+              FieldName = 'descripcion'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taRightJustify
+              Title.Caption = 'Copias'
+              Width = 62
+              FieldName = 'Copias_a_Imprimir'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Prd'
+              Width = 66
+              FieldName = 'predeterminada_SN'
+            end>
+        end
+      end
+    end
+  end
+  inherited SQLQuery_Principal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'descripcion'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'predeterminada_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Copias_a_Imprimir'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end>
+    SQL.Strings = (
+      'SELECT i.*'
+      'FROM impresoras AS i'
+    )
+    object SQLQuery_Principaldescripcion: TStringField[1]
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'descripcion'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_Principalpredeterminada_SN: TStringField[2]
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'predeterminada_SN'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_PrincipalCopias_a_Imprimir: TLongintField[3]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Copias_a_Imprimir'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalInsert_WHEN: TDateTimeField[4]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalInsert_Id_User: TLargeintField[5]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalDel_WHEN: TDateTimeField[6]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_Id_User: TLargeintField[7]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_WHY: TStringField[8]
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_PrincipalChange_WHEN: TDateTimeField[9]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalChange_Id_User: TLargeintField[10]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+end

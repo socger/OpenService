@@ -1,0 +1,696 @@
+inherited f_clientes_002: Tf_clientes_002
+  Left = 135
+  Height = 292
+  Top = 193
+  Width = 1081
+  ClientHeight = 292
+  ClientWidth = 1081
+  inherited GroupBox_Registro_Principal: TGroupBox
+    Height = 80
+    Width = 1081
+    ClientHeight = 60
+    ClientWidth = 1077
+    inherited Panel10: TPanel
+      Height = 60
+    end
+    inherited Panel13: TPanel
+      Left = 1060
+      Height = 60
+    end
+    inherited Panel11: TPanel
+      Height = 60
+      Width = 1043
+      ClientHeight = 60
+      ClientWidth = 1043
+      object Label1: TLabel[0]
+        AnchorSideLeft.Control = DBEdit_a_quien_facturamos
+        AnchorSideBottom.Control = DBEdit_a_quien_facturamos
+        Left = 16
+        Height = 19
+        Top = 3
+        Width = 252
+        Anchors = [akLeft, akBottom]
+        Caption = 'A quien facturamos / razón social'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_a_quien_facturamos: TDBEdit[1]
+        Left = 16
+        Height = 24
+        Top = 22
+        Width = 372
+        DataField = 'nombre_propietario'
+        DataSource = f_clientes_000.DataSource_Principal
+        ReadOnly = True
+        CharCase = ecNormal
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Label7: TLabel[2]
+        AnchorSideLeft.Control = DBEdit_Nombre_Comercial
+        AnchorSideBottom.Control = DBEdit_Nombre_Comercial
+        Left = 394
+        Height = 19
+        Top = 3
+        Width = 139
+        Anchors = [akLeft, akBottom]
+        Caption = 'Nombre comercial'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Nombre_Comercial: TDBEdit[3]
+        Left = 394
+        Height = 24
+        Top = 22
+        Width = 408
+        DataField = 'nombre_comercial'
+        DataSource = f_clientes_000.DataSource_Principal
+        ReadOnly = True
+        CharCase = ecNormal
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 1
+      end
+      object Label11: TLabel[4]
+        AnchorSideLeft.Control = DBEdit_NIF_CIF
+        AnchorSideBottom.Control = DBEdit_NIF_CIF
+        Left = 807
+        Height = 19
+        Top = 3
+        Width = 36
+        Anchors = [akLeft, akBottom]
+        Caption = 'N.I.F.'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_NIF_CIF: TDBEdit[5]
+        Left = 807
+        Height = 24
+        Top = 22
+        Width = 218
+        DataField = 'nif_cif'
+        DataSource = f_clientes_000.DataSource_Principal
+        ReadOnly = True
+        CharCase = ecUppercase
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 2
+      end
+    end
+  end
+  inherited GroupBox_Registro: TGroupBox
+    Height = 212
+    Top = 80
+    Width = 1081
+    ClientHeight = 192
+    ClientWidth = 1077
+    inherited Panel20: TPanel
+      Height = 192
+    end
+    inherited Panel21: TPanel
+      Left = 1060
+      Height = 192
+    end
+    inherited Panel22: TPanel
+      Height = 192
+      Width = 1043
+      ClientHeight = 192
+      ClientWidth = 1043
+      inherited Panel23: TPanel
+        Top = 155
+        Width = 1043
+        ClientWidth = 1043
+        TabOrder = 15
+        inherited ButtonPanel1: TButtonPanel
+          Width = 1031
+        end
+        inherited Shape1: TShape
+          Width = 1043
+        end
+      end
+      object DBCheckBox_IVA_Excluido_SN: TDBCheckBox[1]
+        Left = 883
+        Height = 21
+        Top = 99
+        Width = 140
+        Align = alCustom
+        BiDiMode = bdRightToLeft
+        Caption = 'Portes pagados'
+        DataField = 'Agrupar_Albaranes_SN'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentBiDiMode = False
+        ParentFont = False
+        TabOrder = 14
+        ValueChecked = 'S'
+        ValueUnchecked = 'N'
+      end
+      object Label19: TLabel[2]
+        Left = 16
+        Height = 19
+        Top = 8
+        Width = 131
+        Caption = 'Con quién hablar'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Boton_Elegir_Contacto: TBitBtn[3]
+        Left = 16
+        Height = 26
+        Top = 25
+        Width = 30
+        Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        OnClick = Boton_Elegir_ContactoClick
+        ParentFont = False
+        Spacing = 0
+        TabOrder = 0
+      end
+      object Edit_Descripcion_Contacto: TEdit[4]
+        Left = 45
+        Height = 24
+        Top = 26
+        Width = 336
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_ContactoClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object Label3: TLabel[5]
+        AnchorSideLeft.Control = DBEdit_Direccion
+        AnchorSideBottom.Control = DBEdit_Direccion
+        Left = 16
+        Height = 19
+        Top = 55
+        Width = 73
+        Anchors = [akLeft, akBottom]
+        Caption = 'Dirección'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Direccion: TDBEdit[6]
+        Left = 16
+        Height = 24
+        Top = 74
+        Width = 646
+        DataField = 'Direccion'
+        CharCase = ecNormal
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 3
+      end
+      object Label8: TLabel[7]
+        AnchorSideLeft.Control = DBEdit_Direccion_Numero
+        AnchorSideBottom.Control = DBEdit_Direccion_Numero
+        Left = 666
+        Height = 19
+        Top = 55
+        Width = 61
+        Anchors = [akLeft, akBottom]
+        Caption = 'Número'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Direccion_Numero: TDBEdit[8]
+        Left = 666
+        Height = 24
+        Top = 74
+        Width = 75
+        DataField = 'Direccion_Numero'
+        CharCase = ecNormal
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 4
+      end
+      object Label12: TLabel[9]
+        AnchorSideLeft.Control = DBEdit_Direccion_Piso_Letra
+        AnchorSideBottom.Control = DBEdit_Direccion_Piso_Letra
+        Left = 745
+        Height = 19
+        Top = 55
+        Width = 85
+        Anchors = [akLeft, akBottom]
+        Caption = 'Piso / Letra'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Direccion_Piso_Letra: TDBEdit[10]
+        Left = 745
+        Height = 24
+        Top = 74
+        Width = 107
+        DataField = 'Direccion_Piso_Letra'
+        CharCase = ecNormal
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 5
+      end
+      object Label2: TLabel[11]
+        AnchorSideLeft.Control = DBEdit_Codigo_Postal
+        AnchorSideBottom.Control = DBEdit_Codigo_Postal
+        Left = 856
+        Height = 19
+        Top = 55
+        Width = 107
+        Anchors = [akLeft, akBottom]
+        Caption = 'Código postal'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Codigo_Postal: TDBEdit[12]
+        Left = 856
+        Height = 24
+        Top = 74
+        Width = 132
+        DataField = 'Codigo_Postal'
+        CharCase = ecNormal
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 6
+      end
+      object BitBtn_ver_direccion_en_Maps: TBitBtn[13]
+        Left = 989
+        Height = 26
+        Top = 73
+        Width = 34
+        Action = form_Menu.BitBtn_ver_direccion_en_Maps
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Spacing = 0
+        TabOrder = 7
+      end
+      object Label20: TLabel[14]
+        Left = 16
+        Height = 19
+        Top = 101
+        Width = 77
+        Caption = 'Población'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Boton_Elegir_Poblacion: TBitBtn[15]
+        Left = 16
+        Height = 26
+        Top = 118
+        Width = 30
+        Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        OnClick = Boton_Elegir_PoblacionClick
+        ParentFont = False
+        Spacing = 0
+        TabOrder = 8
+      end
+      object Edit_Descripcion_Poblacion: TEdit[16]
+        Left = 45
+        Height = 24
+        Top = 119
+        Width = 336
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_PoblacionClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 9
+      end
+      object Label5: TLabel[17]
+        Left = 385
+        Height = 19
+        Top = 101
+        Width = 72
+        Caption = 'Provincia'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Boton_Elegir_Provincia: TBitBtn[18]
+        Left = 385
+        Height = 26
+        Top = 118
+        Width = 30
+        Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        OnClick = Boton_Elegir_ProvinciaClick
+        ParentFont = False
+        Spacing = 0
+        TabOrder = 10
+      end
+      object Edit_Descripcion_Provincia: TEdit[19]
+        Left = 414
+        Height = 24
+        Top = 119
+        Width = 302
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_ProvinciaClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 11
+      end
+      object Label4: TLabel[20]
+        Left = 721
+        Height = 19
+        Top = 101
+        Width = 33
+        Caption = 'País'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Boton_Elegir_Pais: TBitBtn[21]
+        Left = 721
+        Height = 26
+        Top = 118
+        Width = 30
+        Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        OnClick = Boton_Elegir_PaisClick
+        ParentFont = False
+        Spacing = 0
+        TabOrder = 12
+      end
+      object Edit_Descripcion_Pais: TEdit[22]
+        Left = 750
+        Height = 24
+        Top = 119
+        Width = 273
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_PaisClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 13
+      end
+      object GroupBox2: TGroupBox[23]
+        Left = 384
+        Height = 46
+        Top = 10
+        Width = 639
+        Caption = ' TELEFONOS '
+        ClientHeight = 26
+        ClientWidth = 635
+        TabOrder = 2
+        object Label13: TLabel
+          Left = 5
+          Height = 19
+          Top = 2
+          Width = 15
+          Caption = '1º'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label14: TLabel
+          Left = 147
+          Height = 19
+          Top = 3
+          Width = 15
+          Caption = '2º'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label17: TLabel
+          Left = 291
+          Height = 19
+          Top = 2
+          Width = 31
+          Caption = 'FAX'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label18: TLabel
+          Left = 450
+          Height = 19
+          Top = 3
+          Width = 40
+          Caption = 'Móvil'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Tfno_Fijo_1: TDBEdit
+          Left = 23
+          Height = 24
+          Top = -2
+          Width = 120
+          DataField = 'Tfno_Fijo_1'
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 0
+        end
+        object DBEdit_Tfno_Fijo_2: TDBEdit
+          Left = 166
+          Height = 24
+          Top = -2
+          Width = 120
+          DataField = 'Tfno_Fijo_2'
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 1
+        end
+        object DBEdit_FAX: TDBEdit
+          Left = 325
+          Height = 24
+          Top = -2
+          Width = 120
+          DataField = 'FAX'
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 2
+        end
+        object BitBtn_SMS: TBitBtn
+          Left = 493
+          Height = 25
+          Top = -3
+          Width = 32
+          Caption = 'SMS'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          OnClick = BitBtn_SMSClick
+          ParentFont = False
+          TabOrder = 3
+        end
+        object DBEdit_Movil: TDBEdit
+          Left = 526
+          Height = 24
+          Top = -2
+          Width = 100
+          DataField = 'Movil'
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 4
+        end
+      end
+    end
+  end
+end

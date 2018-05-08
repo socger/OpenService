@@ -1,0 +1,42 @@
+unit dm_albaranes;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, sqldb, FileUtil, utilidades_bd, utilidades_general;
+
+type
+
+  { TDataModule_Albaranes }
+
+  TDataModule_Albaranes = class(TDataModule)
+    SQLConnector_Alb_Detalles: TSQLConnector;
+    SQLConnector_Alb: TSQLConnector;
+    SQLTransaction_Alb_Detalles: TSQLTransaction;
+    SQLTransaction_Alb: TSQLTransaction;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  DataModule_Albaranes: TDataModule_Albaranes;
+
+implementation
+
+{$R *.lfm}
+
+{ TDataModule_Albaranes }
+
+procedure TDataModule_Albaranes.DataModuleCreate(Sender: TObject);
+begin
+    if UTI_CN_Abrir(SQLTransaction_Alb, SQLConnector_Alb) = False then UTI_GEN_Salir;
+    if UTI_CN_Abrir(SQLTransaction_Alb_Detalles, SQLConnector_Alb_Detalles) = False then UTI_GEN_Salir;
+end;
+
+end.
+

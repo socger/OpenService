@@ -1,0 +1,20 @@
+{"version":1,"strings":[
+{"hash":115187020,"name":"tf_clientes_002.label1.caption","sourcebytes":[65,32,113,117,105,101,110,32,102,97,99,116,117,114,97,109,111,115,32,47,32,114,97,122,195,179,110,32,115,111,99,105,97,108],"value":"A quien facturamos / raz\u00F3n social"},
+{"hash":172678924,"name":"tf_clientes_002.label7.caption","sourcebytes":[78,111,109,98,114,101,32,99,111,109,101,114,99,105,97,108],"value":"Nombre comercial"},
+{"hash":85115534,"name":"tf_clientes_002.label11.caption","sourcebytes":[78,46,73,46,70,46],"value":"N.I.F."},
+{"hash":15186787,"name":"tf_clientes_002.dbcheckbox_iva_excluido_sn.caption","sourcebytes":[80,111,114,116,101,115,32,112,97,103,97,100,111,115],"value":"Portes pagados"},
+{"hash":266883826,"name":"tf_clientes_002.label19.caption","sourcebytes":[67,111,110,32,113,117,105,195,169,110,32,104,97,98,108,97,114],"value":"Con qui\u00E9n hablar"},
+{"hash":194965022,"name":"tf_clientes_002.label3.caption","sourcebytes":[68,105,114,101,99,99,105,195,179,110],"value":"Direcci\u00F3n"},
+{"hash":183581919,"name":"tf_clientes_002.label8.caption","sourcebytes":[78,195,186,109,101,114,111],"value":"N\u00FAmero"},
+{"hash":71461553,"name":"tf_clientes_002.label12.caption","sourcebytes":[80,105,115,111,32,47,32,76,101,116,114,97],"value":"Piso / Letra"},
+{"hash":168579228,"name":"tf_clientes_002.label2.caption","sourcebytes":[67,195,179,100,105,103,111,32,112,111,115,116,97,108],"value":"C\u00F3digo postal"},
+{"hash":41757454,"name":"tf_clientes_002.label20.caption","sourcebytes":[80,111,98,108,97,99,105,195,179,110],"value":"Poblaci\u00F3n"},
+{"hash":114302561,"name":"tf_clientes_002.label5.caption","sourcebytes":[80,114,111,118,105,110,99,105,97],"value":"Provincia"},
+{"hash":5692995,"name":"tf_clientes_002.label4.caption","sourcebytes":[80,97,195,173,115],"value":"Pa\u00EDs"},
+{"hash":160939600,"name":"tf_clientes_002.groupbox2.caption","sourcebytes":[32,84,69,76,69,70,79,78,79,83,32],"value":" TELEFONOS "},
+{"hash":15834,"name":"tf_clientes_002.label13.caption","sourcebytes":[49,194,186],"value":"1\u00BA"},
+{"hash":16090,"name":"tf_clientes_002.label14.caption","sourcebytes":[50,194,186],"value":"2\u00BA"},
+{"hash":19048,"name":"tf_clientes_002.label17.caption","sourcebytes":[70,65,88],"value":"FAX"},
+{"hash":94285052,"name":"tf_clientes_002.label18.caption","sourcebytes":[77,195,179,118,105,108],"value":"M\u00F3vil"},
+{"hash":22563,"name":"tf_clientes_002.bitbtn_sms.caption","sourcebytes":[83,77,83],"value":"SMS"}
+]}

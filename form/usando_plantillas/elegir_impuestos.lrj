@@ -1,0 +1,6 @@
+{"version":1,"strings":[
+{"hash":1268,"name":"tf_elegir_impuestos.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":80135182,"name":"tf_elegir_impuestos.dbgrid_principal.columns[1].title.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
+{"hash":37,"name":"tf_elegir_impuestos.dbgrid_principal.columns[2].title.caption","sourcebytes":[37],"value":"%"},
+{"hash":1184,"name":"tf_elegir_impuestos.dbgrid_principal.columns[3].title.caption","sourcebytes":[67,112],"value":"Cp"}
+]}

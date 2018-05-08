@@ -1,0 +1,43 @@
+unit dm_vehiculos_tipo_ruedas;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, sqldb, FileUtil, utilidades_bd, utilidades_general;
+
+type
+
+  { TDataModule_Vehiculos_Tipo_Ruedas }
+
+  TDataModule_Vehiculos_Tipo_Ruedas = class(TDataModule)
+    SQLConnector_VTRuedas: TSQLConnector;
+    SQLTransaction_VTRuedas: TSQLTransaction;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  DataModule_Vehiculos_Tipo_Ruedas: TDataModule_Vehiculos_Tipo_Ruedas;
+
+implementation
+
+{$R *.lfm}
+
+{ TDataModule_Vehiculos_Tipo_Ruedas }
+
+procedure TDataModule_Vehiculos_Tipo_Ruedas.DataModuleCreate(Sender: TObject);
+begin
+    if UTI_CN_Abrir( SQLTransaction_VTRuedas,
+                     SQLConnector_VTRuedas ) = False then
+    begin
+        UTI_GEN_Salir;
+    end;
+end;
+
+end.
+

@@ -1,0 +1,403 @@
+object form_personal_contratos_001: Tform_personal_contratos_001
+  Left = 313
+  Height = 311
+  Top = 119
+  Width = 825
+  Caption = 'Ficha - Contrato'
+  ClientHeight = 311
+  ClientWidth = 825
+  Color = 14737613
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 813
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object GroupBox11: TGroupBox
+    Left = 26
+    Height = 37
+    Top = -2
+    Width = 174
+    ClientHeight = 17
+    ClientWidth = 170
+    TabOrder = 1
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -5
+      Width = 56
+      Anchors = [akLeft, akBottom]
+      Caption = 'Código'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 77
+      Height = 23
+      Top = -9
+      Width = 90
+      DataField = 'id'
+      DataSource = form_personal_contratos_familias_000.DataSource_PCF
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+  object Boton_Elegir_Empleado: TBitBtn
+    Left = 26
+    Height = 47
+    Top = 51
+    Width = 38
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Glyph.Data = {
+      36030000424D3603000000000000360000002800000010000000100000000100
+      18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+      B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+      D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+      C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+      AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+      F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+      A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+      62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+      C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+      976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+      FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+      FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+      00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+      FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = Boton_Elegir_EmpleadoClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Label6: TLabel
+    Left = 65
+    Height = 22
+    Top = 50
+    Width = 93
+    Caption = 'Empleado'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit_Descripcion_Empleado: TEdit
+    Left = 65
+    Height = 26
+    Top = 72
+    Width = 336
+    Anchors = [akLeft]
+    Color = 7001047
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = Edit_Descripcion_EmpleadoClick
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 3
+  end
+  object Boton_Elegir_Empresa: TBitBtn
+    Left = 424
+    Height = 47
+    Top = 52
+    Width = 38
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Glyph.Data = {
+      36030000424D3603000000000000360000002800000010000000100000000100
+      18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+      B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+      D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+      C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+      AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+      F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+      A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+      62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+      C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+      976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+      FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+      FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+      00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+      FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = Boton_Elegir_EmpresaClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object Label7: TLabel
+    Left = 463
+    Height = 22
+    Top = 51
+    Width = 83
+    Caption = 'Empresa'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit_Descripcion_Empresa: TEdit
+    Left = 463
+    Height = 26
+    Top = 72
+    Width = 336
+    Anchors = [akLeft]
+    Color = 7001047
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = Edit_Descripcion_EmpresaClick
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 5
+  end
+  object Boton_Elegir_Contrato_Tipo: TBitBtn
+    Left = 26
+    Height = 47
+    Top = 113
+    Width = 38
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Glyph.Data = {
+      36030000424D3603000000000000360000002800000010000000100000000100
+      18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+      B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+      D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+      C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+      AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+      F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+      A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+      62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+      C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+      976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+      FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+      FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+      00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+      FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = Boton_Elegir_Contrato_TipoClick
+    ParentFont = False
+    TabOrder = 6
+  end
+  object Label8: TLabel
+    Left = 65
+    Height = 22
+    Top = 112
+    Width = 153
+    Caption = 'Tipo de contrato'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit_Descripcion_Contrato_Tipo: TEdit
+    Left = 65
+    Height = 26
+    Top = 134
+    Width = 336
+    Anchors = [akLeft]
+    Color = 7001047
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = Edit_Descripcion_Contrato_TipoClick
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 7
+  end
+  object Label9: TLabel
+    Left = 424
+    Height = 22
+    Top = 113
+    Width = 50
+    Caption = 'Inicio'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBDateEdit1: TDBDateEdit
+    Left = 424
+    Height = 26
+    Top = 134
+    Width = 122
+    CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+    OKCaption = 'OK'
+    CancelCaption = 'Cancel'
+    DateOrder = doNone
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 8
+    DataField = 'Inicio'
+    DataSource = form_personal_contratos_000.DataSource_PC
+  end
+  object Label10: TLabel
+    Left = 552
+    Height = 22
+    Top = 113
+    Width = 29
+    Caption = 'Fin'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBDateEdit2: TDBDateEdit
+    Left = 552
+    Height = 26
+    Top = 134
+    Width = 122
+    CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+    OKCaption = 'OK'
+    CancelCaption = 'Cancel'
+    DateOrder = doNone
+    ButtonWidth = 23
+    NumGlyphs = 1
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 9
+    DataField = 'Fin'
+    DataSource = form_personal_contratos_000.DataSource_PC
+  end
+  object Label26: TLabel
+    Left = 26
+    Height = 22
+    Top = 169
+    Width = 272
+    Caption = 'Observaciones / comentarios'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBMemo_Observaciones_Comentarios: TDBMemo
+    Left = 26
+    Height = 96
+    Top = 190
+    Width = 773
+    DataField = 'Observaciones_Comentarios'
+    DataSource = form_personal_contratos_000.DataSource_PC
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ScrollBars = ssAutoVertical
+    TabOrder = 10
+  end
+end

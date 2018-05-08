@@ -1,0 +1,29 @@
+object DataModule_Pelis: TDataModule_Pelis
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 307
+  HorizontalOffset = 529
+  VerticalOffset = 314
+  Width = 648
+  object SQLConnector_pelis: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'peliculas'
+    KeepConnection = False
+    Transaction = SQLTransaction_pelis
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 104
+    top = 112
+  end
+  object SQLTransaction_pelis: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_pelis
+    left = 104
+    top = 40
+  end
+end

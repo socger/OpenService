@@ -1,0 +1,2614 @@
+object form_visitas_por_provincia_000: Tform_visitas_por_provincia_000
+  Left = 19
+  Height = 676
+  Top = 11
+  Width = 1324
+  Caption = 'EXPLOTACIÓN de visitas por PROVINCIA'
+  ClientHeight = 676
+  ClientWidth = 1324
+  Color = 14737613
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.8.0.6'
+  object PageControl_Filtros: TPageControl
+    Left = 26
+    Height = 136
+    Top = 28
+    Width = 1270
+    ActivePage = TabSheet_Busqueda_Concreta
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet_Busqueda_Concreta: TTabSheet
+      Caption = 'Filtramos por ...'
+      ClientHeight = 108
+      ClientWidth = 1262
+      object Edit_Descripcion_Ruta: TEdit
+        Left = 525
+        Height = 26
+        Top = 77
+        Width = 200
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_RutaClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 19
+      end
+      object Label6: TLabel
+        Left = 9
+        Height = 22
+        Top = 2
+        Width = 108
+        Caption = 'Comentario'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Comentario: TEdit
+        Left = 9
+        Height = 26
+        Top = 21
+        Width = 257
+        Anchors = [akLeft]
+        Color = clWhite
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Boton_Elegir_Cliente: TBitBtn
+        Left = 274
+        Height = 47
+        Top = 4
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_ClienteClick
+        ParentFont = False
+        TabOrder = 1
+      end
+      object Label49: TLabel
+        Left = 313
+        Height = 22
+        Top = 3
+        Width = 64
+        Caption = 'Cliente'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Cliente: TEdit
+        Left = 313
+        Height = 26
+        Top = 25
+        Width = 300
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_ClienteClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object Edit_id_Cliente: TEdit
+        Left = 340
+        Height = 26
+        Top = 25
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 3
+        Visible = False
+      end
+      object Boton_Elegir_Tipo_Cliente: TBitBtn
+        Left = 618
+        Height = 47
+        Top = 4
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_Tipo_ClienteClick
+        ParentFont = False
+        TabOrder = 4
+      end
+      object Label51: TLabel
+        Left = 657
+        Height = 22
+        Top = 3
+        Width = 136
+        Caption = 'Tipo de cliente'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Tipo_Cliente: TEdit
+        Left = 657
+        Height = 26
+        Top = 25
+        Width = 300
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_Tipo_ClienteClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 5
+      end
+      object Edit_id_Tipo_Cliente: TEdit
+        Left = 684
+        Height = 26
+        Top = 25
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 6
+        Visible = False
+      end
+      object Label15: TLabel
+        Left = 966
+        Height = 19
+        Top = 9
+        Width = 58
+        Caption = 'Visita ...'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DateTimePicker_Visitado_Desde: TDateTimePicker
+        Left = 1031
+        Height = 26
+        Top = 2
+        Width = 105
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 7
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Label16: TLabel
+        Left = 1137
+        Height = 22
+        Top = 2
+        Width = 6
+        Caption = '-'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DateTimePicker_Visitado_Hasta: TDateTimePicker
+        Left = 1144
+        Height = 26
+        Top = 2
+        Width = 105
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 8
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Label17: TLabel
+        Left = 966
+        Height = 19
+        Top = 34
+        Width = 63
+        Caption = 'Próxima'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DateTimePicker_Proxima_Visita_Desde: TDateTimePicker
+        Left = 1031
+        Height = 26
+        Top = 27
+        Width = 105
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 9
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Label18: TLabel
+        Left = 1137
+        Height = 22
+        Top = 27
+        Width = 6
+        Caption = '-'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DateTimePicker_Proxima_Visita_Hasta: TDateTimePicker
+        Left = 1144
+        Height = 26
+        Top = 27
+        Width = 105
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 10
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Boton_Elegir_Visita_Tipo: TBitBtn
+        Left = 9
+        Height = 47
+        Top = 54
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_Visita_TipoClick
+        ParentFont = False
+        TabOrder = 11
+      end
+      object Label45: TLabel
+        Left = 47
+        Height = 22
+        Top = 54
+        Width = 174
+        Caption = 'Tipo / motivo visita'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Visita_Tipo: TEdit
+        Left = 47
+        Height = 26
+        Top = 75
+        Width = 187
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_Visita_TipoClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 12
+      end
+      object Edit_id_Visita_Tipo: TEdit
+        Left = 75
+        Height = 26
+        Top = 75
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 13
+        Visible = False
+      end
+      object Boton_Elegir_Visita_Resultado: TBitBtn
+        Left = 237
+        Height = 47
+        Top = 54
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_Visita_ResultadoClick
+        ParentFont = False
+        TabOrder = 14
+      end
+      object Edit_Descripcion_Visita_Resultado: TEdit
+        Left = 276
+        Height = 26
+        Top = 77
+        Width = 210
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_Visita_ResultadoClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 15
+      end
+      object Edit_id_Visita_Resultado: TEdit
+        Left = 288
+        Height = 26
+        Top = 75
+        Width = 29
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 16
+        Visible = False
+      end
+      object Label46: TLabel
+        Left = 276
+        Height = 22
+        Top = 56
+        Width = 147
+        Caption = 'Resultado visita'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Boton_Elegir_Ruta: TBitBtn
+        Left = 487
+        Height = 47
+        Top = 56
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_RutaClick
+        ParentFont = False
+        TabOrder = 17
+      end
+      object Label47: TLabel
+        Left = 525
+        Height = 22
+        Top = 55
+        Width = 103
+        Caption = 'Ruta / Zona'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_id_Ruta: TEdit
+        Left = 557
+        Height = 26
+        Top = 77
+        Width = 29
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 18
+        Visible = False
+      end
+      object Boton_Elegir_Actividad: TBitBtn
+        Left = 728
+        Height = 47
+        Top = 56
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_ActividadClick
+        ParentFont = False
+        TabOrder = 20
+      end
+      object Label48: TLabel
+        Left = 765
+        Height = 22
+        Top = 56
+        Width = 86
+        Caption = 'Actividad'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Actividad: TEdit
+        Left = 766
+        Height = 26
+        Top = 77
+        Width = 220
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_ActividadClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 21
+      end
+      object Edit_id_Actividad: TEdit
+        Left = 793
+        Height = 26
+        Top = 77
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 22
+        Visible = False
+      end
+      object Boton_Elegir_Representante: TBitBtn
+        Left = 990
+        Height = 47
+        Top = 56
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_RepresentanteClick
+        ParentFont = False
+        TabOrder = 23
+      end
+      object Label50: TLabel
+        Left = 1029
+        Height = 22
+        Top = 56
+        Width = 135
+        Caption = 'Representante'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Representante: TEdit
+        Left = 1029
+        Height = 26
+        Top = 77
+        Width = 220
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_RepresentanteClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 24
+      end
+      object Edit_id_representantes: TEdit
+        Left = 1057
+        Height = 26
+        Top = 77
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 25
+        Visible = False
+      end
+    end
+    object TabSheet_Filtros_Generales: TTabSheet
+      Caption = 'Filtrado personalizado.-'
+      ClientHeight = 108
+      ClientWidth = 1262
+      object Label7: TLabel
+        Left = 10
+        Height = 11
+        Top = 2
+        Width = 91
+        Caption = 'Último filtro general'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Memo_Filtros: TMemo
+        Left = 10
+        Height = 48
+        Top = 13
+        Width = 1239
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+      end
+      object Label8: TLabel
+        Left = 10
+        Height = 11
+        Top = 60
+        Width = 64
+        Caption = 'Ordenado por'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Memo_OrderBy: TMemo
+        Left = 10
+        Height = 34
+        Top = 70
+        Width = 1239
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 1
+      end
+    end
+  end
+  object DBGrid_1: TDBGrid
+    Left = 26
+    Height = 445
+    Top = 168
+    Width = 299
+    Anchors = [akLeft]
+    BorderSpacing.Top = 4
+    Color = 3522756
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Provincia'
+        Width = 265
+        FieldName = 'descripcion'
+      end>
+    DataSource = DataSource_1
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection]
+    ParentFont = False
+    Scrollbars = ssAutoBoth
+    TabOrder = 1
+    TitleFont.CharSet = ANSI_CHARSET
+    TitleFont.Color = clBlack
+    TitleFont.Height = -16
+    TitleFont.Name = 'Arial'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Quality = fqDraft
+    TitleFont.Style = [fsBold]
+    OnCellClick = DBGrid_1CellClick
+    OnDrawColumnCell = DBGrid_1DrawColumnCell
+  end
+  object DBNavigator_1: TDBNavigator
+    AnchorSideLeft.Control = DBGrid_1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = DBGrid_1
+    Left = 26
+    Height = 38
+    Top = 616
+    Width = 198
+    BeforeAction = DBNavigator_1BeforeAction
+    BevelOuter = bvNone
+    BorderSpacing.Top = 4
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 38
+    ClientWidth = 198
+    DataSource = DataSource_1
+    Options = []
+    TabOrder = 2
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+  end
+  object BitBtn_Ver_Situacion_Registro_1: TBitBtn
+    Left = 237
+    Height = 38
+    Hint = 'Ver situación del registro'
+    Top = 616
+    Width = 37
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Times New Roman'
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD3A793C2A195BD9C
+      8ED1A490FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7AB9A
+      BDB0ABAAA3A3988F8F9A8882C99E8EFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFD7AB9AD1C4C2C4C1C2BAB6B7ADA5A7988F8F988681C7A08EFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFD8AD9ADED1CFD9D9DAD1CFD3C2AAA1B79E96ADA7A99A909197
+      8680C9A08FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFD9B09DE7DDD9E9EAEFE2E2E5C27859AF3812AF38
+      12B16749ADA5A79A9193988681C69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFD9AF9CEEE5E2F0F6FAEFF4FAC67754
+      A72806A72907A92907A92907B05E3EAFA7A79A919393827FC69D8CFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F0E7E2FAFEFFF6
+      FEFFCE8868B13C15CE7752D38460D38460CE7752B43A13B05B39ADA7A99A9193
+      93827FC69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F3E7
+      E2FEFFFFFEFFFFD49072AA300CAA300CD38664FFFFFFFFFFFFCF7F5BAB310CAD
+      300BB16041ADA5A79C9395968480C69D8CFF00FFFF00FFFF00FFFF00FFFF00FF
+      D8AD9AF6EBE9FFFFFFFFFFFFD78F6EAB310CAB320DAA2E0AC4653CFFFFFFFFFF
+      FFC15D35AA2E0BAD350FAD310BB05A38AFA4A49C939593827FC09A8AFF00FFFF
+      00FFFF00FFD8AA97F6EAE5FFFFFFFFFFFFE0A486B53F14B43A13AF3711AA2E0A
+      C6673FFFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD300BB05735ABA1A19A91
+      9390817FC09A8AFF00FFD7A793F0E2D9FFFFFFFFFFFFE9BB9CC15523BC4D1EBA
+      491CB64117AF340DC76840FFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD350F
+      AD2E0AB05D3DADA5A79A908F95827FCCA18FE0BBAAFFFFFFFFFFFFFEFAF6D17A
+      42C75F29C45C28C15523BD4E1FB53F14CB7048FFFFFFFFFFFFC25F38AA2E0BAD
+      350FAD350FAD350FAD330EAF3611B69C91ADA7A99A908FBC9A8EE0BAAAFFFFFF
+      FFFFFFFEFAF6D9894ECF6F32CC6A31C7632CC45B28BC4C1CCF794FFFFFFFFFFF
+      FFC4633AAA2E0BAD350FAD350FAD350FAB310CAF3C16C4AFA9BAB6B7ABA3A3C6
+      A193D7A793F3E2DAFFFFFFFFFFFFF0D1B1D88241D37638CF6F35CB682FC25723
+      D88C60FFFFFFFFFFFFC96D43AF350EAF360FAD350FAB320DAB310CC7896ED1D3
+      D7C4C1C2C1AFAAD7A793FF00FFD8AA97F6EAE3FFFFFFFFFFFFF0D1AFD98744D4
+      7D3CCF7537D1753CE9B693F0D4C0F0D3BDCB6C3EB74116B54016AF360FAB320D
+      CC886AE2E7EBD9D9DAD1C1BCD7A996FF00FFFF00FFFF00FFD8AA97F3E5DDFFFF
+      FFFFFFFFF4D9BBDE904CD88240D78041D3773BCE6E35C9662EC25925C05322BB
+      4A1CB64116D79A7FEEF4FAE7EAEEDDCEC9D7A996FF00FFFF00FFFF00FFFF00FF
+      FF00FFD7A996F0E2D9FFFFFFFFFFFFF6DDC0E29752D98641DA8F52F4DAC6F3D4
+      C0CF733DC45B26C15421E0A486F6FEFFF0F6FAE7D9D4D7AA97FF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFD7A996F0E2DAFFFFFFFFFFFFF8E2C6E2964C
+      EABA87FFFFFFFFFFFFE09E6DC96328E2A984FEFFFFFAFEFFEBE2DED8AD9AFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA97F0E0D8FF
+      FFFFFFFFFFF6DEC0EAAF6CF4D7B1F3CFABDA894AE9B78FFFFFFFFEFFFFF3E7E2
+      D9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFAE7CBEBB470E5A45FF0CCA5FFFFFFFF
+      FFFFF4E9E3D8AD9AFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFFFEFBFEFA
+      F6FFFFFFFFFFFFF8EFEBD9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7A793F0E0D8
+      FFFFFFFFFFFFFFFFFFFFFFFFF8EFEBDAB1A0FF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFD7A793EED7CBFEFBFBFFFEFEF4E9E3DAB19EFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA96DEB5A4E0BAAAD8AA96FF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = BitBtn_Ver_Situacion_Registro_1Click
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+  end
+  object DBGrid_2: TDBGrid
+    Left = 336
+    Height = 429
+    Top = 168
+    Width = 960
+    Anchors = [akLeft]
+    BorderSpacing.Top = 4
+    Color = 7001047
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Visita'
+        Width = 150
+        FieldName = 'Fecha_Visita'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Tipo de visita'
+        Width = 270
+        FieldName = 'OT_descripcion_visita_tipo'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Cliente'
+        Width = 270
+        FieldName = 'OT_descripcion_cliente'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Representante'
+        Width = 270
+        FieldName = 'OT_descripcion_representante'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Resultado'
+        Width = 277
+        FieldName = 'OT_descripcion_visita_resultado'
+      end>
+    DataSource = DataSource_2
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection]
+    ParentFont = False
+    Scrollbars = ssAutoBoth
+    TabOrder = 4
+    TitleFont.CharSet = ANSI_CHARSET
+    TitleFont.Color = clBlack
+    TitleFont.Height = -16
+    TitleFont.Name = 'Arial'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Quality = fqDraft
+    TitleFont.Style = [fsBold]
+    OnDrawColumnCell = DBGrid_2DrawColumnCell
+    OnDblClick = DBGrid_2DblClick
+    OnKeyDown = DBGrid_2KeyDown
+    OnKeyUp = DBGrid_2KeyUp
+  end
+  object RadioGroup_Bajas: TRadioGroup
+    Left = 1127
+    Height = 45
+    Top = 1
+    Width = 96
+    AutoFill = True
+    BorderSpacing.Bottom = 3
+    Caption = ' Ver bajas '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 22
+    ClientWidth = 92
+    Columns = 2
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemIndex = 1
+    Items.Strings = (
+      'Si'
+      'No'
+    )
+    OnClick = RadioGroup_BajasClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object BitBtn_Filtrar: TBitBtn
+    Left = 1226
+    Height = 37
+    Hint = 'Filtrar'
+    Top = 9
+    Width = 34
+    BorderSpacing.Bottom = 3
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Times New Roman'
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF02558E0B5B
+      890B669802558EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      086EA919749C0505050202020D344605649DFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FF02558E1597D523BDFE3C7A88EEB47A664F3A00000016475FFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FF035B930973AF23BDFE23BDFE3C7A88FFBF81FFBF8134291F0A
+      0D0F176A9DFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FF004B820E81BD23BDFE0E81BD24BDFE30C1FE3A8EADEEB4
+      7AFFBF81987452020202417EA0FF00FFFF00FF00386C186C9F004B82FF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF05649D1AA6E523BDFE26BFFE137DB658CEFF
+      7AD8FF99E0FF97846CFFBF81BF9167020202377598004B822C81B14A87A40B0D
+      0F0D1F2905578BFF00FFFF00FFFF00FFFF00FF0973AF23BDFE2AC0FE41C7FE64
+      D0FF2B84B696D9F7C2EDFFDCF4FFE1EAEF907F6C694F371D34402076A768C5EE
+      60D0FF437481866749010101071924004B82FF00FF02558E096CA631C2FE4DCA
+      FE6FD4FF90DDFFAFE7FFABD8EE3E86AFF2FBFFEBF8FFD3F2FFA9DEF74392BF05
+      7EB23DB1E637C4FE27BFFE3C7A88FFBF8152402E010101044169055D961F93CE
+      359ACE7AD8FF9AE1FFB8EAFFD4F2FFEAF8FFF2FBFF1B86B41984B44BA5CC2D84
+      B4046FA400588F0198CB1CA6E523BDFE23BDFE1C84ACEEB47ABF91670000000D
+      5882004B827BD1F72376A7C2EDFFDDF4FFEFFAFFEFFAFFDCF4FFBFEBFF77C2E6
+      0D84B80189BD0179AF0198CB006BA10193C613A5E123BDFE23BDFE23BDFE6D7A
+      6CBF91670000000B527B004B82CBEFFF6AA5C6609DBFEBF8FFD1F0FFB4E7FF95
+      DEFF75D5FF55CCFF36C4FE0E8BC7015A92017FB4006298018EC10388BF23BDFE
+      23BDFE23BDFE23B2EE3B666C02203102558E004B8272A9C6C2E0EE1767981365
+      9849A1CE46A6D549C9FE2FC1FE24BDFE23BDFE23BDFE1FB6F60E86C20277AD01
+      89BD018EC10A91CA1FB6F60F96D40679B5005B9500386CFF00FFFF00FF004B82
+      004B82FF00FFFF00FF04568E158AC51390CE1390CE1FB6F623BDFE23BDFE23BD
+      FE23BDFE1FB6F61390CE005187005B8F00386CFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF04629A1597D50973AF
+      0E81BD0A88C40679B501659E00518800386CFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FF005991016099004A80FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = BitBtn_FiltrarClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    Spacing = 0
+    TabOrder = 6
+  end
+  object BitBtn_SALIR: TBitBtn
+    Left = 1262
+    Height = 37
+    Hint = 'Salir'
+    Top = 9
+    Width = 34
+    BorderSpacing.Bottom = 3
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Times New Roman'
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B4E1E
+      1FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B824B4B
+      8C4B4B914B4B4E1E1FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B824B4B89
+      4B4B9C4B4CB64B4CBD4B4C9F4B4C4E1E1FFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B824B
+      4B9A4D4EAF4E4FC14E4FC04D4EBF4C4DBF4C4D9F4B4C4E1E1F994B4B824B4B82
+      4B4B824B4B824B4B824B4B824B4B824B4B824B4BFF00FFFF00FFFF00FFFF00FF
+      FF00FF824B4BC55455C95455C75354C65253C55152C45051C24F50A04C4D4E1E
+      1FFE8B8CFC9293FB9A9CFAA3A4F8AAABF7B1B1F7B5B6F7B5B6824B4BFF00FFFF
+      00FFFF00FFFF00FFFF00FF824B4BCE5859CC5758CB5657CA5556C95455C75354
+      C65253A34E4F4E1E1F3F9E4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4CF7B5
+      B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BD15B5CD05A5BCF595ACE
+      5859CC5758CB5657CA5556A550504E1E1F3F9E4C1EBC4C1EBC4C1EBC4C1EBC4C
+      1EBC4C1EBC4CF7B5B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BD55E
+      5FD55E5FD45D5ED35C5DD15B5CD05A5BCF595AA651524E1E1F3F9E4C1EBC4C1E
+      BC4C1EBC4C1EBC4C1EBC4C1EBC4CF7B5B6824B4BFF00FFFF00FFFF00FFFF00FF
+      FF00FF824B4BDA6364D96263D86062D75F60D55E5FD45D5ED35C5DA953544E1E
+      1F3F9E4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4CF7B5B6824B4BFF00FFFF
+      00FFFF00FFFF00FFFF00FF824B4BDE6667DD6566DC6465DA6364D96263D86062
+      D75F60AB55554E1E1F3F9E4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4CF7B5
+      B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BE2696AE16869E06768DE
+      6667E06D6EE69091DC6465AC56574E1E1F58A55B1EBC4C1EBC4C1EBC4C1EBC4C
+      1EBC4C1EBC4CF7B5B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BE76D
+      6EE66C6DE56B6CE36A6BEEA6A7FFFFFFEB9C9CAF58594E1E1FEECEAFB7EBAA5E
+      D3775ED37745CA6745CA6745CA67F7B5B6824B4BFF00FFFF00FFFF00FFFF00FF
+      FF00FF824B4BEB7072EA6F70E96E6FE76D6EF2A9AAFFFFFFEB9596B15A5A4E1E
+      1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3D9F6BDD9F6BDF7B5B6824B4BFF00FFFF
+      00FFFF00FFFF00FFFF00FF824B4BEF7475EE7374ED7273EB7072EA6F70EF9091
+      E76D6EB25B5C4E1E1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5
+      B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BF37778F37778F27677F0
+      7576EF7475EE7374ED7273B55D5D4E1E1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3
+      FFFFD3FFFFD3F7B5B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BF87B
+      7DF77A7BF6797AF47879F37778F27677F07576B75F5F4E1E1FEECEAFFFFFD3FF
+      FFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5B6824B4BFF00FFFF00FFFF00FFFF00FF
+      FF00FF824B4BFC7F80FB7E7FFA7D7EF87B7DF77A7BF6797AF47879B860624E1E
+      1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5B6824B4BFF00FFFF
+      00FFFF00FFFF00FFFF00FF824B4BFF8182FF8182FE8081FC7F80FC7F80FB7E7F
+      FA7D7EBB63634E1E1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5
+      B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BFF8182FF8182FF8182FF
+      8182FF8182FE8081FE8081BD65654E1E1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3
+      FFFFD3FFFFD3F7B5B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BF77E
+      7FFF8182FF8182FF8182FF8182FF8182FF8182BF66664E1E1FEECEAFFFFFD3FF
+      FFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5B6824B4BFF00FFFF00FFFF00FFFF00FF
+      FF00FF824B4B824B4BAF5E5FD56F70FF8182FF8182FF8182FF8182BF66664E1E
+      1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5B6824B4BFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B824B4B915152B66263EE7A7B
+      FF8182BF66664E1E1F914B4B824B4B824B4B824B4B824B4B824B4B824B4B824B
+      4B824B4BFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FF824B4B824B4B9855559F58584E1E1FFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B4E1E1FFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = BitBtn_SALIRClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    Spacing = 0
+    TabOrder = 7
+  end
+  object DBNavigator_2: TDBNavigator
+    AnchorSideTop.Side = asrBottom
+    Left = 336
+    Height = 38
+    Top = 599
+    Width = 250
+    BeforeAction = DBNavigator_2BeforeAction
+    BevelOuter = bvNone
+    BorderSpacing.Top = 4
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 38
+    ClientWidth = 250
+    DataSource = DataSource_2
+    Options = []
+    TabOrder = 8
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbRefresh]
+  end
+  object BitBtn_Ver_Situacion_Registro_2: TBitBtn
+    Left = 597
+    Height = 38
+    Hint = 'Ver situación del registro'
+    Top = 599
+    Width = 37
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Times New Roman'
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD3A793C2A195BD9C
+      8ED1A490FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7AB9A
+      BDB0ABAAA3A3988F8F9A8882C99E8EFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFD7AB9AD1C4C2C4C1C2BAB6B7ADA5A7988F8F988681C7A08EFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFD8AD9ADED1CFD9D9DAD1CFD3C2AAA1B79E96ADA7A99A909197
+      8680C9A08FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFD9B09DE7DDD9E9EAEFE2E2E5C27859AF3812AF38
+      12B16749ADA5A79A9193988681C69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFD9AF9CEEE5E2F0F6FAEFF4FAC67754
+      A72806A72907A92907A92907B05E3EAFA7A79A919393827FC69D8CFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F0E7E2FAFEFFF6
+      FEFFCE8868B13C15CE7752D38460D38460CE7752B43A13B05B39ADA7A99A9193
+      93827FC69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F3E7
+      E2FEFFFFFEFFFFD49072AA300CAA300CD38664FFFFFFFFFFFFCF7F5BAB310CAD
+      300BB16041ADA5A79C9395968480C69D8CFF00FFFF00FFFF00FFFF00FFFF00FF
+      D8AD9AF6EBE9FFFFFFFFFFFFD78F6EAB310CAB320DAA2E0AC4653CFFFFFFFFFF
+      FFC15D35AA2E0BAD350FAD310BB05A38AFA4A49C939593827FC09A8AFF00FFFF
+      00FFFF00FFD8AA97F6EAE5FFFFFFFFFFFFE0A486B53F14B43A13AF3711AA2E0A
+      C6673FFFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD300BB05735ABA1A19A91
+      9390817FC09A8AFF00FFD7A793F0E2D9FFFFFFFFFFFFE9BB9CC15523BC4D1EBA
+      491CB64117AF340DC76840FFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD350F
+      AD2E0AB05D3DADA5A79A908F95827FCCA18FE0BBAAFFFFFFFFFFFFFEFAF6D17A
+      42C75F29C45C28C15523BD4E1FB53F14CB7048FFFFFFFFFFFFC25F38AA2E0BAD
+      350FAD350FAD350FAD330EAF3611B69C91ADA7A99A908FBC9A8EE0BAAAFFFFFF
+      FFFFFFFEFAF6D9894ECF6F32CC6A31C7632CC45B28BC4C1CCF794FFFFFFFFFFF
+      FFC4633AAA2E0BAD350FAD350FAD350FAB310CAF3C16C4AFA9BAB6B7ABA3A3C6
+      A193D7A793F3E2DAFFFFFFFFFFFFF0D1B1D88241D37638CF6F35CB682FC25723
+      D88C60FFFFFFFFFFFFC96D43AF350EAF360FAD350FAB320DAB310CC7896ED1D3
+      D7C4C1C2C1AFAAD7A793FF00FFD8AA97F6EAE3FFFFFFFFFFFFF0D1AFD98744D4
+      7D3CCF7537D1753CE9B693F0D4C0F0D3BDCB6C3EB74116B54016AF360FAB320D
+      CC886AE2E7EBD9D9DAD1C1BCD7A996FF00FFFF00FFFF00FFD8AA97F3E5DDFFFF
+      FFFFFFFFF4D9BBDE904CD88240D78041D3773BCE6E35C9662EC25925C05322BB
+      4A1CB64116D79A7FEEF4FAE7EAEEDDCEC9D7A996FF00FFFF00FFFF00FFFF00FF
+      FF00FFD7A996F0E2D9FFFFFFFFFFFFF6DDC0E29752D98641DA8F52F4DAC6F3D4
+      C0CF733DC45B26C15421E0A486F6FEFFF0F6FAE7D9D4D7AA97FF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFD7A996F0E2DAFFFFFFFFFFFFF8E2C6E2964C
+      EABA87FFFFFFFFFFFFE09E6DC96328E2A984FEFFFFFAFEFFEBE2DED8AD9AFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA97F0E0D8FF
+      FFFFFFFFFFF6DEC0EAAF6CF4D7B1F3CFABDA894AE9B78FFFFFFFFEFFFFF3E7E2
+      D9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFAE7CBEBB470E5A45FF0CCA5FFFFFFFF
+      FFFFF4E9E3D8AD9AFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFFFEFBFEFA
+      F6FFFFFFFFFFFFF8EFEBD9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7A793F0E0D8
+      FFFFFFFFFFFFFFFFFFFFFFFFF8EFEBDAB1A0FF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFD7A793EED7CBFEFBFBFFFEFEF4E9E3DAB19EFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA96DEB5A4E0BAAAD8AA96FF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = BitBtn_Ver_Situacion_Registro_2Click
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 9
+  end
+  object BitBtn_Imprimir: TBitBtn
+    Left = 635
+    Height = 38
+    Hint = 'Imprimir'
+    Top = 599
+    Width = 37
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Times New Roman'
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FF817E7FABA9AA8682826F6C6DFF00FFFF00
+      FF7F7D7EB6B6B6C2C1C19A9797807D7EFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FF817E7FA4A1A3EBEAEAF0EFEF959191
+      8682822A292A2D2C2D535152817F7FAAA9A9CFCECED7D7D7BAB7B78C898AFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF807E7F938F90DAD9D9FFFEFEFB
+      FAFAEAE9E9918F8F8784841E1D1F0707080D0D0E1717182E2D2E524F51828080
+      B5B4B4D9D8D8C7C6C67D7879FF00FFFF00FFFF00FFFF00FF828081CCC9C9FBFA
+      FAFAF8F8F6F4F4FAF8F8E0DDDE8C89898C89896665663A393A1E1D1F0F0F0F0A
+      0A0A0C0C0D1616182D2C2D585455787676FF00FFFF00FFFF00FF757072B4B0B0
+      F3F0F0F8F6F6F0EFEFF0EFEFDAD9D9A5A4A4807E7F6F6C6D737070827F808F8A
+      8C8886866D6C6C45444526252611111209090A181718706D6EFF00FFFF00FFFF
+      00FF757072E5E5E5EBEBEBE7E5E5CECCCC9C98987E797A908E8EB7B6B68E8A8A
+      797676726E6F6E6A6C726F6F7E797A8A88878A88887876774F4E4F373738726F
+      6FFF00FFFF00FFFF00FF757072D4D3D3C2C1C1918F8F7A7778918F8FBBBABBC9
+      CBC9D1CFCFD8D7D7BDBBBBA7A4A4918F8F827F80767273706D6E6F6C6D787575
+      8681818C8989787676FF00FFFF00FFFF00FF7570728784867A7878939191B7B7
+      B7C4C6C6C0C0C0BABABADEDDDDF3F0F0EFEFEFE7E5E5D7D4D4C1C0C0ADABAB9A
+      97978A88887D7979737070706D6E6C6869FF00FFFF00FFFF00FF757072959193
+      BAB7B7C1C1C1BCBCBCBBBBBBB6B6B6CFCFCFF0EFEFA19EA0A395A0B4B0B1CCCB
+      CBD8D8D8D9D9D9CECECEC0C0C0B0AFAFA09E9E959191797677FF00FFFF00FFFF
+      00FF757072BBBBBBBDBDBDBBBBBBBBBBBBB7B7B7CBCBCBF0EFEF9A9597818780
+      4B9C4F878C86817D7F848282959393A9A7A7BDBCBCC4C4C4C4C4C4C1C1C18281
+      81FF00FFFF00FFFF00FFFF00FF989697C2C2C2BDC0C0C0C0C0D4D4D4DAD9D98E
+      8A8A969395E9E9E7B7E7BADDE2DDD7D3D4F69A829C989A8886867D7879827F80
+      9693939693958C8889FF00FFFF00FFFF00FFFF00FFFF00FF8A8889A9A7A7BBBA
+      BAA3A0A0817F7FABA9A9F0EFEFF0EFEFF0E9EFE3E0E0DDDADAD9D9D9D8D8D8CE
+      CECEC0C0C0000000000000000000000000000000FF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FF706D6E939191C4C4C4ADADAD808181A7A7A7C6C4C4D4D3D3D8D7
+      D7D4D4D4D1D1D1D3D3D3CBCBCB0000007875760008E1FF00FF000000FF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF868284EFF0F0F0EFEECEC9C7959191919393
+      A0A4A5B7BCBDBABDBDBDC0C0BDBDBDA3A1A3807E7F0000030007E1FF00FF0008
+      E1000161FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE2C0BDFFDACEFF
+      D3C1FEC9B7F6C6B6EFC4B6E7C4BBDEC7C1D4CCC9C2C2C2A5A4A5FF00FF000000
+      FF00FFFF00FFFF00FF0004D6FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFD3A09CFFD7C6FFCCBAFFC1AFFFB7A1FFAF95FFA78EFFA488FB9C81DDB5B0FF
+      00FFFF00FF0000000000000000000000000002510004E0FF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFD4A19CFFDDCCFFCCBAFFC1AFFFBAA4FEB098FEA98FFFA0
+      84F49078FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF0000C000
+      02E1FF00FFFF00FFFF00FFFF00FFFF00FFDEADA5FFDDCCFFCCBAFFC1AFFFBAA4
+      FEB098FEA98FFFA186E58976FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8ABA5FFD9C9FF
+      CCBAFFC1AFFFBAA4FEB098FEA98FFFA186F69A82FF00FFFF00FFFF00FF000000
+      000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFD8ABA5FFD7C6FFCCBAFFC1AFFFBAA4FEB098FFA98FF69A82F69A82FF00FFFF
+      00FFFF00FF000000FF00FF0008E1FF00FF000000FF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFD7A7A1FFE7D9FFD7C6FFCCBAFFC1AFFEBAA4FEB198FFAB90F69A
+      82FF00FFFF00FFFF00FFFF00FF0000030007E1FF00FF0008E1000264FF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFD8ABA5FFEBDDFFDDCCFFD4C0FFC9B5FFC0A9
+      FFB79EE79684F69A82FF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FFFF00
+      FF0004D6FF00FFFF00FFFF00FFFF00FFFF00FFC08886D8ABA5D7A49ED7A198D7
+      9D93D7978FD79589D38C82F69A82FF00FFFF00FFFF00FFFF00FFFF00FF000000
+      0000000000000000000002510004E0FF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF0000C00002E1
+    }
+    OnClick = BitBtn_ImprimirClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 10
+  end
+  object Label_Ctdad_Sin_Pedido: TLabel
+    Left = 893
+    Height = 15
+    Top = 620
+    Width = 98
+    Alignment = taRightJustify
+    Anchors = [akLeft, akBottom]
+    AutoSize = False
+    Caption = '0000'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_Ctdad_Rgtros1: TLabel
+    Left = 997
+    Height = 18
+    Top = 620
+    Width = 258
+    Alignment = taRightJustify
+    Anchors = [akLeft, akBottom]
+    Caption = 'Sin pedido ............. Con pedido .........'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_Ctdad_Rgtros: TLabel
+    Left = 1147
+    Height = 18
+    Top = 600
+    Width = 32
+    Alignment = taRightJustify
+    Anchors = [akLeft, akBottom]
+    Caption = '0000'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_Ctdad_Rgtros5: TLabel
+    Left = 1082
+    Height = 18
+    Top = 600
+    Width = 55
+    Alignment = taRightJustify
+    Anchors = [akLeft, akBottom]
+    Caption = 'VISITAS'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_Ctdad_Con_Pedido: TLabel
+    Left = 1264
+    Height = 18
+    Top = 620
+    Width = 32
+    Anchors = [akLeft, akBottom]
+    Caption = '0000'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_Ctdad_Rgtros6: TLabel
+    Left = 960
+    Height = 18
+    Top = 602
+    Width = 336
+    Alignment = taRightJustify
+    Anchors = [akLeft, akBottom]
+    Caption = '__________________________________________'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_Ctdad_Sin_Pto: TLabel
+    Left = 893
+    Height = 15
+    Top = 638
+    Width = 98
+    Alignment = taRightJustify
+    Anchors = [akLeft, akBottom]
+    AutoSize = False
+    Caption = '0000'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_Ctdad_Rgtros2: TLabel
+    Left = 997
+    Height = 18
+    Top = 638
+    Width = 260
+    Alignment = taRightJustify
+    Anchors = [akLeft, akBottom]
+    Caption = 'Sin presupuesto ... Con presupuesto'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_Ctdad_Con_Pto: TLabel
+    Left = 1264
+    Height = 18
+    Top = 638
+    Width = 32
+    Anchors = [akLeft, akBottom]
+    Caption = '0000'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object BitBtn_ver_Presupuestos: TBitBtn
+    Left = 752
+    Height = 38
+    Hint = 'Ver situación del registro'
+    Top = 599
+    Width = 114
+    Caption = '&Presupuestos'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = BitBtn_ver_PresupuestosClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 11
+  end
+  object BitBtn_ver_Pedidos: TBitBtn
+    Left = 869
+    Height = 38
+    Hint = 'Ver situación del registro'
+    Top = 599
+    Width = 71
+    Caption = 'P&edidos'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = BitBtn_ver_PedidosClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 12
+  end
+  object SQLQuery_2: TSQLQuery
+    PacketRecords = 20
+    MaxIndexesCount = 100
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Fecha_Visita'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'id_clientes'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Fecha_Visita_Proxima'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'id_visitas_tipos'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_visitas_resultados'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_representantes'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Comentario'
+        DataType = ftString
+        Precision = -1
+        Size = 3000
+      end    
+      item
+        Name = 'id_clientes_contactos'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Pedido_Realizado_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Presupuesto_Realizado_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'OT_descripcion_cliente'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'id_clientes_tipos'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_actividades'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_rutas'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'nif_cif'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'id_poblaciones'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_provincias'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_paises'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Tfno_Fijo_1'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Tfno_Fijo_2'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'FAX'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Movil'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'OT_descripcion_Contacto'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'OT_descripcion_cliente_tipo'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_actividad'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_ruta'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_poblacion'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_provincia'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_pais'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_representante'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'OT_descripcion_visita_tipo'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_visita_resultado'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end>
+    AfterPost = SQLQuery_2AfterPost
+    BeforeEdit = SQLQuery_2BeforeEdit
+    BeforePost = SQLQuery_2BeforePost
+    Database = DataModule_visitas_por_provincia.SQLCon_Visita
+    Transaction = DataModule_visitas_por_provincia.SQLTran_Visita
+    SQL.Strings = (
+      'SELECT vis.*,'
+      ''
+      'c.nombre_propietario AS OT_descripcion_cliente,'
+      'c.id_clientes_tipos,'
+      'c.id_actividades,'
+      'c.id_rutas,'
+      'c.nif_cif,'
+      'c.id_poblaciones,'
+      'c.id_provincias,'
+      'c.id_paises,'
+      'c.Tfno_Fijo_1,'
+      'c.Tfno_Fijo_2,'
+      'c.FAX,'
+      'c.Movil,'
+      ''
+      'cc.nombre AS OT_descripcion_Contacto,'
+      'ct.descripcion AS OT_descripcion_cliente_tipo,'
+      'act.descripcion AS OT_descripcion_actividad,'
+      'rt.descripcion AS OT_descripcion_ruta,'
+      ''
+      'pb.descripcion AS OT_descripcion_poblacion,'
+      'pr.descripcion AS OT_descripcion_provincia,'
+      'ps.descripcion AS OT_descripcion_pais,'
+      ''
+      'rep.nombre_propietario AS OT_descripcion_representante,'
+      'vist.descripcion AS OT_descripcion_visita_tipo,'
+      'visr.descripcion AS OT_descripcion_visita_resultado'
+      ''
+      'FROM visitas AS vis'
+      ''
+      'LEFT JOIN clientes AS c'
+      'ON vis.id_clientes = c.id'
+      ''
+      'LEFT JOIN poblaciones AS pb'
+      'ON c.id_poblaciones = pb.id'
+      ''
+      'LEFT JOIN provincias AS pr'
+      'ON c.id_provincias = pr.id'
+      ''
+      'LEFT JOIN paises AS ps'
+      'ON c.id_paises = ps.id'
+      ''
+      'LEFT JOIN clientes_tipos AS ct'
+      'ON c.id_clientes_tipos = ct.id'
+      ''
+      'LEFT JOIN actividades AS act'
+      'ON c.id_actividades = act.id'
+      ''
+      'LEFT JOIN rutas AS rt'
+      'ON c.id_rutas = rt.id'
+      ''
+      'LEFT JOIN visitas_tipos AS vist'
+      'ON vis.id_visitas_tipos = vist.id'
+      ''
+      'LEFT JOIN visitas_resultados AS visr'
+      'ON vis.id_visitas_resultados = visr.id'
+      ''
+      'LEFT JOIN clientes_contactos AS cc'
+      'ON vis.id_clientes_contactos = cc.id'
+      ''
+      'LEFT JOIN representantes AS rep'
+      'ON vis.id_representantes = rep.id'
+      ''
+      ''
+    )
+    Params = <>
+    left = 907
+    top = 312
+    object SQLQuery_2id: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2Fecha_Visita: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Fecha_Visita'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_2id_clientes: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_clientes'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_2Fecha_Visita_Proxima: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Fecha_Visita_Proxima'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2id_visitas_tipos: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_visitas_tipos'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2id_visitas_resultados: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_visitas_resultados'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2id_representantes: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_representantes'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_2Insert_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_2Insert_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_2Del_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2Del_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2Del_WHY: TStringField
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_2Change_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2Change_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2OT_descripcion_cliente: TStringField
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_cliente'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_2OT_descripcion_representante: TStringField
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_representante'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_2OT_descripcion_visita_tipo: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_visita_tipo'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_2OT_descripcion_visita_resultado: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_visita_resultado'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_2Comentario: TStringField
+      DisplayWidth = 3000
+      FieldKind = fkData
+      FieldName = 'Comentario'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3000
+    end
+    object SQLQuery_2id_clientes_contactos: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_clientes_contactos'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2id_clientes_tipos: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_clientes_tipos'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2id_actividades: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_actividades'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2id_rutas: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_rutas'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2OT_descripcion_cliente_tipo: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_cliente_tipo'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_2OT_descripcion_actividad: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_actividad'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_2OT_descripcion_ruta: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_ruta'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_2nif_cif: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'nif_cif'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_2id_poblaciones: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_poblaciones'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2id_provincias: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_provincias'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2id_paises: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_paises'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_2OT_descripcion_poblacion: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_poblacion'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_2OT_descripcion_provincia: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_provincia'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_2OT_descripcion_pais: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_pais'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_2Tfno_Fijo_1: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_1'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_2Tfno_Fijo_2: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_2'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_2FAX: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'FAX'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_2Movil: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Movil'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_2OT_descripcion_Contacto: TStringField
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_Contacto'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_2Pedido_Realizado_SN: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Pedido_Realizado_SN'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_2Presupuesto_Realizado_SN: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Presupuesto_Realizado_SN'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+  end
+  object DataSource_2: TDataSource
+    DataSet = SQLQuery_2
+    left = 907
+    top = 400
+  end
+  object SQLQuery_1: TSQLQuery
+    PacketRecords = 20
+    MaxIndexesCount = 100
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'descripcion'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'id_paises'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'OT_descripcion_pais'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end>
+    AfterPost = SQLQuery_1AfterPost
+    AfterScroll = SQLQuery_1AfterScroll
+    BeforeEdit = SQLQuery_1BeforeEdit
+    BeforePost = SQLQuery_1BeforePost
+    Database = DataModule_visitas_por_provincia.SQLCon_Prov
+    Transaction = DataModule_visitas_por_provincia.SQLTran_Prov
+    SQL.Strings = (
+      'SELECT'
+      ''
+      'pr.*,'
+      'ps.descripcion AS OT_descripcion_pais'
+      ''
+      'FROM provincias AS pr'
+      ''
+      'LEFT JOIN paises AS ps'
+      'ON pr.id_paises = ps.id'
+      ''
+    )
+    Params = <>
+    left = 248
+    top = 240
+    object SQLQuery_1id: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_1descripcion: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'descripcion'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_1id_paises: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_paises'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_1Insert_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_1Insert_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_1Del_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_1Del_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_1Del_WHY: TStringField
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_1Change_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_1Change_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_1OT_descripcion_pais: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_pais'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+  end
+  object DataSource_1: TDataSource
+    DataSet = SQLQuery_1
+    left = 248
+    top = 300
+  end
+end

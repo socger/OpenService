@@ -1,0 +1,24 @@
+inherited form_plantilla_0001: Tform_plantilla_0001
+  inherited Panel_Barra_Superior: TPanel
+    inherited Panel1: TPanel
+      inherited BitBtn_Filtros_Cerrar: TBitBtn
+        Visible = False
+      end
+    end
+  end
+  inherited Panel_de_Abajo: TPanel
+    inherited GroupBox_Registro: TGroupBox[0]
+    end
+    inherited GroupBox_Grid: TGroupBox[1]
+      inherited Panel_Barra_Superior1: TPanel
+        inherited Panel4: TPanel
+          inherited Panel14: TPanel
+            inherited DBNavigatorPrincpal: TDBNavigator
+              Hints.Strings = (              )
+            end
+          end
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,75 @@
+object form_opciones_impresion: Tform_opciones_impresion
+  Left = 366
+  Height = 113
+  Top = 158
+  Width = 370
+  Caption = 'Opciones de impresión.-'
+  ClientHeight = 113
+  ClientWidth = 370
+  Color = 9221227
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object Label1: TLabel
+    Left = 26
+    Height = 13
+    Top = 48
+    Width = 133
+    Caption = 'ElLIJA LA IMPRESORA'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label_Copias: TLabel
+    Left = 296
+    Height = 13
+    Top = 48
+    Width = 46
+    Caption = 'COPIAS'
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ComboBox_Elegir_Impresora: TComboBox
+    Left = 26
+    Height = 23
+    Top = 62
+    Width = 257
+    ItemHeight = 15
+    TabOrder = 0
+  end
+  object SpinEdit_Copias: TSpinEdit
+    Left = 297
+    Height = 23
+    Top = 62
+    Width = 47
+    MaxValue = 0
+    TabOrder = 1
+    Value = 1
+  end
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 358
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 2
+    ShowButtons = [pbOK, pbCancel]
+  end
+end

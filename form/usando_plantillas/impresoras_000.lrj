@@ -1,0 +1,10 @@
+{"version":1,"strings":[
+{"hash":126670529,"name":"tf_impresoras_000.label17.caption","sourcebytes":[73,109,112,114,101,115,111,114,97],"value":"Impresora"},
+{"hash":25593873,"name":"tf_impresoras_000.dbcheckbox1.caption","sourcebytes":[80,114,101,100,101,116,101,114,109,105,110,97,100,97],"value":"Predeterminada"},
+{"hash":78016387,"name":"tf_impresoras_000.label_copias.caption","sourcebytes":[67,111,112,105,97,115],"value":"Copias"},
+{"hash":226269873,"name":"tf_impresoras_000.bitbtn_considerar_como_cerrado.caption","sourcebytes":[69,108,101,103,105,114,32,99,111,109,111,32,112,114,101,100,101,116,101,114,109,105,110,97,100,97],"value":"Elegir como predeterminada"},
+{"hash":1268,"name":"tf_impresoras_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":80135182,"name":"tf_impresoras_000.dbgrid_principal.columns[1].title.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
+{"hash":78016387,"name":"tf_impresoras_000.dbgrid_principal.columns[2].title.caption","sourcebytes":[67,111,112,105,97,115],"value":"Copias"},
+{"hash":22404,"name":"tf_impresoras_000.dbgrid_principal.columns[3].title.caption","sourcebytes":[80,114,100],"value":"Prd"}
+]}

@@ -1,0 +1,600 @@
+unit visitas_001;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, DBDateTimePicker, Forms, Controls, Graphics, Dialogs, ButtonPanel, db,
+  StdCtrls, DbCtrls, Buttons, EditBtn, utilidades_forms_Filtrar, utilidades_general, utilidades_datos_tablas,
+  utilidades_usuarios, utilidades_clientes;
+
+type
+
+  { Tform_visitas_001 }
+
+  Tform_visitas_001 = class(TForm)
+    BitBtn_SMS: TBitBtn;
+    Boton_Elegir_Cliente: TBitBtn;
+    Boton_Elegir_Contacto: TBitBtn;
+    Boton_Elegir_Representante: TBitBtn;
+    Boton_Elegir_Visita_Resultado: TBitBtn;
+    Boton_Elegir_Visita_Tipo: TBitBtn;
+    ButtonPanel1: TButtonPanel;
+    DBCheckBox_IVA_Pedido_Realizado: TDBCheckBox;
+    DBCheckBox_Presupuesto_Realizado: TDBCheckBox;
+    DBDateTimePicker_Visita: TDBDateTimePicker;
+    DBDateTimePicker_Visita_Proxima: TDBDateTimePicker;
+    DBEdit_eMail1: TDBEdit;
+    DBMemo1: TDBMemo;
+    Edit_Descripcion_Actividad: TEdit;
+    Edit_Descripcion_Cliente: TEdit;
+    Edit_Descripcion_Cliente_Tipo: TEdit;
+    Edit_Descripcion_Contacto: TEdit;
+    Edit_Descripcion_Tfno1: TEdit;
+    Edit_Descripcion_Tfno2: TEdit;
+    Edit_Descripcion_Fax: TEdit;
+    Edit_Descripcion_Movil: TEdit;
+    Edit_Descripcion_Pais: TEdit;
+    Edit_Descripcion_Poblacion: TEdit;
+    Edit_Descripcion_Provincia: TEdit;
+    Edit_Descripcion_Visita_Resultado: TEdit;
+    Edit_nif: TEdit;
+    Edit_Descripcion_Representante: TEdit;
+    Edit_Descripcion_Ruta: TEdit;
+    Edit_Descripcion_Visita_Tipo: TEdit;
+    GroupBox1: TGroupBox;
+    GroupBox11: TGroupBox;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    Label26: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label62: TLabel;
+    Label63: TLabel;
+    Label64: TLabel;
+    Label_Fecha: TLabel;
+    Label_Fecha1: TLabel;
+    Label_Fecha2: TLabel;
+    Label_MaxLength_Comentario: TLabel;
+
+    procedure No_Tocar_Representante;
+    procedure No_Tocar_Por_Planificacion;
+    function  Comprobar_No_Tocar( param_Reproducir_Mensajes, param_Ejecutar_No_Tocar : Boolean ) : Boolean;
+    procedure No_Tocar_Cliente;
+    procedure Boton_Elegir_ContactoClick(Sender: TObject);
+    procedure Cuanto_Falta_para_Total_Comentario;
+    procedure Boton_Elegir_ClienteClick(Sender: TObject);
+    procedure Boton_Elegir_RepresentanteClick(Sender: TObject);
+    procedure Boton_Elegir_Visita_ResultadoClick(Sender: TObject);
+    procedure Boton_Elegir_Visita_TipoClick(Sender: TObject);
+    procedure DBMemo1Change(Sender: TObject);
+    procedure Edit_Descripcion_ClienteClick(Sender: TObject);
+    procedure Edit_Descripcion_ContactoClick(Sender: TObject);
+    procedure Edit_Descripcion_RepresentanteClick(Sender: TObject);
+    procedure Edit_Descripcion_Visita_ResultadoClick(Sender: TObject);
+    procedure Edit_Descripcion_Visita_TipoClick(Sender: TObject);
+    procedure para_Empezar;
+    procedure FormCreate(Sender: TObject);
+    procedure no_Tocar;
+    procedure CancelButtonClick(Sender: TObject);
+    procedure OKButtonClick(Sender: TObject);
+    procedure Presentar_Datos;
+    procedure FormActivate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+
+  private
+      { private declarations }
+      private_Salir_OK : Boolean;
+  public
+      { public declarations }
+      public_Solo_Ver      : Boolean;
+      public_Menu_Worked   : Integer;
+      public_Pulso_Aceptar : Boolean;
+      public_Record_Rgtro  : TRecord_Rgtro_Comun;
+      public_planificacion : Boolean;
+  end;
+
+var
+  form_visitas_001: Tform_visitas_001;
+
+implementation
+
+{$R *.lfm}
+
+uses menu, visitas_000, clientes_000;
+
+{ Tform_visitas_001 }
+
+procedure Tform_visitas_001.FormActivate(Sender: TObject);
+begin
+    If form_visitas_000.public_Elegimos = true then
+    begin
+        with Self do
+        begin
+            Color := $00B9959C;
+        end;
+    end;
+
+    Comprobar_No_Tocar(true, true);
+end;
+
+function Tform_visitas_001.Comprobar_No_Tocar( param_Reproducir_Mensajes,
+                                               param_Ejecutar_No_Tocar : Boolean ) : Boolean;
+begin
+    Result := false;
+
+    // ********************************************************************************************* //
+    // ** Si se llamó para solo verlo, pues no se puede tocar                                     ** //
+    // ********************************************************************************************* //
+    if public_Solo_Ver = true then
+    begin
+        Result := true;
+        if param_Ejecutar_No_Tocar = true then no_Tocar;
+    end;
+end;
+
+procedure Tform_visitas_001.Presentar_Datos;
+begin
+    with form_visitas_000.SQLQuery_Visitas do
+    begin
+        Edit_Descripcion_Cliente.Text          := FieldByName('OT_descripcion_cliente').AsString;
+        Edit_nif.Text                          := FieldByName('OT_nif_cif').AsString;
+        Edit_Descripcion_Cliente_Tipo.Text     := FieldByName('OT_descripcion_cliente_tipo').AsString;
+        Edit_Descripcion_Ruta.Text             := FieldByName('OT_descripcion_ruta').AsString;
+        Edit_Descripcion_Provincia.Text        := FieldByName('OT_descripcion_provincia').AsString;
+        Edit_Descripcion_Actividad.Text        := FieldByName('OT_descripcion_actividad').AsString;
+        Edit_Descripcion_Poblacion.Text        := FieldByName('OT_descripcion_poblacion').AsString;
+        Edit_Descripcion_Pais.Text             := FieldByName('OT_descripcion_pais').AsString;
+        Edit_Descripcion_Tfno1.Text            := FieldByName('OT_Tfno_Fijo_1').AsString;
+        Edit_Descripcion_Tfno2.Text            := FieldByName('OT_Tfno_Fijo_2').AsString;
+        Edit_Descripcion_Fax.Text              := FieldByName('OT_FAX').AsString;
+        Edit_Descripcion_Movil.Text            := FieldByName('OT_Movil').AsString;
+
+        Edit_Descripcion_Representante.Text    := FieldByName('OT_descripcion_representante').AsString;
+        Edit_Descripcion_Visita_Tipo.Text      := FieldByName('OT_descripcion_visita_tipo').AsString;
+        Edit_Descripcion_Visita_Resultado.Text := FieldByName('OT_descripcion_visita_resultado').AsString;
+
+        Edit_Descripcion_Contacto.Text         := FieldByName('OT_descripcion_Contacto').AsString;
+
+        Cuanto_Falta_para_Total_Comentario;
+    end;
+end;
+
+procedure Tform_visitas_001.OKButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := true;
+    public_Pulso_Aceptar := true;
+end;
+
+procedure Tform_visitas_001.CancelButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := True;
+    public_Pulso_Aceptar := false;
+end;
+
+procedure Tform_visitas_001.FormCreate(Sender: TObject);
+begin
+    // ********************************************************************************************* //
+    // ** Obligado en cada formulario para no olvidarlo                                           ** //
+    // ********************************************************************************************* //
+    with Self do
+    begin
+        Color       := $00C2C29E;
+        Position    := poScreenCenter;
+        BorderIcons := [];
+        BorderStyle := bsSingle;
+    end;
+
+    private_Salir_OK := false;
+
+    // ********************************************************************************************* //
+    // ** Solo para formularios que traten con datos                                              ** //
+    // ********************************************************************************************* //
+    public_Solo_Ver := false;
+
+    // ********************************************************************************************* //
+    // ** SOLO PARA ESTE FORM                                                                     ** //
+    // ********************************************************************************************* //
+    public_planificacion := false;
+end;
+
+procedure Tform_visitas_001.para_Empezar;
+begin
+    { ****************************************************************************
+      Solo para formularios que traten con datos
+      **************************************************************************** }
+      with form_visitas_000.SQLQuery_Visitas do
+      begin
+          public_Record_Rgtro := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                             FieldByName('Fecha_Visita').AsString,
+                                                             FieldByName('id_clientes').AsString,
+                                                             FieldByName('id_visitas_tipos').AsString,
+                                                             FieldByName('id_visitas_resultados').AsString,
+                                                             FieldByName('id_representantes').AsString );
+      end;
+
+      Presentar_Datos;
+end;
+
+procedure Tform_visitas_001.Boton_Elegir_Visita_TipoClick(Sender: TObject);
+var var_Registro : TRecord_Rgtro_Comun;
+begin
+    with form_visitas_000.SQLQuery_Visitas do
+    begin
+        var_Registro := UTI_Abrir_Form( true, false, '', 470 );
+        if var_Registro.id_1 <> '' then
+        begin
+             FieldByName('id_visitas_tipos').AsString := Trim(var_Registro.id_1);
+
+             Edit_Descripcion_Visita_Tipo.Text := var_Registro.descripcion_1;
+
+             FieldByName('OT_descripcion_visita_tipo').AsString := var_Registro.descripcion_1;
+        end;
+    end;
+end;
+
+procedure Tform_visitas_001.DBMemo1Change(Sender: TObject);
+begin
+    Cuanto_Falta_para_Total_Comentario;
+end;
+
+procedure Tform_visitas_001.Cuanto_Falta_para_Total_Comentario;
+begin
+    Label_MaxLength_Comentario.Caption := IntToStr( DBMemo1.MaxLength - Length(DBMemo1.Text) );
+end;
+
+procedure Tform_visitas_001.Boton_Elegir_ContactoClick(Sender: TObject);
+var var_Registro : TRecord_Rgtro_Comun;
+begin
+    with form_visitas_000.SQLQuery_Visitas do
+    begin
+        if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
+        begin
+            var_Registro := UTI_CLIENTES_Elegir_Contacto( FieldByName('id_clientes').AsString,
+                                                          public_Menu_Worked );
+            if var_Registro.id_1 <> '' then
+            begin
+                 FieldByName('id_clientes_contactos').AsString := Trim(var_Registro.id_1);
+                 Edit_Descripcion_Contacto.Text                := var_Registro.descripcion_1;
+            end;
+        end;
+    end;
+end;
+
+procedure Tform_visitas_001.Edit_Descripcion_ClienteClick(Sender: TObject);
+var var_msg : TStrings;
+begin
+    var_msg := TStringList.Create;
+    var_msg.Add('¿QUITAMOS el CLIENTE?');
+    if UTI_GEN_Aviso(true, var_msg, rs_OK, True, True) = True then
+    begin
+         form_visitas_000.SQLQuery_Visitas.FieldByName('id_clientes').Clear;
+         Edit_Descripcion_Cliente.Text := '';
+    end;
+    var_msg.Free;
+end;
+
+procedure Tform_visitas_001.Edit_Descripcion_ContactoClick(Sender: TObject);
+var var_msg : TStrings;
+begin
+    var_msg := TStringList.Create;
+    var_msg.Add('¿QUITAMOS la persona CON QUIEN SE HABLO?');
+    if UTI_GEN_Aviso(true, var_msg, rs_OK, True, True) = True then
+    begin
+         form_visitas_000.SQLQuery_Visitas.FieldByName('id_clientes_contactos').Clear;
+         Edit_Descripcion_Contacto.Text := '';
+    end;
+    var_msg.Free;
+end;
+
+procedure Tform_visitas_001.Edit_Descripcion_RepresentanteClick(Sender: TObject);
+var var_msg : TStrings;
+begin
+    var_msg := TStringList.Create;
+    var_msg.Add('¿QUITAMOS el REPRESENTANTE?');
+    if UTI_GEN_Aviso(true, var_msg, rs_OK, True, True) = True then
+    begin
+         form_visitas_000.SQLQuery_Visitas.FieldByName('id_representantes').Clear;
+         Edit_Descripcion_Representante.Text := '';
+    end;
+    var_msg.Free;
+end;
+
+procedure Tform_visitas_001.Edit_Descripcion_Visita_ResultadoClick(Sender: TObject);
+var var_msg : TStrings;
+begin
+    var_msg := TStringList.Create;
+    var_msg.Add('¿QUITAMOS el RESULTADO DE LA VISITA?');
+    if UTI_GEN_Aviso(true, var_msg, rs_OK, True, True) = True then
+    begin
+         form_visitas_000.SQLQuery_Visitas.FieldByName('id_visitas_tipos').Clear;
+         Edit_Descripcion_Visita_Tipo.Text := '';
+    end;
+    var_msg.Free;
+end;
+
+procedure Tform_visitas_001.Edit_Descripcion_Visita_TipoClick(Sender: TObject);
+var var_msg : TStrings;
+begin
+    var_msg := TStringList.Create;
+    var_msg.Add('¿QUITAMOS el TIPO/MOTIVO DE VISITA?');
+    if UTI_GEN_Aviso(true, var_msg, rs_OK, True, True) = True then
+    begin
+         form_visitas_000.SQLQuery_Visitas.FieldByName('id_visitas_tipos').Clear;
+         Edit_Descripcion_Visita_Tipo.Text := '';
+    end;
+    var_msg.Free;
+end;
+
+procedure Tform_visitas_001.Boton_Elegir_RepresentanteClick(Sender: TObject);
+var var_Registro : TRecord_Rgtro_Comun;
+begin
+    with form_visitas_000.SQLQuery_Visitas do
+    begin
+        var_Registro := UTI_Abrir_Form( true, false, '', 130 );
+        if var_Registro.id_1 <> '' then
+        begin
+             FieldByName('id_representantes').AsString := Trim(var_Registro.id_1);
+
+             Edit_Descripcion_Representante.Text := var_Registro.descripcion_1;
+
+             FieldByName('OT_descripcion_representante').AsString := var_Registro.descripcion_1;
+        end;
+    end;
+end;
+
+procedure Tform_visitas_001.Boton_Elegir_Visita_ResultadoClick(Sender: TObject);
+var var_Registro : TRecord_Rgtro_Comun;
+begin
+    with form_visitas_000.SQLQuery_Visitas do
+    begin
+        var_Registro := UTI_Abrir_Form( true, false, '', 480 );
+        if var_Registro.id_1 <> '' then
+        begin
+             FieldByName('id_visitas_resultados').AsString := Trim(var_Registro.id_1);
+
+             Edit_Descripcion_Visita_Resultado.Text := var_Registro.descripcion_1;
+
+             FieldByName('OT_descripcion_visita_resultado').AsString := var_Registro.descripcion_1;
+        end;
+    end;
+end;
+
+procedure Tform_visitas_001.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+var var_msg : TStrings;
+begin
+    ButtonPanel1.SetFocus; // Con esto consigo que salga del campo que este y pueda actualizarlo
+
+    var_msg := TStringList.Create;
+
+    if public_Pulso_Aceptar = true then
+    begin
+        with form_visitas_000.SQLQuery_Visitas do
+        begin
+            if Trim(FieldByName('Fecha_Visita').asString) = '' then
+            begin
+                var_msg.Add( '* La fecha de la visita');
+            end;
+
+            if public_planificacion = false then
+            begin
+                if Trim(FieldByName('id_clientes').asString) = '' then
+                begin
+                    var_msg.Add( '* El cliente');
+                end;
+            end;
+
+            if Trim(FieldByName('id_representantes').asString) = '' then
+            begin
+                var_msg.Add( '* El representante');
+            end;
+        end;
+    end;
+
+    if private_Salir_OK = false then
+    begin
+      { ********************************************************************
+        Intento BitBtn_SALIR de la aplicación de un modo no permitido.
+        ********************************************************************
+        Pero si desde el menu principal está a true la variable
+        public_Salir_Ok, significa que hay que salir si o si pues se pulsó
+        cancelar al preguntar otra vez por la contraseña
+        ******************************************************************** }
+        if form_Menu.public_Salir_OK = False then CloseAction := caNone;
+    end else begin
+      { ********************************************************************
+        Fue correcto el modo como quiere salir de la aplicación
+        ********************************************************************
+        Comprobaremos si no se generó algún error por falta de completar
+        algun campo y si se salió con el botón Ok o Cancel
+        ******************************************************************** }
+        if (Trim(var_msg.Text) <> '') and (public_Pulso_Aceptar = true) then
+        begin
+            UTI_GEN_Aviso(true, var_msg, rs_Falta, True, False);
+            CloseAction := caNone;
+        end else begin
+            CloseAction := caFree;
+        end;
+    end;
+
+    var_msg.Free;
+end;
+
+procedure Tform_visitas_001.No_Tocar_Cliente;
+begin
+    Boton_Elegir_Cliente.Enabled          := false;
+    Edit_Descripcion_Cliente.Enabled      := false;
+    Edit_nif.Enabled                      := false;
+    Edit_Descripcion_Cliente_Tipo.Enabled := false;
+    Edit_Descripcion_Ruta.Enabled         := false;
+    Edit_Descripcion_Provincia.Enabled    := false;
+    Edit_Descripcion_Actividad.Enabled    := false;
+    Edit_Descripcion_Poblacion.Enabled    := false;
+    Edit_Descripcion_Pais.Enabled         := false;
+    Edit_Descripcion_Tfno1.Enabled        := false;
+    Edit_Descripcion_Tfno2.Enabled        := false;
+    Edit_Descripcion_Fax.Enabled          := false;
+    Edit_Descripcion_Movil.Enabled        := false;
+end;
+
+procedure Tform_visitas_001.No_Tocar_Por_Planificacion;
+begin
+    No_Tocar_Cliente;
+
+    Boton_Elegir_Contacto.Enabled             := false;
+    Edit_Descripcion_Contacto.Enabled         := false;
+    DBCheckBox_Presupuesto_Realizado.Enabled  := false;
+    Boton_Elegir_Visita_Resultado.Enabled     := false;
+    Edit_Descripcion_Visita_Resultado.Enabled := false;
+    DBCheckBox_IVA_Pedido_Realizado.Enabled   := false;
+    DBDateTimePicker_Visita_Proxima.Enabled   := false;
+end;
+
+procedure Tform_visitas_001.No_Tocar_Representante;
+begin
+    Boton_Elegir_Representante.Enabled     := False;
+    Edit_Descripcion_Representante.Enabled := False;
+end;
+
+procedure Tform_visitas_001.no_Tocar;
+begin
+    No_Tocar_Cliente;
+    No_Tocar_Representante;
+
+    DBDateTimePicker_Visita.Enabled           := False;
+    Boton_Elegir_Visita_Tipo.Enabled          := False;
+    Edit_Descripcion_Visita_Tipo.Enabled      := False;
+
+    DBMemo1.Enabled                           := False;
+
+    Boton_Elegir_Contacto.Enabled             := False;
+    Edit_Descripcion_Contacto.Enabled         := False;
+    DBCheckBox_Presupuesto_Realizado.Enabled  := False;
+
+    Boton_Elegir_Visita_Resultado.Enabled     := False;
+    Edit_Descripcion_Visita_Resultado.Enabled := False;
+    DBCheckBox_IVA_Pedido_Realizado.Enabled   := False;
+
+    DBDateTimePicker_Visita_Proxima.Enabled   := False;
+end;
+
+procedure Tform_visitas_001.Boton_Elegir_ClienteClick(Sender: TObject);
+var var_Registro         : TRecord_Rgtro_Comun;
+    var_Registro_Cliente : TClientes;
+    var_msg              : TStrings;
+begin
+    if UTI_USR_Permiso_SN(50, '', True) = true then
+    begin
+        if UTI_GEN_Form_Abierto_Ya('f_clientes_000') = false then
+        begin
+            Application.CreateForm(Tf_clientes_000, f_clientes_000);
+
+            f_clientes_000.public_Solo_Ver    := public_Solo_Ver;
+            f_clientes_000.public_Elegimos    := true;
+            f_clientes_000.public_Menu_Worked := 50;
+
+            // ********************************************************************************* //
+            // ** Puede que sea llamado desde otro modulo                                     ** //
+            // ********************************************************************************* //
+            if Trim(form_visitas_000.public_llamado_desde) <> '' then
+            begin
+                if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_actividad_000' then
+                begin
+                    f_clientes_000.Edit_Filtro_id_Actividad.Text          := form_visitas_000.public_llamado_desde_id;
+                    f_clientes_000.Edit_Filtro_Descripcion_Actividad.Text := form_visitas_000.public_llamado_desde_Descripcion;
+                end;
+
+                if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_provincia_000' then
+                begin
+                    f_clientes_000.Edit_Filtro_id_provincias.Text         := form_visitas_000.public_llamado_desde_id;
+                    f_clientes_000.Edit_Filtro_Descripcion_Provincia.Text := form_visitas_000.public_llamado_desde_Descripcion;
+                end;
+
+                if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_tipo_cliente_000' then
+                begin
+                    f_clientes_000.Edit_id_clientes_tipos.Text          := form_visitas_000.public_llamado_desde_id;
+                    f_clientes_000.Edit_Descripcion_clientes_tipos.Text := form_visitas_000.public_llamado_desde_Descripcion;
+                end;
+
+                if Trim(form_visitas_000.public_llamado_desde) = 'Tform_visitas_por_zona_000' then
+                begin
+                    f_clientes_000.Edit_Filtro_id_Ruta.Text          := form_visitas_000.public_llamado_desde_id;
+                    f_clientes_000.Edit_Filtro_Descripcion_Ruta.Text := form_visitas_000.public_llamado_desde_Descripcion;
+                end;
+            end;
+
+            f_clientes_000.para_Empezar;
+
+            f_clientes_000.ShowModal;
+
+            if f_clientes_000.public_Rgtro_Seleccionado = true then
+            begin
+                with f_clientes_000.SQLQuery_Clientes do
+                begin
+                    var_Registro := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                FieldByName('id_Agencias_Transporte').AsString,
+                                                                '',
+                                                                FieldByName('nombre_propietario').AsString,
+                                                                FieldByName('nombre_comercial').AsString,
+                                                                '' );
+                    if var_Registro.id_1 <> '' then
+                    begin
+                        form_visitas_000.SQLQuery_Visitas.FieldByName('id_clientes').AsString := Trim(var_Registro.id_1);
+
+                        if Trim(var_Registro.descripcion_1) <> '' then
+                        begin
+                            Edit_Descripcion_Cliente.Text := var_Registro.descripcion_1;
+                        end else begin
+                            Edit_Descripcion_Cliente.Text := var_Registro.descripcion_2;
+                        end;
+
+                        // FieldByName('OT_descripcion_cliente').AsString := Edit_Descripcion_Cliente.Text;
+
+
+                        var_Registro_Cliente := UTI_DATOS_TABLA_Traer_Clientes_xID( Trim(var_Registro.id_1) );
+
+                        if var_Registro_Cliente.id <> '0' then
+                        begin
+                            Edit_nif.Text                      := var_Registro_Cliente.nif_cif;
+                            Edit_Descripcion_Cliente_Tipo.Text := var_Registro_Cliente.OT_descripcion_cliente_tipo;
+                            Edit_Descripcion_Ruta.Text         := var_Registro_Cliente.OT_descripcion_ruta;
+                            Edit_Descripcion_Provincia.Text    := var_Registro_Cliente.OT_descripcion_provincia;
+                            Edit_Descripcion_Actividad.Text    := var_Registro_Cliente.OT_descripcion_actividad;
+                            Edit_Descripcion_Poblacion.Text    := var_Registro_Cliente.OT_descripcion_poblacion;
+                            Edit_Descripcion_Pais.Text         := var_Registro_Cliente.OT_descripcion_pais;
+                            Edit_Descripcion_Tfno1.Text        := var_Registro_Cliente.Tfno_Fijo_1;
+                            Edit_Descripcion_Tfno2.Text        := var_Registro_Cliente.Tfno_Fijo_2;
+                            Edit_Descripcion_Fax.Text          := var_Registro_Cliente.FAX;
+                            Edit_Descripcion_Movil.Text        := var_Registro_Cliente.Movil;
+                        end;
+                    end;
+                end;
+            end;
+
+            f_clientes_000.Free;
+        end
+
+        else
+        begin
+            var_msg := TStringList.Create;
+            var_msg.Add(rs_Modulo_Abierto);
+            UTI_GEN_Aviso(true, var_msg, 'NO SE PUEDE ABRIR.-', True, False);
+            var_msg.Free;
+        end;
+    end;
+end;
+
+end.
+
+

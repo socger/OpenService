@@ -1,0 +1,604 @@
+inherited f_elegir_cliente_direccion_envio: Tf_elegir_cliente_direccion_envio
+  Left = 73
+  Height = 505
+  Top = 59
+  Width = 1252
+  ClientHeight = 505
+  ClientWidth = 1252
+  inherited Panel_de_Abajo: TPanel
+    Height = 461
+    Width = 1252
+    ClientHeight = 461
+    ClientWidth = 1252
+    inherited GroupBox_Registro: TGroupBox
+      Height = 459
+      Width = 1250
+      ClientHeight = 439
+      ClientWidth = 1246
+      inherited Panel20: TPanel
+        Height = 439
+      end
+      inherited Panel21: TPanel
+        Left = 1229
+        Height = 439
+      end
+      inherited Panel22: TPanel
+        Height = 439
+        Width = 1212
+        ClientHeight = 439
+        ClientWidth = 1212
+        inherited Panel23: TPanel
+          Top = 402
+          Width = 1212
+          ClientWidth = 1212
+          inherited ButtonPanel1: TButtonPanel
+            Width = 1200
+          end
+          inherited Shape1: TShape
+            Width = 1212
+          end
+        end
+      end
+    end
+    inherited GroupBox_Grid: TGroupBox
+      Height = 459
+      Width = 1250
+      ClientHeight = 439
+      ClientWidth = 1246
+      inherited Panel_Barra_Superior1: TPanel
+        Top = 381
+        Width = 1246
+        ClientWidth = 1246
+        inherited Panel4: TPanel
+          inherited Panel14: TPanel
+            inherited DBNavigatorPrincpal: TDBNavigator
+              Hints.Strings = (              )
+            end
+          end
+        end
+        inherited Panel15: TPanel
+          Left = 1229
+        end
+        inherited Panel_Otros_Campos_no_Grid: TPanel
+          Width = 854
+          ClientWidth = 854
+          inherited Label_Ctdad_Rgtros: TLabel
+            Left = 756
+          end
+        end
+      end
+      inherited Panel5: TPanel
+        Height = 381
+      end
+      inherited Panel6: TPanel
+        Left = 1229
+        Height = 381
+      end
+      inherited Panel7: TPanel
+        Height = 381
+        Width = 1212
+        ClientHeight = 381
+        ClientWidth = 1212
+        inherited DBGrid_Principal: TDBGrid
+          Height = 377
+          Width = 1212
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Id'
+              Width = 50
+              FieldName = 'id'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Dirección'
+              Width = 1125
+              FieldName = 'OT_Direccion_Entera'
+            end>
+        end
+      end
+    end
+    inherited GroupBox_Filtros: TGroupBox
+      Left = 304
+      Top = 128
+      inherited Panel11: TPanel
+        inherited Panel_Filtramos_por: TPanel
+          inherited Panel_Barra_DBGrid_Filtros: TPanel
+            inherited Panel_Barra_Filtros: TPanel
+              inherited DBNavigatorDBGrid_Filtros: TDBNavigator
+                Hints.Strings = (                )
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  inherited Panel_Barra_Superior: TPanel
+    Width = 1252
+    ClientWidth = 1252
+    inherited Panel9: TPanel
+      Left = 1235
+    end
+    inherited Panel1: TPanel
+      Left = 1030
+    end
+  end
+  inherited SQLQuery_Principal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_clientes'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_clientes_contactos'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Direccion'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'Direccion_Numero'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'Direccion_Piso_Letra'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'Codigo_Postal'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'id_poblaciones'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_provincias'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_paises'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Tfno_Fijo_1'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Tfno_Fijo_2'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'FAX'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Movil'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'eMail'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'Portes_Pagados_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'OT_descripcion_poblacion'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_provincia'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_pais'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_Contacto'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end>
+    OnCalcFields = SQLQuery_PrincipalCalcFields
+    SQL.Strings = (
+      'SELECT ce.*,'
+      ''
+      '       pb.descripcion AS OT_descripcion_poblacion,'
+      '       pr.descripcion AS OT_descripcion_provincia,'
+      '       ps.descripcion AS OT_descripcion_pais,'
+      '       cc.nombre AS OT_descripcion_Contacto'
+      ''
+      ''
+      '  FROM clientes_envios AS ce'
+      ''
+      'LEFT JOIN poblaciones AS pb'
+      '  ON ce.id_poblaciones = pb.id'
+      ''
+      'LEFT JOIN provincias AS pr'
+      '  ON ce.id_provincias = pr.id'
+      ''
+      'LEFT JOIN paises AS ps'
+      '  ON ce.id_paises = ps.id'
+      ''
+      'LEFT JOIN clientes_contactos AS cc'
+      'ON ce.id_clientes_contactos = cc.id'
+      ''
+    )
+    object SQLQuery_PrincipalOT_todos_los_Tfnos1: TStringField[1]
+      DisplayWidth = 70
+      FieldKind = fkCalculated
+      FieldName = 'OT_todos_los_Tfnos'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 70
+    end
+    object SQLQuery_PrincipalOT_Direccion_Entera1: TStringField[2]
+      DisplayWidth = 600
+      FieldKind = fkCalculated
+      FieldName = 'OT_Direccion_Entera'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 600
+    end
+    object SQLQuery_Principalid_clientes: TLargeintField[3]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_clientes'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Principalid_clientes_contactos: TLargeintField[4]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_clientes_contactos'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDireccion: TStringField[5]
+      DisplayWidth = 600
+      FieldKind = fkData
+      FieldName = 'Direccion'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 600
+    end
+    object SQLQuery_PrincipalDireccion_Numero: TStringField[6]
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'Direccion_Numero'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object SQLQuery_PrincipalDireccion_Piso_Letra: TStringField[7]
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'Direccion_Piso_Letra'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object SQLQuery_PrincipalCodigo_Postal: TStringField[8]
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'Codigo_Postal'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object SQLQuery_Principalid_poblaciones: TLargeintField[9]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_poblaciones'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Principalid_provincias: TLargeintField[10]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_provincias'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Principalid_paises: TLargeintField[11]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_paises'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalTfno_Fijo_1: TStringField[12]
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_1'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_PrincipalTfno_Fijo_2: TStringField[13]
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_2'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_PrincipalFAX: TStringField[14]
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'FAX'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_PrincipalMovil: TStringField[15]
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Movil'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_PrincipaleMail: TStringField[16]
+      DisplayWidth = 300
+      FieldKind = fkData
+      FieldName = 'eMail'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object SQLQuery_PrincipalPortes_Pagados_SN: TStringField[17]
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Portes_Pagados_SN'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_PrincipalInsert_WHEN: TDateTimeField[18]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalInsert_Id_User: TLargeintField[19]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalDel_WHEN: TDateTimeField[20]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_Id_User: TLargeintField[21]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_WHY: TStringField[22]
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_PrincipalChange_WHEN: TDateTimeField[23]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalChange_Id_User: TLargeintField[24]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalOT_descripcion_poblacion: TStringField[25]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_poblacion'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalOT_descripcion_provincia: TStringField[26]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_provincia'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalOT_descripcion_pais: TStringField[27]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_pais'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalOT_descripcion_Contacto: TStringField[28]
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_Contacto'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+  end
+end

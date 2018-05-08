@@ -1,0 +1,29 @@
+object DataModule_Cliente_Elegir_Direccion_Envio: TDataModule_Cliente_Elegir_Direccion_Envio
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 383
+  HorizontalOffset = 650
+  VerticalOffset = 61
+  Width = 361
+  object SQLTransaction_CliEnvios: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_CliEnvios
+    left = 132
+    top = 68
+  end
+  object SQLConnector_CliEnvios: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_CliEnvios
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 132
+    top = 140
+  end
+end

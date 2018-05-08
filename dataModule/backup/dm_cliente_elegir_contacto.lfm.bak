@@ -1,0 +1,29 @@
+object DataModule_Cliente_Elegir_Contacto: TDataModule_Cliente_Elegir_Contacto
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 271
+  HorizontalOffset = 597
+  VerticalOffset = 155
+  Width = 246
+  object SQLTransaction_CliContactos: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_CliContactos
+    left = 104
+    top = 40
+  end
+  object SQLConnector_CliContactos: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_CliContactos
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 104
+    top = 112
+  end
+end

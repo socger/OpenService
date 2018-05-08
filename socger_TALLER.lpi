@@ -1,0 +1,1936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="10"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="OpenService"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N Value="True"/>
+      <OutDir Value="languages"/>
+    </i18n>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="8">
+      <Item1>
+        <PackageName Value="RunTimeTypeInfoControls"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LazControls"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="DateTimeCtrls"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="Printer4Lazarus"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="lazreport"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="FCL"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="SQLDBLaz"/>
+      </Item7>
+      <Item8>
+        <PackageName Value="LCL"/>
+      </Item8>
+    </RequiredPackages>
+    <Units Count="270">
+      <Unit0>
+        <Filename Value="socger_TALLER.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="form\peliculas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_peliculas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="dataModule\dm_pelis.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Pelis"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="Unit\utilidades_bd.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="Unit\utilidades_usuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="Unit\utilidades_general.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="form\avisos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Avisos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="form\peliculas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_peliculas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="form\menu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_Menu"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="form\estado_registro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Estado_Registro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="dataModule\dm_medios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Medios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="form\filtrar_registros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Filtrar_Registros"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="utilidades_forms_Filtrar"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="form\medios_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_medios_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="form\informe.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_Informe"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="form\medios_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_medios_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="form\users_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_users_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="dataModule\dm_users.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Users"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="form\users_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_users_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="form\arrancar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Arrancar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="form\users_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_users_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="form\users_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_users_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="form\users_004.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_users_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="dataModule\dm_menus.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Menus"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="form\menus_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_menus_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="form\menus_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_menus_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="dataModule\dm_historico_registros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_historico_registros"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="form\askbypwd.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_AskByPwd"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="AskByPwd"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="form\paises_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_paises_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="dataModule\dm_paises.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Paises"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="form\paises_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_paises_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="form\formas_pago_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_formas_pago_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="dataModule\dm_formas_pago.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Formas_Pago"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="form\formas_pago_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_formas_pago_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="dataModule\dm_tarifas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Tarifas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="form\provincias_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_provincias_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="dataModule\dm_provincias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Provincias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dm_Provincias"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="form\provincias_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_provincias_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="form\poblaciones_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_poblaciones_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="dataModule\dm_poblaciones.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Poblaciones"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="form\poblaciones_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_poblaciones_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="form\representantes_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_representantes_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="dataModule\dm_representantes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Representantes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="form\representantes_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_representantes_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="form\proveedores_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="dataModule\dm_proveedores.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Proveedores"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="form\proveedores_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="form\proveedores_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="form\proveedores_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="dataModule\dm_proveedores_tipos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Proveedores_Tipos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="form\proveedores_tipos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_tipos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="form\articulos_familias_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_familias_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="dataModule\dm_articulos_familias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos_Familias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="form\articulos_familias_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_familias_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="form\articulos_familias_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_familias_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="form\articulos_familias_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_familias_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="form\articulos_familias_005.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_familias_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit57>
+      <Unit58>
+        <Filename Value="dataModule\dm_articulos_no_subfamilias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos_No_SubFamilias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit58>
+      <Unit59>
+        <Filename Value="dataModule\dm_cliente_elegir_contacto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Cliente_Elegir_Contacto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit59>
+      <Unit60>
+        <Filename Value="form\articulos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit60>
+      <Unit61>
+        <Filename Value="dataModule\dm_articulos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit61>
+      <Unit62>
+        <Filename Value="form\articulos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit62>
+      <Unit63>
+        <Filename Value="form\opciones_impresion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_opciones_impresion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit63>
+      <Unit64>
+        <Filename Value="form\articulos_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit64>
+      <Unit65>
+        <Filename Value="form\articulos_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="form\articulos_004.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="form\articulos_005.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="form\articulos_006.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_006"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="form\grupos_cocina_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_grupos_cocina_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="dataModule\dm_grupos_cocina.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Grupos_Cocina"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="form\grupos_cocina_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_grupos_cocina_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="form\articulos_007.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_007"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="dataModule\dm_articulos_elegir.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos_Elegir"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit73>
+      <Unit74>
+        <Filename Value="form\personal_familias_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_familias_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit74>
+      <Unit75>
+        <Filename Value="dataModule\dm_personal_familias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Personal_Familias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit75>
+      <Unit76>
+        <Filename Value="form\personal_familias_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_familias_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit76>
+      <Unit77>
+        <Filename Value="form\personal_familias_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_familias_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit77>
+      <Unit78>
+        <Filename Value="dataModule\dm_personal_no_subfamilias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Personal_No_SubFamilias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit78>
+      <Unit79>
+        <Filename Value="form\personal_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit79>
+      <Unit80>
+        <Filename Value="dataModule\dm_personal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Personal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit80>
+      <Unit81>
+        <Filename Value="form\personal_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit81>
+      <Unit82>
+        <Filename Value="form\personal_contratos_familias_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_contratos_familias_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit82>
+      <Unit83>
+        <Filename Value="dataModule\dm_personal_contratos_familias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Personal_Contratos_Familias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit83>
+      <Unit84>
+        <Filename Value="form\personal_contratos_familias_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_contratos_familias_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit84>
+      <Unit85>
+        <Filename Value="dataModule\dm_personal_contratos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Personal_Contratos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit85>
+      <Unit86>
+        <Filename Value="form\personal_contratos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_contratos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit86>
+      <Unit87>
+        <Filename Value="form\personal_contratos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_contratos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit87>
+      <Unit88>
+        <Filename Value="form\empresas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_empresas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit88>
+      <Unit89>
+        <Filename Value="dataModule\dm_empresas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Empresas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit89>
+      <Unit90>
+        <Filename Value="form\empresas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_empresas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit90>
+      <Unit91>
+        <Filename Value="form\gastos_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_gastos_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit91>
+      <Unit92>
+        <Filename Value="dataModule\dm_gastos_tipos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Gastos_Tipos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit92>
+      <Unit93>
+        <Filename Value="form\gastos_tipos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_gastos_tipos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit93>
+      <Unit94>
+        <Filename Value="form\cuentas_pagos_cobros_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_cuentas_pagos_cobros_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit94>
+      <Unit95>
+        <Filename Value="dataModule\dm_cuentas_pagos_cobros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Cuentas_Pagos_Cobros"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit95>
+      <Unit96>
+        <Filename Value="form\cuentas_pagos_cobros_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_cuentas_pagos_cobros_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit96>
+      <Unit97>
+        <Filename Value="form\conceptos_almacen_traspaso_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_conceptos_almacen_traspaso_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit97>
+      <Unit98>
+        <Filename Value="dataModule\dm_conceptos_almacen_traspaso.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Conceptos_Almacen_Traspaso"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit98>
+      <Unit99>
+        <Filename Value="form\conceptos_almacen_traspaso_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_conceptos_almacen_traspaso_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit99>
+      <Unit100>
+        <Filename Value="form\articulos_ofertas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_ofertas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit100>
+      <Unit101>
+        <Filename Value="dataModule\dm_articulos_ofertas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos_Ofertas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit101>
+      <Unit102>
+        <Filename Value="form\articulos_ofertas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_ofertas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit102>
+      <Unit103>
+        <Filename Value="form\articulos_ofertas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_ofertas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit103>
+      <Unit104>
+        <Filename Value="form\articulos_ofertas_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_ofertas_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit104>
+      <Unit105>
+        <Filename Value="Unit\utilidades_stock.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit105>
+      <Unit106>
+        <Filename Value="dataModule\dm_albaranes_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Albaranes_Ventas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit106>
+      <Unit107>
+        <Filename Value="Unit\utilidades_datos_tablas.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit107>
+      <Unit108>
+        <Filename Value="Unit\utilidades_impuestos.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit108>
+      <Unit109>
+        <Filename Value="Unit\utilidades_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit109>
+      <Unit110>
+        <Filename Value="dataModule\dm_users_elegir.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Users_Elegir"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dm_Users_Elegir"/>
+      </Unit110>
+      <Unit111>
+        <Filename Value="form\users_005.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_users_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit111>
+      <Unit112>
+        <Filename Value="form\users_006.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_users_006"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit112>
+      <Unit113>
+        <Filename Value="form\albaranes_ventas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_ventas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit113>
+      <Unit114>
+        <Filename Value="form\albaranes_ventas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_ventas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit114>
+      <Unit115>
+        <Filename Value="form\empresas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_empresas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit115>
+      <Unit116>
+        <Filename Value="dataModule\dm_vehiculos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit116>
+      <Unit117>
+        <Filename Value="form\vehiculos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit117>
+      <Unit118>
+        <Filename Value="form\vehiculos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit118>
+      <Unit119>
+        <Filename Value="form\vehiculos_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit119>
+      <Unit120>
+        <Filename Value="form\vehiculos_tipos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit120>
+      <Unit121>
+        <Filename Value="dataModule\dm_vehiculos_tipos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos_Tipos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit121>
+      <Unit122>
+        <Filename Value="form\vehiculos_marcas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_marcas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit122>
+      <Unit123>
+        <Filename Value="dataModule\dm_vehiculos_marcas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos_Marcas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit123>
+      <Unit124>
+        <Filename Value="form\vehiculos_marcas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_marcas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit124>
+      <Unit125>
+        <Filename Value="form\combustibles_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_combustibles_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit125>
+      <Unit126>
+        <Filename Value="form\combustibles_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_combustibles_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit126>
+      <Unit127>
+        <Filename Value="dataModule\dm_combustibles.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Combustibles"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit127>
+      <Unit128>
+        <Filename Value="dataModule\dm_vehiculos_tipo_cambios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos_Tipo_Cambios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit128>
+      <Unit129>
+        <Filename Value="form\vehiculos_tipo_cambios_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipo_cambios_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit129>
+      <Unit130>
+        <Filename Value="form\vehiculos_tipo_cambios_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipo_cambios_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit130>
+      <Unit131>
+        <Filename Value="dataModule\dm_vehiculos_tipo_ruedas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos_Tipo_Ruedas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit131>
+      <Unit132>
+        <Filename Value="form\vehiculos_tipo_ruedas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipo_ruedas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit132>
+      <Unit133>
+        <Filename Value="form\vehiculos_tipo_ruedas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipo_ruedas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit133>
+      <Unit134>
+        <Filename Value="dataModule\dm_tarjetas_transporte.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Tarjetas_Transporte"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit134>
+      <Unit135>
+        <Filename Value="form\tarjetas_transporte_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_tarjetas_transporte_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit135>
+      <Unit136>
+        <Filename Value="form\tarjetas_transporte_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_tarjetas_transporte_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit136>
+      <Unit137>
+        <Filename Value="form\proveedores_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit137>
+      <Unit138>
+        <Filename Value="dataModule\dm_proveedor_elegir_contacto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Proveedor_Elegir_Contacto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit138>
+      <Unit139>
+        <Filename Value="form\albaranes_ventas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_ventas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit139>
+      <Unit140>
+        <Filename Value="form\vehiculos_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit140>
+      <Unit141>
+        <Filename Value="dataModule\dm_vehiculos_equipamientos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos_Equipamientos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit141>
+      <Unit142>
+        <Filename Value="form\vehiculos_equipamientos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_equipamientos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit142>
+      <Unit143>
+        <Filename Value="form\vehiculos_equipamientos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_equipamientos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit143>
+      <Unit144>
+        <Filename Value="Unit\utilidades_contabilidad.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit144>
+      <Unit145>
+        <Filename Value="dataModule\dm_cliente_elegir_direccion_envio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Cliente_Elegir_Direccion_Envio"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit145>
+      <Unit146>
+        <Filename Value="form\proveedores_004.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit146>
+      <Unit147>
+        <Filename Value="dataModule\dm_proveedores_elegir.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Proveedores_Elegir"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit147>
+      <Unit148>
+        <Filename Value="form\articulos_008.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_008"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit148>
+      <Unit149>
+        <Filename Value="form\presupuestos_ventas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_ventas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit149>
+      <Unit150>
+        <Filename Value="dataModule\dm_presupuestos_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_presupuestos_ventas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit150>
+      <Unit151>
+        <Filename Value="form\presupuestos_ventas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_ventas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit151>
+      <Unit152>
+        <Filename Value="form\presupuestos_ventas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_ventas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit152>
+      <Unit153>
+        <Filename Value="dataModule\dm_pedidos_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_pedidos_ventas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit153>
+      <Unit154>
+        <Filename Value="form\pedidos_ventas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_ventas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit154>
+      <Unit155>
+        <Filename Value="form\pedidos_ventas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_ventas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit155>
+      <Unit156>
+        <Filename Value="form\pedidos_ventas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_ventas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit156>
+      <Unit157>
+        <Filename Value="dataModule\dm_empresas_elegir.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_empresas_elegir"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit157>
+      <Unit158>
+        <Filename Value="form\configuracion_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_configuracion_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit158>
+      <Unit159>
+        <Filename Value="form\configuracion_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_configuracion_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit159>
+      <Unit160>
+        <Filename Value="dataModule\dm_configuracion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_configuracion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit160>
+      <Unit161>
+        <Filename Value="dataModule\dm_visitas_tipos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_tipos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit161>
+      <Unit162>
+        <Filename Value="form\visitas_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit162>
+      <Unit163>
+        <Filename Value="form\visitas_tipos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_tipos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit163>
+      <Unit164>
+        <Filename Value="dataModule\dm_visitas_resultados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_resultados"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit164>
+      <Unit165>
+        <Filename Value="form\visitas_resultados_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_resultados_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit165>
+      <Unit166>
+        <Filename Value="form\visitas_resultados_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_resultados_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit166>
+      <Unit167>
+        <Filename Value="form\visitas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit167>
+      <Unit168>
+        <Filename Value="dataModule\dm_visitas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit168>
+      <Unit169>
+        <Filename Value="form\visitas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit169>
+      <Unit170>
+        <Filename Value="form\rutas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_rutas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit170>
+      <Unit171>
+        <Filename Value="form\rutas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_rutas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit171>
+      <Unit172>
+        <Filename Value="dataModule\dm_rutas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_rutas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit172>
+      <Unit173>
+        <Filename Value="Unit\utilidades_clientes.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit173>
+      <Unit174>
+        <Filename Value="form\visitas_por_zona_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_zona_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit174>
+      <Unit175>
+        <Filename Value="dataModule\dm_visitas_por_zona.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_zona"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit175>
+      <Unit176>
+        <Filename Value="form\visitas_por_provincia_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_provincia_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit176>
+      <Unit177>
+        <Filename Value="dataModule\dm_visitas_por_provincia.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_provincia"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit177>
+      <Unit178>
+        <Filename Value="form\visitas_por_cliente_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_cliente_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit178>
+      <Unit179>
+        <Filename Value="dataModule\dm_visitas_por_cliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_cliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit179>
+      <Unit180>
+        <Filename Value="form\visitas_por_tipo_cliente_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_tipo_cliente_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit180>
+      <Unit181>
+        <Filename Value="dataModule\dm_visitas_por_tipo_cliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_tipo_cliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit181>
+      <Unit182>
+        <Filename Value="form\visitas_por_actividad_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_actividad_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit182>
+      <Unit183>
+        <Filename Value="dataModule\dm_visitas_por_actividad.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_actividad"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit183>
+      <Unit184>
+        <Filename Value="form\visitas_por_representante_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_representante_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit184>
+      <Unit185>
+        <Filename Value="dataModule\dm_visitas_por_representante.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_representante"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit185>
+      <Unit186>
+        <Filename Value="form\visitas_planificacion_por_zona_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_planificacion_por_zona_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit186>
+      <Unit187>
+        <Filename Value="dataModule\dm_visitas_planificacion_por_zona.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_planificacion_por_zona"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit187>
+      <Unit188>
+        <Filename Value="form\visitas_planificacion_por_provincia_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_planificacion_por_provincia_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit188>
+      <Unit189>
+        <Filename Value="dataModule\dm_visitas_planificacion_por_provincia.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_planificacion_por_provincia"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit189>
+      <Unit190>
+        <Filename Value="form\pedidos_ventas_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_ventas_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit190>
+      <Unit191>
+        <Filename Value="form\albaranes_ventas_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_ventas_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit191>
+      <Unit192>
+        <Filename Value="dataModule\dm_facturas_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_facturas_ventas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit192>
+      <Unit193>
+        <Filename Value="form\facturas_ventas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit193>
+      <Unit194>
+        <Filename Value="form\facturas_ventas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit194>
+      <Unit195>
+        <Filename Value="form\facturas_ventas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit195>
+      <Unit196>
+        <Filename Value="form\facturas_ventas_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit196>
+      <Unit197>
+        <Filename Value="form\facturas_ventas_004.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit197>
+      <Unit198>
+        <Filename Value="form\facturas_ventas_005.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit198>
+      <Unit199>
+        <Filename Value="form\barra_progreso.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_barra_progreso"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit199>
+      <Unit200>
+        <Filename Value="form\facturas_ventas_006.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_006"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit200>
+      <Unit201>
+        <Filename Value="form\margenes_tarifas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_margenes_tarifas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit201>
+      <Unit202>
+        <Filename Value="dataModule\dm_margenes_tarifas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Margenes_Tarifas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit202>
+      <Unit203>
+        <Filename Value="form\margenes_tarifas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_margenes_tarifas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit203>
+      <Unit204>
+        <Filename Value="form\tarifas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_tarifas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit204>
+      <Unit205>
+        <Filename Value="form\tarifas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_tarifas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit205>
+      <Unit206>
+        <Filename Value="form\tarifas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_tarifas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit206>
+      <Unit207>
+        <Filename Value="form\articulos_009.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_009"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit207>
+      <Unit208>
+        <Filename Value="dataModule\dm_presupuestos_compras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Presupuestos_Compras"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit208>
+      <Unit209>
+        <Filename Value="Unit\utilidades_compras.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit209>
+      <Unit210>
+        <Filename Value="form\presupuestos_compras_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_compras_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit210>
+      <Unit211>
+        <Filename Value="form\presupuestos_compras_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_compras_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit211>
+      <Unit212>
+        <Filename Value="form\presupuestos_compras_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_compras_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit212>
+      <Unit213>
+        <Filename Value="form\pedidos_compras_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_compras_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit213>
+      <Unit214>
+        <Filename Value="dataModule\dm_pedidos_compras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_pedidos_compras"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit214>
+      <Unit215>
+        <Filename Value="form\pedidos_compras_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_compras_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit215>
+      <Unit216>
+        <Filename Value="form\pedidos_compras_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_compras_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit216>
+      <Unit217>
+        <Filename Value="dataModule\dm_albaranes_compras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Albaranes_Compras"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit217>
+      <Unit218>
+        <Filename Value="form\albaranes_compras_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_compras_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit218>
+      <Unit219>
+        <Filename Value="form\albaranes_compras_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_compras_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit219>
+      <Unit220>
+        <Filename Value="form\albaranes_compras_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_compras_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit220>
+      <Unit221>
+        <Filename Value="form\facturas_compras_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit221>
+      <Unit222>
+        <Filename Value="dataModule\dm_facturas_compras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_facturas_compras"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit222>
+      <Unit223>
+        <Filename Value="form\facturas_compras_006.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_006"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit223>
+      <Unit224>
+        <Filename Value="form\facturas_compras_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit224>
+      <Unit225>
+        <Filename Value="form\facturas_compras_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit225>
+      <Unit226>
+        <Filename Value="form\facturas_compras_005.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit226>
+      <Unit227>
+        <Filename Value="Unit\utilidades_lineas_detalle.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit227>
+      <Unit228>
+        <Filename Value="form\utilidades_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_utilidades_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit228>
+      <Unit229>
+        <Filename Value="dataModule\dm_utilidades.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_utilidades"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit229>
+      <Unit230>
+        <Filename Value="Unit\utilidades_empresas.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit230>
+      <Unit231>
+        <Filename Value="Unit\utilidades_almacenes.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit231>
+      <Unit232>
+        <Filename Value="form\articulos_010.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_010"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit232>
+      <Unit233>
+        <Filename Value="dataModule\dm_articulos_referencias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos_Referencias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit233>
+      <Unit234>
+        <Filename Value="form\facturas_cerrar_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_cerrar_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit234>
+      <Unit235>
+        <Filename Value="form\facturas_cerrar_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_cerrar_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit235>
+      <Unit236>
+        <Filename Value="dataModule\dm_facturas_cerrar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_facturas_cerrar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit236>
+      <Unit237>
+        <Filename Value="form\articulos_ultimas_ventas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_ultimas_ventas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit237>
+      <Unit238>
+        <Filename Value="dataModule\dm_articulos_ultimas_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_articulos_ultimas_ventas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit238>
+      <Unit239>
+        <Filename Value="form\facturas_compras_004.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit239>
+      <Unit240>
+        <Filename Value="form\facturas_ventas_007.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_007"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit240>
+      <Unit241>
+        <Filename Value="form\facturas_compras_007.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_007"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit241>
+      <Unit242>
+        <Filename Value="Unit\utilidades_impresoras.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit242>
+      <Unit243>
+        <Filename Value="Unit\utilidades_informes.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit243>
+      <Unit244>
+        <Filename Value="form\elija_ano_trimestre.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_elija_ano_trimestre"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Elija_Ano_Trimestre"/>
+      </Unit244>
+      <Unit245>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_plantilla_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit245>
+      <Unit246>
+        <Filename Value="form\usando_plantillas\reportes_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_reportes_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit246>
+      <Unit247>
+        <Filename Value="form\usando_plantillas\actividades_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_actividades_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit247>
+      <Unit248>
+        <Filename Value="form\usando_plantillas\impuestos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_impuestos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit248>
+      <Unit249>
+        <Filename Value="form\usando_plantillas\elegir_impuestos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_elegir_impuestos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit249>
+      <Unit250>
+        <Filename Value="form\usando_plantillas\almacenes_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_almacenes_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit250>
+      <Unit251>
+        <Filename Value="form\usando_plantillas\almacenes_movimientos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_almacenes_movimientos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit251>
+      <Unit252>
+        <Filename Value="form\plantillas form\plantilla_detalle_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_plantilla_detalle_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit252>
+      <Unit253>
+        <Filename Value="form\usando_plantillas\almacenes_movimientos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_almacenes_movimientos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit253>
+      <Unit254>
+        <Filename Value="form\usando_plantillas\impresoras_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_impresoras_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit254>
+      <Unit255>
+        <Filename Value="form\usando_plantillas\terminales_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_terminales_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit255>
+      <Unit256>
+        <Filename Value="form\usando_plantillas\servicios_regulares_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_servicios_regulares_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit256>
+      <Unit257>
+        <Filename Value="form\usando_plantillas\servicios_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_servicios_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit257>
+      <Unit258>
+        <Filename Value="Unit\utilidades_servicios.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit258>
+      <Unit259>
+        <Filename Value="form\usando_plantillas\series_servicios_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_series_servicios_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit259>
+      <Unit260>
+        <Filename Value="form\usando_plantillas\elegir_diarios_tipos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_elegir_diarios_tipos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit260>
+      <Unit261>
+        <Filename Value="form\usando_plantillas\bancos_ctas_empresas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_bancos_ctas_empresas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit261>
+      <Unit262>
+        <Filename Value="form\usando_plantillas\clientes_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_clientes_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit262>
+      <Unit263>
+        <Filename Value="form\usando_plantillas\clientes_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_clientes_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit263>
+      <Unit264>
+        <Filename Value="form\usando_plantillas\clientes_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_clientes_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit264>
+      <Unit265>
+        <Filename Value="form\usando_plantillas\clientes_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_clientes_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit265>
+      <Unit266>
+        <Filename Value="form\usando_plantillas\elegir_cliente_contacto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_elegir_cliente_contacto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit266>
+      <Unit267>
+        <Filename Value="form\usando_plantillas\elegir_cliente_direccion_envio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_elegir_cliente_direccion_envio"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit267>
+      <Unit268>
+        <Filename Value="form\usando_plantillas\servicios_regulares_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_servicios_regulares_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit268>
+      <Unit269>
+        <Filename Value="form\plantillas form\plantilla_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_plantilla_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit269>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="SALIDA EJECUTABLE/OpenService"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="form;dataModule;Unit;plantillas;form\plantillas form;form\usando_plantillas"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <Verbosity>
+        <ShowDebugInfo Value="True"/>
+      </Verbosity>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="4">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="EReadError"/>
+      </Item4>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

@@ -1,0 +1,52 @@
+object DataModule_Tarifas: TDataModule_Tarifas
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 368
+  HorizontalOffset = 741
+  VerticalOffset = 38
+  Width = 496
+  object SQLTransaction_Tarifas: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Tarifas
+    left = 72
+    top = 88
+  end
+  object SQLConnector_Tarifas: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Password = 'sasa'
+    Transaction = SQLTransaction_Tarifas
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 72
+    top = 160
+  end
+  object SQLTransaction_Tarifas_Margenes: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Tarifas_Margenes
+    left = 256
+    top = 88
+  end
+  object SQLConnector_Tarifas_Margenes: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Password = 'sasa'
+    Transaction = SQLTransaction_Tarifas_Margenes
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 256
+    top = 160
+  end
+end

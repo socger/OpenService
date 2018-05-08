@@ -1,0 +1,1561 @@
+inherited form_almacenes_movimientos_000: Tform_almacenes_movimientos_000
+  Left = 175
+  Height = 704
+  Top = 2
+  Width = 1004
+  ClientHeight = 704
+  ClientWidth = 1004
+  inherited Panel_Barra_Superior: TPanel
+    Width = 1004
+    ClientWidth = 1004
+    inherited Panel9: TPanel
+      Left = 987
+    end
+    inherited Panel1: TPanel
+      Left = 782
+    end
+  end
+  inherited GroupBox_Filtros: TGroupBox
+    Width = 1004
+    ClientWidth = 1000
+    inherited Panel13: TPanel
+      Left = 983
+    end
+    inherited Panel11: TPanel
+      Width = 966
+      ClientWidth = 966
+      inherited PageControl_Filtros: TPageControl
+        Width = 966
+        inherited TabSheet_Busqueda_Concreta: TTabSheet
+          ClientWidth = 958
+          object Boton_Elegir_id_almacenes_destino: TBitBtn[0]
+            Left = 12
+            Height = 47
+            Top = 1
+            Width = 38
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'MS Sans Serif'
+            Glyph.Data = {
+              36030000424D3603000000000000360000002800000010000000100000000100
+              18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+              B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+              1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+              D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+              C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+              AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+              F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+              A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+              62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+              C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+              976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+              FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+              FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+              00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+              FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            }
+            OnClick = Boton_Elegir_id_almacenes_destinoClick
+            ParentFont = False
+            TabOrder = 0
+          end
+          object Label46: TLabel[1]
+            Left = 51
+            Height = 19
+            Top = 3
+            Width = 150
+            Caption = 'Almacén de destino'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Edit_Descripcion_id_almacenes_destino: TEdit[2]
+            Left = 51
+            Height = 24
+            Top = 23
+            Width = 265
+            Color = 7001047
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clRed
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            OnClick = Edit_Descripcion_id_almacenes_destinoClick
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 1
+          end
+          object Edit_id_almacenes_destino: TEdit[3]
+            Left = 133
+            Height = 26
+            Top = 22
+            Width = 73
+            Color = 16723967
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clRed
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            ParentFont = False
+            TabOrder = 2
+            Visible = False
+          end
+          object Boton_Elegir_id_almacenes_origen: TBitBtn[4]
+            Left = 320
+            Height = 47
+            Top = 2
+            Width = 38
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'MS Sans Serif'
+            Glyph.Data = {
+              36030000424D3603000000000000360000002800000010000000100000000100
+              18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+              B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+              1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+              D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+              C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+              AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+              F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+              A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+              62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+              C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+              976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+              FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+              FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+              00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+              FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            }
+            OnClick = Boton_Elegir_id_almacenes_origenClick
+            ParentFont = False
+            TabOrder = 3
+          end
+          object Label47: TLabel[5]
+            Left = 359
+            Height = 19
+            Top = 3
+            Width = 142
+            Caption = 'Almacén de origen'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Edit_Descripcion_id_almacenes_origen: TEdit[6]
+            Left = 359
+            Height = 24
+            Top = 24
+            Width = 265
+            Color = 7001047
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clRed
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            OnClick = Edit_Descripcion_id_almacenes_origenClick
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 4
+          end
+          object Edit_id_almacenes_origen: TEdit[7]
+            Left = 441
+            Height = 26
+            Top = 22
+            Width = 73
+            Color = 16723967
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clRed
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            ParentFont = False
+            TabOrder = 5
+            Visible = False
+          end
+          object Label15: TLabel[8]
+            Left = 707
+            Height = 19
+            Top = 2
+            Width = 146
+            Caption = 'Entre fecha y fecha'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object DateTimePicker_Desde: TDateTimePicker[9]
+            Left = 708
+            Height = 24
+            Top = 23
+            Width = 89
+            CenturyFrom = 1941
+            MaxDate = 2958465
+            MinDate = -53780
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            ParentFont = False
+            TabOrder = 6
+            TrailingSeparator = False
+            TextForNullDate = 'NULL'
+            LeadingZeros = True
+            Kind = dtkDate
+            TimeFormat = tf24
+            TimeDisplay = tdHMS
+            DateMode = dmComboBox
+            Date = 1.7E308
+            Time = 1.7E308
+            UseDefaultSeparators = True
+            HideDateTimeParts = []
+            MonthNames = 'Long'
+          end
+          object Label16: TLabel[10]
+            Left = 799
+            Height = 22
+            Top = 23
+            Width = 6
+            Caption = '-'
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -19
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object DateTimePicker_Hasta: TDateTimePicker[11]
+            Left = 807
+            Height = 24
+            Top = 23
+            Width = 89
+            CenturyFrom = 1941
+            MaxDate = 2958465
+            MinDate = -53780
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            ParentFont = False
+            TabOrder = 7
+            TrailingSeparator = False
+            TextForNullDate = 'NULL'
+            LeadingZeros = True
+            Kind = dtkDate
+            TimeFormat = tf24
+            TimeDisplay = tdHMS
+            DateMode = dmComboBox
+            Date = 1.7E308
+            Time = 1.7E308
+            UseDefaultSeparators = True
+            HideDateTimeParts = []
+            MonthNames = 'Long'
+          end
+          object Boton_Elegir_conceptos_almacen_traspaso: TBitBtn[12]
+            Left = 12
+            Height = 47
+            Top = 53
+            Width = 38
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'MS Sans Serif'
+            Glyph.Data = {
+              36030000424D3603000000000000360000002800000010000000100000000100
+              18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+              B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+              1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+              D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+              C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+              AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+              F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+              A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+              62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+              C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+              976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+              FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+              FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+              00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+              FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            }
+            OnClick = Boton_Elegir_conceptos_almacen_traspasoClick
+            ParentFont = False
+            TabOrder = 8
+          end
+          object Label45: TLabel[13]
+            Left = 51
+            Height = 19
+            Top = 54
+            Width = 75
+            Caption = 'Concepto'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Edit_Descripcion_conceptos_almacen_traspaso: TEdit[14]
+            Left = 51
+            Height = 24
+            Top = 75
+            Width = 336
+            Color = 7001047
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clRed
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            OnClick = Edit_Descripcion_conceptos_almacen_traspasoClick
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 9
+          end
+          object Edit_id_conceptos_almacen_traspaso: TEdit[15]
+            Left = 79
+            Height = 26
+            Top = 74
+            Width = 73
+            Color = 16723967
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clRed
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            ParentFont = False
+            TabOrder = 10
+            Visible = False
+          end
+        end
+        inherited TabSheet_Filtros_Generales: TTabSheet
+          ClientHeight = 204
+          ClientWidth = 1820
+        end
+      end
+    end
+  end
+  inherited Panel_de_Abajo: TPanel
+    Height = 510
+    Width = 1004
+    ClientHeight = 510
+    ClientWidth = 1004
+    inherited GroupBox_Grid: TGroupBox[0]
+      Height = 508
+      Width = 1002
+      ClientHeight = 488
+      ClientWidth = 998
+      inherited Panel_Barra_Superior1: TPanel
+        Top = 430
+        Width = 998
+        ClientWidth = 998
+        inherited Panel4: TPanel
+          inherited Panel14: TPanel
+            inherited DBNavigatorPrincpal: TDBNavigator
+              Hints.Strings = (              )
+            end
+          end
+        end
+        inherited Panel15: TPanel
+          Left = 981
+        end
+        inherited Panel_Otros_Campos_no_Grid: TPanel
+          Width = 606
+          ClientWidth = 606
+          inherited Label_Ctdad_Rgtros: TLabel
+            Left = 508
+          end
+        end
+      end
+      inherited Panel5: TPanel
+        Height = 430
+      end
+      inherited Panel6: TPanel
+        Left = 981
+        Height = 430
+      end
+      inherited Panel7: TPanel
+        Height = 430
+        Width = 964
+        ClientHeight = 430
+        ClientWidth = 964
+        inherited DBGrid_Principal: TDBGrid
+          Height = 426
+          Width = 964
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Id'
+              Width = 50
+              FieldName = 'id'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Fecha'
+              Width = 90
+              FieldName = 'Fecha_Movimiento'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Almacén de destino'
+              Width = 175
+              FieldName = 'OT_descripcion_almacen_destino'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Almacén de origen'
+              Width = 175
+              FieldName = 'OT_descripcion_almacen_origen'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Tipo de movimiento'
+              Width = 215
+              FieldName = 'Tipo_Movimiento'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Concepto'
+              Width = 225
+              FieldName = 'OT_descripcion_conceptos_almacen_traspaso'
+            end>
+        end
+      end
+    end
+    inherited GroupBox_Registro: TGroupBox[1]
+      Height = 508
+      Width = 1002
+      ClientHeight = 488
+      ClientWidth = 998
+      inherited Panel20: TPanel
+        Height = 488
+      end
+      inherited Panel21: TPanel
+        Left = 981
+        Height = 488
+      end
+      inherited Panel22: TPanel
+        Height = 488
+        Width = 964
+        ClientHeight = 488
+        ClientWidth = 964
+        inherited Panel23: TPanel
+          Top = 451
+          Width = 964
+          ClientWidth = 964
+          inherited ButtonPanel1: TButtonPanel
+            Width = 952
+          end
+          inherited Shape1: TShape
+            Width = 964
+          end
+        end
+        object Label1: TLabel[1]
+          Left = 6
+          Height = 19
+          Top = 9
+          Width = 140
+          Caption = 'Fecha movimiento'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBDateTimePicker_Fecha_Movimiento: TDBDateTimePicker[2]
+          Left = 6
+          Height = 24
+          Top = 30
+          Width = 153
+          DataField = 'Fecha_Movimiento'
+          DataSource = DataSource_Principal
+          ReadOnly = False
+          CenturyFrom = 1941
+          MaxDate = 2958465
+          MinDate = -53780
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          TabOrder = 1
+          TrailingSeparator = False
+          TextForNullDate = 'NULL'
+          LeadingZeros = True
+          Kind = dtkDateTime
+          TimeFormat = tf24
+          TimeDisplay = tdHMS
+          DateMode = dmComboBox
+          UseDefaultSeparators = True
+          HideDateTimeParts = []
+          MonthNames = 'Long'
+        end
+        object Boton_Elegir_Almacen_Destino: TBitBtn[3]
+          Left = 198
+          Height = 47
+          Top = 9
+          Width = 38
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+            B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+            D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+            C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+            AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+            F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+            A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+            62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+            C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+            976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+            FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+            FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+            00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+            FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          }
+          OnClick = Boton_Elegir_Almacen_DestinoClick
+          ParentFont = False
+          TabOrder = 2
+        end
+        object Label6: TLabel[4]
+          Left = 237
+          Height = 19
+          Top = 9
+          Width = 127
+          Caption = 'Almacén destino'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Almacen_Destino: TEdit[5]
+          Left = 238
+          Height = 24
+          Top = 30
+          Width = 336
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_Almacen_DestinoClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 3
+        end
+        object Boton_Elegir_Almacen_Origen: TBitBtn[6]
+          Left = 580
+          Height = 47
+          Top = 9
+          Width = 38
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+            B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+            D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+            C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+            AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+            F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+            A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+            62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+            C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+            976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+            FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+            FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+            00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+            FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          }
+          OnClick = Boton_Elegir_Almacen_OrigenClick
+          ParentFont = False
+          TabOrder = 4
+        end
+        object Label7: TLabel[7]
+          Left = 619
+          Height = 19
+          Top = 9
+          Width = 119
+          Caption = 'Almacén origen'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Almacen_Origen: TEdit[8]
+          Left = 619
+          Height = 24
+          Top = 30
+          Width = 336
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_Almacen_OrigenClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 5
+        end
+        object Panel_Tipo_Movimiento: TPanel[9]
+          Left = 6
+          Height = 54
+          Top = 64
+          Width = 301
+          BevelOuter = bvNone
+          ClientHeight = 54
+          ClientWidth = 301
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          TabOrder = 6
+          object DBRadioGroup_Tipo_Cuenta: TDBRadioGroup
+            Left = 0
+            Height = 42
+            Top = 12
+            Width = 301
+            Align = alBottom
+            Columns = 2
+            DataField = 'Tipo_Movimiento'
+            DataSource = DataSource_Principal
+            Items.Strings = (
+              'Traspaso entre almacenes'
+              'Entrada manual'
+            )
+            TabOrder = 0
+            Values.Strings = (
+              '1'
+              '2'
+            )
+          end
+          object Label64: TLabel
+            Left = -5
+            Height = 19
+            Top = 2
+            Width = 158
+            Anchors = [akLeft, akBottom]
+            Caption = ' Tipo de movimiento '
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object Boton_Elegir_Concepto: TBitBtn[10]
+          Left = 399
+          Height = 47
+          Top = 71
+          Width = 38
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+            B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+            D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+            C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+            AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+            F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+            A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+            62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+            C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+            976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+            FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+            FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+            00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+            FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          }
+          OnClick = Boton_Elegir_ConceptoClick
+          ParentFont = False
+          TabOrder = 7
+        end
+        object Label8: TLabel[11]
+          Left = 438
+          Height = 19
+          Top = 71
+          Width = 75
+          Caption = 'Concepto'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Concepto: TEdit[12]
+          Left = 438
+          Height = 24
+          Top = 92
+          Width = 517
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_ConceptoClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 8
+        end
+        object GroupBox_AMD: TGroupBox[13]
+          Left = 6
+          Height = 299
+          Top = 137
+          Width = 949
+          Caption = ' MOVIMIENTOS '
+          ClientHeight = 279
+          ClientWidth = 945
+          TabOrder = 9
+          object DBGrid_AMD: TDBGrid
+            Left = 22
+            Height = 225
+            Top = 1
+            Width = 898
+            AlternateColor = clWhite
+            BorderSpacing.Top = 4
+            Color = 7001047
+            Columns = <            
+              item
+                Title.Alignment = taCenter
+                Title.Caption = 'Artículo'
+                Width = 700
+                FieldName = 'OT_descripcion_articulo'
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Caption = 'Unidades'
+                Width = 150
+                FieldName = 'Unidades'
+              end>
+            DataSource = DataSource_AMD
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -19
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection]
+            ParentBiDiMode = False
+            ParentFont = False
+            Scrollbars = ssAutoBoth
+            TabOrder = 0
+            TitleFont.CharSet = ANSI_CHARSET
+            TitleFont.Color = clBlack
+            TitleFont.Height = -16
+            TitleFont.Name = 'Arial'
+            TitleFont.Pitch = fpVariable
+            TitleFont.Quality = fqDraft
+            TitleFont.Style = [fsBold]
+            OnDrawColumnCell = DBGrid_AMDDrawColumnCell
+            OnDblClick = DBGrid_AMDDblClick
+            OnKeyDown = DBGrid_AMDKeyDown
+          end
+          object DBNavigator_AMD: TDBNavigator
+            AnchorSideTop.Side = asrBottom
+            Left = 22
+            Height = 42
+            Top = 226
+            Width = 248
+            BeforeAction = DBNavigator_AMDBeforeAction
+            BevelOuter = bvNone
+            BorderSpacing.Top = 4
+            ChildSizing.EnlargeHorizontal = crsScaleChilds
+            ChildSizing.EnlargeVertical = crsScaleChilds
+            ChildSizing.ShrinkHorizontal = crsScaleChilds
+            ChildSizing.ShrinkVertical = crsScaleChilds
+            ChildSizing.Layout = cclLeftToRightThenTopToBottom
+            ChildSizing.ControlsPerLine = 100
+            ClientHeight = 42
+            ClientWidth = 248
+            DataSource = DataSource_AMD
+            Options = []
+            TabOrder = 1
+            VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbRefresh]
+          end
+          object BitBtn_Ver_Situacion_Registro_AMD: TBitBtn
+            Left = 278
+            Height = 42
+            Hint = 'Ver situación del registro'
+            Top = 226
+            Width = 35
+            Font.Color = clBlack
+            Font.Height = -12
+            Font.Name = 'Times New Roman'
+            Glyph.Data = {
+              F6060000424DF606000000000000360000002800000018000000180000000100
+              180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD3A793C2A195BD9C
+              8ED1A490FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7AB9A
+              BDB0ABAAA3A3988F8F9A8882C99E8EFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFD7AB9AD1C4C2C4C1C2BAB6B7ADA5A7988F8F988681C7A08EFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+              FFFF00FFFF00FFD8AD9ADED1CFD9D9DAD1CFD3C2AAA1B79E96ADA7A99A909197
+              8680C9A08FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFD9B09DE7DDD9E9EAEFE2E2E5C27859AF3812AF38
+              12B16749ADA5A79A9193988681C69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FFFF00FFD9AF9CEEE5E2F0F6FAEFF4FAC67754
+              A72806A72907A92907A92907B05E3EAFA7A79A919393827FC69D8CFF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F0E7E2FAFEFFF6
+              FEFFCE8868B13C15CE7752D38460D38460CE7752B43A13B05B39ADA7A99A9193
+              93827FC69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F3E7
+              E2FEFFFFFEFFFFD49072AA300CAA300CD38664FFFFFFFFFFFFCF7F5BAB310CAD
+              300BB16041ADA5A79C9395968480C69D8CFF00FFFF00FFFF00FFFF00FFFF00FF
+              D8AD9AF6EBE9FFFFFFFFFFFFD78F6EAB310CAB320DAA2E0AC4653CFFFFFFFFFF
+              FFC15D35AA2E0BAD350FAD310BB05A38AFA4A49C939593827FC09A8AFF00FFFF
+              00FFFF00FFD8AA97F6EAE5FFFFFFFFFFFFE0A486B53F14B43A13AF3711AA2E0A
+              C6673FFFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD300BB05735ABA1A19A91
+              9390817FC09A8AFF00FFD7A793F0E2D9FFFFFFFFFFFFE9BB9CC15523BC4D1EBA
+              491CB64117AF340DC76840FFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD350F
+              AD2E0AB05D3DADA5A79A908F95827FCCA18FE0BBAAFFFFFFFFFFFFFEFAF6D17A
+              42C75F29C45C28C15523BD4E1FB53F14CB7048FFFFFFFFFFFFC25F38AA2E0BAD
+              350FAD350FAD350FAD330EAF3611B69C91ADA7A99A908FBC9A8EE0BAAAFFFFFF
+              FFFFFFFEFAF6D9894ECF6F32CC6A31C7632CC45B28BC4C1CCF794FFFFFFFFFFF
+              FFC4633AAA2E0BAD350FAD350FAD350FAB310CAF3C16C4AFA9BAB6B7ABA3A3C6
+              A193D7A793F3E2DAFFFFFFFFFFFFF0D1B1D88241D37638CF6F35CB682FC25723
+              D88C60FFFFFFFFFFFFC96D43AF350EAF360FAD350FAB320DAB310CC7896ED1D3
+              D7C4C1C2C1AFAAD7A793FF00FFD8AA97F6EAE3FFFFFFFFFFFFF0D1AFD98744D4
+              7D3CCF7537D1753CE9B693F0D4C0F0D3BDCB6C3EB74116B54016AF360FAB320D
+              CC886AE2E7EBD9D9DAD1C1BCD7A996FF00FFFF00FFFF00FFD8AA97F3E5DDFFFF
+              FFFFFFFFF4D9BBDE904CD88240D78041D3773BCE6E35C9662EC25925C05322BB
+              4A1CB64116D79A7FEEF4FAE7EAEEDDCEC9D7A996FF00FFFF00FFFF00FFFF00FF
+              FF00FFD7A996F0E2D9FFFFFFFFFFFFF6DDC0E29752D98641DA8F52F4DAC6F3D4
+              C0CF733DC45B26C15421E0A486F6FEFFF0F6FAE7D9D4D7AA97FF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FFD7A996F0E2DAFFFFFFFFFFFFF8E2C6E2964C
+              EABA87FFFFFFFFFFFFE09E6DC96328E2A984FEFFFFFAFEFFEBE2DED8AD9AFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA97F0E0D8FF
+              FFFFFFFFFFF6DEC0EAAF6CF4D7B1F3CFABDA894AE9B78FFFFFFFFEFFFFF3E7E2
+              D9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+              FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFAE7CBEBB470E5A45FF0CCA5FFFFFFFF
+              FFFFF4E9E3D8AD9AFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFFFEFBFEFA
+              F6FFFFFFFFFFFFF8EFEBD9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7A793F0E0D8
+              FFFFFFFFFFFFFFFFFFFFFFFFF8EFEBDAB1A0FF00FFFF00FFFF00FFFF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+              00FFFF00FFD7A793EED7CBFEFBFBFFFEFEF4E9E3DAB19EFF00FFFF00FFFF00FF
+              FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+              FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA96DEB5A4E0BAAAD8AA96FF00FFFF
+              00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            }
+            OnClick = BitBtn_Ver_Situacion_Registro_AMDClick
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 2
+          end
+        end
+      end
+    end
+  end
+  inherited SQLQuery_Principal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Fecha_Movimiento'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Tipo_Movimiento'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'id_conceptos_almacen_traspaso'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_almacenes_destino'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_almacenes_origen'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'OT_descripcion_almacen_destino'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_almacen_origen'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_conceptos_almacen_traspaso'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end>
+    SQL.Strings = (
+      'SELECT am.*,'
+      ''
+      'ad.descripcion AS OT_descripcion_almacen_destino,'
+      'ao.descripcion AS OT_descripcion_almacen_origen,'
+      'cat.descripcion AS OT_descripcion_conceptos_almacen_traspaso'
+      ''
+      'FROM almacenes_movimientos AS am'
+      ''
+      'LEFT JOIN almacenes AS ad'
+      'ON am.id_almacenes_destino = ad.id'
+      ''
+      'LEFT JOIN almacenes AS ao'
+      'ON am.id_almacenes_origen = ao.id'
+      ''
+      'LEFT JOIN conceptos_almacen_traspaso AS cat'
+      'ON am.id_conceptos_almacen_traspaso = cat.id'
+      ''
+    )
+    left = 112
+    top = 512
+    object SQLQuery_PrincipalFecha_Movimiento: TDateTimeField[1]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Fecha_Movimiento'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalTipo_Movimiento: TStringField[2]
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Tipo_Movimiento'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_Principalid_conceptos_almacen_traspaso: TLargeintField[3]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_conceptos_almacen_traspaso'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Principalid_almacenes_destino: TLargeintField[4]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_almacenes_destino'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Principalid_almacenes_origen: TLargeintField[5]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_almacenes_origen'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalInsert_WHEN: TDateTimeField[6]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalInsert_Id_User: TLargeintField[7]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalDel_WHEN: TDateTimeField[8]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_Id_User: TLargeintField[9]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_WHY: TStringField[10]
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_PrincipalChange_WHEN: TDateTimeField[11]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalChange_Id_User: TLargeintField[12]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalOT_descripcion_almacen_destino: TStringField[13]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_almacen_destino'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalOT_descripcion_almacen_origen: TStringField[14]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_almacen_origen'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalOT_descripcion_conceptos_almacen_traspaso: TStringField[15]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_conceptos_almacen_traspaso'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+  end
+  inherited DataSource_Principal: TDataSource
+    left = 232
+    top = 512
+  end
+  object SQLConnector_AMD: TSQLConnector[7]
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_AMD
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 616
+    top = 8
+  end
+  object SQLTransaction_AMD: TSQLTransaction[8]
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_AMD
+    left = 488
+    top = 8
+  end
+  object SQLQuery_AMD: TSQLQuery[9]
+    PacketRecords = 20
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_almacenes_movimientos'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_almacenes_destino'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_almacenes_origen'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_articulos'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Unidades'
+        DataType = ftBCD
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'OT_Tipo_de_articulo'
+        DataType = ftString
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'OT_descripcion_articulo'
+        DataType = ftString
+        Precision = -1
+        Size = 3000
+      end>
+    AfterPost = SQLQuery_AMDAfterPost
+    BeforeEdit = SQLQuery_AMDBeforeEdit
+    BeforePost = SQLQuery_AMDBeforePost
+    SQL.Strings = (
+      'SELECT amd.*,'
+      '       art.Tipo_de_articulo AS OT_Tipo_de_articulo,'
+      '       art.descripcion AS OT_descripcion_articulo'
+      '  FROM almacenes_movimientos_detalles AS amd'
+      ''
+      'LEFT JOIN articulos AS art'
+      'ON amd.id_articulos = art.id'
+      ''
+      ''
+    )
+    InsertSQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 680
+    top = 448
+    object SQLQuery_AMDid: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_AMDid_almacenes_movimientos: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_almacenes_movimientos'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDid_almacenes_destino: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_almacenes_destino'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDid_almacenes_origen: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_almacenes_origen'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDid_articulos: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_articulos'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDUnidades: TBCDField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Unidades'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = -1
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 3
+    end
+    object SQLQuery_AMDInsert_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDInsert_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDDel_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_AMDDel_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_AMDDel_WHY: TStringField
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_AMDChange_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_AMDChange_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_AMDOT_Tipo_de_articulo: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'OT_Tipo_de_articulo'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_AMDOT_descripcion_articulo: TStringField
+      DisplayWidth = 3000
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_articulo'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3000
+    end
+  end
+  object DataSource_AMD: TDataSource[10]
+    DataSet = SQLQuery_AMD
+    left = 680
+    top = 528
+  end
+end

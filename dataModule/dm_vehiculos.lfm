@@ -1,0 +1,50 @@
+object DataModule_Vehiculos: TDataModule_Vehiculos
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 290
+  HorizontalOffset = 643
+  VerticalOffset = 183
+  Width = 528
+  object SQLTransaction_Vehiculos: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Vehiculos
+    left = 64
+    top = 48
+  end
+  object SQLConnector_Vehiculos: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Vehiculos
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 64
+    top = 120
+  end
+  object SQLTransaction_Vehiculos_su_Equipamiento: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Vehiculos_su_Equipamiento
+    left = 288
+    top = 32
+  end
+  object SQLConnector_Vehiculos_su_Equipamiento: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Vehiculos_su_Equipamiento
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 288
+    top = 120
+  end
+end

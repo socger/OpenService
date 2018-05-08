@@ -1,0 +1,143 @@
+object form_historico_registros: Tform_historico_registros
+  Left = 277
+  Height = 595
+  Top = 50
+  Width = 717
+  Caption = 'Histórico del registro'
+  ClientHeight = 595
+  ClientWidth = 717
+  LCLVersion = '1.2.6.0'
+  object DBGrid_Principal: TDBGrid
+    Left = 29
+    Height = 509
+    Top = 17
+    Width = 658
+    Anchors = [akLeft]
+    BorderSpacing.Top = 4
+    Color = 7001047
+    Columns = <>
+    DataSource = DataSource_user_row_changes
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Options = [dgTitles, dgIndicator, dgRowLines, dgTabs, dgAlwaysShowSelection]
+    ParentFont = False
+    Scrollbars = ssAutoBoth
+    TabOrder = 0
+    TitleFont.CharSet = ANSI_CHARSET
+    TitleFont.Color = clBlack
+    TitleFont.Height = -16
+    TitleFont.Name = 'Arial'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Quality = fqDraft
+    TitleFont.Style = [fsBold]
+  end
+  object DBNavigator1: TDBNavigator
+    AnchorSideLeft.Control = DBGrid_Principal
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = DBGrid_Principal
+    Left = 29
+    Height = 38
+    Top = 527
+    Width = 250
+    BevelOuter = bvNone
+    BorderSpacing.Top = 4
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 38
+    ClientWidth = 250
+    DataSource = DataSource_user_row_changes
+    Options = []
+    TabOrder = 1
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+  end
+  object SQLQuery_user_row_changes: TSQLQuery
+    PacketRecords = 20
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Descripcion'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'Id_Menus'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end>
+    Database = DataModule_historico_registros.SQLConnector
+    Transaction = DataModule_historico_registros.SQLTransaction
+    SQL.Strings = (
+      'SELECT me.*'
+      'FROM menus AS me'
+      ''
+    )
+    InsertSQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 558
+    top = 173
+  end
+  object DataSource_user_row_changes: TDataSource
+    DataSet = SQLQuery_user_row_changes
+    left = 556
+    top = 277
+  end
+end

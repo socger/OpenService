@@ -1,0 +1,29 @@
+object DataModule_Proveedor_Elegir_Contacto: TDataModule_Proveedor_Elegir_Contacto
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 346
+  HorizontalOffset = 643
+  VerticalOffset = 183
+  Width = 469
+  object SQLTransaction_ProContactos: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_ProContactos
+    left = 132
+    top = 68
+  end
+  object SQLConnector_ProContactos: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_ProContactos
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 132
+    top = 140
+  end
+end

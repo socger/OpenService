@@ -1,0 +1,1383 @@
+object form_plantilla_000: Tform_plantilla_000
+  Left = 411
+  Height = 456
+  Top = 72
+  Width = 957
+  Caption = 'Plantilla - mantenimiento'
+  ClientHeight = 456
+  ClientWidth = 957
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  LCLVersion = '1.8.0.6'
+  object Panel_de_Abajo: TPanel
+    Left = 0
+    Height = 412
+    Top = 44
+    Width = 957
+    Align = alClient
+    ClientHeight = 412
+    ClientWidth = 957
+    TabOrder = 1
+    object GroupBox_Registro: TGroupBox
+      Left = 1
+      Height = 410
+      Top = 1
+      Width = 955
+      Align = alClient
+      Caption = ' Registro '
+      ClientHeight = 390
+      ClientWidth = 951
+      TabOrder = 0
+      object Panel20: TPanel
+        Left = 0
+        Height = 390
+        Top = 0
+        Width = 17
+        Align = alLeft
+        BevelOuter = bvNone
+        TabOrder = 0
+      end
+      object Panel21: TPanel
+        Left = 934
+        Height = 390
+        Top = 0
+        Width = 17
+        Align = alRight
+        BevelOuter = bvNone
+        TabOrder = 1
+      end
+      object Panel22: TPanel
+        Left = 17
+        Height = 390
+        Top = 0
+        Width = 917
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 390
+        ClientWidth = 917
+        TabOrder = 2
+        object Panel23: TPanel
+          Left = 0
+          Height = 37
+          Top = 353
+          Width = 917
+          Align = alBottom
+          BevelOuter = bvNone
+          ClientHeight = 37
+          ClientWidth = 917
+          TabOrder = 0
+          object ButtonPanel1: TButtonPanel
+            Left = 6
+            Height = 34
+            Top = 7
+            Width = 905
+            Align = alTop
+            OKButton.Name = 'OKButton'
+            OKButton.DefaultCaption = True
+            OKButton.OnClick = OKButtonClick
+            HelpButton.Name = 'HelpButton'
+            HelpButton.DefaultCaption = True
+            CloseButton.Name = 'CloseButton'
+            CloseButton.DefaultCaption = True
+            CancelButton.Name = 'CancelButton'
+            CancelButton.DefaultCaption = True
+            CancelButton.OnClick = CancelButtonClick
+            TabOrder = 0
+            ShowButtons = [pbOK, pbCancel]
+          end
+          object Panel3: TPanel
+            Left = 4
+            Height = 32
+            Top = 5
+            Width = 202
+            BevelOuter = bvNone
+            ClientHeight = 32
+            ClientWidth = 202
+            TabOrder = 1
+            object Label62: TLabel
+              Left = 3
+              Height = 19
+              Top = 9
+              Width = 14
+              Caption = 'Id'
+              Font.CharSet = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -16
+              Font.Name = 'Arial'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+            object DBEdit_Id: TDBEdit
+              Left = 21
+              Height = 24
+              Top = 4
+              Width = 132
+              DataField = 'id'
+              DataSource = DataSource_Principal
+              ReadOnly = True
+              CharCase = ecNormal
+              Color = 7001047
+              Font.CharSet = ANSI_CHARSET
+              Font.Color = clRed
+              Font.Height = -13
+              Font.Name = 'Arial'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              MaxLength = 0
+              ParentFont = False
+              TabOrder = 0
+            end
+          end
+          object Shape1: TShape
+            Left = 0
+            Height = 1
+            Top = 0
+            Width = 917
+            Align = alTop
+          end
+        end
+      end
+    end
+    object GroupBox_Grid: TGroupBox
+      Left = 1
+      Height = 410
+      Top = 1
+      Width = 955
+      Align = alClient
+      Caption = ' Registros '
+      ClientHeight = 390
+      ClientWidth = 951
+      TabOrder = 1
+      object Panel_Barra_Superior1: TPanel
+        Left = 0
+        Height = 58
+        Top = 332
+        Width = 951
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 58
+        ClientWidth = 951
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+        object Panel4: TPanel
+          Left = 0
+          Height = 58
+          Top = 0
+          Width = 375
+          Align = alLeft
+          BevelOuter = bvNone
+          ClientHeight = 58
+          ClientWidth = 375
+          TabOrder = 0
+          object Panel12: TPanel
+            Left = 0
+            Height = 58
+            Top = 0
+            Width = 17
+            Align = alLeft
+            BevelOuter = bvNone
+            TabOrder = 0
+          end
+          object Panel14: TPanel
+            Left = 17
+            Height = 58
+            Top = 0
+            Width = 359
+            Align = alLeft
+            BevelOuter = bvNone
+            ClientHeight = 58
+            ClientWidth = 359
+            TabOrder = 1
+            object DBNavigatorPrincpal: TDBNavigator
+              AnchorSideTop.Side = asrBottom
+              Left = 2
+              Height = 38
+              Top = 2
+              Width = 250
+              BeforeAction = DBNavigatorPrincpalBeforeAction
+              BevelOuter = bvNone
+              BorderSpacing.Top = 4
+              ChildSizing.EnlargeHorizontal = crsScaleChilds
+              ChildSizing.EnlargeVertical = crsScaleChilds
+              ChildSizing.ShrinkHorizontal = crsScaleChilds
+              ChildSizing.ShrinkVertical = crsScaleChilds
+              ChildSizing.Layout = cclLeftToRightThenTopToBottom
+              ChildSizing.ControlsPerLine = 100
+              ClientHeight = 38
+              ClientWidth = 250
+              DataSource = DataSource_Principal
+              Options = []
+              TabOrder = 0
+              VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbRefresh]
+            end
+            object BitBtn_Ver_Situacion_Registro: TBitBtn
+              Left = 254
+              Height = 38
+              Top = 2
+              Width = 33
+              Action = form_Menu.BitBtn_Ver_Situacion_Registro
+              Font.Color = clBlack
+              Font.Height = -12
+              Font.Name = 'Times New Roman'
+              OnClick = BitBtn_Ver_Situacion_RegistroClick
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              Spacing = 0
+              TabOrder = 1
+            end
+            object BitBtn_Seleccionar: TBitBtn
+              Left = 287
+              Height = 38
+              Top = 2
+              Width = 33
+              Action = form_Menu.BitBtn_Seleccionar
+              Font.CharSet = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Arial Black'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              Font.Style = [fsBold]
+              OnClick = BitBtn_SeleccionarClick
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              Spacing = 0
+              TabOrder = 2
+            end
+            object BitBtn_Imprimir: TBitBtn
+              Left = 320
+              Height = 38
+              Top = 2
+              Width = 33
+              Action = form_Menu.BitBtn_Imprimir
+              Font.Color = clBlack
+              Font.Height = -12
+              Font.Name = 'Times New Roman'
+              OnClick = BitBtn_ImprimirClick
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              Spacing = 0
+              TabOrder = 3
+            end
+          end
+        end
+        object Panel15: TPanel
+          Left = 934
+          Height = 58
+          Top = 0
+          Width = 17
+          Align = alRight
+          BevelOuter = bvNone
+          TabOrder = 1
+        end
+        object Panel_Otros_Campos_no_Grid: TPanel
+          Left = 375
+          Height = 58
+          Top = 0
+          Width = 559
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 58
+          ClientWidth = 559
+          TabOrder = 2
+          object Label_Ctdad_Rgtros: TLabel
+            Left = 461
+            Height = 15
+            Top = 0
+            Width = 98
+            Alignment = taRightJustify
+            Anchors = [akTop, akRight]
+            AutoSize = False
+            Caption = '0'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clRed
+            Font.Height = -15
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+      end
+      object Panel5: TPanel
+        Left = 0
+        Height = 332
+        Top = 0
+        Width = 17
+        Align = alLeft
+        BevelOuter = bvNone
+        TabOrder = 1
+      end
+      object Panel6: TPanel
+        Left = 934
+        Height = 332
+        Top = 0
+        Width = 17
+        Align = alRight
+        BevelOuter = bvNone
+        TabOrder = 2
+      end
+      object Panel7: TPanel
+        Left = 17
+        Height = 332
+        Top = 0
+        Width = 917
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 332
+        ClientWidth = 917
+        TabOrder = 3
+        object DBGrid_Principal: TDBGrid
+          Left = 0
+          Height = 328
+          Top = 4
+          Width = 917
+          Align = alClient
+          AlternateColor = clWhite
+          Anchors = [akLeft]
+          AutoAdvance = aaLeft
+          BorderSpacing.Top = 4
+          Color = 7001047
+          Columns = <          
+            item
+              Title.Alignment = taCenter
+              Title.Caption = 'Id'
+              Width = 50
+              FieldName = 'id'
+            end>
+          DataSource = DataSource_Principal
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection]
+          ParentFont = False
+          Scrollbars = ssAutoBoth
+          TabOrder = 0
+          TitleFont.CharSet = ANSI_CHARSET
+          TitleFont.Color = clBlack
+          TitleFont.Height = -16
+          TitleFont.Name = 'Arial'
+          TitleFont.Pitch = fpVariable
+          TitleFont.Quality = fqDraft
+          TitleFont.Style = [fsBold]
+          OnCellClick = DBGrid_PrincipalCellClick
+          OnDrawColumnCell = DBGrid_PrincipalDrawColumnCell
+          OnDblClick = DBGrid_PrincipalDblClick
+          OnKeyDown = DBGrid_PrincipalKeyDown
+          OnKeyUp = DBGrid_PrincipalKeyUp
+        end
+      end
+    end
+    object GroupBox_Filtros: TGroupBox
+      Left = 352
+      Height = 248
+      Top = 96
+      Width = 554
+      Caption = ' Filtros '
+      ClientHeight = 228
+      ClientWidth = 550
+      TabOrder = 2
+      object Panel10: TPanel
+        Left = 0
+        Height = 228
+        Top = 0
+        Width = 17
+        Align = alLeft
+        BevelOuter = bvNone
+        TabOrder = 0
+      end
+      object Panel13: TPanel
+        Left = 533
+        Height = 228
+        Top = 0
+        Width = 17
+        Align = alRight
+        BevelOuter = bvNone
+        TabOrder = 1
+      end
+      object Panel11: TPanel
+        Left = 17
+        Height = 228
+        Top = 0
+        Width = 516
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 228
+        ClientWidth = 516
+        TabOrder = 2
+        object Panel_Filtramos_por: TPanel
+          Left = 0
+          Height = 228
+          Top = 0
+          Width = 516
+          Align = alClient
+          ClientHeight = 228
+          ClientWidth = 516
+          TabOrder = 0
+          object Panel_Barra_DBGrid_Filtros: TPanel
+            Left = 1
+            Height = 151
+            Top = 76
+            Width = 514
+            Align = alBottom
+            BevelOuter = bvNone
+            ClientHeight = 151
+            ClientWidth = 514
+            TabOrder = 0
+            object GroupBox3: TGroupBox
+              Left = 0
+              Height = 48
+              Top = 103
+              Width = 514
+              Align = alBottom
+              Caption = ' Ordenado por '
+              ClientHeight = 28
+              ClientWidth = 510
+              TabOrder = 0
+              object Memo_OrderBy: TMemo
+                Left = 0
+                Height = 28
+                Top = 0
+                Width = 510
+                Align = alClient
+                Color = 7001047
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clRed
+                Font.Height = -11
+                Font.Name = 'Arial'
+                Font.Pitch = fpVariable
+                Font.Quality = fqDraft
+                ParentFont = False
+                ReadOnly = True
+                ScrollBars = ssAutoBoth
+                TabOrder = 0
+              end
+            end
+            object Panel_Barra_Filtros: TPanel
+              Left = 0
+              Height = 40
+              Top = 0
+              Width = 514
+              Align = alTop
+              ClientHeight = 40
+              ClientWidth = 514
+              TabOrder = 1
+              object DBNavigatorDBGrid_Filtros: TDBNavigator
+                AnchorSideTop.Side = asrBottom
+                Left = 0
+                Height = 38
+                Top = 0
+                Width = 157
+                BeforeAction = DBNavigatorDBGrid_FiltrosBeforeAction
+                BevelOuter = bvNone
+                BorderSpacing.Top = 4
+                ChildSizing.EnlargeHorizontal = crsScaleChilds
+                ChildSizing.EnlargeVertical = crsScaleChilds
+                ChildSizing.ShrinkHorizontal = crsScaleChilds
+                ChildSizing.ShrinkVertical = crsScaleChilds
+                ChildSizing.Layout = cclLeftToRightThenTopToBottom
+                ChildSizing.ControlsPerLine = 100
+                ClientHeight = 38
+                ClientWidth = 157
+                DataSource = DataSource_Filtros
+                Options = []
+                TabOrder = 0
+                VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+              end
+              object BitBtn_Filtrar1: TBitBtn
+                Left = 479
+                Height = 38
+                Top = 0
+                Width = 33
+                Action = form_Menu.BitBtn_Filtrar
+                Anchors = [akTop, akRight]
+                BorderSpacing.Bottom = 3
+                Font.Color = clBlack
+                Font.Height = -12
+                Font.Name = 'Times New Roman'
+                OnClick = BitBtn_Filtrar1Click
+                ParentFont = False
+                ParentShowHint = False
+                ShowHint = True
+                Spacing = 2
+                TabOrder = 1
+              end
+              object BitBtn_Vaciar_Filtros: TBitBtn
+                Left = 385
+                Height = 38
+                Top = 0
+                Width = 95
+                Anchors = [akTop, akRight]
+                Caption = '&Vaciar filtros'
+                OnClick = BitBtn_Vaciar_FiltrosClick
+                TabOrder = 2
+              end
+            end
+            object GroupBox1: TGroupBox
+              Left = 0
+              Height = 63
+              Top = 40
+              Width = 514
+              Align = alClient
+              Caption = ' Ultimo filtro general '
+              ClientHeight = 43
+              ClientWidth = 510
+              TabOrder = 2
+              object Memo_Filtros: TMemo
+                Left = 0
+                Height = 43
+                Top = 0
+                Width = 510
+                Align = alClient
+                Color = 7001047
+                Font.CharSet = ANSI_CHARSET
+                Font.Color = clRed
+                Font.Height = -11
+                Font.Name = 'Arial'
+                Font.Pitch = fpVariable
+                Font.Quality = fqDraft
+                ParentFont = False
+                ReadOnly = True
+                ScrollBars = ssAutoBoth
+                TabOrder = 0
+              end
+            end
+          end
+          object DBGrid_Filtros: TDBGrid
+            Left = 1
+            Height = 75
+            Top = 1
+            Width = 514
+            Align = alClient
+            Color = 7658675
+            Columns = <            
+              item
+                ReadOnly = True
+                Title.Font.CharSet = ANSI_CHARSET
+                Title.Font.Height = -13
+                Title.Font.Name = 'Arial'
+                Title.Font.Pitch = fpVariable
+                Title.Font.Quality = fqDraft
+                Title.Font.Style = [fsBold]
+                Title.Caption = 'Descripción'
+                Width = 260
+                FieldName = 'Descripcion'
+              end            
+              item
+                Color = clWhite
+                Title.Font.CharSet = ANSI_CHARSET
+                Title.Font.Height = -13
+                Title.Font.Name = 'Arial Narrow'
+                Title.Font.Pitch = fpVariable
+                Title.Font.Quality = fqDraft
+                Title.Font.Style = [fsBold]
+                Title.Caption = 'Desde'
+                Width = 95
+                FieldName = 'Desde_Valor'
+              end            
+              item
+                Color = clWindow
+                ReadOnly = True
+                Title.Caption = ''
+                Width = 20
+                FieldName = 'Boton_Desde_Filtro'
+              end            
+              item
+                Color = clWhite
+                Title.Font.CharSet = ANSI_CHARSET
+                Title.Font.Height = -13
+                Title.Font.Name = 'Arial'
+                Title.Font.Pitch = fpVariable
+                Title.Font.Quality = fqDraft
+                Title.Font.Style = [fsBold]
+                Title.Caption = 'Hasta'
+                Width = 95
+                FieldName = 'Hasta_Valor'
+              end            
+              item
+                Color = clWindow
+                ReadOnly = True
+                Title.Caption = ''
+                Width = 20
+                FieldName = 'Boton_Hasta_Filtro'
+              end>
+            DataSource = DataSource_Filtros
+            FixedCols = 0
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -11
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Options = [dgEditing, dgTitles, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+            ParentFont = False
+            Scrollbars = ssAutoHorizontal
+            TabOrder = 1
+            TitleFont.CharSet = ANSI_CHARSET
+            TitleFont.Height = -13
+            TitleFont.Name = 'Arial Black'
+            TitleFont.Pitch = fpVariable
+            TitleFont.Quality = fqDraft
+            TitleFont.Style = [fsBold]
+            OnCellClick = DBGrid_FiltrosCellClick
+            OnColEnter = DBGrid_FiltrosColEnter
+            OnDrawColumnCell = DBGrid_FiltrosDrawColumnCell
+            OnKeyPress = DBGrid_FiltrosKeyPress
+          end
+        end
+      end
+    end
+  end
+  object Panel_Barra_Superior: TPanel
+    Left = 0
+    Height = 44
+    Top = 0
+    Width = 957
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 44
+    ClientWidth = 957
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    object Panel8: TPanel
+      Left = 0
+      Height = 44
+      Top = 0
+      Width = 17
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 0
+    end
+    object Panel2: TPanel
+      Left = 17
+      Height = 44
+      Top = 0
+      Width = 459
+      Align = alLeft
+      BevelOuter = bvNone
+      ClientHeight = 44
+      ClientWidth = 459
+      TabOrder = 1
+      object Label_Fecha2: TLabel
+        Left = 12
+        Height = 16
+        Top = 12
+        Width = 88
+        Caption = 'Ordenado por'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object ComboBox_Filtros: TComboBox
+        Left = 104
+        Height = 24
+        Top = 8
+        Width = 347
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ItemHeight = 16
+        OnChange = ComboBox_FiltrosChange
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 0
+      end
+    end
+    object Panel9: TPanel
+      Left = 940
+      Height = 44
+      Top = 0
+      Width = 17
+      Align = alRight
+      BevelOuter = bvNone
+      TabOrder = 2
+    end
+    object Panel1: TPanel
+      Left = 735
+      Height = 44
+      Top = 0
+      Width = 205
+      Align = alRight
+      BevelOuter = bvNone
+      ClientHeight = 44
+      ClientWidth = 205
+      TabOrder = 3
+      object RadioGroup_Bajas: TRadioGroup
+        Left = 0
+        Height = 45
+        Top = 0
+        Width = 85
+        AutoFill = True
+        BorderSpacing.Bottom = 3
+        Caption = ' Ver bajas '
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 2
+        ClientHeight = 24
+        ClientWidth = 81
+        Columns = 2
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ItemIndex = 1
+        Items.Strings = (
+          'Si'
+          'No'
+        )
+        OnClick = RadioGroup_BajasClick
+        ParentFont = False
+        TabOrder = 1
+      end
+      object BitBtn_Filtrar: TBitBtn
+        Left = 128
+        Height = 37
+        Top = 8
+        Width = 37
+        Action = form_Menu.BitBtn_Filtrar
+        BorderSpacing.Bottom = 3
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Times New Roman'
+        OnClick = BitBtn_FiltrarClick
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Spacing = 0
+        TabOrder = 0
+      end
+      object BitBtn_SALIR: TBitBtn
+        Left = 169
+        Height = 37
+        Top = 8
+        Width = 37
+        Action = form_Menu.BitBtn_SALIR
+        BorderSpacing.Bottom = 3
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Times New Roman'
+        OnClick = BitBtn_SALIRClick
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Spacing = 0
+        TabOrder = 2
+      end
+      object BitBtn_Filtros_Cerrar: TBitBtn
+        Left = 90
+        Height = 37
+        Top = 8
+        Width = 37
+        Action = form_Menu.BitBtn_Filtros_Cerrar
+        BorderSpacing.Bottom = 3
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Times New Roman'
+        OnClick = BitBtn_Filtros_CerrarClick
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Spacing = 0
+        TabOrder = 4
+      end
+      object BitBtn_Filtros_Abrir: TBitBtn
+        Left = 90
+        Height = 37
+        Top = 8
+        Width = 37
+        Action = form_Menu.BitBtn_Filtros_Abrir
+        BorderSpacing.Bottom = 3
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Times New Roman'
+        OnClick = BitBtn_Filtros_AbrirClick
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Spacing = 0
+        TabOrder = 3
+      end
+    end
+    object Image_Boton_Busqueda: TImage
+      Left = 568
+      Height = 23
+      Top = 8
+      Width = 28
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B47726170686963F102000089504E47
+        0D0A1A0A0000000D49484452000000180000001808020000006F15AAAF000000
+        0674524E5300FF000000FF89C02F90000002A649444154789C63F8CFF09F2A88
+        61D420F20D5A5EC2B0AE9A79462AB1366157B7BE86E7FE1AF5033DA26766CA5E
+        9C2F7E7492C0A67AD6F9390C6D4138CD05C159690C4004E12F29E4BEB450FDE6
+        321520FA71CCF4DF194B3802728182F37218969661311164C4E5DDDD9F9E5F58
+        DBA8B5B65EE5E6D694FB3B13FF5D4DF977DEE3DF196BB81117E6CAEE9FC07666
+        01F3F9252CD7968B0345EEAD9603BA7415CC50B05B3E5FBFBCA3E5ECC6EAFFBF
+        3EFCFF72E7FFDB23FF9FADFA7FBFEFFF8D827F1703AE2C925D51CA72643AF3DA
+        1A46A02967E773C1DDF8E9B0655B43A89719FB92023690413FEF4CD9D56FF5FF
+        E385FFDF9FFEFFFD1984BE3FF9FFE1EC9B0B134ECC9101BAE2C024E6EB6B59B6
+        B6325D5EC9F262872ADCA0B6C9ED8DCBCF3230304CC99560585DC17B73A5C9CD
+        F57EFF1F4EFEFF62FDFFF727FE7FBDF7FFD7FBFF7FBE1E99AB7F648EEE8D1D69
+        47E6B86EEFE4595ACC0834EEF54E038829FBE6184E3EF20962D0AC621990F780
+        0EDBD926F2EF82D7BF6B19FFEF75FE7FBAECFFDB039F1EEE3D303702681CC8BF
+        5FEFFE7CB6FBEC8AB8C3D378DF1C0AFF7731F0DF59BBF993C3669EFDEF1E95CB
+        CCCCDC1CCD83087C606483AC3AE7F4EF4ACCFFDB75C7E638FF7CB41AECDF279F
+        DFBF689BBE2C30AB39CAD76857BFD9A74B4DFF6F57CFEC8D4B699C0B34C55A57
+        10183E28B1B8B18EF7F54E3D9071676D8F4D55FD7FB318E4DFE7EBDAE6AC015A
+        0EF4053B3BFBDABE40A0B643335DB6CF4B9593917034955954C4872541021501
+        1321D02C3069FDEFBCE7FE2521C0B0001A94DBBB1668D09669311095C058DFDC
+        A60D4F80D853EACA324EA84FCF5842C202884C1C7DE5A4C536B6689196D78031
+        00CC251083802E0AC96A00C64E55922699B97F7787F0865E5D3E5E5EA0A7127D
+        65808148A64110A72D289358DB200164909CFBC940C3D820004D433408197F29
+        4E0000000049454E44AE426082
+      }
+      Visible = False
+    end
+    object Image_Boton_Calendario: TImage
+      Left = 608
+      Height = 24
+      Top = 8
+      Width = 26
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B477261706869630C04000089504E47
+        0D0A1A0A0000000D4948445200000018000000180806000000E0773DF8000000
+        06624B474400FF00FF00FFA0BDA793000000097048597300000B1200000B1201
+        D2DD7EFC0000000774494D4507E2041E0E0C3BC53E1D67000003994944415448
+        C79D955F4C5B551CC73F853B05D7627153B8739219D69B2C5BE72CCA7820036C
+        8C89BD095B7CD82226739935D825665BFC375F4CD007DE8C2F64061EDDBB0FDB
+        932FA0649993362655B2B65A36915E310A81162CF7DEDEE343DB4BEF7A19845F
+        729273EE39E7FBBDDFEFEF9CDFF10804BB0D35A2DA9B6FDEBAE9715BD3B053A0
+        6A7B18BC0A5C3B571B9EED14D40255FB07348D3D2D7E9E5E5DA65192685F5921
+        D5F224FAFA3ACFE6727CBCBCE471255023AA682E16695D5E46324D0EB63CCE1E
+        DDA0DDD4595F2BD266E84C1C7981D373191A9E3F8CF5849F62FB73FCBDB2C403
+        A38821493CD6ECE59F85ACAD4CAA82C7DE8B893716259E4AFC4CEBC176669B9A
+        D87FF8081BDE56344347EA0C30B3B6063377C8C73EC0EBDDCBEABF8BC8ED6DDC
+        4F2428CEAFF0EEC5F384C361464747E15619D726E8E8E860E098C2C67F4BDC9E
+        4951FCF41AF70A055E1918A0B3B11161597C73E306C160902B97A20E1B878686
+        181919211C0ED7592C6DE5FDF1A347ED7E4F4F0FC96492B1B131A6A7A7EBD64E
+        4D4E22CBB22B8EB4D323190C0689C7E38442210AF93CE94C062D970340D33400
+        028AB27B028089F171645926140A9149A739D5DFCFF793935CBE7A954C3ACDAE
+        EF4135645926A2AAF87C3E344DA390CF13501426C6C76D155B2A280930ADED09
+        32E93467CF9D43D334BC3E1FA7FAFA1EB96793C002A3F46849EF44CBA7279148
+        20CB3289789C443C4E4455ED249B1658C285C0B440B7A0A9325E11CDC0E6B836
+        62C3C30084BABA00501405599631AD328E105B5864943601CB7609C059C30AF9
+        3C0077EEDEB5BF89CAFA6AB3DC922C1A248C1A6DBA29D04BF57F9FCE64003833
+        38484F7737670607B9974A3B086A15D804BE7D071C80BA25D830B72E848AA270
+        311AC5EBF371EDA30F9D0ADC2C322A49AE46D114B81578251060ECFA755E0C85
+        2859103CD1C5E54BC336B861E1A8CFB602A3549EB4098C7273B348CBE5285500
+        7395DB6C54C0B74CB2C0C9BC5112785C1CD272393E1F196179B5C0336D32635F
+        7DC9C9DEBEED2D7A3874B3FE2912C06BAFABCC2F68FC30358525E0646F1F1762
+        579C49DE492D2A275C38C0ABB6BC7521CAD9F3CEA3992FAC919A4D327F3FCB5C
+        7AB69E60299745AFC9AA69B98357133997CD32FB6B92853FE7C966522CFC31C7
+        89EE5EBEF8EC13CFFBBCE9FE267FFDF271D1BFDFCFED9914DF454EF352E46D7A
+        648B439D017EFB3DCB2FC9248B8B7F11FFE9471B6CBB0259F7E87FDBB64FEC6D
+        6AE1D507731E35A20ABFDFCF21E5D88EC0DCE27F0902D3EFD660CB4700000000
+        49454E44AE426082
+      }
+      Visible = False
+    end
+  end
+  object SQLQuery_Principal: TSQLQuery
+    PacketRecords = 20
+    MaxIndexesCount = 100
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'nombre_fichero'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'id_menus'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'descripcion'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'OT_Descripcion_Menu'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end>
+    AfterPost = SQLQuery_PrincipalAfterPost
+    AfterScroll = SQLQuery_PrincipalAfterScroll
+    BeforeEdit = SQLQuery_PrincipalBeforeEdit
+    BeforePost = SQLQuery_PrincipalBeforePost
+    OnNewRecord = SQLQuery_PrincipalNewRecord
+    Database = SQLConnector_Principal
+    Transaction = SQLTransaction_Principal
+    SQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 213
+    top = 8
+    object SQLQuery_Principalid: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object DataSource_Principal: TDataSource
+    DataSet = SQLQuery_Principal
+    left = 248
+    top = 8
+  end
+  object SQLTransaction_Principal: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Principal
+    left = 176
+    top = 8
+  end
+  object SQLConnector_Principal: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_Principal
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 152
+    top = 8
+  end
+  object SQLQuery_Filtros: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_menus'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Descripcion'
+        DataType = ftString
+        Precision = -1
+        Size = 1500
+      end    
+      item
+        Name = 'nombre_campo'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'parte_de_SQL_tipoDato'
+        DataType = ftString
+        Precision = -1
+        Size = 75
+      end    
+      item
+        Name = 'Desde_Valor'
+        DataType = ftString
+        Precision = -1
+        Size = 3000
+      end    
+      item
+        Name = 'Desde_Valor_pedir_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Desde_Valor_parte_de_SQL_antes'
+        DataType = ftString
+        Precision = -1
+        Size = 3000
+      end    
+      item
+        Name = 'Desde_Valor_parte_de_SQL_despues'
+        DataType = ftString
+        Precision = -1
+        Size = 3000
+      end    
+      item
+        Name = 'Hasta_Valor'
+        DataType = ftString
+        Precision = -1
+        Size = 3000
+      end    
+      item
+        Name = 'Hasta_Valor_pedir_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Hasta_Valor_parte_de_SQL_antes'
+        DataType = ftString
+        Precision = -1
+        Size = 3000
+      end    
+      item
+        Name = 'Hasta_Valor_parte_de_SQL_despues'
+        DataType = ftString
+        Precision = -1
+        Size = 3000
+      end    
+      item
+        Name = 'orden'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end>
+    AutoCalcFields = False
+    AfterEdit = SQLQuery_FiltrosAfterEdit
+    AfterPost = SQLQuery_FiltrosAfterPost
+    BeforeEdit = SQLQuery_FiltrosBeforeEdit
+    BeforePost = SQLQuery_FiltrosBeforePost
+    OnNewRecord = SQLQuery_FiltrosNewRecord
+    Database = SQLConnector_Principal
+    Transaction = SQLTransaction_Principal
+    SQL.Strings = (
+      'SELECT mf.*'
+      'FROM menus_filtros mf'
+      ''
+    )
+    Params = <>
+    left = 48
+    top = 128
+    object SQLQuery_Filtrosid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Filtrosid_menus: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id_menus'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_FiltrosDescripcion: TStringField
+      FieldKind = fkData
+      FieldName = 'Descripcion'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1500
+    end
+    object SQLQuery_Filtrosnombre_campo: TStringField
+      FieldKind = fkData
+      FieldName = 'nombre_campo'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 450
+    end
+    object SQLQuery_Filtrosparte_de_SQL_tipoDato: TStringField
+      FieldKind = fkData
+      FieldName = 'parte_de_SQL_tipoDato'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 75
+    end
+    object SQLQuery_FiltrosDesde_Valor: TStringField
+      FieldKind = fkData
+      FieldName = 'Desde_Valor'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3000
+    end
+    object SQLQuery_FiltrosDesde_Valor_pedir_SN: TStringField
+      FieldKind = fkData
+      FieldName = 'Desde_Valor_pedir_SN'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_FiltrosDesde_Valor_parte_de_SQL_antes: TStringField
+      FieldKind = fkData
+      FieldName = 'Desde_Valor_parte_de_SQL_antes'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3000
+    end
+    object SQLQuery_FiltrosDesde_Valor_parte_de_SQL_despues: TStringField
+      FieldKind = fkData
+      FieldName = 'Desde_Valor_parte_de_SQL_despues'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3000
+    end
+    object SQLQuery_FiltrosHasta_Valor: TStringField
+      FieldKind = fkData
+      FieldName = 'Hasta_Valor'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3000
+    end
+    object SQLQuery_FiltrosHasta_Valor_pedir_SN: TStringField
+      FieldKind = fkData
+      FieldName = 'Hasta_Valor_pedir_SN'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_FiltrosHasta_Valor_parte_de_SQL_antes: TStringField
+      FieldKind = fkData
+      FieldName = 'Hasta_Valor_parte_de_SQL_antes'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3000
+    end
+    object SQLQuery_FiltrosHasta_Valor_parte_de_SQL_despues: TStringField
+      FieldKind = fkData
+      FieldName = 'Hasta_Valor_parte_de_SQL_despues'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3000
+    end
+    object SQLQuery_Filtrosorden: TLargeintField
+      FieldKind = fkData
+      FieldName = 'orden'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_FiltrosInsert_WHEN: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_FiltrosInsert_Id_User: TLargeintField
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_FiltrosDel_WHEN: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_FiltrosDel_Id_User: TLargeintField
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_FiltrosDel_WHY: TStringField
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_FiltrosChange_WHEN: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_FiltrosChange_Id_User: TLargeintField
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object DataSource_Filtros: TDataSource
+    DataSet = SQLQuery_Filtros
+    Enabled = False
+    left = 104
+    top = 128
+  end
+  object CalendarDialog1: TCalendarDialog
+    Date = 43220
+    OKCaption = '&Aceptar'
+    CancelCaption = 'Cancelar'
+    left = 508
+    top = 24
+  end
+end

@@ -1,0 +1,141 @@
+object form_conceptos_almacen_traspaso_001: Tform_conceptos_almacen_traspaso_001
+  Left = 434
+  Height = 306
+  Top = 101
+  Width = 575
+  ActiveControl = DBEdit_Descripcion
+  Caption = 'Ficha - concepto para movimientos de almacén.-'
+  ClientHeight = 306
+  ClientWidth = 575
+  Color = 14737613
+  OnActivate = FormActivate
+  OnClose = FormClose
+  LCLVersion = '1.4.2.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 563
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object GroupBox11: TGroupBox
+    Left = 30
+    Height = 37
+    Top = 0
+    Width = 174
+    ClientHeight = 17
+    ClientWidth = 170
+    TabOrder = 1
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -5
+      Width = 56
+      Anchors = [akLeft, akBottom]
+      Caption = 'Código'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 77
+      Height = 23
+      Top = -7
+      Width = 90
+      DataField = 'id'
+      DataSource = form_conceptos_almacen_traspaso_000.DataSource_CAT
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = DBEdit_Descripcion
+    AnchorSideBottom.Control = DBEdit_Descripcion
+    Left = 30
+    Height = 22
+    Top = 61
+    Width = 112
+    Anchors = [akLeft, akBottom]
+    Caption = 'Descripción'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Descripcion: TDBEdit
+    Left = 30
+    Height = 24
+    Top = 83
+    Width = 512
+    DataField = 'descripcion'
+    DataSource = form_conceptos_almacen_traspaso_000.DataSource_CAT
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Label26: TLabel
+    Left = 30
+    Height = 22
+    Top = 113
+    Width = 272
+    Caption = 'Observaciones / comentarios'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBMemo_Observaciones_Comentarios: TDBMemo
+    Left = 30
+    Height = 135
+    Top = 134
+    Width = 512
+    DataField = 'Observaciones_Comentarios'
+    DataSource = form_conceptos_almacen_traspaso_000.DataSource_CAT
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ScrollBars = ssAutoVertical
+    TabOrder = 3
+  end
+end

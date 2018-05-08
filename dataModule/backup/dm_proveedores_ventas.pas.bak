@@ -1,0 +1,42 @@
+unit dm_proveedores_ventas;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, sqldb, FileUtil;
+
+type
+
+  { TDataModule_proveedores_ventas }
+
+  TDataModule_proveedores_ventas = class(TDataModule)
+    SQLConnector_Alb: TSQLConnector;
+    SQLConnector_Alb_Detalles: TSQLConnector;
+    SQLTransaction_Alb: TSQLTransaction;
+    SQLTransaction_Alb_Detalles: TSQLTransaction;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  DataModule_proveedores_ventas: TDataModule_proveedores_ventas;
+
+implementation
+
+{$R *.lfm}
+
+{ TDataModule_proveedores_ventas }
+
+procedure TDataModule_proveedores_ventas.DataModuleCreate(Sender: TObject);
+begin
+    if UTI_CN_Abrir(SQLTransaction_Alb, SQLConnector_Alb) = False then UTI_GEN_Salir;
+    if UTI_CN_Abrir(SQLTransaction_Alb_Detalles, SQLConnector_Alb_Detalles) = False then UTI_GEN_Salir;
+end;
+
+end.
+

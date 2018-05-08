@@ -1,0 +1,29 @@
+object DataModule_Representantes: TDataModule_Representantes
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 177
+  HorizontalOffset = 517
+  VerticalOffset = 154
+  Width = 284
+  object SQLTransaction: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector
+    left = 112
+    top = 24
+  end
+  object SQLConnector: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 120
+    top = 88
+  end
+end

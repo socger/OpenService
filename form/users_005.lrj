@@ -1,0 +1,20 @@
+{"version":1,"strings":[
+{"hash":168577397,"name":"tform_users_005.caption","sourcebytes":[102,111,114,109,95,117,115,101,114,115,95,48,48,53],"value":"form_users_005"},
+{"hash":167091869,"name":"tform_users_005.label1.caption","sourcebytes":[69,108,105,106,97,32,101,108,32,117,115,117,97,114,105,111,46,45],"value":"Elija el usuario.-"},
+{"hash":348059,"name":"tform_users_005.dbgrid_principal.columns[0].title.caption","sourcebytes":[78,105,99,107],"value":"Nick"},
+{"hash":254498766,"name":"tform_users_005.tabsheet_busqueda_concreta.caption","sourcebytes":[70,105,108,116,114,97,109,111,115,32,112,111,114,32,46,46,46],"value":"Filtramos por ..."},
+{"hash":348059,"name":"tform_users_005.label6.caption","sourcebytes":[78,105,99,107],"value":"Nick"},
+{"hash":196965519,"name":"tform_users_005.label9.caption","sourcebytes":[84,105,112,111,32,100,101,32,117,115,117,97,114,105,111],"value":"Tipo de usuario"},
+{"hash":5847363,"name":"tform_users_005.combobox_tipo_usuario.text","sourcebytes":[84,79,68,79,83],"value":"TODOS"},
+{"hash":166570735,"name":"tform_users_005.label10.caption","sourcebytes":[80,101,114,109,105,115,111,32,116,111,116,97,108,32,83,105,47,78,111],"value":"Permiso total Si/No"},
+{"hash":5847363,"name":"tform_users_005.combobox_permiso_total_sn.text","sourcebytes":[84,79,68,79,83],"value":"TODOS"},
+{"hash":186825597,"name":"tform_users_005.tabsheet_filtros_generales.caption","sourcebytes":[70,105,108,116,114,97,100,111,32,112,101,114,115,111,110,97,108,105,122,97,100,111,46,45],"value":"Filtrado personalizado.-"},
+{"hash":145727212,"name":"tform_users_005.label7.caption","sourcebytes":[195,154,108,116,105,109,111,32,102,105,108,116,114,111,32,103,101,110,101,114,97,108],"value":"\u00DAltimo filtro general"},
+{"hash":47831842,"name":"tform_users_005.label8.caption","sourcebytes":[79,114,100,101,110,97,100,111,32,112,111,114],"value":"Ordenado por"},
+{"hash":111395856,"name":"tform_users_005.radiogroup_bajas.caption","sourcebytes":[32,86,101,114,32,98,97,106,97,115,32],"value":" Ver bajas "},
+{"hash":218347714,"name":"tform_users_005.bitbtn_filtrar.hint","sourcebytes":[70,105,108,116,114,97,114],"value":"Filtrar"},
+{"hash":5866242,"name":"tform_users_005.bitbtn_salir.hint","sourcebytes":[83,97,108,105,114],"value":"Salir"},
+{"hash":244642687,"name":"tform_users_005.bitbtn_seleccionar.hint","sourcebytes":[86,101,114,32,115,105,116,117,97,99,105,195,179,110,32,100,101,108,32,114,101,103,105,115,116,114,111],"value":"Ver situaci\u00F3n del registro"},
+{"hash":194804325,"name":"tform_users_005.bitbtn_seleccionar.caption","sourcebytes":[83,101,108,101,99,99,105,111,110,101],"value":"Seleccione"},
+{"hash":47831842,"name":"tform_users_005.label_fecha2.caption","sourcebytes":[79,114,100,101,110,97,100,111,32,112,111,114],"value":"Ordenado por"}
+]}

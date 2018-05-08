@@ -1,0 +1,75 @@
+unit General_Utilidades;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+    Classes, SysUtils;
+
+implementation
+
+function Aviso( param_Mensaje : TStrings;
+                param_Titulo_Form : String;
+                param_Boton_Aceptar,
+                param_Boton_Cancelar,
+                param_Transparente : Boolean) : Boolean;
+begin
+  { ****************************************************************************
+    Ejemplos:
+        Aviso( 'Para el codigo del trabajador NO EMPLEAR el signo -',
+               '', True, False, True );
+
+        if Aviso( '¿SOLO EL tipo de personal ELEGIDO S/N?',
+                  '', True, True, True ) = True then
+        begin
+        end;
+
+    ****************************************************************************
+    Ejemplos .... llamando desde fuera de esta opción:
+    ****************************************************************************
+        Application.CreateForm(tform_Avisos, form_Avisos);
+        form_Avisos.Memo1.Lines.Clear;
+        form_Avisos.Memo1.Lines.Add('-. IMAGEN CAPTURADA .-');
+        form_Avisos.Show;
+        form_Avisos.Repaint;
+    ****************************************************************************
+        Application.CreateForm(tform_Avisos, form_Avisos);
+        form_Avisos.Memo1.Lines.Clear;
+        form_Avisos.Memo1.Lines.Add('-. IMAGEN CAPTURADA .-');
+        form_Avisos.Show;
+        form_Avisos.Repaint;
+        for Contador := 1 to 999999999 do
+        begin
+            {Contador de tiempo}
+        end;
+        form_Avisos.Destroy;
+    **************************************************************************** }
+
+
+    Application.CreateForm(tform_Avisos, form_Avisos);
+
+    with form_Avisos do
+    begin
+        Memo1.Lines.Clear;
+
+        if Trim(Param_Mensaje.Text) <> '' then Memo1.Lines.AddStrings(Param_Mensaje);
+
+        if Param_Boton_Aceptar = True then
+        begin
+            Aceptar.Visible := True;
+            ActiveControl   := Aceptar;
+        end;
+
+        if Trim(Param_Titulo_Form) <> '' then Caption := Param_Titulo_Form;
+        if Param_Transparente = True     then Transparencia;
+        if Param_Boton_Cancelar = True   then Cancelar.Visible := True;
+
+        if ShowModal = mrOk then Result := True else Result := False;
+
+        Destroy;
+    end;
+end;
+
+end.
+

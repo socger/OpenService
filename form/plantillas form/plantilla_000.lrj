@@ -1,0 +1,21 @@
+{"version":1,"strings":[
+{"hash":196180495,"name":"tform_plantilla_000.caption","sourcebytes":[80,108,97,110,116,105,108,108,97,32,45,32,109,97,110,116,101,110,105,109,105,101,110,116,111],"value":"Plantilla - mantenimiento"},
+{"hash":235463072,"name":"tform_plantilla_000.groupbox_registro.caption","sourcebytes":[32,82,101,103,105,115,116,114,111,32],"value":" Registro "},
+{"hash":1268,"name":"tform_plantilla_000.label62.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":9313712,"name":"tform_plantilla_000.groupbox_grid.caption","sourcebytes":[32,82,101,103,105,115,116,114,111,115,32],"value":" Registros "},
+{"hash":48,"name":"tform_plantilla_000.label_ctdad_rgtros.caption","sourcebytes":[48],"value":"0"},
+{"hash":1268,"name":"tform_plantilla_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":3912320,"name":"tform_plantilla_000.groupbox_filtros.caption","sourcebytes":[32,70,105,108,116,114,111,115,32],"value":" Filtros "},
+{"hash":228438112,"name":"tform_plantilla_000.groupbox3.caption","sourcebytes":[32,79,114,100,101,110,97,100,111,32,112,111,114,32],"value":" Ordenado por "},
+{"hash":192682179,"name":"tform_plantilla_000.bitbtn_vaciar_filtros.caption","sourcebytes":[38,86,97,99,105,97,114,32,102,105,108,116,114,111,115],"value":"&Vaciar filtros"},
+{"hash":164707936,"name":"tform_plantilla_000.groupbox1.caption","sourcebytes":[32,85,108,116,105,109,111,32,102,105,108,116,114,111,32,103,101,110,101,114,97,108,32],"value":" Ultimo filtro general "},
+{"hash":80135182,"name":"tform_plantilla_000.dbgrid_filtros.columns[0].title.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
+{"hash":4901285,"name":"tform_plantilla_000.dbgrid_filtros.columns[1].title.caption","sourcebytes":[68,101,115,100,101],"value":"Desde"},
+{"hash":4294967295,"name":"tform_plantilla_000.dbgrid_filtros.columns[2].title.caption","sourcebytes":[],"value":""},
+{"hash":5147297,"name":"tform_plantilla_000.dbgrid_filtros.columns[3].title.caption","sourcebytes":[72,97,115,116,97],"value":"Hasta"},
+{"hash":4294967295,"name":"tform_plantilla_000.dbgrid_filtros.columns[4].title.caption","sourcebytes":[],"value":""},
+{"hash":47831842,"name":"tform_plantilla_000.label_fecha2.caption","sourcebytes":[79,114,100,101,110,97,100,111,32,112,111,114],"value":"Ordenado por"},
+{"hash":111395856,"name":"tform_plantilla_000.radiogroup_bajas.caption","sourcebytes":[32,86,101,114,32,98,97,106,97,115,32],"value":" Ver bajas "},
+{"hash":127694882,"name":"tform_plantilla_000.calendardialog1.okcaption","sourcebytes":[38,65,99,101,112,116,97,114],"value":"&Aceptar"},
+{"hash":139052562,"name":"tform_plantilla_000.calendardialog1.cancelcaption","sourcebytes":[67,97,110,99,101,108,97,114],"value":"Cancelar"}
+]}

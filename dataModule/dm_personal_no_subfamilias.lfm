@@ -1,0 +1,29 @@
+object DataModule_Personal_No_SubFamilias: TDataModule_Personal_No_SubFamilias
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 300
+  HorizontalOffset = 311
+  VerticalOffset = 66
+  Width = 545
+  object SQLTransaction_PerFamNOSub: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_PerFamNOSub
+    left = 172
+    top = 68
+  end
+  object SQLConnector_PerFamNOSub: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_PerFamNOSub
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 172
+    top = 140
+  end
+end

@@ -1,0 +1,253 @@
+unit menu_principal;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs,
+  DbCtrls, DBGrids, StdCtrls, Buttons, dm_Pelis, bd_Utilidades;
+
+type
+
+  { TForm1 }
+
+  TForm1 = class(TForm)
+    DataSource_Pelis: TDataSource;
+    DBEdit_Pelicula: TDBEdit;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    Label1: TLabel;
+    SALIR: TBitBtn;
+    SQLQuery_Pelis: TSQLQuery;
+    SQLQuery_Pelisid: TAutoIncField;
+    SQLQuery_Pelisid_medio: TLongintField;
+    SQLQuery_PelisNumero: TLongintField;
+    SQLQuery_Pelistitulo: TStringField;
+
+    procedure DataSource_PelisDataChange(Sender: TObject; Field: TField);
+    procedure DBNavigator1BeforeAction(Sender: TObject; Button: TDBNavButtonType
+        );
+    procedure DBNavigator1Click(Sender: TObject; Button: TDBNavButtonType);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure SALIRClick(Sender: TObject);
+    procedure SQLQuery_PelisAfterDelete(DataSet: TDataSet);
+    procedure SQLQuery_PelisAfterEdit(DataSet: TDataSet);
+    procedure SQLQuery_PelisAfterInsert(DataSet: TDataSet);
+    procedure SQLQuery_PelisAfterPost(DataSet: TDataSet);
+    procedure SQLQuery_PelisBeforePost(DataSet: TDataSet);
+  private
+    { private declarations }
+    private_Salir_OK : Boolean;
+  public
+    { public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm1 }
+
+procedure TForm1.FormShow(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.SALIRClick(Sender: TObject);
+begin
+    private_Salir_OK := True;
+    Close;
+end;
+
+procedure TForm1.SQLQuery_PelisAfterDelete(DataSet: TDataSet);
+begin
+    TB_Grabar( DataModule_Pelis.SQLTransaction_Pelis,
+               SQLQuery_Pelis,
+               True );
+end;
+
+procedure TForm1.SQLQuery_PelisAfterEdit(DataSet: TDataSet);
+begin
+
+end;
+
+procedure TForm1.SQLQuery_PelisAfterInsert(DataSet: TDataSet);
+begin
+    TB_Grabar( DataModule_Pelis.SQLTransaction_Pelis,
+               SQLQuery_Pelis,
+               True );
+end;
+
+procedure TForm1.SQLQuery_PelisAfterPost(DataSet: TDataSet);
+begin
+    TB_Grabar( DataModule_Pelis.SQLTransaction_Pelis,
+               SQLQuery_Pelis,
+               True );
+end;
+
+procedure TForm1.SQLQuery_PelisBeforePost(DataSet: TDataSet);
+begin
+{
+    with SQLQuery_Pelis do
+    begin
+        // ESTAS LINEAS BORRARLAS
+        SQLQuery_Pelis.FieldByName('id_Medio').Value := 1;
+        SQLQuery_Pelis.FieldByName('Numero').Value := 99999;
+    end;
+}
+end;
+
+procedure TForm1.DataSource_PelisDataChange(Sender: TObject; Field: TField);
+begin
+
+end;
+
+procedure TForm1.DBNavigator1BeforeAction(Sender: TObject;
+    Button: TDBNavButtonType);
+begin
+    case Button of
+        nbInsert : begin
+            Insertar_Registro;
+
+            Abort;
+            Exit;
+        end;
+
+        nbDelete : begin
+            Borrar_Registro;
+
+            Abort;
+            Exit;
+        end;
+
+        nbEdit : begin
+            Editar_Registro;
+
+            Abort;
+            Exit;
+        end;
+
+        nbRefresh : begin
+            TB_Refrescar( DataModule_Pelis.SQLConnector_Pelis,
+                          DataModule_Pelis.SQLTransaction_Pelis,
+                          SQLQuery_Pelis,
+                          'Select * from peliculas' );
+            Abort;
+            Exit;
+        end;
+    end;
+end;
+
+procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TDBNavButtonType);
+begin
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+    private_Salir_OK := False;
+
+    if DataModule_Pelis = Nil then
+    begin
+        DataModule_Pelis := TDataModule_Pelis.Create(Application);
+        if CN_Abrir( DataModule_Pelis.SQLTransaction_Pelis,
+                     DataModule_Pelis.SQLConnector_pelis ) = False then
+        begin
+            Application.Terminate;
+        end;
+    end;
+
+    if TB_Abrir( DataModule_Pelis.SQLConnector_Pelis,
+                 DataModule_Pelis.SQLTransaction_Pelis,
+                 SQLQuery_Pelis,
+                 'Select * from peliculas' ) = False then
+    begin
+        Application.Terminate;
+    end;
+end;
+
+procedure TForm1.FormDestroy(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+    if private_Salir_OK = False then
+        begin
+            CloseAction := caNone;
+        end
+    else
+        begin
+            if TB_Cerrar( DataModule_Pelis.SQLConnector_Pelis,
+                          DataModule_Pelis.SQLTransaction_Pelis,
+                          SQLQuery_Pelis ) then
+            begin
+                Application.Terminate;
+            end;
+
+            DataModule_Pelis.Destroy;
+        end;
+end;
+
+procedure TForm1..Insertar_Registro;
+var Mensaje_Error: ShortString;
+begin
+    with ado_Qry_Clientes do
+    begin
+        Mensaje_Error := '';
+
+        if Tiene_Permisos(28, 'A', True) = True then
+        begin
+            if SoloVisualizacion then
+                Mensajito('Sólo se puede visualizar.', '', True, False, True)
+            else
+                begin
+                    Append;
+                    FieldByName('Correspondencia_Automatica').AsString := 'S';
+
+                    Application.CreateForm(tform_Clientes_1, form_Clientes_1);
+
+                    if form_Clientes_1.ShowModal = mrOk then
+                        begin
+                            form_Clientes_1.Destroy;
+                            FieldByName('Fecha_Alta').Value   := Devolver_Fecha_Hora_Servidor_SQL;
+                            FieldByName('Usuario_Alta').Value := form_Principal.public_User;
+                            Grabar_Registro;
+                        end
+                    else
+                        begin
+                            form_Clientes_1.Destroy;
+                            if RecordCount > 0 then
+                                begin
+                                    CancelBatch;
+                                    Cancel;
+                                end
+                            else
+                                begin
+                                    // Si intentamos hacer un cancelbatch y no hay
+                                    // ningún registro se produce una excepción por eso
+                                    // pongo este control y refresco otra vez. Para que
+                                    // no se quede pillado el registro en modo dsInsert
+                                    Mensaje_Error := Filtrar;
+                                    if Mensaje_Error <> '' then
+                                    begin
+                                        Mensajito(Mensaje_Error, '', True, False, True);
+                                        Application.Terminate;
+                                    end;
+                                end;
+                        end;
+                end;
+        end;
+    end;
+end;
+
+end.
+

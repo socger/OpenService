@@ -1,0 +1,8 @@
+{"version":1,"strings":[
+{"hash":81406079,"name":"tf_reportes_000.label5.caption","sourcebytes":[78,111,109,98,114,101,32,100,101,32,102,105,99,104,101,114,111],"value":"Nombre de fichero"},
+{"hash":166313087,"name":"tf_reportes_000.label4.caption","sourcebytes":[77,195,179,100,117,108,111],"value":"M\u00F3dulo"},
+{"hash":216077125,"name":"tf_reportes_000.label1.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110,32,100,101,108,32,105,110,102,111,114,109,101],"value":"Descripci\u00F3n del informe"},
+{"hash":1268,"name":"tf_reportes_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":166313087,"name":"tf_reportes_000.dbgrid_principal.columns[1].title.caption","sourcebytes":[77,195,179,100,117,108,111],"value":"M\u00F3dulo"},
+{"hash":80135182,"name":"tf_reportes_000.dbgrid_principal.columns[2].title.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"}
+]}

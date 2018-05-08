@@ -1,0 +1,6 @@
+{"version":1,"strings":[
+{"hash":262026800,"name":"tform_plantilla_detalle_000.caption","sourcebytes":[70,105,99,104,97,32,45,32],"value":"Ficha - "},
+{"hash":195706640,"name":"tform_plantilla_detalle_000.groupbox_registro_principal.caption","sourcebytes":[32,82,101,103,105,115,116,114,111,32,112,114,105,110,99,105,112,97,108,32,101,108,101,103,105,100,111,32],"value":" Registro principal elegido "},
+{"hash":71801552,"name":"tform_plantilla_detalle_000.groupbox_registro.caption","sourcebytes":[32,82,101,103,105,115,116,114,111,32,100,101,116,97,108,108,101,32],"value":" Registro detalle "},
+{"hash":1268,"name":"tform_plantilla_detalle_000.label62.caption","sourcebytes":[73,100],"value":"Id"}
+]}

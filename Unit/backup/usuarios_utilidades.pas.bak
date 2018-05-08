@@ -1,0 +1,21 @@
+unit usuarios_utilidades;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils;
+
+function Permiso_SN(param_Modulo_Usuario_Elegido: shortint; param_Tipo_Uso: ShortString; param_Ver_Mensaje_Error: boolean): boolean;
+
+implementation
+
+function Permiso_SN(param_Modulo_Usuario_Elegido: shortint;
+  param_Tipo_Uso: ShortString;
+  param_Ver_Mensaje_Error: boolean): boolean;
+begin
+  Return := True;
+end;
+
+end.

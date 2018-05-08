@@ -1,0 +1,947 @@
+object form_articulos_002: Tform_articulos_002
+  Left = 68
+  Height = 562
+  Top = 125
+  Width = 1110
+  Caption = 'Ficha - Tarifa de el artículo'
+  ClientHeight = 562
+  ClientWidth = 1110
+  Color = 10724203
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 1098
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object GroupBox11: TGroupBox
+    Left = 25
+    Height = 38
+    Top = 0
+    Width = 174
+    ClientHeight = 18
+    ClientWidth = 170
+    TabOrder = 1
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -4
+      Width = 56
+      Anchors = [akLeft, akBottom]
+      Caption = 'Código'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 74
+      Height = 24
+      Top = -7
+      Width = 90
+      DataField = 'id'
+      DataSource = form_articulos_000.DataSource_Art_Tarifas
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Name = 'Arial Narrow'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+  object Panel1: TPanel
+    Left = 24
+    Height = 475
+    Top = 56
+    Width = 654
+    ClientHeight = 475
+    ClientWidth = 654
+    TabOrder = 2
+    object Label1: TLabel
+      AnchorSideLeft.Control = DBEdit_a_quien_facturamos
+      AnchorSideBottom.Control = DBEdit_a_quien_facturamos
+      Left = 18
+      Height = 22
+      Top = 4
+      Width = 53
+      Anchors = [akLeft, akBottom]
+      Caption = 'Tarifa'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_a_quien_facturamos: TDBEdit
+      Left = 18
+      Height = 26
+      Top = 26
+      Width = 615
+      DataField = 'OT_descripcion_tarifa'
+      DataSource = form_articulos_000.DataSource_Art_Tarifas
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 0
+    end
+    object GroupBox_Contactos: TGroupBox
+      Left = 18
+      Height = 248
+      Top = 64
+      Width = 615
+      Caption = 'INCREMENTO PARA ESTA TARIFA, SEGUN MARGENES ESTABLECIDOS PARA ELLA'
+      ClientHeight = 228
+      ClientWidth = 611
+      TabOrder = 1
+      object DBNavigator_Margenes: TDBNavigator
+        AnchorSideTop.Side = asrBottom
+        Left = 11
+        Height = 32
+        Top = -1
+        Width = 188
+        BeforeAction = DBNavigator_MargenesBeforeAction
+        BevelOuter = bvNone
+        BorderSpacing.Top = 4
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 32
+        ClientWidth = 188
+        DataSource = form_articulos_000.DataSource_Tarifas_Margenes
+        Options = []
+        TabOrder = 0
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+      end
+      object BitBtn_Ver_Situacion_Registro_Margenes: TBitBtn
+        Left = 207
+        Height = 32
+        Hint = 'Ver situación del registro'
+        Top = -1
+        Width = 35
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Times New Roman'
+        Glyph.Data = {
+          F6060000424DF606000000000000360000002800000018000000180000000100
+          180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD3A793C2A195BD9C
+          8ED1A490FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7AB9A
+          BDB0ABAAA3A3988F8F9A8882C99E8EFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFD7AB9AD1C4C2C4C1C2BAB6B7ADA5A7988F8F988681C7A08EFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFD8AD9ADED1CFD9D9DAD1CFD3C2AAA1B79E96ADA7A99A909197
+          8680C9A08FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFD9B09DE7DDD9E9EAEFE2E2E5C27859AF3812AF38
+          12B16749ADA5A79A9193988681C69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFD9AF9CEEE5E2F0F6FAEFF4FAC67754
+          A72806A72907A92907A92907B05E3EAFA7A79A919393827FC69D8CFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F0E7E2FAFEFFF6
+          FEFFCE8868B13C15CE7752D38460D38460CE7752B43A13B05B39ADA7A99A9193
+          93827FC69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F3E7
+          E2FEFFFFFEFFFFD49072AA300CAA300CD38664FFFFFFFFFFFFCF7F5BAB310CAD
+          300BB16041ADA5A79C9395968480C69D8CFF00FFFF00FFFF00FFFF00FFFF00FF
+          D8AD9AF6EBE9FFFFFFFFFFFFD78F6EAB310CAB320DAA2E0AC4653CFFFFFFFFFF
+          FFC15D35AA2E0BAD350FAD310BB05A38AFA4A49C939593827FC09A8AFF00FFFF
+          00FFFF00FFD8AA97F6EAE5FFFFFFFFFFFFE0A486B53F14B43A13AF3711AA2E0A
+          C6673FFFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD300BB05735ABA1A19A91
+          9390817FC09A8AFF00FFD7A793F0E2D9FFFFFFFFFFFFE9BB9CC15523BC4D1EBA
+          491CB64117AF340DC76840FFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD350F
+          AD2E0AB05D3DADA5A79A908F95827FCCA18FE0BBAAFFFFFFFFFFFFFEFAF6D17A
+          42C75F29C45C28C15523BD4E1FB53F14CB7048FFFFFFFFFFFFC25F38AA2E0BAD
+          350FAD350FAD350FAD330EAF3611B69C91ADA7A99A908FBC9A8EE0BAAAFFFFFF
+          FFFFFFFEFAF6D9894ECF6F32CC6A31C7632CC45B28BC4C1CCF794FFFFFFFFFFF
+          FFC4633AAA2E0BAD350FAD350FAD350FAB310CAF3C16C4AFA9BAB6B7ABA3A3C6
+          A193D7A793F3E2DAFFFFFFFFFFFFF0D1B1D88241D37638CF6F35CB682FC25723
+          D88C60FFFFFFFFFFFFC96D43AF350EAF360FAD350FAB320DAB310CC7896ED1D3
+          D7C4C1C2C1AFAAD7A793FF00FFD8AA97F6EAE3FFFFFFFFFFFFF0D1AFD98744D4
+          7D3CCF7537D1753CE9B693F0D4C0F0D3BDCB6C3EB74116B54016AF360FAB320D
+          CC886AE2E7EBD9D9DAD1C1BCD7A996FF00FFFF00FFFF00FFD8AA97F3E5DDFFFF
+          FFFFFFFFF4D9BBDE904CD88240D78041D3773BCE6E35C9662EC25925C05322BB
+          4A1CB64116D79A7FEEF4FAE7EAEEDDCEC9D7A996FF00FFFF00FFFF00FFFF00FF
+          FF00FFD7A996F0E2D9FFFFFFFFFFFFF6DDC0E29752D98641DA8F52F4DAC6F3D4
+          C0CF733DC45B26C15421E0A486F6FEFFF0F6FAE7D9D4D7AA97FF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFD7A996F0E2DAFFFFFFFFFFFFF8E2C6E2964C
+          EABA87FFFFFFFFFFFFE09E6DC96328E2A984FEFFFFFAFEFFEBE2DED8AD9AFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA97F0E0D8FF
+          FFFFFFFFFFF6DEC0EAAF6CF4D7B1F3CFABDA894AE9B78FFFFFFFFEFFFFF3E7E2
+          D9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFAE7CBEBB470E5A45FF0CCA5FFFFFFFF
+          FFFFF4E9E3D8AD9AFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFFFEFBFEFA
+          F6FFFFFFFFFFFFF8EFEBD9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7A793F0E0D8
+          FFFFFFFFFFFFFFFFFFFFFFFFF8EFEBDAB1A0FF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFD7A793EED7CBFEFBFBFFFEFEF4E9E3DAB19EFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA96DEB5A4E0BAAAD8AA96FF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+      end
+      object Shape2: TShape
+        Left = 424
+        Height = 47
+        Top = 6
+        Width = 151
+        Brush.Color = 13616925
+      end
+      object Label57: TLabel
+        Left = 433
+        Height = 16
+        Top = 13
+        Width = 136
+        Anchors = [akLeft, akBottom]
+        Caption = 'Incremento/Beneficio'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBGrid_Margenes: TDBGrid
+        Left = 11
+        Height = 180
+        Top = 31
+        Width = 588
+        Anchors = [akLeft]
+        BorderSpacing.Top = 4
+        Color = 7001047
+        Columns = <        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Mayor o igual que'
+            Width = 200
+            FieldName = 'OT_mayor_igual_que'
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Menor o igual que'
+            Width = 200
+            FieldName = 'OT_menor_igual_que'
+          end        
+          item
+            Alignment = taRightJustify
+            Color = 13616925
+            Title.Alignment = taCenter
+            Title.Caption = 'Cantidad'
+            Title.Color = 13616925
+            Width = 120
+            FieldName = 'Beneficio'
+          end        
+          item
+            Alignment = taCenter
+            Color = 13616925
+            Title.Alignment = taCenter
+            Title.Caption = '%'
+            Title.Color = 13616925
+            Width = 30
+            FieldName = 'Beneficio_en_Tanto_por_Ciento_SN'
+          end>
+        DataSource = form_articulos_000.DataSource_Tarifas_Margenes
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection]
+        ParentFont = False
+        Scrollbars = ssAutoBoth
+        TabOrder = 2
+        TitleFont.CharSet = ANSI_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -16
+        TitleFont.Name = 'Arial'
+        TitleFont.Pitch = fpVariable
+        TitleFont.Quality = fqDraft
+        TitleFont.Style = [fsBold]
+      end
+    end
+    object Panel_Mantenimiento2: TPanel
+      Left = 18
+      Height = 134
+      Top = 320
+      Width = 615
+      ClientHeight = 134
+      ClientWidth = 615
+      TabOrder = 2
+      OnClick = Panel_Mantenimiento2Click
+      object Label22: TLabel
+        Left = 16
+        Height = 22
+        Top = 8
+        Width = 232
+        Caption = 'Impuesto habitual ventas'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Impto_Ventas: TEdit
+        Left = 16
+        Height = 26
+        Top = 30
+        Width = 404
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object GroupBox_Cuentas_Contables4: TGroupBox
+        Left = 333
+        Height = 43
+        Top = 77
+        Width = 268
+        Caption = 'ULTIMA COMPRA'
+        ClientHeight = 23
+        ClientWidth = 264
+        TabOrder = 1
+        object Edit_Compra_Ultima_Fecha: TEdit
+          Left = 54
+          Height = 24
+          Top = -3
+          Width = 76
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 0
+        end
+        object Edit_Compra_Ultimo_Precio: TEdit
+          Left = 169
+          Height = 24
+          Top = -3
+          Width = 91
+          Anchors = [akLeft]
+          BidiMode = bdRightToLeft
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentBidiMode = False
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object Label31: TLabel
+          Left = 134
+          Height = 19
+          Top = -1
+          Width = 33
+          Anchors = [akLeft, akBottom]
+          Caption = 'PVP'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label30: TLabel
+          Left = 3
+          Height = 19
+          Top = -1
+          Width = 47
+          Anchors = [akLeft, akBottom]
+          Caption = 'Fecha'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+    end
+  end
+  object Label65: TLabel
+    Left = 688
+    Height = 29
+    Top = 48
+    Width = 351
+    Anchors = [akLeft, akBottom]
+    Caption = 'Incremento/beneficio sugerido'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = 206
+    Font.Height = -24
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label68: TLabel
+    Left = 688
+    Height = 29
+    Top = 73
+    Width = 385
+    Anchors = [akLeft, akBottom]
+    Caption = 'sobre margen del precio de costo'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = 206
+    Font.Height = -24
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Panel_Mantenimiento1: TPanel
+    Left = 688
+    Height = 270
+    Top = 112
+    Width = 396
+    ClientHeight = 270
+    ClientWidth = 396
+    Color = 8816262
+    ParentColor = False
+    TabOrder = 3
+    object GroupBox1: TGroupBox
+      Left = 15
+      Height = 70
+      Top = 10
+      Width = 365
+      Caption = 'MARGENES DE LA TARIFA ELEGIDA'
+      ClientHeight = 50
+      ClientWidth = 361
+      TabOrder = 0
+      object Label4: TLabel
+        Left = 7
+        Height = 22
+        Top = -3
+        Width = 166
+        Anchors = [akLeft, akBottom]
+        Caption = 'Mayor o igual que'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label2: TLabel
+        Left = 185
+        Height = 22
+        Top = -3
+        Width = 167
+        Anchors = [akLeft, akBottom]
+        Caption = 'Menor o igual que'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Descripcion1: TDBEdit
+        Left = 8
+        Height = 26
+        Top = 18
+        Width = 165
+        DataField = 'OT_mayor_igual_que'
+        DataSource = form_articulos_000.DataSource_Art_Tarifas
+        CharCase = ecNormal
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 0
+      end
+      object DBEdit_Descripcion2: TDBEdit
+        Left = 186
+        Height = 26
+        Top = 18
+        Width = 165
+        DataField = 'OT_menor_igual_que'
+        DataSource = form_articulos_000.DataSource_Art_Tarifas
+        CharCase = ecNormal
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 1
+      end
+    end
+    object GroupBox2: TGroupBox
+      Left = 14
+      Height = 164
+      Top = 88
+      Width = 366
+      Caption = 'SE SUGIERE'
+      ClientHeight = 144
+      ClientWidth = 362
+      Color = 8816262
+      ParentColor = False
+      TabOrder = 1
+      object Shape3: TShape
+        Left = 9
+        Height = 67
+        Top = 4
+        Width = 344
+        Brush.Color = 13616925
+      end
+      object Label3: TLabel
+        AnchorSideLeft.Control = DBEdit_Descripcion
+        AnchorSideBottom.Control = DBEdit_Descripcion
+        Left = 20
+        Height = 22
+        Top = 8
+        Width = 83
+        Anchors = [akLeft, akBottom]
+        Caption = 'Cantidad'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Descripcion: TDBEdit
+        Left = 20
+        Height = 26
+        Top = 30
+        Width = 157
+        DataField = 'OT_Beneficio'
+        DataSource = form_articulos_000.DataSource_Art_Tarifas
+        CharCase = ecNormal
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Label63: TLabel
+        Left = 204
+        Height = 19
+        Top = 21
+        Width = 86
+        Anchors = [akLeft, akBottom]
+        Caption = 'Incremento'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label64: TLabel
+        Left = 207
+        Height = 19
+        Top = 37
+        Width = 39
+        Anchors = [akLeft, akBottom]
+        Caption = 'en %'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBRadioGroup1: TDBRadioGroup
+        Left = 294
+        Height = 62
+        Top = 3
+        Width = 48
+        DataField = 'OT_Beneficio_en_Tanto_por_Ciento_SN'
+        DataSource = form_articulos_000.DataSource_Art_Tarifas
+        Items.Strings = (
+          'Si'
+          'No'
+        )
+        ReadOnly = True
+        TabOrder = 1
+        Values.Strings = (
+          'S'
+          'N'
+        )
+      end
+      object Label72: TLabel
+        Left = 120
+        Height = 19
+        Top = 88
+        Width = 33
+        Anchors = [akLeft, akBottom]
+        Caption = 'PVP'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Importe_Neto1: TDBEdit
+        Left = 119
+        Height = 24
+        Top = 108
+        Width = 113
+        DataField = 'OT_Importe_Neto_Sugerido'
+        DataSource = form_articulos_000.DataSource_Art_Tarifas
+        ReadOnly = True
+        BiDiMode = bdRightToLeft
+        CharCase = ecNormal
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentBiDiMode = False
+        ParentFont = False
+        TabOrder = 2
+      end
+      object Label73: TLabel
+        Left = 238
+        Height = 19
+        Top = 77
+        Width = 94
+        Anchors = [akLeft, akBottom]
+        Caption = 'PVP, incluye'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label74: TLabel
+        Left = 238
+        Height = 19
+        Top = 90
+        Width = 112
+        Anchors = [akLeft, akBottom]
+        Caption = 'sus impuestos'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Importe_con_Impuestos1: TDBEdit
+        Left = 239
+        Height = 24
+        Top = 108
+        Width = 113
+        DataField = 'OT_Importe_Impuestos_Incluidos_Sugerido'
+        DataSource = form_articulos_000.DataSource_Art_Tarifas
+        ReadOnly = True
+        BiDiMode = bdRightToLeft
+        CharCase = ecNormal
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentBiDiMode = False
+        ParentFont = False
+        TabOrder = 3
+      end
+    end
+  end
+  object Label70: TLabel
+    Left = 688
+    Height = 29
+    Top = 424
+    Width = 347
+    Anchors = [akLeft, akBottom]
+    Caption = 'PVP elegido y % de descuento'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -24
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Panel_Mantenimiento: TPanel
+    Left = 688
+    Height = 74
+    Top = 457
+    Width = 251
+    ClientHeight = 74
+    ClientWidth = 251
+    Color = 14913900
+    ParentColor = False
+    TabOrder = 4
+    object DBEdit_Importe_Neto: TDBEdit
+      Left = 8
+      Height = 24
+      Top = 38
+      Width = 113
+      DataField = 'Importe_Neto'
+      DataSource = form_articulos_000.DataSource_Art_Tarifas
+      CharCase = ecNormal
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 0
+    end
+    object DBEdit_Importe_con_Impuestos: TDBEdit
+      Left = 128
+      Height = 24
+      Top = 38
+      Width = 113
+      DataField = 'Importe_Impuestos_Incluidos'
+      DataSource = form_articulos_000.DataSource_Art_Tarifas
+      CharCase = ecNormal
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Label67: TLabel
+      Left = 8
+      Height = 19
+      Top = 18
+      Width = 33
+      Anchors = [akLeft, akBottom]
+      Caption = 'PVP'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label69: TLabel
+      Left = 127
+      Height = 19
+      Top = 7
+      Width = 94
+      Anchors = [akLeft, akBottom]
+      Caption = 'PVP, incluye'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label66: TLabel
+      Left = 127
+      Height = 19
+      Top = 20
+      Width = 112
+      Anchors = [akLeft, akBottom]
+      Caption = 'sus impuestos'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object Panel_Mantenimiento3: TPanel
+    Left = 955
+    Height = 74
+    Top = 456
+    Width = 129
+    ClientHeight = 74
+    ClientWidth = 129
+    Color = clBtnFace
+    ParentColor = False
+    TabOrder = 5
+    object Label60: TLabel
+      Left = 22
+      Height = 19
+      Top = 19
+      Width = 83
+      Anchors = [akLeft, akBottom]
+      Caption = 'Descuento'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_Retencion1: TDBEdit
+      Left = 22
+      Height = 24
+      Top = 38
+      Width = 69
+      DataField = 'Descuento'
+      DataSource = form_articulos_000.DataSource_Art_Tarifas
+      CharCase = ecNormal
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Label61: TLabel
+      Left = 92
+      Height = 19
+      Top = 41
+      Width = 16
+      Anchors = [akLeft, akBottom]
+      Caption = '%'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+end

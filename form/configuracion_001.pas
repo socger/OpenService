@@ -1,0 +1,293 @@
+unit configuracion_001;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls, DbCtrls, db,
+  Buttons, ExtCtrls, ButtonPanel, utilidades_forms_Filtrar, utilidades_general, types;
+
+type
+
+  { Tform_configuracion_001 }
+
+  Tform_configuracion_001 = class(TForm)
+    ButtonPanel1: TButtonPanel;
+    DBCheckBox_Clientes_Obligar_Cuenta_Contable_SN: TDBCheckBox;
+    DBCheckBox_Clientes_Obligar_Cuenta_Contable_SN1: TDBCheckBox;
+    DBCheckBox_Clientes_Obligar_Cuenta_Contable_SN2: TDBCheckBox;
+    DBCheckBox_Clientes_Obligar_Cuenta_Contable_SN3: TDBCheckBox;
+    DBCheckBox_Clientes_Obligar_Cuenta_Contable_SN4: TDBCheckBox;
+    DBCheckBox_Clientes_Obligar_Cuenta_Contable_SN5: TDBCheckBox;
+    DBCheckBox_Clientes_Obligar_NIF_SN: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN1: TDBCheckBox;
+    DBCheckBox_Obligar_Almacen: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN20: TDBCheckBox;
+    DBCheckBox_Modulo_Profesorado_Activo_SN: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN10: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN11: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN12: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN13: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN14: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN15: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN16: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN17: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN18: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN19: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN4: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN6: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN7: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN8: TDBCheckBox;
+    DBCheckBox_IVA_Excluido_SN9: TDBCheckBox;
+    DBCheckBox_Obligar_Almacen1: TDBCheckBox;
+    DBCheckBox_Obligar_Almacen2: TDBCheckBox;
+    DBCheckBox_Tipo_Clientes_Obligar_Cuenta_Contable_SN: TDBCheckBox;
+    DBCheckBox_Tipo_Clientes_Obligar_Cuenta_Contable_SN1: TDBCheckBox;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    GroupBox_Clientes2: TGroupBox;
+    GroupBox_Clientes3: TGroupBox;
+    GroupBox_Clientes4: TGroupBox;
+    GroupBox_Clientes5: TGroupBox;
+    GroupBox_Tipo_Clientes1: TGroupBox;
+    GroupBox_Tipo_Clientes2: TGroupBox;
+    PageControl1: TPageControl;
+    PageControl2: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet10: TTabSheet;
+    TabSheet11: TTabSheet;
+    TabSheet12: TTabSheet;
+    TabSheet13: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
+    TabSheet5: TTabSheet;
+    TabSheet6: TTabSheet;
+    TabSheet7: TTabSheet;
+    TabSheet8: TTabSheet;
+    TabSheet9: TTabSheet;
+
+    procedure DBCheckBox_Obligar_AlmacenChange(Sender: TObject);
+    procedure para_Empezar;
+    procedure FormCreate(Sender: TObject);
+    function  Comprobar_No_Tocar( param_Reproducir_Mensajes, param_Ejecutar_No_Tocar : Boolean ) : Boolean;
+    procedure no_Tocar;
+    procedure CancelButtonClick(Sender: TObject);
+    procedure OKButtonClick(Sender: TObject);
+    procedure Presentar_Datos;
+    procedure FormActivate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+
+  private
+      { private declarations }
+      private_Salir_OK : Boolean;
+  public
+      { public declarations }
+      public_Solo_Ver      : Boolean;
+      public_Menu_Worked   : Integer;
+      public_Pulso_Aceptar : Boolean;
+      public_Record_Rgtro  : TRecord_Rgtro_Comun;
+  end;
+
+var
+  form_configuracion_001: Tform_configuracion_001;
+
+implementation
+
+{$R *.lfm}
+
+uses menu, configuracion_000;
+
+{ Tform_configuracion_001 }
+
+procedure Tform_configuracion_001.FormActivate(Sender: TObject);
+begin
+    If form_configuracion_000.public_Elegimos = true then
+    begin
+        with Self do
+        begin
+            Color := $00B9959C;
+        end;
+    end;
+
+    Comprobar_No_Tocar(true, true);
+end;
+
+function Tform_configuracion_001.Comprobar_No_Tocar( param_Reproducir_Mensajes,
+                                                     param_Ejecutar_No_Tocar : Boolean ) : Boolean;
+begin
+    Result := false;
+
+    // ********************************************************************************************* //
+    // ** Si se llamó para solo verlo, pues no se puede tocar                                     ** //
+    // ********************************************************************************************* //
+    if public_Solo_Ver = true then
+    begin
+        Result := true;
+        if param_Ejecutar_No_Tocar = true then no_Tocar;
+    end;
+end;
+
+procedure Tform_configuracion_001.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+var var_msg : TStrings;
+begin
+    ButtonPanel1.SetFocus; // Con esto consigo que salga del campo que este y pueda actualizarlo
+
+    var_msg := TStringList.Create;
+
+    if public_Pulso_Aceptar = true then
+    begin
+        with form_configuracion_000.SQLQuery_Configuracion do
+        begin
+            if Trim(FieldByName('Trabajar_Grupos_Cocina_SN').AsString) = '' then
+            begin
+                var_msg.Add( '* Trabajar con GRUPOS DE COCINA');
+            end;
+
+            if Trim(FieldByName('Trabajar_Albaranes_con_Vehiculos_SN').AsString) = '' then
+            begin
+                var_msg.Add( '* Trabajar en Albaranes con VEHICULOS');
+            end;
+
+            if Trim(FieldByName('Clientes_Obligar_NIF_SN').AsString) = '' then
+            begin
+                var_msg.Add( '* Obligar a introducir NIF en clientes');
+            end;
+
+            if Trim(FieldByName('Clientes_Obligar_Cuenta_Contable_SN').AsString) = '' then
+            begin
+                var_msg.Add( '* Obligar a introducir CUENTA CONTABLE en clientes');
+            end;
+
+            if Trim(FieldByName('Tipo_Clientes_Obligar_Cuenta_Contable_SN').AsString) = '' then
+            begin
+                var_msg.Add( '* Obligar a introducir CUENTA CONTABLE en tipo de clientes');
+            end;
+
+            if Trim(FieldByName('Bancos_Cuenta_Contable_SN').AsString) = '' then
+            begin
+                var_msg.Add( '* Obligar a introducir CUENTA CONTABLE en bancos de empresas');
+            end;
+        end;
+    end;
+
+    if private_Salir_OK = false then
+    begin
+      { ********************************************************************
+        Intento BitBtn_SALIR de la aplicación de un modo no permitido.
+        ********************************************************************
+        Pero si desde el menu principal está a true la variable
+        public_Salir_Ok, significa que hay que salir si o si pues se pulsó
+        cancelar al preguntar otra vez por la contraseña
+        ******************************************************************** }
+        if form_Menu.public_Salir_OK = False then CloseAction := caNone;
+    end else begin
+      { ********************************************************************
+        Fue correcto el modo como quiere salir de la aplicación
+        ********************************************************************
+        Comprobaremos si no se generó algún error por falta de completar
+        algun campo y si se salió con el botón Ok o Cancel
+        ******************************************************************** }
+        if (Trim(var_msg.Text) <> '') and (public_Pulso_Aceptar = true) then
+        begin
+            UTI_GEN_Aviso(true, var_msg, rs_Falta, True, False);
+            CloseAction := caNone;
+        end else begin
+            CloseAction := caFree;
+        end;
+    end;
+
+    var_msg.Free;
+end;
+
+procedure Tform_configuracion_001.Presentar_Datos;
+begin
+    with form_configuracion_000.SQLQuery_Configuracion do
+    begin
+        PageControl1.ActivePage := TabSheet1;
+    end;
+end;
+
+procedure Tform_configuracion_001.OKButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := true;
+    public_Pulso_Aceptar := true;
+end;
+
+procedure Tform_configuracion_001.CancelButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := True;
+    public_Pulso_Aceptar := false;
+end;
+
+procedure Tform_configuracion_001.no_Tocar;
+begin
+    TabSheet1.Enabled  := False;
+    TabSheet2.Enabled  := False;
+    TabSheet3.Enabled  := False;
+    TabSheet4.Enabled  := False;
+    TabSheet5.Enabled  := False;
+    TabSheet6.Enabled  := False;
+    TabSheet7.Enabled  := False;
+    TabSheet8.Enabled  := False;
+    TabSheet9.Enabled  := False;
+    TabSheet10.Enabled := False;
+end;
+
+procedure Tform_configuracion_001.FormCreate(Sender: TObject);
+begin
+    { ****************************************************************************
+      Obligado en cada formulario para no olvidarlo
+      **************************************************************************** }
+      with Self do
+      begin
+          Color       := $00C2C29E;
+          Position    := poScreenCenter;
+          BorderIcons := [];
+          BorderStyle := bsSingle;
+      end;
+
+      private_Salir_OK := false;
+    { **************************************************************************** }
+
+    { ****************************************************************************
+      Solo para formularios que traten con datos
+      **************************************************************************** }
+      public_Solo_Ver := false;
+end;
+
+procedure Tform_configuracion_001.para_Empezar;
+begin
+    { ****************************************************************************
+      Solo para formularios que traten con datos
+      **************************************************************************** }
+      with form_configuracion_000.SQLQuery_Configuracion do
+      begin
+          public_Record_Rgtro := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                             'descripcion',
+                                                             '',
+                                                             '',
+                                                             '',
+                                                             '' );
+      end;
+
+      Presentar_Datos;
+end;
+
+procedure Tform_configuracion_001.DBCheckBox_Obligar_AlmacenChange(Sender: TObject);
+var var_msg : TStrings;
+begin
+    if DBCheckBox_Obligar_Almacen.Checked = false then
+    begin
+        var_msg := TStringList.Create;
+        var_msg.add( 'Al elegir no obligar a introducir el almacén/garage, no va a poder usar ' +
+                     'artículos con stock ni en presupuestos, ni en pedidos, ni en albaranes, ni en facturas.' );
+        UTI_GEN_Aviso(true, var_msg, rs_Falta, True, False);
+        var_msg.free;
+    end;
+end;
+
+end.
+
+

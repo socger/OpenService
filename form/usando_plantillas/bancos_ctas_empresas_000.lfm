@@ -1,0 +1,1605 @@
+inherited f_bancos_ctas_empresas_000: Tf_bancos_ctas_empresas_000
+  Left = 32
+  Height = 386
+  Top = 44
+  Width = 1175
+  ClientHeight = 386
+  ClientWidth = 1175
+  inherited Panel_de_Abajo: TPanel
+    Height = 342
+    Width = 1175
+    ClientHeight = 342
+    ClientWidth = 1175
+    inherited GroupBox_Registro: TGroupBox
+      Height = 340
+      Width = 1173
+      ClientHeight = 320
+      ClientWidth = 1169
+      inherited Panel20: TPanel
+        Height = 320
+      end
+      inherited Panel21: TPanel
+        Left = 1152
+        Height = 320
+      end
+      inherited Panel22: TPanel
+        Height = 320
+        Width = 1135
+        ClientHeight = 320
+        ClientWidth = 1135
+        inherited Panel23: TPanel
+          Top = 283
+          Width = 1135
+          ClientWidth = 1135
+          inherited ButtonPanel1: TButtonPanel
+            Width = 1123
+          end
+          inherited Shape1: TShape
+            Width = 1135
+          end
+        end
+        object Label1: TLabel[1]
+          AnchorSideLeft.Control = DBEdit_Descripcion
+          AnchorSideBottom.Control = DBEdit_Descripcion
+          Left = 12
+          Height = 19
+          Top = 11
+          Width = 92
+          Anchors = [akLeft, akBottom]
+          Caption = 'Descripción'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Descripcion: TDBEdit[2]
+          Left = 12
+          Height = 24
+          Top = 30
+          Width = 540
+          DataField = 'descripcion'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 1
+        end
+        object Boton_Elegir_Empresa: TBitBtn[3]
+          Left = 570
+          Height = 26
+          Top = 29
+          Width = 30
+          Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          OnClick = Boton_Elegir_EmpresaClick
+          ParentFont = False
+          Spacing = 0
+          TabOrder = 2
+        end
+        object Label15: TLabel[4]
+          Left = 570
+          Height = 19
+          Top = 10
+          Width = 68
+          Caption = 'Empresa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Empresa: TEdit[5]
+          Left = 599
+          Height = 24
+          Top = 30
+          Width = 305
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_EmpresaClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 3
+        end
+        object Label2: TLabel[6]
+          AnchorSideLeft.Control = DBEdit_Descripcion1
+          AnchorSideBottom.Control = DBEdit_Descripcion1
+          Left = 12
+          Height = 19
+          Top = 60
+          Width = 50
+          Anchors = [akLeft, akBottom]
+          Caption = 'Banco'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Descripcion1: TDBEdit[7]
+          Left = 12
+          Height = 24
+          Top = 79
+          Width = 73
+          DataField = 'Cta_Bco_Entidad'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 4
+        end
+        object Label3: TLabel[8]
+          AnchorSideLeft.Control = DBEdit_Cta_Bco_Sucursal
+          AnchorSideBottom.Control = DBEdit_Cta_Bco_Sucursal
+          Left = 88
+          Height = 19
+          Top = 60
+          Width = 68
+          Anchors = [akLeft, akBottom]
+          Caption = 'Sucursal'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Cta_Bco_Sucursal: TDBEdit[9]
+          Left = 88
+          Height = 24
+          Top = 79
+          Width = 83
+          DataField = 'Cta_Bco_Sucursal'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 5
+        end
+        object Label4: TLabel[10]
+          AnchorSideLeft.Control = DBEdit_Descripcion2
+          AnchorSideBottom.Control = DBEdit_Descripcion2
+          Left = 174
+          Height = 19
+          Top = 60
+          Width = 24
+          Anchors = [akLeft, akBottom]
+          Caption = 'DC'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Descripcion2: TDBEdit[11]
+          Left = 174
+          Height = 24
+          Top = 79
+          Width = 31
+          DataField = 'Cta_Bco_Digito_Control'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 6
+        end
+        object Label5: TLabel[12]
+          AnchorSideLeft.Control = DBEdit_Cta_Bco_Cuenta
+          AnchorSideBottom.Control = DBEdit_Cta_Bco_Cuenta
+          Left = 208
+          Height = 19
+          Top = 60
+          Width = 55
+          Anchors = [akLeft, akBottom]
+          Caption = 'Cuenta'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Cta_Bco_Cuenta: TDBEdit[13]
+          Left = 208
+          Height = 24
+          Top = 79
+          Width = 142
+          DataField = 'Cta_Bco_Cuenta'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 7
+        end
+        object Label6: TLabel[14]
+          AnchorSideLeft.Control = DBEdit_Cta_Bco_BIC_SWIFT
+          AnchorSideBottom.Control = DBEdit_Cta_Bco_BIC_SWIFT
+          Left = 353
+          Height = 19
+          Top = 60
+          Width = 90
+          Anchors = [akLeft, akBottom]
+          Caption = 'BIC / SWIFT'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Cta_Bco_BIC_SWIFT: TDBEdit[15]
+          Left = 353
+          Height = 24
+          Top = 79
+          Width = 262
+          DataField = 'Cta_Bco_BIC_SWIFT'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 8
+        end
+        object Label7: TLabel[16]
+          AnchorSideLeft.Control = DBEdit_Cta_Bco_IBAN
+          AnchorSideBottom.Control = DBEdit_Cta_Bco_IBAN
+          Left = 618
+          Height = 19
+          Top = 60
+          Width = 39
+          Anchors = [akLeft, akBottom]
+          Caption = 'IBAN'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Cta_Bco_IBAN: TDBEdit[17]
+          Left = 618
+          Height = 24
+          Top = 79
+          Width = 286
+          DataField = 'Cta_Bco_IBAN'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 9
+        end
+        object Label8: TLabel[18]
+          AnchorSideLeft.Control = DBEdit_Direccion
+          AnchorSideBottom.Control = DBEdit_Direccion
+          Left = 13
+          Height = 19
+          Top = 111
+          Width = 73
+          Anchors = [akLeft, akBottom]
+          Caption = 'Dirección'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Direccion: TDBEdit[19]
+          Left = 13
+          Height = 24
+          Top = 130
+          Width = 536
+          DataField = 'Direccion'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 10
+        end
+        object Label9: TLabel[20]
+          AnchorSideLeft.Control = DBEdit_Direccion_Numero
+          AnchorSideBottom.Control = DBEdit_Direccion_Numero
+          Left = 552
+          Height = 19
+          Top = 111
+          Width = 61
+          Anchors = [akLeft, akBottom]
+          Caption = 'Número'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Direccion_Numero: TDBEdit[21]
+          Left = 552
+          Height = 24
+          Top = 130
+          Width = 73
+          DataField = 'Direccion_Numero'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 11
+        end
+        object Label10: TLabel[22]
+          AnchorSideLeft.Control = DBEdit_Direccion_Piso_Letra
+          AnchorSideBottom.Control = DBEdit_Direccion_Piso_Letra
+          Left = 628
+          Height = 19
+          Top = 111
+          Width = 85
+          Anchors = [akLeft, akBottom]
+          Caption = 'Piso / Letra'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Direccion_Piso_Letra: TDBEdit[23]
+          Left = 628
+          Height = 24
+          Top = 130
+          Width = 104
+          DataField = 'Direccion_Piso_Letra'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 12
+        end
+        object Label11: TLabel[24]
+          AnchorSideLeft.Control = DBEdit_Codigo_Postal
+          AnchorSideBottom.Control = DBEdit_Codigo_Postal
+          Left = 735
+          Height = 19
+          Top = 111
+          Width = 107
+          Anchors = [akLeft, akBottom]
+          Caption = 'Código postal'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Codigo_Postal: TDBEdit[25]
+          Left = 735
+          Height = 24
+          Top = 130
+          Width = 131
+          DataField = 'Codigo_Postal'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 13
+        end
+        object Boton_Elegir_Pais1: TBitBtn[26]
+          Left = 870
+          Height = 26
+          Top = 129
+          Width = 30
+          Action = form_Menu.BitBtn_ver_direccion_en_Maps
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          Spacing = 0
+          TabOrder = 14
+        end
+        object GroupBox2: TGroupBox[27]
+          Left = 916
+          Height = 147
+          Top = 10
+          Width = 202
+          Caption = ' TELEFONOS '
+          ClientHeight = 127
+          ClientWidth = 198
+          TabOrder = 15
+          object Label12: TLabel
+            Left = 11
+            Height = 19
+            Top = 11
+            Width = 15
+            Anchors = [akLeft, akBottom]
+            Caption = '1º'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label13: TLabel
+            Left = 11
+            Height = 19
+            Top = 38
+            Width = 15
+            Anchors = [akLeft, akBottom]
+            Caption = '2º'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label14: TLabel
+            Left = 11
+            Height = 19
+            Top = 64
+            Width = 31
+            Anchors = [akLeft, akBottom]
+            Caption = 'FAX'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label16: TLabel
+            Left = 11
+            Height = 19
+            Top = 91
+            Width = 40
+            Anchors = [akLeft, akBottom]
+            Caption = 'Móvil'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object DBEdit_Tfno_Fijo_1: TDBEdit
+            Left = 67
+            Height = 24
+            Top = 7
+            Width = 120
+            DataField = 'Tfno_Fijo_1'
+            DataSource = DataSource_Principal
+            CharCase = ecNormal
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            MaxLength = 0
+            ParentFont = False
+            TabOrder = 0
+          end
+          object DBEdit_Tfno_Fijo_2: TDBEdit
+            Left = 67
+            Height = 24
+            Top = 34
+            Width = 120
+            DataField = 'Tfno_Fijo_2'
+            DataSource = DataSource_Principal
+            CharCase = ecNormal
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            MaxLength = 0
+            ParentFont = False
+            TabOrder = 1
+          end
+          object DBEdit_FAX: TDBEdit
+            Left = 67
+            Height = 24
+            Top = 60
+            Width = 120
+            DataField = 'FAX'
+            DataSource = DataSource_Principal
+            CharCase = ecNormal
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            MaxLength = 0
+            ParentFont = False
+            TabOrder = 2
+          end
+          object BitBtn_SMS: TBitBtn
+            Left = 54
+            Height = 24
+            Top = 86
+            Width = 32
+            Caption = 'SMS'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -11
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            OnClick = BitBtn_SMSClick
+            ParentFont = False
+            TabOrder = 3
+          end
+          object DBEdit_Movil: TDBEdit
+            Left = 87
+            Height = 24
+            Top = 87
+            Width = 100
+            DataField = 'Movil'
+            DataSource = DataSource_Principal
+            CharCase = ecNormal
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            MaxLength = 0
+            ParentFont = False
+            TabOrder = 4
+          end
+        end
+        object Boton_Elegir_Poblacion: TBitBtn[28]
+          Left = 13
+          Height = 26
+          Top = 183
+          Width = 30
+          Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          OnClick = Boton_Elegir_PoblacionClick
+          ParentFont = False
+          Spacing = 0
+          TabOrder = 16
+        end
+        object Label17: TLabel[29]
+          Left = 13
+          Height = 19
+          Top = 165
+          Width = 77
+          Caption = 'Población'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Poblacion: TEdit[30]
+          Left = 42
+          Height = 24
+          Top = 184
+          Width = 367
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_PoblacionClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 17
+        end
+        object Boton_Elegir_Provincia: TBitBtn[31]
+          Left = 429
+          Height = 26
+          Top = 183
+          Width = 30
+          Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          OnClick = Boton_Elegir_ProvinciaClick
+          ParentFont = False
+          Spacing = 0
+          TabOrder = 18
+        end
+        object Label18: TLabel[32]
+          Left = 429
+          Height = 19
+          Top = 165
+          Width = 72
+          Caption = 'Provincia'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Provincia: TEdit[33]
+          Left = 458
+          Height = 24
+          Top = 184
+          Width = 300
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_ProvinciaClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 19
+        end
+        object Boton_Elegir_Pais: TBitBtn[34]
+          Left = 778
+          Height = 26
+          Top = 183
+          Width = 30
+          Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          OnClick = Boton_Elegir_PaisClick
+          ParentFont = False
+          Spacing = 0
+          TabOrder = 20
+        end
+        object Label19: TLabel[35]
+          Left = 778
+          Height = 19
+          Top = 165
+          Width = 33
+          Caption = 'País'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Pais: TEdit[36]
+          Left = 807
+          Height = 24
+          Top = 184
+          Width = 299
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_PaisClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 21
+        end
+        object Label20: TLabel[37]
+          AnchorSideLeft.Control = DBEdit_Contacto
+          AnchorSideBottom.Control = DBEdit_Contacto
+          Left = 13
+          Height = 19
+          Top = 217
+          Width = 70
+          Anchors = [akLeft, akBottom]
+          Caption = 'Contacto'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Contacto: TDBEdit[38]
+          Left = 13
+          Height = 24
+          Top = 236
+          Width = 621
+          DataField = 'Responsable'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 22
+        end
+        object Label21: TLabel[39]
+          AnchorSideLeft.Control = DBEdit_eMail
+          AnchorSideBottom.Control = DBEdit_eMail
+          Left = 637
+          Height = 19
+          Top = 217
+          Width = 39
+          Anchors = [akLeft, akBottom]
+          Caption = 'eMail'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_eMail: TDBEdit[40]
+          Left = 637
+          Height = 24
+          Top = 236
+          Width = 323
+          DataField = 'eMail'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 23
+        end
+        object Label22: TLabel[41]
+          AnchorSideLeft.Control = DBEdit_Cuenta_Contable
+          AnchorSideBottom.Control = DBEdit_Cuenta_Contable
+          Left = 963
+          Height = 19
+          Top = 217
+          Width = 125
+          Anchors = [akLeft, akBottom]
+          Caption = 'Cuenta contable'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Cuenta_Contable: TDBEdit[42]
+          Left = 963
+          Height = 24
+          Top = 236
+          Width = 155
+          DataField = 'Cuenta_Contable'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 24
+        end
+      end
+    end
+    inherited GroupBox_Grid: TGroupBox
+      Height = 340
+      Width = 1173
+      ClientHeight = 320
+      ClientWidth = 1169
+      inherited Panel_Barra_Superior1: TPanel
+        Top = 262
+        Width = 1169
+        ClientWidth = 1169
+        inherited Panel4: TPanel
+          inherited Panel14: TPanel
+            inherited DBNavigatorPrincpal: TDBNavigator
+              Hints.Strings = (              )
+            end
+          end
+        end
+        inherited Panel15: TPanel
+          Left = 1152
+        end
+        inherited Panel_Otros_Campos_no_Grid: TPanel
+          Width = 777
+          ClientWidth = 777
+          inherited Label_Ctdad_Rgtros: TLabel
+            Left = 679
+          end
+        end
+      end
+      inherited Panel5: TPanel
+        Height = 262
+      end
+      inherited Panel6: TPanel
+        Left = 1152
+        Height = 262
+      end
+      inherited Panel7: TPanel
+        Height = 262
+        Width = 1135
+        ClientHeight = 262
+        ClientWidth = 1135
+        inherited DBGrid_Principal: TDBGrid
+          Height = 258
+          Width = 1135
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Id'
+              Width = 50
+              FieldName = 'id'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Descripción'
+              Width = 545
+              FieldName = 'descripcion'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Cuenta'
+              Width = 250
+              FieldName = 'OT_Cta_Completa'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'IBAN'
+              Width = 250
+              FieldName = 'Cta_Bco_IBAN'
+            end>
+        end
+      end
+    end
+    inherited GroupBox_Filtros: TGroupBox
+      Left = 568
+      Top = 240
+      inherited Panel11: TPanel
+        inherited Panel_Filtramos_por: TPanel
+          inherited Panel_Barra_DBGrid_Filtros: TPanel
+            inherited Panel_Barra_Filtros: TPanel
+              inherited DBNavigatorDBGrid_Filtros: TDBNavigator
+                Hints.Strings = (                )
+              end
+              inherited BitBtn_Vaciar_Filtros: TBitBtn
+                Left = -237
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  inherited Panel_Barra_Superior: TPanel
+    Width = 1175
+    ClientWidth = 1175
+    inherited Panel9: TPanel
+      Left = 1158
+    end
+    inherited Panel1: TPanel
+      Left = 953
+    end
+  end
+  inherited SQLQuery_Principal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'descripcion'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Responsable'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Cta_Bco_Entidad'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'Cta_Bco_Sucursal'
+        DataType = ftString
+        Precision = -1
+        Size = 18
+      end    
+      item
+        Name = 'Cta_Bco_Digito_Control'
+        DataType = ftString
+        Precision = -1
+        Size = 6
+      end    
+      item
+        Name = 'Cta_Bco_Cuenta'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Cta_Bco_IBAN'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Cta_Bco_BIC_SWIFT'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Direccion'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'Direccion_Numero'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'Direccion_Piso_Letra'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'Codigo_Postal'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'id_poblaciones'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_provincias'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_paises'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Tfno_Fijo_1'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Tfno_Fijo_2'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'FAX'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Movil'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'eMail'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'id_empresas'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Cuenta_Contable'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'OT_Descripcion_Empresa'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'OT_descripcion_poblacion'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_provincia'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_pais'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end>
+    OnCalcFields = SQLQuery_PrincipalCalcFields
+    SQL.Strings = (
+      'SELECT be.*,'
+      ''
+      'e.nombre_comercial AS OT_Descripcion_Empresa,'
+      ''
+      'pb.descripcion AS OT_descripcion_poblacion,'
+      'pr.descripcion AS OT_descripcion_provincia,'
+      'ps.descripcion AS OT_descripcion_pais'
+      ''
+      'FROM bancos_empresas AS be'
+      ''
+      'LEFT JOIN empresas AS e'
+      'ON be.id_empresas = e.id'
+      ''
+      'LEFT JOIN poblaciones AS pb'
+      'ON be.id_poblaciones = pb.id'
+      ''
+      'LEFT JOIN provincias AS pr'
+      'ON be.id_provincias = pr.id'
+      ''
+      'LEFT JOIN paises AS ps'
+      'ON be.id_paises = ps.id'
+      ''
+    )
+    object SQLQuery_PrincipalOT_Cta_Completa1: TStringField[1]
+      DisplayWidth = 25
+      FieldKind = fkCalculated
+      FieldName = 'OT_Cta_Completa'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 25
+    end
+    object SQLQuery_Principaldescripcion: TStringField[2]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'descripcion'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalResponsable: TStringField[3]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'Responsable'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalCta_Bco_Entidad: TStringField[4]
+      DisplayWidth = 12
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Entidad'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object SQLQuery_PrincipalCta_Bco_Sucursal: TStringField[5]
+      DisplayWidth = 18
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Sucursal'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 18
+    end
+    object SQLQuery_PrincipalCta_Bco_Digito_Control: TStringField[6]
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Digito_Control'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 6
+    end
+    object SQLQuery_PrincipalCta_Bco_Cuenta: TStringField[7]
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Cuenta'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_PrincipalCta_Bco_IBAN: TStringField[8]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_IBAN'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalCta_Bco_BIC_SWIFT: TStringField[9]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_BIC_SWIFT'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalDireccion: TStringField[10]
+      DisplayWidth = 600
+      FieldKind = fkData
+      FieldName = 'Direccion'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 600
+    end
+    object SQLQuery_PrincipalDireccion_Numero: TStringField[11]
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'Direccion_Numero'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object SQLQuery_PrincipalDireccion_Piso_Letra: TStringField[12]
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'Direccion_Piso_Letra'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object SQLQuery_PrincipalCodigo_Postal: TStringField[13]
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'Codigo_Postal'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object SQLQuery_Principalid_poblaciones: TLargeintField[14]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_poblaciones'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Principalid_provincias: TLargeintField[15]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_provincias'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Principalid_paises: TLargeintField[16]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_paises'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalTfno_Fijo_1: TStringField[17]
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_1'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_PrincipalTfno_Fijo_2: TStringField[18]
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_2'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_PrincipalFAX: TStringField[19]
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'FAX'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_PrincipalMovil: TStringField[20]
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Movil'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_PrincipaleMail: TStringField[21]
+      DisplayWidth = 300
+      FieldKind = fkData
+      FieldName = 'eMail'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object SQLQuery_Principalid_empresas: TLargeintField[22]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_empresas'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalCuenta_Contable: TStringField[23]
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'Cuenta_Contable'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object SQLQuery_PrincipalInsert_WHEN: TDateTimeField[24]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalInsert_Id_User: TLargeintField[25]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalDel_WHEN: TDateTimeField[26]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_Id_User: TLargeintField[27]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_WHY: TStringField[28]
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_PrincipalChange_WHEN: TDateTimeField[29]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalChange_Id_User: TLargeintField[30]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalOT_Descripcion_Empresa: TStringField[31]
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'OT_Descripcion_Empresa'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_PrincipalOT_descripcion_poblacion: TStringField[32]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_poblacion'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalOT_descripcion_provincia: TStringField[33]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_provincia'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalOT_descripcion_pais: TStringField[34]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_pais'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+  end
+  inherited SQLConnector_Principal: TSQLConnector
+    left = 240
+    top = 16
+  end
+end

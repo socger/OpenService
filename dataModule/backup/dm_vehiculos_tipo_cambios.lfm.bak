@@ -1,0 +1,29 @@
+object DataModule_Vehiculos_Tipo_Cambios: TDataModule_Vehiculos_Tipo_Cambios
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 358
+  HorizontalOffset = 643
+  VerticalOffset = 183
+  Width = 527
+  object SQLTransaction_VTCambios: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_VTCambios
+    left = 256
+    top = 96
+  end
+  object SQLConnector_VTCambios: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_VTCambios
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 256
+    top = 168
+  end
+end

@@ -1,0 +1,4197 @@
+object form_clientes_000: Tform_clientes_000
+  Left = 17
+  Height = 676
+  Top = 13
+  Width = 1261
+  Caption = 'Mantenimiento de clientes'
+  ClientHeight = 676
+  ClientWidth = 1261
+  Color = 14737613
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.4.2.0'
+  object PageControl_Filtros: TPageControl
+    Left = 24
+    Height = 186
+    Top = 33
+    Width = 1206
+    ActivePage = TabSheet_Busqueda_Concreta
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet_Busqueda_Concreta: TTabSheet
+      Caption = 'Filtramos por ...'
+      ClientHeight = 158
+      ClientWidth = 1198
+      object Edit_Descripcion_Actividad: TEdit
+        Left = 561
+        Height = 26
+        Top = 75
+        Width = 290
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_ActividadClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 28
+      end
+      object Edit_Descripcion_Ruta: TEdit
+        Left = 899
+        Height = 26
+        Top = 75
+        Width = 290
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_RutaClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 29
+      end
+      object Label6: TLabel
+        Left = 12
+        Height = 22
+        Top = 2
+        Width = 179
+        Caption = 'A quien facturamos'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_nombre_propietario: TEdit
+        Left = 12
+        Height = 26
+        Top = 25
+        Width = 180
+        Anchors = [akLeft]
+        Color = clWhite
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Label9: TLabel
+        Left = 196
+        Height = 22
+        Top = 2
+        Width = 169
+        Caption = 'Nombre comercial'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Nombre_Comercial: TEdit
+        Left = 196
+        Height = 26
+        Top = 25
+        Width = 169
+        Anchors = [akLeft]
+        Color = clWhite
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 1
+      end
+      object Label10: TLabel
+        Left = 371
+        Height = 22
+        Top = 2
+        Width = 43
+        Caption = 'N.I.F.'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_NIF: TEdit
+        Left = 371
+        Height = 26
+        Top = 25
+        Width = 132
+        Anchors = [akLeft]
+        Color = clWhite
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 2
+      end
+      object Label15: TLabel
+        Left = 509
+        Height = 22
+        Top = 3
+        Width = 154
+        Caption = 'Nacido entre y el'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DateTimePicker_Nacido_Desde: TDateTimePicker
+        Left = 510
+        Height = 26
+        Top = 25
+        Width = 105
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 3
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Label16: TLabel
+        Left = 616
+        Height = 22
+        Top = 25
+        Width = 6
+        Caption = '-'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DateTimePicker_Nacido_Hasta: TDateTimePicker
+        Left = 623
+        Height = 26
+        Top = 25
+        Width = 105
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 4
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Boton_Elegir_clientes_tipos: TBitBtn
+        Left = 773
+        Height = 47
+        Top = 4
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_clientes_tiposClick
+        ParentFont = False
+        TabOrder = 5
+      end
+      object Label49: TLabel
+        Left = 812
+        Height = 22
+        Top = 3
+        Width = 136
+        Caption = 'Tipo de cliente'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_clientes_tipos: TEdit
+        Left = 812
+        Height = 26
+        Top = 25
+        Width = 375
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_clientes_tiposClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 6
+      end
+      object Edit_id_clientes_tipos: TEdit
+        Left = 837
+        Height = 26
+        Top = 25
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 7
+        Visible = False
+      end
+      object Boton_Elegir_Forma_Pago: TBitBtn
+        Left = 12
+        Height = 47
+        Top = 54
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_Forma_PagoClick
+        ParentFont = False
+        TabOrder = 8
+      end
+      object Label45: TLabel
+        Left = 52
+        Height = 22
+        Top = 54
+        Width = 140
+        Caption = 'Forma de pago'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Forma_Pago: TEdit
+        Left = 52
+        Height = 26
+        Top = 75
+        Width = 180
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_Forma_PagoClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 9
+      end
+      object Edit_id_Forma_Pago: TEdit
+        Left = 79
+        Height = 26
+        Top = 75
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 10
+        Visible = False
+      end
+      object Boton_Elegir_Representante: TBitBtn
+        Left = 236
+        Height = 47
+        Top = 54
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_RepresentanteClick
+        ParentFont = False
+        TabOrder = 11
+      end
+      object Label50: TLabel
+        Left = 278
+        Height = 22
+        Top = 54
+        Width = 135
+        Caption = 'Representante'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Representante: TEdit
+        Left = 276
+        Height = 26
+        Top = 75
+        Width = 229
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_RepresentanteClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 12
+      end
+      object Edit_id_representantes: TEdit
+        Left = 303
+        Height = 26
+        Top = 75
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 13
+        Visible = False
+      end
+      object Boton_Elegir_Poblacion: TBitBtn
+        Left = 12
+        Height = 47
+        Top = 106
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_PoblacionClick
+        ParentFont = False
+        TabOrder = 14
+      end
+      object Label46: TLabel
+        Left = 51
+        Height = 22
+        Top = 106
+        Width = 93
+        Caption = 'Población'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Poblacion: TEdit
+        Left = 51
+        Height = 26
+        Top = 126
+        Width = 350
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_PoblacionClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 15
+      end
+      object Edit_id_poblaciones: TEdit
+        Left = 78
+        Height = 26
+        Top = 126
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 16
+        Visible = False
+      end
+      object Boton_Elegir_Provincia: TBitBtn
+        Left = 404
+        Height = 47
+        Top = 106
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_ProvinciaClick
+        ParentFont = False
+        TabOrder = 17
+      end
+      object Edit_Descripcion_Provincia: TEdit
+        Left = 443
+        Height = 26
+        Top = 126
+        Width = 350
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_ProvinciaClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 18
+      end
+      object Label47: TLabel
+        Left = 443
+        Height = 22
+        Top = 106
+        Width = 88
+        Caption = 'Provincia'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_id_provincias: TEdit
+        Left = 468
+        Height = 26
+        Top = 126
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 19
+        Visible = False
+      end
+      object Boton_Elegir_Pais: TBitBtn
+        Left = 798
+        Height = 47
+        Top = 106
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_PaisClick
+        ParentFont = False
+        TabOrder = 20
+      end
+      object Edit_Descripcion_Pais: TEdit
+        Left = 837
+        Height = 26
+        Top = 127
+        Width = 350
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_PaisClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 21
+      end
+      object Label48: TLabel
+        Left = 839
+        Height = 22
+        Top = 106
+        Width = 40
+        Caption = 'País'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_id_paises: TEdit
+        Left = 864
+        Height = 26
+        Top = 126
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 22
+        Visible = False
+      end
+      object CheckBox1: TCheckBox
+        Left = 990
+        Height = 20
+        Top = 4
+        Width = 197
+        Caption = 'Sólo quien supera su riesgo'
+        Checked = True
+        Color = clWhite
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        State = cbChecked
+        TabOrder = 23
+      end
+      object Boton_Elegir_Actividad: TBitBtn
+        Left = 522
+        Height = 47
+        Top = 54
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_ActividadClick
+        ParentFont = False
+        TabOrder = 24
+      end
+      object Label51: TLabel
+        Left = 561
+        Height = 22
+        Top = 54
+        Width = 86
+        Caption = 'Actividad'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_id_Actividad: TEdit
+        Left = 586
+        Height = 26
+        Top = 75
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 25
+        Visible = False
+      end
+      object Boton_Elegir_Ruta: TBitBtn
+        Left = 858
+        Height = 47
+        Top = 54
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_RutaClick
+        ParentFont = False
+        TabOrder = 26
+      end
+      object Label52: TLabel
+        Left = 899
+        Height = 22
+        Top = 55
+        Width = 103
+        Caption = 'Ruta / Zona'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_id_Ruta: TEdit
+        Left = 924
+        Height = 26
+        Top = 75
+        Width = 73
+        Anchors = [akLeft]
+        Color = 16723967
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 27
+        Visible = False
+      end
+    end
+    object TabSheet_Filtros_Generales: TTabSheet
+      Caption = 'Filtrado personalizado.-'
+      ClientHeight = 316
+      ClientWidth = 2396
+      object Label7: TLabel
+        Left = 10
+        Height = 11
+        Top = 2
+        Width = 91
+        Caption = 'Último filtro general'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Memo_Filtros: TMemo
+        Left = 10
+        Height = 81
+        Top = 13
+        Width = 1175
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+      end
+      object Label8: TLabel
+        Left = 10
+        Height = 11
+        Top = 98
+        Width = 64
+        Caption = 'Ordenado por'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -9
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Memo_OrderBy: TMemo
+        Left = 10
+        Height = 44
+        Top = 108
+        Width = 1175
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
+        TabOrder = 1
+      end
+    end
+  end
+  object Image_Confirmado: TImage
+    Left = 816
+    Height = 30
+    Top = 612
+    Width = 27
+    Picture.Data = {
+      0A544A706567496D616765550B0000FFD8FFE000104A46494600010101009000
+      900000FFE100224578696600004D4D002A000000080001011200030000000100
+      01000000000000FFDB0043000201010201010202020202020202030503030303
+      030604040305070607070706070708090B0908080A0807070A0D0A0A0B0C0C0C
+      0C07090E0F0D0C0E0B0C0C0CFFDB004301020202030303060303060C0807080C
+      0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C
+      0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0CFFC00011080037003A030122000211
+      01031101FFC4001F000001050101010101010000000000000000010203040506
+      0708090A0BFFC400B5100002010303020403050504040000017D010203000411
+      05122131410613516107227114328191A1082342B1C11552D1F0243362728209
+      0A161718191A25262728292A3435363738393A434445464748494A5354555657
+      58595A636465666768696A737475767778797A838485868788898A9293949596
+      9798999AA2A3A4A5A6A7A8A9AAB2B3B4B5B6B7B8B9BAC2C3C4C5C6C7C8C9CAD2
+      D3D4D5D6D7D8D9DAE1E2E3E4E5E6E7E8E9EAF1F2F3F4F5F6F7F8F9FAFFC4001F
+      0100030101010101010101010000000000000102030405060708090A0BFFC400
+      B511000201020404030407050404000102770001020311040521310612415107
+      61711322328108144291A1B1C109233352F0156272D10A162434E125F1171819
+      1A262728292A35363738393A434445464748494A535455565758595A63646566
+      6768696A737475767778797A82838485868788898A92939495969798999AA2A3
+      A4A5A6A7A8A9AAB2B3B4B5B6B7B8B9BAC2C3C4C5C6C7C8C9CAD2D3D4D5D6D7D8
+      D9DAE2E3E4E5E6E7E8E9EAF2F3F4F5F6F7F8F9FAFFDA000C0301000211031100
+      3F00FDFCA28AFC99FF0082937FC1716DCFED0B1FC2FF0004DB5F5D7C3FD1EE1E
+      D7C5BE20B09DA2B8D5661956B6B375C1FB344C0F9AEA434EEA5148895BED1352
+      4E34E5512BF2A6ECBC8F5727C971B9AE23EAB81839CECDD9765FD69DDE87DA9F
+      B4E7FC14EBC0FF00B3EC97DA76976B7DE39F1058C8D6F716DA5BAA59D84CA594
+      A5C5DB7C8ACACA55E3884D321C6E886413F9FF00F1C7FE0BD3F1BEEF5B4B7D03
+      4DF00783EC6E987EED6C67D4EFADF91C0BA965489C73D4DA293E82BABB9F07E9
+      3F10BE1A59DE682D6775A2DCDAA9B092D14084C2061551460285036EDC0DB8C6
+      38AF80FF006A4D267F0EFC4CB4B1C796CE1FA8EE781F9123FCF35F9EE1F8AEA6
+      36AF2537CAB5F3D2CDEFF23BF30E1DAB8454DCFACE319796BAA6BA7547D2FF00
+      0E3FE0B83FB4A4DE286F2FC41E14D66DD7E6106ADE1B8DE16DCC4203F667B77E
+      8AC4E1F8250F2320FDC1FB327FC168AC7C53341A7FC55F0EC1E14690AA7FC241
+      A5CCD3E94A4F592E6271E6DA264A8DC1AE235019E4922419AFCB9FD9BBE19B5C
+      693FDA5247859D8BA6476E0027DF68507DD6BD8A68E3D31100629B7D3AFB57C2
+      C38FB32A18B769F3413D534BF3DD5BD7E47B32C8F095293938F2B7B5BFCB67F9
+      9FB97637F0EA9650DCDB4D1DC5BDC2092296360C92A9190CA470411C823822A5
+      AFCE9FF8242FED70DA078FDBE0DEAD72A34CD4ADA6D47C2C933FCF67245F3DC5
+      947CE4C4C85A78D40C47E55C8DDB5A244FD16AFDA725CE30F9A60E38CC33F765
+      F835A35F27FE67C663307530B55D2AAB5FCD7467827FC141BE2BDDF83FE1147E
+      17D1B52B8D275EF1C196C96F6DA531DC69D648A0DD5C46CA432BE1E3815D5834
+      725D4720CF96457E64788FF612B0D4AD92DEDEDF4CBAB58542431A6207854000
+      2A7000006001D2BEACFF00829BFC528F4BFDAB2D34BB8BA558F4CF0B59CD0A31
+      FF0052F71757825DBFEFADBC19C75F2D7D2BC574DF176A9ABED7D3F4BD4EE97F
+      E7AF9263887FC0DF0BFAD7C867DC510A58A9E123523A5972E97BDAFEB7D6C7B1
+      C3B9DE272AC4AC5613E25E4FF34713E1FF0013DE7EC17E1AB5D1EDB499BC53A8
+      78BAE278743F0CCB722D4DC4F1A79935D34E43AC16B021569E70AC02B46BB5A5
+      92207875FD8D345FDA1755B9F147C4FF0014F8B35CD6A30C6E23F0883A0E85A3
+      06E4C712AA49705471F3DD4F2336DC9541F20D4D5A7D5BC67FB7CDC786B53996
+      3D5354F8636F268318B8DF13A45AD4F26A70A37DD331DBA548E8B9252DE36E88
+      71FA25F09BE2FE87F05FF649B5F07E9BE17BA6D6174F92DA6824897ECB733C81
+      83CF2BE72CAD9C95C138C2F400D5F06F0AE0F054A58B4DCE555B97BDAF2A7F66
+      29ECBBDF56DBD6C5F1371362F34C64EBD4F779ACDA5D5AEAFCFF00ADCFCCD7D1
+      6E3F66CF8C7A2F816F3C48BAE7827C5F657371E17D7B518638F54B1B9B48D64B
+      9D32F3C844867261266826548D9962991D5D9439E8A5867D72E3ECFE1BD2B50D
+      4E6938FB5491119FF746323F215E99FB327C0FD3FF0068FF00DB7F43B29645D4
+      FC2BF01A0D42E75FBA64592D26D7EFACCD95AE96AE480D3416B717B7370ABBBC
+      932592B6D690A8FD02D0FE15E87E1E8D63B2B1B5B651C011C6ABFCABE378AF84
+      A854CC9CB0D4EF169371E6E58736B7BA8AE67A59DAEA3EB7230B9F55A7494672
+      6DAED6BDBD5DFF00267E7DFECB7FB2678FBC0BF1EBC07E3A9E28F48FEC8F13E9
+      AD212713491DC5CC76730CFDE3BADEE6643927E5761DEBF5FABC275CD063BDD6
+      7C33A3C204736A5AE59CA195771892D2417EEC47F7585AF9593800CEBCE4807D
+      DABF45E0DC257C3E09C2B72DAFEEA84796295968BBFA9E5E3F18F1353DA4B7EE
+      DB6DFAB7FA59791F027FC14BA2BDF01FED3D63AB43A7DBB2F89BC370476D74C8
+      1E4F32CEE27138E9950AB796A47A973E86BC193FB6BC4CDBAF2EA50A78C67B7B
+      0E82BF49BF6AEFD9E63FDA23E1B0B1B76B5B6F1069337DBF46BA9C1F2E2B80A5
+      0A484027CA911991B862BB83852C8B5F9E5E2FB9B9F075FDFE97A8595D697ACE
+      96C23BDB0BA50B3D9B9E81B0482A7195752C922FCC8CCA413F17C7985CC30F89
+      F6D85F769D4DDA5ADF669BF3DD3F55D0F5B29AB47D9F23579AFC8F1DFDABBE1D
+      F867C47E07B2178DA969FE20D06E8EA3A26BDA55EB596ADA1DD6D2A66B7B85F9
+      94B2FCACAC191C6032B6D5C637EC0B73F14BF6D3F146B9A1FC46F8E9F13350F0
+      769262896D7468F4CD06EF5256DCC639EFAD6D16E8215003186489C827E719AE
+      6FF69AF16CD3E91784336E65289CF563C57B77FC1253C0EDE1AF045C6A0CA55B
+      53BC6981239D83017F4E3F0AF87A39F6619750A587C35692F6B56315D777CD2B
+      5EF6D16B6EEDEE7AD8CC1D29616B622AC573462ACFB3728A4BEEE6FB8FB1ADBF
+      676D27E127C17D33C3FF000A342D23C2967E1BB731E9BA3D8A7916B32E4BBA12
+      4E4CCEC598CCE59E476632312C5C78DE93FF000521D3FC2175358789AE24B6B8
+      B3668EE2298F97716ACA70C1D4FF00748391C608E7BE3E9E6F13D8784FC3736A
+      5AB5F59E9BA6DA8066BABB9961862CE00CB3100124800752480326BCD6F3FE09
+      A3E07FDB0BF69CF0E7C60F18784F50D36D3C331910595EEFB57F17CC36F93717
+      B68C03470C2010A92ED9662C04B1A244AB2FEDDC2B4B095AB3FAF424E2D3778D
+      AFCD6D136FA37A5F75BD99F93E65904ABE3E9E3215A518D9A9C16B19754EDD1F
+      47E4EEB55AFB4FEC956D7DF11ECE3F883A825D4367A859FD9FC3B6F73198E54B
+      390A3C972CA79067648F683C88E18DB82ECA3DB68036F4A2BEAA108C172C1591
+      EE5382845463B2F98579F7C7AFD97BC13FB49E930DBF8AB475BAB8B3565B3BFB
+      699ED2FECB7632239E32AE1490A5A324C6E55772B018A28A5529C2A45C26934F
+      74F54691938BBA3E30F8CDFF00040EFF0084EAE221E1FF008C1A869F6B1CA262
+      35DF0DC3A9CC482081BADA6B35C67FD827DEBD33E03FFC12FF00C51F083C3B69
+      A34DF1534CFECFB58C4627D13C1E2CAFF03D1EEAEEF211F8C068A2BC1A9C2794
+      4EAD3AD2C3C79A9BE68F936AD74B6DBC8EC96658995374A537CADA6FE57B7DD7
+      67BD7C36FD94FC27F0F758B4D6278F50F13F892CF2D0EB1AEDC9BDB8B6720AB3
+      5BC78582D37292185AC50AB0E0AD7A5018A28AF7E14E305CB0565E4708514515
+      407FFFD9
+    }
+    Stretch = True
+    Visible = False
+  end
+  object DBGrid_Principal: TDBGrid
+    Left = 24
+    Height = 388
+    Top = 224
+    Width = 1206
+    AlternateColor = clWhite
+    Anchors = [akLeft]
+    BorderSpacing.Top = 4
+    Color = 7001047
+    Columns = <    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Código'
+        Width = 60
+        FieldName = 'id'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'A quien facturamos'
+        Width = 600
+        FieldName = 'nombre_propietario'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'NIF / CIF'
+        Width = 200
+        FieldName = 'nif_cif'
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Teléfonos'
+        Width = 300
+        FieldName = 'OT_todos_los_Tfnos'
+      end>
+    DataSource = DataSource_Clientes
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection]
+    ParentFont = False
+    Scrollbars = ssAutoBoth
+    TabOrder = 1
+    TitleFont.CharSet = ANSI_CHARSET
+    TitleFont.Color = clBlack
+    TitleFont.Height = -16
+    TitleFont.Name = 'Arial'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Quality = fqDraft
+    TitleFont.Style = [fsBold]
+    OnCellClick = DBGrid_PrincipalCellClick
+    OnDrawColumnCell = DBGrid_PrincipalDrawColumnCell
+    OnDblClick = DBGrid_PrincipalDblClick
+    OnKeyDown = DBGrid_PrincipalKeyDown
+    OnKeyUp = DBGrid_PrincipalKeyUp
+  end
+  object DBNavigator1: TDBNavigator
+    AnchorSideTop.Side = asrBottom
+    Left = 24
+    Height = 38
+    Top = 614
+    Width = 250
+    BeforeAction = DBNavigator1BeforeAction
+    BevelOuter = bvNone
+    BorderSpacing.Top = 4
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 38
+    ClientWidth = 250
+    DataSource = DataSource_Clientes
+    Options = []
+    TabOrder = 2
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbRefresh]
+  end
+  object BitBtn_Ver_Situacion_Registro: TBitBtn
+    Left = 284
+    Height = 38
+    Hint = 'Ver situación del registro'
+    Top = 614
+    Width = 37
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Times New Roman'
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD3A793C2A195BD9C
+      8ED1A490FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7AB9A
+      BDB0ABAAA3A3988F8F9A8882C99E8EFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFD7AB9AD1C4C2C4C1C2BAB6B7ADA5A7988F8F988681C7A08EFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFD8AD9ADED1CFD9D9DAD1CFD3C2AAA1B79E96ADA7A99A909197
+      8680C9A08FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFD9B09DE7DDD9E9EAEFE2E2E5C27859AF3812AF38
+      12B16749ADA5A79A9193988681C69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFD9AF9CEEE5E2F0F6FAEFF4FAC67754
+      A72806A72907A92907A92907B05E3EAFA7A79A919393827FC69D8CFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F0E7E2FAFEFFF6
+      FEFFCE8868B13C15CE7752D38460D38460CE7752B43A13B05B39ADA7A99A9193
+      93827FC69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F3E7
+      E2FEFFFFFEFFFFD49072AA300CAA300CD38664FFFFFFFFFFFFCF7F5BAB310CAD
+      300BB16041ADA5A79C9395968480C69D8CFF00FFFF00FFFF00FFFF00FFFF00FF
+      D8AD9AF6EBE9FFFFFFFFFFFFD78F6EAB310CAB320DAA2E0AC4653CFFFFFFFFFF
+      FFC15D35AA2E0BAD350FAD310BB05A38AFA4A49C939593827FC09A8AFF00FFFF
+      00FFFF00FFD8AA97F6EAE5FFFFFFFFFFFFE0A486B53F14B43A13AF3711AA2E0A
+      C6673FFFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD300BB05735ABA1A19A91
+      9390817FC09A8AFF00FFD7A793F0E2D9FFFFFFFFFFFFE9BB9CC15523BC4D1EBA
+      491CB64117AF340DC76840FFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD350F
+      AD2E0AB05D3DADA5A79A908F95827FCCA18FE0BBAAFFFFFFFFFFFFFEFAF6D17A
+      42C75F29C45C28C15523BD4E1FB53F14CB7048FFFFFFFFFFFFC25F38AA2E0BAD
+      350FAD350FAD350FAD330EAF3611B69C91ADA7A99A908FBC9A8EE0BAAAFFFFFF
+      FFFFFFFEFAF6D9894ECF6F32CC6A31C7632CC45B28BC4C1CCF794FFFFFFFFFFF
+      FFC4633AAA2E0BAD350FAD350FAD350FAB310CAF3C16C4AFA9BAB6B7ABA3A3C6
+      A193D7A793F3E2DAFFFFFFFFFFFFF0D1B1D88241D37638CF6F35CB682FC25723
+      D88C60FFFFFFFFFFFFC96D43AF350EAF360FAD350FAB320DAB310CC7896ED1D3
+      D7C4C1C2C1AFAAD7A793FF00FFD8AA97F6EAE3FFFFFFFFFFFFF0D1AFD98744D4
+      7D3CCF7537D1753CE9B693F0D4C0F0D3BDCB6C3EB74116B54016AF360FAB320D
+      CC886AE2E7EBD9D9DAD1C1BCD7A996FF00FFFF00FFFF00FFD8AA97F3E5DDFFFF
+      FFFFFFFFF4D9BBDE904CD88240D78041D3773BCE6E35C9662EC25925C05322BB
+      4A1CB64116D79A7FEEF4FAE7EAEEDDCEC9D7A996FF00FFFF00FFFF00FFFF00FF
+      FF00FFD7A996F0E2D9FFFFFFFFFFFFF6DDC0E29752D98641DA8F52F4DAC6F3D4
+      C0CF733DC45B26C15421E0A486F6FEFFF0F6FAE7D9D4D7AA97FF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFD7A996F0E2DAFFFFFFFFFFFFF8E2C6E2964C
+      EABA87FFFFFFFFFFFFE09E6DC96328E2A984FEFFFFFAFEFFEBE2DED8AD9AFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA97F0E0D8FF
+      FFFFFFFFFFF6DEC0EAAF6CF4D7B1F3CFABDA894AE9B78FFFFFFFFEFFFFF3E7E2
+      D9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFAE7CBEBB470E5A45FF0CCA5FFFFFFFF
+      FFFFF4E9E3D8AD9AFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFFFEFBFEFA
+      F6FFFFFFFFFFFFF8EFEBD9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7A793F0E0D8
+      FFFFFFFFFFFFFFFFFFFFFFFFF8EFEBDAB1A0FF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFD7A793EED7CBFEFBFBFFFEFEF4E9E3DAB19EFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA96DEB5A4E0BAAAD8AA96FF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = BitBtn_Ver_Situacion_RegistroClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+  end
+  object BitBtn_Imprimir: TBitBtn
+    Left = 322
+    Height = 38
+    Hint = 'Imprimir'
+    Top = 614
+    Width = 37
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Times New Roman'
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FF817E7FABA9AA8682826F6C6DFF00FFFF00
+      FF7F7D7EB6B6B6C2C1C19A9797807D7EFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FF817E7FA4A1A3EBEAEAF0EFEF959191
+      8682822A292A2D2C2D535152817F7FAAA9A9CFCECED7D7D7BAB7B78C898AFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF807E7F938F90DAD9D9FFFEFEFB
+      FAFAEAE9E9918F8F8784841E1D1F0707080D0D0E1717182E2D2E524F51828080
+      B5B4B4D9D8D8C7C6C67D7879FF00FFFF00FFFF00FFFF00FF828081CCC9C9FBFA
+      FAFAF8F8F6F4F4FAF8F8E0DDDE8C89898C89896665663A393A1E1D1F0F0F0F0A
+      0A0A0C0C0D1616182D2C2D585455787676FF00FFFF00FFFF00FF757072B4B0B0
+      F3F0F0F8F6F6F0EFEFF0EFEFDAD9D9A5A4A4807E7F6F6C6D737070827F808F8A
+      8C8886866D6C6C45444526252611111209090A181718706D6EFF00FFFF00FFFF
+      00FF757072E5E5E5EBEBEBE7E5E5CECCCC9C98987E797A908E8EB7B6B68E8A8A
+      797676726E6F6E6A6C726F6F7E797A8A88878A88887876774F4E4F373738726F
+      6FFF00FFFF00FFFF00FF757072D4D3D3C2C1C1918F8F7A7778918F8FBBBABBC9
+      CBC9D1CFCFD8D7D7BDBBBBA7A4A4918F8F827F80767273706D6E6F6C6D787575
+      8681818C8989787676FF00FFFF00FFFF00FF7570728784867A7878939191B7B7
+      B7C4C6C6C0C0C0BABABADEDDDDF3F0F0EFEFEFE7E5E5D7D4D4C1C0C0ADABAB9A
+      97978A88887D7979737070706D6E6C6869FF00FFFF00FFFF00FF757072959193
+      BAB7B7C1C1C1BCBCBCBBBBBBB6B6B6CFCFCFF0EFEFA19EA0A395A0B4B0B1CCCB
+      CBD8D8D8D9D9D9CECECEC0C0C0B0AFAFA09E9E959191797677FF00FFFF00FFFF
+      00FF757072BBBBBBBDBDBDBBBBBBBBBBBBB7B7B7CBCBCBF0EFEF9A9597818780
+      4B9C4F878C86817D7F848282959393A9A7A7BDBCBCC4C4C4C4C4C4C1C1C18281
+      81FF00FFFF00FFFF00FFFF00FF989697C2C2C2BDC0C0C0C0C0D4D4D4DAD9D98E
+      8A8A969395E9E9E7B7E7BADDE2DDD7D3D4F69A829C989A8886867D7879827F80
+      9693939693958C8889FF00FFFF00FFFF00FFFF00FFFF00FF8A8889A9A7A7BBBA
+      BAA3A0A0817F7FABA9A9F0EFEFF0EFEFF0E9EFE3E0E0DDDADAD9D9D9D8D8D8CE
+      CECEC0C0C0000000000000000000000000000000FF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FF706D6E939191C4C4C4ADADAD808181A7A7A7C6C4C4D4D3D3D8D7
+      D7D4D4D4D1D1D1D3D3D3CBCBCB0000007875760008E1FF00FF000000FF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF868284EFF0F0F0EFEECEC9C7959191919393
+      A0A4A5B7BCBDBABDBDBDC0C0BDBDBDA3A1A3807E7F0000030007E1FF00FF0008
+      E1000161FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE2C0BDFFDACEFF
+      D3C1FEC9B7F6C6B6EFC4B6E7C4BBDEC7C1D4CCC9C2C2C2A5A4A5FF00FF000000
+      FF00FFFF00FFFF00FF0004D6FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFD3A09CFFD7C6FFCCBAFFC1AFFFB7A1FFAF95FFA78EFFA488FB9C81DDB5B0FF
+      00FFFF00FF0000000000000000000000000002510004E0FF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFD4A19CFFDDCCFFCCBAFFC1AFFFBAA4FEB098FEA98FFFA0
+      84F49078FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF0000C000
+      02E1FF00FFFF00FFFF00FFFF00FFFF00FFDEADA5FFDDCCFFCCBAFFC1AFFFBAA4
+      FEB098FEA98FFFA186E58976FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8ABA5FFD9C9FF
+      CCBAFFC1AFFFBAA4FEB098FEA98FFFA186F69A82FF00FFFF00FFFF00FF000000
+      000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFD8ABA5FFD7C6FFCCBAFFC1AFFFBAA4FEB098FFA98FF69A82F69A82FF00FFFF
+      00FFFF00FF000000FF00FF0008E1FF00FF000000FF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFD7A7A1FFE7D9FFD7C6FFCCBAFFC1AFFEBAA4FEB198FFAB90F69A
+      82FF00FFFF00FFFF00FFFF00FF0000030007E1FF00FF0008E1000264FF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFD8ABA5FFEBDDFFDDCCFFD4C0FFC9B5FFC0A9
+      FFB79EE79684F69A82FF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FFFF00
+      FF0004D6FF00FFFF00FFFF00FFFF00FFFF00FFC08886D8ABA5D7A49ED7A198D7
+      9D93D7978FD79589D38C82F69A82FF00FFFF00FFFF00FFFF00FFFF00FF000000
+      0000000000000000000002510004E0FF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF0000C00002E1
+    }
+    OnClick = BitBtn_ImprimirClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
+  end
+  object RadioGroup_Bajas: TRadioGroup
+    Left = 1060
+    Height = 45
+    Top = 1
+    Width = 96
+    AutoFill = True
+    BorderSpacing.Bottom = 3
+    Caption = ' Ver bajas '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 22
+    ClientWidth = 92
+    Columns = 2
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemIndex = 1
+    Items.Strings = (
+      'Si'
+      'No'
+    )
+    OnClick = RadioGroup_BajasClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object BitBtn_Filtrar: TBitBtn
+    Left = 1160
+    Height = 37
+    Hint = 'Filtrar'
+    Top = 9
+    Width = 34
+    BorderSpacing.Bottom = 3
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Times New Roman'
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF02558E0B5B
+      890B669802558EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      086EA919749C0505050202020D344605649DFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FF02558E1597D523BDFE3C7A88EEB47A664F3A00000016475FFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FF035B930973AF23BDFE23BDFE3C7A88FFBF81FFBF8134291F0A
+      0D0F176A9DFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FF004B820E81BD23BDFE0E81BD24BDFE30C1FE3A8EADEEB4
+      7AFFBF81987452020202417EA0FF00FFFF00FF00386C186C9F004B82FF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF05649D1AA6E523BDFE26BFFE137DB658CEFF
+      7AD8FF99E0FF97846CFFBF81BF9167020202377598004B822C81B14A87A40B0D
+      0F0D1F2905578BFF00FFFF00FFFF00FFFF00FF0973AF23BDFE2AC0FE41C7FE64
+      D0FF2B84B696D9F7C2EDFFDCF4FFE1EAEF907F6C694F371D34402076A768C5EE
+      60D0FF437481866749010101071924004B82FF00FF02558E096CA631C2FE4DCA
+      FE6FD4FF90DDFFAFE7FFABD8EE3E86AFF2FBFFEBF8FFD3F2FFA9DEF74392BF05
+      7EB23DB1E637C4FE27BFFE3C7A88FFBF8152402E010101044169055D961F93CE
+      359ACE7AD8FF9AE1FFB8EAFFD4F2FFEAF8FFF2FBFF1B86B41984B44BA5CC2D84
+      B4046FA400588F0198CB1CA6E523BDFE23BDFE1C84ACEEB47ABF91670000000D
+      5882004B827BD1F72376A7C2EDFFDDF4FFEFFAFFEFFAFFDCF4FFBFEBFF77C2E6
+      0D84B80189BD0179AF0198CB006BA10193C613A5E123BDFE23BDFE23BDFE6D7A
+      6CBF91670000000B527B004B82CBEFFF6AA5C6609DBFEBF8FFD1F0FFB4E7FF95
+      DEFF75D5FF55CCFF36C4FE0E8BC7015A92017FB4006298018EC10388BF23BDFE
+      23BDFE23BDFE23B2EE3B666C02203102558E004B8272A9C6C2E0EE1767981365
+      9849A1CE46A6D549C9FE2FC1FE24BDFE23BDFE23BDFE1FB6F60E86C20277AD01
+      89BD018EC10A91CA1FB6F60F96D40679B5005B9500386CFF00FFFF00FF004B82
+      004B82FF00FFFF00FF04568E158AC51390CE1390CE1FB6F623BDFE23BDFE23BD
+      FE23BDFE1FB6F61390CE005187005B8F00386CFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF04629A1597D50973AF
+      0E81BD0A88C40679B501659E00518800386CFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FF005991016099004A80FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = BitBtn_FiltrarClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    Spacing = 0
+    TabOrder = 6
+  end
+  object BitBtn_SALIR: TBitBtn
+    Left = 1196
+    Height = 37
+    Hint = 'Salir'
+    Top = 9
+    Width = 34
+    BorderSpacing.Bottom = 3
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Times New Roman'
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B4E1E
+      1FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B824B4B
+      8C4B4B914B4B4E1E1FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B824B4B89
+      4B4B9C4B4CB64B4CBD4B4C9F4B4C4E1E1FFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B824B
+      4B9A4D4EAF4E4FC14E4FC04D4EBF4C4DBF4C4D9F4B4C4E1E1F994B4B824B4B82
+      4B4B824B4B824B4B824B4B824B4B824B4B824B4BFF00FFFF00FFFF00FFFF00FF
+      FF00FF824B4BC55455C95455C75354C65253C55152C45051C24F50A04C4D4E1E
+      1FFE8B8CFC9293FB9A9CFAA3A4F8AAABF7B1B1F7B5B6F7B5B6824B4BFF00FFFF
+      00FFFF00FFFF00FFFF00FF824B4BCE5859CC5758CB5657CA5556C95455C75354
+      C65253A34E4F4E1E1F3F9E4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4CF7B5
+      B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BD15B5CD05A5BCF595ACE
+      5859CC5758CB5657CA5556A550504E1E1F3F9E4C1EBC4C1EBC4C1EBC4C1EBC4C
+      1EBC4C1EBC4CF7B5B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BD55E
+      5FD55E5FD45D5ED35C5DD15B5CD05A5BCF595AA651524E1E1F3F9E4C1EBC4C1E
+      BC4C1EBC4C1EBC4C1EBC4C1EBC4CF7B5B6824B4BFF00FFFF00FFFF00FFFF00FF
+      FF00FF824B4BDA6364D96263D86062D75F60D55E5FD45D5ED35C5DA953544E1E
+      1F3F9E4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4CF7B5B6824B4BFF00FFFF
+      00FFFF00FFFF00FFFF00FF824B4BDE6667DD6566DC6465DA6364D96263D86062
+      D75F60AB55554E1E1F3F9E4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4C1EBC4CF7B5
+      B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BE2696AE16869E06768DE
+      6667E06D6EE69091DC6465AC56574E1E1F58A55B1EBC4C1EBC4C1EBC4C1EBC4C
+      1EBC4C1EBC4CF7B5B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BE76D
+      6EE66C6DE56B6CE36A6BEEA6A7FFFFFFEB9C9CAF58594E1E1FEECEAFB7EBAA5E
+      D3775ED37745CA6745CA6745CA67F7B5B6824B4BFF00FFFF00FFFF00FFFF00FF
+      FF00FF824B4BEB7072EA6F70E96E6FE76D6EF2A9AAFFFFFFEB9596B15A5A4E1E
+      1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3D9F6BDD9F6BDF7B5B6824B4BFF00FFFF
+      00FFFF00FFFF00FFFF00FF824B4BEF7475EE7374ED7273EB7072EA6F70EF9091
+      E76D6EB25B5C4E1E1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5
+      B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BF37778F37778F27677F0
+      7576EF7475EE7374ED7273B55D5D4E1E1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3
+      FFFFD3FFFFD3F7B5B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BF87B
+      7DF77A7BF6797AF47879F37778F27677F07576B75F5F4E1E1FEECEAFFFFFD3FF
+      FFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5B6824B4BFF00FFFF00FFFF00FFFF00FF
+      FF00FF824B4BFC7F80FB7E7FFA7D7EF87B7DF77A7BF6797AF47879B860624E1E
+      1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5B6824B4BFF00FFFF
+      00FFFF00FFFF00FFFF00FF824B4BFF8182FF8182FE8081FC7F80FC7F80FB7E7F
+      FA7D7EBB63634E1E1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5
+      B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BFF8182FF8182FF8182FF
+      8182FF8182FE8081FE8081BD65654E1E1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3
+      FFFFD3FFFFD3F7B5B6824B4BFF00FFFF00FFFF00FFFF00FFFF00FF824B4BF77E
+      7FFF8182FF8182FF8182FF8182FF8182FF8182BF66664E1E1FEECEAFFFFFD3FF
+      FFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5B6824B4BFF00FFFF00FFFF00FFFF00FF
+      FF00FF824B4B824B4BAF5E5FD56F70FF8182FF8182FF8182FF8182BF66664E1E
+      1FEECEAFFFFFD3FFFFD3FFFFD3FFFFD3FFFFD3FFFFD3F7B5B6824B4BFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B824B4B915152B66263EE7A7B
+      FF8182BF66664E1E1F914B4B824B4B824B4B824B4B824B4B824B4B824B4B824B
+      4B824B4BFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FF824B4B824B4B9855559F58584E1E1FFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF824B4B4E1E1FFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = BitBtn_SALIRClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    Spacing = 0
+    TabOrder = 7
+  end
+  object Label_Ctdad_Rgtros: TLabel
+    Left = 1132
+    Height = 15
+    Top = 612
+    Width = 98
+    Alignment = taRightJustify
+    Anchors = [akLeft, akBottom]
+    AutoSize = False
+    Caption = '0'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -15
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object BitBtn_Seleccionar: TBitBtn
+    Left = 360
+    Height = 38
+    Hint = 'Ver situación del registro'
+    Top = 614
+    Width = 120
+    Caption = 'Seleccione'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Glyph.Data = {
+      36090000424D3609000000000000360000002800000018000000180000000100
+      2000000000000009000064000000640000000000000000000000FFFFFF020000
+      0000FFFFFF00FFFFFF0000000000000000000000000000000000000000000000
+      000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000000000000000
+      00000000000000000000FFFFFF010000000000000000FFFFFF0000000000FFFF
+      FF00000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000D1D0D200000000000000000000000000FFFF
+      FF00FFFFFF0000000000FFFFFF000000000000000000FFFFFF00FFFFFF010000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000009191910000000000B9B8BA37403F41A000000000FFFF
+      FF00FFFFFF0000000000000000000000000000000000FFFFFF0000000000FFFF
+      FF000000000000000000FFFFFF0000000000000000000000000000000000AFAF
+      AF000000000000000000FFFFFF0B3A393B7D767577FFBCBBBDFF6A696BFA3231
+      336800000000FFFFFF01F4F4F400000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF0100000000000000000000000069696900000000000000
+      0000A8A8A90F49484AAC343337FFC9C8CAFFFBFBFBFFFCFCFCFFFDFDFEFFB2B1
+      B2FF363539E0A3A3A41700000000FFFFFF000000000000000000000000000000
+      000000000000FFFFFF000000000000000000ECECEC00000000008384822A4140
+      42B59D9C9DFFD3D3D3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFE9E9E9FF8C8B8DFF383738A6FFFFFF0A00000000FFFFFF00000000000000
+      0000000000000000000000000000000000000000000051505124575658FBFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFDADADAFF37363AFF89898823FFFFFF04000000000000
+      00000000000000000000000000000000000000000000464549AEEFEEEFFFFDFE
+      FDFFE0E0E1FFE5E4E5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFBFBFBFF353336EC00000000FFFFFF02FFFFFF01FFFF
+      FF00000000000000000000000000FFFFFF000000000047464AD9FDFDFDFFF9F9
+      F9FF444345FFF1F1F2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFEFEFEFFA7A6A7FF5857596300000000FFFFFF00FFFFFF08FFFF
+      FF01000000000000000000000000FFFFFF0100000000545357ACEAEAEAFFA6A5
+      A7FFD5D5D5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFEFEFEFF727173F00000000000000000FFFFFF00FFFFFF02FFFF
+      FF000000000000000000FFFFFF00000000000000040036353611727173E7706F
+      72FFFEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFEFEFEFFF3C3B3F97000000000000000000000000FFFFFF02FFFF
+      FF01000000000000000000000000FFFFFF01FFFFFF00FFFFFF0129282AD9F3F3
+      F3FFFFFFFFFFABABABFFFAFAFAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFF757476FF45444635000000000000000000000000FFFFFF00FFFF
+      FF00828282000000000000000000000000000000000048484845AFAEAFFFFFFF
+      FFFFDCDBDCFF848384FFFDFDFDFFD8D7D8FFF6F6F6FFFCFCFCFFFFFFFFFFFFFF
+      FFFFE9E9E9FF343435D600000000FFFFFF00FFFFFF00FFFFFF02000000009494
+      9400000000007171715B1F1F1FFBFFFFFF1400000000545454FFF3F3F3FFFBFB
+      FBFF3A393BFFFDFCFDFFFDFDFDFF676668FFFFFFFFFFF4F4F4FF8B8B8BFFFFFF
+      FFFF9F9EA0FFA9A9A94000000000000000000000000000000000000000000000
+      0000454545763B3B3BD86969694E4C4C4C762C2B2D9DD0CFD1FFFFFFFFFFAAAA
+      ABFFCACACBFFFFFFFFFFABABABFFB3B2B5FFFCFCFCFF605F60FFE5E4E6FFF7F8
+      F7FF3F3E40C6000000009D9D9D000000000000000000FFFFFF00000000000000
+      0000272727D9C8C8C806272727F04F4D4F91858586F4FFFFFFFFF9F9F9FF4A49
+      4BFFEBEBEBFFE5E4E5FF3E3D3FFFFFFFFFFFD9D9DAFFA5A4A6FFFFFFFFFF4F4E
+      50FF8A8A893A000000000000000000000000FFFFFF000000000000000000FFFF
+      FF2B0D0D0DC13D3D3D952B2B2B56444346DEE8E8E8FFFFFFFFFF5E5D5FFF6868
+      6933535255BC4F4E52C0434146E68B8A8BFF3C3B3FFFC9C9CAFFB9B8BAFF6564
+      666D00000000D6D6D600000000000000000000000000FFFFFF0200000000FFFF
+      FF01262626A64D4D4D7F5859585A4A484CFFFFFFFFFFD1D1D1FF636364831B1B
+      1BA42B2B2BBB6364644A000000005C5B5D4FFFFFFF0C21202491312F3495DCDA
+      DF0300000000000000000000000000000000FFFFFF0000000000000000000000
+      000081818104888888000000000057575999515054FF3B3B3DD87C7C7C571818
+      18B81F1F1FB23F3F3F6000000000000000000000000000000000000000000000
+      0000EEEEEE0000000000000000000000000000000000FFFFFF02000000000000
+      000000000000EFEFEF004B4B4C0000000000DCDDD91356565654272727DF7979
+      793B1C1C1CFF9696961700000000000000000000000000000000000000000000
+      0000000000000000000000000000FFFFFF00FFFFFF00FFFFFF02FFFFFF000000
+      0000000000000000000000000000E8E8E8000000000000000000949494211C1C
+      1CDD5C5C5C6800000000FFFFFF01FFFFFF000000000000000000000000000000
+      0000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      0000000000000000000000000000FFFFFF00000000005555550C262626A23535
+      354600000000C2C2C201000000000000000000000000FFFFFF02FFFFFF03FFFF
+      FF01FFFFFF0100000000FFFFFF00FFFFFF01FFFFFF03FFFFFF02000000000000
+      00000000000000000000FFFFFF0100000000FFFFFF0000000000000000000000
+      000000000000FFFFFF00FFFFFF00FFFFFF01FFFFFF01FFFFFF01FFFFFF01FFFF
+      FF00FFFFFF00FFFFFF01FFFFFF01FFFFFF01FFFFFF01FFFFFF01000000000000
+      0000000000000000000000000000FFFFFF0000000000FFFFFF01FFFFFF00FFFF
+      FF00FFFFFF01FFFFFF00FFFFFF06FFFFFF04FFFFFF01FFFFFF0000000000FFFF
+      FF01FFFFFF00FFFFFF00FFFFFF01FFFFFF00FFFFFF01FFFFFF01
+    }
+    OnClick = BitBtn_SeleccionarClick
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 8
+    Visible = False
+  end
+  object Label_Fecha2: TLabel
+    Left = 24
+    Height = 16
+    Top = 9
+    Width = 88
+    Anchors = [akLeft, akBottom]
+    Caption = 'Ordenado por'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ComboBox_Filtros: TComboBox
+    Left = 117
+    Height = 24
+    Top = 4
+    Width = 309
+    Color = 7001047
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemHeight = 16
+    OnChange = ComboBox_FiltrosChange
+    ParentFont = False
+    Style = csDropDownList
+    TabOrder = 9
+  end
+  object SQLQuery_Clientes: TSQLQuery
+    PacketRecords = 20
+    MaxIndexesCount = 100
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'nombre_propietario'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'nombre_comercial'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'nif_cif'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Fecha_Nacimiento'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Tfno_Fijo_1'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Tfno_Fijo_2'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'FAX'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Movil'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'eMail'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'pagina_web'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'Direccion'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'Direccion_Numero'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'Direccion_Piso_Letra'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'Codigo_Postal'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'id_poblaciones'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_provincias'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_paises'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_clientes_tipos'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Cta_Bco_Entidad'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'Cta_Bco_Sucursal'
+        DataType = ftString
+        Precision = -1
+        Size = 18
+      end    
+      item
+        Name = 'Cta_Bco_Digito_Control'
+        DataType = ftString
+        Precision = -1
+        Size = 6
+      end    
+      item
+        Name = 'Cta_Bco_Cuenta'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Cta_Bco_IBAN'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Cta_Bco_BIC_SWIFT'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Cta_Bco_Mandato_Fecha_de_Firma'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Cta_Bco_Mandato_Ref'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Cta_Bco_Direccion'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'Cta_Bco_Direccion_Numero'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'Cta_Bco_Direccion_Piso_Letra'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'Cta_Bco_Codigo_Postal'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'id_Cta_Bco_poblaciones'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_Cta_Bco_provincias'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_Cta_Bco_pais'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_formas_pago'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Forma_pago_Dia_1'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Forma_pago_Dia_2'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Vencimientos_automaticos_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Vencimientos_Cantidad'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Vencimientos_Dias_Entre'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Forma_pago_Vacaciones_Dia_Inicio'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Forma_pago_Vacaciones_Mes_Inicio'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Forma_pago_Vacaciones_Dia_Fin'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Forma_pago_Vacaciones_Mes_Fin'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'IVA_con_Recargo_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'IVA_Excluido_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'id_tarifas'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Descuento_Comercial_1'
+        DataType = ftBCD
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'Descuento_Comercial_2'
+        DataType = ftBCD
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'Descuento_Pronto_Pago'
+        DataType = ftBCD
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'Descuento_Final'
+        DataType = ftBCD
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'Retencion'
+        DataType = ftBCD
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'Riesgo_Autorizado'
+        DataType = ftBCD
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'Riesgo_Acumulado'
+        DataType = ftBCD
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'Agrupar_Albaranes_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Activar_Proximidad_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Cuenta_Contable'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'id_Agencias_Transporte'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Portes_Pagados_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'id_Representantes'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Observaciones_Comentarios'
+        DataType = ftString
+        Precision = -1
+        Size = 3000
+      end    
+      item
+        Name = 'Estudia_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Trabaja_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Estudios_Trabajos'
+        DataType = ftString
+        Precision = -1
+        Size = 1500
+      end    
+      item
+        Name = 'Cantidad_Hermanos'
+        DataType = ftSmallint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_rutas'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_actividades'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'OT_descripcion_actividad'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_ruta'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_poblacion'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_provincia'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_pais'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_cliente_tipo'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_Cuenta_Contable_cliente_tipo'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'OT_Cta_Bco_descripcion_poblacion'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_Cta_Bco_descripcion_provincia'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_Cta_Bco_descripcion_pais'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_forma_pago'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_tarifa'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_agencia_transporte'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'OT_Tfno_Fijo_1_agencia_transporte'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'OT_Movil_agencia_transporte'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'OT_descripcion_representante'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'OT_Tfno_Fijo_1_representante'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'OT_Movil_representante'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end>
+    AfterPost = SQLQuery_ClientesAfterPost
+    AfterScroll = SQLQuery_ClientesAfterScroll
+    BeforeEdit = SQLQuery_ClientesBeforeEdit
+    BeforePost = SQLQuery_ClientesBeforePost
+    OnCalcFields = SQLQuery_ClientesCalcFields
+    Database = DataModule_Clientes.SQLConnector_Clientes
+    Transaction = DataModule_Clientes.SQLTransaction_Clientes
+    SQL.Strings = (
+      'SELECT cl.*,'
+      ''
+      'act.descripcion AS OT_descripcion_actividad,'
+      'rt.descripcion AS OT_descripcion_ruta,'
+      ''
+      'pb.descripcion AS OT_descripcion_poblacion,'
+      'pr.descripcion AS OT_descripcion_provincia,'
+      'ps.descripcion AS OT_descripcion_pais,'
+      ''
+      'ct.descripcion AS OT_descripcion_cliente_tipo,'
+      'ct.Cuenta_Contable AS OT_Cuenta_Contable_cliente_tipo,'
+      ''
+      'ct_pb.descripcion AS OT_Cta_Bco_descripcion_poblacion,'
+      'ct_pr.descripcion AS OT_Cta_Bco_descripcion_provincia,'
+      'ct_ps.descripcion AS OT_Cta_Bco_descripcion_pais,'
+      ''
+      'fp.descripcion AS OT_descripcion_forma_pago,'
+      ''
+      'tf.descripcion AS OT_descripcion_tarifa,'
+      ''
+      'prv.nombre_propietario AS OT_descripcion_agencia_transporte,'
+      'prv.Tfno_Fijo_1 AS OT_Tfno_Fijo_1_agencia_transporte,'
+      'prv.Movil AS OT_Movil_agencia_transporte,'
+      ''
+      'rp.nombre_propietario AS OT_descripcion_representante,'
+      'rp.Tfno_Fijo_1 AS OT_Tfno_Fijo_1_representante,'
+      'rp.Movil AS OT_Movil_representante'
+      ''
+      'FROM clientes AS cl'
+      ''
+      'LEFT JOIN poblaciones AS pb'
+      'ON cl.id_poblaciones = pb.id'
+      ''
+      'LEFT JOIN provincias AS pr'
+      'ON cl.id_provincias = pr.id'
+      ''
+      'LEFT JOIN paises AS ps'
+      'ON cl.id_paises = ps.id'
+      ''
+      'LEFT JOIN clientes_tipos AS ct'
+      'ON cl.id_clientes_tipos = ct.id'
+      ''
+      'LEFT JOIN poblaciones AS ct_pb'
+      'ON cl.id_Cta_Bco_poblaciones = ct_pb.id'
+      ''
+      'LEFT JOIN provincias AS ct_pr'
+      'ON cl.id_Cta_Bco_provincias = ct_pr.id'
+      ''
+      'LEFT JOIN paises AS ct_ps'
+      'ON cl.id_Cta_Bco_pais = ct_ps.id'
+      ''
+      'LEFT JOIN formas_pago AS fp'
+      'ON cl.id_formas_pago = fp.id'
+      ''
+      'LEFT JOIN tarifas AS tf'
+      'ON cl.id_tarifas = tf.id'
+      ''
+      'LEFT JOIN proveedores AS prv'
+      'ON cl.id_Agencias_Transporte = prv.id'
+      ''
+      'LEFT JOIN actividades AS act'
+      'ON cl.id_actividades = act.id'
+      ''
+      'LEFT JOIN rutas AS rt'
+      'ON cl.id_rutas = rt.id'
+      ''
+      'LEFT JOIN representantes AS rp'
+      'ON cl.id_Representantes = rp.id'
+      ''
+    )
+    Params = <>
+    left = 304
+    top = 288
+    object SQLQuery_Clientesid: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientesnombre_propietario: TStringField
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'nombre_propietario'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_Clientesnombre_comercial: TStringField
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'nombre_comercial'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_Clientesnif_cif: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'nif_cif'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_ClientesFecha_Nacimiento: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Fecha_Nacimiento'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesTfno_Fijo_1: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_1'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_ClientesTfno_Fijo_2: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_2'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_ClientesFAX: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'FAX'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_ClientesMovil: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Movil'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_ClienteseMail: TStringField
+      DisplayWidth = 300
+      FieldKind = fkData
+      FieldName = 'eMail'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object SQLQuery_Clientespagina_web: TStringField
+      DisplayWidth = 300
+      FieldKind = fkData
+      FieldName = 'pagina_web'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object SQLQuery_ClientesDireccion: TStringField
+      DisplayWidth = 600
+      FieldKind = fkData
+      FieldName = 'Direccion'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 600
+    end
+    object SQLQuery_ClientesDireccion_Numero: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'Direccion_Numero'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object SQLQuery_ClientesDireccion_Piso_Letra: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'Direccion_Piso_Letra'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object SQLQuery_ClientesCodigo_Postal: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'Codigo_Postal'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object SQLQuery_Clientesid_poblaciones: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_poblaciones'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientesid_provincias: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_provincias'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientesid_paises: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_paises'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientesid_clientes_tipos: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_clientes_tipos'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesCta_Bco_Entidad: TStringField
+      DisplayWidth = 12
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Entidad'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object SQLQuery_ClientesCta_Bco_Sucursal: TStringField
+      DisplayWidth = 18
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Sucursal'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 18
+    end
+    object SQLQuery_ClientesCta_Bco_Digito_Control: TStringField
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Digito_Control'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 6
+    end
+    object SQLQuery_ClientesCta_Bco_Cuenta: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Cuenta'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_ClientesCta_Bco_IBAN: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_IBAN'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesCta_Bco_BIC_SWIFT: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_BIC_SWIFT'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesCta_Bco_Mandato_Fecha_de_Firma: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Mandato_Fecha_de_Firma'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesCta_Bco_Mandato_Ref: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Mandato_Ref'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesCta_Bco_Direccion: TStringField
+      DisplayWidth = 600
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Direccion'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 600
+    end
+    object SQLQuery_ClientesCta_Bco_Direccion_Numero: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Direccion_Numero'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object SQLQuery_ClientesCta_Bco_Direccion_Piso_Letra: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Direccion_Piso_Letra'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object SQLQuery_ClientesCta_Bco_Codigo_Postal: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'Cta_Bco_Codigo_Postal'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object SQLQuery_Clientesid_Cta_Bco_poblaciones: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_Cta_Bco_poblaciones'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientesid_Cta_Bco_provincias: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_Cta_Bco_provincias'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientesid_Cta_Bco_pais: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_Cta_Bco_pais'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientesid_formas_pago: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_formas_pago'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesForma_pago_Dia_1: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Forma_pago_Dia_1'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesForma_pago_Dia_2: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Forma_pago_Dia_2'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesVencimientos_automaticos_SN: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Vencimientos_automaticos_SN'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_ClientesForma_pago_Vacaciones_Dia_Inicio: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Forma_pago_Vacaciones_Dia_Inicio'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesForma_pago_Vacaciones_Mes_Inicio: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Forma_pago_Vacaciones_Mes_Inicio'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesForma_pago_Vacaciones_Dia_Fin: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Forma_pago_Vacaciones_Dia_Fin'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesForma_pago_Vacaciones_Mes_Fin: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Forma_pago_Vacaciones_Mes_Fin'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesIVA_con_Recargo_SN: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'IVA_con_Recargo_SN'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_ClientesIVA_Excluido_SN: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'IVA_Excluido_SN'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_Clientesid_tarifas: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_tarifas'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesDescuento_Comercial_1: TBCDField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Descuento_Comercial_1'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = -1
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object SQLQuery_ClientesDescuento_Comercial_2: TBCDField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Descuento_Comercial_2'
+      Index = 46
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = -1
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object SQLQuery_ClientesDescuento_Pronto_Pago: TBCDField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Descuento_Pronto_Pago'
+      Index = 47
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = -1
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object SQLQuery_ClientesDescuento_Final: TBCDField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Descuento_Final'
+      Index = 48
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = -1
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object SQLQuery_ClientesRetencion: TBCDField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Retencion'
+      Index = 49
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = -1
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object SQLQuery_ClientesRiesgo_Autorizado: TBCDField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Riesgo_Autorizado'
+      Index = 50
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      EditFormat = '###########0.00'
+      Precision = -1
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object SQLQuery_ClientesRiesgo_Acumulado: TBCDField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Riesgo_Acumulado'
+      Index = 51
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      EditFormat = '###########0.00'
+      Precision = -1
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object SQLQuery_ClientesAgrupar_Albaranes_SN: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Agrupar_Albaranes_SN'
+      Index = 52
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_ClientesActivar_Proximidad_SN: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Activar_Proximidad_SN'
+      Index = 53
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_ClientesCuenta_Contable: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'Cuenta_Contable'
+      Index = 54
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object SQLQuery_Clientesid_Agencias_Transporte: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_Agencias_Transporte'
+      Index = 55
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientesid_Representantes: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_Representantes'
+      Index = 56
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesObservaciones_Comentarios: TStringField
+      DisplayWidth = 3000
+      FieldKind = fkData
+      FieldName = 'Observaciones_Comentarios'
+      Index = 57
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3000
+    end
+    object SQLQuery_ClientesInsert_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 58
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_ClientesInsert_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 59
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_ClientesDel_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 60
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesDel_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 61
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesDel_WHY: TStringField
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 62
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_ClientesChange_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 63
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesChange_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 64
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesOT_descripcion_poblacion: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_poblacion'
+      Index = 65
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesOT_descripcion_provincia: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_provincia'
+      Index = 66
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesOT_descripcion_pais: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_pais'
+      Index = 67
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesOT_descripcion_cliente_tipo: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_cliente_tipo'
+      Index = 68
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesOT_Cta_Bco_descripcion_poblacion: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_Cta_Bco_descripcion_poblacion'
+      Index = 69
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesOT_Cta_Bco_descripcion_provincia: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_Cta_Bco_descripcion_provincia'
+      Index = 70
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesOT_Cta_Bco_descripcion_pais: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_Cta_Bco_descripcion_pais'
+      Index = 71
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesOT_descripcion_forma_pago: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_forma_pago'
+      Index = 72
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesOT_descripcion_tarifa: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_tarifa'
+      Index = 73
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesOT_descripcion_agencia_transporte: TStringField
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_agencia_transporte'
+      Index = 74
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_ClientesOT_Tfno_Fijo_1_agencia_transporte: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'OT_Tfno_Fijo_1_agencia_transporte'
+      Index = 75
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_ClientesOT_Movil_agencia_transporte: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'OT_Movil_agencia_transporte'
+      Index = 76
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_ClientesOT_descripcion_representante: TStringField
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_representante'
+      Index = 77
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_ClientesOT_Tfno_Fijo_1_representante: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'OT_Tfno_Fijo_1_representante'
+      Index = 78
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_ClientesOT_Movil_representante: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'OT_Movil_representante'
+      Index = 79
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_ClientesOT_Cuenta_Contable_cliente_tipo: TStringField
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'OT_Cuenta_Contable_cliente_tipo'
+      Index = 80
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object SQLQuery_ClientesOT_todos_los_Tfnos1: TStringField
+      DisplayWidth = 70
+      FieldKind = fkCalculated
+      FieldName = 'OT_todos_los_Tfnos'
+      Index = 81
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 70
+    end
+    object SQLQuery_ClientesEstudia_SN: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Estudia_SN'
+      Index = 82
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_ClientesTrabaja_SN: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Trabaja_SN'
+      Index = 83
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_ClientesEstudios_Trabajos: TStringField
+      DisplayWidth = 1500
+      FieldKind = fkData
+      FieldName = 'Estudios_Trabajos'
+      Index = 84
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1500
+    end
+    object SQLQuery_ClientesPortes_Pagados_SN: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Portes_Pagados_SN'
+      Index = 85
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_ClientesCantidad_Hermanos: TSmallintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Cantidad_Hermanos'
+      Index = 86
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientesid_rutas: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_rutas'
+      Index = 87
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientesid_actividades: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_actividades'
+      Index = 88
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_ClientesOT_descripcion_actividad: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_actividad'
+      Index = 89
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_ClientesOT_descripcion_ruta: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_ruta'
+      Index = 90
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+  end
+  object DataSource_Clientes: TDataSource
+    DataSet = SQLQuery_Clientes
+    left = 296
+    top = 368
+  end
+  object SQLQuery_Clientes_Contactos: TSQLQuery
+    PacketRecords = 20
+    MaxIndexesCount = 100
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_clientes'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'nombre'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'nif_cif'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Fecha_Nacimiento'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Tfno_Fijo_1'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Tfno_Fijo_2'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'FAX'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Movil'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'eMail'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'pagina_web'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'Cargo_Puesto'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end>
+    AfterPost = SQLQuery_Clientes_ContactosAfterPost
+    BeforeEdit = SQLQuery_Clientes_ContactosBeforeEdit
+    BeforePost = SQLQuery_Clientes_ContactosBeforePost
+    OnCalcFields = SQLQuery_Clientes_ContactosCalcFields
+    Database = DataModule_Clientes.SQLConnector_Clientes_Contactos
+    Transaction = DataModule_Clientes.SQLTransaction_Clientes_Contactos
+    SQL.Strings = (
+      'SELECT cc.*'
+      'FROM clientes_contactos AS cc'
+      ''
+    )
+    Params = <>
+    left = 472
+    top = 296
+    object SQLQuery_Clientes_Contactosid: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_Contactosid_clientes: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_clientes'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientes_Contactosnombre: TStringField
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'nombre'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 450
+    end
+    object SQLQuery_Clientes_Contactosnif_cif: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'nif_cif'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_Clientes_ContactosFecha_Nacimiento: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Fecha_Nacimiento'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_ContactosTfno_Fijo_1: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_1'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_Clientes_ContactosTfno_Fijo_2: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_2'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_Clientes_ContactosFAX: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'FAX'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_Clientes_ContactosMovil: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Movil'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_Clientes_ContactoseMail: TStringField
+      DisplayWidth = 300
+      FieldKind = fkData
+      FieldName = 'eMail'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object SQLQuery_Clientes_Contactospagina_web: TStringField
+      DisplayWidth = 300
+      FieldKind = fkData
+      FieldName = 'pagina_web'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object SQLQuery_Clientes_ContactosCargo_Puesto: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'Cargo_Puesto'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_Clientes_ContactosInsert_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientes_ContactosInsert_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientes_ContactosDel_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_ContactosDel_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_ContactosDel_WHY: TStringField
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_Clientes_ContactosChange_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_ContactosChange_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_ContactosOT_todos_los_Tfnos1: TStringField
+      DisplayWidth = 70
+      FieldKind = fkCalculated
+      FieldName = 'OT_todos_los_Tfnos'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 70
+    end
+  end
+  object DataSource_Clientes_Contactos: TDataSource
+    DataSet = SQLQuery_Clientes_Contactos
+    left = 464
+    top = 376
+  end
+  object SQLQuery_Clientes_Envios: TSQLQuery
+    PacketRecords = 20
+    MaxIndexesCount = 100
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_clientes'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_clientes_contactos'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Direccion'
+        DataType = ftString
+        Precision = -1
+        Size = 600
+      end    
+      item
+        Name = 'Direccion_Numero'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'Direccion_Piso_Letra'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'Codigo_Postal'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'id_poblaciones'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_provincias'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'id_paises'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Tfno_Fijo_1'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Tfno_Fijo_2'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'FAX'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'Movil'
+        DataType = ftString
+        Precision = -1
+        Size = 45
+      end    
+      item
+        Name = 'eMail'
+        DataType = ftString
+        Precision = -1
+        Size = 300
+      end    
+      item
+        Name = 'Portes_Pagados_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'OT_descripcion_poblacion'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_provincia'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_pais'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_Contacto'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end>
+    AfterPost = SQLQuery_Clientes_EnviosAfterPost
+    BeforeEdit = SQLQuery_Clientes_EnviosBeforeEdit
+    BeforePost = SQLQuery_Clientes_EnviosBeforePost
+    OnCalcFields = SQLQuery_Clientes_EnviosCalcFields
+    Database = DataModule_Clientes.SQLConnector_Clientes_Envios
+    Transaction = DataModule_Clientes.SQLTransaction_Clientes_Envios
+    SQL.Strings = (
+      'SELECT ce.*,'
+      ''
+      '       pb.descripcion AS OT_descripcion_poblacion,'
+      '       pr.descripcion AS OT_descripcion_provincia,'
+      '       ps.descripcion AS OT_descripcion_pais,'
+      '       cc.nombre AS OT_descripcion_Contacto'
+      ''
+      ''
+      '  FROM clientes_envios AS ce'
+      ''
+      'LEFT JOIN poblaciones AS pb'
+      '  ON ce.id_poblaciones = pb.id'
+      ''
+      'LEFT JOIN provincias AS pr'
+      '  ON ce.id_provincias = pr.id'
+      ''
+      'LEFT JOIN paises AS ps'
+      '  ON ce.id_paises = ps.id'
+      ''
+      'LEFT JOIN clientes_contactos AS cc'
+      'ON ce.id_clientes_contactos = cc.id'
+      ''
+    )
+    Params = <>
+    left = 648
+    top = 296
+    object SQLQuery_Clientes_Enviosid: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_Enviosid_clientes: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_clientes'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientes_Enviosid_clientes_contactos: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_clientes_contactos'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_EnviosDireccion: TStringField
+      DisplayWidth = 600
+      FieldKind = fkData
+      FieldName = 'Direccion'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 600
+    end
+    object SQLQuery_Clientes_EnviosDireccion_Numero: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'Direccion_Numero'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object SQLQuery_Clientes_EnviosDireccion_Piso_Letra: TStringField
+      DisplayWidth = 15
+      FieldKind = fkData
+      FieldName = 'Direccion_Piso_Letra'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object SQLQuery_Clientes_EnviosCodigo_Postal: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'Codigo_Postal'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object SQLQuery_Clientes_Enviosid_poblaciones: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_poblaciones'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientes_Enviosid_provincias: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_provincias'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientes_Enviosid_paises: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_paises'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientes_EnviosTfno_Fijo_1: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_1'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_Clientes_EnviosTfno_Fijo_2: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Tfno_Fijo_2'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_Clientes_EnviosFAX: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'FAX'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_Clientes_EnviosMovil: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'Movil'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object SQLQuery_Clientes_EnvioseMail: TStringField
+      DisplayWidth = 300
+      FieldKind = fkData
+      FieldName = 'eMail'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
+    end
+    object SQLQuery_Clientes_EnviosInsert_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientes_EnviosInsert_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Clientes_EnviosDel_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_EnviosDel_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_EnviosDel_WHY: TStringField
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_Clientes_EnviosChange_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_EnviosChange_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Clientes_EnviosOT_descripcion_poblacion: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_poblacion'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_Clientes_EnviosOT_descripcion_provincia: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_provincia'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_Clientes_EnviosOT_descripcion_pais: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_pais'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_Clientes_EnviosOT_descripcion_Contacto: TStringField
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_Contacto'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_Clientes_EnviosOT_todos_los_Tfnos1: TStringField
+      DisplayWidth = 70
+      FieldKind = fkCalculated
+      FieldName = 'OT_todos_los_Tfnos'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 70
+    end
+    object SQLQuery_Clientes_EnviosOT_Direccion_Entera1: TStringField
+      DisplayWidth = 600
+      FieldKind = fkCalculated
+      FieldName = 'OT_Direccion_Entera'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 600
+    end
+    object SQLQuery_Clientes_EnviosPortes_Pagados_SN: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Portes_Pagados_SN'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+  end
+  object DataSource_Clientes_Envios: TDataSource
+    DataSet = SQLQuery_Clientes_Envios
+    left = 640
+    top = 376
+  end
+end

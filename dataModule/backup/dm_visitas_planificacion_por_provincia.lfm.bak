@@ -1,0 +1,29 @@
+object DataModule_visitas_planificacion_por_provincia: TDataModule_visitas_planificacion_por_provincia
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 285
+  HorizontalOffset = 650
+  VerticalOffset = 61
+  Width = 333
+  object SQLTran_Plan_Pro: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLCon_Plan_Pro
+    left = 172
+    top = 84
+  end
+  object SQLCon_Plan_Pro: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTran_Plan_Pro
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 172
+    top = 156
+  end
+end

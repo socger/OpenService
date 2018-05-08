@@ -1,0 +1,33 @@
+object DataModule_Grupos_Cocina: TDataModule_Grupos_Cocina
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 427
+  HorizontalOffset = 550
+  VerticalOffset = 154
+  Width = 488
+  object SQLTransaction: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector
+    left = 216
+    top = 96
+  end
+  object SQLConnector: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 216
+    top = 168
+  end
+end

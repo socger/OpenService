@@ -1,0 +1,54 @@
+object DataModule_Almacenes_Movimientos: TDataModule_Almacenes_Movimientos
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 408
+  HorizontalOffset = 644
+  VerticalOffset = 252
+  Width = 526
+  object SQLTransaction_AM: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_AM
+    left = 160
+    top = 120
+  end
+  object SQLConnector_AM: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_AM
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 160
+    top = 192
+  end
+  object SQLTransaction_AMD: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_AMD
+    left = 372
+    top = 120
+  end
+  object SQLConnector_AMD: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_AMD
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 372
+    top = 192
+  end
+end

@@ -1,0 +1,18 @@
+{"version":1,"strings":[
+{"hash":1268,"name":"tf_series_servicios_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":266973087,"name":"tf_series_servicios_000.dbgrid_principal.columns[1].title.caption","sourcebytes":[67,195,179,100,105,103,111],"value":"C\u00F3digo"},
+{"hash":220174255,"name":"tf_series_servicios_000.dbgrid_principal.columns[2].title.caption","sourcebytes":[80,114,195,179,120,46,110,195,186,109,101,114,111],"value":"Pr\u00F3x.n\u00FAmero"},
+{"hash":80135182,"name":"tf_series_servicios_000.dbgrid_principal.columns[3].title.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
+{"hash":206015697,"name":"tf_series_servicios_000.dbgrid_principal.columns[4].title.caption","sourcebytes":[69,109,112,114,101,115,97],"value":"Empresa"},
+{"hash":116690927,"name":"tf_series_servicios_000.dbgrid_principal.columns[5].title.caption","sourcebytes":[84,105,112,111,32,100,105,97,114,105,111],"value":"Tipo diario"},
+{"hash":266973087,"name":"tf_series_servicios_000.label2.caption","sourcebytes":[67,195,179,100,105,103,111],"value":"C\u00F3digo"},
+{"hash":1860383,"name":"tf_series_servicios_000.label3.caption","sourcebytes":[80,114,195,179,120,105,109,111,32,110,195,186,109,101,114,111],"value":"Pr\u00F3ximo n\u00FAmero"},
+{"hash":80135182,"name":"tf_series_servicios_000.label1.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
+{"hash":206015697,"name":"tf_series_servicios_000.label61.caption","sourcebytes":[69,109,112,114,101,115,97],"value":"Empresa"},
+{"hash":115271487,"name":"tf_series_servicios_000.label63.caption","sourcebytes":[84,105,112,111,32,100,101,32,100,105,97,114,105,111],"value":"Tipo de diario"},
+{"hash":78046175,"name":"tf_series_servicios_000.panel_1.caption","sourcebytes":[80,69,82,73,79,68,79],"value":"PERIODO"},
+{"hash":342540,"name":"tf_series_servicios_000.dbdatetimepicker_desdefecha.textfornulldate","sourcebytes":[78,85,76,76],"value":"NULL"},
+{"hash":4901285,"name":"tf_series_servicios_000.label5.caption","sourcebytes":[68,101,115,100,101],"value":"Desde"},
+{"hash":342540,"name":"tf_series_servicios_000.dbdatetimepicker_hastafecha.textfornulldate","sourcebytes":[78,85,76,76],"value":"NULL"},
+{"hash":5147297,"name":"tf_series_servicios_000.label7.caption","sourcebytes":[72,97,115,116,97],"value":"Hasta"}
+]}

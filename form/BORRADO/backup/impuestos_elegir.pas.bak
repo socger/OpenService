@@ -1,0 +1,27 @@
+unit impuestos_elegir;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, 
+    plantilla_000;
+
+type
+  Tform_plantilla_0001 = class(Tform_plantilla_000)
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  form_plantilla_0001: Tform_plantilla_0001;
+
+implementation
+
+{$R *.lfm}
+
+end.
+

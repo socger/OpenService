@@ -1,0 +1,131 @@
+object Form_ordenado_por: TForm_ordenado_por
+  Left = 519
+  Height = 311
+  Top = 143
+  Width = 809
+  Caption = 'ORDENAR POR ...'
+  ClientHeight = 311
+  ClientWidth = 809
+  Color = 9221227
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.2.6.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 37
+    Top = 6
+    Width = 797
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object Label3: TLabel
+    AnchorSideLeft.Control = ComboBox_Campo
+    AnchorSideBottom.Control = ComboBox_Campo
+    Left = 25
+    Height = 19
+    Top = 58
+    Width = 55
+    Anchors = [akLeft, akBottom]
+    Caption = 'Campo'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ComboBox_Campo: TComboBox
+    Left = 25
+    Height = 27
+    Top = 77
+    Width = 328
+    ItemHeight = 19
+    Style = csDropDownList
+    TabOrder = 1
+  end
+  object BitBtn_Ignorar: TBitBtn
+    Left = 553
+    Height = 30
+    Top = 116
+    Width = 105
+    DefaultCaption = True
+    Kind = bkIgnore
+    OnClick = BitBtn_IgnorarClick
+    TabOrder = 2
+  end
+  object BitBtn_Add: TBitBtn
+    Left = 677
+    Height = 30
+    Top = 116
+    Width = 105
+    Caption = '&Añadir'
+    Kind = bkYesToAll
+    OnClick = BitBtn_AddClick
+    TabOrder = 3
+  end
+  object Memo_OrderBy: TMemo
+    Left = 25
+    Height = 128
+    Top = 152
+    Width = 757
+    ScrollBars = ssAutoBoth
+    TabOrder = 4
+  end
+  object GroupBox_And_Or: TGroupBox
+    Left = 376
+    Height = 96
+    Top = 50
+    Width = 117
+    ClientHeight = 78
+    ClientWidth = 113
+    TabOrder = 5
+    object Radio_ASC: TRadioButton
+      Left = 9
+      Height = 33
+      Top = 4
+      Width = 74
+      Caption = 'ASC'
+      Checked = True
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -24
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      TabStop = True
+    end
+    object Radio_OR: TRadioButton
+      Left = 9
+      Height = 33
+      Top = 36
+      Width = 90
+      Caption = 'DESC'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -24
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+    end
+  end
+end

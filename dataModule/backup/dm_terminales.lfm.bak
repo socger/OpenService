@@ -1,0 +1,29 @@
+object DataModule_Terminales: TDataModule_Terminales
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 325
+  HorizontalOffset = 641
+  VerticalOffset = 126
+  Width = 350
+  object SQLTransaction_Terminales: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Terminales
+    left = 132
+    top = 72
+  end
+  object SQLConnector_Terminales: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Terminales
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 132
+    top = 164
+  end
+end

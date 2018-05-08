@@ -1,0 +1,8 @@
+{"version":1,"strings":[
+{"hash":1268,"name":"tf_terminales_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":80135182,"name":"tf_terminales_000.dbgrid_principal.columns[1].title.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
+{"hash":80135182,"name":"tf_terminales_000.label1.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
+{"hash":70088321,"name":"tf_terminales_000.bitbtn_configurar_terminal.hint","sourcebytes":[65,115,105,103,110,97,114,32,100,101,115,99,117,101,110,116,111,115,32,97,32,108,111,115,32,97,114,116,195,173,99,117,108,111,115,32,100,101,32,101,115,116,97,32,102,97,109,105,108,105,97],"value":"Asignar descuentos a los art\u00EDculos de esta familia"},
+{"hash":139807324,"name":"tf_terminales_000.bitbtn_configurar_terminal.caption","sourcebytes":[67,79,78,70,73,71,85,82,65,82,32,84,69,82,77,73,78,65,76],"value":"CONFIGURAR TERMINAL"},
+{"hash":5866159,"name":"tf_terminales_000.label2.caption","sourcebytes":[83,97,108,100,111],"value":"Saldo"}
+]}

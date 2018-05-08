@@ -1,0 +1,96 @@
+object DataModule_Articulos_Familias: TDataModule_Articulos_Familias
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 452
+  HorizontalOffset = 479
+  VerticalOffset = 121
+  Width = 827
+  object SQLTransaction_ArtFam: TSQLTransaction
+    Active = True
+    Action = caCommit
+    Database = SQLConnector_ArtFam
+    left = 80
+    top = 72
+  end
+  object SQLConnector_ArtFam: TSQLConnector
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_ArtFam
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 80
+    top = 144
+  end
+  object SQLTransaction_ArtFamSubFamilias: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_ArtFamSubFamilias
+    left = 264
+    top = 72
+  end
+  object SQLConnector_ArtFamSubFamilias: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_ArtFamSubFamilias
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 264
+    top = 144
+  end
+  object SQLTransaction_ArtFamTerminales: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_ArtFamTerminales
+    left = 496
+    top = 208
+  end
+  object SQLConnector_ArtFamTerminales: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_ArtFamTerminales
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 499
+    top = 280
+  end
+  object SQLTransaction_ArtFamTarifas: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_ArtFamTarifas
+    left = 704
+    top = 208
+  end
+  object SQLConnector_ArtFamTarifas: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_ArtFamTarifas
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 704
+    top = 280
+  end
+end

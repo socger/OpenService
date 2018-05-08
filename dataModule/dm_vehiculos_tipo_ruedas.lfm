@@ -1,0 +1,29 @@
+object DataModule_Vehiculos_Tipo_Ruedas: TDataModule_Vehiculos_Tipo_Ruedas
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 361
+  HorizontalOffset = 643
+  VerticalOffset = 183
+  Width = 452
+  object SQLTransaction_VTRuedas: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_VTRuedas
+    left = 192
+    top = 88
+  end
+  object SQLConnector_VTRuedas: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_VTRuedas
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 192
+    top = 160
+  end
+end

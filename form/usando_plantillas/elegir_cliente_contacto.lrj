@@ -1,0 +1,6 @@
+{"version":1,"strings":[
+{"hash":1268,"name":"tf_elegir_cliente_contacto.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":106593807,"name":"tf_elegir_cliente_contacto.dbgrid_principal.columns[1].title.caption","sourcebytes":[67,111,110,116,97,99,116,111],"value":"Contacto"},
+{"hash":234216751,"name":"tf_elegir_cliente_contacto.dbgrid_principal.columns[2].title.caption","sourcebytes":[67,97,114,103,111,32,47,32,80,117,101,115,116,111],"value":"Cargo / Puesto"},
+{"hash":234555875,"name":"tf_elegir_cliente_contacto.dbgrid_principal.columns[3].title.caption","sourcebytes":[84,101,108,195,169,102,111,110,111,115],"value":"Tel\u00E9fonos"}
+]}

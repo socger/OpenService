@@ -1,0 +1,1027 @@
+inherited f_almacenes_movimientos_000: Tf_almacenes_movimientos_000
+  Left = 175
+  Height = 572
+  Top = 2
+  Width = 1004
+  ClientHeight = 572
+  ClientWidth = 1004
+  inherited Panel_de_Abajo: TPanel
+    Height = 528
+    Width = 1004
+    ClientHeight = 528
+    ClientWidth = 1004
+    inherited GroupBox_Registro: TGroupBox
+      Height = 526
+      Width = 1002
+      ClientHeight = 506
+      ClientWidth = 998
+      inherited Panel20: TPanel
+        Height = 506
+      end
+      inherited Panel21: TPanel
+        Left = 981
+        Height = 506
+      end
+      inherited Panel22: TPanel
+        Height = 506
+        Width = 964
+        ClientHeight = 506
+        ClientWidth = 964
+        inherited Panel23: TPanel
+          Top = 469
+          Width = 964
+          ClientWidth = 964
+          inherited ButtonPanel1: TButtonPanel
+            Width = 952
+          end
+          inherited Shape1: TShape
+            Width = 964
+          end
+        end
+        object GroupBox_AMD: TGroupBox[1]
+          Left = 6
+          Height = 299
+          Top = 137
+          Width = 949
+          Caption = ' MOVIMIENTOS '
+          ClientHeight = 279
+          ClientWidth = 945
+          TabOrder = 9
+          object DBGrid_AMD: TDBGrid
+            Left = 22
+            Height = 225
+            Top = 1
+            Width = 898
+            AlternateColor = clWhite
+            BorderSpacing.Top = 4
+            Color = 7001047
+            Columns = <            
+              item
+                Title.Alignment = taCenter
+                Title.Caption = 'Artículo'
+                Width = 700
+                FieldName = 'OT_descripcion_articulo'
+              end            
+              item
+                Title.Alignment = taCenter
+                Title.Caption = 'Unidades'
+                Width = 150
+                FieldName = 'Unidades'
+              end>
+            DataSource = DataSource_AMD
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -19
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection]
+            ParentBiDiMode = False
+            ParentFont = False
+            Scrollbars = ssAutoBoth
+            TabOrder = 0
+            TitleFont.CharSet = ANSI_CHARSET
+            TitleFont.Color = clBlack
+            TitleFont.Height = -16
+            TitleFont.Name = 'Arial'
+            TitleFont.Pitch = fpVariable
+            TitleFont.Quality = fqDraft
+            TitleFont.Style = [fsBold]
+            OnDrawColumnCell = DBGrid_AMDDrawColumnCell
+            OnDblClick = DBGrid_AMDDblClick
+            OnKeyDown = DBGrid_AMDKeyDown
+          end
+          object DBNavigator_AMD: TDBNavigator
+            AnchorSideTop.Side = asrBottom
+            Left = 22
+            Height = 42
+            Top = 226
+            Width = 248
+            BeforeAction = DBNavigator_AMDBeforeAction
+            BevelOuter = bvNone
+            BorderSpacing.Top = 4
+            ChildSizing.EnlargeHorizontal = crsScaleChilds
+            ChildSizing.EnlargeVertical = crsScaleChilds
+            ChildSizing.ShrinkHorizontal = crsScaleChilds
+            ChildSizing.ShrinkVertical = crsScaleChilds
+            ChildSizing.Layout = cclLeftToRightThenTopToBottom
+            ChildSizing.ControlsPerLine = 100
+            ClientHeight = 42
+            ClientWidth = 248
+            DataSource = DataSource_AMD
+            Options = []
+            TabOrder = 1
+            VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbRefresh]
+          end
+          object BitBtn_Ver_Situacion_Registro_AMD: TBitBtn
+            Left = 278
+            Height = 42
+            Top = 226
+            Width = 35
+            Action = form_Menu.BitBtn_Ver_Situacion_Registro
+            Font.Color = clBlack
+            Font.Height = -12
+            Font.Name = 'Times New Roman'
+            OnClick = BitBtn_Ver_Situacion_Registro_AMDClick
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            Spacing = 0
+            TabOrder = 2
+          end
+        end
+        object Label1: TLabel[2]
+          Left = 6
+          Height = 19
+          Top = 9
+          Width = 140
+          Caption = 'Fecha movimiento'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBDateTimePicker_Fecha_Movimiento: TDBDateTimePicker[3]
+          Left = 6
+          Height = 24
+          Top = 30
+          Width = 153
+          DataField = 'Fecha_Movimiento'
+          DataSource = DataSource_Principal
+          ReadOnly = False
+          CenturyFrom = 1941
+          MaxDate = 2958465
+          MinDate = -53780
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          TabOrder = 1
+          TrailingSeparator = False
+          TextForNullDate = 'NULL'
+          LeadingZeros = True
+          Kind = dtkDateTime
+          TimeFormat = tf24
+          TimeDisplay = tdHMS
+          DateMode = dmComboBox
+          UseDefaultSeparators = True
+          HideDateTimeParts = []
+          MonthNames = 'Long'
+        end
+        object Boton_Elegir_Almacen_Destino: TBitBtn[4]
+          Left = 198
+          Height = 26
+          Top = 29
+          Width = 30
+          Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          OnClick = Boton_Elegir_Almacen_DestinoClick
+          ParentFont = False
+          Spacing = 0
+          TabOrder = 2
+        end
+        object Label6: TLabel[5]
+          Left = 198
+          Height = 19
+          Top = 9
+          Width = 127
+          Caption = 'Almacén destino'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Almacen_Destino: TEdit[6]
+          Left = 227
+          Height = 24
+          Top = 30
+          Width = 336
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_Almacen_DestinoClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 3
+        end
+        object Boton_Elegir_Almacen_Origen: TBitBtn[7]
+          Left = 590
+          Height = 26
+          Top = 29
+          Width = 30
+          Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          OnClick = Boton_Elegir_Almacen_OrigenClick
+          ParentFont = False
+          Spacing = 0
+          TabOrder = 4
+        end
+        object Label7: TLabel[8]
+          Left = 590
+          Height = 19
+          Top = 9
+          Width = 119
+          Caption = 'Almacén origen'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Almacen_Origen: TEdit[9]
+          Left = 619
+          Height = 24
+          Top = 30
+          Width = 336
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_Almacen_OrigenClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 5
+        end
+        object Panel_Tipo_Movimiento: TPanel[10]
+          Left = 6
+          Height = 54
+          Top = 64
+          Width = 301
+          BevelOuter = bvNone
+          ClientHeight = 54
+          ClientWidth = 301
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          TabOrder = 6
+          object DBRadioGroup_Tipo_Cuenta: TDBRadioGroup
+            Left = 0
+            Height = 42
+            Top = 12
+            Width = 301
+            Align = alBottom
+            Columns = 2
+            DataField = 'Tipo_Movimiento'
+            DataSource = DataSource_Principal
+            Items.Strings = (
+              'Traspaso entre almacenes'
+              'Entrada manual'
+            )
+            TabOrder = 0
+            Values.Strings = (
+              '1'
+              '2'
+            )
+          end
+          object Label64: TLabel
+            Left = -5
+            Height = 19
+            Top = 2
+            Width = 158
+            Anchors = [akLeft, akBottom]
+            Caption = ' Tipo de movimiento '
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object Boton_Elegir_Concepto: TBitBtn[11]
+          Left = 409
+          Height = 26
+          Top = 91
+          Width = 30
+          Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          OnClick = Boton_Elegir_ConceptoClick
+          ParentFont = False
+          Spacing = 0
+          TabOrder = 7
+        end
+        object Label8: TLabel[12]
+          Left = 409
+          Height = 19
+          Top = 71
+          Width = 75
+          Caption = 'Concepto'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Concepto: TEdit[13]
+          Left = 438
+          Height = 24
+          Top = 92
+          Width = 517
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_ConceptoClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 8
+        end
+      end
+    end
+    inherited GroupBox_Grid: TGroupBox
+      Height = 526
+      Width = 1002
+      ClientHeight = 506
+      ClientWidth = 998
+      inherited Panel_Barra_Superior1: TPanel
+        Top = 448
+        Width = 998
+        ClientWidth = 998
+        inherited Panel4: TPanel
+          inherited Panel14: TPanel
+            inherited DBNavigatorPrincpal: TDBNavigator
+              Hints.Strings = (              )
+            end
+          end
+        end
+        inherited Panel15: TPanel
+          Left = 981
+        end
+        inherited Panel_Otros_Campos_no_Grid: TPanel
+          Width = 606
+          ClientWidth = 606
+          inherited Label_Ctdad_Rgtros: TLabel
+            Left = 508
+          end
+        end
+      end
+      inherited Panel5: TPanel
+        Height = 448
+      end
+      inherited Panel6: TPanel
+        Left = 981
+        Height = 448
+      end
+      inherited Panel7: TPanel
+        Height = 448
+        Width = 964
+        ClientHeight = 448
+        ClientWidth = 964
+        inherited DBGrid_Principal: TDBGrid
+          Height = 444
+          Width = 964
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Id'
+              Width = 50
+              FieldName = 'id'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Fecha'
+              Width = 90
+              FieldName = 'Fecha_Movimiento'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Almacén de destino'
+              Width = 175
+              FieldName = 'OT_descripcion_almacen_destino'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Almacén de origen'
+              Width = 175
+              FieldName = 'OT_descripcion_almacen_origen'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Tipo de movimiento'
+              Width = 215
+              FieldName = 'Tipo_Movimiento'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Concepto'
+              Width = 225
+              FieldName = 'OT_descripcion_conceptos_almacen_traspaso'
+            end>
+        end
+      end
+    end
+    inherited GroupBox_Filtros: TGroupBox
+      Left = 232
+      Top = 104
+      inherited Panel11: TPanel
+        inherited Panel_Filtramos_por: TPanel
+          inherited Panel_Barra_DBGrid_Filtros: TPanel
+            inherited Panel_Barra_Filtros: TPanel
+              inherited DBNavigatorDBGrid_Filtros: TDBNavigator
+                Hints.Strings = (                )
+              end
+              inherited BitBtn_Vaciar_Filtros: TBitBtn
+                Left = 385
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  inherited Panel_Barra_Superior: TPanel
+    Width = 1004
+    ClientWidth = 1004
+    inherited Panel9: TPanel
+      Left = 987
+    end
+    inherited Panel1: TPanel
+      Left = 782
+    end
+  end
+  inherited SQLQuery_Principal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Fecha_Movimiento'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Tipo_Movimiento'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'id_conceptos_almacen_traspaso'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_almacenes_destino'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_almacenes_origen'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'OT_descripcion_almacen_destino'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_almacen_origen'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'OT_descripcion_conceptos_almacen_traspaso'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end>
+    SQL.Strings = (
+      'SELECT am.*,'
+      ''
+      'ad.descripcion AS OT_descripcion_almacen_destino,'
+      'ao.descripcion AS OT_descripcion_almacen_origen,'
+      'cat.descripcion AS OT_descripcion_conceptos_almacen_traspaso'
+      ''
+      'FROM almacenes_movimientos AS am'
+      ''
+      'LEFT JOIN almacenes AS ad'
+      'ON am.id_almacenes_destino = ad.id'
+      ''
+      'LEFT JOIN almacenes AS ao'
+      'ON am.id_almacenes_origen = ao.id'
+      ''
+      'LEFT JOIN conceptos_almacen_traspaso AS cat'
+      'ON am.id_conceptos_almacen_traspaso = cat.id'
+      ''
+    )
+    left = 208
+    object SQLQuery_PrincipalFecha_Movimiento: TDateTimeField[1]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Fecha_Movimiento'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalTipo_Movimiento: TStringField[2]
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Tipo_Movimiento'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_Principalid_conceptos_almacen_traspaso: TLargeintField[3]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_conceptos_almacen_traspaso'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Principalid_almacenes_destino: TLargeintField[4]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_almacenes_destino'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Principalid_almacenes_origen: TLargeintField[5]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_almacenes_origen'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalInsert_WHEN: TDateTimeField[6]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalInsert_Id_User: TLargeintField[7]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalDel_WHEN: TDateTimeField[8]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_Id_User: TLargeintField[9]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_WHY: TStringField[10]
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_PrincipalChange_WHEN: TDateTimeField[11]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalChange_Id_User: TLargeintField[12]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalOT_descripcion_almacen_destino: TStringField[13]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_almacen_destino'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalOT_descripcion_almacen_origen: TStringField[14]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_almacen_origen'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+    object SQLQuery_PrincipalOT_descripcion_conceptos_almacen_traspaso: TStringField[15]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_conceptos_almacen_traspaso'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+  end
+  inherited DataSource_Principal: TDataSource
+    left = 232
+    top = 0
+  end
+  inherited SQLConnector_Principal: TSQLConnector
+    Params.Strings = (
+      'Port=3306'
+    )
+  end
+  object SQLQuery_AMD: TSQLQuery[8]
+    PacketRecords = 20
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_almacenes_movimientos'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_almacenes_destino'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_almacenes_origen'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_articulos'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Unidades'
+        DataType = ftBCD
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'OT_Tipo_de_articulo'
+        DataType = ftString
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'OT_descripcion_articulo'
+        DataType = ftString
+        Precision = -1
+        Size = 3000
+      end>
+    AfterPost = SQLQuery_AMDAfterPost
+    BeforeEdit = SQLQuery_AMDBeforeEdit
+    BeforePost = SQLQuery_AMDBeforePost
+    Database = SQLConnector_Principal
+    Transaction = SQLTransaction_Principal
+    SQL.Strings = (
+      'SELECT amd.*,'
+      '       art.Tipo_de_articulo AS OT_Tipo_de_articulo,'
+      '       art.descripcion AS OT_descripcion_articulo'
+      '  FROM almacenes_movimientos_detalles AS amd'
+      ''
+      'LEFT JOIN articulos AS art'
+      'ON amd.id_articulos = art.id'
+      ''
+      ''
+    )
+    InsertSQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 696
+    object SQLQuery_AMDid: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_AMDid_almacenes_movimientos: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_almacenes_movimientos'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDid_almacenes_destino: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_almacenes_destino'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDid_almacenes_origen: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_almacenes_origen'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDid_articulos: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_articulos'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDUnidades: TBCDField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Unidades'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Precision = -1
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 3
+    end
+    object SQLQuery_AMDInsert_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDInsert_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_AMDDel_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_AMDDel_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_AMDDel_WHY: TStringField
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_AMDChange_WHEN: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_AMDChange_Id_User: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_AMDOT_Tipo_de_articulo: TStringField
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'OT_Tipo_de_articulo'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_AMDOT_descripcion_articulo: TStringField
+      DisplayWidth = 3000
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_articulo'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3000
+    end
+  end
+  object DataSource_AMD: TDataSource[9]
+    DataSet = SQLQuery_AMD
+    left = 728
+  end
+end

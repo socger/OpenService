@@ -1,0 +1,374 @@
+unit servicios_tipos_000;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  Buttons, ComCtrls, DbCtrls, DBGrids, ButtonPanel, plantilla_000, utilidades_datos_tablas, Grids,
+  utilidades_rgtro, utilidades_general, utilidades_bd, utilidades_forms_Filtrar, utilidades_usuarios;
+
+resourcestring
+  rs_srt_001 = ', con descripción %';
+  rs_srt_002 = 'Por la descripción';
+  rs_srt_003 = 'Por la id';
+  rs_srt_004 = 'Mantenimiento de tipos de servicios';
+  rs_srt_005 = '* La descripción';
+
+type
+
+  { Tform_servicios_tipos_000 }
+
+  Tform_servicios_tipos_000 = class(Tform_plantilla_000)
+    DBEdit_Descripcion: TDBEdit;
+    Edit_Descripcion: TEdit;
+    Label1: TLabel;
+    Label6: TLabel;
+    SQLQuery_PrincipalChange_Id_User: TLargeintField;
+    SQLQuery_PrincipalChange_WHEN: TDateTimeField;
+    SQLQuery_PrincipalDel_Id_User: TLargeintField;
+    SQLQuery_PrincipalDel_WHEN: TDateTimeField;
+    SQLQuery_PrincipalDel_WHY: TStringField;
+    SQLQuery_Principaldescripcion: TStringField;
+    SQLQuery_PrincipalInsert_Id_User: TLargeintField;
+    SQLQuery_PrincipalInsert_WHEN: TDateTimeField;
+
+    function  Antes_de_hacer_Post_tabla_Principal : Boolean; override;
+    procedure Filtrar_tablas_ligadas_II( var p_Lineas_Filtro : TStrings; var p_Lineas_OrderBy : TStrings ); override;
+    procedure Cambiar_Nombre_Tabla_Principal; override;
+    procedure Cambiar_Titulo_Form; override;
+    procedure Rellenar_Filtros_Impresion(var p_Ordenado_por : String); override;
+    procedure Crear_tipos_orden_Principal; override;
+    procedure Crear_tipos_orden_TablasLigadas; override;
+    procedure Refrescar_Registros; override;
+    procedure Refrescar_Registros_TablasLigadas; override;
+    procedure SQLQuery_PrincipalNewRecord(DataSet: TDataSet);
+    procedure Tabla_Principal_que_Filtrar( var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
+    procedure Presentar_Datos; override;
+    procedure Presentar_Datos_GroupBox_Registro; override;
+    procedure para_Empezar_GroupBox_Registro; override;
+    function  SeCambioAlgoEnRgtro : Boolean; override;
+    procedure Cambiar_WindowState; override;
+    procedure Abrir_Conexiones_con_BD_II; override;
+    procedure Cerramos_Tablas_Ligadas; override;
+    procedure Borrar_Registro; override;
+    procedure falta_algo_por_completar_II(p_msg : TStrings); override;
+    procedure Dibujar_Grid_Principal( p_Sender: TObject; const p_Rect: TRect; p_DataCol: Integer; p_Column: TColumn; p_State: TGridDrawState ); override;
+
+  private
+    { private declarations }
+
+  public
+    { public declarations }
+
+  end;
+
+var
+  form_servicios_tipos_000: Tform_servicios_tipos_000;
+
+implementation
+
+{$R *.lfm}
+
+uses menu;
+
+{ Tform_servicios_tipos_000 }
+
+function Tform_servicios_tipos_000.Antes_de_hacer_Post_tabla_Principal : Boolean;
+begin
+  Result := true;
+
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  with SQLQuery_Principal do
+  begin
+    // ********************************************************************************************* //
+    // ** Asignamos valores si no los tenían                                                      ** //
+    // ********************************************************************************************* //
+    if FieldByName('predeterminada_SN').IsNull then
+    begin
+      FieldByName('predeterminada_SN').AsString := 'N';
+    end;
+
+    if FieldByName('Copias_a_Imprimir').IsNull then
+    begin
+      FieldByName('Copias_a_Imprimir').AsString := '1';
+    end;
+
+    // ********************************************************************************************* //
+    // ** Ahora vienen las comprobaciones de porque no grabamos                                   ** //
+    // ********************************************************************************************* //
+    if no se cumple algo then
+    begin
+      Result := false;
+    end;
+  end;
+  }
+end;
+
+procedure Tform_servicios_tipos_000.Filtrar_tablas_ligadas_II( var p_Lineas_Filtro : TStrings;
+                                                               var p_Lineas_OrderBy : TStrings );
+begin
+  // *********************************************************************************************** //
+  // ** no hay tablas ligadas                                                                     ** //
+  // *********************************************************************************************** //
+end;
+
+procedure Tform_servicios_tipos_000.Cambiar_Nombre_Tabla_Principal;
+begin
+  pubic_nombre_tabla_Principal := 'servicios_tipos';
+end;
+
+procedure Tform_servicios_tipos_000.Cambiar_Titulo_Form;
+begin
+  Self.Caption := rs_srt_004;
+end;
+
+procedure Tform_servicios_tipos_000.Rellenar_Filtros_Impresion(var p_Ordenado_por : String);
+begin
+  // ********************************************************************************************* //
+  // ** Configuramos el título del listado                                                      ** //
+  // ********************************************************************************************* //
+  p_Ordenado_por := rs_Filtros_Otros_1 +
+                    Trim(ComboBox_Filtros.Text);
+
+  if Trim(Memo_Filtros.Lines.Text) <> '' then
+  begin
+    p_Ordenado_por := p_Ordenado_por +
+                      rs_Filtros_Otros_2 +
+                      Trim(Memo_Filtros.Lines.Text);
+  end;
+
+  if Trim(Edit_Descripcion.Text) <> '' then
+  begin
+    p_Ordenado_por := p_Ordenado_por +
+                      rs_srt_001 +
+                      Trim(Edit_Descripcion.Text) + '%';
+  end;
+end;
+
+procedure Tform_servicios_tipos_000.Crear_tipos_orden_Principal;
+begin
+  SetLength(public_Order_By, 2);
+
+  public_Order_By[0].Titulo       := rs_srt_002; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  public_Order_By[0].Memo_OrderBy := 'srt.descripcion ASC';
+
+  public_Order_By[1].Titulo       := rs_srt_003;
+  public_Order_By[1].Memo_OrderBy := 'srt.id ASC';
+
+  Memo_OrderBy.Lines.Text         := public_Order_By[0].Memo_OrderBy;
+
+  UTI_TB_Rellenar_ComboBox_Orden( true,
+                                  ComboBox_Filtros,
+                                  public_Order_By,
+                                  0 );
+end;
+
+procedure Tform_servicios_tipos_000.Crear_tipos_orden_TablasLigadas;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // Tabla ligada 001
+  SetLength(private_Order_By_TablaLigada001, 1);
+
+  private_Order_By_TablaLigada001[0].Titulo       := 'Por la id del impuesto'; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  private_Order_By_TablaLigada001[0].Memo_OrderBy := 'ic.id_impuestos_al_que_pertenece ASC, ic.id_impuestos ASC';
+
+  // Tabla ligada 002
+  SetLength(private_Order_By_TablaLigada002, 1);
+
+  private_Order_By_TablaLigada002[0].Titulo       := 'Por la id del impuesto'; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  private_Order_By_TablaLigada002[0].Memo_OrderBy := 'ic.id_impuestos_al_que_pertenece ASC, ic.id_impuestos ASC';
+  }
+end;
+
+procedure Tform_servicios_tipos_000.Refrescar_Registros;
+var var_descripcion : String;
+begin
+  var_descripcion := '';
+
+  if SQLQuery_Principal.RecordCount > 0 then
+  begin
+    var_descripcion := SQLQuery_Principal.FieldByName('descripcion').Value;
+  end;
+
+  Filtrar_Principal_Sin_Preguntar;
+
+  if Trim(var_descripcion) <> '' then
+  begin
+    SQLQuery_Principal.Locate( 'descripcion',
+                               var_descripcion,
+                               [] );
+  end;
+end;
+
+procedure Tform_servicios_tipos_000.Refrescar_Registros_TablasLigadas;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  Refrescar_Tabla_001;
+  Refrescar_Tabla_002;
+  Refrescar_Tabla_003;
+  }
+end;
+
+procedure Tform_servicios_tipos_000.SQLQuery_PrincipalNewRecord(
+  DataSet: TDataSet);
+begin
+  inherited;
+
+end;
+
+procedure Tform_servicios_tipos_000.Tabla_Principal_que_Filtrar( var p_Registro_CRUD : TRegistro_CRUD;
+                                                                 var p_ctdad_Rgtros  : Integer;
+                                                                 var p_a_Filtrar     : TStrings );
+begin
+  p_Registro_CRUD := UTI_DATOS_TABLA_servicios_tipos_CRUD(SQLQuery_Principal);
+  p_ctdad_Rgtros  := -1;
+
+  // ********************************************************************************************* //
+  // ** AHORA PONDREMOS EL RESTO DE LOS FILTROS QUE NO SON GENERALES                            ** //
+  // ********************************************************************************************* //
+  // ** Primero buscaremos en el nombre y apellido el texto a buscar                              ** //
+  // ********************************************************************************************* //
+  if Trim(Edit_Descripcion.Text) <> '' then
+  begin
+      UTI_RGTRO_Add_to_Where( false,
+                              p_a_Filtrar,
+                              'srt.descripcion LIKE ' +
+                              UTI_GEN_Comillas('%' + Trim(Edit_Descripcion.Text) + '%') );
+  end;
+end;
+
+procedure Tform_servicios_tipos_000.Presentar_Datos;
+begin
+  // *********************************************************************************************** //
+  // ** En el Panel_Barra_Superior                                                                ** //
+  // *********************************************************************************************** //
+
+  // *********************************************************************************************** //
+  // ** En el TabSheet_Busqueda_Concreta                                                          ** //
+  // *********************************************************************************************** //
+
+  // *********************************************************************************************** //
+  // ** En el GroupBox_Grid                                                                       ** //
+  // *********************************************************************************************** //
+
+  // *********************************************************************************************** //
+  // ** En el GroupBox_Registro                                                                   ** //
+  // *********************************************************************************************** //
+  Presentar_Datos_GroupBox_Registro;
+end;
+
+procedure Tform_servicios_tipos_000.Presentar_Datos_GroupBox_Registro;
+begin
+  with SQLQuery_Principal do
+  begin
+    if RecordCount > 0 then
+    begin
+      // ***************************************************************************************** //
+      // ** NO HAY NADA QUE PRESENTAR                                                           ** //
+      // ***************************************************************************************** //
+    end;
+  end;
+end;
+
+procedure Tform_servicios_tipos_000.para_Empezar_GroupBox_Registro;
+begin
+  with SQLQuery_Principal do
+  begin
+    public_Record_Rgtro := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                       '',
+                                                       '',
+                                                       FieldByName('descripcion').AsString,
+                                                       '',
+                                                       '' );
+  end;
+
+  Presentar_Datos_GroupBox_Registro;
+end;
+
+function Tform_servicios_tipos_000.SeCambioAlgoEnRgtro : Boolean;
+begin
+  Result := true;
+
+  with SQLQuery_Principal do
+  begin
+    if falta_algo_por_completar = false then
+    begin
+      if State = dsEdit then
+      begin
+        Result := false;
+        if Trim(Params.ParamByName('COPY_' + 'descripcion').AsString) <> Trim(FieldByName('descripcion').AsString) then
+        begin
+          Result := true;
+        end;
+      end;
+    end else
+    begin
+      Result := false;
+    end;
+  end;
+end;
+
+procedure Tform_servicios_tipos_000.Cambiar_WindowState;
+begin
+  Self.WindowState := wsNormal; // Puede ser wsNormal, wsFullScreen, wsMaximized o wsMinimized
+end;
+
+procedure Tform_servicios_tipos_000.Abrir_Conexiones_con_BD_II;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  Abrir_Conexion_con_BD( SQLTransaction_TablaHija001, SQLConnector_TablaHija001);
+  Abrir_Conexion_con_BD( SQLTransaction_TablaHija002, SQLConnector_TablaHija002);
+  }
+end;
+
+procedure Tform_servicios_tipos_000.Cerramos_Tablas_Ligadas;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  Cerrar_Tabla( SQLConnector_Tabla001,
+                SQLTransaction_Tabla001,
+                SQLQuery_Tabla001 );
+  }
+end;
+
+procedure Tform_servicios_tipos_000.Borrar_Registro;
+begin
+  if UTI_USR_Permiso_SN(public_Menu_Worked, 'B', True) = True then
+  begin
+    UTI_RGTRO_Borrar( pubic_nombre_tabla_Principal,
+                      SQLQuery_Principal,
+                      public_Solo_Ver,
+                      public_Menu_Worked );
+  end;
+end;
+
+procedure Tform_servicios_tipos_000.falta_algo_por_completar_II(p_msg : TStrings);
+begin
+  with SQLQuery_Principal do
+  begin
+    if Trim(DBEdit_Descripcion.Text) <> '' then
+    begin
+      FieldByName('descripcion').asString := AnsiUpperCase(Trim(FieldByName('descripcion').AsString));
+    end else begin
+      p_msg.Add( rs_srt_005);
+    end;
+  end;
+end;
+
+procedure Tform_servicios_tipos_000.Dibujar_Grid_Principal( p_Sender: TObject;
+                                                            const p_Rect: TRect;
+                                                            p_DataCol: Integer;
+                                                            p_Column: TColumn;
+                                                            p_State: TGridDrawState );
+begin
+  UTI_GEN_Dibujar_Grid( p_Sender, SQLQuery_Principal, p_Rect, p_DataCol, p_Column, p_State );
+end;
+
+end.
+

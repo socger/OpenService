@@ -1,0 +1,50 @@
+object DataModule_visitas_por_tipo_cliente: TDataModule_visitas_por_tipo_cliente
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 311
+  HorizontalOffset = 616
+  VerticalOffset = 183
+  Width = 448
+  object SQLTran_TCli: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLCon_TCli
+    left = 160
+    top = 72
+  end
+  object SQLCon_TCli: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTran_TCli
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 160
+    top = 140
+  end
+  object SQLTran_Visita: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLCon_Visita
+    left = 272
+    top = 72
+  end
+  object SQLCon_Visita: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTran_Visita
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 272
+    top = 140
+  end
+end

@@ -1,0 +1,306 @@
+unit BD_Utilidades;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+{
+    Forms, Controls, Graphics, Dialogs,
+    DbCtrls, DBGrids, StdCtrls, Buttons, dm_Pelis, bd_Utilidades;
+}
+    Forms, FileUtil, Classes, SysUtils, Dialogs, db, sqldb, IniFiles;
+
+{
+var Variable : String;
+}
+
+Type
+
+    TCN_Conexion = record
+        con_Exito     : Boolean;
+        ConnectorType : String;
+        DatabaseName  : String;
+        HostName      : String;
+        Password      : String;
+        UserName      : String;
+    end;
+
+function  CN_Traer_Configuracion : TCN_Conexion;
+function  CN_Abrir( param_SQLTransaction : TSQLTransaction; param_SQLConnector : TSQLConnector ) : Boolean;
+function  CN_Cerrar( param_SQLTransaction : TSQLTransaction; param_SQLConnector : TSQLConnector ) : Boolean;
+
+function  TB_Abrir( param_SQLConnector : TSQLConnector; param_SQLTransaction : TSQLTransaction; param_SQLQuery : TSQLQuery; param_SQL : String ) : Boolean;
+function  TB_Cerrar( param_SQLConnector : TSQLConnector; param_SQLTransaction : TSQLTransaction; param_SQLQuery : TSQLQuery ) : Boolean;
+procedure TB_Refrescar( param_SQLConnector : TSQLConnector; param_SQLTransaction : TSQLTransaction; param_SQLQuery : TSQLQuery; param_String : String );
+function  TB_Grabar( param_SQLTransaction : TSQLTransaction; param_SQLQuery : TSQLQuery; param_Commit : Boolean ) : Boolean;
+
+implementation
+
+// uses Modulo_Databases, Menu_Principal, Elegir_Ruta_BD_SQL, Enviar_Correo, Comprobar_SQL;
+
+procedure TB_Refrescar( param_SQLConnector : TSQLConnector;
+                        param_SQLTransaction : TSQLTransaction;
+                        param_SQLQuery : TSQLQuery;
+                        param_String : String );
+begin
+    if TB_Cerrar( param_SQLConnector,
+                  param_SQLTransaction,
+                  param_SQLQuery ) = False then
+    begin
+        Application.Terminate;
+    end;
+
+    if TB_Abrir( param_SQLConnector,
+                 param_SQLTransaction,
+                 param_SQLQuery,
+                 param_String ) = False then
+    begin
+        Application.Terminate;
+    end;
+end;
+
+function TB_Grabar( param_SQLTransaction : TSQLTransaction;
+                    param_SQLQuery : TSQLQuery;
+                    param_Commit : Boolean ) : Boolean;
+begin
+    { **************************************************************************
+      ** Grabajos los los cambios realizados por el usuario en el registro    **
+      ************************************************************************** }
+    Result := True;
+
+    try
+        if param_SQLTransaction.Active then
+        { **********************************************************************
+          ** Only if we are within a started transaction; otherwise you get   **
+          ** "Operation cannot be performed on an inactive dataset"           **
+          ********************************************************************** }
+        begin
+            param_SQLQuery.ApplyUpdates; { Pass user-generated changes back to database... }
+
+            if param_Commit = True then
+            begin
+                param_SQLTransaction.CommitRetaining; { and commit them using the transaction. }
+                { param_SQLTransaction.Active now is false }
+
+                // param_SQLTransaction.Active := True;
+                // param_SQLQuery.Active       := True;
+            end;
+        end;
+    except
+        on error : EDatabaseError do
+        begin
+            Result := False;
+
+            MessageDlg( 'Error',
+                        'Ocurrió un error de conexión con la BF.' +
+                        ' Este es elmensaje de error: ' +
+                        error.Message, mtError, [mbOK], 0 );
+        end;
+    end;
+end;
+
+function CN_Cerrar( param_SQLTransaction : TSQLTransaction;
+                    param_SQLConnector : TSQLConnector ) : Boolean;
+begin
+    try
+        Result := True;
+        param_SQLTransaction.Active  := False;
+        param_SQLConnector.Connected := False;
+    Except
+        on error : EDatabaseError do
+        begin
+            Result := False;
+            MessageDlg( 'Error',
+                        'Ocurrió un error al cerrar la conexión con la BD.' +
+                        ' El mensaje de error es este: ' + error.Message,
+                        mtError, [mbOK], 0 );
+        end;
+    end;
+end;
+
+function CN_Traer_Configuracion : TCN_Conexion;
+var var_fichero_ini : TIniFile;
+begin
+  if(FileExists(GetCurrentDirUTF8 + '\socger.ini')) then
+  begin
+      try
+          var_fichero_ini := TIniFile.Create(GetCurrentDirUTF8 + '\socger.ini');
+              Result.con_Exito     := true;
+              Result.ConnectorType := var_fichero_ini.ReadString('HowConnectBD', 'ConnectorType', '');
+              Result.DatabaseName  := var_fichero_ini.ReadString('HowConnectBD', 'DatabaseName', '');
+              Result.HostName      := var_fichero_ini.ReadString('HowConnectBD', 'HostName', '');
+              Result.Password      := var_fichero_ini.ReadString('HowConnectBD', 'Password', '');
+              Result.UserName      := var_fichero_ini.ReadString('HowConnectBD', 'UserName', '');
+          var_fichero_ini.Free;
+      Except
+          Result.con_Exito := false;
+      end;
+  end;
+end;
+
+function CN_Abrir( param_SQLTransaction : TSQLTransaction;
+                   param_SQLConnector : TSQLConnector ) : Boolean;
+var var_CN_Conexion : TCN_Conexion;
+begin
+    Try
+        Result := True;
+
+        if CN_Cerrar( param_SQLTransaction,
+                      param_SQLConnector ) = False then
+        begin
+            Application.Terminate;
+        end;
+
+        with param_SQLTransaction do
+        begin
+            Action   := caCommit;
+            Database := param_SQLConnector;
+            Params.Clear;
+            Tag      := 0;
+        end;
+
+        var_CN_Conexion := CN_Traer_Configuracion;
+        if var_CN_Conexion.con_Exito = True then
+            begin
+                with param_SQLConnector do
+                begin
+                    CharSet        := 'utf8';
+                    ConnectorType  := var_CN_Conexion.ConnectorType;
+                    DatabaseName   := var_CN_Conexion.DatabaseName;
+                    HostName       := var_CN_Conexion.HostName;
+                    KeepConnection := False;
+
+                    LoginPrompt    := False;
+                    Params.Clear;
+                    Password       := var_CN_Conexion.Password;
+                    Role           := '';
+                    Tag            := 0;
+                    Transaction    := param_SQLTransaction;
+                    UserName       := var_CN_Conexion.UserName;
+
+                    {
+                        LogEvents      := LogAllEvents; // Para registrar los sucesos tenemos que decirle que hacer  = [detCustom, detPrepare, detExecute, detFetch, detCommit, detRollBack]
+                                                        // ... and to which procedure the connection should send the events:
+                        OnLog          := @Self.GetLogEvent;
+                    }
+                end;
+            end
+        else
+            begin
+                Result := False;
+                ShowMessage('No existe el archivo de configuraciones');
+            end;
+    Except
+        Result := False;
+    end;
+end;
+
+function TB_Cerrar( param_SQLConnector : TSQLConnector;
+                    param_SQLTransaction : TSQLTransaction;
+                    param_SQLQuery : TSQLQuery ) : Boolean;
+begin
+    try
+        Result := True;
+        param_SQLQuery.Active := False;
+
+        if CN_Cerrar( param_SQLTransaction, param_SQLConnector ) = False then
+        begin
+            Application.Terminate;
+        end;
+    Except
+        Result := False;
+    end;
+end;
+
+
+function TB_Abrir( param_SQLConnector : TSQLConnector;
+                   param_SQLTransaction : TSQLTransaction;
+                   param_SQLQuery : TSQLQuery;
+                   param_SQL : String ) : Boolean;
+begin
+    if TB_Cerrar( param_SQLConnector,
+                  param_SQLTransaction,
+                  param_SQLQuery ) = False then
+    begin
+        Application.Terminate;
+    end;
+
+    try
+        Result := True;
+
+        param_SQLConnector.Connected := True;
+        param_SQLTransaction.Active  := True;
+
+        with param_SQLQuery do
+        begin
+            Active   := False;
+            AutoCalcFields := True;
+            Database := param_SQLConnector;
+            PacketRecords := 20;
+
+            DeleteSQL.Clear;
+            UpdateSQL.Clear;
+            InsertSQL.Clear;
+
+            SQL.Clear;
+            {
+                SQL.Text := 'Select * from peliculas where titulo like ' +
+                            QuotedStr('%orig%') +
+                            '  limit 1';
+
+                            ( 'Select * from peliculas' );
+            }
+            SQL.Add( param_SQL );
+
+            UpdateMode         := upWhereKeyOnly;
+            UsePrimaryKeyAsKey := True;
+
+            Active             := True;
+
+            {
+                ShowMessage(IntToStr(RecordCount));
+                Es curioso sólo me devuelve 20 por que es justo lo que le he
+                puesto a PacketRecords
+
+                Copiado de ... http://wiki.freepascal.org/SqlDBHowto/es
+
+                ¿Por qué TSQLQuery.RecordCount siempre devuelve 0?
+                Para contar los registros de un dataset, usaremos RecordCount.
+                Sin embargo, observa que RecordCount muestra el número de
+                registros que se ha cargado desde el servidor. SQLdb no lee
+                todos los registros al abrir un TSQLQuery de forma predeter-
+                minada, sólo los 10 primeros. Sólo cuando se accede al
+                undécimo registro entonces el siguiente conjunto de 10
+                registros se carga. Usando .Last todos los registros se
+                cargarán.
+                Si desea conocer el número real de registros en el servidor
+                hay que llamar primero '.Last' y luego llamar a .RecordCount.
+                Hay una alternativa disponible. El número de registros
+                devueltos por el servidor está determinado por el valor de
+                la propiedad PacketRecords. El valor por defecto es 10, si
+                se pone a -1 entonces todos los registros serán cargados a
+                la vez.
+            }
+        end;
+    except
+        on error : EDatabaseError do
+        begin
+            Result := False;
+            MessageDlg( 'Error',
+                        'Ocurrió un error de conexión con la BD.' +
+                        ' El mensaje de error es este: ' + error.Message,
+                        mtError, [mbOK], 0 );
+        end;
+    end;
+
+end;
+
+end.
+jerofa hay que llevar un control de errores, ver si vale el método GetLogEvent
+de dm_Pelis para guardar en un fichero .log el control de los errores.
+
+Ver de como arreglar todos los Application.Terminate porque puede ser que fallen
+porque no necesite en ese momento cerrar la aplicación
+
+

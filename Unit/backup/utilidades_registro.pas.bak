@@ -1,0 +1,257 @@
+unit utilidades_registro;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+    Forms, Classes, SysUtils, db, sqldb, utilidades_general, Controls,
+    utilidades_usuarios, utilidades_bd, ButtonPanel;
+
+
+implementation
+
+uses
+    Estado_Registro, principio;
+
+procedure RGTRO_Ver_Estado_Registro( param_SQLQuery : TSQLQuery );
+begin
+    with param_SQLQuery do
+    begin
+        Application.CreateForm(TForm_Estado_Registro, Form_Estado_Registro);
+
+        Form_Estado_Registro.ButtonPanel_Estado_Registro.ShowButtons := [pbOK];
+        Form_Estado_Registro.ButtonPanel_Estado_Registro.DefaultButton := pbOK;
+
+        Form_Estado_Registro.Edit_Motivo_Baja.Color           := $006AD3D7;
+        Form_Estado_Registro.Edit_Motivo_Baja.ReadOnly        := True;
+
+        Form_Estado_Registro.Edit_Motivo_Baja.Text            := FieldByName('Del_WHY').AsString;
+        Form_Estado_Registro.Edit_Fecha_Baja.Text             := FieldByName('Del_WHEN').AsString;
+        Form_Estado_Registro.Edit_Fecha_Ult_Modificacion.Text := FieldByName('Change_WHEN').AsString;
+        Form_Estado_Registro.Edit_Fecha_Alta.Text             := FieldByName('Insert_WHEN').AsString;
+
+        if not FieldByName('Del_Id_User').isNull then
+        begin
+            Form_Estado_Registro.Edit_Usuario_Baja.Text := Traer_Nombre_Usuario(FieldByName('Del_Id_User').Value);
+        end;
+
+        if not FieldByName('Change_Id_User').isNull then
+        begin
+            Form_Estado_Registro.Edit_Usuario_Ult_Modificacion.Text := Traer_Nombre_Usuario(FieldByName('Change_Id_User').Value);
+        end;
+
+        if not FieldByName('Insert_Id_User').isNull then
+        begin
+            Form_Estado_Registro.Edit_Usuario_Alta.Text := Traer_Nombre_Usuario(FieldByName('Insert_Id_User').Value);
+        end;
+
+        Form_Estado_Registro.ShowModal;
+        Form_Estado_Registro.Free;
+    end;
+end;
+
+function RGTRO_Grabar( param_SQLTransaction : TSQLTransaction;
+                       param_SQLQuery : TSQLQuery;
+                       param_Commit : Boolean ) : Boolean;
+var var_msg : TStrings;
+begin
+    { **************************************************************************
+      ** Grabajos los los cambios realizados por el usuario en el registro    **
+      ************************************************************************** }
+    Result := True;
+
+    try
+        if param_SQLTransaction.Active then
+        { **********************************************************************
+          ** Only if we are within a started transaction; otherwise you get   **
+          ** "Operation cannot be performed on an inactive dataset"           **
+          ********************************************************************** }
+        begin
+            param_SQLQuery.ApplyUpdates; { Pass user-generated changes back to database... }
+
+            if param_Commit = True then
+            begin
+                param_SQLTransaction.CommitRetaining; { and commit them using the transaction. }
+                { param_SQLTransaction.Active now is false }
+
+                // param_SQLTransaction.Active := True;
+                // param_SQLQuery.Active       := True;
+            end;
+        end;
+    except
+        on error : EDatabaseError do
+        begin
+            var_msg := TStringList.Create;
+                var_msg.Clear;
+                var_msg.Add('Ocurrió un error de conexión con la BD.');
+                var_msg.Add('Este es el mensaje de error: ');
+                var_msg.Add( error.Message );
+                Aviso(var_msg, 'ERROR', True, False);
+            var_msg.Free;
+
+            Result := False;
+        end;
+    end;
+end;
+
+procedure RGTRO_Borrar( param_SQLQuery : TSQLQuery;
+                        param_Solo_Ver : Boolean;
+                        param_Menu_Worked : Integer );
+var var_msg : TStrings;
+begin
+    with param_SQLQuery do
+    begin
+        var_msg := TStringList.Create;
+
+        if RecordCount > 0 then
+            begin
+                if param_Solo_Ver = True then
+                    begin
+                        var_msg.Clear;
+                        var_msg.Add('Sólo se puede CONSULTAR.');
+                        Aviso(var_msg, 'SOLO PARA OBSERVAR', True, False);
+                    end
+                else
+                    begin
+                        if FieldByName('Del_WHEN').IsNull then
+                             RGTRO_Borrar_BAJA( param_SQLQuery, var_msg, param_Menu_Worked)
+                        else RGTRO_Borrar_ALTA( param_SQLQuery, var_msg );
+                    end;
+            end
+        else
+            begin
+                var_msg.Clear;
+                var_msg.Add('NO hay REGISTROS.');
+                Aviso(var_msg, '¿COMO?', True, False);
+            end;
+
+        var_msg.Free;
+    end;
+end;
+
+procedure RGTRO_Borrar_BAJA( param_SQLQuery : TSQLQuery;
+                             param_msg : TStrings;
+                             param_Menu_Worked : Integer);
+var var_OK : Boolean;
+begin
+    with param_SQLQuery do
+    begin
+        try
+            Edit;
+
+            FieldByName('Del_WHEN').Value    := CN_Fecha_Hora;
+            FieldByName('Del_Id_User').Value := Form_Principio.public_User;
+
+            // Llamo a un formulario para que pregunte por el motivo por el que se da de baja
+            Application.CreateForm(tform_Estado_Registro, form_Estado_Registro);
+
+            form_Estado_Registro.Edit_Usuario_Baja.Text           := Traer_Nombre_Usuario(Form_Principio.public_User);
+            form_Estado_Registro.Edit_Fecha_Baja.Text             := FieldByName('Del_WHEN').AsString;
+
+            form_Estado_Registro.Edit_Fecha_Ult_Modificacion.Text := FieldByName('Change_WHEN').AsString;
+            form_Estado_Registro.Edit_Fecha_Alta.Text             := FieldByName('Insert_WHEN').AsString;
+
+            if not FieldByName('Change_Id_User').IsNull then
+            begin
+                form_Estado_Registro.Edit_Usuario_Ult_Modificacion.Text := Traer_Nombre_Usuario(FieldByName('Change_Id_User').Value);
+            end;
+
+            if not FieldByName('Insert_Id_User').IsNull then
+            begin
+                form_Estado_Registro.Edit_Usuario_Alta.Text := Traer_Nombre_Usuario(FieldByName('Insert_Id_User').Value);
+            end;
+
+            var_OK := True;
+            if Obligado_WHY_Delete_SN(param_Menu_Worked) = true then
+            begin
+                var_OK := False;
+                While Trim(form_Estado_Registro.Edit_Motivo_Baja.Text) = '' do
+                begin
+                    if form_Estado_Registro.ShowModal = mrOk then
+                        begin
+                            var_OK := True;
+                            if Trim(form_Estado_Registro.Edit_Motivo_Baja.Text) = '' then
+                            begin
+                                param_msg.Clear;
+                                param_msg.Add('Está Obligado a decirme PORQUE BORRAR el registro.');
+                                Aviso(param_msg, 'NO PUEDO BORRAR', True, False);
+                            end;
+                        end
+                    else
+                        begin
+                            var_OK := False;
+                            Break;
+                        end;
+                end;
+            end;
+
+            FieldByName('Del_WHY').AsString := form_Estado_Registro.Edit_Motivo_Baja.Text;
+            form_Estado_Registro.Destroy;
+
+            if var_OK = True then
+                 //Grabar_Registro
+                 Post
+            else Cancel;
+        except
+            on error : EDatabaseError do
+            begin
+                param_msg.Clear;
+                param_msg.Add('NO SE PUDO BORRAR el registro, ocurrió un error de conexión con la BD.');
+                param_msg.Add('Este es el mensaje de error: ');
+                param_msg.Add( error.Message );
+                Aviso(param_msg, 'ERROR', True, False);
+            end;
+        end;
+    end;
+end;
+
+procedure RGTRO_Borrar_ALTA( param_SQLQuery : TSQLQuery;
+                             param_msg : TStrings );
+begin
+    with param_SQLQuery do
+    begin
+        param_msg.Clear;
+        param_msg.Add('El registro ya estaba dado de baja.');
+        param_msg.Add('¿SEGURO que desea darlo de ALTA?');
+        if Aviso(param_msg, '¿SEGURO?', True, True) = True then
+        begin
+            try
+                Edit;
+                FieldByName('Del_WHEN').Clear;
+                FieldByName('Del_Id_User').Clear;
+                FieldByName('Del_WHY').Clear;
+
+                //Grabar_Registro;
+                Post;
+            except
+                on error : EDatabaseError do
+                begin
+                    param_msg.Clear;
+                    param_msg.Add('NO SE PUDO DAR DE ALTA el registro, ocurrió un error de conexión con la BD.');
+                    param_msg.Add('Este es el mensaje de error: ');
+                    param_msg.Add( error.Message );
+                    Aviso(param_msg, 'ERROR', True, False);
+                end;
+            end;
+        end;;
+    end;
+end;
+
+procedure RGTRO_Ver_Bajas_SN( param_SQL : TStrings;
+                              param_ver_Bajas : ShortInt );
+begin
+    if Trim(param_SQL.Text) = '' then
+    begin
+        if param_ver_Bajas = 1 then
+        begin
+            param_SQL.Add( 'Del_WHEN IS NULL' );
+        end;
+    end;
+end;
+
+end.
+
+jerofa ver porque confunde cuando filtranos si o no las bajas ... verlas
+
+

@@ -1,0 +1,92 @@
+object DataModule_Users: TDataModule_Users
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 322
+  HorizontalOffset = 14
+  VerticalOffset = 142
+  Width = 1089
+  object SQLConnector_Users: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Users
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 64
+    top = 104
+  end
+  object SQLTransaction_Users: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Users
+    left = 64
+    top = 32
+  end
+  object SQLTransaction_Users_Passwords: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Users_Passwords
+    left = 280
+    top = 32
+  end
+  object SQLConnector_Users_Passwords: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Users_Passwords
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 280
+    top = 104
+  end
+  object SQLTransaction_Users_Menus: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Users_Menus
+    left = 560
+    top = 40
+  end
+  object SQLConnector_Users_Menus: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Users_Menus
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 560
+    top = 112
+  end
+  object SQLTransaction_Users_Menus_Permisos: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Users_Menus_Permisos
+    left = 840
+    top = 40
+  end
+  object SQLConnector_Users_Menus_Permisos: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Users_Menus_Permisos
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 840
+    top = 112
+  end
+end

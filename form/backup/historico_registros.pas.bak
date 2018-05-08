@@ -1,0 +1,43 @@
+unit historico_registros;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+    Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids, DbCtrls;
+
+type
+
+    { Tform_historico_registros }
+
+    Tform_historico_registros = class(TForm)
+        DataSource_user_row_changes: TDataSource;
+        DBGrid_Principal: TDBGrid;
+        DBNavigator1: TDBNavigator;
+        SQLQuery_user_row_changes: TSQLQuery;
+        SQLQuery_user_row_changesChange_Id_User: TLargeintField;
+        SQLQuery_user_row_changesChange_WHEN: TDateTimeField;
+        SQLQuery_user_row_changesDel_Id_User: TLargeintField;
+        SQLQuery_user_row_changesDel_WHEN: TDateTimeField;
+        SQLQuery_user_row_changesDel_WHY: TStringField;
+        SQLQuery_user_row_changesDescripcion: TStringField;
+        SQLQuery_user_row_changesid: TLargeintField;
+        SQLQuery_user_row_changesId_Menus: TLargeintField;
+        SQLQuery_user_row_changesInsert_Id_User: TLargeintField;
+        SQLQuery_user_row_changesInsert_WHEN: TDateTimeField;
+    private
+        { private declarations }
+    public
+        { public declarations }
+    end;
+
+var
+    form_historico_registros: Tform_historico_registros;
+
+implementation
+
+{$R *.lfm}
+
+end.
+

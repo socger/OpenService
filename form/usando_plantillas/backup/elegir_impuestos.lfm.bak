@@ -1,0 +1,461 @@
+inherited f_elegir_impuestos: Tf_elegir_impuestos
+  Height = 596
+  Top = 75
+  Width = 726
+  ClientHeight = 596
+  ClientWidth = 726
+  inherited Panel_de_Abajo: TPanel
+    Height = 552
+    Width = 726
+    ClientHeight = 552
+    ClientWidth = 726
+    inherited GroupBox_Registro: TGroupBox
+      Height = 550
+      Width = 724
+      ClientHeight = 530
+      ClientWidth = 720
+      inherited Panel20: TPanel
+        Height = 530
+      end
+      inherited Panel21: TPanel
+        Left = 703
+        Height = 530
+      end
+      inherited Panel22: TPanel
+        Height = 530
+        Width = 686
+        ClientHeight = 530
+        ClientWidth = 686
+        inherited Panel23: TPanel
+          Top = 493
+          Width = 686
+          ClientWidth = 686
+          inherited ButtonPanel1: TButtonPanel
+            Width = 674
+          end
+          inherited Shape1: TShape
+            Width = 686
+          end
+        end
+      end
+    end
+    inherited GroupBox_Grid: TGroupBox
+      Height = 550
+      Width = 724
+      ClientHeight = 530
+      ClientWidth = 720
+      inherited Panel_Barra_Superior1: TPanel
+        Top = 472
+        Width = 720
+        ClientWidth = 720
+        inherited Panel4: TPanel
+          inherited Panel14: TPanel
+            inherited DBNavigatorPrincpal: TDBNavigator
+              Width = 164
+              ClientWidth = 164
+              Hints.Strings = (              )
+              VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+            end
+            inherited BitBtn_Ver_Situacion_Registro: TBitBtn
+              Left = 166
+            end
+            inherited BitBtn_Seleccionar: TBitBtn
+              Left = 199
+              TabOrder = 3
+            end
+            inherited BitBtn_Imprimir: TBitBtn
+              Left = 232
+              TabOrder = 2
+            end
+          end
+        end
+        inherited Panel15: TPanel
+          Left = 703
+        end
+        inherited Panel_Otros_Campos_no_Grid: TPanel
+          Width = 328
+          ClientWidth = 328
+          inherited Label_Ctdad_Rgtros: TLabel
+            Left = 230
+          end
+        end
+      end
+      inherited Panel5: TPanel
+        Height = 472
+      end
+      inherited Panel6: TPanel
+        Left = 703
+        Height = 472
+      end
+      inherited Panel7: TPanel
+        Height = 472
+        Width = 686
+        ClientHeight = 472
+        ClientWidth = 686
+        inherited DBGrid_Principal: TDBGrid
+          Height = 468
+          Width = 686
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Id'
+              Width = 50
+              FieldName = 'id'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Descripción'
+              Width = 505
+              FieldName = 'descripcion'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = '%'
+              Width = 65
+              FieldName = 'Tanto_Por_Ciento'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Cp'
+              Width = 30
+              FieldName = 'COLUMNA_CON_IMAGEN'
+            end>
+        end
+      end
+    end
+    inherited GroupBox_Filtros: TGroupBox
+      Left = 152
+      Top = 104
+      inherited Panel11: TPanel
+        inherited Panel_Filtramos_por: TPanel
+          inherited Panel_Barra_DBGrid_Filtros: TPanel
+            inherited Panel_Barra_Filtros: TPanel
+              inherited DBNavigatorDBGrid_Filtros: TDBNavigator
+                Hints.Strings = (                )
+              end
+              inherited BitBtn_Vaciar_Filtros: TBitBtn
+                Left = 212
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  inherited Panel_Barra_Superior: TPanel
+    Width = 726
+    ClientWidth = 726
+    inherited Panel9: TPanel
+      Left = 709
+    end
+    inherited Panel1: TPanel
+      Left = 504
+    end
+    object Image_Compuesto: TImage[4]
+      Left = 474
+      Height = 30
+      Top = 9
+      Width = 27
+      Picture.Data = {
+        07544269746D6170360C0000424D360C00000000000036000000280000002000
+        0000200000000100180000000000000C0000C40E0000C40E0000000000000000
+        0000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFDFDFDF7F7F7F4F4F4F3F3F3F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2
+        F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2
+        F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F2F3F3F3F4F4F4F9F9F9FDFDFDFFFFFFFF
+        FFFFFEFEFEF0F0F0D1D1D1BCBCBBB3B1B0B2B0AFB2B0AFB2B0AFB2B0AFB2B0AF
+        B2B0AFB2B0AFB2B0AFB2B0AFB2B0AFB2B0AFB2B0AFB2B0AFB2B0AFB2B0AFB2B0
+        AFB2B0AFB2B0AFB2B0AFB6B4B3B6B4B3B8B6B4C1C1C1DADADAF5F5F5FEFEFEFF
+        FFFFFDFDFDE9E9E9A1A1A17A583EA46534A46636A46636A46636A46636A46636
+        A46636A46636A46636A46636A46636A46636A46636A46636A46636A46636A466
+        36A46636A46636A46636A46636A56737A56738A5724AC4BDB8EEEEEEFDFDFDFF
+        FFFFFFFFFFF9F9F9959595787470A4683AB88659BA885BBA895CBA895CBA895C
+        BA895CBA895CBB8A5CBB8A5CBB8A5CBB8A5CBC8B5DBC8B5DBC8B5DBC8B5DBD8C
+        5EBD8C5EBD8C5EBD8C5EBE8D5FBE8D5FBE8C5EB07749C4A083FBFBFBFFFFFFFF
+        FFFFFFFFFFFFFFFF9696967E7E7EA5724AC89D75D0A883D0A883D0A883D0A883
+        D0A883D1A984D1A984D1A984D1A984D1A984D1A984D1A984D1A984D2AA85D2AA
+        85D2AA85D2AA85D3AB86D3AB86D3AB86D2AA84C5946AB7835CFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF8F8F8F7E7E7EA0734FC79569D2A478D1A276D1A276D1A276
+        D1A276D1A276D1A277D1A277D1A277D1A377D1A377D1A377D1A378D1A378D1A3
+        78D1A378D1A378D1A378D2A479D2A479D3A57BCC9D72B0794DFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF8A8A8A878787A37C5DC08C5FCE9C6ECC9767CC9767CD9767
+        CD9867CD9868CD9868CD9868CD9868CD9868CD9868CD9869CD9869CD9869CD99
+        69CD9969CD9969CD996ACD996ACD996ACE9B6CCFA176AA6E3FFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFF84848486878799785FC28F66D3A67CCE9C6DCE9C6DCE9C6D
+        CE9C6ECE9C6ECF9C6ECF9C6ECF9C6ECF9C6ECF9D6FCF9D6FCF9D6FCF9D6FCF9D
+        6FCF9D6FCF9D70CF9D70CF9D70CF9E70CF9E71D7B08BA56736FEFEFDFFFFFFFF
+        FFFFFFFFFFFFFFFF7F7F7F919191A08671C2936EDDBB9BD6AC85D3A67CD1A177
+        D1A176D1A276D1A276D1A276D1A276D2A277D2A277D2A277D2A277D2A277D2A3
+        77D2A377D2A378D2A378D2A378D2A378D2A378DDBA99A96E3FF8F3EFFFFFFFFF
+        FFFFFFFFFFFFFFFF7B7B7B909090947F6FBD8F6AE2C4A9DBB592DBB593DBB592
+        D9B28ED8AF89D6AB84D5A880D4A780D4A87FD4A87FD4A87FD5A87FD5A87FD5A8
+        7FD5A880D5A880D5A880D5A880D5A980D5A980E1C1A4B0784DF1E7DFFFFFFFFF
+        FFFFFFFFFFFFFFFF7777779C9C9C9F8F83B78861E7CDB5DDB999DDB999DDB999
+        DDB999DDBA99DDBA99DDBA9ADDBA9ADDB999DCB897DCB796DBB694DAB491DAB3
+        8FD8AF89D8AE88D8AE88D8AE88D8AE88D8AE89E4C6ADB9855DE9DACEFFFFFFFF
+        FFFFFFFFFFFFFFFF747474989898928880B27D55EAD4C0DEBC9CDEBC9CDEBC9C
+        DEBB9CDEBB9CDEBB9CDEBB9CDEBB9CDEBB9CDEBB9BDEBB9BDEBB9BDEBB9BDEBB
+        9BDEBB9BDCB694D9AF8AD8AE88D8AE88D8AE88E4C7ADBF906BE2CEBFFFFFFFFF
+        FFFFFFFFFFFFFFFF717171A4A5A5A09B97AB7246ECD8C5DDB999DDB999DDB999
+        DDB999DDB999DDB999DDB999DDB999DDB999DDB999DDB999DDB999DDB998DDB9
+        98DDB998DDB998DCB895D7AF88D6AC84D6AC84E2C4A7C59975DBC2AFFFFFFFFF
+        FFFFFFFFFFFFFFFF6F6F6F9F9F9F8F8E8EA56838ECD8C6DCB997DCB896DCB896
+        DCB895DCB895DCB895DCB895DCB895DCB895DCB895DCB895DCB895DCB895DCB8
+        95DCB795DCB795DCB795DCB694D7AE87D5A980DFBE9FCAA07DD3B59EFFFFFFFF
+        FFFFFFFFFFFFFFFF6E6E6EACADADA2A2A2A66B3DE8D1BDDDB998DBB693DBB693
+        DBB693DBB693DBB693DBB692DBB692DBB692DBB592DBB592DBB592DBB592DBB5
+        92DBB592DBB592DBB592DBB592DBB592D7AD86DDBA98CFA785CCA78BFFFFFFFF
+        FFFFFFFFFFFFFFFF6B6B6BA5A5A5929292A56F44E4CAB3DDBB99DAB48FDAB38F
+        DAB38FDAB38FDAB38FDAB38FDAB38FDAB38FDAB38FDAB38FDAB38FDAB38FDAB3
+        8FD9B38FD9B38FD9B38FD9B38FD9B38FD9B38EDBB693D3AF8EC39877FFFFFFFF
+        FFFFFFFFFFFFFFFF6B6B6BB5B6B6A5A5A5A7754FDEC1A7DEBD9DDAB38ED9B38E
+        D9B38FD9B38FD9B38FD9B38FD9B38FD9B48FD9B48FD9B48FD9B48FD9B48FD9B4
+        8FDAB48FDAB48FDAB48FDAB58FDAB58FDAB590DEBC9CD7B696BB8B65FFFFFFFF
+        FFFFFFFFFFFFFFFF6A6A6AAAAAAA959595A17654D8B89AE9D3BEE9D3BEE9D3BE
+        E9D2BDE9D2BDE9D2BCE9D2BCE9D2BCE9D2BCE9D2BCE9D2BCE9D2BCE8D1BCE8D1
+        BCE8D1BCE8D1BCE8D1BCE8D1BBE8D1BBE8D1BBE8D1BBDCBDA0B47F55FFFFFFFF
+        FFFFFFFFFFFFFFFF686868BDBDBDA8A8A8A68A73A56737A56737A46636A36535
+        A66838A66838A66838A66838A66838A66838A66838A66838A66838A66838A668
+        38A66838A66838A66838A66838A66838A36535A66838A66838C8A284FFFFFFFF
+        FFFFFFFFFFFFFFFF6A6A6AAFB0B0989898969696969696949494909090585C5A
+        EBEBEBEBEBEBEAEAEAEAEAEAA5A7A6A3A4A3A2A3A2A2A3A2A2A3A2A2A3A2A2A3
+        A2A2A3A2A2A3A2A7A8A8E7E7E7E7E7E7585C5AFAFAFAFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFCFCFC717171C1C2C2ACACACAAAAAAA9A9A9A7A7A7A2A2A2585C5A
+        E8E8E8E8E8E8E8E8E8E8E8E8E7E7E7E7E7E7E7E7E7E6E6E6E6E6E6E6E6E6E6E6
+        E6E5E5E5E5E5E5E5E5E5E4E4E4E1E1E1585C5AFAFAFAFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFF7F7F7777777B1B1B19C9C9C9A9A9A999999979797949494565A58
+        E6E6E6E5E5E5E8E8E8E5E5E5A0A1A09D9F9E9D9F9E9D9F9E9D9F9E9D9F9E9D9F
+        9E9D9F9E9C9E9DA2A4A3DDDDDDD9D9D9575B59FAFAFAFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFF3F3F37F7F7FC4C5C5B0B0B0AEAEAEADADADACACACA9A9A9575B59
+        E3E3E38E918FCFD0D0E2E2E2DDDEDEDEDEDEDEDEDEDDDDDDDDDDDDDDDDDDE0E0
+        E0E0E0E0DDDDDDDADADAD5D5D5CECECE575B59FAFAFAFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFEFEFEF868686B3B3B39F9F9F9E9E9E9D9D9D9C9C9C999999565A58
+        E1E1E1D9D9D9E0E0E0E0E0E09FA1A09D9E9D9D9E9D9D9E9D9D9E9DA2A3A3DEDE
+        DEDADADAD1D1D1CCCCCCC8C8C8B4B5B5707472FEFEFEFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFECECEC858585CDCDCDC4C4C4C3C3C3C3C3C3C1C1C1BEBEBE555957
+        DEDEDEDEDEDEDEDEDEDDDDDDDBDBDBDBDBDBDADADADADADADADADAD9D9D9D7D7
+        D7CFCFCFA7A7A7A7A7A7BCBCBC8C8E8DB3B5B4FFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFDFDFD9A9A9A797979797979797979797979797979787878555957
+        DCDCDCDBDBDBDBDBDBDBDBDB9B9C9B989A99989A99989A999799989B9D9CD1D1
+        D1C1C1C1F9F9F9F3F3F39FA1A08B8E8CFEFEFEFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDFD545856
+        D9D9D9D9D9D9D9D9D9D8D8D8D8D8D8D8D8D8D7D7D7D4D4D4D2D2D2CECECEC7C7
+        C7BEBEBEF2F2F2A0A2A1848685FDFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFE535755
+        D7D7D7D7D7D7D7D7D7D7D7D7D6D6D6D5D5D5D3D3D3D1D1D1CDCDCDC8C8C8BFBF
+        BFBCBCBCA3A4A47D807EFCFCFCFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFEFE535755
+        F2F2F2FEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFEFDFDFDFDFDFDEAEA
+        EA898B8A777A78F9F9F9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF535755
+        535755535755535755535755535755535755535755535755535755535755565A
+        588A8D8CF7F7F7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFF
+      }
+      Stretch = True
+      Visible = False
+    end
+  end
+  inherited SQLQuery_Principal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'descripcion'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'Cuenta_Contable'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'Sumado_A_Ftra_SN'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'Tanto_Por_Ciento'
+        DataType = ftBCD
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end>
+    SQL.Strings = (
+      'SELECT ic.*'
+      ''
+      'FROM impuestos AS ic'
+      ''
+    )
+    object SQLQuery_Principaldescripcion: TStringField[1]
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'descripcion'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 150
+    end
+    object SQLQuery_PrincipalCuenta_Contable: TStringField[2]
+      DisplayWidth = 60
+      FieldKind = fkData
+      FieldName = 'Cuenta_Contable'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object SQLQuery_PrincipalSumado_A_Ftra_SN: TStringField[3]
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'Sumado_A_Ftra_SN'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object SQLQuery_PrincipalTanto_Por_Ciento: TBCDField[4]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Tanto_Por_Ciento'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = -1
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object SQLQuery_PrincipalInsert_WHEN: TDateTimeField[5]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalInsert_Id_User: TLargeintField[6]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalDel_WHEN: TDateTimeField[7]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_Id_User: TLargeintField[8]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_WHY: TStringField[9]
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_PrincipalChange_WHEN: TDateTimeField[10]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalChange_Id_User: TLargeintField[11]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+end

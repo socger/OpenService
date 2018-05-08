@@ -1,0 +1,4 @@
+{"version":1,"strings":[
+{"hash":1268,"name":"tf_elegir_diarios_tipos.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":115271487,"name":"tf_elegir_diarios_tipos.dbgrid_principal.columns[1].title.caption","sourcebytes":[84,105,112,111,32,100,101,32,100,105,97,114,105,111],"value":"Tipo de diario"}
+]}

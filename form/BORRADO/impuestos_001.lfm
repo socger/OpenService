@@ -1,0 +1,381 @@
+object form_impuestos_001: Tform_impuestos_001
+  Left = 487
+  Height = 413
+  Top = 127
+  Width = 715
+  ActiveControl = DBEdit_Descripcion
+  Caption = 'Ficha - Impuesto'
+  ClientHeight = 413
+  ClientWidth = 715
+  Color = 14737613
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 703
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 1
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object GroupBox11: TGroupBox
+    Left = 146
+    Height = 35
+    Top = 0
+    Width = 174
+    ClientHeight = 15
+    ClientWidth = 170
+    TabOrder = 0
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -7
+      Width = 56
+      Anchors = [akLeft, akBottom]
+      Caption = 'Código'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 74
+      Height = 23
+      Top = -7
+      Width = 90
+      DataField = 'id'
+      DataSource = form_impuestos_000.DataSource_Impuestos
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+  object RadioGroup_Bajas: TRadioGroup
+    Left = 26
+    Height = 39
+    Top = 6
+    Width = 96
+    AutoFill = True
+    BorderSpacing.Bottom = 3
+    Caption = ' Ver bajas '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 19
+    ClientWidth = 92
+    Columns = 2
+    ItemIndex = 1
+    Items.Strings = (
+      'Si'
+      'No'
+    )
+    OnClick = RadioGroup_BajasClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Label17: TLabel
+    Left = 26
+    Height = 22
+    Top = 56
+    Width = 112
+    Caption = 'Descripción'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Descripcion: TDBEdit
+    Left = 26
+    Height = 26
+    Top = 78
+    Width = 657
+    DataField = 'descripcion'
+    DataSource = form_impuestos_000.DataSource_Impuestos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Label25: TLabel
+    AnchorSideLeft.Control = DBEdit_Tanto_Por_Ciento
+    AnchorSideBottom.Control = DBEdit_Tanto_Por_Ciento
+    Left = 26
+    Height = 22
+    Top = 111
+    Width = 17
+    Anchors = [akLeft, akBottom]
+    Caption = '%'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Tanto_Por_Ciento: TDBEdit
+    Left = 26
+    Height = 26
+    Top = 133
+    Width = 64
+    DataField = 'Tanto_Por_Ciento'
+    DataSource = form_impuestos_000.DataSource_Impuestos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 4
+  end
+  object Label24: TLabel
+    AnchorSideLeft.Control = DBEdit_Cuenta_Contable
+    AnchorSideBottom.Control = DBEdit_Cuenta_Contable
+    Left = 104
+    Height = 22
+    Top = 111
+    Width = 151
+    Anchors = [akLeft, akBottom]
+    Caption = 'Cuenta contable'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Cuenta_Contable: TDBEdit
+    Left = 104
+    Height = 26
+    Top = 133
+    Width = 152
+    DataField = 'Cuenta_Contable'
+    DataSource = form_impuestos_000.DataSource_Impuestos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 5
+  end
+  object DBCheckBox_IVA_con_Recargo_SN: TDBCheckBox
+    Left = 283
+    Height = 23
+    Top = 134
+    Width = 400
+    Align = alCustom
+    Caption = 'Se suma al total de la factura'
+    DataField = 'Sumado_A_Ftra_SN'
+    DataSource = form_impuestos_000.DataSource_Impuestos
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -27
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 6
+    ValueChecked = 'S'
+    ValueUnchecked = 'N'
+  end
+  object GroupBox_Impuestos_Composicion: TGroupBox
+    Left = 24
+    Height = 226
+    Top = 173
+    Width = 667
+    Caption = 'COMPUESTO POR'
+    ClientHeight = 206
+    ClientWidth = 663
+    TabOrder = 7
+    object DBGrid_Impuestos_Composiciones: TDBGrid
+      Left = 3
+      Height = 164
+      Top = 1
+      Width = 658
+      Anchors = [akLeft]
+      BorderSpacing.Top = 4
+      Color = 7001047
+      Columns = <      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'Código'
+          Width = 60
+          FieldName = 'id_impuestos'
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'Descripción'
+          Width = 500
+          FieldName = 'OT_descripcion_impuesto'
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = '%'
+          Width = 55
+          FieldName = 'OT_Tanto_Por_Ciento'
+        end>
+      DataSource = form_impuestos_000.DataSource_Impuestos_Composiciones
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection]
+      ParentFont = False
+      Scrollbars = ssAutoBoth
+      TabOrder = 0
+      TitleFont.CharSet = ANSI_CHARSET
+      TitleFont.Color = clBlack
+      TitleFont.Height = -16
+      TitleFont.Name = 'Arial'
+      TitleFont.Pitch = fpVariable
+      TitleFont.Quality = fqDraft
+      TitleFont.Style = [fsBold]
+      OnDrawColumnCell = DBGrid_Impuestos_ComposicionesDrawColumnCell
+    end
+    object DBNavigator_Impuestos_Composiciones: TDBNavigator
+      AnchorSideTop.Side = asrBottom
+      Left = 3
+      Height = 38
+      Top = 165
+      Width = 248
+      BeforeAction = DBNavigator_Impuestos_ComposicionesBeforeAction
+      BevelOuter = bvNone
+      BorderSpacing.Top = 4
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 38
+      ClientWidth = 248
+      DataSource = form_impuestos_000.DataSource_Impuestos_Composiciones
+      Options = []
+      TabOrder = 1
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbRefresh]
+    end
+    object BitBtn_Ver_Situacion_Registro_Composiciones: TBitBtn
+      Left = 256
+      Height = 38
+      Hint = 'Ver situación del registro'
+      Top = 165
+      Width = 37
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Times New Roman'
+      Glyph.Data = {
+        F6060000424DF606000000000000360000002800000018000000180000000100
+        180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD3A793C2A195BD9C
+        8ED1A490FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7AB9A
+        BDB0ABAAA3A3988F8F9A8882C99E8EFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFD7AB9AD1C4C2C4C1C2BAB6B7ADA5A7988F8F988681C7A08EFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFD8AD9ADED1CFD9D9DAD1CFD3C2AAA1B79E96ADA7A99A909197
+        8680C9A08FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFD9B09DE7DDD9E9EAEFE2E2E5C27859AF3812AF38
+        12B16749ADA5A79A9193988681C69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFD9AF9CEEE5E2F0F6FAEFF4FAC67754
+        A72806A72907A92907A92907B05E3EAFA7A79A919393827FC69D8CFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F0E7E2FAFEFFF6
+        FEFFCE8868B13C15CE7752D38460D38460CE7752B43A13B05B39ADA7A99A9193
+        93827FC69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F3E7
+        E2FEFFFFFEFFFFD49072AA300CAA300CD38664FFFFFFFFFFFFCF7F5BAB310CAD
+        300BB16041ADA5A79C9395968480C69D8CFF00FFFF00FFFF00FFFF00FFFF00FF
+        D8AD9AF6EBE9FFFFFFFFFFFFD78F6EAB310CAB320DAA2E0AC4653CFFFFFFFFFF
+        FFC15D35AA2E0BAD350FAD310BB05A38AFA4A49C939593827FC09A8AFF00FFFF
+        00FFFF00FFD8AA97F6EAE5FFFFFFFFFFFFE0A486B53F14B43A13AF3711AA2E0A
+        C6673FFFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD300BB05735ABA1A19A91
+        9390817FC09A8AFF00FFD7A793F0E2D9FFFFFFFFFFFFE9BB9CC15523BC4D1EBA
+        491CB64117AF340DC76840FFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD350F
+        AD2E0AB05D3DADA5A79A908F95827FCCA18FE0BBAAFFFFFFFFFFFFFEFAF6D17A
+        42C75F29C45C28C15523BD4E1FB53F14CB7048FFFFFFFFFFFFC25F38AA2E0BAD
+        350FAD350FAD350FAD330EAF3611B69C91ADA7A99A908FBC9A8EE0BAAAFFFFFF
+        FFFFFFFEFAF6D9894ECF6F32CC6A31C7632CC45B28BC4C1CCF794FFFFFFFFFFF
+        FFC4633AAA2E0BAD350FAD350FAD350FAB310CAF3C16C4AFA9BAB6B7ABA3A3C6
+        A193D7A793F3E2DAFFFFFFFFFFFFF0D1B1D88241D37638CF6F35CB682FC25723
+        D88C60FFFFFFFFFFFFC96D43AF350EAF360FAD350FAB320DAB310CC7896ED1D3
+        D7C4C1C2C1AFAAD7A793FF00FFD8AA97F6EAE3FFFFFFFFFFFFF0D1AFD98744D4
+        7D3CCF7537D1753CE9B693F0D4C0F0D3BDCB6C3EB74116B54016AF360FAB320D
+        CC886AE2E7EBD9D9DAD1C1BCD7A996FF00FFFF00FFFF00FFD8AA97F3E5DDFFFF
+        FFFFFFFFF4D9BBDE904CD88240D78041D3773BCE6E35C9662EC25925C05322BB
+        4A1CB64116D79A7FEEF4FAE7EAEEDDCEC9D7A996FF00FFFF00FFFF00FFFF00FF
+        FF00FFD7A996F0E2D9FFFFFFFFFFFFF6DDC0E29752D98641DA8F52F4DAC6F3D4
+        C0CF733DC45B26C15421E0A486F6FEFFF0F6FAE7D9D4D7AA97FF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFD7A996F0E2DAFFFFFFFFFFFFF8E2C6E2964C
+        EABA87FFFFFFFFFFFFE09E6DC96328E2A984FEFFFFFAFEFFEBE2DED8AD9AFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA97F0E0D8FF
+        FFFFFFFFFFF6DEC0EAAF6CF4D7B1F3CFABDA894AE9B78FFFFFFFFEFFFFF3E7E2
+        D9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFAE7CBEBB470E5A45FF0CCA5FFFFFFFF
+        FFFFF4E9E3D8AD9AFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFFFEFBFEFA
+        F6FFFFFFFFFFFFF8EFEBD9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7A793F0E0D8
+        FFFFFFFFFFFFFFFFFFFFFFFFF8EFEBDAB1A0FF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFD7A793EED7CBFEFBFBFFFEFEF4E9E3DAB19EFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA96DEB5A4E0BAAAD8AA96FF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      }
+      OnClick = BitBtn_Ver_Situacion_Registro_ComposicionesClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+  end
+end

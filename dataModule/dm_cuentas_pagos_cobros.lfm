@@ -1,0 +1,29 @@
+object DataModule_Cuentas_Pagos_Cobros: TDataModule_Cuentas_Pagos_Cobros
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 415
+  HorizontalOffset = 206
+  VerticalOffset = 106
+  Width = 474
+  object SQLConnector: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 216
+    top = 200
+  end
+  object SQLTransaction: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector
+    left = 216
+    top = 128
+  end
+end

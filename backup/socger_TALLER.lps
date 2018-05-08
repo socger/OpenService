@@ -1,0 +1,3772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="349">
+      <Unit0>
+        <Filename Value="socger_TALLER.pas"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="69"/>
+        <CursorPos X="60" Y="76"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="form\peliculas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_peliculas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="685"/>
+        <CursorPos X="29" Y="664"/>
+        <UsageCount Value="201"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="dataModule\dm_pelis.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Pelis"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="33"/>
+        <CursorPos X="61" Y="67"/>
+        <UsageCount Value="201"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="Unit\utilidades_bd.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="328"/>
+        <CursorPos Y="345"/>
+        <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <TopLine Value="1290"/>
+          <CursorPos X="46" Y="1300"/>
+        </ExtraEditor1>
+        <UsageCount Value="202"/>
+        <Bookmarks Count="1">
+          <Item0 X="26" Y="1381" ID="4"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="Unit\utilidades_usuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="230"/>
+        <CursorPos X="43" Y="240"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="Unit\utilidades_general.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="276"/>
+        <CursorPos X="6" Y="278"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="form\avisos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Avisos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="62"/>
+        <CursorPos X="28" Y="75"/>
+        <UsageCount Value="201"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="form\peliculas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_peliculas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="121"/>
+        <CursorPos X="73" Y="135"/>
+        <UsageCount Value="201"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="form\menu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_Menu"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="1632"/>
+        <CursorPos X="64" Y="1637"/>
+        <UsageCount Value="204"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="form\estado_registro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Estado_Registro"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="480"/>
+        <CursorPos X="27" Y="461"/>
+        <UsageCount Value="204"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="dataModule\dm_medios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Medios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="61" Y="36"/>
+        <UsageCount Value="201"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="form\filtrar_registros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Filtrar_Registros"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="583"/>
+        <CursorPos X="55" Y="584"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="1312"/>
+        <CursorPos X="3" Y="1325"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="utilidades_forms_Filtrar"/>
+        <EditorIndex Value="13"/>
+        <UsageCount Value="202"/>
+        <Bookmarks Count="1">
+          <Item0 Y="137" ID="3"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="form\medios_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_medios_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="372"/>
+        <CursorPos X="5" Y="386"/>
+        <UsageCount Value="202"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="form\informe.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_Informe"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="105"/>
+        <CursorPos X="100" Y="107"/>
+        <UsageCount Value="200"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="form\medios_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_medios_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="14"/>
+        <UsageCount Value="203"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="form\users_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_users_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1481"/>
+        <CursorPos X="5" Y="1500"/>
+        <UsageCount Value="200"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="dataModule\dm_users.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Users"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="93" Y="44"/>
+        <UsageCount Value="200"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="form\users_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_users_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="415"/>
+        <CursorPos Y="430"/>
+        <UsageCount Value="200"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="form\arrancar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Arrancar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="26"/>
+        <CursorPos X="73" Y="36"/>
+        <UsageCount Value="203"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="form\users_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_users_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="274"/>
+        <CursorPos Y="296"/>
+        <UsageCount Value="200"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="form\users_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_users_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="146"/>
+        <CursorPos X="38" Y="169"/>
+        <UsageCount Value="200"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="form\users_004.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_users_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="193"/>
+        <CursorPos Y="215"/>
+        <UsageCount Value="200"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="dataModule\dm_menus.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Menus"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="35"/>
+        <UsageCount Value="200"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="form\menus_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_menus_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="560"/>
+        <CursorPos X="5" Y="577"/>
+        <UsageCount Value="200"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="form\menus_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_menus_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="59" Y="15"/>
+        <UsageCount Value="201"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="dataModule\dm_historico_registros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_historico_registros"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="31" Y="38"/>
+        <UsageCount Value="201"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="form\askbypwd.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_AskByPwd"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="AskByPwd"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="189"/>
+        <CursorPos Y="200"/>
+        <UsageCount Value="201"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="form\paises_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_paises_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="437"/>
+        <CursorPos X="46" Y="448"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="dataModule\dm_paises.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Paises"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="61" Y="36"/>
+        <UsageCount Value="201"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="form\paises_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_paises_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="138"/>
+        <CursorPos Y="160"/>
+        <UsageCount Value="200"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="form\formas_pago_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_formas_pago_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="183"/>
+        <CursorPos X="119" Y="203"/>
+        <UsageCount Value="203"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="dataModule\dm_formas_pago.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Formas_Pago"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="61" Y="35"/>
+        <UsageCount Value="203"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="form\formas_pago_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_formas_pago_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="213"/>
+        <CursorPos Y="235"/>
+        <UsageCount Value="201"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="dataModule\dm_tarifas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Tarifas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="76" Y="38"/>
+        <UsageCount Value="208"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="form\provincias_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_provincias_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="517"/>
+        <CursorPos X="5" Y="532"/>
+        <UsageCount Value="203"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="dataModule\dm_provincias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Provincias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dm_Provincias"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="61" Y="35"/>
+        <UsageCount Value="203"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="form\provincias_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_provincias_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="155"/>
+        <CursorPos X="42" Y="169"/>
+        <UsageCount Value="203"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="form\poblaciones_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_poblaciones_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="546"/>
+        <CursorPos X="15" Y="522"/>
+        <UsageCount Value="200"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="dataModule\dm_poblaciones.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Poblaciones"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="61" Y="35"/>
+        <UsageCount Value="202"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="form\poblaciones_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_poblaciones_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="165"/>
+        <CursorPos X="42" Y="174"/>
+        <UsageCount Value="203"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="form\representantes_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_representantes_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="719"/>
+        <CursorPos X="5" Y="738"/>
+        <UsageCount Value="200"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="dataModule\dm_representantes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Representantes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="61" Y="36"/>
+        <UsageCount Value="200"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="form\representantes_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_representantes_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="240"/>
+        <CursorPos X="42" Y="254"/>
+        <UsageCount Value="200"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="form\proveedores_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="965"/>
+        <CursorPos X="5" Y="986"/>
+        <UsageCount Value="201"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="dataModule\dm_proveedores.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Proveedores"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="104" Y="38"/>
+        <UsageCount Value="201"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="form\proveedores_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="309"/>
+        <CursorPos X="42" Y="323"/>
+        <UsageCount Value="202"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="form\proveedores_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="63"/>
+        <CursorPos X="84" Y="69"/>
+        <UsageCount Value="208"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="form\proveedores_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="487"/>
+        <CursorPos X="5" Y="503"/>
+        <UsageCount Value="204"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="dataModule\dm_proveedores_tipos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Proveedores_Tipos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="61" Y="35"/>
+        <UsageCount Value="204"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="form\proveedores_tipos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_tipos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="155"/>
+        <CursorPos Y="177"/>
+        <UsageCount Value="203"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="form\articulos_familias_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_familias_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1392"/>
+        <CursorPos X="5" Y="1407"/>
+        <UsageCount Value="200"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="dataModule\dm_articulos_familias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos_Familias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="11"/>
+        <CursorPos X="72" Y="42"/>
+        <UsageCount Value="200"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="form\articulos_familias_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_familias_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1166"/>
+        <CursorPos X="42" Y="1180"/>
+        <UsageCount Value="200"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="form\articulos_familias_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_familias_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="55"/>
+        <CursorPos Y="68"/>
+        <UsageCount Value="200"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="form\articulos_familias_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_familias_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="55"/>
+        <CursorPos Y="63"/>
+        <UsageCount Value="200"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="form\articulos_familias_005.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_familias_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="359"/>
+        <CursorPos X="5" Y="374"/>
+        <UsageCount Value="201"/>
+      </Unit57>
+      <Unit58>
+        <Filename Value="dataModule\dm_articulos_no_subfamilias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos_No_SubFamilias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="85" Y="35"/>
+        <UsageCount Value="201"/>
+      </Unit58>
+      <Unit59>
+        <Filename Value="dataModule\dm_cliente_elegir_contacto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Cliente_Elegir_Contacto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="31" Y="36"/>
+        <UsageCount Value="201"/>
+      </Unit59>
+      <Unit60>
+        <Filename Value="form\articulos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4212"/>
+        <CursorPos X="27" Y="4235"/>
+        <UsageCount Value="200"/>
+      </Unit60>
+      <Unit61>
+        <Filename Value="dataModule\dm_articulos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="37"/>
+        <CursorPos X="95" Y="71"/>
+        <UsageCount Value="200"/>
+      </Unit61>
+      <Unit62>
+        <Filename Value="form\articulos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="991"/>
+        <CursorPos X="42" Y="1005"/>
+        <UsageCount Value="203"/>
+      </Unit62>
+      <Unit63>
+        <Filename Value="form\opciones_impresion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_opciones_impresion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="121"/>
+        <CursorPos X="44" Y="130"/>
+        <UsageCount Value="200"/>
+      </Unit63>
+      <Unit64>
+        <Filename Value="form\articulos_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="6"/>
+        <CursorPos X="19" Y="29"/>
+        <UsageCount Value="202"/>
+      </Unit64>
+      <Unit65>
+        <Filename Value="form\articulos_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="131"/>
+        <CursorPos Y="140"/>
+        <UsageCount Value="200"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="form\articulos_004.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="123"/>
+        <CursorPos Y="148"/>
+        <UsageCount Value="201"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="form\articulos_005.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="356"/>
+        <CursorPos X="35" Y="376"/>
+        <UsageCount Value="200"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="form\articulos_006.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_006"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="93"/>
+        <CursorPos Y="99"/>
+        <UsageCount Value="200"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="form\grupos_cocina_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_grupos_cocina_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="488"/>
+        <CursorPos X="5" Y="507"/>
+        <UsageCount Value="201"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="dataModule\dm_grupos_cocina.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Grupos_Cocina"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="61" Y="36"/>
+        <UsageCount Value="200"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="form\grupos_cocina_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_grupos_cocina_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="137"/>
+        <CursorPos X="11" Y="159"/>
+        <UsageCount Value="200"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="form\articulos_007.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_007"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="475"/>
+        <CursorPos X="5" Y="488"/>
+        <UsageCount Value="200"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="dataModule\dm_articulos_elegir.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos_Elegir"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="82" Y="36"/>
+        <UsageCount Value="201"/>
+      </Unit73>
+      <Unit74>
+        <Filename Value="form\personal_familias_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_familias_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="940"/>
+        <CursorPos X="15" Y="910"/>
+        <UsageCount Value="200"/>
+      </Unit74>
+      <Unit75>
+        <Filename Value="dataModule\dm_personal_familias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Personal_Familias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="74" Y="37"/>
+        <UsageCount Value="200"/>
+      </Unit75>
+      <Unit76>
+        <Filename Value="form\personal_familias_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_familias_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="758"/>
+        <CursorPos X="12" Y="771"/>
+        <UsageCount Value="202"/>
+      </Unit76>
+      <Unit77>
+        <Filename Value="form\personal_familias_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_familias_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="211"/>
+        <CursorPos X="5" Y="227"/>
+        <UsageCount Value="205"/>
+      </Unit77>
+      <Unit78>
+        <Filename Value="dataModule\dm_personal_no_subfamilias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Personal_No_SubFamilias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="31" Y="36"/>
+        <UsageCount Value="205"/>
+      </Unit78>
+      <Unit79>
+        <Filename Value="form\personal_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1018"/>
+        <CursorPos X="5" Y="1032"/>
+        <UsageCount Value="200"/>
+      </Unit79>
+      <Unit80>
+        <Filename Value="dataModule\dm_personal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Personal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="60" Y="35"/>
+        <UsageCount Value="200"/>
+      </Unit80>
+      <Unit81>
+        <Filename Value="form\personal_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="833"/>
+        <CursorPos X="54" Y="855"/>
+        <UsageCount Value="205"/>
+      </Unit81>
+      <Unit82>
+        <Filename Value="form\personal_contratos_familias_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_contratos_familias_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="137"/>
+        <CursorPos Y="159"/>
+        <UsageCount Value="204"/>
+      </Unit82>
+      <Unit83>
+        <Filename Value="dataModule\dm_personal_contratos_familias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Personal_Contratos_Familias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="60" Y="35"/>
+        <UsageCount Value="203"/>
+      </Unit83>
+      <Unit84>
+        <Filename Value="form\personal_contratos_familias_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_contratos_familias_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="377"/>
+        <CursorPos X="5" Y="385"/>
+        <UsageCount Value="203"/>
+      </Unit84>
+      <Unit85>
+        <Filename Value="dataModule\dm_personal_contratos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Personal_Contratos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="60" Y="35"/>
+        <UsageCount Value="200"/>
+      </Unit85>
+      <Unit86>
+        <Filename Value="form\personal_contratos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_contratos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="778"/>
+        <CursorPos X="5" Y="794"/>
+        <UsageCount Value="200"/>
+      </Unit86>
+      <Unit87>
+        <Filename Value="form\personal_contratos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_personal_contratos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="238"/>
+        <CursorPos X="42" Y="252"/>
+        <UsageCount Value="201"/>
+      </Unit87>
+      <Unit88>
+        <Filename Value="form\empresas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_empresas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="683"/>
+        <CursorPos X="5" Y="696"/>
+        <UsageCount Value="205"/>
+      </Unit88>
+      <Unit89>
+        <Filename Value="dataModule\dm_empresas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Empresas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="60" Y="36"/>
+        <UsageCount Value="203"/>
+      </Unit89>
+      <Unit90>
+        <Filename Value="form\empresas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_empresas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="588"/>
+        <CursorPos X="42" Y="602"/>
+        <UsageCount Value="201"/>
+      </Unit90>
+      <Unit91>
+        <Filename Value="form\gastos_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_gastos_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="375"/>
+        <CursorPos X="5" Y="388"/>
+        <UsageCount Value="205"/>
+      </Unit91>
+      <Unit92>
+        <Filename Value="dataModule\dm_gastos_tipos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Gastos_Tipos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="60" Y="35"/>
+        <UsageCount Value="205"/>
+      </Unit92>
+      <Unit93>
+        <Filename Value="form\gastos_tipos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_gastos_tipos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="26" Y="9"/>
+        <UsageCount Value="205"/>
+      </Unit93>
+      <Unit94>
+        <Filename Value="form\cuentas_pagos_cobros_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_cuentas_pagos_cobros_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="432"/>
+        <CursorPos X="5" Y="443"/>
+        <UsageCount Value="200"/>
+      </Unit94>
+      <Unit95>
+        <Filename Value="dataModule\dm_cuentas_pagos_cobros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Cuentas_Pagos_Cobros"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="60" Y="35"/>
+        <UsageCount Value="200"/>
+      </Unit95>
+      <Unit96>
+        <Filename Value="form\cuentas_pagos_cobros_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_cuentas_pagos_cobros_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="8"/>
+        <CursorPos X="62" Y="33"/>
+        <UsageCount Value="200"/>
+      </Unit96>
+      <Unit97>
+        <Filename Value="form\conceptos_almacen_traspaso_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_conceptos_almacen_traspaso_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="378"/>
+        <CursorPos X="5" Y="395"/>
+        <UsageCount Value="201"/>
+      </Unit97>
+      <Unit98>
+        <Filename Value="dataModule\dm_conceptos_almacen_traspaso.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Conceptos_Almacen_Traspaso"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="60" Y="35"/>
+        <UsageCount Value="201"/>
+      </Unit98>
+      <Unit99>
+        <Filename Value="form\conceptos_almacen_traspaso_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_conceptos_almacen_traspaso_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="62" Y="27"/>
+        <UsageCount Value="204"/>
+      </Unit99>
+      <Unit100>
+        <Filename Value="form\articulos_ofertas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_ofertas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="971"/>
+        <CursorPos X="29" Y="993"/>
+        <UsageCount Value="202"/>
+      </Unit100>
+      <Unit101>
+        <Filename Value="dataModule\dm_articulos_ofertas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos_Ofertas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="7"/>
+        <CursorPos X="64" Y="39"/>
+        <UsageCount Value="202"/>
+      </Unit101>
+      <Unit102>
+        <Filename Value="form\articulos_ofertas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_ofertas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="340"/>
+        <CursorPos X="42" Y="354"/>
+        <UsageCount Value="201"/>
+      </Unit102>
+      <Unit103>
+        <Filename Value="form\articulos_ofertas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_ofertas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="110"/>
+        <CursorPos X="20" Y="129"/>
+        <UsageCount Value="204"/>
+      </Unit103>
+      <Unit104>
+        <Filename Value="form\articulos_ofertas_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_ofertas_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="86"/>
+        <CursorPos X="42" Y="100"/>
+        <UsageCount Value="201"/>
+      </Unit104>
+      <Unit105>
+        <Filename Value="Unit\utilidades_stock.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="19"/>
+        <CursorPos X="35" Y="39"/>
+        <UsageCount Value="200"/>
+      </Unit105>
+      <Unit106>
+        <Filename Value="dataModule\dm_albaranes_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Albaranes_Ventas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="20"/>
+        <CursorPos X="90" Y="54"/>
+        <UsageCount Value="201"/>
+      </Unit106>
+      <Unit107>
+        <Filename Value="Unit\utilidades_datos_tablas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="816"/>
+        <CursorPos X="23" Y="836"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit107>
+      <Unit108>
+        <Filename Value="Unit\utilidades_impuestos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="560"/>
+        <CursorPos X="35" Y="580"/>
+        <UsageCount Value="200"/>
+      </Unit108>
+      <Unit109>
+        <Filename Value="Unit\utilidades_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1382"/>
+        <CursorPos X="36" Y="1397"/>
+        <UsageCount Value="200"/>
+      </Unit109>
+      <Unit110>
+        <Filename Value="dataModule\dm_users_elegir.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Users_Elegir"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="dm_Users_Elegir"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="86" Y="35"/>
+        <UsageCount Value="200"/>
+      </Unit110>
+      <Unit111>
+        <Filename Value="form\users_005.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_users_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="534"/>
+        <CursorPos X="119" Y="551"/>
+        <UsageCount Value="200"/>
+      </Unit111>
+      <Unit112>
+        <Filename Value="form\users_006.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_users_006"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="78"/>
+        <CursorPos X="26" Y="92"/>
+        <UsageCount Value="202"/>
+      </Unit112>
+      <Unit113>
+        <Filename Value="form\albaranes_ventas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_ventas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="979"/>
+        <CursorPos X="42" Y="993"/>
+        <UsageCount Value="202"/>
+      </Unit113>
+      <Unit114>
+        <Filename Value="form\albaranes_ventas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_ventas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3248"/>
+        <CursorPos X="27" Y="3271"/>
+        <UsageCount Value="200"/>
+        <Bookmarks Count="1">
+          <Item0 X="17" Y="1928" ID="5"/>
+        </Bookmarks>
+      </Unit114>
+      <Unit115>
+        <Filename Value="form\empresas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_empresas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="395"/>
+        <CursorPos X="119" Y="411"/>
+        <UsageCount Value="201"/>
+      </Unit115>
+      <Unit116>
+        <Filename Value="dataModule\dm_vehiculos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="13"/>
+        <CursorPos X="31" Y="44"/>
+        <UsageCount Value="200"/>
+      </Unit116>
+      <Unit117>
+        <Filename Value="form\vehiculos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="406"/>
+        <CursorPos X="42" Y="420"/>
+        <UsageCount Value="200"/>
+      </Unit117>
+      <Unit118>
+        <Filename Value="form\vehiculos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1535"/>
+        <CursorPos X="31" Y="1548"/>
+        <UsageCount Value="204"/>
+      </Unit118>
+      <Unit119>
+        <Filename Value="form\vehiculos_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="257"/>
+        <CursorPos X="5" Y="264"/>
+        <UsageCount Value="202"/>
+      </Unit119>
+      <Unit120>
+        <Filename Value="form\vehiculos_tipos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="113"/>
+        <CursorPos Y="135"/>
+        <UsageCount Value="202"/>
+      </Unit120>
+      <Unit121>
+        <Filename Value="dataModule\dm_vehiculos_tipos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos_Tipos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="92" Y="35"/>
+        <UsageCount Value="201"/>
+      </Unit121>
+      <Unit122>
+        <Filename Value="form\vehiculos_marcas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_marcas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="254"/>
+        <CursorPos X="29" Y="267"/>
+        <UsageCount Value="207"/>
+      </Unit122>
+      <Unit123>
+        <Filename Value="dataModule\dm_vehiculos_marcas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos_Marcas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="31" Y="36"/>
+        <UsageCount Value="205"/>
+      </Unit123>
+      <Unit124>
+        <Filename Value="form\vehiculos_marcas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_marcas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="113"/>
+        <CursorPos Y="135"/>
+        <UsageCount Value="204"/>
+      </Unit124>
+      <Unit125>
+        <Filename Value="form\combustibles_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_combustibles_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="248"/>
+        <CursorPos X="5" Y="265"/>
+        <UsageCount Value="204"/>
+      </Unit125>
+      <Unit126>
+        <Filename Value="form\combustibles_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_combustibles_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="113"/>
+        <CursorPos Y="135"/>
+        <UsageCount Value="204"/>
+      </Unit126>
+      <Unit127>
+        <Filename Value="dataModule\dm_combustibles.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Combustibles"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="31" Y="36"/>
+        <UsageCount Value="203"/>
+      </Unit127>
+      <Unit128>
+        <Filename Value="dataModule\dm_vehiculos_tipo_cambios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos_Tipo_Cambios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="31" Y="36"/>
+        <UsageCount Value="203"/>
+      </Unit128>
+      <Unit129>
+        <Filename Value="form\vehiculos_tipo_cambios_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipo_cambios_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="247"/>
+        <CursorPos X="5" Y="264"/>
+        <UsageCount Value="200"/>
+      </Unit129>
+      <Unit130>
+        <Filename Value="form\vehiculos_tipo_cambios_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipo_cambios_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="113"/>
+        <CursorPos Y="135"/>
+        <UsageCount Value="200"/>
+      </Unit130>
+      <Unit131>
+        <Filename Value="dataModule\dm_vehiculos_tipo_ruedas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos_Tipo_Ruedas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="31" Y="36"/>
+        <UsageCount Value="200"/>
+      </Unit131>
+      <Unit132>
+        <Filename Value="form\vehiculos_tipo_ruedas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipo_ruedas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="249"/>
+        <CursorPos X="5" Y="263"/>
+        <UsageCount Value="200"/>
+      </Unit132>
+      <Unit133>
+        <Filename Value="form\vehiculos_tipo_ruedas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_tipo_ruedas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="113"/>
+        <CursorPos Y="135"/>
+        <UsageCount Value="200"/>
+      </Unit133>
+      <Unit134>
+        <Filename Value="dataModule\dm_tarjetas_transporte.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Tarjetas_Transporte"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="31" Y="36"/>
+        <UsageCount Value="205"/>
+      </Unit134>
+      <Unit135>
+        <Filename Value="form\tarjetas_transporte_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_tarjetas_transporte_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="317"/>
+        <CursorPos X="5" Y="332"/>
+        <UsageCount Value="205"/>
+      </Unit135>
+      <Unit136>
+        <Filename Value="form\tarjetas_transporte_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_tarjetas_transporte_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="92"/>
+        <CursorPos X="42" Y="106"/>
+        <UsageCount Value="205"/>
+      </Unit136>
+      <Unit137>
+        <Filename Value="form\proveedores_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="400"/>
+        <CursorPos X="5" Y="413"/>
+        <UsageCount Value="200"/>
+      </Unit137>
+      <Unit138>
+        <Filename Value="dataModule\dm_proveedor_elegir_contacto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Proveedor_Elegir_Contacto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="6"/>
+        <CursorPos X="31" Y="37"/>
+        <UsageCount Value="200"/>
+      </Unit138>
+      <Unit139>
+        <Filename Value="form\albaranes_ventas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_ventas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="302"/>
+        <CursorPos X="42" Y="316"/>
+        <UsageCount Value="202"/>
+      </Unit139>
+      <Unit140>
+        <Filename Value="form\vehiculos_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="130"/>
+        <CursorPos X="42" Y="144"/>
+        <UsageCount Value="202"/>
+      </Unit140>
+      <Unit141>
+        <Filename Value="dataModule\dm_vehiculos_equipamientos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Vehiculos_Equipamientos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="31" Y="36"/>
+        <UsageCount Value="200"/>
+      </Unit141>
+      <Unit142>
+        <Filename Value="form\vehiculos_equipamientos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_equipamientos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="252"/>
+        <CursorPos X="15" Y="228"/>
+        <UsageCount Value="200"/>
+      </Unit142>
+      <Unit143>
+        <Filename Value="form\vehiculos_equipamientos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_vehiculos_equipamientos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="113"/>
+        <CursorPos Y="135"/>
+        <UsageCount Value="200"/>
+      </Unit143>
+      <Unit144>
+        <Filename Value="Unit\utilidades_contabilidad.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1271"/>
+        <CursorPos X="36" Y="1286"/>
+        <UsageCount Value="201"/>
+      </Unit144>
+      <Unit145>
+        <Filename Value="dataModule\dm_cliente_elegir_direccion_envio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Cliente_Elegir_Direccion_Envio"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="29" Y="36"/>
+        <UsageCount Value="201"/>
+      </Unit145>
+      <Unit146>
+        <Filename Value="form\proveedores_004.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_proveedores_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="794"/>
+        <CursorPos X="5" Y="810"/>
+        <UsageCount Value="201"/>
+      </Unit146>
+      <Unit147>
+        <Filename Value="dataModule\dm_proveedores_elegir.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Proveedores_Elegir"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="80" Y="35"/>
+        <UsageCount Value="201"/>
+      </Unit147>
+      <Unit148>
+        <Filename Value="form\articulos_008.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_008"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="97"/>
+        <CursorPos Y="106"/>
+        <UsageCount Value="216"/>
+      </Unit148>
+      <Unit149>
+        <Filename Value="form\presupuestos_ventas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_ventas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3423"/>
+        <CursorPos X="23" Y="3445"/>
+        <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <TopLine Value="1083"/>
+          <CursorPos X="27" Y="1096"/>
+        </ExtraEditor1>
+        <UsageCount Value="200"/>
+        <Bookmarks Count="1">
+          <Item0 Y="1082" ID="6"/>
+        </Bookmarks>
+      </Unit149>
+      <Unit150>
+        <Filename Value="dataModule\dm_presupuestos_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_presupuestos_ventas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="21"/>
+        <CursorPos X="84" Y="47"/>
+        <UsageCount Value="202"/>
+      </Unit150>
+      <Unit151>
+        <Filename Value="form\presupuestos_ventas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_ventas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="914"/>
+        <CursorPos X="42" Y="928"/>
+        <UsageCount Value="201"/>
+      </Unit151>
+      <Unit152>
+        <Filename Value="form\presupuestos_ventas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_ventas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="290"/>
+        <CursorPos X="42" Y="304"/>
+        <UsageCount Value="200"/>
+      </Unit152>
+      <Unit153>
+        <Filename Value="dataModule\dm_pedidos_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_pedidos_ventas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="27"/>
+        <CursorPos X="78" Y="52"/>
+        <UsageCount Value="201"/>
+      </Unit153>
+      <Unit154>
+        <Filename Value="form\pedidos_ventas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_ventas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4213"/>
+        <CursorPos X="27" Y="4236"/>
+        <UsageCount Value="201"/>
+      </Unit154>
+      <Unit155>
+        <Filename Value="form\pedidos_ventas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_ventas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="918"/>
+        <CursorPos X="42" Y="932"/>
+        <UsageCount Value="200"/>
+      </Unit155>
+      <Unit156>
+        <Filename Value="form\pedidos_ventas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_ventas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="519"/>
+        <CursorPos X="42" Y="533"/>
+        <UsageCount Value="202"/>
+      </Unit156>
+      <Unit157>
+        <Filename Value="dataModule\dm_empresas_elegir.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_empresas_elegir"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="60" Y="36"/>
+        <UsageCount Value="204"/>
+      </Unit157>
+      <Unit158>
+        <Filename Value="form\configuracion_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_configuracion_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="267"/>
+        <CursorPos X="50" Y="271"/>
+        <UsageCount Value="204"/>
+      </Unit158>
+      <Unit159>
+        <Filename Value="form\configuracion_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_configuracion_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="510"/>
+        <CursorPos X="5" Y="523"/>
+        <UsageCount Value="204"/>
+      </Unit159>
+      <Unit160>
+        <Filename Value="dataModule\dm_configuracion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_configuracion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="44" Y="37"/>
+        <UsageCount Value="200"/>
+      </Unit160>
+      <Unit161>
+        <Filename Value="dataModule\dm_visitas_tipos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_tipos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="29" Y="35"/>
+        <UsageCount Value="200"/>
+      </Unit161>
+      <Unit162>
+        <Filename Value="form\visitas_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="244"/>
+        <CursorPos X="5" Y="250"/>
+        <UsageCount Value="200"/>
+      </Unit162>
+      <Unit163>
+        <Filename Value="form\visitas_tipos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_tipos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="154"/>
+        <CursorPos X="66" Y="162"/>
+        <UsageCount Value="200"/>
+      </Unit163>
+      <Unit164>
+        <Filename Value="dataModule\dm_visitas_resultados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_resultados"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="29" Y="35"/>
+        <UsageCount Value="202"/>
+      </Unit164>
+      <Unit165>
+        <Filename Value="form\visitas_resultados_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_resultados_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="238"/>
+        <CursorPos X="7" Y="250"/>
+        <UsageCount Value="201"/>
+      </Unit165>
+      <Unit166>
+        <Filename Value="form\visitas_resultados_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_resultados_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="142"/>
+        <CursorPos Y="164"/>
+        <UsageCount Value="202"/>
+      </Unit166>
+      <Unit167>
+        <Filename Value="form\visitas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1297"/>
+        <CursorPos X="5" Y="1310"/>
+        <UsageCount Value="200"/>
+      </Unit167>
+      <Unit168>
+        <Filename Value="dataModule\dm_visitas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="29" Y="35"/>
+        <UsageCount Value="200"/>
+      </Unit168>
+      <Unit169>
+        <Filename Value="form\visitas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="502"/>
+        <CursorPos Y="514"/>
+        <UsageCount Value="200"/>
+      </Unit169>
+      <Unit170>
+        <Filename Value="form\rutas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_rutas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="235"/>
+        <CursorPos X="5" Y="251"/>
+        <UsageCount Value="201"/>
+      </Unit170>
+      <Unit171>
+        <Filename Value="form\rutas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_rutas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="142"/>
+        <CursorPos Y="164"/>
+        <UsageCount Value="201"/>
+      </Unit171>
+      <Unit172>
+        <Filename Value="dataModule\dm_rutas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_rutas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="29" Y="35"/>
+        <UsageCount Value="203"/>
+      </Unit172>
+      <Unit173>
+        <Filename Value="Unit\utilidades_clientes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="59"/>
+        <CursorPos X="45" Y="61"/>
+        <UsageCount Value="203"/>
+      </Unit173>
+      <Unit174>
+        <Filename Value="form\visitas_por_zona_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_zona_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="829"/>
+        <CursorPos X="29" Y="851"/>
+        <UsageCount Value="201"/>
+      </Unit174>
+      <Unit175>
+        <Filename Value="dataModule\dm_visitas_por_zona.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_zona"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="29" Y="38"/>
+        <UsageCount Value="200"/>
+      </Unit175>
+      <Unit176>
+        <Filename Value="form\visitas_por_provincia_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_provincia_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="654"/>
+        <CursorPos X="27" Y="667"/>
+        <UsageCount Value="206"/>
+      </Unit176>
+      <Unit177>
+        <Filename Value="dataModule\dm_visitas_por_provincia.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_provincia"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="27" Y="38"/>
+        <UsageCount Value="205"/>
+      </Unit177>
+      <Unit178>
+        <Filename Value="form\visitas_por_cliente_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_cliente_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1002"/>
+        <CursorPos X="5" Y="1018"/>
+        <UsageCount Value="200"/>
+      </Unit178>
+      <Unit179>
+        <Filename Value="dataModule\dm_visitas_por_cliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_cliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="29" Y="38"/>
+        <UsageCount Value="200"/>
+      </Unit179>
+      <Unit180>
+        <Filename Value="form\visitas_por_tipo_cliente_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_tipo_cliente_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="866"/>
+        <CursorPos X="5" Y="869"/>
+        <UsageCount Value="200"/>
+      </Unit180>
+      <Unit181>
+        <Filename Value="dataModule\dm_visitas_por_tipo_cliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_tipo_cliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="200"/>
+      </Unit181>
+      <Unit182>
+        <Filename Value="form\visitas_por_actividad_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_actividad_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="675"/>
+        <CursorPos X="27" Y="688"/>
+        <UsageCount Value="201"/>
+      </Unit182>
+      <Unit183>
+        <Filename Value="dataModule\dm_visitas_por_actividad.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_actividad"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="29" Y="38"/>
+        <UsageCount Value="201"/>
+      </Unit183>
+      <Unit184>
+        <Filename Value="form\visitas_por_representante_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_por_representante_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="942"/>
+        <CursorPos X="5" Y="957"/>
+        <UsageCount Value="202"/>
+      </Unit184>
+      <Unit185>
+        <Filename Value="dataModule\dm_visitas_por_representante.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_por_representante"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="29" Y="38"/>
+        <UsageCount Value="202"/>
+      </Unit185>
+      <Unit186>
+        <Filename Value="form\visitas_planificacion_por_zona_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_planificacion_por_zona_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="383"/>
+        <CursorPos X="5" Y="394"/>
+        <UsageCount Value="201"/>
+      </Unit186>
+      <Unit187>
+        <Filename Value="dataModule\dm_visitas_planificacion_por_zona.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_planificacion_por_zona"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="6"/>
+        <CursorPos X="31" Y="37"/>
+        <UsageCount Value="200"/>
+      </Unit187>
+      <Unit188>
+        <Filename Value="form\visitas_planificacion_por_provincia_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_visitas_planificacion_por_provincia_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="399"/>
+        <CursorPos X="5" Y="404"/>
+        <UsageCount Value="201"/>
+      </Unit188>
+      <Unit189>
+        <Filename Value="dataModule\dm_visitas_planificacion_por_provincia.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_visitas_planificacion_por_provincia"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="6"/>
+        <CursorPos X="31" Y="37"/>
+        <UsageCount Value="201"/>
+      </Unit189>
+      <Unit190>
+        <Filename Value="form\pedidos_ventas_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_ventas_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="145"/>
+        <CursorPos X="70" Y="159"/>
+        <UsageCount Value="201"/>
+      </Unit190>
+      <Unit191>
+        <Filename Value="form\albaranes_ventas_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_ventas_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="145"/>
+        <CursorPos X="70" Y="159"/>
+        <UsageCount Value="200"/>
+      </Unit191>
+      <Unit192>
+        <Filename Value="dataModule\dm_facturas_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_facturas_ventas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="35"/>
+        <CursorPos X="76" Y="60"/>
+        <UsageCount Value="202"/>
+      </Unit192>
+      <Unit193>
+        <Filename Value="form\facturas_ventas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1731"/>
+        <CursorPos X="27" Y="1744"/>
+        <UsageCount Value="202"/>
+      </Unit193>
+      <Unit194>
+        <Filename Value="form\facturas_ventas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1343"/>
+        <CursorPos X="78" Y="1346"/>
+        <UsageCount Value="200"/>
+      </Unit194>
+      <Unit195>
+        <Filename Value="form\facturas_ventas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="215"/>
+        <CursorPos X="42" Y="229"/>
+        <UsageCount Value="201"/>
+      </Unit195>
+      <Unit196>
+        <Filename Value="form\facturas_ventas_003.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="158"/>
+        <CursorPos X="28" Y="172"/>
+        <UsageCount Value="201"/>
+      </Unit196>
+      <Unit197>
+        <Filename Value="form\facturas_ventas_004.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="101"/>
+        <CursorPos X="38" Y="115"/>
+        <UsageCount Value="200"/>
+      </Unit197>
+      <Unit198>
+        <Filename Value="form\facturas_ventas_005.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="599"/>
+        <CursorPos X="38" Y="613"/>
+        <UsageCount Value="202"/>
+      </Unit198>
+      <Unit199>
+        <Filename Value="form\barra_progreso.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_barra_progreso"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="18"/>
+        <CursorPos X="71" Y="30"/>
+        <UsageCount Value="200"/>
+      </Unit199>
+      <Unit200>
+        <Filename Value="form\facturas_ventas_006.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_006"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="104"/>
+        <CursorPos X="28" Y="118"/>
+        <UsageCount Value="200"/>
+      </Unit200>
+      <Unit201>
+        <Filename Value="form\margenes_tarifas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_margenes_tarifas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="267"/>
+        <CursorPos X="5" Y="281"/>
+        <UsageCount Value="200"/>
+      </Unit201>
+      <Unit202>
+        <Filename Value="dataModule\dm_margenes_tarifas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Margenes_Tarifas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="29" Y="35"/>
+        <UsageCount Value="200"/>
+      </Unit202>
+      <Unit203>
+        <Filename Value="form\margenes_tarifas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_margenes_tarifas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="168"/>
+        <CursorPos Y="194"/>
+        <UsageCount Value="200"/>
+      </Unit203>
+      <Unit204>
+        <Filename Value="form\tarifas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_tarifas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="481"/>
+        <CursorPos X="27" Y="494"/>
+        <UsageCount Value="201"/>
+      </Unit204>
+      <Unit205>
+        <Filename Value="form\tarifas_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_tarifas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="328"/>
+        <CursorPos X="35" Y="348"/>
+        <UsageCount Value="201"/>
+      </Unit205>
+      <Unit206>
+        <Filename Value="form\tarifas_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_tarifas_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="219"/>
+        <CursorPos X="42" Y="233"/>
+        <UsageCount Value="205"/>
+      </Unit206>
+      <Unit207>
+        <Filename Value="form\articulos_009.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_009"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="117"/>
+        <CursorPos Y="142"/>
+        <UsageCount Value="200"/>
+        <Bookmarks Count="1">
+          <Item0 Y="217" ID="2"/>
+        </Bookmarks>
+      </Unit207>
+      <Unit208>
+        <Filename Value="dataModule\dm_presupuestos_compras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Presupuestos_Compras"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="23"/>
+        <CursorPos X="82" Y="49"/>
+        <UsageCount Value="201"/>
+      </Unit208>
+      <Unit209>
+        <Filename Value="Unit\utilidades_compras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1167"/>
+        <CursorPos X="36" Y="1182"/>
+        <UsageCount Value="200"/>
+      </Unit209>
+      <Unit210>
+        <Filename Value="form\presupuestos_compras_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_compras_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3061"/>
+        <CursorPos X="27" Y="3084"/>
+        <UsageCount Value="200"/>
+      </Unit210>
+      <Unit211>
+        <Filename Value="form\presupuestos_compras_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_compras_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="337"/>
+        <CursorPos X="42" Y="351"/>
+        <UsageCount Value="200"/>
+      </Unit211>
+      <Unit212>
+        <Filename Value="form\presupuestos_compras_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_presupuestos_compras_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="274"/>
+        <CursorPos X="42" Y="288"/>
+        <UsageCount Value="201"/>
+      </Unit212>
+      <Unit213>
+        <Filename Value="form\pedidos_compras_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_compras_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2062"/>
+        <CursorPos X="19" Y="2075"/>
+        <UsageCount Value="200"/>
+        <Bookmarks Count="1">
+          <Item0 X="9" Y="1097" ID="7"/>
+        </Bookmarks>
+      </Unit213>
+      <Unit214>
+        <Filename Value="dataModule\dm_pedidos_compras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_pedidos_compras"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="24"/>
+        <CursorPos X="76" Y="50"/>
+        <UsageCount Value="200"/>
+      </Unit214>
+      <Unit215>
+        <Filename Value="form\pedidos_compras_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_compras_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="811"/>
+        <CursorPos X="42" Y="825"/>
+        <UsageCount Value="200"/>
+      </Unit215>
+      <Unit216>
+        <Filename Value="form\pedidos_compras_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_pedidos_compras_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="507"/>
+        <CursorPos X="42" Y="521"/>
+        <UsageCount Value="200"/>
+      </Unit216>
+      <Unit217>
+        <Filename Value="dataModule\dm_albaranes_compras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Albaranes_Compras"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="17"/>
+        <CursorPos X="90" Y="51"/>
+        <UsageCount Value="201"/>
+      </Unit217>
+      <Unit218>
+        <Filename Value="form\albaranes_compras_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_compras_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="967"/>
+        <CursorPos X="27" Y="980"/>
+        <UsageCount Value="200"/>
+      </Unit218>
+      <Unit219>
+        <Filename Value="form\albaranes_compras_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_compras_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1054"/>
+        <CursorPos X="42" Y="1068"/>
+        <UsageCount Value="201"/>
+      </Unit219>
+      <Unit220>
+        <Filename Value="form\albaranes_compras_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_albaranes_compras_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="196"/>
+        <CursorPos X="42" Y="210"/>
+        <UsageCount Value="200"/>
+      </Unit220>
+      <Unit221>
+        <Filename Value="form\facturas_compras_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1952"/>
+        <CursorPos X="29" Y="1965"/>
+        <UsageCount Value="200"/>
+      </Unit221>
+      <Unit222>
+        <Filename Value="dataModule\dm_facturas_compras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_facturas_compras"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="33"/>
+        <CursorPos X="82" Y="54"/>
+        <UsageCount Value="200"/>
+      </Unit222>
+      <Unit223>
+        <Filename Value="form\facturas_compras_006.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_006"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="104"/>
+        <CursorPos X="28" Y="118"/>
+        <UsageCount Value="200"/>
+      </Unit223>
+      <Unit224>
+        <Filename Value="form\facturas_compras_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1332"/>
+        <CursorPos X="42" Y="1346"/>
+        <UsageCount Value="200"/>
+      </Unit224>
+      <Unit225>
+        <Filename Value="form\facturas_compras_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="227"/>
+        <CursorPos X="42" Y="241"/>
+        <UsageCount Value="200"/>
+      </Unit225>
+      <Unit226>
+        <Filename Value="form\facturas_compras_005.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="566"/>
+        <CursorPos X="38" Y="580"/>
+        <UsageCount Value="200"/>
+      </Unit226>
+      <Unit227>
+        <Filename Value="Unit\utilidades_lineas_detalle.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="913"/>
+        <CursorPos X="23" Y="915"/>
+        <UsageCount Value="203"/>
+      </Unit227>
+      <Unit228>
+        <Filename Value="form\utilidades_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_utilidades_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="10"/>
+        <CursorPos X="61" Y="3"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit228>
+      <Unit229>
+        <Filename Value="dataModule\dm_utilidades.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_utilidades"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="29" Y="36"/>
+        <UsageCount Value="200"/>
+      </Unit229>
+      <Unit230>
+        <Filename Value="Unit\utilidades_empresas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="102"/>
+        <CursorPos X="35" Y="122"/>
+        <UsageCount Value="200"/>
+      </Unit230>
+      <Unit231>
+        <Filename Value="Unit\utilidades_almacenes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="132"/>
+        <CursorPos X="35" Y="152"/>
+        <UsageCount Value="201"/>
+      </Unit231>
+      <Unit232>
+        <Filename Value="form\articulos_010.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_010"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="350"/>
+        <CursorPos X="15" Y="316"/>
+        <UsageCount Value="202"/>
+      </Unit232>
+      <Unit233>
+        <Filename Value="dataModule\dm_articulos_referencias.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_Articulos_Referencias"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="90" Y="35"/>
+        <UsageCount Value="202"/>
+      </Unit233>
+      <Unit234>
+        <Filename Value="form\facturas_cerrar_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_cerrar_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="255"/>
+        <CursorPos X="5" Y="266"/>
+        <UsageCount Value="201"/>
+      </Unit234>
+      <Unit235>
+        <Filename Value="form\facturas_cerrar_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_cerrar_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="196"/>
+        <CursorPos X="42" Y="210"/>
+        <UsageCount Value="200"/>
+      </Unit235>
+      <Unit236>
+        <Filename Value="dataModule\dm_facturas_cerrar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_facturas_cerrar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="29" Y="36"/>
+        <UsageCount Value="200"/>
+      </Unit236>
+      <Unit237>
+        <Filename Value="form\articulos_ultimas_ventas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_articulos_ultimas_ventas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2019"/>
+        <CursorPos X="27" Y="2032"/>
+        <UsageCount Value="201"/>
+      </Unit237>
+      <Unit238>
+        <Filename Value="dataModule\dm_articulos_ultimas_ventas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule_articulos_ultimas_ventas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="78" Y="44"/>
+        <UsageCount Value="202"/>
+      </Unit238>
+      <Unit239>
+        <Filename Value="form\facturas_compras_004.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="185"/>
+        <CursorPos X="22" Y="199"/>
+        <UsageCount Value="206"/>
+      </Unit239>
+      <Unit240>
+        <Filename Value="form\facturas_ventas_007.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_ventas_007"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="41" Y="9"/>
+        <UsageCount Value="202"/>
+      </Unit240>
+      <Unit241>
+        <Filename Value="form\facturas_compras_007.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_facturas_compras_007"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="59"/>
+        <CursorPos X="73" Y="64"/>
+        <UsageCount Value="200"/>
+        <Bookmarks Count="1">
+          <Item0 Y="308" ID="2"/>
+        </Bookmarks>
+      </Unit241>
+      <Unit242>
+        <Filename Value="Unit\utilidades_impresoras.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="64"/>
+        <CursorPos X="36" Y="78"/>
+        <UsageCount Value="200"/>
+      </Unit242>
+      <Unit243>
+        <Filename Value="Unit\utilidades_informes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="13"/>
+        <CursorPos X="35" Y="33"/>
+        <UsageCount Value="202"/>
+      </Unit243>
+      <Unit244>
+        <Filename Value="form\elija_ano_trimestre.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_elija_ano_trimestre"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Elija_Ano_Trimestre"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="83"/>
+        <CursorPos X="29" Y="89"/>
+        <UsageCount Value="201"/>
+      </Unit244>
+      <Unit245>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_plantilla_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="2939"/>
+        <CursorPos X="24" Y="2962"/>
+        <UsageCount Value="206"/>
+        <Bookmarks Count="6">
+          <Item0 Y="2857" ID="2"/>
+          <Item1 X="31" Y="1605" ID="8"/>
+          <Item2 Y="1982" ID="9"/>
+          <Item3 Y="2922" ID="5"/>
+          <Item4 X="33" Y="288" ID="6"/>
+          <Item5 Y="2051" ID="1"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit245>
+      <Unit246>
+        <Filename Value="form\usando_plantillas\reportes_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_reportes_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="231"/>
+        <CursorPos X="44" Y="246"/>
+        <UsageCount Value="218"/>
+      </Unit246>
+      <Unit247>
+        <Filename Value="form\usando_plantillas\actividades_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_actividades_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="88"/>
+        <CursorPos X="44" Y="99"/>
+        <UsageCount Value="202"/>
+      </Unit247>
+      <Unit248>
+        <Filename Value="form\usando_plantillas\impuestos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_impuestos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="941"/>
+        <CursorPos X="104" Y="946"/>
+        <UsageCount Value="204"/>
+      </Unit248>
+      <Unit249>
+        <Filename Value="form\usando_plantillas\elegir_impuestos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_elegir_impuestos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="150"/>
+        <CursorPos X="44" Y="159"/>
+        <UsageCount Value="201"/>
+      </Unit249>
+      <Unit250>
+        <Filename Value="form\usando_plantillas\almacenes_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_almacenes_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="289"/>
+        <CursorPos X="109" Y="309"/>
+        <UsageCount Value="202"/>
+      </Unit250>
+      <Unit251>
+        <Filename Value="form\usando_plantillas\almacenes_movimientos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_almacenes_movimientos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="107"/>
+        <CursorPos X="43" Y="120"/>
+        <UsageCount Value="204"/>
+      </Unit251>
+      <Unit252>
+        <Filename Value="form\plantillas form\plantilla_detalle_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_plantilla_detalle_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="194"/>
+        <CursorPos Y="206"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit252>
+      <Unit253>
+        <Filename Value="form\usando_plantillas\almacenes_movimientos_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_almacenes_movimientos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="67" Y="26"/>
+        <UsageCount Value="201"/>
+      </Unit253>
+      <Unit254>
+        <Filename Value="form\usando_plantillas\impresoras_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_impresoras_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="128"/>
+        <CursorPos X="66" Y="109"/>
+        <UsageCount Value="201"/>
+      </Unit254>
+      <Unit255>
+        <Filename Value="form\usando_plantillas\terminales_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_terminales_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="85"/>
+        <CursorPos X="44" Y="98"/>
+        <UsageCount Value="200"/>
+      </Unit255>
+      <Unit256>
+        <Filename Value="form\usando_plantillas\servicios_regulares_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_servicios_regulares_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="15"/>
+        <TopLine Value="1272"/>
+        <CursorPos X="6" Y="1288"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit256>
+      <Unit257>
+        <Filename Value="form\usando_plantillas\servicios_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_servicios_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="187"/>
+        <CursorPos X="59" Y="210"/>
+        <UsageCount Value="200"/>
+      </Unit257>
+      <Unit258>
+        <Filename Value="Unit\utilidades_servicios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="232"/>
+        <CursorPos X="32" Y="246"/>
+        <UsageCount Value="200"/>
+      </Unit258>
+      <Unit259>
+        <Filename Value="form\usando_plantillas\series_servicios_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_series_servicios_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="254"/>
+        <CursorPos X="44" Y="264"/>
+        <UsageCount Value="200"/>
+      </Unit259>
+      <Unit260>
+        <Filename Value="form\usando_plantillas\elegir_diarios_tipos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_elegir_diarios_tipos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="161"/>
+        <CursorPos X="44" Y="174"/>
+        <UsageCount Value="207"/>
+      </Unit260>
+      <Unit261>
+        <Filename Value="form\usando_plantillas\bancos_ctas_empresas_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_bancos_ctas_empresas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="351"/>
+        <CursorPos X="44" Y="366"/>
+        <UsageCount Value="201"/>
+      </Unit261>
+      <Unit262>
+        <Filename Value="form\usando_plantillas\clientes_tipos_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_clientes_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="106"/>
+        <CursorPos X="44" Y="119"/>
+        <UsageCount Value="201"/>
+      </Unit262>
+      <Unit263>
+        <Filename Value="form\usando_plantillas\clientes_000.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_clientes_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1619"/>
+        <CursorPos Y="1623"/>
+        <UsageCount Value="201"/>
+      </Unit263>
+      <Unit264>
+        <Filename Value="form\usando_plantillas\clientes_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_clientes_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="48"/>
+        <CursorPos X="76" Y="53"/>
+        <UsageCount Value="200"/>
+      </Unit264>
+      <Unit265>
+        <Filename Value="form\usando_plantillas\clientes_002.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_clientes_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="114"/>
+        <CursorPos X="50" Y="137"/>
+        <UsageCount Value="200"/>
+      </Unit265>
+      <Unit266>
+        <Filename Value="form\usando_plantillas\elegir_cliente_contacto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_elegir_cliente_contacto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="67" Y="18"/>
+        <UsageCount Value="200"/>
+      </Unit266>
+      <Unit267>
+        <Filename Value="form\usando_plantillas\elegir_cliente_direccion_envio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_elegir_cliente_direccion_envio"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="340"/>
+        <CursorPos X="86" Y="346"/>
+        <UsageCount Value="200"/>
+      </Unit267>
+      <Unit268>
+        <Filename Value="form\usando_plantillas\servicios_regulares_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="f_servicios_regulares_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="258"/>
+        <CursorPos X="73" Y="281"/>
+        <UsageCount Value="201"/>
+      </Unit268>
+      <Unit269>
+        <Filename Value="form\plantillas form\plantilla_001.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_plantilla_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="7"/>
+        <CursorPos X="21" Y="12"/>
+        <UsageCount Value="170"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit269>
+      <Unit270>
+        <Filename Value="form\clientes_000.pas"/>
+        <ComponentName Value="form_clientes_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1399"/>
+        <CursorPos Y="1413"/>
+        <UsageCount Value="168"/>
+      </Unit270>
+      <Unit271>
+        <Filename Value="dataModule\dm_clientes.pas"/>
+        <ComponentName Value="DataModule_Clientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="25"/>
+        <CursorPos X="40" Y="39"/>
+        <UsageCount Value="168"/>
+      </Unit271>
+      <Unit272>
+        <Filename Value="form\clientes_001.pas"/>
+        <ComponentName Value="form_clientes_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="456"/>
+        <CursorPos X="5" Y="331"/>
+        <UsageCount Value="167"/>
+      </Unit272>
+      <Unit273>
+        <Filename Value="form\clientes_002.pas"/>
+        <ComponentName Value="form_clientes_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="105"/>
+        <CursorPos X="42" Y="113"/>
+        <UsageCount Value="168"/>
+      </Unit273>
+      <Unit274>
+        <Filename Value="form\clientes_003.pas"/>
+        <ComponentName Value="form_clientes_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="369"/>
+        <CursorPos X="42" Y="380"/>
+        <UsageCount Value="167"/>
+      </Unit274>
+      <Unit275>
+        <Filename Value="form\clientes_004.pas"/>
+        <ComponentName Value="form_clientes_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="78"/>
+        <CursorPos X="26" Y="90"/>
+        <UsageCount Value="167"/>
+      </Unit275>
+      <Unit276>
+        <Filename Value="form\clientes_005.pas"/>
+        <ComponentName Value="form_clientes_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="86"/>
+        <CursorPos X="22" Y="98"/>
+        <UsageCount Value="168"/>
+      </Unit276>
+      <Unit277>
+        <Filename Value="form\clientes_tipos_000.pas"/>
+        <ComponentName Value="form_clientes_tipos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="413"/>
+        <CursorPos X="61" Y="431"/>
+        <UsageCount Value="167"/>
+      </Unit277>
+      <Unit278>
+        <Filename Value="dataModule\dm_clientes_tipos.pas"/>
+        <ComponentName Value="DataModule_Clientes_Tipos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="166"/>
+      </Unit278>
+      <Unit279>
+        <Filename Value="form\clientes_tipos_001.pas"/>
+        <ComponentName Value="form_clientes_tipos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="72"/>
+        <CursorPos Y="92"/>
+        <UsageCount Value="170"/>
+      </Unit279>
+      <Unit280>
+        <Filename Value="dataModule\dm_bancos_empresas.pas"/>
+        <ComponentName Value="DataModule_Bancos_Empresas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="8"/>
+        <UsageCount Value="167"/>
+      </Unit280>
+      <Unit281>
+        <Filename Value="form\bancos_empresas_000.pas"/>
+        <ComponentName Value="form_bancos_empresas_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="542"/>
+        <CursorPos X="37" Y="554"/>
+        <UsageCount Value="166"/>
+      </Unit281>
+      <Unit282>
+        <Filename Value="form\bancos_empresas_001.pas"/>
+        <ComponentName Value="form_bancos_empresas_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="442"/>
+        <CursorPos X="33" Y="457"/>
+        <UsageCount Value="165"/>
+      </Unit282>
+      <Unit283>
+        <Filename Value="dataModule\dm_terminales.pas"/>
+        <ComponentName Value="DataModule_Terminales"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="18"/>
+        <CursorPos Y="35"/>
+        <UsageCount Value="143"/>
+      </Unit283>
+      <Unit284>
+        <Filename Value="form\terminales_001.pas"/>
+        <ComponentName Value="form_terminales_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="45"/>
+        <CursorPos X="92" Y="56"/>
+        <UsageCount Value="143"/>
+      </Unit284>
+      <Unit285>
+        <Filename Value="dataModule\dm_impresoras.pas"/>
+        <ComponentName Value="DataModule_Impresoras"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="139"/>
+      </Unit285>
+      <Unit286>
+        <Filename Value="form\impresoras_001.pas"/>
+        <ComponentName Value="form_impresoras_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="46" Y="9"/>
+        <UsageCount Value="139"/>
+        <Bookmarks Count="1">
+          <Item0 X="42" Y="119" ID="3"/>
+        </Bookmarks>
+      </Unit286>
+      <Unit287>
+        <Filename Value="dataModule\dm_almacenes_movimientos.pas"/>
+        <ComponentName Value="DataModule_Almacenes_Movimientos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="15"/>
+        <CursorPos X="60" Y="18"/>
+        <UsageCount Value="138"/>
+      </Unit287>
+      <Unit288>
+        <Filename Value="form\almacenes_movimientos_002.pas"/>
+        <ComponentName Value="form_almacenes_movimientos_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="246"/>
+        <CursorPos X="5" Y="257"/>
+        <UsageCount Value="139"/>
+      </Unit288>
+      <Unit289>
+        <Filename Value="dataModule\dm_almacenes.pas"/>
+        <ComponentName Value="DataModule_Almacenes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="12"/>
+        <CursorPos Y="36"/>
+        <UsageCount Value="136"/>
+      </Unit289>
+      <Unit290>
+        <Filename Value="form\almacenes_001.pas"/>
+        <ComponentName Value="form_almacenes_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="129"/>
+        <CursorPos Y="143"/>
+        <UsageCount Value="136"/>
+      </Unit290>
+      <Unit291>
+        <Filename Value="dataModule\dm_impuestos.pas"/>
+        <ComponentName Value="DataModule_Impuestos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="74" Y="8"/>
+        <UsageCount Value="134"/>
+      </Unit291>
+      <Unit292>
+        <Filename Value="form\impuestos_001.pas"/>
+        <ComponentName Value="form_impuestos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="643"/>
+        <CursorPos Y="660"/>
+        <UsageCount Value="135"/>
+      </Unit292>
+      <Unit293>
+        <Filename Value="form\impuestos_002.pas"/>
+        <ComponentName Value="form_impuestos_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="69"/>
+        <CursorPos X="50" Y="78"/>
+        <UsageCount Value="134"/>
+      </Unit293>
+      <Unit294>
+        <Filename Value="dataModule\dm_impuestos_para_composicion.pas"/>
+        <ComponentName Value="DataModule_impuestos_para_composicion"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="74" Y="8"/>
+        <UsageCount Value="134"/>
+      </Unit294>
+      <Unit295>
+        <Filename Value="form\actividades_001.pas"/>
+        <ComponentName Value="form_actividades_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="102"/>
+        <CursorPos Y="110"/>
+        <UsageCount Value="135"/>
+      </Unit295>
+      <Unit296>
+        <Filename Value="dataModule\dm_actividades.pas"/>
+        <ComponentName Value="DataModule_actividades"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="13"/>
+        <CursorPos X="66" Y="25"/>
+        <UsageCount Value="137"/>
+      </Unit296>
+      <Unit297>
+        <Filename Value="form\informes_000.pas"/>
+        <ComponentName Value="form_informes_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="106"/>
+        <CursorPos Y="114"/>
+        <UsageCount Value="45"/>
+      </Unit297>
+      <Unit298>
+        <Filename Value="form\informes_001.pas"/>
+        <ComponentName Value="form_informes_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="21" Y="8"/>
+        <UsageCount Value="45"/>
+      </Unit298>
+      <Unit299>
+        <Filename Value="dataModule\dm_informes.pas"/>
+        <ComponentName Value="DataModule_Informes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="36"/>
+        <UsageCount Value="37"/>
+      </Unit299>
+      <Unit300>
+        <Filename Value="form\alumnos_000.pas"/>
+        <ComponentName Value="form_alumnos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1129"/>
+        <CursorPos X="26" Y="1129"/>
+        <UsageCount Value="94"/>
+      </Unit300>
+      <Unit301>
+        <Filename Value="form\alumnos_001.pas"/>
+        <ComponentName Value="form_alumnos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="631"/>
+        <CursorPos X="53" Y="644"/>
+        <UsageCount Value="94"/>
+      </Unit301>
+      <Unit302>
+        <Filename Value="form\alumnos_002.pas"/>
+        <ComponentName Value="form_alumnos_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="13"/>
+        <UsageCount Value="94"/>
+      </Unit302>
+      <Unit303>
+        <Filename Value="form\alumnos_003.pas"/>
+        <ComponentName Value="form_alumnos_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="16"/>
+        <UsageCount Value="94"/>
+      </Unit303>
+      <Unit304>
+        <Filename Value="form\alumnos_004.pas"/>
+        <ComponentName Value="form_alumnos_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="204"/>
+        <CursorPos X="58" Y="218"/>
+        <UsageCount Value="94"/>
+      </Unit304>
+      <Unit305>
+        <Filename Value="form\recibos_000.pas"/>
+        <ComponentName Value="form_recibos_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="842"/>
+        <CursorPos X="26" Y="842"/>
+        <UsageCount Value="95"/>
+      </Unit305>
+      <Unit306>
+        <Filename Value="form\recibos_001.pas"/>
+        <ComponentName Value="form_recibos_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="89"/>
+        <CursorPos Y="111"/>
+        <UsageCount Value="94"/>
+      </Unit306>
+      <Unit307>
+        <Filename Value="form\recibos_002.pas"/>
+        <ComponentName Value="form_recibos_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="387"/>
+        <CursorPos X="49" Y="400"/>
+        <UsageCount Value="97"/>
+      </Unit307>
+      <Unit308>
+        <Filename Value="form\recibos_003.pas"/>
+        <ComponentName Value="form_recibos_003"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="456"/>
+        <CursorPos X="102" Y="471"/>
+        <UsageCount Value="94"/>
+      </Unit308>
+      <Unit309>
+        <Filename Value="..\..\..\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4494"/>
+        <CursorPos Y="4509"/>
+        <UsageCount Value="9"/>
+      </Unit309>
+      <Unit310>
+        <Filename Value="..\..\..\lcl\dbctrls.pp"/>
+        <UnitName Value="DbCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1505"/>
+        <CursorPos Y="1516"/>
+        <UsageCount Value="3"/>
+      </Unit310>
+      <Unit311>
+        <Filename Value="..\..\..\lcl\grids.pas"/>
+        <UnitName Value="Grids"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="12250"/>
+        <CursorPos Y="12264"/>
+        <UsageCount Value="7"/>
+      </Unit311>
+      <Unit312>
+        <Filename Value="..\..\..\lcl\include\pen.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="505"/>
+        <CursorPos Y="519"/>
+        <UsageCount Value="1"/>
+      </Unit312>
+      <Unit313>
+        <Filename Value="..\..\..\lcl\include\customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="926"/>
+        <CursorPos Y="940"/>
+        <UsageCount Value="3"/>
+      </Unit313>
+      <Unit314>
+        <Filename Value="form\BORRADO\clientes\clientes_001.pas"/>
+        <ComponentName Value="form_clientes_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1959"/>
+        <CursorPos X="57" Y="1976"/>
+        <UsageCount Value="7"/>
+      </Unit314>
+      <Unit315>
+        <Filename Value="form\BORRADO\clientes\clientes_002.pas"/>
+        <ComponentName Value="form_clientes_002"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="345"/>
+        <CursorPos X="19" Y="350"/>
+        <UsageCount Value="2"/>
+        <Bookmarks Count="1">
+          <Item0 Y="92" ID="1"/>
+        </Bookmarks>
+      </Unit315>
+      <Unit316>
+        <Filename Value="form\BORRADO\clientes\clientes_004.pas"/>
+        <ComponentName Value="form_clientes_004"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="3"/>
+      </Unit316>
+      <Unit317>
+        <Filename Value="form\BORRADO\clientes\clientes_005.pas"/>
+        <ComponentName Value="form_clientes_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="2"/>
+      </Unit317>
+      <Unit318>
+        <Filename Value="C:\prueba para borrarla\servicios_regulares_001.pas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <CursorPos X="19" Y="4"/>
+        <UsageCount Value="1"/>
+      </Unit318>
+      <Unit319>
+        <Filename Value="..\..\..\components\codetools\nonpascalcodetools.pas"/>
+        <UnitName Value="NonPascalCodeTools"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="41"/>
+        <CursorPos Y="52"/>
+        <UsageCount Value="1"/>
+      </Unit319>
+      <Unit320>
+        <Filename Value="form\usando_plantillas\servicios_regulares_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5292"/>
+        <CursorPos Y="5319"/>
+        <UsageCount Value="4"/>
+        <Bookmarks Count="1">
+          <Item0 X="9" Y="5497" ID="1"/>
+        </Bookmarks>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit320>
+      <Unit321>
+        <Filename Value="..\..\..\components\lazutils\winlazfileutils.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="48"/>
+        <CursorPos Y="70"/>
+        <UsageCount Value="3"/>
+      </Unit321>
+      <Unit322>
+        <Filename Value="..\..\..\components\lazutils\lazmethodlist.pas"/>
+        <UnitName Value="LazMethodList"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="284"/>
+        <CursorPos Y="305"/>
+        <UsageCount Value="3"/>
+      </Unit322>
+      <Unit323>
+        <Filename Value="form\usando_plantillas\clientes_tipos_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="197"/>
+        <CursorPos Y="211"/>
+        <UsageCount Value="10"/>
+        <Bookmarks Count="1">
+          <Item0 X="28" Y="425" ID="5"/>
+        </Bookmarks>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit323>
+      <Unit324>
+        <Filename Value="form\usando_plantillas\filtros_001.pas"/>
+        <ComponentName Value="f_filtros_001"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="132"/>
+        <CursorPos Y="146"/>
+        <UsageCount Value="12"/>
+      </Unit324>
+      <Unit325>
+        <Filename Value="..\..\..\fpc\3.0.4\source\packages\fcl-db\src\base\db.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="94"/>
+        <CursorPos X="26" Y="108"/>
+        <UsageCount Value="9"/>
+      </Unit325>
+      <Unit326>
+        <Filename Value="C:\Users\Satellite\Desktop\plantilla_000.pas"/>
+        <ComponentName Value="form_plantilla_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="425"/>
+        <CursorPos X="3" Y="427"/>
+        <UsageCount Value="8"/>
+      </Unit326>
+      <Unit327>
+        <Filename Value="form\usando_plantillas\impresoras_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit327>
+      <Unit328>
+        <Filename Value="form\usando_plantillas\clientes_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit328>
+      <Unit329>
+        <Filename Value="C:\Users\Satellite\Desktop\filtrar_registros.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="614"/>
+        <CursorPos X="29" Y="636"/>
+        <UsageCount Value="9"/>
+      </Unit329>
+      <Unit330>
+        <Filename Value="form\menu.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2912"/>
+        <CursorPos Y="2921"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit330>
+      <Unit331>
+        <Filename Value="..\..\..\lcl\include\wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="8256"/>
+        <CursorPos X="32" Y="8270"/>
+        <UsageCount Value="3"/>
+      </Unit331>
+      <Unit332>
+        <Filename Value="form\usando_plantillas\actividades_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit332>
+      <Unit333>
+        <Filename Value="form\usando_plantillas\almacenes_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit333>
+      <Unit334>
+        <Filename Value="form\usando_plantillas\almacenes_movimientos_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="98" Y="2"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit334>
+      <Unit335>
+        <Filename Value="form\usando_plantillas\bancos_ctas_empresas_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit335>
+      <Unit336>
+        <Filename Value="form\usando_plantillas\elegir_cliente_contacto.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit336>
+      <Unit337>
+        <Filename Value="form\usando_plantillas\elegir_cliente_direccion_envio.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit337>
+      <Unit338>
+        <Filename Value="form\usando_plantillas\elegir_diarios_tipos.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit338>
+      <Unit339>
+        <Filename Value="form\usando_plantillas\elegir_impuestos.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit339>
+      <Unit340>
+        <Filename Value="form\usando_plantillas\impuestos_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit340>
+      <Unit341>
+        <Filename Value="form\usando_plantillas\reportes_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit341>
+      <Unit342>
+        <Filename Value="form\usando_plantillas\servicios_tipos_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit342>
+      <Unit343>
+        <Filename Value="form\usando_plantillas\terminales_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="185"/>
+        <CursorPos X="27" Y="212"/>
+        <UsageCount Value="4"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit343>
+      <Unit344>
+        <Filename Value="..\..\..\lcl\dbgrids.pas"/>
+        <UnitName Value="DBGrids"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="835"/>
+        <CursorPos Y="850"/>
+        <UsageCount Value="7"/>
+      </Unit344>
+      <Unit345>
+        <Filename Value="..\..\..\lcl\include\radiogroup.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="348"/>
+        <CursorPos Y="374"/>
+        <UsageCount Value="9"/>
+      </Unit345>
+      <Unit346>
+        <Filename Value="C:\Users\Satellite\Desktop\servicios_regulares_000.pas"/>
+        <ComponentName Value="f_servicios_regulares_000"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="91" Y="16"/>
+        <UsageCount Value="9"/>
+      </Unit346>
+      <Unit347>
+        <Filename Value="C:\Users\Satellite\Desktop\servicios_regulares_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit347>
+      <Unit348>
+        <Filename Value="..\..\..\lcl\extdlgs.pas"/>
+        <UnitName Value="ExtDlgs"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="11"/>
+      </Unit348>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="2348" Column="45" TopLine="2316"/>
+      </Position1>
+      <Position2>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="2378" Column="47" TopLine="2346"/>
+      </Position2>
+      <Position3>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="2411" Column="72" TopLine="2400"/>
+      </Position3>
+      <Position4>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="2313" Column="6" TopLine="2300"/>
+      </Position4>
+      <Position5>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="2962" Column="27" TopLine="2949"/>
+      </Position5>
+      <Position6>
+        <Filename Value="form\usando_plantillas\servicios_regulares_000.pas"/>
+        <Caret Line="1280" Column="8" TopLine="1267"/>
+      </Position6>
+      <Position7>
+        <Filename Value="form\usando_plantillas\servicios_regulares_000.pas"/>
+        <Caret Line="1288" Column="7" TopLine="1269"/>
+      </Position7>
+      <Position8>
+        <Filename Value="form\filtrar_registros.pas"/>
+        <Caret Line="306" Column="36" TopLine="293"/>
+      </Position8>
+      <Position9>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <Caret Line="15" Column="15" TopLine="2"/>
+      </Position9>
+      <Position10>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <Caret Line="1325" Column="3" TopLine="1312"/>
+      </Position10>
+      <Position11>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="2962" Column="27" TopLine="2949"/>
+      </Position11>
+      <Position12>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+      </Position12>
+      <Position13>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="1996" Column="33" TopLine="1973"/>
+      </Position13>
+      <Position14>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <Caret Line="15" Column="15"/>
+      </Position14>
+      <Position15>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="1996" Column="33" TopLine="1973"/>
+      </Position15>
+      <Position16>
+        <Filename Value="form\filtrar_registros.pas"/>
+        <Caret Line="307" Column="65" TopLine="293"/>
+      </Position16>
+      <Position17>
+        <Filename Value="form\filtrar_registros.pas"/>
+        <Caret Line="567" Column="39" TopLine="553"/>
+      </Position17>
+      <Position18>
+        <Filename Value="form\filtrar_registros.pas"/>
+        <Caret Line="588" Column="36" TopLine="565"/>
+      </Position18>
+      <Position19>
+        <Filename Value="socger_TALLER.pas"/>
+        <Caret Line="91" Column="50" TopLine="82"/>
+      </Position19>
+      <Position20>
+        <Filename Value="socger_TALLER.pas"/>
+      </Position20>
+      <Position21>
+        <Filename Value="socger_TALLER.pas"/>
+        <Caret Line="83" Column="48" TopLine="60"/>
+      </Position21>
+      <Position22>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="1982" Column="58" TopLine="1973"/>
+      </Position22>
+      <Position23>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+      </Position23>
+      <Position24>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="1222" Column="9" TopLine="1199"/>
+      </Position24>
+      <Position25>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="1225" Column="9" TopLine="1202"/>
+      </Position25>
+      <Position26>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="2313" Column="9" TopLine="2290"/>
+      </Position26>
+      <Position27>
+        <Filename Value="form\usando_plantillas\servicios_regulares_000.pas"/>
+        <Caret Line="1288" Column="7" TopLine="1269"/>
+      </Position27>
+      <Position28>
+        <Filename Value="form\usando_plantillas\servicios_regulares_000.pas"/>
+        <Caret Line="2003" Column="41" TopLine="1981"/>
+      </Position28>
+      <Position29>
+        <Filename Value="form\usando_plantillas\servicios_regulares_000.pas"/>
+        <Caret Line="674" Column="9" TopLine="661"/>
+      </Position29>
+      <Position30>
+        <Filename Value="form\usando_plantillas\servicios_regulares_000.pas"/>
+        <Caret Line="1177" Column="9" TopLine="1154"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="1">
+      <Item1>
+        <Expression Value="v_nombre_campo"/>
+      </Item1>
+    </Watches>
+  </Debugging>
+</CONFIG>

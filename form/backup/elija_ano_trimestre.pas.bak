@@ -1,0 +1,190 @@
+unit Elija_Ano_Trimestre;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, RTTICtrls, Forms, Controls, Graphics, Dialogs, StdCtrls, ComCtrls,
+  ButtonPanel, utilidades_general;
+
+type
+
+  { Tform_elija_ano_trimestre }
+
+  Tform_elija_ano_trimestre = class(TForm)
+    ButtonPanel1: TButtonPanel;
+    Label_Ano: TLabel;
+    Label_Trimestre: TLabel;
+    TISpinEdit_Ano: TTISpinEdit;
+    TISpinEdit_Trimestre: TTISpinEdit;
+
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure CancelButtonClick(Sender: TObject);
+    procedure OKButtonClick(Sender: TObject);
+
+  private
+    { private declarations }
+    private_Salir_OK  : Boolean;
+
+    procedure Validacion( param_msg : TStrings );
+
+  public
+    { public declarations }
+    public_Pulso_Aceptar : Boolean;
+  end;
+
+var
+  form_elija_ano_trimestre: Tform_elija_ano_trimestre;
+
+implementation
+
+{$R *.lfm}
+
+uses menu;
+
+{ Tform_elija_ano_trimestre }
+
+
+procedure Tform_elija_ano_trimestre.OKButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := true;
+    public_Pulso_Aceptar := true;
+end;
+
+procedure Tform_elija_ano_trimestre.CancelButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := true;
+    public_Pulso_Aceptar := false;
+end;
+
+procedure Tform_elija_ano_trimestre.FormClose( Sender: TObject;
+                                               var CloseAction: TCloseAction );
+var var_msg : TStrings;
+begin
+    // ********************************************************************************************* //
+    // ** SOLO PARA ESTE FORM                                                                     ** //
+    // ********************************************************************************************* //
+    ButtonPanel1.SetFocus;   // ** Con esto consigo que salga del campo que este y que se pueda   ** //
+                             // ** actualizar                                                     ** //
+    // ********************************************************************************************* //
+
+    var_msg := TStringList.Create;
+
+    if public_Pulso_Aceptar = true then
+    begin
+        Validacion(var_msg);
+    end;
+
+    if private_Salir_OK = False then
+    begin
+        // ***************************************************************************************** //
+        // ** Intento BitBtn_SALIR de la aplicación de un modo no permitido.
+        // ***************************************************************************************** //
+        // ** Pero si desde el menu principal está a true la variable public_Salir_Ok, significa  ** //
+        // ** que hay que salir si o si pues se pulsó cancelar al preguntar otra vez por la con-  ** //
+        // ** traseña                                                                             ** //
+        // ***************************************************************************************** //
+        if form_Menu.public_Salir_OK = False then
+        begin
+            CloseAction := CloseAction.caNone;
+        end;
+    end else begin
+        // ***************************************************************************************** //
+        // ** Fue correcto el modo como quiere salir de la aplicación                             ** //
+        // ***************************************************************************************** //
+        // ** SI ESTAMOS EN MODO DE INSERCCION (CREANDO LA CABECERA), ASIGNAMOS A LA CABECERA SU  ** //
+        // ** NUMERACION Y ACTUALIZAMOS EL REGISTRO DE EMPRESA CON EL A GENERAR.                  ** //
+        // **                                                                                     ** //
+        // ** ... LUEGO ...                                                                       ** //
+        // **                                                                                     ** //
+        // ** Comprobaremos si no se generó algún error por falta de completar algun campo y si se** //
+        // ** salió con el botón Ok o Cancel                                                      ** //
+        // ***************************************************************************************** //
+        if (Trim(var_msg.Text) <> '') and (public_Pulso_Aceptar = true) then
+        begin
+            UTI_GEN_Aviso(true, var_msg, rs_Falta, True, False);
+            CloseAction := CloseAction.caNone;
+        end else begin
+            CloseAction := caFree;
+        end;
+    end;
+
+    var_msg.Free;
+end;
+
+procedure Tform_elija_ano_trimestre.FormCreate(Sender: TObject);
+Var v_YY    : Word;
+    v_MM    : Word;
+    v_DD    : Word;
+    v_Fecha : TDate;
+Begin
+    // ********************************************************************************************* //
+    // ** Obligado en cada formulario para no olvidarlo                                           ** //
+    // ********************************************************************************************* //
+    with Self do
+    begin
+        Color       := $00C2C29E;
+        Position    := poScreenCenter;
+        BorderIcons := [];
+        BorderStyle := bsSingle;
+    end;
+
+    private_Salir_OK  := false;
+
+    // ********************************************************************************************* //
+    // ** Solo para formularios que traten con datos                                              ** //
+    // ********************************************************************************************* //
+
+    // ********************************************************************************************* //
+    // ** Solo para este modulo                                                                   ** //
+    // ********************************************************************************************* //
+    v_Fecha := Date;
+    DecodeDate(v_Fecha, v_YY, v_MM, v_DD);
+
+    TISpinEdit_Ano.MaxValue       := 9999;
+    TISpinEdit_Ano.MinValue       := v_YY;
+    TISpinEdit_Ano.Value          := v_YY;
+
+    TISpinEdit_Trimestre.MaxValue := 4;
+    TISpinEdit_Trimestre.MinValue := 1;
+
+    if ( Int(v_Fecha) >= Int(StrToDate('01/01/' + IntToStr(v_YY))) ) and
+       ( Int(v_Fecha) < Int(StrToDate('01/04/' + IntToStr(v_YY))) )  then
+    begin
+        TISpinEdit_Trimestre.Value := 1;
+    end;
+
+    if ( Int(v_Fecha) >= Int(StrToDate('01/04/' + IntToStr(v_YY))) ) and
+       ( Int(v_Fecha) < Int(StrToDate('01/07/' + IntToStr(v_YY))) )  then
+    begin
+        TISpinEdit_Trimestre.Value := 2;
+    end;
+
+    if ( Int(v_Fecha) >= Int(StrToDate('01/07/' + IntToStr(v_YY))) ) and
+       ( Int(v_Fecha) < Int(StrToDate('01/10/' + IntToStr(v_YY))) )  then
+    begin
+        TISpinEdit_Trimestre.Value := 3;
+    end;
+
+    if ( Int(v_Fecha) >= Int(StrToDate('01/10/' + IntToStr(v_YY))) )    and
+       ( Int(v_Fecha) < Int(StrToDate('31/12/' + IntToStr(v_YY + 1))) ) then
+    begin
+        TISpinEdit_Trimestre.Value := 4;
+    end;
+end;
+
+procedure Tform_elija_ano_trimestre.Validacion( param_msg : TStrings );
+begin
+    // jerofa aqui validar si me faltan por introducir valores
+{
+    if Trim(FieldByName('Fecha_Factura_Proveedor').AsString) = '' then
+    begin
+        param_msg.Add( '* Su fecha de factura.');
+    end;
+}
+end;
+
+end.
+

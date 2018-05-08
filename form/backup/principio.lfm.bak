@@ -1,0 +1,28 @@
+object Form_Principio: TForm_Principio
+  Left = 900
+  Height = 240
+  Top = 341
+  Width = 320
+  Caption = 'Form_Principio'
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  LCLVersion = '1.2.6.0'
+  object MainMenu1: TMainMenu
+    left = 240
+    top = 54
+    object MenuItem1: TMenuItem
+      Caption = '&Usuarios'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem_Medios: TMenuItem
+      Caption = '&Medios'
+      OnClick = MenuItem_MediosClick
+    end
+    object MenuItem_Peliculas: TMenuItem
+      Caption = '&Películas'
+      OnClick = MenuItem_PeliculasClick
+    end
+  end
+end

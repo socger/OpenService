@@ -1,0 +1,154 @@
+unit diarios_tipos_elegir;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  grids, Buttons, ComCtrls, ButtonPanel, DbCtrls, DBGrids, plantilla_000, utilidades_datos_tablas,
+  utilidades_bd, utilidades_rgtro, utilidades_general;
+
+resourcestring
+  rs_dia_tip_001 = 'Elegir tipo de diario';
+  rs_dia_tip_002 = 'Por la descripción';
+  rs_dia_tip_003 = 'Por la id';
+
+type
+
+  { Tform_diarios_tipos_elegir }
+
+  Tform_diarios_tipos_elegir = class(Tform_plantilla_000)
+    Edit_Descripcion: TEdit;
+    Label6: TLabel;
+    SQLQuery_PrincipalChange_Id_User: TLargeintField;
+    SQLQuery_PrincipalChange_WHEN: TDateTimeField;
+    SQLQuery_PrincipalDel_Id_User: TLargeintField;
+    SQLQuery_PrincipalDel_WHEN: TDateTimeField;
+    SQLQuery_PrincipalDel_WHY: TStringField;
+    SQLQuery_Principaldescripcion: TStringField;
+    SQLQuery_PrincipalInsert_Id_User: TLargeintField;
+    SQLQuery_PrincipalInsert_WHEN: TDateTimeField;
+
+    procedure Filtrar_tablas_ligadas_II( var p_Lineas_Filtro : TStrings; var p_Lineas_OrderBy : TStrings ); override;
+    procedure Cambiar_Nombre_Tabla_Principal; override;
+    procedure Cambiar_Titulo_Form; override;
+    procedure Crear_tipos_orden_Principal; override;
+    procedure Refrescar_Registros; override;
+    procedure Refrescar_Registros_TablasLigadas; override;
+    procedure Tabla_Principal_que_Filtrar( var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
+    procedure Cambiar_WindowState; override;
+    procedure Dibujar_Grid_Principal( p_Sender: TObject; const p_Rect: TRect; p_DataCol: Integer; p_Column: TColumn; p_State: TGridDrawState ); override;
+
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  form_diarios_tipos_elegir: Tform_diarios_tipos_elegir;
+
+implementation
+
+{$R *.lfm}
+
+procedure Tform_diarios_tipos_elegir.Filtrar_tablas_ligadas_II( var p_Lineas_Filtro : TStrings;
+                                                                var p_Lineas_OrderBy : TStrings );
+begin
+  // *********************************************************************************************** //
+  // ** no hay tablas ligadas                                                                     ** //
+  // *********************************************************************************************** //
+end;
+
+procedure Tform_diarios_tipos_elegir.Cambiar_Nombre_Tabla_Principal;
+begin
+  pubic_nombre_tabla_Principal := 'diarios_tipos';
+end;
+
+procedure Tform_diarios_tipos_elegir.Cambiar_Titulo_Form;
+begin
+  Self.Caption := rs_dia_tip_001;
+end;
+
+procedure Tform_diarios_tipos_elegir.Crear_tipos_orden_Principal;
+begin
+  SetLength(public_Order_By, 2);
+
+  public_Order_By[0].Titulo       := rs_dia_tip_002; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  public_Order_By[0].Memo_OrderBy := 'dt.descripcion ASC';
+
+  public_Order_By[1].Titulo       := rs_dia_tip_003;
+  public_Order_By[1].Memo_OrderBy := 'dt.id ASC';
+
+  Memo_OrderBy.Lines.Text          := public_Order_By[0].Memo_OrderBy;
+
+  UTI_TB_Rellenar_ComboBox_Orden( true,
+                                  ComboBox_Filtros,
+                                  public_Order_By,
+                                  0 );
+end;
+
+procedure Tform_diarios_tipos_elegir.Refrescar_Registros;
+var var_descripcion : String;
+begin
+  var_descripcion := '';
+
+  if SQLQuery_Principal.RecordCount > 0 then
+  begin
+    var_descripcion := SQLQuery_Principal.FieldByName('descripcion').Value;
+  end;
+
+  Filtrar_Principal_Sin_Preguntar;
+
+  if Trim(var_descripcion) <> '' then
+  begin
+    SQLQuery_Principal.Locate( 'descripcion',
+                               var_descripcion,
+                               [] );
+  end;
+end;
+
+procedure Tform_diarios_tipos_elegir.Refrescar_Registros_TablasLigadas;
+begin
+  // No hay tablas ligadas de momento
+end;
+
+procedure Tform_diarios_tipos_elegir.Cambiar_WindowState;
+begin
+  Self.WindowState := wsNormal; // Puede ser wsNormal, wsFullScreen, wsMaximized o wsMinimized
+end;
+
+procedure Tform_diarios_tipos_elegir.Dibujar_Grid_Principal( p_Sender: TObject;
+                                                             const p_Rect: TRect;
+                                                             p_DataCol: Integer;
+                                                             p_Column: TColumn;
+                                                             p_State: TGridDrawState );
+begin
+  UTI_GEN_Dibujar_Grid( p_Sender, SQLQuery_Principal, p_Rect, p_DataCol, p_Column, p_State );
+end;
+
+procedure Tform_diarios_tipos_elegir.Tabla_Principal_que_Filtrar( var p_Registro_CRUD : TRegistro_CRUD;
+                                                                  var p_ctdad_Rgtros  : Integer;
+                                                                  var p_a_Filtrar     : TStrings );
+begin
+  p_Registro_CRUD := UTI_DATOS_TABLA_diarios_tipos_CRUD;
+  p_ctdad_Rgtros  := -1;
+
+  // *********************************************************************************************** //
+  // ** AHORA PONDREMOS EL RESTO DE LOS FILTROS QUE NO SON GENERALES                              ** //
+  // *********************************************************************************************** //
+  // ** Primero buscaremos en el nombre y apellido el texto a buscar                              ** //
+  // *********************************************************************************************** //
+  if Trim(Edit_Descripcion.Text) <> '' then
+  begin
+      UTI_RGTRO_Add_to_Where( false,
+                              p_a_Filtrar,
+                              'dt.descripcion LIKE ' +
+                              UTI_GEN_Comillas('%' + Trim(Edit_Descripcion.Text) + '%') );
+  end;
+
+end;
+
+end.
+

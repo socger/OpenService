@@ -1,0 +1,8 @@
+object form_articulos_familias_004: Tform_articulos_familias_004
+  Left = 596
+  Height = 240
+  Top = 154
+  Width = 320
+  Caption = 'form_articulos_familias_004'
+  LCLVersion = '1.2.6.0'
+end

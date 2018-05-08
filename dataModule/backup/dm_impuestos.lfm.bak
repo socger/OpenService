@@ -1,0 +1,50 @@
+object DataModule_Impuestos: TDataModule_Impuestos
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 272
+  HorizontalOffset = 702
+  VerticalOffset = 202
+  Width = 410
+  object SQLTransaction_Imptos: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Imptos
+    left = 96
+    top = 48
+  end
+  object SQLConnector_Imptos: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Imptos
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 96
+    top = 120
+  end
+  object SQLTransaction_ImptosComp: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_ImptosComp
+    left = 240
+    top = 48
+  end
+  object SQLConnector_ImptosComp: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_ImptosComp
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 240
+    top = 120
+  end
+end

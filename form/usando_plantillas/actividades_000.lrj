@@ -1,0 +1,5 @@
+{"version":1,"strings":[
+{"hash":1780,"name":"tf_actividades_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[105,100],"value":"id"},
+{"hash":80135182,"name":"tf_actividades_000.dbgrid_principal.columns[1].title.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
+{"hash":80135182,"name":"tf_actividades_000.label1.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"}
+]}

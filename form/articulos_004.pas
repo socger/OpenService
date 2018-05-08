@@ -1,0 +1,300 @@
+unit articulos_004;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+    Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ButtonPanel, ExtCtrls, DbCtrls,
+    utilidades_usuarios, utilidades_general, utilidades_forms_Filtrar, StdCtrls, Buttons, LCLTranslator;
+
+resourcestring
+  rs_FormClose_1 = '* El artículo con el que creamos la composición.';
+  rs_FormClose_2 = '* Las unidades de la composición.';
+
+  rs_Quitamos_1 = '¿QUITAMOS la FAMILIA a la que pertenece';
+
+  rs_avisamos_de = 'AVISAMOS DE ... ';
+
+type
+
+    { Tform_articulos_004 }
+
+    Tform_articulos_004 = class(TForm)
+        Boton_Elegir_Articulo: TBitBtn;
+        ButtonPanel1: TButtonPanel;
+        DBEdit_eMail1: TDBEdit;
+        DBEdit_Unidades: TDBEdit;
+        Edit_Descripcion_Articulo: TEdit;
+        GroupBox11: TGroupBox;
+        Label17: TLabel;
+        Label62: TLabel;
+        Label66: TLabel;
+
+        procedure Validacion( param_msg : TStrings );
+        procedure Boton_Elegir_ArticuloClick(Sender: TObject);
+        function  Comprobar_No_Tocar( param_Reproducir_Mensajes, param_Ejecutar_No_Tocar : Boolean ) : Boolean;
+        function  Elegir_Articulo(param_articulo : ShortString) : TRecord_Rgtro_Comun;
+        procedure CancelButtonClick(Sender: TObject);
+        procedure Edit_Descripcion_ArticuloClick(Sender: TObject);
+        procedure no_Tocar;
+        procedure OKButtonClick(Sender: TObject);
+        procedure Presentar_Datos;
+        procedure para_Empezar;
+        procedure FormActivate(Sender: TObject);
+        procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+        procedure FormCreate(Sender: TObject);
+
+    private
+        { private declarations }
+        private_Salir_OK : Boolean;
+    public
+        { public declarations }
+        public_Pulso_Aceptar : Boolean;
+        public_Menu_Worked   : Integer;
+        public_Solo_Ver      : Boolean;
+        public_Record_Rgtro  : TRecord_Rgtro_Comun;
+    end;
+
+var
+    form_articulos_004: Tform_articulos_004;
+
+implementation
+
+{$R *.lfm}
+
+uses menu, articulos_000, articulos_007;
+
+{ Tform_articulos_004 }
+
+procedure Tform_articulos_004.FormActivate(Sender: TObject);
+begin
+    If form_articulos_000.public_Elegimos = true then
+    begin
+        with Self do
+        begin
+            Color := $00B9959C;
+        end;
+    end;
+
+    Comprobar_No_Tocar(true, true);
+end;
+
+function Tform_articulos_004.Comprobar_No_Tocar( param_Reproducir_Mensajes,
+                                                 param_Ejecutar_No_Tocar : Boolean ) : Boolean;
+begin
+    Result := false;
+
+    // ********************************************************************************************* //
+    // ** Si se llamó para solo verlo, pues no se puede tocar                                     ** //
+    // ********************************************************************************************* //
+    if public_Solo_Ver = true then
+    begin
+        Result := true;
+        if param_Ejecutar_No_Tocar = true then no_Tocar;
+    end;
+end;
+
+procedure Tform_articulos_004.FormCreate(Sender: TObject);
+begin
+  { ****************************************************************************
+    Obligado en cada formulario para no olvidarlo
+    **************************************************************************** }
+    with Self do
+    begin
+        Color       := $00C2C29E;
+        Position    := poScreenCenter;
+        BorderIcons := [];
+        BorderStyle := bsSingle;
+    end;
+
+    private_Salir_OK := false;
+
+  { ****************************************************************************
+    Solo para formularios que traten con datos
+    **************************************************************************** }
+    public_Solo_Ver := false;
+end;
+
+procedure Tform_articulos_004.para_Empezar;
+begin
+  { ****************************************************************************
+    Solo para formularios que traten con datos
+    **************************************************************************** }
+    with form_articulos_000.SQLQuery_Articulos_Composiciones do
+    begin
+        public_Record_Rgtro := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                           '',
+                                                           '',
+
+                                                           FieldByName('OT_descripcion_articulo_composicion').AsString,
+                                                           '',
+                                                           '' );
+    end;
+
+    Presentar_Datos;
+end;
+
+procedure Tform_articulos_004.Presentar_Datos;
+begin
+    WITH form_articulos_000.SQLQuery_Articulos_Composiciones DO
+    BEGIN
+        Edit_Descripcion_Articulo.Text := FieldByName('OT_descripcion_articulo_composicion').AsString;
+    END;
+end;
+
+procedure Tform_articulos_004.Validacion( param_msg : TStrings );
+begin
+    with form_articulos_000.SQLQuery_Articulos_Composiciones do
+    begin
+        if Trim(FieldByName('id_articulos_composiciones').AsString) = '' then
+        begin
+            param_msg.Add(rs_FormClose_1);
+        end;
+
+        if Trim(FieldByName('Unidades').AsString) = '' then
+        begin
+            param_msg.Add(rs_FormClose_2);
+        end;
+    end;
+end;
+
+procedure Tform_articulos_004.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+var var_msg : TStrings;
+begin
+    ButtonPanel1.SetFocus; // Con esto consigo que salga del campo que este y pueda actualizarlo
+
+    var_msg := TStringList.Create;
+
+    if public_Pulso_Aceptar = true then
+    begin
+        Validacion( var_msg );
+    end;
+
+    if private_Salir_OK = False then
+    begin
+      { ********************************************************************
+        Intento BitBtn_SALIR de la aplicación de un modo no permitido.
+        ********************************************************************
+        Pero si desde el menu principal está a true la variable
+        public_Salir_Ok, significa que hay que salir si o si pues se pulsó
+        cancelar al preguntar otra vez por la contraseña
+        ******************************************************************** }
+        if form_Menu.public_Salir_OK = False then CloseAction := caNone;
+    end else begin
+      { ********************************************************************
+        Fue correcto el modo como quiere salir de la aplicación
+        ********************************************************************
+        Comprobaremos si no se generó algún error por falta de completar
+        algun campo y si se salió con el botón Ok o Cancel
+        ******************************************************************** }
+        if (Trim(var_msg.Text) <> '') and (public_Pulso_Aceptar = true) then
+        begin
+            UTI_GEN_Aviso(true, var_msg, rs_Falta, True, False);
+            // var_msg.Free;
+            CloseAction := caNone;
+        end else begin
+            // var_msg.Free;
+            CloseAction := caFree;
+        end;
+    end;
+
+    var_msg.Free;
+end;
+
+procedure Tform_articulos_004.no_Tocar;
+begin
+    Boton_Elegir_Articulo.Enabled     := False;
+    Edit_Descripcion_Articulo.Enabled := False;
+    DBEdit_Unidades.Enabled           := False;
+end;
+
+procedure Tform_articulos_004.OKButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := true;
+    public_Pulso_Aceptar := true;
+end;
+
+procedure Tform_articulos_004.CancelButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := true;
+    public_Pulso_Aceptar := false;
+end;
+
+procedure Tform_articulos_004.Boton_Elegir_ArticuloClick(Sender: TObject);
+var var_Registro : TRecord_Rgtro_Comun;
+begin
+    with form_articulos_000.SQLQuery_Articulos_Composiciones do
+    begin
+        if UTI_USR_Permiso_SN(public_Menu_Worked, '', True) = true then
+        begin
+            var_Registro := Elegir_Articulo( form_articulos_000.SQLQuery_Articulos.FieldByName('id').AsString );
+        end;
+
+        if var_Registro.id_1 <> '' then
+        begin
+            FieldByName('id_articulos_composiciones').AsString := Trim(var_Registro.id_1);
+            Edit_Descripcion_Articulo.Text                     := var_Registro.descripcion_1;
+        end;
+    end;
+end;
+
+procedure Tform_articulos_004.Edit_Descripcion_ArticuloClick(Sender: TObject);
+var var_msg : TStrings;
+begin
+    var_msg := TStringList.Create;
+    var_msg.Add(rs_Quitamos_1);
+    if UTI_GEN_Aviso(true, var_msg, rs_OK, True, True) = True then
+    begin
+         form_articulos_000.SQLQuery_Articulos_Composiciones.FieldByName('id_articulos_composiciones').Clear;
+         Edit_Descripcion_Articulo.Text := '';
+    end;
+    var_msg.Free;
+end;
+
+function Tform_articulos_004.Elegir_Articulo(param_articulo : ShortString) : TRecord_Rgtro_Comun;
+var var_msg : TStrings;
+begin
+    Result.id_1 := '';
+
+    if UTI_GEN_Form_Abierto_Ya('form_articulos_007') = false then
+    begin
+        Application.CreateForm(Tform_articulos_007, form_articulos_007);
+
+        form_articulos_007.public_id_articulo_que_no_tiene_que_aparecer := param_articulo;
+
+        form_articulos_007.public_Solo_Ver    := true;
+        form_articulos_007.public_Elegimos    := true;
+        form_articulos_007.public_Menu_Worked := public_Menu_Worked;
+
+        form_articulos_007.para_Empezar;
+
+        form_articulos_007.ShowModal;
+
+        if form_articulos_007.public_Rgtro_Seleccionado = true then
+        begin
+            with form_articulos_007.SQLQuery_Articulos_a_Elegir do
+            begin
+                Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                      '',
+                                                      '',
+
+                                                      FieldByName('descripcion').AsString,
+                                                      '',
+                                                      '' );
+            end;
+        end;
+
+        form_articulos_007.Free;
+    end else begin
+        var_msg := TStringList.Create;
+        var_msg.Add(rs_Modulo_Abierto);
+        UTI_GEN_Aviso(true, var_msg, rs_avisamos_de, True, False);
+        var_msg.Free;
+        Exit;
+    end;
+end;
+
+end.
+
+

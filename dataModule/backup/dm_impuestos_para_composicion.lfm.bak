@@ -1,0 +1,29 @@
+object DataModule_impuestos_para_composicion: TDataModule_impuestos_para_composicion
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 324
+  HorizontalOffset = 550
+  VerticalOffset = 154
+  Width = 276
+  object SQLTransaction_ImptosC: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_ImptosC
+    left = 124
+    top = 76
+  end
+  object SQLConnector_ImptosC: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_ImptosC
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 124
+    top = 148
+  end
+end

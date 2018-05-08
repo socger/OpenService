@@ -1,0 +1,33 @@
+object DataModule_Proveedores_Elegir: TDataModule_Proveedores_Elegir
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 293
+  HorizontalOffset = 650
+  VerticalOffset = 61
+  Width = 349
+  object SQLTransaction_Pr_Elegir: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Pr_Elegir
+    left = 112
+    top = 80
+  end
+  object SQLConnector_Pr_Elegir: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_Pr_Elegir
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 112
+    top = 144
+  end
+end

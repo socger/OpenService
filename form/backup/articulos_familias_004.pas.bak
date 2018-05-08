@@ -1,0 +1,26 @@
+unit articulos_familias_004;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+    Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs;
+
+type
+    Tform_articulos_familias_004 = class(TForm)
+    private
+        { private declarations }
+    public
+        { public declarations }
+    end;
+
+var
+    form_articulos_familias_004: Tform_articulos_familias_004;
+
+implementation
+
+{$R *.lfm}
+
+end.
+

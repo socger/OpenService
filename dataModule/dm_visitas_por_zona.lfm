@@ -1,0 +1,50 @@
+object DataModule_visitas_por_zona: TDataModule_visitas_por_zona
+  OnCreate = DataModule_visitas_por_zona
+  OldCreateOrder = False
+  Height = 394
+  HorizontalOffset = 504
+  VerticalOffset = 57
+  Width = 440
+  object SQLTran_Ruta: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLCon_Ruta
+    left = 48
+    top = 64
+  end
+  object SQLCon_Ruta: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTran_Ruta
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 48
+    top = 132
+  end
+  object SQLTran_Visita: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLCon_Visita
+    left = 160
+    top = 64
+  end
+  object SQLCon_Visita: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTran_Visita
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 160
+    top = 132
+  end
+end

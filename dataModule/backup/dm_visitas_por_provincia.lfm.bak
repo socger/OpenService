@@ -1,0 +1,50 @@
+object DataModule_visitas_por_provincia: TDataModule_visitas_por_provincia
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 371
+  HorizontalOffset = 581
+  VerticalOffset = 162
+  Width = 406
+  object SQLTran_Prov: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLCon_Prov
+    left = 76
+    top = 92
+  end
+  object SQLCon_Prov: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTran_Prov
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 76
+    top = 160
+  end
+  object SQLTran_Visita: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLCon_Visita
+    left = 188
+    top = 92
+  end
+  object SQLCon_Visita: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTran_Visita
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 188
+    top = 160
+  end
+end

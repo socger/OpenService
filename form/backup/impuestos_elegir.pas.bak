@@ -1,0 +1,223 @@
+unit impuestos_elegir;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, plantilla_000, DbGrids,
+  Grids, ExtCtrls, StdCtrls, Buttons, ComCtrls, DbCtrls, ButtonPanel, utilidades_datos_tablas,
+  utilidades_bd, utilidades_rgtro, utilidades_general;
+
+resourcestring
+  rs_imptos_eleg_001 = 'Elegir impuesto';
+  rs_imptos_eleg_002 = 'Por la descripción';
+  rs_imptos_eleg_003 = 'Por la id';
+
+type
+
+  { Tform_impuestos_elegir }
+
+  Tform_impuestos_elegir = class(Tform_plantilla_000)
+    Edit_Descripcion: TEdit;
+    Image_Compuesto: TImage;
+    Label6: TLabel;
+    SQLQuery_PrincipalChange_Id_User: TLargeintField;
+    SQLQuery_PrincipalChange_WHEN: TDateTimeField;
+    SQLQuery_PrincipalCuenta_Contable: TStringField;
+    SQLQuery_PrincipalDel_Id_User: TLargeintField;
+    SQLQuery_PrincipalDel_WHEN: TDateTimeField;
+    SQLQuery_PrincipalDel_WHY: TStringField;
+    SQLQuery_Principaldescripcion: TStringField;
+    SQLQuery_PrincipalInsert_Id_User: TLargeintField;
+    SQLQuery_PrincipalInsert_WHEN: TDateTimeField;
+    SQLQuery_PrincipalSumado_A_Ftra_SN: TStringField;
+    SQLQuery_PrincipalTanto_Por_Ciento: TBCDField;
+
+    procedure Filtrar_tablas_ligadas_II( var p_Lineas_Filtro : TStrings; var p_Lineas_OrderBy : TStrings ); override;
+    procedure Cambiar_Nombre_Tabla_Principal; override;
+    procedure Cambiar_Titulo_Form; override;
+    procedure Crear_tipos_orden_Principal; override;
+    procedure Refrescar_Registros; override;
+    procedure Refrescar_Registros_TablasLigadas; override;
+    procedure Tabla_Principal_que_Filtrar( var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
+    procedure Cambiar_WindowState; override;
+    procedure Dibujar_Grid_Principal( p_Sender: TObject; const p_Rect: TRect; p_DataCol: Integer; p_Column: TColumn; p_State: TGridDrawState ); override;
+
+  private
+    { private declarations }
+
+  public
+    { public declarations }
+    public_id_impuesto_que_no_tiene_que_aparecer : ShortString;
+
+  end;
+
+var
+  form_impuestos_elegir: Tform_impuestos_elegir;
+
+implementation
+
+{$R *.lfm}
+
+procedure Tform_impuestos_elegir.Filtrar_tablas_ligadas_II( var p_Lineas_Filtro : TStrings;
+                                                            var p_Lineas_OrderBy : TStrings );
+begin
+  // *********************************************************************************************** //
+  // ** no hay tablas ligadas                                                                     ** //
+  // *********************************************************************************************** //
+end;
+
+procedure Tform_impuestos_elegir.Cambiar_Nombre_Tabla_Principal;
+begin
+  pubic_nombre_tabla_Principal := 'impuestos';
+end;
+
+procedure Tform_impuestos_elegir.Cambiar_Titulo_Form;
+begin
+  Self.Caption := rs_imptos_eleg_001;
+end;
+
+procedure Tform_impuestos_elegir.Crear_tipos_orden_Principal;
+begin
+  SetLength(public_Order_By, 2);
+
+  public_Order_By[0].Titulo       := rs_imptos_eleg_002; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  public_Order_By[0].Memo_OrderBy := 'i.descripcion ASC';
+
+  public_Order_By[1].Titulo       := rs_imptos_eleg_003;
+  public_Order_By[1].Memo_OrderBy := 'i.id ASC';
+
+  Memo_OrderBy.Lines.Text          := public_Order_By[0].Memo_OrderBy;
+
+  UTI_TB_Rellenar_ComboBox_Orden( true,
+                                  ComboBox_Filtros,
+                                  public_Order_By,
+                                  0 );
+end;
+
+procedure Tform_impuestos_elegir.Refrescar_Registros;
+var var_descripcion : String;
+begin
+  var_descripcion := '';
+
+  if SQLQuery_Principal.RecordCount > 0 then
+  begin
+    var_descripcion := SQLQuery_Principal.FieldByName('descripcion').Value;
+  end;
+
+  Filtrar_Principal_Sin_Preguntar;
+
+  if Trim(var_descripcion) <> '' then
+  begin
+    SQLQuery_Principal.Locate( 'descripcion',
+                               var_descripcion,
+                               [] );
+  end;
+end;
+
+procedure Tform_impuestos_elegir.Refrescar_Registros_TablasLigadas;
+begin
+  // No hay tablas ligadas de momento
+end;
+
+procedure Tform_impuestos_elegir.Tabla_Principal_que_Filtrar( var p_Registro_CRUD : TRegistro_CRUD;
+                                                              var p_ctdad_Rgtros  : Integer;
+                                                              var p_a_Filtrar     : TStrings );
+begin
+  p_Registro_CRUD := UTI_DATOS_TABLA_impuestos_CRUD;
+  p_ctdad_Rgtros  := -1;
+
+  if Trim(public_id_impuesto_que_no_tiene_que_aparecer) <> '' then
+  begin
+      UTI_RGTRO_Add_to_Where( true,
+                              Memo_Filtros.Lines,
+                              'i.id <> ' + Trim(public_id_impuesto_que_no_tiene_que_aparecer) );
+  end;
+
+  // *********************************************************************************************** //
+  // ** AHORA PONDREMOS EL RESTO DE LOS FILTROS QUE NO SON GENERALES                              ** //
+  // *********************************************************************************************** //
+  // ** Primero buscaremos en el nombre y apellido el texto a buscar                              ** //
+  // *********************************************************************************************** //
+  if Trim(Edit_Descripcion.Text) <> '' then
+  begin
+      UTI_RGTRO_Add_to_Where( false,
+                              p_a_Filtrar,
+                              'i.descripcion LIKE ' +
+                              UTI_GEN_Comillas('%' + Trim(Edit_Descripcion.Text) + '%') );
+  end;
+
+end;
+
+procedure Tform_impuestos_elegir.Cambiar_WindowState;
+begin
+  Self.WindowState := wsNormal; // Puede ser wsNormal, wsFullScreen, wsMaximized o wsMinimized
+end;
+
+procedure Tform_impuestos_elegir.Dibujar_Grid_Principal( p_Sender: TObject;
+                                                         const p_Rect: TRect;
+                                                         p_DataCol: Integer;
+                                                         p_Column: TColumn;
+                                                         p_State: TGridDrawState );
+var var_Color_Normal : TColor;
+begin
+  with p_Sender as TDBGrid do
+  begin
+    if SQLQuery_Principal.RecordCount = 0 then Exit;
+
+    var_Color_Normal := Canvas.Brush.Color;
+
+    // ********************************************************************************************* //
+    // ** Primero comprobamos si es un registro dado de baja o no                                 ** //
+    // ********************************************************************************************* //
+    if not SQLQuery_Principal.FieldByName('Del_WHEN').IsNull then
+    begin
+      // ******************************************************************************************* //
+      // ** Registro DADO de BAJA                                                                 ** //
+      // ******************************************************************************************* //
+      Canvas.Font.Color := clSilver;
+    end else begin
+      // ******************************************************************************************* //
+      // ** Registro DADO de ALTA, NO BAJA                                                        ** //
+      // ******************************************************************************************* //
+      // ** Así que las pinto, pero sólo si no son las columnas que van a ser dibujadas           ** //
+      // ******************************************************************************************* //
+      if p_State <> [gdSelected] then
+      begin
+        if (p_Column.FieldName <> 'COLUMNA_CON_IMAGEN') then
+        begin
+          Canvas.font.Color := clBlack;
+        end;
+      end;
+    end;
+
+    // ********************************************************************************************* //
+    // ** Ahora paso a dibujar una celda normal con los colores elegidos o una dibujada           ** //
+    // ********************************************************************************************* //
+    if (p_Column.FieldName <> 'COLUMNA_CON_IMAGEN') then
+    begin
+      // ******************************************************************************************* //
+      // ** No es una de las columnas a dibujar por lo que la pinto con los colores elegidos      ** //
+      // ******************************************************************************************* //
+      DefaultDrawColumnCell(p_Rect, p_DataCol, p_Column, p_State)
+    end else begin
+      // ******************************************************************************************* //
+      // ** Es una de las columnas a dibujar                                                      ** //
+      // ******************************************************************************************* //
+      if p_Column.FieldName = 'COLUMNA_CON_IMAGEN'  then
+      begin
+        if SQLQuery_Principal.FieldByName('Tanto_Por_Ciento').AsString = '' then
+        begin
+          Canvas.StretchDraw(p_Rect, Image_Compuesto.Picture.Graphic);
+        end;
+      end;
+    end;
+
+    Canvas.Font.Color := var_Color_Normal;
+  end;
+end;
+
+end.
+
+

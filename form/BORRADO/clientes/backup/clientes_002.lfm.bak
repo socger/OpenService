@@ -1,0 +1,702 @@
+object form_clientes_002: Tform_clientes_002
+  Left = 1388
+  Height = 320
+  Top = 0
+  Width = 1276
+  Caption = 'Ficha contacto ... cliente'
+  ClientHeight = 320
+  ClientWidth = 1276
+  Color = 14737613
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 1264
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object Panel1: TPanel
+    Left = 25
+    Height = 65
+    Top = 56
+    Width = 1223
+    ClientHeight = 65
+    ClientWidth = 1223
+    TabOrder = 1
+    object Label1: TLabel
+      AnchorSideLeft.Control = DBEdit_a_quien_facturamos
+      AnchorSideBottom.Control = DBEdit_a_quien_facturamos
+      Left = 16
+      Height = 22
+      Top = 8
+      Width = 179
+      Anchors = [akLeft, akBottom]
+      Caption = 'A quien facturamos'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_a_quien_facturamos: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 30
+      Width = 486
+      DataField = 'nombre_propietario'
+      DataSource = form_clientes_000.DataSource_Clientes
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label7: TLabel
+      AnchorSideLeft.Control = DBEdit_Nombre_Comercial
+      AnchorSideBottom.Control = DBEdit_Nombre_Comercial
+      Left = 510
+      Height = 22
+      Top = 8
+      Width = 169
+      Anchors = [akLeft, akBottom]
+      Caption = 'Nombre comercial'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_Nombre_Comercial: TDBEdit
+      Left = 510
+      Height = 23
+      Top = 30
+      Width = 486
+      DataField = 'nombre_comercial'
+      DataSource = form_clientes_000.DataSource_Clientes
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object Label10: TLabel
+      AnchorSideLeft.Control = DBEdit_NIF_CIF
+      AnchorSideBottom.Control = DBEdit_NIF_CIF
+      Left = 1005
+      Height = 22
+      Top = 8
+      Width = 97
+      Anchors = [akLeft, akBottom]
+      Caption = 'N.I.F./ C.I.F.'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_NIF_CIF: TDBEdit
+      Left = 1005
+      Height = 23
+      Top = 30
+      Width = 202
+      DataField = 'nif_cif'
+      DataSource = form_clientes_000.DataSource_Clientes
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 2
+    end
+  end
+  object Panel_Mantenimiento: TPanel
+    Left = 25
+    Height = 164
+    Top = 126
+    Width = 1223
+    ClientHeight = 164
+    ClientWidth = 1223
+    TabOrder = 2
+    OnClick = Panel_MantenimientoClick
+    object Label2: TLabel
+      AnchorSideLeft.Control = DBEdit_Nombre_Contacto
+      AnchorSideBottom.Control = DBEdit_Nombre_Contacto
+      Left = 18
+      Height = 22
+      Top = 6
+      Width = 192
+      Anchors = [akLeft, akBottom]
+      Caption = 'Nombre del contacto'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_Nombre_Contacto: TDBEdit
+      Left = 18
+      Height = 23
+      Top = 28
+      Width = 486
+      DataField = 'nombre'
+      DataSource = form_clientes_000.DataSource_Clientes_Contactos
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label11: TLabel
+      AnchorSideLeft.Control = DBEdit_NIF_CIF1
+      AnchorSideBottom.Control = DBEdit_NIF_CIF1
+      Left = 509
+      Height = 22
+      Top = 6
+      Width = 97
+      Anchors = [akLeft, akBottom]
+      Caption = 'N.I.F./ C.I.F.'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_NIF_CIF1: TDBEdit
+      Left = 509
+      Height = 23
+      Top = 28
+      Width = 202
+      DataField = 'nif_cif'
+      DataSource = form_clientes_000.DataSource_Clientes_Contactos
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object Label_Fecha: TLabel
+      AnchorSideLeft.Control = DateEdit_Fecha_Nacimiento
+      AnchorSideBottom.Control = DateEdit_Fecha_Nacimiento
+      Left = 716
+      Height = 22
+      Top = 6
+      Width = 85
+      Anchors = [akLeft, akBottom]
+      Caption = 'Nacido el'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DateEdit_Fecha_Nacimiento: TDateEdit
+      Left = 716
+      Height = 23
+      Top = 28
+      Width = 90
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      OKCaption = 'OK'
+      CancelCaption = 'Cancel'
+      DateOrder = doDMY
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 10
+      TabOrder = 2
+      Text = '  /  /    '
+    end
+    object Label3: TLabel
+      AnchorSideLeft.Control = DBEdit_a_quien_facturamos2
+      AnchorSideBottom.Control = DBEdit_a_quien_facturamos2
+      Left = 818
+      Height = 22
+      Top = 6
+      Width = 136
+      Anchors = [akLeft, akBottom]
+      Caption = 'Cargo / puesto'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_a_quien_facturamos2: TDBEdit
+      Left = 818
+      Height = 23
+      Top = 28
+      Width = 389
+      DataField = 'Cargo_Puesto'
+      DataSource = form_clientes_000.DataSource_Clientes_Contactos
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 3
+    end
+    object GroupBox2: TGroupBox
+      Left = 16
+      Height = 80
+      Top = 62
+      Width = 398
+      Caption = ' INTERNET '
+      ClientHeight = 60
+      ClientWidth = 394
+      TabOrder = 4
+      object Label16: TLabel
+        Left = 8
+        Height = 19
+        Top = 1
+        Width = 39
+        Anchors = [akLeft, akBottom]
+        Caption = 'eMail'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_eMail: TDBEdit
+        Left = 55
+        Height = 23
+        Top = 3
+        Width = 291
+        DataField = 'eMail'
+        DataSource = form_clientes_000.DataSource_Clientes_Contactos
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object Label17: TLabel
+        Left = 8
+        Height = 19
+        Top = 25
+        Width = 39
+        Anchors = [akLeft, akBottom]
+        Caption = 'www'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Pagina_Web: TDBEdit
+        Left = 55
+        Height = 23
+        Top = 27
+        Width = 329
+        DataField = 'pagina_web'
+        DataSource = form_clientes_000.DataSource_Clientes_Contactos
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object BitBtn_eMAIL: TBitBtn
+        Left = 352
+        Height = 36
+        Hint = 'Enviar email'
+        Top = -12
+        Width = 34
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Glyph.Data = {
+          CE0C0000424DCE0C00000000000036000000280000001A0000001F0000000100
+          200000000000980C000064000000640000000000000000000000FFF7FFFFF7EC
+          FCFFF6F4FAFFFBFFFCFFEBF8EAFFF6FFF4FFCBDCC7FFF7FFF2FFF7FCF3FFFBF9
+          F8FFFCF7F9FFFAF4F9FFF8F4F9FFF6F7FBFFF7FDFCFFF8FFFFFFF8FFFFFFF4FB
+          FEFFFAFFFFFFFBFFFFFFF3F5F6FFFCFAFAFFFBF6F7FFFFFFFEFFFFFFFEFFFFFF
+          FEFFFEF4FFFFFFFBFFFFFFFFFFFFF7F8EEFFFDFEEAFFF1F3D6FF6B6947FF6C64
+          3FFFFFF2D1FFFFFDDEFFFFFFEAFFFFFFEBFFFFFFEEFFFFFFEFFFFFFFEEFFFFFF
+          F1FFF6F8F2FFF2F6F1FFFDFFFCFFFDFFFEFFFDFEFCFFFCFCFCFFF6F4F4FFFFFE
+          FEFFFFFFFFFFFFFFFFFFFFFAFBFFFFFFFCFFFFFFF8FFFFFFEFFFFFFFEBFFCEBE
+          9AFF4D3608FF61450FFF6B490EFF714C10FF896428FFBE9B63FFF8DAA9FFFFFF
+          D7FFFFFFE2FFFFFBDDFFFFFEEBFFF9F9EBFFF9F9EDFFFBFCF3FFFFFFFBFFFFFF
+          FEFFF8F8F8FFFAFCFDFFFDFFFFFFFDFEFFFFFFFFF2FFFFFBE9FFFFF9E5FFC6B9
+          9FFF91795BFF503007FF7E551EFF9F712AFFB07B2AFFBF8A30FFC69136FFB888
+          30FFAC8334FFC2A25BFFF8DEA2FFFFFFDCFFFFFFE7FFFFFFEDFFFFFFECFFFEFB
+          ECFFFFFFF7FFF9FBF5FFF8FAFAFFFAFFFFFFFAFEFFFFF8FEFFFFFFFFE4FFB9B1
+          8CFF423313FF4B3616FF462504FF6A4016FF9E6C32FFC28840FFD4973AFFDB9E
+          36FFE0A537FFDDA83AFFD4A543FFC59F47FFBB984EFFAD9357FFFEEEC0FFFFFF
+          E4FFFFFFE4FFFFFFEDFFFFFFF4FFF2F5ECFFF1F6F5FFF8FFFFFFF6FEFFFFF4FE
+          FFFFD3C88AFF5D4F15FFA28B5DFF9C7F5AFFFFFEDEFF6A3D18FF945F2DFF884E
+          0CFFCE943BFFE2A83FFFF3BC49FFF5C24EFFEBBD51FFE4BA59FFE4BF6AFFE4C6
+          7FFFD1BD86FFECDFB3FFE9DEB8FFFAF4D7FFFFFFF1FFF8F9EFFFF1F6F5FFF6FC
+          FFFFF4FDFFFFF3FEFFFFE3CE7CFF786116FF9B7E45FFA38156FFE0B99DFFEEC3
+          A8FFF5C5A1FF946430FF835208FFB07F23FFE6B84DFFFFDA6BFFFFDE74FFF6CF
+          6DFFE4C068FFD7B86DFFD4BF82FFDCCD9CFFC1B389FFD7CEACFFFFFDE8FFFEFE
+          F2FFF9FEFCFFF8FEFFFFF4FDFFFFF3FDFFFFC8A845FFB6953FFF765313FFEAC7
+          9BFFA17C66FFF4D1C3FFFFE1D1FFFFF2D5FFAB8B5AFF7D5D1BFF9C7F2AFFE9CA
+          6DFFFDDE81FFFFE087FFFFE393FFF5D790FFEDD599FFDAC794FFE4D3A8FFE1D5
+          B1FFFFFFEEFFFEFDEFFFE9EDE8FFFAFFFFFFF4FCFFFFF0F9FFFFD8AE49FFAE86
+          2DFF906A29FFE6C499FFBB9D8AFFE5CBC5FFE1CAC8FFE5D1C6FFFAE9CEFFBAA9
+          7EFF877538FF86742DFFBEA95EFFFFF4A8FFFFFFB8FFE8CE8CFFE3CD93FFFEEB
+          B8FFDCCBA0FFD7C8A7FFFFF9E1FFFFFFF4FFFDFDF7FFF9FEFDFFFAFEFFFFF8FE
+          FFFFF4C667FF946A17FF8B6628FFB3946DFFC7B0A1FFD7C7C8FFD8CDD5FFDFD8
+          DDFFF3EDE6FFE9E4CFFFA69D7BFF9E9465FFEDE1ABFFFFF1B7FFEBDAA1FFFFF9
+          C2FFFFFCC9FFEAD7AAFFF4E3BCFFBAAB8BFFD2C7B1FFFFFFF1FFFFFFF7FFFBF9
+          F8FFF3F2F4FFEEEFF3FFFFE396FF805712FF6D4B16FF7A5F3DFFCDBDADFFD3C9
+          C9FFDFDBE1FFE6E5EEFFD4D6D7FFB5B5AFFF868270FF70694EFF958C6AFFD7CD
+          A5FFFFF6CAFFFFFED2FFFDEBC2FFFFFED9FFFFF9D8FFF2E4C8FF9B8D7AFF968B
+          7DFFE8DFD6FFFFFFFBFFFEFAF9FFFEF9FAFFFFF4C3FF856133FF513611FF6D5B
+          3EFFDDD3C1FFD8D3CAFFD9D7D6FFD5D4D6FFEDEAECFFD8D4D3FFB0A8A1FF988F
+          82FF7B725EFF3F381DFF484120FF9E9573FFFFF7D7FFFFF2D5FFF0DFC5FFFCEB
+          D6FFD0C0AFFFEDDDD0FF8B7F75FFBFB4ACFFFFF9F5FFFFFFFBFFFFFCE4FFAB8C
+          75FF3F2910FF867861FFE1DAC6FFDEDCCAFFDDDBD0FFD9D6CEFFFFF6F3FFF2E6
+          E6FFFFFEFCFFFFFEFBFFEEE2D8FFE3DBCAFFBDB9A1FF656047FF352812FF5B4A
+          35FFD0BFACFFFFFFF1FFDECEBEFFD2C1B4FFFAEADEFFBFB0A7FFBBABA4FFDCCF
+          C7FFFFFCFCFFDFC9C4FF3A2A1EFFB4AA98FFDCD8BFFFE2DFC3FFEAE5CCFFF4E9
+          D5FFF5E3D8FFFBE5DFFFFFEAE8FFFFF7F5FFFFFFF9FFFFFBF1FFF1EFDDFFF0EC
+          D9FFB7AD9CFF8E7F6FFF827265FF4B3A2DFFD0BFB2FFECD9CCFFE1CEC1FFDECC
+          C1FFBEACA1FFF1E0D7FFFFFAFFFFFFF8FBFF483C36FFE7DED0FFE0DCC4FFE1DC
+          C3FFE6DFC6FFF2E5CFFFFFEFE0FFFFF1E9FFFFF0ECFFFFEDEBFFFFF1EBFFFFF8
+          EFFFFBF7ECFFF5F2E4FFFEF4EAFFFBECE3FFFFF0E7FFFFF9EDFFE4D2C7FFF0DF
+          D2FFE6D4C9FFDACABEFFB6A69AFFF5E7DBFFFEEFECFFFFFFF9FF8C8179FFD7CE
+          C1FFDFD8C9FFE2DBCCFFF0E7D9FFF0E7DAFFF7EDE3FFF2E7DFFFFFF6F0FFFFFF
+          F9FFFFFFF9FFBEB6AFFFFFFFF8FFFFFFF8FFFFFCF6FFFAEAE4FFF3E3DCFFFCEC
+          E5FFFAEBE2FFDCD0C4FFD9CFC5FFCDC4BAFFD6CDC3FFF9F3E8FFFFFFF8FFDDD3
+          C9FFAA9F97FFECE2D8FFDCD3CAFFDFD6CDFFF0E7DEFFEFE6DDFFF7F0E7FFFFFF
+          F8FFFFF8F1FF706861FF453D36FF3D352EFF443C35FF827871FFE3D2CFFFFFFE
+          FBFFFFF0EAFFE9DBD5FFE5DAD2FFF7EEE4FFF2E9DFFFB6B2A7FFE9E7DDFFFFFD
+          F3FFFFF9F2FFB2A9A0FFC6BCB5FFD0C7BEFFCFC5BEFFFCF3EAFFFDF4EBFFECE3
+          DAFFCFC6BDFF6C635AFF21180FFFC1B8AFFFF2E9E0FFFFFFF8FFFFFFF8FFD1C5
+          BFFF7A6966FF594845FFFFFFF9FFF2E4DEFFFFF5EDFFC3BAB1FFD0C7BDFFC6C2
+          B7FFFFFDF3FFFFFFF7FFFFFFFBFFB0A5A1FFCFC4C0FFF4EAE3FFFFF8F1FFDFD5
+          CEFF8C827BFF877E75FF675E55FF180D05FFE8DDD5FFDBD0C8FF584B43FF3125
+          1BFFD1C4BCFFFDF0E8FFFFF2ECFF998A87FFA3958FFFFFF5EFFFF2E7DFFFE9E0
+          D7FFB5AFA4FFEAE6DBFFFFFFF6FFFDFCF2FFF3EAE7FFC7BEBBFFBDB4B1FF9C93
+          8FFF665B57FF796F68FFBEB2ACFFFFFFF9FF150A02FFD3C6BEFFF7EBE1FF1F13
+          09FF6F6057FFECDED2FF57483FFF3C2D24FF695953FFFFF3F0FF7D6F69FFFFF5
+          EFFFE8DDD5FFC5BCB3FFBDB6ADFFFFFDF4FFFFFDF3FFFBFAF0FFF4ECEDFFECE4
+          E4FFE8E0E0FFD5CCC9FFB7AEABFFF8EDE9FFFFFFFBFFAEA29CFF43362EFFFFF2
+          EAFF8E7F76FF53443BFFFFF7EBFFFFF0E4FFAD9D91FF7A6960FFA49690FFA498
+          94FFFCF0ECFFA79D96FFEFE5DEFFD1CAC1FF9A958CFFFFFFF8FFFFFEF4FFFFFF
+          F6FFFFFDFFFFE3DDDEFFD6D0D1FFDAD2D2FFEEE4E4FFFBF2EFFFFFFFFBFF9589
+          83FF685B53FFFFFFF8FF615249FF8D7C73FFFFFBEFFFFFFFF4FF9C8B7EFF8D7C
+          73FFE8DAD4FF887D79FFFDF2EEFFD4CAC3FFECE2DBFFBEB6AFFFD5D0C7FFFDFB
+          F1FFFFFFF7FFFFFFF9FFFAF3F6FFFEF7FAFFEFE9EAFFC7C1C2FFFFFEFEFFF9EF
+          EFFFFFF7F4FF8E837FFF756963FFFFFFF8FF76675EFF8B7A71FFFFFFF5FFFFF9
+          ECFF928174FFC9B9ADFFE6DAD6FFA19593FFFFFFFBFFD1C8C4FFB1A9A2FFCBC5
+          BEFFDEDCD2FFF0EFE5FFFFFEF6FFFFFFF9FFFCF7F9FFFFFEFFFFE1DCDEFFEEE8
+          E9FFFEF9F8FFFBF3F3FFFCF3F0FFCABFBBFF6C605AFFFFF7EFFFD2C6BCFF5849
+          40FFD7C7BBFFAE9E92FF706053FFF9EBDFFFC6BAB6FFC5BCB9FFFFFFFCFFE3DD
+          D8FFBDB7B0FFF1EEE6FFC6C3BBFFF2F0E8FFFFFFF9FFFFFFF9FFFFFCFEFFFCF9
+          FBFFDDD8DAFFF0EBECFFFFFAF9FFF6F1F0FFFFFEFBFFF0E7E4FF564B47FFB1A7
+          A0FFFFFFF8FFCEC2B8FF85766DFFD1C3B7FFA89A8EFFE5D9CFFF9F9490FFFFFC
+          F9FFFFFFFCFFBCB7B4FFDDD9D4FFF7F4ECFFC7C5BDFFFFFFF9FFFFFFF9FFFFFF
+          F9FFFFFFFFFFF8F6F6FFE0DEDEFFFAF8F8FFFFFFFEFFF4EFEEFFFFFFFCFFFFFF
+          FCFFB9B3AEFF665E57FFA99F98FFF6EDE4FFFFFFF8FFFFF6ECFFCEC4BAFFA49B
+          92FFF4EDEAFFFEF9F8FFE6E1DEFFF3EEEBFFFFFFFBFFE9E6E1FFD8D6CEFFFBF9
+          F1FFFFFFFBFFFFFFFBFFFFFDFDFFF6F4F3FFE8E6E6FFFFFEFDFFFFFFFEFFF0EC
+          EBFFFAF7F3FFFFFBF8FFFFFFFBFFE5E1DCFFA19B96FF9D9790FF867E77FF9B93
+          8CFFBEB6AFFFFCF6F1FFFFFFFCFFFFFAF9FFF2EDEAFFCBC8C4FFB5B2ADFFC3C0
+          BBFFFFFFF9FFFAF8F0FFFFFFFBFFFFFFFBFFFBF9F8FFF7F6F2FFEFEDECFFF8F7
+          F3FFF9F8F4FFEFEEEAFFEFEEEAFFEBE8E4FFE4E1DDFFD6D3CFFFF1EEEAFFBFBC
+          B7FFC0BDB8FFFBF8F3FFE2DFDAFFEBE8E4FFEBE7E6FFFBF7F6FFD6D2D1FF8E8B
+          87FFBEBBB6FFFDFDF7FFFFFFFBFFF0F0EAFFFFFFFBFFFFFFFBFFFFFFFCFFFFFF
+          FBFFF9F8F4FFF5F4F0FFF7F6F2FFFBFAF6FFF9F8F4FFF1F0ECFFFFFFFCFFDFE0
+          DCFFF0EFEBFFB2B3AFFFE3E4E0FFD6D7D3FFE8E9E5FFEEECEBFFE2E0DFFFF3EF
+          EEFFFCF8F7FFEEEAE9FFFFFFFCFFFCFCF6FFE8E8E2FFFFFFFBFFFFFFFBFFFFFF
+          FBFFFFFFFBFFFFFFFBFFFFFFFBFFFCFCF6FFFBFDF7FFFFFFFBFFFFFFFCFFFFFF
+          FCFFD4D5D1FFFDFFFCFFE7E8E6FFEEF1EFFFEEF1EFFFFAFDFBFFFAFDFBFFFDFF
+          FFFFFFFFFFFFF9F7F7FFF7F5F4FFFDFBFAFFFAF9F5FFFFFFFCFFF8F8F2FFFCFC
+          F6FFFFFFFCFFFFFFFCFFFCFCF6FFF8F8F2FFFFFFFAFFFFFFFBFFFEFFFAFFFCFE
+          F8FFF7F8F4FFFFFFFCFFFDFFFCFFEFF3EEFFF9FCFAFFF0F3F1FFF3F8F6FFFBFF
+          FEFFEAEFEEFFF5F7F7FFF0F0F0FFF9F7F7FFF3F1F0FFFFFFFEFFF1F0ECFFF5F4
+          F0FFFCFCF6FFFFFFFBFFFFFFFCFFFFFFFCFF
+        }
+        OnClick = BitBtn_eMAILClick
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Spacing = 0
+        TabOrder = 2
+      end
+    end
+    object GroupBox1: TGroupBox
+      Left = 479
+      Height = 80
+      Top = 62
+      Width = 408
+      Caption = ' TELEFONOS '
+      ClientHeight = 60
+      ClientWidth = 404
+      TabOrder = 5
+      object Label12: TLabel
+        Left = 11
+        Height = 19
+        Top = 1
+        Width = 15
+        Anchors = [akLeft, akBottom]
+        Caption = '1º'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Tfno_Fijo_1: TDBEdit
+        Left = 67
+        Height = 23
+        Top = 3
+        Width = 120
+        DataField = 'Tfno_Fijo_1'
+        DataSource = form_clientes_000.DataSource_Clientes_Contactos
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 0
+      end
+      object Label13: TLabel
+        Left = 11
+        Height = 19
+        Top = 25
+        Width = 15
+        Anchors = [akLeft, akBottom]
+        Caption = '2º'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Tfno_Fijo_2: TDBEdit
+        Left = 67
+        Height = 23
+        Top = 27
+        Width = 120
+        DataField = 'Tfno_Fijo_2'
+        DataSource = form_clientes_000.DataSource_Clientes_Contactos
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object Label14: TLabel
+        Left = 216
+        Height = 19
+        Top = 0
+        Width = 31
+        Anchors = [akLeft, akBottom]
+        Caption = 'FAX'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_FAX: TDBEdit
+        Left = 272
+        Height = 23
+        Top = 3
+        Width = 120
+        DataField = 'FAX'
+        DataSource = form_clientes_000.DataSource_Clientes_Contactos
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object Label15: TLabel
+        Left = 216
+        Height = 19
+        Top = 25
+        Width = 40
+        Anchors = [akLeft, akBottom]
+        Caption = 'Móvil'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object BitBtn_SMS: TBitBtn
+        Left = 259
+        Height = 23
+        Top = 26
+        Width = 32
+        Caption = 'SMS'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        OnClick = BitBtn_SMSClick
+        ParentFont = False
+        TabOrder = 3
+      end
+      object DBEdit_Movil: TDBEdit
+        Left = 292
+        Height = 23
+        Top = 27
+        Width = 100
+        DataField = 'Movil'
+        DataSource = form_clientes_000.DataSource_Clientes_Contactos
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 4
+      end
+    end
+    object BitBtn_Copiar_Datos_Cliente: TBitBtn
+      Left = 976
+      Height = 54
+      Hint = 'Enviar email'
+      Top = 88
+      Width = 231
+      Caption = 'COPIAR COMO CONTACTO AL CLIENTE'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnClick = BitBtn_Copiar_Datos_ClienteClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      Spacing = 0
+      TabOrder = 6
+    end
+  end
+  object Boton_Elegir_Provincia1: TBitBtn
+    Left = 25
+    Height = 37
+    Top = 10
+    Width = 140
+    Caption = '&Ver imagen asociada'
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Glyph.Data = {
+      36030000424D3603000000000000360000002800000010000000100000000100
+      18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+      B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+      D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+      C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+      AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+      F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+      A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+      62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+      C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+      976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+      FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+      FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+      00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+      FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    ParentFont = False
+    TabOrder = 3
+  end
+  object GroupBox11: TGroupBox
+    Left = 187
+    Height = 38
+    Top = -2
+    Width = 174
+    ClientHeight = 18
+    ClientWidth = 170
+    TabOrder = 4
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -4
+      Width = 56
+      Anchors = [akLeft, akBottom]
+      Caption = 'Código'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 74
+      Height = 23
+      Top = -7
+      Width = 90
+      DataField = 'id'
+      DataSource = form_clientes_000.DataSource_Clientes_Contactos
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+end

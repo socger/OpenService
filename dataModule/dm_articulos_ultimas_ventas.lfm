@@ -1,0 +1,108 @@
+object DataModule_articulos_ultimas_ventas: TDataModule_articulos_ultimas_ventas
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 267
+  HorizontalOffset = 265
+  VerticalOffset = 90
+  Width = 930
+  object SQLTransaction_Ftra_V_D: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Ftra_V_D
+    left = 280
+    top = 48
+  end
+  object SQLConnector_Ftra_V_D: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_Ftra_V_D
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 280
+    top = 120
+  end
+  object SQLTransaction_Alb_V_D: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Alb_V_D
+    left = 96
+    top = 48
+  end
+  object SQLConnector_Alb_V_D: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_Alb_V_D
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 96
+    top = 120
+  end
+  object SQLTransaction_Ftra_C_D: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Ftra_C_D
+    left = 656
+    top = 48
+  end
+  object SQLConnector_Ftra_C_D: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_Ftra_C_D
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 656
+    top = 120
+  end
+  object SQLTransaction_Alb_C_D: TSQLTransaction
+    Active = True
+    Action = caCommit
+    Database = SQLConnector_Alb_C_D
+    left = 472
+    top = 48
+  end
+  object SQLConnector_Alb_C_D: TSQLConnector
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_Alb_C_D
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 472
+    top = 120
+  end
+end

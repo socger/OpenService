@@ -1,0 +1,4237 @@
+[s�b 18 abr, 16:18:14]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Grabar_Cambios_en_Historico_3 desde form_personal_familias_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'personal_familias' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 27 abr, 15:24:03]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Traer_Ultimo_Contrato_Personal desde form_personal_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'AND pc.Del_WHEN IS NULL
+ORDER BY pc.id_personal ASC, pc.Inicio DESC
+LIMIT 1' à la ligne 10
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 27 abr, 15:36:20]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Traer_Ultimo_Contrato_Personal desde form_personal_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'AND pc.Del_WHEN IS NULL
+ORDER BY pc.id_personal ASC, pc.Inicio DESC
+LIMIT 1' à la ligne 10
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 27 abr, 15:57:34]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Traer_Ultimo_Contrato_Personal desde form_personal_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: La table 'socger.tbl_personal_contratos' n'existe pas
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 27 abr, 16:04:17]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Traer_Ultimo_Contrato_Personal desde form_personal_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: La table 'socger.tbl_personal_contratos' n'existe pas
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi� 29 abr, 15:21:39]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Grabar_Cambios_en_Historico_3 desde form_gastos_tipos_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'AND Campo_Nombre = "descripcion" ORDER BY tb ASC, id ASC, Momento DESC, Id_Users' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi� 29 abr, 15:21:46]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Grabar_Cambios_en_Historico_3 desde form_gastos_tipos_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'AND Campo_Nombre = "incluir_en_IVA" ORDER BY tb ASC, id ASC, Momento DESC, Id_Us' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�b 16 may, 23:00:53]- SUPER USUARIO ... Ocurrió un error al intentar crear el artículo 1 en el almacén 1
+La tabla ha sido SQLQuery_UTI_ALMACENES_Crear_Articulo_En_Almacen desde el módulo form_almacenes_movimientos_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ '1-1' pour la clef 'id_articulos_id_almacenes'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 17 may, 00:10:50]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_AM desde form_Menu
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 17 may, 06:31:49]- SUPER USUARIO ... Ocurrió un error al intentar crear el artículo 1 en el almacén 1
+La tabla ha sido SQLQuery_UTI_ALMACENES_Crear_Articulo_En_Almacen desde el módulo form_almacenes_movimientos_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ '1-1' pour la clef 'id_articulos_id_almacenes'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 18 may, 15:37:41]- SUPER USUARIO ... Ocurrió un error al intentar crear el artículo 4 en el almacén 1
+La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_almacenes_movimientos_001
+ 
+Este es el mensaje de error:
+ 
+ : Error executing query: Erreur de syntaxe près de 'INSERT INTO articulos_stock
+( id_articulos,
+ id_almacenes,
+ Stock )
+VALUES
+' à la ligne 7
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 18 may, 15:47:11]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Grabar_Cambios_en_Historico_3 desde form_almacenes_movimientos_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'AND Campo_Nombre = "Fecha_Movimiento" ORDER BY tb ASC, id ASC, Momento DESC, Id_' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 18 may, 15:47:19]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Grabar_Cambios_en_Historico_3 desde form_almacenes_movimientos_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'AND Campo_Nombre = "Tipo_Movimiento" ORDER BY tb ASC, id ASC, Momento DESC, Id_U' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 18 may, 18:37:46]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Grabar_Cambios_en_Historico_3 desde form_almacenes_movimientos_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY tb ASC, id ASC, Momento DESC, Id_Users ASC, Campo_Nombre ASC
+LIMIT 1' à la ligne 4
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 18 may, 18:54:12]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Grabar_Cambios_en_Historico_3 desde form_almacenes_movimientos_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY tb ASC, id ASC, Momento DESC, Id_Users ASC, Campo_Nombre ASC
+LIMIT 1' à la ligne 4
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 18 may, 19:11:59]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Grabar_Cambios_en_Historico_3 desde form_almacenes_movimientos_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY tb ASC, id ASC, Momento DESC, Id_Users ASC, Campo_Nombre ASC
+LIMIT 1' à la ligne 4
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 18 may, 19:12:02]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Grabar_Cambios_en_Historico_3 desde form_almacenes_movimientos_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY tb ASC, id ASC, Momento DESC, Id_Users ASC, Campo_Nombre ASC
+LIMIT 1' à la ligne 4
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 18 may, 20:37:23]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro.La tabla ha sido SQLQuery_AM desde el módulo form_almacenes_movimientos_000
+ 
+Este es el mensaje de error: 
+ 
+Parameter "Fecha_Movimiento" not found
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 18 may, 20:37:35]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Grabar_Cambios_en_Historico_3 desde form_almacenes_movimientos_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY tb ASC, id ASC, Momento DESC, Id_Users ASC, Campo_Nombre ASC
+LIMIT 1' à la ligne 4
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 18 may, 20:39:59]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Grabar_Cambios_en_Historico_3 desde form_almacenes_movimientos_000
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY tb ASC, id ASC, Momento DESC, Id_Users ASC, Campo_Nombre ASC
+LIMIT 1' à la ligne 4
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 21 may, 11:54:43]- SUPER USUARIO ... Ocurrió un error al intentar crear el artículo 4 en el almacén 2
+La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_almacenes_movimientos_001
+ 
+Este es el mensaje de error:
+ 
+ : Error executing query: Erreur de syntaxe près de 'DELIMITER $$
+CREATE PROCEDURE Crear_Articulo_en_Stock( param_id_articulos bigin' à la ligne 2
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mar 26 may, 20:00:52]- SUPER USUARIO ... Ocurrió un error al intentar comprobar si el registro está bloqueado.
+ 
+La tabla ha sido SQLQuery_UTI_RGTRO_isLock desde el módulo form_articulos_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_RGTRO_isLock : Field not found : "FieldByName"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 14 jun, 16:54:22]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes_Contactos desde form_Menu
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'cc.id_clientes' inconnu dans order clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 14 jun, 17:59:15]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes_Periodos desde form_alumnos_001
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'pe.id_clientes' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 14 jun, 17:59:20]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes_periodos
+ 
+Este es el mensaje de error: 
+ 
+Operation cannot be performed on an inactive dataset
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 14 jun, 18:57:06]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes_Periodos desde form_alumnos_001
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'pe.id_clientes' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 14 jun, 18:57:13]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes_periodos
+ 
+Este es el mensaje de error: 
+ 
+Operation cannot be performed on an inactive dataset
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 14 jun, 19:04:13]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes_Periodos desde form_alumnos_001
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'pe.id_clientes' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 14 jun, 19:04:17]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes_periodos
+ 
+Este es el mensaje de error: 
+ 
+Operation cannot be performed on an inactive dataset
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mar 16 jun, 17:00:42]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY ad.id_clientes ASC, ad.id ASC' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mar 16 jun, 17:03:28]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY ad.id_clientes ASC, ad.id ASC' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vie 19 jun, 12:55:45]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_DATOS_TABLA_Traer_Impuesto_xID desde form_alumnos_004
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'a.id' inconnu dans order clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 21 jun, 17:54:33]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes desde form_alumnos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'cp.Fin' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 21 jun, 17:59:44]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes desde form_alumnos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'cp.Fin' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 21 jun, 18:01:25]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'cp.Fin' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 21 jun, 18:27:29]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes desde form_alumnos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'cp.Fin' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 21 jun, 18:32:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes desde form_alumnos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'cp.Fin' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 21 jun, 20:15:47]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes desde form_alumnos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'cp.Fin >= "2015-06-21 00:00:00 23:59:59" AND cp.Inicio <= "2015-06-21 00:00:00 0' à la ligne 2
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 21 jun, 20:51:37]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes desde form_alumnos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de '%b% AND cl.nombre_propietario LIKE %b% AND cl.Del_WHEN IS NULL ORDER BY cl.nombr' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 21 jun, 21:04:45]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes desde form_alumnos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'cp.id_formas_pago' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 28 jun, 17:36:09]- SUPER USUARIO ... Error al copiar los menus asociados al usuario con id = 21 para el nuevo usuario 22
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'Forcing_Why_Delete' inconnu dans field list
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 29 jun, 12:20:10]- DOMINIC ... Error al CREAR la cabecera del albarán número 12 de la serie A2015
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de '
+"RECIBO JUNIO - 2015",
+0,
+"2015-06-29",
+21 )' à la ligne 18
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 29 jun, 12:30:37]- SUPER USUARIO ... Error al CREAR la cabecera del albarán número 12 de la serie A2015
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de '
+"JUNIO - 2015",
+0,
+"2015-06-29",
+0 )' à la ligne 18
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 29 jun, 14:37:38]- SUPER USUARIO ... No se pudo salvar el registro en la tabla albaranes_detalles
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Alb_Detalles : Operation not allowed, dataset "SQLQuery_Alb_Detalles" is not in an edit or insert state.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 29 jun, 14:42:49]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Alb_Detalles desde el módulo form_recibos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'albaranes_detalles-1-2015-06-19 13:53:29-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 29 jun, 14:43:06]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Alb_Detalles desde el módulo form_recibos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'albaranes_detalles-3-2015-06-29 01:13:44-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 29 jun, 14:43:15]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Alb_Detalles desde el módulo form_recibos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'albaranes_detalles-4-2015-06-29 01:08:32-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 29 jun, 14:43:19]- SUPER USUARIO ... Error al CREAR la cabecera del albarán número 12 de la serie A2015
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'A2015-12' pour la clef 'Serie_Albaran_Numero_Albaran'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 29 jun, 16:17:48]- SUPER USUARIO ... Error al CREAR la cabecera del albarán número 13 de la serie A2015
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'A2015-13' pour la clef 'Serie_Albaran_Numero_Albaran'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 29 jun, 17:07:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes_Contactos desde form_alumnos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY cc.id_clientes ASC, cc.nombre ASC' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi� 01 jul, 11:31:55]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Alb desde el módulo form_recibos_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Duplicata du champ 'A2015-25' pour la clef 'Serie_Albaran_Numero_Albaran'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi� 01 jul, 16:46:24]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Users_Menus desde Form_users_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'um.Id_Menus = 60 ORDER BY um.Id_Users ASC, um.Id_Menus ASC' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi� 01 jul, 16:47:44]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Users_Menus desde Form_users_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'um.Id_Menus = 60 ORDER BY um.Id_Users ASC, um.Id_Menus ASC' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi� 29 jul, 13:35:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Vehiculos_Marcas desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'vt.Del_WHEN' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 06 ago, 13:47:43]- �� ��� ��� ��� ��� ��� ��� ��� ��� ��� N�W�J�R��� ��� ��� ��� ��� ��� ��� ��� ��� ��� ��� ��� ��� M�V�c�m�_�i�A�Iy��� ��� ��� ��� ��� ��� ��� ��� ��� ��� ��� L�U�b�l��я�zȅ�W�`�8�?{��� ��� ��� ��� ��� ��� ��� ��� ��� K�T�`�j��ύ�ϋ�X�a�9�@�4~:��� � ... Error al CERRAR la CONEXION con el MOTOR de la BD desde Form_Arrancar
+ 
+Este es el mensaje de error: 
+ 
+"" is an invalid float
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 09 ago, 11:59:47]- �� ��� ��� ��� ��� ��� ��� ��� ��� ��� N�W�J�R��� ��� ��� ��� ��� ��� ��� ��� ��� ��� ��� ��� ��� M�V�c�m�_�i�A�Iy��� ��� ��� ��� ��� ��� ��� ��� ��� ��� ��� L�U�b�l��я�zȅ�W�`�8�?{��� ��� ��� ��� ��� ��� ��� ��� ��� K�T�`�j��ύ�ϋ�X�a�9�@�4~:��� � ... Error al CERRAR la CONEXION con el MOTOR de la BD desde Form_Arrancar
+ 
+Este es el mensaje de error: 
+ 
+"" is an invalid float
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 10 ago, 20:19:00]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Devolver_Vehiculo_Km_Ultimos desde form_vehiculos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY vkm.id_vehiculos ASC, vkm.fecha DESC
+LIMIT 1' à la ligne 4
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vie 28 ago, 08:25:23]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table/alias: 'fp' non unique
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vie 28 ago, 08:31:37]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vie 28 ago, 08:38:35]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vie 04 sep, 16:09:08]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes
+ 
+Este es el mensaje de error: 
+ 
+"4,536.01" is an invalid float
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vie 04 sep, 16:13:55]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes
+ 
+Este es el mensaje de error: 
+ 
+"14,536.01" is an invalid float
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vie 04 sep, 16:16:27]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes
+ 
+Este es el mensaje de error: 
+ 
+"14,536.01" is an invalid float
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 07 sep, 20:49:35]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_isLock desde form_albaranes_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY tb ASC, id ASC' à la ligne 5
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 07 sep, 20:49:41]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_DATOS_TABLA_Traer_Empresas_xID desde form_albaranes_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY e.id ASC' à la ligne 3
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 07 sep, 21:10:34]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Alb desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record: SQLQuery_Alb : Field not found : "id_Cta_Bco_poblaciones"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 07 sep, 21:10:38]- SUPER USUARIO ... No se pudo salvar el registro en la tabla albaranes_ventas
+ 
+Este es el mensaje de error: 
+ 
+Could not convert variant of type (Null) into type (String)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 07 sep, 21:37:45]- SUPER USUARIO ... No se pudo salvar el registro en la tabla albaranes_ventas
+ 
+Este es el mensaje de error: 
+ 
+Could not convert variant of type (Null) into type (String)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 10 sep, 18:19:34]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes_envios
+ 
+Este es el mensaje de error: 
+ 
+Could not convert variant of type (Null) into type (String)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 10 sep, 18:21:21]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes_envios
+ 
+Este es el mensaje de error: 
+ 
+Could not convert variant of type (Null) into type (String)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 10 sep, 19:02:45]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes_envios
+ 
+Este es el mensaje de error: 
+ 
+Could not convert variant of type (Null) into type (String)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 10 sep, 19:03:51]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_users_row_changes desde form_clientes_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'AND r.tb = "clientes_envios" ORDER BY r.tb ASC, r.id ASC, r.Momento ASC, r.Id_Us' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 10 sep, 19:22:54]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes_envios
+ 
+Este es el mensaje de error: 
+ 
+Could not convert variant of type (Null) into type (String)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 10 sep, 19:24:49]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes_envios
+ 
+Este es el mensaje de error: 
+ 
+Could not convert variant of type (Null) into type (String)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 10 sep, 19:25:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_isLock desde form_clientes_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY tb ASC, id ASC' à la ligne 5
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 10 sep, 19:25:11]- SUPER USUARIO ... Ocurrió un error al intentar desbloquear el registro. Debe avisar de este error, pues el registro va a permanecer siempre bloqueado
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de '' à la ligne 3
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi� 16 sep, 11:13:05]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Impuestos_para_composicion desde form_impuestos_001
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi� 16 sep, 11:46:53]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Impuestos_para_composicion desde form_impuestos_001
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 21 sep, 12:57:34]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Articulos_Stock desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'st.Del_WHEN' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 21 sep, 13:09:17]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Articulos_Stock desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'st.Del_WHEN' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 15 oct, 12:29:01]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Existe_Stock_Ya desde form_articulos_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'a.id_articulos' inconnu dans order clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mar 27 oct, 01:41:58]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Visitas_Tipos desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 29 oct, 22:31:06]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mar 03 nov, 11:14:34]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_UTI_DATOS_TABLA_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[jue 05 nov, 16:38:52]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_UTI_DATOS_TABLA_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[dom 15 nov, 07:10:55]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Empresas desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mar 17 nov, 01:04:50]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Presup desde el módulo form_presupuestos_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'presupuestos_ventas-1-2015-11-17 00:57:03-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�b 21 nov, 10:13:43]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Presup_Detalles desde el módulo form_presupuestos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'presupuestos_ventas_detalles-2-2015-10-15 13:27:34-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 23 nov, 09:26:53]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Presup_Detalles desde el módulo form_presupuestos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'presupuestos_ventas_detalles-2-2015-10-15 13:27:34-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 23 nov, 09:32:02]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Presup_Detalles desde el módulo form_presupuestos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'presupuestos_ventas_detalles-2-2015-10-15 13:27:34-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 23 nov, 09:37:22]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Pdo desde el módulo form_presupuestos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'pedidos_ventas-8-2015-11-23 09:36:33-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 23 nov, 18:24:47]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb_Detalles desde form_pedidos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'add.id' inconnu dans order clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 23 nov, 19:21:57]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Alb desde el módulo form_pedidos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Champ 'Numero_Albaran' spécifié deux fois
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lun 23 nov, 19:36:02]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Alb desde el módulo form_pedidos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Champ 'Numero_Albaran' spécifié deux fois
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 25 nov., 15:15:04]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_isLock desde form_presupuestos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY tb ASC, id ASC' à la ligne 5
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 25 nov., 15:31:11]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_DATOS_TABLA_Traer_Representantes_xID desde form_pedidos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY rp.id ASC' à la ligne 3
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 30 nov., 20:32:13]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_DATOS_TABLA_Traer_Representantes_xID desde form_presupuestos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY rp.id ASC' à la ligne 3
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 01 dic., 08:30:07]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_DATOS_TABLA_Traer_Impuesto_xID desde form_pedidos_ventas_002
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY i.id ASC' à la ligne 3
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�. 05 dic., 17:06:24]- SUPER USUARIO ... Error al considerar como no cerrado el albarán Ab2015/61.
+
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: La table 'socger.pedidos' n'existe pas
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 09 dic., 11:54:14]- SUPER USUARIO ... Error al actualizar el almacén a las líneas de detalle
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'id_albaranes' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 09 dic., 11:54:36]- SUPER USUARIO ... Error al actualizar el almacén a las líneas de detalle
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'id_albaranes' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 09 dic., 11:58:28]- SUPER USUARIO ... Error al actualizar el almacén a las líneas de detalle
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'id_albaranes' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 09 dic., 12:45:28]- SUPER USUARIO ... Error al actualizar el almacén a las líneas de detalle
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'id_albaranes' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 10 dic., 09:58:44]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Tarifas desde el módulo form_articulos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'SQLQuery_Articulos_Tarifas-1-2015-11-15 20:39:09-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 10 dic., 09:58:49]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Tarifas desde el módulo form_articulos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'SQLQuery_Articulos_Tarifas-2-2015-03-24 08:32:55-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 11 dic., 19:55:17]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Presup_Detalles desde form_presupuestos_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY pd.id_presupuestos ASC, pd.id ASC' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 11 dic., 19:57:19]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Pdo_Detalles desde form_pedidos_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY pdod.id_pedidos ASC, pdod.id ASC' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 11 dic., 20:40:52]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Presup desde el módulo form_presupuestos_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Le champ 'IVA_Excluido_SN_Representante' ne peut être vide (null)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 14 dic., 08:19:34]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Pdo_Detalles_Stock desde form_pedidos_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'WHERE pdods.Del_WHEN IS NULL AND st.Stock < pdods.Unidades AND st.id_almacenes =' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 14 dic., 08:56:12]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Pdo_Detalles_Stock desde form_pedidos_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 dic., 18:05:45]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'a.Serie_Factura' inconnu dans order clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 dic., 18:11:54]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_VENTAS_Tiene_Recibos desde form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY id_facturas ASC, id ASC' à la ligne 4
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 dic., 18:12:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si existen recibos de ventas para la factura con la id . La tabla ha sido SQLQuery_UTI_VENTAS_Tiene_Recibos desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_VENTAS_Tiene_Recibos : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 21 dic., 13:01:32]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_VENTAS_Tiene_Recibos desde form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ORDER BY id_facturas ASC, id ASC' à la ligne 4
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 21 dic., 13:01:34]- SUPER USUARIO ... Ocurrió un error al intentar ver si existen recibos de ventas para la factura con la id . La tabla ha sido SQLQuery_UTI_VENTAS_Tiene_Recibos desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_VENTAS_Tiene_Recibos : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 21 dic., 13:02:20]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb_Pdtes desde form_facturas_ventas_005
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de '' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 23 dic., 09:11:48]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb_Pdtes desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Champ 'f.Del_WHEN' inconnu dans where clause
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 23 dic., 15:04:18]- SUPER USUARIO ... Ocurrió un error al intentar desbloquear el registro. Debe avisar de este error, pues el registro va a permanecer siempre bloqueado
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de '' à la ligne 3
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 23 dic., 15:04:25]- SUPER USUARIO ... Ocurrió un error al intentar desbloquear el registro. Debe avisar de este error, pues el registro va a permanecer siempre bloqueado
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de '' à la ligne 3
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 23 dic., 19:15:37]- SUPER USUARIO ... Ocurrió un error al intentar desbloquear el registro. Debe avisar de este error, pues el registro va a permanecer siempre bloqueado
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de '' à la ligne 3
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 23 dic., 19:15:41]- SUPER USUARIO ... Ocurrió un error al intentar desbloquear el registro. Debe avisar de este error, pues el registro va a permanecer siempre bloqueado
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de '' à la ligne 3
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 17:59:57]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_002
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:00:01]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_002
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:00:04]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_002
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:00:06]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:00:07]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:00:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:00:10]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:00:11]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:00:13]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:00:14]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:01:40]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:03:18]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 08 ene., 18:05:04]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Erreur de syntaxe près de 'ic.id_impuestos_al_que_pertenece = 3 AND SELECT ic.*, i.descripcion AS OT_descri' à la ligne 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 ene., 13:48:00]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'facturas_ventas-1-2015-12-31 12:09:52-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 ene., 13:48:10]- SUPER USUARIO ... Ocurrió un error al intentar copiar la factura elegida.. El error ocurrió desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+Could not convert variant of type (Null) into type (Int64)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 ene., 14:15:57]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'facturas_ventas-1-2016-01-11 14:01:36-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 ene., 15:28:00]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'facturas_ventas-17-2016-01-11 15:23:39-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 ene., 16:16:18]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'facturas_ventas_detalles-39-2016-01-11 16:13:31-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 ene., 16:31:53]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'facturas_ventas-27-2016-01-11 16:31:06-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 ene., 16:34:00]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicata du champ 'facturas_ventas-28-2016-01-11 16:32:58-0' pour la clef 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 12 ene., 12:40:59]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_UTI_DATOS_TABLA_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Unknown connector type
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 12 ene., 12:43:06]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_UTI_DATOS_TABLA_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Unknown connector type
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 12 ene., 12:43:52]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_UTI_DATOS_TABLA_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Unknown connector type
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 12 ene., 12:46:06]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_UTI_DATOS_TABLA_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Unknown connector type
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 12 ene., 12:55:48]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_UTI_DATOS_TABLA_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Unknown connector type
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 ene., 20:13:28]- SUPER USUARIO ... Ocurrió un error al intentar actualizar en el stock del artículo.  La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_almacenes_destino' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 ene., 20:13:35]- SUPER USUARIO ... Ocurrió un error al intentar actualizar en el stock del artículo.  La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_almacenes_destino' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 ene., 20:15:13]- SUPER USUARIO ... Ocurrió un error al intentar actualizar en el stock del artículo.  La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_almacenes_destino' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 ene., 20:15:28]- SUPER USUARIO ... No se pudo salvar el registro en la tabla facturas_ventas_detalles
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field id_facturas is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 ene., 20:15:37]- SUPER USUARIO ... Ocurrió un error al intentar actualizar en el stock del artículo.  La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_almacenes_destino' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 ene., 20:15:47]- SUPER USUARIO ... No se pudo salvar el registro en la tabla facturas_ventas_detalles
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field id_facturas is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 ene., 21:22:17]- SUPER USUARIO ... Ocurrió un error al intentar actualizar en el stock del artículo.  La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_almacenes_movimientos_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_almacenes_origen' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 ene., 21:24:07]- SUPER USUARIO ... No se pudo salvar el registro en la tabla almacenes_movimientos_detalles
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_AMD : Field id_almacenes_movimientos is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 ene., 21:26:07]- SUPER USUARIO ... Ocurrió un error al intentar actualizar en el stock del artículo.  La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_almacenes_movimientos_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_almacenes_origen' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 ene., 21:26:38]- SUPER USUARIO ... No se pudo salvar el registro en la tabla almacenes_movimientos_detalles
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_AMD : Field id_almacenes_movimientos is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 ene., 21:38:49]- SUPER USUARIO ... Ocurrió un error al intentar actualizar en el stock del artículo.  La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_almacenes_movimientos_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_almacenes_origen' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 ene., 16:57:12]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes
+ 
+Este es el mensaje de error: 
+ 
+Could not convert variant of type (Null) into type (Int64)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 ene., 10:09:47]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Column 'Tipo' cannot be null
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 ene., 11:18:14]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_VENTAS_Devolver_id_factura desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY Serie_Factura ASC, Numero_Factura ASC' at line 5
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 ene., 11:18:21]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_VENTAS_Devolver_id_factura desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY Serie_Factura ASC, Numero_Factura ASC' at line 5
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 ene., 11:27:38]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_VENTAS_Devolver_id_factura desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY Serie_Factura ASC, Numero_Factura ASC' at line 5
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 04 feb., 19:01:21]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Borradas desde form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fb.Tipo = "F" AND fb.id_empresas = 1 ORDER BY fb.id_empresas ASC, fb.Serie_Factu' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 04 feb., 19:36:20]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Borradas desde form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'fb.Tipo = "F" AND fb.id_empresas = 1 ORDER BY fb.id_empresas ASC, fb.Serie_Factu' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 05 feb., 18:37:12]- SUPER USUARIO ... Error, NO SE PUDO DAR DE ALTA el registro, ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+Could not convert variant of type (Null) into type (Int64)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 15 feb., 15:40:29]- SUPER USUARIO ... Error al borrar en albaranes todo rastro de la factura /.
+
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 17 feb., 11:06:58]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Alb desde el módulo form_pedidos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Duplicate entry 'Ab2015-48' for key 2
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 17 feb., 11:14:44]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Alb desde el módulo form_pedidos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Duplicate entry 'Ab2015-49' for key 2
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 26 feb., 13:03:57]- SUPER USUARIO ... Error al comprobar si la referencia existe ya para el articulo.La tabla ha sido SQLQuery_Existe_articulo_Referencia_Ya desde el módulo form_articulos_001
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Existe_articulo_Referencia_Ya : Field not found : "Del_WHEN"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 14 mar., 18:32:15]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_COMPRAS_Esta_Cerrado_SN desde form_presupuestos_compras_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id ASC' at line 4
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 14 mar., 18:33:50]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_COMPRAS_Esta_Cerrado_SN desde form_presupuestos_compras_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id ASC' at line 4
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 09:49:00]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Presup desde el módulo form_presupuestos_compras_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record: SQLQuery_Presup : Field not found : "Numero_Presupuesto_Compras"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 12:06:36]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los registros del impuesto compuesto con la id 5. La tabla ha sido SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde el módulo form_presupuestos_compras_002
+ 
+Este es el mensaje de error: 
+ 
+"" is an invalid float
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 12:13:07]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los registros del impuesto compuesto con la id 5. La tabla ha sido SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde el módulo form_presupuestos_compras_002
+ 
+Este es el mensaje de error: 
+ 
+"" is an invalid float
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 13:41:00]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Pdo_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 13:42:33]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Pdo_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 14:09:35]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Pdo desde el módulo form_pedidos_compras_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record: SQLQuery_Pdo : Field not found : "id_clientes"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 16:05:18]- SUPER USUARIO ... Ocurrió un error al intentar actualizar en el stock del artículo.  La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_albaranes_compras_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: The user specified as a definer ('root'@'localhost') does not exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 16:07:18]- SUPER USUARIO ... No se pudo salvar el registro en la tabla albaranes_compras_detalles
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Alb_Detalles : Field id_albaranes is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 16:16:31]- SUPER USUARIO ... Ocurrió un error al intentar actualizar en el stock del artículo.  La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_albaranes_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: The user specified as a definer ('root'@'localhost') does not exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 16:22:56]- SUPER USUARIO ... Ocurrió un error al intentar actualizar en el stock del artículo.  La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_albaranes_compras_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: The user specified as a definer ('root'@'localhost') does not exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 16:26:13]- SUPER USUARIO ... Ocurrió un error al intentar actualizar en el stock del artículo.  La tabla ha sido SQLQuery_UTI_STOCK_Update_STOCK desde el módulo form_albaranes_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: The user specified as a definer ('root'@'localhost') does not exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 16:26:16]- SUPER USUARIO ... No se pudo salvar el registro en la tabla albaranes_ventas_detalles
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Alb_Detalles : Field id_albaranes is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 17:31:44]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_compras_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Fecha_Factura_Proveedor = Null nombre_propietario = 'gasolinera bp ', nombre_com' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 17:38:39]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_compras_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Fecha_Factura_Proveedor = '2016-03-15 00:00:00.000' nombre_propietario = 'gasoli' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 15 mar., 17:42:22]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_compras_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Fecha_Factura_Proveedor = '2016-03-15 00:00:00.000' nombre_propietario = 'gasoli' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 16 mar., 23:31:27]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Impuestos desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'fi.Del_WHEN' in 'where clause'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 16 mar., 23:39:40]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 41 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Field 'Insert_WHEN' doesn't have a default value
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 16 mar., 23:39:59]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 41 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Field 'Insert_WHEN' doesn't have a default value
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 16 mar., 23:40:20]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 41 desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Field 'Insert_WHEN' doesn't have a default value
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 16 mar., 23:41:11]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 18 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Field 'Insert_WHEN' doesn't have a default value
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 16 mar., 23:49:20]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 24 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Field 'Insert_WHEN' doesn't have a default value
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 01:40:23]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 42 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 01:43:32]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 37 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 01:44:26]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 37 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 17:07:15]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 29 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 17:08:57]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 29 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 17:11:21]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 29 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 17:12:04]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 52 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 17:12:11]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 63 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 17:12:24]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 73 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 17:12:39]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 52 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 17:13:09]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 63 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 17 mar., 17:13:36]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 73 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_impuestos' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 18 mar., 11:32:31]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 49 desde el módulo form_pedidos_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'id_albaranes' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 18 mar., 11:33:12]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id 49 desde el módulo form_pedidos_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'id_albaranes' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 18 mar., 12:01:44]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Presup_Detalles desde el módulo form_presupuestos_compras_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record: SQLQuery_Presup_Detalles : Field not found : "id_impuestos_Ventas"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 18 mar., 12:04:55]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Presup_Detalles desde el módulo form_presupuestos_compras_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record: SQLQuery_Presup_Detalles : Field not found : "id_impuestos_Ventas"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 18 mar., 12:24:55]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de impuestos de la ftra.con id  desde el módulo form_presupuestos_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 18 mar., 12:58:00]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Alb desde el módulo form_pedidos_compras_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Duplicate entry 'Ab2015-88' for key 'Serie_Albaran_Numero_Albaran'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 21 mar., 18:55:24]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Tablas desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 25 mar., 17:12:01]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_UTI_DATOS_TABLA_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : failed to select database: Unknown database 'jean_manuel'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 28 mar., 16:32:44]- SUPER USUARIO ... No se pudo salvar el registro en la tabla articulos_referencias
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Articulos_Ref : Field not found : "OT_Descripcion"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 28 mar., 18:08:54]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 29 mar., 16:25:50]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb_Compras_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'st.id_articulos' in 'order clause'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 29 mar., 16:29:35]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb_Compras_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'st.id_articulos' in 'order clause'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 30 mar., 13:05:46]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Compras_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'fc.Serie_Factura' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 30 mar., 13:08:25]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Compras_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'fc.Serie_Factura' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 19:40:52]- SUPER USUARIO ... No se pudo salvar el registro en la tabla articulos_referencias
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Articulos_Ref : Field not found : "OT_Descripcion"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 19:50:23]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Impresoras desde el módulo form_impresoras_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Unknown column 'descripcion' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:11:17]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Impresoras desde el módulo form_impresoras_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Unknown column 'descripcion' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:17:52]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-104-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:17:56]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-103-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:00]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-107-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:04]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-98-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:08]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-99-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:11]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-106-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:14]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-108-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:20]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-102-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:25]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-101-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:30]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-100-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:33]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-105-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:36]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Familias_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Familias_Terminales-97-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:40]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-104-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:44]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-103-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:49]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-107-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:52]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-98-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:56]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-99-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:18:59]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-106-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:19:04]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-108-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:19:07]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-102-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:19:11]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-101-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:19:16]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-100-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:19:22]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-105-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 31 mar., 20:19:27]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Articulos_Terminales desde el módulo form_terminales_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'SQLQuery_Articulos_Terminales-97-2016-03-31 20:16:55-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 01 abr., 16:04:05]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Articulos_Tarifas desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 01 abr., 16:06:21]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Articulos_Tarifas desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 04 abr., 18:51:17]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_IMPTOS_Devolver_Calculo_Impuesto_Compuesto desde form_facturas_compras_002
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ic.id_impuestos_al_que_pertenece = 6 AND SELECT ic.*, i.descripcion AS OT_descri' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 05 abr., 10:00:16]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_compras_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Duplicate entry '2-rc2016-1' for key 'id_empresas_Serie_Factura_Numero_Factura'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 06 abr., 22:14:08]- CRISTOBAL ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_compras_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'facturas_compras_detalles-242-2016-04-06 22:13:56-30' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 06 abr., 22:14:34]- CRISTOBAL ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_compras_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'facturas_compras_detalles-242-2016-04-06 22:14:26-30' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�. 09 abr., 08:37:26]- SUPER USUARIO ... No se pudo salvar el registro en la tabla facturas_compras_detalles
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "PVP_Impuestos_Incluidos"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�. 09 abr., 08:42:40]- CRISTOBAL ... Ocurrió un error al intentar actualizar los totales de la ftra.con id  desde el módulo form_facturas_compras_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_facturas' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�. 09 abr., 08:44:08]- CRISTOBAL ... Ocurrió un error al intentar actualizar los totales de la ftra.con id  desde el módulo form_facturas_compras_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_facturas' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�. 09 abr., 08:44:45]- CRISTOBAL ... Ocurrió un error al intentar actualizar los totales de la ftra.con id  desde el módulo form_facturas_compras_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Incorrect integer value: '' for column 'param_id_facturas' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 abr., 18:45:14]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Borradas desde form_facturas_compras_001
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 abr., 18:47:10]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Borradas desde form_facturas_compras_001
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 abr., 22:33:06]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 285 desde el módulo form_facturas_compras_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'i.Sumado_A_Ftra_SN' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 abr., 23:28:58]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 1 desde el módulo form_pedidos_compras_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: PROCEDURE cristobal.function_ACT_totales_pedidos_compras does not exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 11 abr., 23:29:16]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 1 desde el módulo form_pedidos_compras_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: PROCEDURE cristobal.function_ACT_totales_pedidos_compras does not exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 13 abr., 13:31:39]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:51]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:55]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:55]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:55]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:55]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:55]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:55]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:55]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:55]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:39:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Detalles desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Detalles : Field not found : "OT_Concepto_Articulo"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 14 abr., 19:52:32]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 1 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'id_proveedores' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 15 abr., 12:50:04]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Imptos_Totales desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'pdoc.Fecha >= "2015-01-01 00:00:00" AND pdoc.Fecha <= "2017-12-31 23:59:59" AND ' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 15 abr., 12:55:38]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Imptos_Totales desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'pc.Fecha >= "2015-01-01 00:00:00" AND pc.Fecha <= "2017-12-31 23:59:59" AND pc.D' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 18 abr., 18:47:48]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Articulos_Composiciones desde form_presupuestos_compras_002
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'a1.PVP_Impuestos_Incluidos' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 18 abr., 18:47:58]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb_Compras_Detalles desde form_presupuestos_compras_002
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 18 abr., 18:47:58]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb_Ventas_Detalles desde form_presupuestos_compras_002
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 18 abr., 18:47:58]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Compras_Detalles desde form_presupuestos_compras_002
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 18 abr., 18:47:58]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Ventas_Detalles desde form_presupuestos_compras_002
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 19 abr., 16:23:04]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 1 desde el módulo form_albaranes_compras_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'Total_Base_Imponible' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 19 abr., 16:23:43]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 65 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'Total_Base_Imponible' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 19 abr., 16:23:51]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 52 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'Total_Base_Imponible' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 20 abr., 10:22:12]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Presup desde form_presupuestos_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+Access violation
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 21 abr., 15:41:20]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_1 desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 21 abr., 21:29:09]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_compras_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'facturas_compras_detalles-313-2016-04-21 21:28:53-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 21 abr., 21:29:57]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_compras_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'facturas_compras_detalles-312-2016-04-21 21:29:46-0' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 21 abr., 21:47:31]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 291 desde el módulo form_facturas_compras_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry '291-1' for key 'id_facturas_id_impuestos'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 21 abr., 23:02:01]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_VENTAS_Existe_el_impto_NOcompuesto_como_compuesto desde form_facturas_compras_002
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY ic.id_impuestos_al_que_pertenece ASC, ic.id_impuestos ASC' at line 9
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 21 abr., 23:02:04]- SUPER USUARIO ... Ocurrió un error al intentar comprobar si existe el impuesto no compuesto 1, en la factura con id: 291. La tabla ha sido SQLQuery_UTI_VENTAS_Existe_el_impto_NOcompuesto_como_compuesto desde el módulo form_facturas_compras_002
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_VENTAS_Existe_el_impto_NOcompuesto_como_compuesto : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 22 abr., 00:20:11]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_COMPRAS_Existe_alguna_parte_del_impto_compuesto_en_otro_compuesto desde form_facturas_compras_002
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') as tmp
+WHERE EXISTS ( SELECT *
+FROM facturas_compras_detalles
+WHERE id_fact' at line 7
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 22 abr., 19:34:46]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Ventas_Detalles desde form_facturas_ventas_002
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra_Ventas_Detalles : Field not found : "OT_Descripcion_para_DbGrid"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 22 abr., 19:52:27]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Articulos_Composiciones desde form_albaranes_ventas_002
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'a1.PVP_Impuestos_Incluidos' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 22 abr., 21:50:10]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb_Compras_Detalles desde form_facturas_compras_002
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'fd.Del_WHEN' in 'where clause'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 22 abr., 21:50:17]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Compras_Detalles desde form_facturas_compras_002
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�. 23 abr., 08:27:58]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Alb_Compras_Detalles desde form_facturas_ventas_002
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Alb_Ventas_Detalles : Operation not allowed, dataset "%s" is not in an edit or insert state.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�. 23 abr., 16:57:34]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Articulos_Composiciones desde form_facturas_ventas_002
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'a1.PVP_Impuestos_Incluidos' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 09:37:24]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_UTI_DATOS_TABLA_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 09:54:10]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_UTI_DATOS_TABLA_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 09:59:26]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_UTI_DATOS_TABLA_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 16:37:14]- SUPER USUARIO ... Error al borrar la factura con id 276. La tabla ha sido SQLQuery_UTI_CONTA_Borrar_Del_Todo_Ftra desde el módulo form_facturas_compras_004
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DELETE FROM facturas_compras_detalles
+WHERE id = 276' at line 3
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:41]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 117 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:44]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 118 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:45]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 119 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:45]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 120 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:46]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 121 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:46]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 122 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:46]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 123 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:46]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 124 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:47]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 125 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:47]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 126 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:47]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 127 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:47]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 128 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:47]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 129 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:48]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 130 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:29:48]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 131 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 25 abr., 23:30:51]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 218 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:36:07]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 218 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo frProgressForm
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:43]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 35 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo frProgressForm
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:44]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 40 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo frProgressForm
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:46]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 208 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:47]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 209 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:48]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 213 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:48]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 214 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:48]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 215 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:49]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 216 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:49]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 218 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:49]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 226 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:49]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 233 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:49]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 246 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:49]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 248 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:50]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 249 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:50]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 253 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:50]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 255 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:50]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 257 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 26 abr., 02:38:50]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 258 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+Server connect failed.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:07]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 65 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 66 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 67 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 68 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 69 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 70 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 71 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 72 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 73 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 74 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 75 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 76 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 77 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 79 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 80 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 81 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo Form_Avisos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 65 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+Access violation
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 66 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 67 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 68 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:08]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 69 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 70 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 71 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 72 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 73 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 74 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 75 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 76 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 77 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 79 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 80 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Table 'jean.facturas_cerradas' doesn't exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 28 abr., 18:39:09]- SUPER USUARIO ... Ocurrió un error al intentar ver si la factura con la id 81 está cerrada o no. La tabla ha sido SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CONTA_Esta_cerrada_la_Ftra : Field not found : "Existe"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 10:51:47]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 1 desde el módulo form_albaranes_compras_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'albaranes_compras_detalles-1-2016-03-31 18:47:42-0-1' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 12:04:01]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 13 desde el módulo form_albaranes_compras_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Dynamic SQL is not allowed in stored function or trigger
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 12:04:18]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Alb_Detalles desde el módulo form_albaranes_compras_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Dynamic SQL is not allowed in stored function or trigger
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 12:04:21]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 13 desde el módulo form_albaranes_compras_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Dynamic SQL is not allowed in stored function or trigger
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 16:31:30]- SUPER USUARIO ... No se pudo salvar el registro en la tabla almacenes_movimientos_detalles
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_AMD : Field id_almacenes_destino is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 16:40:11]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_AMD desde el módulo form_almacenes_movimientos_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Field 'id_almacenes_destino' doesn't have a default value
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 20:09:53]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 87 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'albaranes_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 20:09:56]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 87 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'albaranes_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 20:18:18]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 87 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'albaranes_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 20:18:22]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 87 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'albaranes_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 20:21:36]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 87 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'albaranes_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 02 may., 20:21:41]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 87 desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'albaranes_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 11:22:24]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'fvd.id_albaranes' in 'where clause'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 11:27:01]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 11:27:12]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 11:27:26]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 11:32:45]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 11:49:11]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 12:11:51]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 12:16:12]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 12:16:46]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 12:50:53]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 12:50:58]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 12:52:35]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 62 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 12:52:46]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 12:52:50]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 63 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 13:09:12]- SUPER USUARIO ... Ocurrió un error al intentar actualizar los totales de la ftra.con id 62 desde el módulo form_facturas_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 15:43:13]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 16:06:29]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Column 'Insert_Id_User' cannot be null
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 16:06:56]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 16:25:18]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 16:42:48]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Column 'Insert_Id_User' cannot be null
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 03 may., 16:49:59]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Can't update table 'facturas_ventas_detalles' in stored function/trigger because it is already used by statement which invoked this stored function/trigger.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 04 may., 10:06:59]- SUPER USUARIO ... Ocurrió un error al intentar marcar el registro como dado de alta.
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Column 'Insert_Id_User' cannot be null
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 04 may., 10:10:45]- SUPER USUARIO ... Ocurrió un error al intentar marcar el registro como dado de alta.
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Column 'Insert_Id_User' cannot be null
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 05 may., 10:24:22]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'facturas_ventas-62-2016-05-03 16:11:44-0-1' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 05 may., 11:46:58]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'facturas_ventas-59-2016-03-23 14:55:47-0-1' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 13 may., 10:55:19]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Rcbos desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'fi.id' in 'order clause'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[vi. 13 may., 12:45:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Rcbos desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'fv.nombre_propietario' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[do. 15 may., 13:00:43]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Ftra_Detalles desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Incorrect datetime value: '20160323000060' for column 'var_fecha_vencimiento' at row 2
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 16 may., 21:19:54]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Ftra desde el módulo form_facturas_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'facturas_ventas-61-2016-05-16 21:11:57-0-1' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 18 may., 10:54:20]- SUPER USUARIO ... No se pudo salvar el registro en la tabla facturas_ventas
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Ftra : Field id_empresas is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 24 may., 12:11:15]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 24 may., 12:58:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 24 may., 13:09:34]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Presup desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 24 may., 13:10:02]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Presup desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 24 may., 13:15:02]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Rcbos desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 24 may., 13:15:13]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Rcbos desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 24 may., 13:15:16]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra_Rcbos desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ma. 24 may., 15:28:33]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Ftra desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Missing (compatible) underlying dataset, can not open
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 26 may., 12:18:02]- SUPER USUARIO ... No se pudo salvar el registro en la tabla pedidos_ventas
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Pdo : Field Serie_Pedido is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 26 may., 12:49:36]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Pdo desde el módulo form_presupuestos_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Duplicate entry 'pedidos_ventas-10-2016-05-26 12:41:31-0-1' for key 'PRIMARY'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 30 may., 11:47:18]- SUPER USUARIO ... Error al borrar en albaranes todo rastro de la factura con nuestra referencia /.
+
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 5
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 27 jun., 20:06:45]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Impresoras desde el módulo form_impresoras_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Column count doesn't match value count at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 27 jun., 20:09:04]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Impresoras desde el módulo form_impresoras_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Column count doesn't match value count at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 06 jul., 19:30:03]- SUPER USUARIO ... Error al intentar modificar el diseño del informe listado_paises.lrf desde el módulo form_paises_000
+ 
+Este es el mensaje de error: 
+ 
+Error al cargar el reporte: Archivo no encontrado (document/informes/listado_paises.lrf)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 22 ago., 18:21:29]- SUPER USUARIO ... Error al intentar modificar el diseño del informe albaran_ventas_2.lrf desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+Error al cargar el reporte: Archivo no encontrado (document/informes/albaran_ventas_2.lrf)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�. 24 sep., 19:04:46]- CRISTOBAL ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Presup_Detalles desde el módulo form_presupuestos_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: The user specified as a definer ('root'@'localhost') does not exist
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 26 sep., 19:52:56]- SUPER USUARIO ... Error al hacer la vista previa del informe albaran_ventas_2.lrf desde el módulo form_albaranes_ventas_000
+ 
+Este es el mensaje de error: 
+ 
+Error al cargar el reporte: Archivo no encontrado (document/informes/albaran_ventas_2.lrf)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 20 oct., 07:23:08]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Principal desde form_reportes_000
+ 
+Este es el mensaje de error: 
+ 
+PacketRecords has to be larger then 0
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 09 nov., 20:23:59]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Principal desde el módulo form_impresoras_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Column 'predeterminada_SN' cannot be null
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 21 nov., 21:39:44]- SUPER USUARIO ... Error al intentar modificar el diseño del informe listado_impresoras.lrf desde el módulo form_impresoras_000
+ 
+Este es el mensaje de error: 
+ 
+Error al cargar el reporte: Archivo no encontrado (document/informes/listado_impresoras.lrf)
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 28 nov., 22:45:58]- SUPER USUARIO ... Error al intentar imprimir el informe listado_facturas_compras.lrf desde el módulo form_facturas_compras_000
+ 
+Este es el mensaje de error: 
+ 
+"" is an invalid integer
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 08 mar., 21:39:53]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Principal desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'sr.inicio_servicio_anticipacion' in 'order clause'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 09 mar., 20:14:21]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Principal desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'sr.inicio_servicio_anticipacion' in 'order clause'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 09 mar., 21:35:38]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Principal desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Principal : Field not found : "clientes_fin_servicio"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 09 mar., 21:40:43]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Principal desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Principal : Field not found : "clientes_fin_servicio"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�. 11 mar., 20:00:19]- SUPER USUARIO ... No se pudo salvar el registro en la tabla series_servicios
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Principal : Field desde_fecha is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�. 11 mar., 20:12:47]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Principal desde el módulo form_series_servicios_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Field 'id_diarios_tipos' doesn't have a default value
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[s�. 11 mar., 20:27:30]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Principal desde el módulo form_series_servicios_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Field 'id_diarios_tipos' doesn't have a default value
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[do. 12 mar., 11:14:54]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Principal desde el módulo form_servicios_regulares_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record: SQLQuery_Principal : Field not found : "inicio_en_cocheras_SN"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[do. 12 mar., 12:26:41]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Principal desde el módulo form_servicios_regulares_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= Null, facturar_por_periodo_SN = Null, lunes_SN, martes_SN, miercoles_SN, jueve' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[do. 12 mar., 12:31:26]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Principal desde el módulo form_servicios_regulares_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= Null, facturar_por_periodo_SN = Null, lunes_SN, martes_SN, miercoles_SN, jueve' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[do. 12 mar., 12:40:38]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Principal desde el módulo form_servicios_regulares_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= Null, facturar_por_periodo_SN = Null, lunes_SN, martes_SN, miercoles_SN, jueve' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[do. 12 mar., 13:24:40]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Buscar_id desde form_servicios_regulares_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'id_series_servicios' in 'where clause'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 13 mar., 19:56:50]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Principal desde el módulo form_servicios_regulares_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE id = 1' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[do. 19 mar., 12:56:22]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Pelis desde el módulo Form_peliculas_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record: SQLQuery_Pelis : Field not found : "Observaciones_Comentarios"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[do. 19 mar., 13:56:27]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Paises desde el módulo form_paises_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE id = 2' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[do. 19 mar., 13:58:57]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Paises desde el módulo form_paises_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE id = 2' at line 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 20 mar., 10:38:09]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Bancos_Empresas desde el módulo form_bancos_empresas_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Data too long for column 'Cta_Bco_Entidad' at row 1
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 20 mar., 12:22:31]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_DATOS_TABLA_Traer_Proveedores_xID desde form_albaranes_ventas_001
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY pr.id ASC' at line 3
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 20 mar., 14:19:05]- SUPER USUARIO ... Ocurrió un error de conexión con la BD. La tabla ha sido SQLQuery_Visitas desde el módulo form_visitas_000
+ 
+Este es el mensaje de error: 
+ 
+An error occured while applying the updates in a record:  : Error executing query: Unknown column 'id_clientes_tipos' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 20 mar., 14:35:06]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Visitas desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'c.OT_id_clientes_tipos' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 20 mar., 17:38:41]- SUPER USUARIO ... No se pudo salvar el registro en la tabla almacenes_movimientos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Principal : Field id_almacenes_origen is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 20 mar., 17:38:56]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_isLock desde form_almacenes_movimientos_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY tb ASC, id ASC' at line 5
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 20 mar., 17:57:04]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_RGTRO_Buscar_id desde form_servicios_regulares_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'id_series_servicios' in 'where clause'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 20 mar., 18:52:37]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Visitas desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'c.OT_id_clientes_tipos' in 'field list'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[lu. 20 mar., 19:11:09]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Visitas desde form_visitas_000
+ 
+Este es el mensaje de error: 
+ 
+ : Error executing query: Unknown column 'c.OT_id_clientes_tipos' in 'where clause'
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 23 mar., 21:28:40]- SUPER USUARIO ... No se pudo salvar el registro en la tabla almacenes_movimientos_detalles
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_AMD : Field Unidades is required, but not supplied.
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 12 jul., 22:18:45]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes_contactos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Clientes_Contactos : Field not found : "desde_fecha"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 16 ago., 20:54:53]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes_contactos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Clientes_Contactos : Field not found : "desde_fecha"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[mi. 16 ago., 21:09:18]- SUPER USUARIO ... No se pudo salvar el registro en la tabla clientes_contactos
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Clientes_Contactos : Field not found : "desde_fecha"
+ooo OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO ooo
+ 
+
+[ju. 18 ene., 08:04:24]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Server connect failed.
+ 
+
+[mi. 31 ene., 20:41:01]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CN_Fecha_Hora desde f_clientes_000
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[mi. 31 ene., 20:41:12]- SUPER USUARIO ... Ocurrió un error al intentar marcar el registro como bloqueado para toda terminal.
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CN_Fecha_Hora : Field not found : "Momento"
+ 
+
+[mi. 31 ene., 20:41:51]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CN_Fecha_Hora desde f_clientes_000
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[mi. 31 ene., 20:42:10]- SUPER USUARIO ... Ocurrió un error al intentar marcar el registro como bloqueado para toda terminal.
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CN_Fecha_Hora : Field not found : "Momento"
+ 
+
+[mi. 31 ene., 20:44:44]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CN_Fecha_Hora desde f_clientes_000
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[mi. 31 ene., 20:44:48]- SUPER USUARIO ... Ocurrió un error al intentar marcar el registro como bloqueado para toda terminal.
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_UTI_CN_Fecha_Hora : Field not found : "Momento"
+ 
+
+[mi. 31 ene., 20:53:37]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CN_Fecha_Hora desde f_clientes_000
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[mi. 31 ene., 21:02:11]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_CN_Fecha_Hora desde f_clientes_000
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[mi. 31 ene., 21:13:14]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_USR_Traer_Nombre_Usuario_2 desde f_clientes_000
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[mi. 31 ene., 23:27:08]- SUPER USUARIO ... Error al CERRAR la CONEXION con el MOTOR de la BD desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Access violation
+ 
+
+[mi. 14 feb., 20:37:21] ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Server connect failed.
+ 
+
+[ma. 20 feb., 21:08:24]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Existe_el_menu_Ya desde form_menus_000
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[ma. 20 feb., 21:23:47]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Existe_el_menu_Ya desde form_menus_000
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[ma. 20 feb., 22:04:59]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Menus desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[ju. 22 feb., 19:36:55]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_UTI_USR_Existe_Menu_Ya desde Form_users_001
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[ju. 22 feb., 21:56:00]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Clientes_Envios desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY ce.Direccion ASC, ce.Direccion_Numero ASC, ce.Direccion_Piso_Letra ASC,' at line 1
+ 
+
+[ju. 22 feb., 22:06:41]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Existe_Cliente_Contacto_Ya desde f_clientes_000
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[ju. 12 abr., 23:14:06]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Principal desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY cl.nombre_propietario ASC' at line 1
+ 
+
+[ma. 17 abr., 23:30:06]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Principal desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Error executing query: Unknown column 'vivi' in 'where clause'
+ 
+
+[lu. 23 abr., 17:23:14]- SUPER USUARIO ... Ocurrió un error al intentar grabar en el histórico los cambios realizados en el registro. La tabla ha sido SQLQuery_Principal desde el módulo f_clientes_000
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Error executing query: Duplicate entry 'clientes-8-2016-05-24 00:10:13-0-1' for key 'PRIMARY'
+ 
+
+[lu. 23 abr., 19:33:23]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Filtros desde form_Menu
+ 
+Este es el mensaje de error: 
+ 
+SQLQuery_Filtros : Field not found : "id_menus"
+ 
+
+[ma. 24 abr., 07:28:46]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Server connect failed.
+ 
+
+[mi. 25 abr., 07:24:35] ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Server connect failed.
+ 
+
+[ju. 26 abr., 07:39:07] ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Server connect failed.
+ 
+
+[vi. 27 abr., 07:41:16] ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Server connect failed.
+ 
+
+[sá. 28 abr., 07:51:34]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Server connect failed.
+ 
+
+[lu. 30 abr., 13:29:05]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Principal desde f_clientes_000
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dddd, cl.id ASC' at line 1
+ 
+
+[lu. 30 abr., 13:29:37]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Principal desde f_clientes_000
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Error executing query: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dddd' at line 1
+ 
+

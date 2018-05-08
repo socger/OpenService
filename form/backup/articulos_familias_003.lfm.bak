@@ -1,0 +1,144 @@
+object form_articulos_familias_003: Tform_articulos_familias_003
+  Left = 426
+  Height = 220
+  Top = 154
+  Width = 490
+  ActiveControl = DBCheckBox_Visualizar
+  Caption = 'Ficha - Terminal de la Familia de artículos'
+  ClientHeight = 220
+  ClientWidth = 490
+  Color = 14737613
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 478
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object GroupBox11: TGroupBox
+    Left = 25
+    Height = 38
+    Top = -3
+    Width = 174
+    ClientHeight = 18
+    ClientWidth = 170
+    TabOrder = 1
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -4
+      Width = 56
+      Anchors = [akLeft, akBottom]
+      Caption = 'Código'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 74
+      Height = 23
+      Top = -7
+      Width = 90
+      DataField = 'id'
+      DataSource = form_articulos_familias_000.DataSource_ArtFam_Terminales
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+  object Panel1: TPanel
+    Left = 25
+    Height = 65
+    Top = 56
+    Width = 433
+    ClientHeight = 65
+    ClientWidth = 433
+    TabOrder = 2
+    object Label1: TLabel
+      AnchorSideLeft.Control = DBEdit_a_quien_facturamos
+      AnchorSideBottom.Control = DBEdit_a_quien_facturamos
+      Left = 16
+      Height = 22
+      Top = 8
+      Width = 81
+      Anchors = [akLeft, akBottom]
+      Caption = 'Terminal'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_a_quien_facturamos: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 30
+      Width = 399
+      DataField = 'OT_descripcion_terminal'
+      DataSource = form_articulos_familias_000.DataSource_ArtFam_Terminales
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+  object Panel_Mantenimiento: TPanel
+    Left = 25
+    Height = 68
+    Top = 126
+    Width = 433
+    ClientHeight = 68
+    ClientWidth = 433
+    TabOrder = 3
+    object DBCheckBox_Visualizar: TDBCheckBox
+      Left = 96
+      Height = 23
+      Top = 24
+      Width = 220
+      Align = alCustom
+      Caption = 'Visualizar en terminal'
+      DataField = 'Visualizar_en_terminal_SN'
+      DataSource = form_articulos_familias_000.DataSource_ArtFam_Terminales
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      ValueChecked = 'S'
+      ValueUnchecked = 'N'
+    end
+  end
+end

@@ -1,0 +1,212 @@
+object form_articulos_ofertas_002: Tform_articulos_ofertas_002
+  Left = 519
+  Height = 255
+  Top = 223
+  Width = 667
+  ActiveControl = DBEdit_Cantidad
+  Caption = 'Ficha - Tipo de oferta - Descuento por volumen de la oferta'
+  ClientHeight = 255
+  ClientWidth = 667
+  Color = 14737613
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 655
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object GroupBox11: TGroupBox
+    Left = 25
+    Height = 38
+    Top = 0
+    Width = 174
+    ClientHeight = 18
+    ClientWidth = 170
+    TabOrder = 1
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -4
+      Width = 56
+      Anchors = [akLeft, akBottom]
+      Caption = 'Código'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 74
+      Height = 23
+      Top = -7
+      Width = 90
+      DataField = 'id'
+      DataSource = form_clientes_000.DataSource_Clientes_Envios
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+  object Panel1: TPanel
+    Left = 25
+    Height = 93
+    Top = 56
+    Width = 615
+    ClientHeight = 93
+    ClientWidth = 615
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 24
+      Height = 22
+      Top = 0
+      Width = 112
+      Anchors = [akLeft, akBottom]
+      Caption = 'Descripción'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBMemo_Descripcion: TDBMemo
+      Left = 16
+      Height = 57
+      Top = 24
+      Width = 584
+      Color = 7001047
+      DataField = 'descripcion'
+      DataSource = form_articulos_ofertas_000.DataSource_AO
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssAutoVertical
+      TabOrder = 0
+    end
+  end
+  object Panel_Mantenimiento: TPanel
+    Left = 25
+    Height = 56
+    Top = 168
+    Width = 615
+    ClientHeight = 56
+    ClientWidth = 615
+    TabOrder = 3
+    object DBEdit_Cantidad: TDBEdit
+      Left = 125
+      Height = 26
+      Top = 16
+      Width = 73
+      DataField = 'Cantidad'
+      DataSource = form_articulos_ofertas_000.DataSource_AODPV
+      CharCase = ecNormal
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Label60: TLabel
+      Left = 32
+      Height = 22
+      Top = 20
+      Width = 83
+      Anchors = [akLeft, akBottom]
+      Caption = 'Cantidad'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_Porcentaje: TDBEdit
+      Left = 491
+      Height = 26
+      Top = 16
+      Width = 73
+      DataField = 'Porcentaje'
+      DataSource = form_articulos_ofertas_000.DataSource_AODPV
+      CharCase = ecNormal
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Label58: TLabel
+      Left = 384
+      Height = 22
+      Top = 20
+      Width = 100
+      Anchors = [akLeft, akBottom]
+      Caption = 'Porcentaje'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label59: TLabel
+      Left = 565
+      Height = 22
+      Top = 20
+      Width = 17
+      Anchors = [akLeft, akBottom]
+      Caption = '%'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+end

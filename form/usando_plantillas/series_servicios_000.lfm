@@ -1,0 +1,783 @@
+inherited f_series_servicios_000: Tf_series_servicios_000
+  Left = 127
+  Height = 392
+  Top = 98
+  Width = 1014
+  ClientHeight = 392
+  ClientWidth = 1014
+  inherited Panel_de_Abajo: TPanel
+    Height = 348
+    Width = 1014
+    ClientHeight = 348
+    ClientWidth = 1014
+    inherited GroupBox_Grid: TGroupBox[0]
+      Height = 346
+      Width = 1012
+      ClientHeight = 326
+      ClientWidth = 1008
+      inherited Panel_Barra_Superior1: TPanel
+        Top = 268
+        Width = 1008
+        ClientWidth = 1008
+        inherited Panel4: TPanel
+          inherited Panel14: TPanel
+            inherited DBNavigatorPrincpal: TDBNavigator
+              Hints.Strings = (              )
+            end
+          end
+        end
+        inherited Panel15: TPanel
+          Left = 991
+        end
+        inherited Panel_Otros_Campos_no_Grid: TPanel
+          Width = 616
+          ClientWidth = 616
+          inherited Label_Ctdad_Rgtros: TLabel
+            Left = 518
+          end
+        end
+      end
+      inherited Panel5: TPanel
+        Height = 268
+      end
+      inherited Panel6: TPanel
+        Left = 991
+        Height = 268
+      end
+      inherited Panel7: TPanel
+        Height = 268
+        Width = 974
+        ClientHeight = 268
+        ClientWidth = 974
+        inherited DBGrid_Principal: TDBGrid
+          Height = 264
+          Width = 974
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Id'
+              Width = 50
+              FieldName = 'id'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Código'
+              Width = 90
+              FieldName = 'serie_codigo'
+            end          
+            item
+              Alignment = taRightJustify
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Próx.número'
+              Width = 110
+              FieldName = 'numero_siguiente'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Descripción'
+              Width = 345
+              FieldName = 'descripcion'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Empresa'
+              Width = 250
+              FieldName = 'OT_descripcion_empresa'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Tipo diario'
+              Width = 90
+              FieldName = 'OT_descripcion_diarios_tipos'
+            end>
+          OnDrawColumnCell = DBGrid_PrincipalDrawColumnCell
+        end
+      end
+    end
+    inherited GroupBox_Registro: TGroupBox[1]
+      Height = 346
+      Width = 1012
+      ClientHeight = 326
+      ClientWidth = 1008
+      inherited Panel20: TPanel
+        Height = 326
+      end
+      inherited Panel21: TPanel
+        Left = 991
+        Height = 326
+      end
+      inherited Panel22: TPanel
+        Height = 326
+        Width = 974
+        ClientHeight = 326
+        ClientWidth = 974
+        inherited Panel23: TPanel
+          Top = 289
+          Width = 974
+          ClientWidth = 974
+          inherited ButtonPanel1: TButtonPanel
+            Width = 962
+            OKButton.OnClick = OKButtonClick
+          end
+          inherited Shape1: TShape
+            Width = 974
+          end
+        end
+        object Label2: TLabel[1]
+          AnchorSideLeft.Control = DBEdit_serie_codigo
+          AnchorSideBottom.Control = DBEdit_serie_codigo
+          Left = 16
+          Height = 19
+          Top = 24
+          Width = 56
+          Anchors = [akLeft, akBottom]
+          Caption = 'Código'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_serie_codigo: TDBEdit[2]
+          Left = 16
+          Height = 24
+          Top = 43
+          Width = 119
+          DataField = 'serie_codigo'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 1
+        end
+        object Label3: TLabel[3]
+          AnchorSideLeft.Control = DBEdit_numero_siguiente
+          AnchorSideBottom.Control = DBEdit_numero_siguiente
+          Left = 140
+          Height = 19
+          Top = 24
+          Width = 127
+          Anchors = [akLeft, akBottom]
+          Caption = 'Próximo número'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_numero_siguiente: TDBEdit[4]
+          Left = 140
+          Height = 24
+          Top = 43
+          Width = 127
+          DataField = 'numero_siguiente'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 2
+        end
+        object Label1: TLabel[5]
+          AnchorSideLeft.Control = DBEdit_Descripcion
+          AnchorSideBottom.Control = DBEdit_Descripcion
+          Left = 272
+          Height = 19
+          Top = 24
+          Width = 92
+          Anchors = [akLeft, akBottom]
+          Caption = 'Descripción'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Descripcion: TDBEdit[6]
+          Left = 272
+          Height = 24
+          Top = 43
+          Width = 440
+          DataField = 'descripcion'
+          DataSource = DataSource_Principal
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 3
+        end
+        object BitBtn_Elegir_Empresa: TBitBtn[7]
+          Left = 16
+          Height = 26
+          Top = 103
+          Width = 30
+          Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          OnClick = BitBtn_Elegir_EmpresaClick
+          ParentFont = False
+          Spacing = 0
+          TabOrder = 4
+        end
+        object Label61: TLabel[8]
+          Left = 16
+          Height = 19
+          Top = 84
+          Width = 68
+          Caption = 'Empresa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Empresa: TEdit[9]
+          Left = 45
+          Height = 24
+          Top = 104
+          Width = 438
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_EmpresaClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 5
+        end
+        object BitBtn_Elegir_TipoDiario: TBitBtn[10]
+          Left = 504
+          Height = 26
+          Top = 103
+          Width = 30
+          Action = form_Menu.BitBtn_Encontrar_Registro_Binoculares
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          OnClick = BitBtn_Elegir_TipoDiarioClick
+          ParentFont = False
+          Spacing = 0
+          TabOrder = 6
+        end
+        object Label63: TLabel[11]
+          Left = 504
+          Height = 19
+          Top = 84
+          Width = 104
+          Caption = 'Tipo de diario'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_TipoDiario: TEdit[12]
+          Left = 533
+          Height = 24
+          Top = 104
+          Width = 167
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_TipoDiarioClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 7
+        end
+        object Panel_1: TPanel[13]
+          Left = 724
+          Height = 24
+          Top = 43
+          Width = 232
+          Caption = 'PERIODO'
+          Color = 14079702
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'MS Serif'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+          TabOrder = 8
+        end
+        object Panel_2: TPanel[14]
+          Left = 724
+          Height = 60
+          Top = 68
+          Width = 116
+          ClientHeight = 60
+          ClientWidth = 116
+          Color = clTeal
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+          TabOrder = 9
+          object DBDateTimePicker_DesdeFecha: TDBDateTimePicker
+            Left = 12
+            Height = 24
+            Top = 20
+            Width = 89
+            DataField = 'desde_fecha'
+            DataSource = DataSource_Principal
+            ReadOnly = False
+            CenturyFrom = 1941
+            MaxDate = 2958465
+            MinDate = -53780
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            ParentFont = False
+            TabOrder = 0
+            TrailingSeparator = False
+            TextForNullDate = 'NULL'
+            LeadingZeros = True
+            Kind = dtkDate
+            TimeFormat = tf24
+            TimeDisplay = tdHMS
+            DateMode = dmComboBox
+            UseDefaultSeparators = True
+            HideDateTimeParts = []
+            MonthNames = 'Long'
+          end
+          object Label5: TLabel
+            Left = 12
+            Height = 19
+            Top = 2
+            Width = 49
+            Caption = 'Desde'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+        object Panel_3: TPanel[15]
+          Left = 840
+          Height = 60
+          Top = 68
+          Width = 116
+          ClientHeight = 60
+          ClientWidth = 116
+          Color = clTeal
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+          TabOrder = 10
+          object DBDateTimePicker_HastaFecha: TDBDateTimePicker
+            Left = 12
+            Height = 24
+            Top = 20
+            Width = 89
+            DataField = 'hasta_fecha'
+            DataSource = DataSource_Principal
+            ReadOnly = False
+            CenturyFrom = 1941
+            MaxDate = 2958465
+            MinDate = -53780
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            ParentFont = False
+            TabOrder = 0
+            TrailingSeparator = False
+            TextForNullDate = 'NULL'
+            LeadingZeros = True
+            Kind = dtkDate
+            TimeFormat = tf24
+            TimeDisplay = tdHMS
+            DateMode = dmComboBox
+            UseDefaultSeparators = True
+            HideDateTimeParts = []
+            MonthNames = 'Long'
+          end
+          object Label7: TLabel
+            Left = 12
+            Height = 19
+            Top = 2
+            Width = 44
+            Caption = 'Hasta'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+      end
+    end
+    inherited GroupBox_Filtros: TGroupBox
+      Left = 192
+      Top = 200
+      inherited Panel11: TPanel
+        inherited Panel_Filtramos_por: TPanel
+          inherited Panel_Barra_DBGrid_Filtros: TPanel
+            inherited Panel_Barra_Filtros: TPanel
+              inherited DBNavigatorDBGrid_Filtros: TDBNavigator
+                Hints.Strings = (                )
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  inherited Panel_Barra_Superior: TPanel
+    Width = 1014
+    ClientWidth = 1014
+    inherited Panel9: TPanel
+      Left = 997
+    end
+    inherited Panel1: TPanel
+      Left = 792
+    end
+  end
+  inherited SQLQuery_Principal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_diarios_tipos'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_empresas'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'descripcion'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'serie_codigo'
+        DataType = ftString
+        Precision = -1
+        Size = 75
+      end    
+      item
+        Name = 'numero_siguiente'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'desde_fecha'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'hasta_fecha'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'subcuenta_ventas'
+        DataType = ftString
+        Precision = -1
+        Size = 75
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'OT_descripcion_diarios_tipos'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'OT_descripcion_empresa'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end>
+    OnNewRecord = SQLQuery_PrincipalNewRecord
+    SQL.Strings = (
+      'SELECT ss.*,'
+      '       dt.descripcion AS OT_descripcion_diarios_tipos,'
+      '       emp.nombre_comercial AS OT_descripcion_empresa'
+      'FROM series_servicios AS ss'
+      ''
+      'LEFT JOIN diarios_tipos AS dt'
+      'ON dt.id = ss.id_diarios_tipos'
+      ''
+      'LEFT JOIN empresas AS emp'
+      'ON emp.id = ss.id_empresas'
+      ''
+    )
+    left = 248
+    object SQLQuery_Principalid_diarios_tipos: TLargeintField[1]
+      FieldKind = fkData
+      FieldName = 'id_diarios_tipos'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Principalid_empresas: TLargeintField[2]
+      FieldKind = fkData
+      FieldName = 'id_empresas'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Principaldescripcion: TStringField[3]
+      FieldKind = fkData
+      FieldName = 'descripcion'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 450
+    end
+    object SQLQuery_Principalserie_codigo: TStringField[4]
+      FieldKind = fkData
+      FieldName = 'serie_codigo'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 75
+    end
+    object SQLQuery_Principalnumero_siguiente: TLargeintField[5]
+      FieldKind = fkData
+      FieldName = 'numero_siguiente'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Principaldesde_fecha: TDateTimeField[6]
+      FieldKind = fkData
+      FieldName = 'desde_fecha'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_Principalhasta_fecha: TDateTimeField[7]
+      FieldKind = fkData
+      FieldName = 'hasta_fecha'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_Principalsubcuenta_ventas: TStringField[8]
+      FieldKind = fkData
+      FieldName = 'subcuenta_ventas'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 75
+    end
+    object SQLQuery_PrincipalInsert_WHEN: TDateTimeField[9]
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalInsert_Id_User: TLargeintField[10]
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalDel_WHEN: TDateTimeField[11]
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_Id_User: TLargeintField[12]
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_WHY: TStringField[13]
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_PrincipalChange_WHEN: TDateTimeField[14]
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalChange_Id_User: TLargeintField[15]
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalOT_descripcion_diarios_tipos: TStringField[16]
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_diarios_tipos'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_PrincipalOT_descripcion_empresa: TStringField[17]
+      FieldKind = fkData
+      FieldName = 'OT_descripcion_empresa'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+  end
+  inherited DataSource_Principal: TDataSource
+    DataSet = nil
+    left = 280
+  end
+  inherited SQLTransaction_Principal: TSQLTransaction
+    left = 152
+  end
+  inherited SQLConnector_Principal: TSQLConnector
+    left = 176
+  end
+end

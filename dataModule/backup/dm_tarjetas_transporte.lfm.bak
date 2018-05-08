@@ -1,0 +1,29 @@
+object DataModule_Tarjetas_Transporte: TDataModule_Tarjetas_Transporte
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 329
+  HorizontalOffset = 643
+  VerticalOffset = 183
+  Width = 437
+  object SQLTransaction_Tjtas_Tte: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Tjtas_Tte
+    left = 176
+    top = 88
+  end
+  object SQLConnector_Tjtas_Tte: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Tjtas_Tte
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 176
+    top = 160
+  end
+end

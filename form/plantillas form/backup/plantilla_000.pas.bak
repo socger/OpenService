@@ -1,0 +1,1354 @@
+unit plantilla_000;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Buttons,
+  ComCtrls, DBGrids, DbCtrls, types, sqldb, db, Grids, ButtonPanel, utilidades_datos_tablas,
+  utilidades_bd, variants, utilidades_general, utilidades_rgtro, utilidades_usuarios,
+  utilidades_forms_Filtrar;
+
+type
+
+  { Tform_plantilla_000 }
+
+  Tform_plantilla_000 = class(TForm)
+    BitBtn_Filtrar: TBitBtn;
+    BitBtn_Filtros_Abrir: TBitBtn;
+    BitBtn_Filtros_Cerrar: TBitBtn;
+    BitBtn_Imprimir: TBitBtn;
+    BitBtn_SALIR: TBitBtn;
+    BitBtn_Seleccionar: TBitBtn;
+    BitBtn_Ver_Situacion_Registro: TBitBtn;
+    ButtonPanel1: TButtonPanel;
+    ComboBox_Filtros: TComboBox;
+    DataSource_Principal: TDataSource;
+    DBEdit_Id: TDBEdit;
+    DBGrid_Principal: TDBGrid;
+    DBNavigatorPrincpal: TDBNavigator;
+    GroupBox1: TGroupBox;
+    GroupBox3: TGroupBox;
+    GroupBox_Grid: TGroupBox;
+    GroupBox_Registro: TGroupBox;
+    GroupBox_Filtros: TGroupBox;
+    Label62: TLabel;
+    Label_Ctdad_Rgtros: TLabel;
+    Label_Fecha2: TLabel;
+    Memo_Filtros: TMemo;
+    Memo_OrderBy: TMemo;
+    PageControl_Filtros: TPageControl;
+    Panel1: TPanel;
+    Panel10: TPanel;
+    Panel11: TPanel;
+    Panel12: TPanel;
+    Panel13: TPanel;
+    Panel14: TPanel;
+    Panel15: TPanel;
+    Panel20: TPanel;
+    Panel21: TPanel;
+    Panel22: TPanel;
+    Panel23: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    Panel5: TPanel;
+    Panel6: TPanel;
+    Panel7: TPanel;
+    Panel_Barra_Superior1: TPanel;
+    Panel_de_Abajo: TPanel;
+    Panel2: TPanel;
+    Panel8: TPanel;
+    Panel9: TPanel;
+    Panel_Barra_Superior: TPanel;
+    Panel_Otros_Campos_no_Grid: TPanel;
+    RadioGroup_Bajas: TRadioGroup;
+    Shape1: TShape;
+    SQLConnector_Principal: TSQLConnector;
+    SQLQuery_Principal: TSQLQuery;
+    SQLQuery_Principalid: TLargeintField;
+    SQLTransaction_Principal: TSQLTransaction;
+    TabSheet_Busqueda_Concreta: TTabSheet;
+    TabSheet_Filtros_Generales: TTabSheet;
+
+    procedure BitBtn_FiltrarClick(Sender: TObject);
+    procedure BitBtn_Filtros_CerrarClick(Sender: TObject);
+    procedure BitBtn_Filtros_AbrirClick(Sender: TObject);
+    procedure BitBtn_ImprimirClick(Sender: TObject);
+    procedure BitBtn_SALIRClick(Sender: TObject);
+    procedure BitBtn_SeleccionarClick(Sender: TObject);
+    procedure BitBtn_Ver_Situacion_RegistroClick(Sender: TObject);
+    procedure CancelButtonClick(Sender: TObject);
+    procedure ComboBox_FiltrosChange(Sender: TObject);
+    procedure DBGrid_PrincipalCellClick(Column: TColumn);
+    procedure DBGrid_PrincipalDblClick(Sender: TObject);
+    procedure DBGrid_PrincipalDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure DBGrid_PrincipalKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure DBGrid_PrincipalKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure DBNavigatorPrincpalBeforeAction(Sender: TObject; Button: TDBNavButtonType);
+    procedure FormActivate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure OKButtonClick(Sender: TObject);
+    procedure RadioGroup_BajasClick(Sender: TObject);
+    procedure SQLQuery_PrincipalAfterPost(DataSet: TDataSet);
+    procedure SQLQuery_PrincipalAfterScroll(DataSet: TDataSet);
+    procedure SQLQuery_PrincipalBeforeEdit(DataSet: TDataSet);
+    procedure SQLQuery_PrincipalBeforePost(DataSet: TDataSet);
+
+    procedure Cambiar_Nombre_Tabla_Principal; virtual;
+    procedure Cambiar_Titulo_Form; virtual;
+    procedure Configurar_los_Grids; virtual;
+    procedure Abrir_Conexiones_con_BD_TablasAdicionales; virtual;
+    procedure Filtrar_tablas_adicionales( var p_Lineas_Filtro : TStrings; var p_Lineas_OrderBy : TStrings ); virtual;
+
+    procedure Campo_Foco_en_modo_Edicion_Inserccion; virtual;
+    procedure NewRecord_Insert; virtual;
+    procedure Antes_del_Post_Principal_Sin_Rellenar_Permitido_SI( p_msg : TStrings ); virtual;
+    procedure Antes_del_Post_Principal_Sin_Rellenar_Permitido_NO( p_msg, p_msg_Comprobar : TStrings ); virtual;
+    procedure Antes_del_Post_Principal_Asignar_Valores; virtual;
+    procedure Rellenar_Filtros_Impresion(var p_Ordenado_por : String); virtual;
+    procedure Crear_tipos_orden_Principal; virtual;
+    procedure Crear_tipos_orden_TablasLigadas; virtual;
+    procedure Refrescar_Registros; virtual;
+    procedure SQLQuery_PrincipalNewRecord(DataSet: TDataSet);
+    procedure Tabla_Principal_que_Filtrar( var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); virtual;
+    procedure Presentar_Datos; virtual;
+    procedure Presentar_Datos_GroupBox_Registro; virtual;
+    procedure para_Empezar_GroupBox_Registro; virtual;
+    procedure Cambiar_WindowState; virtual;
+    procedure Cerramos_Tablas_Ligadas; virtual;
+    procedure Borrar_Registro; virtual;
+    procedure Refrescar_Registros_TablasLigadas; virtual;
+    procedure Dibujar_Grid_Principal( p_Sender: TObject; const p_Rect: TRect; p_DataCol: Integer; p_Column: TColumn; p_State: TGridDrawState ); virtual;
+
+  private
+    { private declarations }
+    private_Salir_OK : Boolean;
+
+    function  Filtrar_Principal( p_Cambiamos_Filtro : Boolean ) : ShortInt;
+    procedure Filtrar_tablas_ligadas;
+
+    procedure Abrir_Conexiones_con_BD;
+    function  Antes_del_Post_Principal : Boolean;
+    function  SeCambioAlgoEnRgtro : Boolean;
+    function  Hacer_Post_al_Rgtro : Boolean;
+    procedure Ver_Registro;
+    procedure Ver_Grid;
+    procedure Hacer_Cancel_al_Rgtro;
+    procedure Insertar_Registro;
+    procedure Editar_Registro;
+    procedure Abrir_Panel_Filtros;
+    procedure Cerrar_Panel_Filtros;
+    procedure no_Tocar;
+    procedure PulsoBotonFiltrar;
+    procedure Cerramos_Tablas;
+    procedure Seleccionado_Rgtro;
+
+  public
+    { public declarations }
+    public_Solo_Ver              : Boolean;
+    public_Elegimos              : Boolean;
+    public_Menu_Worked           : Integer;
+    public_Rgtro_Seleccionado    : Boolean;
+    public_Record_Rgtro          : TRecord_Rgtro_Comun;
+
+    public_Order_By              : array of TOrder_By;
+    pubic_nombre_tabla_Principal : String;
+
+    procedure para_Empezar;
+    procedure Cambiar_Estilo_Form;
+    procedure Filtrar_Principal_Sin_Preguntar;
+    procedure Abrir_Conexion_con_BD( p_SQLTransaction : TSQLTransaction; p_SQLConnector : TSQLConnector );
+    procedure Cerrar_Tabla( p_SQLConnector: TSQLConnector; p_SQLTransaction: TSQLTransaction; p_SQLQuery : TSQLQuery );
+
+  end;
+
+var
+  form_plantilla_000: Tform_plantilla_000;
+
+implementation
+
+{$R *.lfm}
+
+uses menu;
+
+{ Tform_plantilla_000 }
+
+procedure Tform_plantilla_000.Hacer_Cancel_al_Rgtro;
+begin
+  with SQLQuery_Principal do
+  begin
+    Cancel;
+  end;
+end;
+
+procedure Tform_plantilla_000.CancelButtonClick(Sender: TObject);
+var var_id : String;
+begin
+  var_id := SQLQuery_Principal.FieldByName('id').AsString;
+
+  Hacer_Cancel_al_Rgtro;
+
+  if Trim(var_id) <> '' then
+  begin
+    UTI_RGTRO_UnLock( pubic_nombre_tabla_Principal, Trim(var_id));
+  end;
+
+  Ver_Grid;
+end;
+
+procedure Tform_plantilla_000.BitBtn_SALIRClick(Sender: TObject);
+begin
+  private_Salir_OK := true;  { La pongo a true para controlar el modo de BitBtn_SALIR del programa}
+
+  Close;
+end;
+
+procedure Tform_plantilla_000.ComboBox_FiltrosChange(Sender: TObject);
+begin
+  Memo_OrderBy.Lines.Clear;
+  Memo_OrderBy.Lines.Add( public_Order_By[ComboBox_Filtros.ItemIndex].Memo_OrderBy );
+  PulsoBotonFiltrar;
+end;
+
+procedure Tform_plantilla_000.no_Tocar;
+begin
+  BitBtn_Imprimir.Enabled := False;
+end;
+
+procedure Tform_plantilla_000.FormActivate(Sender: TObject);
+begin
+  Cambiar_Estilo_Form;
+
+  If public_Elegimos = true then
+  begin
+    BitBtn_Seleccionar.Visible := True;
+    BitBtn_Imprimir.Visible    := False;
+
+    with Self do
+    begin
+      Color := $00B9959C;
+    end;
+  end;
+
+  if public_Solo_Ver = true then
+  begin
+    no_Tocar;
+  end;
+end;
+
+procedure Tform_plantilla_000.FormClose(Sender: TObject;
+  var CloseAction: TCloseAction);
+begin
+  if private_Salir_OK = False then
+  begin
+    // ********************************************************************************************* //
+    // ** Intento BitBtn_SALIR de la aplicación de un modo no permitido.                          ** //
+    // ********************************************************************************************* //
+    // ** Pero si desde el menu principal está a true la variable public_Salir_Ok, significa que  ** //
+    // ** hay que salir si o si pues se pulsó cancelar al preguntar otra vez por la contraseña    ** //
+    // ********************************************************************************************* //
+     if form_Menu.public_Salir_OK = False then
+     begin
+       CloseAction := CloseAction.caNone;
+     end;
+  end else begin
+    // ********************************************************************************************* //
+    // ** Fue correcto el modo como quiere BitBtn_SALIR de la aplicación                          ** //
+    // ********************************************************************************************* //
+  end;
+end;
+
+procedure Tform_plantilla_000.Cambiar_Estilo_Form;
+begin
+  with Self do
+  begin
+    Color       := $00C2C29E;
+    Position    := poScreenCenter;
+    BorderIcons := [];
+    BorderStyle := bsSingle;
+  end;
+
+  Cambiar_WindowState;
+end;
+
+procedure Tform_plantilla_000.RadioGroup_BajasClick(Sender: TObject);
+begin
+  if GroupBox_Grid.Visible then
+       Refrescar_Registros
+  else Refrescar_Registros_TablasLigadas;
+end;
+
+procedure Tform_plantilla_000.Abrir_Panel_Filtros;
+begin
+  BitBtn_Filtros_Abrir.Visible  := false;
+  BitBtn_Filtros_Cerrar.Visible := true;
+
+  GroupBox_Filtros.Visible      := true;
+end;
+
+procedure Tform_plantilla_000.Cerrar_Panel_Filtros;
+begin
+  BitBtn_Filtros_Abrir.Visible  := true;
+  BitBtn_Filtros_Cerrar.Visible := false;
+
+  GroupBox_Filtros.Visible      := false;
+end;
+
+procedure Tform_plantilla_000.BitBtn_Filtros_AbrirClick(Sender: TObject);
+begin
+  Abrir_Panel_Filtros;
+end;
+
+procedure Tform_plantilla_000.BitBtn_Filtros_CerrarClick(Sender: TObject);
+begin
+  Cerrar_Panel_Filtros;
+end;
+
+procedure Tform_plantilla_000.BitBtn_FiltrarClick(Sender: TObject);
+begin
+  PulsoBotonFiltrar;
+end;
+
+procedure Tform_plantilla_000.FormDestroy(Sender: TObject);
+begin
+  Cerramos_Tablas;
+end;
+
+procedure Tform_plantilla_000.FormShow(Sender: TObject);
+begin
+  DBGrid_Principal.SetFocus;;
+end;
+
+procedure Tform_plantilla_000.Cerrar_Tabla( p_SQLConnector: TSQLConnector;
+                                            p_SQLTransaction: TSQLTransaction;
+                                            p_SQLQuery : TSQLQuery );
+begin
+  if UTI_TB_Cerrar( p_SQLConnector,
+                    p_SQLTransaction,
+                    p_SQLQuery ) = false then
+  begin
+    UTI_GEN_Salir;
+  end;
+end;
+
+procedure Tform_plantilla_000.Cerramos_Tablas;
+begin
+  Cerramos_Tablas_Ligadas;
+  Cerrar_Tabla( SQLConnector_Principal,
+                SQLTransaction_Principal,
+                SQLQuery_Principal );
+end;
+
+procedure Tform_plantilla_000.DBGrid_PrincipalDblClick(Sender: TObject);
+begin
+  If public_Elegimos then
+       Seleccionado_Rgtro
+  else Editar_Registro;
+end;
+
+procedure Tform_plantilla_000.DBGrid_PrincipalDrawColumnCell( Sender: TObject;
+                                                              const Rect: TRect;
+                                                              DataCol: Integer;
+                                                              Column: TColumn;
+                                                              State: TGridDrawState );
+begin
+  Dibujar_Grid_Principal( Sender, Rect, DataCol, Column, State );
+end;
+
+procedure Tform_plantilla_000.DBGrid_PrincipalKeyDown(Sender: TObject; var Key: Word;
+    Shift: TShiftState);
+begin
+  if Key = 13 then
+  begin
+    If public_Elegimos then
+         Seleccionado_Rgtro
+    else Editar_Registro;
+
+    key := 12;
+  end;
+
+end;
+
+procedure Tform_plantilla_000.DBGrid_PrincipalKeyUp(Sender: TObject; var Key: Word;
+    Shift: TShiftState);
+begin
+  if (key = 40) or (key = 38) then
+  begin
+    // Por si queremos hacer algo si se pulsa flecha arriba o flecha abajo;
+  end;
+end;
+
+procedure Tform_plantilla_000.DBGrid_PrincipalCellClick(Column: TColumn);
+begin
+  // Por si queremos hacer algo al pulsar una celda;
+end;
+
+procedure Tform_plantilla_000.Seleccionado_Rgtro;
+begin
+  private_Salir_OK          := true;  { La pongo a true para controlar el modo de BitBtn_SALIR del programa}
+  public_Rgtro_Seleccionado := true;
+
+  Close;
+end;
+
+procedure Tform_plantilla_000.SQLQuery_PrincipalAfterScroll(DataSet: TDataSet);
+begin
+    Filtrar_tablas_ligadas;
+end;
+
+procedure Tform_plantilla_000.SQLQuery_PrincipalBeforePost(DataSet: TDataSet);
+begin
+    UTI_RGTRO_param_assign_value( SQLQuery_Principal );
+end;
+
+procedure Tform_plantilla_000.SQLQuery_PrincipalAfterPost(DataSet: TDataSet);
+begin
+  UTI_RGTRO_Grabar( pubic_nombre_tabla_Principal,
+                    SQLTransaction_Principal,
+                    SQLQuery_Principal );
+
+  Refrescar_Registros;
+end;
+
+procedure Tform_plantilla_000.SQLQuery_PrincipalBeforeEdit(DataSet: TDataSet);
+begin
+    UTI_RGTRO_param_assign_value_Edit( SQLQuery_Principal );
+end;
+
+procedure Tform_plantilla_000.DBNavigatorPrincpalBeforeAction(Sender: TObject;
+    Button: TDBNavButtonType);
+begin
+  case Button of
+    nbInsert : begin
+      Insertar_Registro;
+      Abort;
+    end;
+
+    nbEdit : begin
+      Editar_Registro;
+      Abort;
+    end;
+
+    nbDelete : begin
+      Borrar_Registro;
+      Abort;
+    end;
+
+    nbRefresh : begin
+      Refrescar_Registros;
+      Abort;
+    end;
+
+  end;
+end;
+
+procedure Tform_plantilla_000.BitBtn_SeleccionarClick(Sender: TObject);
+begin
+  Seleccionado_Rgtro;
+end;
+
+procedure Tform_plantilla_000.BitBtn_ImprimirClick(Sender: TObject);
+var var_Ficheros     : TStrings;
+    var_Ordenado_por : String;
+begin
+  Rellenar_Filtros_Impresion(var_Ordenado_por);
+
+  // *********************************************************************************************** //
+  // ** Configuramos la llamada al generador de informes                                          ** //
+  // *********************************************************************************************** //
+  var_Ficheros := TStringList.Create;
+
+  UTI_GEN_Informes( var_Ordenado_por,
+                    SQLQuery_Principal,
+                    DataSource_Principal,
+                    Nil,
+                    Nil,
+                    Nil,
+                    public_Menu_Worked,
+                    public_Solo_Ver,
+                    '',
+                    '',
+                    var_Ficheros );
+
+  var_Ficheros.Free;
+end;
+
+procedure Tform_plantilla_000.BitBtn_Ver_Situacion_RegistroClick( Sender: TObject);
+begin
+    if UTI_USR_Permiso_SN(public_Menu_Worked, '', True) = True then
+    begin
+        if SQLQuery_Principal.RecordCount > 0 then
+        begin
+            UTI_RGTRO_Ver_Estado_Registro( pubic_nombre_tabla_Principal,
+                                           SQLQuery_Principal,
+                                           DataSource_Principal,
+                                           DBGrid_Principal );
+        end;
+    end;
+end;
+
+procedure Tform_plantilla_000.Filtrar_tablas_ligadas;
+var var_Lineas_Filtro  : TStrings;
+    var_Lineas_OrderBy : TStrings;
+begin
+  if SQLQuery_Principal.RecordCount = 0 then
+  begin
+    Exit;
+  end;
+
+  if SQLQuery_Principal.State = dsInsert then
+  begin
+    Cerramos_Tablas_Ligadas;
+    Exit;
+  end;
+
+  // *********************************************************************************************** //
+  // ** Creamos los TStrings                                                                      ** //
+  // *********************************************************************************************** //
+  var_Lineas_Filtro  := TStringList.Create;
+  var_Lineas_OrderBy := TStringList.Create;
+
+  Filtrar_tablas_adicionales( var_Lineas_Filtro,
+                              var_Lineas_OrderBy );
+
+  // *********************************************************************************************** //
+  // ** Continuamos vaciando los TStrings                                                         ** //
+  // *********************************************************************************************** //
+  var_Lineas_Filtro.Free;
+  var_Lineas_OrderBy.Free;
+end;
+
+procedure Tform_plantilla_000.Filtrar_Principal_Sin_Preguntar;
+begin
+  RadioGroup_Bajas.ItemIndex := Filtrar_Principal( false );
+end;
+
+procedure Tform_plantilla_000.Ver_Registro;
+begin
+  GroupBox_Grid.Visible              := false;
+  Panel_Barra_Superior.Visible       := false;
+  TabSheet_Busqueda_Concreta.Enabled := false;
+  GroupBox_Registro.Visible          := true;
+
+  Campo_Foco_en_modo_Edicion_Inserccion;
+end;
+
+procedure Tform_plantilla_000.Campo_Foco_en_modo_Edicion_Inserccion;
+begin
+  Self.ActiveControl := GroupBox_Registro;
+end;
+
+procedure Tform_plantilla_000.Ver_Grid;
+begin
+  GroupBox_Grid.Visible              := true;
+  Panel_Barra_Superior.Visible       := true;
+  TabSheet_Busqueda_Concreta.Enabled := true;
+  GroupBox_Registro.Visible          := false;
+
+  DBGrid_Principal.SetFocus;
+end;
+
+procedure Tform_plantilla_000.Insertar_Registro;
+var var_msg : TStrings;
+begin
+  with SQLQuery_Principal do
+  begin
+    var_msg := TStringList.Create;
+
+    if UTI_USR_Permiso_SN(public_Menu_Worked, 'A', True) = True then
+    begin
+      if public_Solo_Ver = True then
+      begin
+        var_msg.Add(rs_Solo_Visualizar);
+        UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
+      end else begin
+        Insert;
+
+        Ver_Registro;
+
+        para_Empezar_GroupBox_Registro;
+      end;
+    end;
+
+    var_msg.Free;
+  end;
+end;
+
+procedure Tform_plantilla_000.Editar_Registro;
+var var_msg : TStrings;
+    var_id  : ShortString;
+begin
+  with SQLQuery_Principal do
+  begin
+    if RecordCount > 0 then
+    begin
+      if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
+      begin
+        var_id := FieldByName('id').AsString;
+
+        if UTI_RGTRO_isLock( pubic_nombre_tabla_Principal,
+                             var_id,
+                             true ) = true then
+        begin
+          Exit;
+        end else begin
+          if UTI_RGTRO_Lock( pubic_nombre_tabla_Principal,
+                             var_id ) = true then
+               Edit
+          else Exit;
+        end;
+
+        Ver_Registro;
+        para_Empezar_GroupBox_Registro;
+      end;
+    end else begin
+      var_msg := TStringList.Create;
+      var_msg.Add(rs_no_Hay_Rgtros);
+      UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
+      var_msg.Free;
+    end;
+  end;
+
+end;
+
+
+// ################################################################################################# //
+// ## Procedures o functions que habrá que crearlas en el form hijo como overwrite                ## //
+// ################################################################################################# //
+procedure Tform_plantilla_000.Rellenar_Filtros_Impresion(var p_Ordenado_por : String);
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // *********************************************************************************************** //
+  // ** Configuramos el título del listado                                                        ** //
+  // *********************************************************************************************** //
+  p_Ordenado_por := rs_Filtros_Otros_1 +
+                    Trim(ComboBox_Filtros.Text);
+
+  if Trim(Memo_Filtros.Lines.Text) <> '' then
+  begin
+      p_Ordenado_por := p_Ordenado_por +
+                        rs_Filtros_Otros_2 +
+                        Trim(Memo_Filtros.Lines.Text);
+  end;
+
+  if Trim(Edit_Nombre_Fichero.Text) <> '' then
+  begin
+      p_Ordenado_por := p_Ordenado_por +
+                        ', con nombre de fichero %' +
+                        Trim(Edit_Nombre_Fichero.Text) + '%';
+  end;
+
+  if Trim(Edit_Descripcion_id_menus.Text) <> '' then
+  begin
+      p_Ordenado_por := p_Ordenado_por +
+                        ', con módulo = ' +
+                        Trim(Edit_Descripcion_id_menus.Text);
+  end;
+
+  if Trim(Edit_Descripcion.Text) <> '' then
+  begin
+      p_Ordenado_por := p_Ordenado_por +
+                        ', con descripción = %' +
+                        Trim(Edit_Descripcion.Text) + '%';
+  end;
+  }
+end;
+
+procedure Tform_plantilla_000.Crear_tipos_orden_TablasLigadas;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // Tabla ligada 001
+  SetLength(private_Order_By_TablaLigada001, 1);
+
+  private_Order_By_TablaLigada001[0].Titulo       := 'Por la id del impuesto'; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  private_Order_By_TablaLigada001[0].Memo_OrderBy := 'ic.id_impuestos_al_que_pertenece ASC, ic.id_impuestos ASC';
+
+  // Tabla ligada 002
+  SetLength(private_Order_By_TablaLigada002, 1);
+
+  private_Order_By_TablaLigada002[0].Titulo       := 'Por la id del impuesto'; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  private_Order_By_TablaLigada002[0].Memo_OrderBy := 'ic.id_impuestos_al_que_pertenece ASC, ic.id_impuestos ASC';
+  }
+end;
+
+procedure Tform_plantilla_000.Crear_tipos_orden_Principal;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // ********************************************************************************************* //
+  // ** Preparamos los diferentes tipos de orden preconfigurados                                ** //
+  // ********************************************************************************************* //
+  SetLength(public_Order_By, 5);
+
+  public_Order_By[0].Titulo       := 'Por el nombre de fichero'; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  public_Order_By[0].Memo_OrderBy := 'i.nombre_fichero ASC';
+
+  public_Order_By[1].Titulo       := 'Por el módulo + nombre de fichero';
+  public_Order_By[1].Memo_OrderBy := 'i.id_menus ASC, i.nombre_fichero ASC';
+
+  public_Order_By[2].Titulo       := 'Por la descripción'; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  public_Order_By[2].Memo_OrderBy := 'i.descripcion ASC';
+
+  public_Order_By[3].Titulo       := 'Por el módulo + descripción';
+  public_Order_By[3].Memo_OrderBy := 'i.id_menus ASC, i.descripcion ASC';
+
+  public_Order_By[4].Titulo       := 'Por la id';
+  public_Order_By[4].Memo_OrderBy := 'i.id ASC';
+
+  Memo_OrderBy.Lines.Text          := public_Order_By[3].Memo_OrderBy;
+
+  UTI_TB_Rellenar_ComboBox_Orden( true,
+                                  ComboBox_Filtros,
+                                  public_Order_By,
+                                  0 );
+
+}
+
+end;
+
+procedure Tform_plantilla_000.Filtrar_tablas_adicionales( var p_Lineas_Filtro : TStrings;
+                                                          var p_Lineas_OrderBy : TStrings );
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // *********************************************************************************************** //
+  // ** IMPUESTOS_COMBINACIONES                                                                   ** //
+  // *********************************************************************************************** //
+  UTI_RGTRO_Add_to_Where( true,
+                          p_Lineas_Filtro,
+                          'ic.id_impuestos_al_que_pertenece = ' + SQLQuery_Principal.FieldByName('id').AsString );
+
+  p_Lineas_OrderBy.Clear;
+  Filtrar_impuestos_composiciones( RadioGroup_Bajas.ItemIndex,
+                                   false,
+                                   p_Lineas_Filtro,
+                                   p_Lineas_OrderBy );
+  }
+end;
+
+procedure Tform_plantilla_000.Refrescar_Registros;
+{ Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+var var_nombre_fichero : String;
+    var_id_menus       : Integer;
+}
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // *********************************************************************************************** //
+  // ** OJITO ... NO USAR CAMPOS AUTOINCREMENTABLES                                               ** //
+  // *********************************************************************************************** //
+  var_nombre_fichero := '';
+  var_id_menus       := 0;
+
+  if SQLQuery_Principal.RecordCount > 0 then
+  begin
+    var_nombre_fichero := SQLQuery_Principal.FieldByName('nombre_fichero').Value;
+    var_id_menus       := SQLQuery_Principal.FieldByName('id_menus').Value;
+  end;
+
+  Filtrar_Principal_Sin_Preguntar;
+
+  if Trim(var_nombre_fichero) <> '' then
+  begin
+    SQLQuery_Principal.Locate( 'nombre_fichero;id_menus',
+                               VarArrayOf( [ var_nombre_fichero, var_id_menus ] ),
+                               [] );
+  end;
+}
+end;
+
+procedure Tform_plantilla_000.SQLQuery_PrincipalNewRecord(DataSet: TDataSet);
+begin
+  NewRecord_Insert;
+end;
+
+procedure Tform_plantilla_000.Tabla_Principal_que_Filtrar( var p_Registro_CRUD : TRegistro_CRUD;
+                                                           var p_ctdad_Rgtros  : Integer;
+                                                           var p_a_Filtrar     : TStrings );
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  p_Registro_CRUD := UTI_DATOS_TABLA_Informes_CRUD;
+  p_ctdad_Rgtros  := -1;
+
+  // ********************************************************************************************* //
+  // ** AHORA PONDREMOS EL RESTO DE LOS FILTROS QUE NO SON GENERALES                            ** //
+  // ********************************************************************************************* //
+  // ** Primero buscaremos en el nombre y apellido el texto a buscar                              ** //
+  // ********************************************************************************************* //
+  if Trim(Edit_Nombre_Fichero.Text) <> '' then
+  begin
+      UTI_RGTRO_Add_to_Where( false,
+                              p_a_Filtrar,
+                              'i.nombre_fichero LIKE ' +
+                              UTI_GEN_Comillas('%' + Trim(Edit_Nombre_Fichero.Text) + '%') );
+  end;
+
+  // ********************************************************************************************* //
+  // ** Ahora buscaremos por el medio                                                           ** //
+  // ********************************************************************************************* //
+  if Trim(Edit_id_menus.Text) <> '' then
+  begin
+      UTI_RGTRO_Add_to_Where( false,
+                              p_a_Filtrar,
+                              'i.id_menus = ' + Trim(Edit_id_menus.Text) );
+  end;
+
+  // ********************************************************************************************* //
+  // ** Ahora buscaremos por la descripción                                                     ** //
+  // ********************************************************************************************* //
+  if Trim(Edit_Descripcion.Text) <> '' then
+  begin
+      UTI_RGTRO_Add_to_Where( false,
+                              p_a_Filtrar,
+                              'i.descripcion LIKE ' +
+                              UTI_GEN_Comillas('%' + Trim(Edit_Descripcion.Text) + '%') );
+  end;
+}
+end;
+
+procedure Tform_plantilla_000.Presentar_Datos;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // *********************************************************************************************** //
+  // ** En el Panel_Barra_Superior                                                                ** //
+  // *********************************************************************************************** //
+
+  // *********************************************************************************************** //
+  // ** En el TabSheet_Busqueda_Concreta                                                          ** //
+  // *********************************************************************************************** //
+
+  // *********************************************************************************************** //
+  // ** En el GroupBox_Grid                                                                       ** //
+  // *********************************************************************************************** //
+
+  // *********************************************************************************************** //
+  // ** En el GroupBox_Registro                                                                   ** //
+  // *********************************************************************************************** //
+  Presentar_Datos_GroupBox_Registro;
+  }
+end;
+
+procedure Tform_plantilla_000.Presentar_Datos_GroupBox_Registro;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  with SQLQuery_Principal do
+  begin
+    if RecordCount > 0 then
+    begin
+      Edit_Descripcion_Menu.Text := FieldByName('OT_Descripcion_Menu').AsString;
+    end;
+  end;
+  }
+end;
+
+procedure Tform_plantilla_000.NewRecord_Insert;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  with SQLQuery_Principal do
+  begin
+    // ********************************************************************************************* //
+    // ** CAMPOS QUE SON OBLIGADOS                                                                ** //
+    // ********************************************************************************************* //
+    FieldByName('numero_siguiente').AsString := '1';
+
+  end;
+}
+end;
+
+procedure Tform_plantilla_000.para_Empezar_GroupBox_Registro;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  with SQLQuery_Principal do
+  begin
+    public_Record_Rgtro := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                       FieldByName('id_menus').AsString,
+                                                       '',
+                                                       FieldByName('nombre_fichero').AsString,
+                                                       FieldByName('descripcion').AsString,
+                                                       '');
+  end;
+
+  Presentar_Datos_GroupBox_Registro;
+  }
+end;
+
+procedure Tform_plantilla_000.Cambiar_WindowState;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo }
+
+  Self.WindowState := wsNormal; // Puede ser wsNormal, wsFullScreen, wsMaximized o wsMinimized
+end;
+
+procedure Tform_plantilla_000.Cerramos_Tablas_Ligadas;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  Cerrar_Tabla( SQLConnector_Tabla001,
+                SQLTransaction_Tabla001,
+                SQLQuery_Tabla001 );
+  }
+end;
+
+procedure Tform_plantilla_000.Borrar_Registro;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  if UTI_USR_Permiso_SN(public_Menu_Worked, 'B', True) = True then
+  begin
+    UTI_RGTRO_Borrar( pubic_nombre_tabla_Principal,
+                      SQLQuery_Principal,
+                      public_Solo_Ver,
+                      public_Menu_Worked );
+  end;
+  }
+end;
+
+procedure Tform_plantilla_000.Refrescar_Registros_TablasLigadas;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  Refrescar_Tabla_001;
+  Refrescar_Tabla_002;
+  Refrescar_Tabla_003;
+  }
+end;
+
+procedure Tform_plantilla_000.Dibujar_Grid_Principal( p_Sender: TObject;
+                                                      const p_Rect: TRect;
+                                                      p_DataCol: Integer;
+                                                      p_Column: TColumn;
+                                                      p_State: TGridDrawState );
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  UTI_GEN_Dibujar_Grid( p_Sender, SQLQuery_Principal, p_Rect, p_DataCol, p_Column, p_State );
+  }
+end;
+
+procedure Tform_plantilla_000.OKButtonClick(Sender: TObject);
+var var_id : String;
+begin
+  var_id := SQLQuery_Principal.FieldByName('id').AsString;
+
+  if Hacer_Post_al_Rgtro = true then
+  begin
+    if Trim(var_id) <> '' then
+    begin
+      UTI_RGTRO_UnLock( pubic_nombre_tabla_Principal, Trim(var_id) );
+    end;
+
+    Ver_Grid;
+  end;
+end;
+
+function Tform_plantilla_000.Hacer_Post_al_Rgtro : Boolean;
+begin
+  with SQLQuery_Principal do
+  begin
+    Result := SeCambioAlgoEnRgtro;
+
+    if Result = true then
+    begin
+      if Antes_del_Post_Principal = false then
+      begin
+        // ***************************************************************************************** //
+        // ** No pasó algunas normas o no pudo asignar valores a los campos que son not null      ** //
+        // ***************************************************************************************** //
+        Result := false;
+        Exit;
+      end;
+
+      if SQLQuery_Principal.State = dsEdit then
+      begin
+        // ***************************************************************************************** //
+        // ** Modificando                                                                         ** //
+        // ***************************************************************************************** //
+        FieldByName('Change_WHEN').Value    := UTI_CN_Fecha_Hora;
+        FieldByName('Change_Id_User').Value := Form_Menu.public_User;
+      end else
+      begin
+        // ***************************************************************************************** //
+        // ** Creando                                                                             ** //
+        // ***************************************************************************************** //
+        FieldByName('Insert_WHEN').Value    := UTI_CN_Fecha_Hora;
+        FieldByName('Insert_Id_User').Value := Form_Menu.public_User;
+      end;
+
+      UTI_RGTRO_Grabar_Antes( pubic_nombre_tabla_Principal, SQLQuery_Principal );
+    end else
+    begin
+      Result := true;
+      Hacer_Cancel_al_Rgtro;
+    end;
+  end;
+end;
+
+function Tform_plantilla_000.SeCambioAlgoEnRgtro : Boolean;
+begin
+  Result := true;
+
+  with SQLQuery_Principal do
+  begin
+    ButtonPanel1.SetFocus; // Con esto consigo que salga del campo que este y pueda actualizarlo
+
+    if State = dsEdit then
+    begin
+      Result := UTI_DATOS_TABLA_SeCambioAlgoEnRgtro( SQLQuery_Principal );
+    end;
+
+  end;
+
+end;
+
+procedure Tform_plantilla_000.Antes_del_Post_Principal_Asignar_Valores;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // *********************************************************************************************** //
+  // ** Asignamos valores si no los tenían                                                        ** //
+  // *********************************************************************************************** //
+  with SQLQuery_Principal do
+  begin
+
+    if FieldByName('').IsNull then
+    begin
+      FieldByName('Nombre_Campo').Value := Valor_Campo;
+    end;
+
+  end;
+}
+end;
+
+function Tform_plantilla_000.Antes_del_Post_Principal : Boolean;
+var var_msg           : TStrings;
+    var_msg_Comprobar : TStrings;
+    var_record_Existe : Trecord_Existe;
+begin
+  Result := true;
+
+  var_msg := TStringList.Create;
+  var_msg.Clear;
+
+  var_msg_Comprobar := TStringList.Create;
+  var_msg_Comprobar.Clear;
+
+  Antes_del_Post_Principal_Asignar_Valores;
+
+  Antes_del_Post_Principal_Sin_Rellenar_Permitido_NO(var_msg, var_msg_Comprobar);
+
+  var_msg_Comprobar.Clear;
+  Antes_del_Post_Principal_Sin_Rellenar_Permitido_SI(var_msg_Comprobar);
+
+  if Trim(var_msg.Text) <> '' then
+  begin
+    Result := false;
+    UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
+  end;
+
+  if Trim(var_msg_Comprobar.Text) <> '' then
+  begin
+    UTI_GEN_Aviso(false, var_msg_Comprobar, rs_falta, True, False);
+  end;
+
+  var_msg.Free;
+  var_msg_Comprobar.Free;
+end;
+
+procedure Tform_plantilla_000.Antes_del_Post_Principal_Sin_Rellenar_Permitido_SI(p_msg : TStrings);
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // *********************************************************************************************** //
+  // ** Ahora vienen las comprobaciones de porque no grabamos                                     ** //
+  // *********************************************************************************************** //
+  with SQLQuery_Principal do
+  begin
+    if Trim(DBEdit_Descripcion.Text) <> '' then
+      FieldByName('descripcion').asString := AnsiUpperCase(Trim(FieldByName('descripcion').AsString))
+    else
+    begin
+      p_msg.Add( rs_bcta_006 );
+    end;
+
+    if Trim(FieldByName('id_empresas').AsString) = '' then
+    begin
+      p_msg.Add( rs_bcta_007 );
+    end;
+  end;
+}
+end;
+
+procedure Tform_plantilla_000.Antes_del_Post_Principal_Sin_Rellenar_Permitido_NO( p_msg,
+                                                                                  p_msg_Comprobar : TStrings );
+var var_record_Existe : Trecord_Existe;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // *********************************************************************************************** //
+  // ** Ahora vienen las comprobaciones de porque no grabamos                                     ** //
+  // *********************************************************************************************** //
+  with SQLQuery_Principal do
+  begin
+    if Trim(DBEdit_Descripcion.Text) <> '' then
+      FieldByName('descripcion').asString := AnsiUpperCase(Trim(FieldByName('descripcion').AsString))
+    else
+    begin
+      p_msg.Add( rs_bcta_006 );
+    end;
+
+    if Trim(FieldByName('id_empresas').AsString) = '' then
+    begin
+      p_msg.Add( rs_bcta_007 );
+    end;
+
+    if Trim(FieldByName('Direccion').AsString) = '' then
+    begin
+      p_msg.Add( rs_bcta_008 );
+    end;
+
+    if Trim(FieldByName('id_poblaciones').AsString) = '' then
+    begin
+      p_msg.Add( rs_bcta_009 );
+    end;
+
+    if Trim(FieldByName('id_provincias').AsString) = '' then
+    begin
+      p_msg.Add( rs_bcta_010 );
+    end;
+
+    if Trim(FieldByName('id_paises').AsString) = '' then
+    begin
+      p_msg.Add( rs_bcta_011 );
+    end;
+
+    if Trim(FieldByName('Responsable').AsString) = '' then
+    begin
+      p_msg.Add( rs_bcta_012 );
+    end;
+
+    // ********************************************************************************************* //
+    // ** Comprobamos que el iban es correcto                                                     ** //
+    // ********************************************************************************************* //
+    p_msg_Comprobar.Clear;
+    Comprobar_Cuenta_IBAN(p_msg_Comprobar);
+
+    if Trim(p_msg_Comprobar.Text) <> '' then
+    begin
+      p_msg.AddStrings( p_msg_Comprobar );
+    end;
+
+    // ********************************************************************************************* //
+    // ** Comprobamos que la cuenta contable es correcta                                          ** //
+    // ********************************************************************************************* //
+    p_msg_Comprobar.Clear;
+    UTI_CONTA_esta_Cta_Ctble_BIEN( form_menu.public_User_Configuracion.Bancos_Cuenta_Contable_SN,
+                                   p_msg_Comprobar,
+                                   SQLQuery_Principal,
+                                   '',
+                                   'bancos_empresas',
+                                   'Cuenta_Contable',
+                                   rs_bcta_019 );
+
+    if Trim(p_msg_Comprobar.Text) <> '' then
+    begin
+      p_msg.AddStrings( p_msg_Comprobar );
+    end;
+
+    // ********************************************************************************************* //
+    // ** Comprobamos que la cuenta contable no esté ya creada para otra cuenta bancaria          ** //
+    // ********************************************************************************************* //
+    if SQLQuery_Principal.State = dsInsert then
+    begin
+      var_record_Existe := Existe_la_Cta_Ya( '',
+                                             FieldByName('descripcion').AsString );
+    end;
+
+    if SQLQuery_Principal.State = dsEdit then
+    begin
+      var_record_Existe := Existe_la_Cta_Ya( FieldByName('id').AsString,
+                                             FieldByName('descripcion').AsString );
+
+    end;
+
+    if (SQLQuery_Principal.State = dsInsert) or
+       (SQLQuery_Principal.State = dsEdit)   then
+    begin
+      if var_record_Existe.Fallo_en_Conexion_BD = true then
+      begin
+        p_msg.Add( rs_bcta_017 );
+      end
+      else
+      begin
+        if var_record_Existe.Existe = true then
+        begin
+          p_msg.Add( rs_bcta_018 + Trim(FieldByName('id_empresas').AsString) );
+
+          if UpperCase(var_record_Existe.deBaja) = 'S' then
+          begin
+            p_msg.Add(rs_Rgtro_Borrado);
+          end;
+        end;
+
+      end;
+    end;
+
+  end;
+}
+end;
+
+procedure Tform_plantilla_000.para_Empezar;
+begin
+  Crear_tipos_orden_Principal;
+  Crear_tipos_orden_TablasLigadas;
+
+  // *********************************************************************************************** //
+  // ** Filtramos los datos                                                                       ** //
+  // *********************************************************************************************** //
+  Filtrar_Principal_Sin_Preguntar;
+
+  Presentar_Datos;
+
+  PageControl_Filtros.ActivePage := TabSheet_Busqueda_Concreta;
+end;
+
+procedure Tform_plantilla_000.PulsoBotonFiltrar;
+begin
+  if PageControl_Filtros.ActivePage = TabSheet_Busqueda_Concreta then
+  begin
+    Filtrar_Principal_Sin_Preguntar;
+  end else begin
+    RadioGroup_Bajas.ItemIndex := Filtrar_Principal( true );
+  end;
+end;
+
+function Tform_plantilla_000.Filtrar_Principal( p_Cambiamos_Filtro : Boolean ) : ShortInt;
+var var_Registro_CRUD : TRegistro_CRUD;
+    var_ctdad_Rgtros  : Integer;
+    var_a_Filtrar     : TStrings;
+begin
+    var_a_Filtrar := TStringList.Create;
+    var_a_Filtrar.Clear;
+
+    Tabla_Principal_que_Filtrar( var_Registro_Crud,
+                                 var_ctdad_Rgtros,
+                                 var_a_Filtrar );
+
+    // ********************************************************************************************* //
+    // ** Pasamos a filtrar los registros                                                         ** //
+    // ********************************************************************************************* //
+    Result := UTI_TB_Filtrar( public_Order_By,
+
+                              var_Registro_CRUD.Delete_SQL,
+                              var_Registro_CRUD.Update_SQL,
+                              var_Registro_CRUD.Insert_SQL,
+
+                              var_ctdad_Rgtros,
+                              SQLTransaction_Principal,
+                              SQLConnector_Principal,
+                              SQLQuery_Principal,
+
+                              var_Registro_CRUD.name_tabla,
+                              RadioGroup_Bajas.ItemIndex,
+
+                              var_Registro_CRUD.SELECT_SQL,
+
+                              Memo_Filtros.Lines,
+                              Memo_OrderBy.Lines,
+                              var_a_Filtrar.Text,
+
+                              p_Cambiamos_Filtro );
+
+    var_a_Filtrar.Free;
+
+    Label_Ctdad_Rgtros.Caption := IntToStr(SQLQuery_Principal.RecordCount);
+
+    BitBtn_Ver_Situacion_Registro.Enabled := false;
+    BitBtn_Seleccionar.Enabled            := false;
+    BitBtn_Imprimir.Enabled               := false;
+
+    if SQLQuery_Principal.RecordCount > 0 then
+    begin
+      BitBtn_Ver_Situacion_Registro.Enabled := true;
+      BitBtn_Seleccionar.Enabled            := true;
+      BitBtn_Imprimir.Enabled               := true;
+    end
+end;
+
+procedure Tform_plantilla_000.Abrir_Conexion_con_BD( p_SQLTransaction : TSQLTransaction;
+                                                     p_SQLConnector : TSQLConnector );
+begin
+  if UTI_CN_Abrir( p_SQLTransaction,
+                   p_SQLConnector ) = false then
+  begin
+    UTI_GEN_Salir;
+  end;
+end;
+
+procedure Tform_plantilla_000.FormCreate(Sender: TObject);
+begin
+  Cambiar_Nombre_Tabla_Principal;
+  Cambiar_Titulo_Form;
+  Configurar_los_Grids;
+
+  Abrir_Conexiones_con_BD;
+
+  private_Salir_OK               := false;
+  public_Solo_Ver                := false;
+  public_Elegimos                := false;
+  public_Rgtro_Seleccionado      := false;
+  GroupBox_Registro.Visible      := false;
+  PageControl_Filtros.ActivePage := TabSheet_Busqueda_Concreta;
+end;
+
+procedure Tform_plantilla_000.Abrir_Conexiones_con_BD;
+begin
+  Abrir_Conexion_con_BD( SQLTransaction_Principal, SQLConnector_Principal);
+  Abrir_Conexiones_con_BD_TablasAdicionales;
+end;
+
+procedure Tform_plantilla_000.Cambiar_Nombre_Tabla_Principal;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo }
+
+  pubic_nombre_tabla_Principal := 'principal';
+end;
+
+procedure Tform_plantilla_000.Cambiar_Titulo_Form;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo }
+
+  Self.Caption := 'Mantenimiento de ... ';
+end;
+
+procedure Tform_plantilla_000.Configurar_los_Grids;
+begin
+  DBGrid_Principal.AutoAdvance := aaLeft; { Para que al pulsar al return (key=13) no se vaya a otro registro }
+end;
+
+procedure Tform_plantilla_000.Abrir_Conexiones_con_BD_TablasAdicionales;
+begin
+  { Hacer algo parecido a lo de abajo
+
+  Abrir_Conexion_con_BD( SQLTransaction_TablaHija001, SQLConnector_TablaHija001);
+  Abrir_Conexion_con_BD( SQLTransaction_TablaHija002, SQLConnector_TablaHija002);
+  }
+end;
+
+end.
+
+
+
+
+

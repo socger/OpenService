@@ -1,0 +1,71 @@
+object DataModule_Articulos_Ofertas: TDataModule_Articulos_Ofertas
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 432
+  HorizontalOffset = 578
+  VerticalOffset = 194
+  Width = 638
+  object SQLConnector_AOA: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_AOA
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 488
+    top = 176
+  end
+  object SQLTransaction_AOA: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_AOA
+    left = 488
+    top = 104
+  end
+  object SQLConnector_AODPV: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_AODPV
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 336
+    top = 176
+  end
+  object SQLTransaction_AODPV: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_AODPV
+    left = 336
+    top = 104
+  end
+  object SQLConnector_AO: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_AO
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 160
+    top = 184
+  end
+  object SQLTransaction_AO: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_AO
+    left = 160
+    top = 112
+  end
+end

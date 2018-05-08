@@ -1,0 +1,282 @@
+inherited form_diarios_tipos_elegir: Tform_diarios_tipos_elegir
+  Width = 703
+  ClientWidth = 703
+  inherited Panel_Barra_Superior: TPanel
+    Width = 703
+    ClientWidth = 703
+    inherited Panel9: TPanel
+      Left = 686
+    end
+    inherited Panel1: TPanel
+      Left = 481
+    end
+  end
+  inherited GroupBox_Filtros: TGroupBox
+    Width = 703
+    ClientWidth = 699
+    inherited Panel13: TPanel
+      Left = 682
+    end
+    inherited Panel11: TPanel
+      Width = 665
+      ClientWidth = 665
+      inherited PageControl_Filtros: TPageControl
+        Width = 665
+        inherited TabSheet_Busqueda_Concreta: TTabSheet
+          ClientWidth = 657
+          object Label6: TLabel[0]
+            Left = 12
+            Height = 19
+            Top = 1
+            Width = 92
+            Caption = 'Descripción'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Edit_Descripcion: TEdit[1]
+            Left = 12
+            Height = 24
+            Top = 24
+            Width = 657
+            Color = clWhite
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clRed
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            ParentFont = False
+            TabOrder = 0
+          end
+        end
+      end
+    end
+  end
+  inherited Panel_de_Abajo: TPanel
+    Width = 703
+    ClientWidth = 703
+    inherited GroupBox_Registro: TGroupBox
+      Width = 701
+      ClientWidth = 697
+      inherited Panel21: TPanel
+        Left = 680
+      end
+      inherited Panel22: TPanel
+        Width = 663
+        ClientWidth = 663
+        inherited Panel23: TPanel
+          Width = 663
+          ClientWidth = 663
+          inherited ButtonPanel1: TButtonPanel
+            Width = 651
+          end
+          inherited Shape1: TShape
+            Width = 663
+          end
+        end
+      end
+    end
+    inherited GroupBox_Grid: TGroupBox
+      Width = 701
+      ClientWidth = 697
+      inherited Panel_Barra_Superior1: TPanel
+        Width = 697
+        ClientWidth = 697
+        inherited Panel4: TPanel
+          inherited Panel14: TPanel
+            inherited DBNavigatorPrincpal: TDBNavigator
+              Hints.Strings = (              )
+            end
+          end
+        end
+        inherited Panel15: TPanel
+          Left = 680
+        end
+        inherited Panel_Otros_Campos_no_Grid: TPanel
+          Width = 305
+          ClientWidth = 305
+          inherited Label_Ctdad_Rgtros: TLabel
+            Left = 207
+          end
+        end
+      end
+      inherited Panel6: TPanel
+        Left = 680
+      end
+      inherited Panel7: TPanel
+        Width = 663
+        ClientWidth = 663
+        inherited DBGrid_Principal: TDBGrid
+          Width = 663
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Id'
+              Width = 50
+              FieldName = 'id'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Tipo de diario'
+              Width = 579
+              FieldName = 'descripcion'
+            end>
+        end
+      end
+    end
+  end
+  inherited SQLQuery_Principal: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'descripcion'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end    
+      item
+        Name = 'Insert_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Insert_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Del_WHY'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Change_WHEN'
+        DataType = ftDateTime
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'Change_Id_User'
+        DataType = ftLargeint
+        Precision = -1
+        Size = 0
+      end>
+    SQL.Strings = (
+      'select * from diarios_tipos'
+    )
+    object SQLQuery_Principaldescripcion: TStringField[1]
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'descripcion'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 450
+    end
+    object SQLQuery_PrincipalInsert_WHEN: TDateTimeField[2]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_WHEN'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalInsert_Id_User: TLargeintField[3]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Insert_Id_User'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_PrincipalDel_WHEN: TDateTimeField[4]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_WHEN'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_Id_User: TLargeintField[5]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Del_Id_User'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalDel_WHY: TStringField[6]
+      DisplayWidth = 765
+      FieldKind = fkData
+      FieldName = 'Del_WHY'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 765
+    end
+    object SQLQuery_PrincipalChange_WHEN: TDateTimeField[7]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_WHEN'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery_PrincipalChange_Id_User: TLargeintField[8]
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Change_Id_User'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  inherited SQLConnector_Principal: TSQLConnector
+    left = 264
+    top = 16
+  end
+end

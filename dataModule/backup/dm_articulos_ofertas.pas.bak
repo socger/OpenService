@@ -1,0 +1,45 @@
+unit dm_articulos_ofertas;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, sqldb, FileUtil;
+
+type
+
+  { TDataModule_Articulos_Ofertas }
+
+  TDataModule_Articulos_Ofertas = class(TDataModule)
+    SQLConnector_AOA: TSQLConnector;
+    SQLConnector_AODPV: TSQLConnector;
+    SQLConnector_AO: TSQLConnector;
+    SQLTransaction_AOA: TSQLTransaction;
+    SQLTransaction_AODPV: TSQLTransaction;
+    SQLTransaction_AO: TSQLTransaction;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  DataModule_Articulos_Ofertas: TDataModule_Articulos_Ofertas;
+
+implementation
+
+{$R *.lfm}
+
+{ TDataModule_Articulos_Ofertas }
+
+procedure TDataModule_Articulos_Ofertas.DataModuleCreate(Sender: TObject);
+begin
+  if UTI_CN_Abrir(SQLTransaction_AO, SQLConnector_AO) = False then UTI_GEN_Salir;
+  if UTI_CN_Abrir(SQLTransaction_AODPV, SQLConnector_AODPV) = False then UTI_GEN_Salir;
+  if UTI_CN_Abrir(SQLTransaction_AOA, SQLConnector_AOA) = False then UTI_GEN_Salir;
+end;
+
+end.
+

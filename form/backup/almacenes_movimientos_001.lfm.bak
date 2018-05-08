@@ -1,0 +1,362 @@
+inherited form_almacenes_movimientos_001: Tform_almacenes_movimientos_001
+  Left = 311
+  Height = 298
+  Top = 225
+  Width = 755
+  ClientHeight = 298
+  ClientWidth = 755
+  inherited GroupBox_Registro_Principal: TGroupBox
+    Height = 152
+    Width = 755
+    ClientHeight = 132
+    ClientWidth = 751
+    inherited Panel10: TPanel
+      Height = 132
+    end
+    inherited Panel13: TPanel
+      Left = 734
+      Height = 132
+    end
+    inherited Panel11: TPanel
+      Height = 132
+      Width = 717
+      ClientHeight = 132
+      ClientWidth = 717
+      object Panel_Tipo_Movimiento: TPanel[0]
+        Left = 6
+        Height = 54
+        Top = 64
+        Width = 301
+        BevelOuter = bvNone
+        ClientHeight = 54
+        ClientWidth = 301
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 0
+        object DBRadioGroup_Tipo_Cuenta: TDBRadioGroup
+          Left = 0
+          Height = 42
+          Top = 12
+          Width = 301
+          Align = alBottom
+          Columns = 2
+          DataField = 'Tipo_Movimiento'
+          DataSource = form_almacenes_movimientos_000.DataSource_Principal
+          Items.Strings = (
+            'Traspaso entre almacenes'
+            'Entrada manual'
+          )
+          ReadOnly = True
+          TabOrder = 0
+          Values.Strings = (
+            '1'
+            '2'
+          )
+        end
+        object Label64: TLabel
+          Left = -5
+          Height = 19
+          Top = 2
+          Width = 158
+          Anchors = [akLeft, akBottom]
+          Caption = ' Tipo de movimiento '
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object Label1: TLabel[1]
+        Left = 6
+        Height = 19
+        Top = 9
+        Width = 140
+        Caption = 'Fecha movimiento'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBDateTimePicker_Fecha_Movimiento: TDBDateTimePicker[2]
+        Left = 6
+        Height = 24
+        Top = 30
+        Width = 153
+        DataField = 'Fecha_Movimiento'
+        DataSource = form_almacenes_movimientos_000.DataSource_Principal
+        ReadOnly = True
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 1
+        Color = 7001047
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDateTime
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Label6: TLabel[3]
+        Left = 164
+        Height = 19
+        Top = 9
+        Width = 127
+        Caption = 'Almacén destino'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Almacen_Destino: TEdit[4]
+        Left = 165
+        Height = 24
+        Top = 30
+        Width = 270
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object Label7: TLabel[5]
+        Left = 439
+        Height = 19
+        Top = 9
+        Width = 119
+        Caption = 'Almacén origen'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Almacen_Origen: TEdit[6]
+        Left = 439
+        Height = 24
+        Top = 30
+        Width = 270
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object Label8: TLabel[7]
+        Left = 318
+        Height = 19
+        Top = 71
+        Width = 75
+        Caption = 'Concepto'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Concepto: TEdit[8]
+        Left = 318
+        Height = 24
+        Top = 92
+        Width = 391
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 4
+      end
+    end
+  end
+  inherited GroupBox_Registro: TGroupBox
+    Height = 146
+    Top = 152
+    Width = 755
+    ClientHeight = 126
+    ClientWidth = 751
+    inherited Panel20: TPanel
+      Height = 126
+    end
+    inherited Panel21: TPanel
+      Left = 734
+      Height = 126
+    end
+    inherited Panel22: TPanel
+      Height = 126
+      Width = 717
+      ClientHeight = 126
+      ClientWidth = 717
+      inherited Panel23: TPanel
+        Top = 89
+        Width = 717
+        ClientWidth = 717
+        inherited ButtonPanel1: TButtonPanel
+          Width = 705
+        end
+        inherited Shape1: TShape
+          Width = 717
+        end
+      end
+      object Boton_Elegir_Articulo: TBitBtn[1]
+        Left = 6
+        Height = 47
+        Top = 4
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_ArticuloClick
+        ParentFont = False
+        TabOrder = 1
+      end
+      object Label16: TLabel[2]
+        Left = 45
+        Height = 22
+        Top = 2
+        Width = 72
+        Caption = 'Artículo'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Articulo: TEdit[3]
+        Left = 45
+        Height = 26
+        Top = 25
+        Width = 541
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_ArticuloClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object Label9: TLabel[4]
+        AnchorSideLeft.Control = DBEdit_Direccion_Numero
+        AnchorSideBottom.Control = DBEdit_Direccion_Numero
+        Left = 622
+        Height = 22
+        Top = 3
+        Width = 87
+        Anchors = [akLeft, akBottom]
+        Caption = 'Unidades'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Direccion_Numero: TDBEdit[5]
+        Left = 622
+        Height = 26
+        Top = 25
+        Width = 87
+        DataField = 'Unidades'
+        DataSource = form_almacenes_movimientos_000.DataSource_AMD
+        CharCase = ecNormal
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 3
+      end
+    end
+  end
+end

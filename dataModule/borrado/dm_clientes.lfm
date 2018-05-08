@@ -1,0 +1,118 @@
+object DataModule_Clientes: TDataModule_Clientes
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 257
+  HorizontalOffset = 109
+  VerticalOffset = 148
+  Width = 1171
+  object SQLTransaction_Clientes: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Clientes
+    left = 104
+    top = 64
+  end
+  object SQLConnector_Clientes: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_Clientes
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 104
+    top = 136
+  end
+  object SQLTransaction_Clientes_Contactos: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Clientes_Contactos
+    left = 272
+    top = 64
+  end
+  object SQLConnector_Clientes_Contactos: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Clientes_Contactos
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 272
+    top = 136
+  end
+  object SQLTransaction_Clientes_Envios: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Clientes_Envios
+    left = 472
+    top = 64
+  end
+  object SQLConnector_Clientes_Envios: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Clientes_Envios
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 472
+    top = 136
+  end
+  object SQLTransaction_Clientes_Periodos: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Clientes_Periodos
+    left = 704
+    top = 64
+  end
+  object SQLConnector_Clientes_Periodos: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Clientes_Periodos
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 704
+    top = 136
+  end
+  object SQLTransaction_Clientes_Alb_Detalles: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Clientes_Alb_Detalles
+    left = 896
+    top = 68
+  end
+  object SQLConnector_Clientes_Alb_Detalles: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Password = 'sasa'
+    Transaction = SQLTransaction_Clientes_Alb_Detalles
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 896
+    top = 140
+  end
+end

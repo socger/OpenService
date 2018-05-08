@@ -1,0 +1,226 @@
+unit alumnos_003;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, DBDateTimePicker, Forms, Controls, Graphics, Dialogs, ButtonPanel,
+  Buttons, StdCtrls, DbCtrls, ExtCtrls, EditBtn, db, utilidades_general, utilidades_forms_Filtrar,
+  LCLTranslator;
+
+resourcestring
+  rs_FormClose_1 = '* El inicio del periodo.';
+  rs_FormClose_2 = '* El fin del periodo.';
+
+type
+
+  { Tform_alumnos_003 }
+
+  Tform_alumnos_003 = class(TForm)
+    ButtonPanel1: TButtonPanel;
+    DBDateTimePicker_Fecha_Movimiento: TDBDateTimePicker;
+    DBDateTimePicker_Fecha_Movimiento1: TDBDateTimePicker;
+    DBDateTimePicker_Fecha_Movimiento2: TDBDateTimePicker;
+    DBEdit_a_quien_facturamos: TDBEdit;
+    DBEdit_eMail1: TDBEdit;
+    DBEdit_NIF_CIF: TDBEdit;
+    DBEdit_Nombre_Comercial: TDBEdit;
+    GroupBox11: TGroupBox;
+    Label1: TLabel;
+    Label10: TLabel;
+    Label18: TLabel;
+    Label62: TLabel;
+    Label7: TLabel;
+    Label_Fecha: TLabel;
+    Label_Fecha1: TLabel;
+    Panel1: TPanel;
+    Panel_Mantenimiento: TPanel;
+
+    procedure no_Tocar;
+    procedure CancelButtonClick(Sender: TObject);
+    function  Comprobar_No_Tocar( param_Reproducir_Mensajes, param_Ejecutar_No_Tocar : Boolean ) : Boolean;
+    procedure OKButtonClick(Sender: TObject);
+    procedure Presentar_Datos;
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure para_Empezar;
+    procedure FormActivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+
+  private
+    { private declarations }
+    private_Salir_OK : Boolean;
+  public
+    { public declarations }
+    public_Pulso_Aceptar : Boolean;
+    public_Menu_Worked   : Integer;
+    public_Solo_Ver      : Boolean;
+    public_Record_Rgtro  : TRecord_Rgtro_Comun;
+  end;
+
+var
+  form_alumnos_003: Tform_alumnos_003;
+
+implementation
+
+{$R *.lfm}
+
+uses menu, alumnos_000;
+
+{ Tform_alumnos_003 }
+
+procedure Tform_alumnos_003.FormActivate(Sender: TObject);
+begin
+    If form_alumnos_000.public_Elegimos = true then
+    begin
+        with Self do
+        begin
+            Color := $00B9959C;
+        end;
+    end;
+
+    Comprobar_No_Tocar(true, true);
+end;
+
+function Tform_alumnos_003.Comprobar_No_Tocar( param_Reproducir_Mensajes,
+                                               param_Ejecutar_No_Tocar : Boolean ) : Boolean;
+begin
+    Result := false;
+
+    // ********************************************************************************************* //
+    // ** Si se llamó para solo verlo, pues no se puede tocar                                     ** //
+    // ********************************************************************************************* //
+    if public_Solo_Ver = true then
+    begin
+        Result := true;
+        if param_Ejecutar_No_Tocar = true then no_Tocar;
+    end;
+end;
+
+procedure Tform_alumnos_003.FormCreate(Sender: TObject);
+begin
+      // ********************************************************************************************* //
+      // ** Obligado en cada formulario para no olvidarlo                                           ** //
+      // ********************************************************************************************* //
+      with Self do
+      begin
+          Color       := $00C2C29E;
+          Position    := poScreenCenter;
+          BorderIcons := [];
+          BorderStyle := bsSingle;
+      end;
+
+      private_Salir_OK := false;
+
+      // ********************************************************************************************* //
+      // ** Solo para formularios que traten con datos                                              ** //
+      // ********************************************************************************************* //
+      public_Solo_Ver := false;
+end;
+
+procedure Tform_alumnos_003.para_Empezar;
+begin
+    // ********************************************************************************************* //
+    // ** Solo para formularios que traten con datos                                              ** //
+    // ********************************************************************************************* //
+    with form_alumnos_000.SQLQuery_Clientes_Periodos do
+    begin
+        public_Record_Rgtro := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                           '',
+                                                           '',
+                                                           '',
+                                                           '',
+                                                           '' );
+    end;
+
+    Presentar_Datos;
+end;
+
+procedure Tform_alumnos_003.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+var var_msg : TStrings;
+begin
+    ButtonPanel1.SetFocus; // Con esto consigo que salga del campo que este y pueda actualizarlo
+
+    var_msg := TStringList.Create;
+
+    if public_Pulso_Aceptar = true then
+    begin
+        with form_alumnos_000.SQLQuery_Clientes_Periodos do
+        begin
+            if Trim(FieldByName('Inicio').AsString) = '' then
+            begin
+                var_msg.Add(rs_FormClose_1);
+            end;
+
+            if Trim(FieldByName('Fin').AsString) = '' then
+            begin
+                var_msg.Add(rs_FormClose_2);
+            end;
+        end;
+    end;
+
+    if private_Salir_OK = False then
+        begin
+          { ********************************************************************
+            Intento BitBtn_SALIR de la aplicación de un modo no permitido.
+            ********************************************************************
+            Pero si desde el menu principal está a true la variable
+            public_Salir_Ok, significa que hay que salir si o si pues se pulsó
+            cancelar al preguntar otra vez por la contraseña
+            ******************************************************************** }
+            if form_Menu.public_Salir_OK = False then CloseAction := caNone;
+        end
+    else
+        begin
+          { ********************************************************************
+            Fue correcto el modo como quiere salir de la aplicación
+            ********************************************************************
+            Comprobaremos si no se generó algún error por falta de completar
+            algun campo y si se salió con el botón Ok o Cancel
+            ******************************************************************** }
+            if (Trim(var_msg.Text) <> '') and (public_Pulso_Aceptar = true) then
+                begin
+                    UTI_GEN_Aviso(true, var_msg, rs_Falta, True, False);
+                    // var_msg.Free;
+                    CloseAction := caNone;
+                end
+            else
+                begin
+                    // var_msg.Free;
+                    CloseAction := caFree;
+                end;
+        end;
+
+    var_msg.Free;
+end;
+
+procedure Tform_alumnos_003.Presentar_Datos;
+begin
+    WITH form_alumnos_000.SQLQuery_Clientes_Periodos do
+    BEGIN
+        // ***************************************************************************************** //
+        // ** DE MOMENTO NO TIENE CAMOS PARA PRESENTAR                                            ** //
+        // ***************************************************************************************** //
+    END;
+end;
+
+procedure Tform_alumnos_003.OKButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := true;
+    public_Pulso_Aceptar := true;
+end;
+
+procedure Tform_alumnos_003.CancelButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := true;
+    public_Pulso_Aceptar := false;
+end;
+
+procedure Tform_alumnos_003.no_Tocar;
+begin
+    Panel_Mantenimiento.Enabled := False;
+end;
+
+end.
+
+

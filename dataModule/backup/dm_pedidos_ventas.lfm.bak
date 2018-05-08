@@ -1,0 +1,195 @@
+object DataModule_pedidos_ventas: TDataModule_pedidos_ventas
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 475
+  HorizontalOffset = 109
+  VerticalOffset = 191
+  Width = 1087
+  object SQLTransaction_Pedido_Detalles: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Pedido_Detalles
+    left = 320
+    top = 48
+  end
+  object SQLConnector_Pedido_Detalles: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Password = 'sasa'
+    Transaction = SQLTransaction_Pedido_Detalles
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 320
+    top = 124
+  end
+  object SQLTransaction_Pedido: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Pedido
+    left = 124
+    top = 48
+  end
+  object SQLConnector_Pedido: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_Pedido
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 124
+    top = 120
+  end
+  object SQLTransaction_Alb: TSQLTransaction
+    Active = True
+    Action = caCommit
+    Database = SQLConnector_Alb
+    left = 752
+    top = 48
+  end
+  object SQLConnector_Alb: TSQLConnector
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_Alb
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 752
+    top = 120
+  end
+  object SQLTransaction_Alb_Detalles: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Alb_Detalles
+    left = 936
+    top = 48
+  end
+  object SQLConnector_Alb_Detalles: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_Alb_Detalles
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 936
+    top = 120
+  end
+  object SQLTransaction_Pedido_Detalles_Stock: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Pedido_Detalles_Stock
+    left = 528
+    top = 48
+  end
+  object SQLConnector_Pedido_Detalles_Stock: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Pedido_Detalles_Stock
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 528
+    top = 124
+  end
+  object SQLTransaction_Pedido_Imptos: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Pedido_Imptos
+    left = 128
+    top = 280
+  end
+  object SQLConnector_Pedido_Imptos: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Password = 'sasa'
+    Transaction = SQLTransaction_Pedido_Imptos
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 128
+    top = 360
+  end
+  object SQLTransaction_Imptos_Totales: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Imptos_Totales
+    left = 432
+    top = 288
+  end
+  object SQLConnector_Imptos_Totales: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Password = 'sasa'
+    Transaction = SQLTransaction_Imptos_Totales
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 432
+    top = 360
+  end
+  object SQLTransaction_List_Pdo: TSQLTransaction
+    Active = True
+    Action = caCommit
+    Database = SQLConnector_List_Pdo
+    left = 720
+    top = 288
+  end
+  object SQLConnector_List_Pdo: TSQLConnector
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_List_Pdo
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 720
+    top = 360
+  end
+end

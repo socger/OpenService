@@ -1,0 +1,42 @@
+object form_plantilla_001: Tform_plantilla_001
+  Left = 358
+  Height = 240
+  Top = 152
+  Width = 610
+  Caption = 'Plantilla - ficha'
+  ClientHeight = 240
+  ClientWidth = 610
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  WindowState = wsMaximized
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 598
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object Panel_Ficha: TPanel
+    Left = 0
+    Height = 194
+    Top = 46
+    Width = 610
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 1
+  end
+end

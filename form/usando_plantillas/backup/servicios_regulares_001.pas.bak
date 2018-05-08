@@ -1,0 +1,54 @@
+unit servicios_regulares_001;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  ExtCtrls, ButtonPanel, DbCtrls, plantilla_detalle_000;
+
+type
+
+  { Tform_plantilla_detalle_0001 }
+
+  Tform_plantilla_detalle_0001 = class(Tform_plantilla_detalle_000)
+    Domingo: TDBCheckBox;
+    Edit_Descripcion_Cliente: TEdit;
+    Edit_serie_codigo: TEdit;
+    Edit_Descripcion: TEdit;
+    Edit_serie_codigo1: TEdit;
+    FueraDelMunicipio: TDBCheckBox;
+    GroupBox_Dias_Servicio: TGroupBox;
+    Jueves: TDBCheckBox;
+    Label17: TLabel;
+    Label2: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    Label5: TLabel;
+    Label59: TLabel;
+    Label60: TLabel;
+    Label78: TLabel;
+    Lunes: TDBCheckBox;
+    Martes: TDBCheckBox;
+    Miercoles: TDBCheckBox;
+    Sabado: TDBCheckBox;
+    Viernes: TDBCheckBox;
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  form_plantilla_detalle_0001: Tform_plantilla_detalle_0001;
+
+implementation
+
+{$R *.lfm}
+
+end.
+

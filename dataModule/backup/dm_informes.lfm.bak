@@ -1,0 +1,33 @@
+object DataModule_Informes: TDataModule_Informes
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 415
+  HorizontalOffset = 648
+  VerticalOffset = 154
+  Width = 282
+  object SQLTransaction_Informes: TSQLTransaction
+    Active = True
+    Action = caCommit
+    Database = SQLConnector_Informes
+    left = 112
+    top = 64
+  end
+  object SQLConnector_Informes: TSQLConnector
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Params.Strings = (
+      'Port=3308'
+    )
+    Password = 'sasa'
+    Transaction = SQLTransaction_Informes
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 112
+    top = 144
+  end
+end

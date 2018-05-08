@@ -1,0 +1,211 @@
+object form_articulos_006: Tform_articulos_006
+  Left = 567
+  Height = 235
+  Top = 118
+  Width = 488
+  Caption = 'Ficha - Tarifa de la proporción del artículo'
+  ClientHeight = 235
+  ClientWidth = 488
+  Color = 14737613
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 476
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object Panel1: TPanel
+    Left = 25
+    Height = 65
+    Top = 56
+    Width = 433
+    ClientHeight = 65
+    ClientWidth = 433
+    TabOrder = 1
+    object Label1: TLabel
+      AnchorSideLeft.Control = DBEdit_a_quien_facturamos
+      AnchorSideBottom.Control = DBEdit_a_quien_facturamos
+      Left = 16
+      Height = 22
+      Top = 8
+      Width = 53
+      Anchors = [akLeft, akBottom]
+      Caption = 'Tarifa'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_a_quien_facturamos: TDBEdit
+      Left = 16
+      Height = 23
+      Top = 30
+      Width = 399
+      DataField = 'OT_descripcion_tarifa'
+      DataSource = form_articulos_000.DataSource_Art_Proporciones_Tarifas
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+  object Panel_Mantenimiento: TPanel
+    Left = 185
+    Height = 74
+    Top = 126
+    Width = 273
+    ClientHeight = 74
+    ClientWidth = 273
+    TabOrder = 2
+    object DBEdit_Importe_Neto: TDBEdit
+      Left = 19
+      Height = 24
+      Top = 37
+      Width = 113
+      DataField = 'PVP'
+      DataSource = form_articulos_000.DataSource_Art_Proporciones_Tarifas
+      CharCase = ecNormal
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 0
+    end
+    object DBEdit_Importe_con_Impuestos: TDBEdit
+      Left = 139
+      Height = 24
+      Top = 37
+      Width = 113
+      DataField = 'PVP_Impuestos_Incluidos'
+      DataSource = form_articulos_000.DataSource_Art_Proporciones_Tarifas
+      CharCase = ecNormal
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Label67: TLabel
+      Left = 19
+      Height = 19
+      Top = 18
+      Width = 33
+      Anchors = [akLeft, akBottom]
+      Caption = 'PVP'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label69: TLabel
+      Left = 139
+      Height = 19
+      Top = 7
+      Width = 94
+      Anchors = [akLeft, akBottom]
+      Caption = 'PVP, incluye'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label66: TLabel
+      Left = 139
+      Height = 19
+      Top = 20
+      Width = 112
+      Anchors = [akLeft, akBottom]
+      Caption = 'sus impuestos'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object GroupBox11: TGroupBox
+    Left = 25
+    Height = 38
+    Top = -3
+    Width = 174
+    ClientHeight = 18
+    ClientWidth = 170
+    TabOrder = 3
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -4
+      Width = 56
+      Anchors = [akLeft, akBottom]
+      Caption = 'Código'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 74
+      Height = 23
+      Top = -8
+      Width = 90
+      DataField = 'id'
+      DataSource = form_articulos_000.DataSource_Art_Proporciones_Tarifas
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+end

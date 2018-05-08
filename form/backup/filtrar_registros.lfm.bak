@@ -1,0 +1,794 @@
+object Form_Filtrar_Registros: TForm_Filtrar_Registros
+  Left = 101
+  Height = 645
+  Top = 23
+  Width = 1103
+  Caption = 'Editar filtro'
+  ClientHeight = 645
+  ClientWidth = 1103
+  Color = 9221227
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.8.0.6'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 605
+    Width = 1091
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object Label_Fecha1: TLabel
+    Left = 25
+    Height = 19
+    Top = 36
+    Width = 105
+    Anchors = [akLeft, akBottom]
+    Caption = 'Elija el campo'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ComboBox_Campo: TComboBox
+    Left = 25
+    Height = 26
+    Top = 54
+    Width = 221
+    Color = 7001047
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemHeight = 18
+    OnChange = ComboBox_CampoChange
+    ParentFont = False
+    Style = csDropDownList
+    TabOrder = 1
+  end
+  object BitBtn_Buscar: TBitBtn
+    Left = 249
+    Height = 28
+    Top = 53
+    Width = 38
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Glyph.Data = {
+      F6060000424DF606000000000000360000002800000018000000180000000100
+      180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FF134EC6134EC6134EC61147BC0F41B40F
+      40B2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FF1D73FC1B69EB1965E52D6DD75E84C2989F
+      B1D0AC91CE8B624967A61147BDFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FF1E74FA2878F0568CD88CA3C1DAC2A9
+      FCD09FF2C098E5AC8BD7895EE2955FEEAC75838EAC134EC6134EC6FF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1F77FE6597D9FCD1A0FC
+      D1A0FCD1A1FCD3A3FCD3A4F4C59CF7CBA0D58455DC8A57EAA978F7CEA9D7CAC5
+      4277D31555D0FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1F78FF1F78
+      FFDCCEBBFEDAB2FEDCB5FEDDB7FEDDB8FEDEBBEDBF9FDC9974D17A4BE39762F6
+      C99FF8D8BAFBE5D0FCEEE18AAFE52366DAFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FF296DCF74674EFEE0BBFEE6C9FEE6CAFEE7CCFEE7CEF3CFB2EFC4A5DC99
+      72E9A36CE9A777F7D3B1FAE1C9FBEBDCFEF3EAFEFAF4CBDDF6397BE61862E1FF
+      00FFFF00FFFF00FF1F78FF66655BFFA435FEEED9FEEEDAFEEFDCFEEFDDFEEFDE
+      F4D8C1EFCBB2D38053D47B4AEDB287F8DCC1FBE7D5FCF0E6FEF7F2FFFBF8FFFE
+      FEDDEAFC1A68EA1A66E7FF00FFFF00FF1F78FFAF752CFFC06DFFF4E7FFF4E9FF
+      F6EAFFF6EAFCEDE0E9B799DD9C77D58253E9A677F7D1B2E9D5C2FCEEE1FEF6EE
+      FEFAF6FFFEFCFFFFFFDAC6C63F5C991C6DF0FF00FFFF00FF1F5DA41EBC4CCEEE
+      CFFFF8F2FFFAF3FFFAF3FFFAF4F4D9C7F3D5C2DC9E7BE6A475E9AA7FFAE0C79D
+      9A959E9D99EBE7E3FFFCFAFFFFFEFFFFFFCA9797706F961D73F7FF00FF1F78FF
+      1F65531EBC4CFFFCF8FFFCFAFFFCFAFFFCFAFFFCFAF8E9E0EECAB4D07D50D580
+      4FF0C09CFBE7D4FCF0E5D9D5D08E908EB7B8B7FFFFFFF7EEEEBF81813766B5FF
+      00FFFF00FF1F70ED196C596CC1A9FFFEFCFFFEFCFFFEFEFFFFFEFCF4EFE5AD8F
+      E0A482D98B5DEEBA92F8DDC5FCEDDEFEF4EDFEFAF6FFFEFBB7B8B7C9CAC9CEE3
+      FF5C7DC51F78FFFF00FFFF00FF1C53B0001EFFC1CEFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFE0A687E19D72E6A57AE1D3C4D9D3CAFEF8F3FFFCFAFFFEFE
+      FFFFFFFFFFFF66A7FF1F78FFFF00FFFF00FFFF00FF1137B0001EFFFFFFFFFFFF
+      FFFFFFFFFFFFFFBDDCFF7AB4FF3F8FFF1F78FF7FA7DDFBE6D3EAE0D59E9E9A9E
+      9F9DEDEBEAFFFFFFFFFFFFFFFFFF2980FF1F78FFFF00FFFF00FF1F78FF155FFF
+      84ABFFEEF6FFAFD3FF72AFFF2F84FF2F84FFFF00FFFF00FFFF00FFFF00FF4490
+      F8DCE3EEFEFAF6DADAD88E908FB7BAB8FFFFFF9FCAFF1F78FF1F78FFFF00FFFF
+      00FF1F78FF1F78FF1F78FF1F78FF1F78FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FF2D83FE90C0FCFFFEFEFFFFFFC0C1C0F6F6F64C98FF1F78
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF5DA3FFEEF6FFFFFFFF
+      AFD3FF1F78FF1F78FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FF1F78FF1F78FF1F78FF1F78FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FF1F78FF1F78FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = BitBtn_BuscarClick
+    ParentFont = False
+    TabOrder = 2
+    Visible = False
+  end
+  object GroupBox3: TGroupBox
+    Left = 297
+    Height = 568
+    Top = 15
+    Width = 776
+    ClientHeight = 548
+    ClientWidth = 772
+    Color = 9221227
+    ParentColor = False
+    TabOrder = 3
+    object GroupBox2: TGroupBox
+      Left = 6
+      Height = 350
+      Top = -6
+      Width = 759
+      Caption = ' FILTRAR POR '
+      ClientHeight = 323
+      ClientWidth = 755
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      object Memo_Filtros: TMemo
+        Left = 7
+        Height = 102
+        Top = 222
+        Width = 740
+        Color = clWhite
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnChange = Memo_FiltrosChange
+        ParentFont = False
+        ScrollBars = ssAutoBoth
+        TabOrder = 0
+      end
+      object RadioGroup_Bajas: TRadioGroup
+        Left = 7
+        Height = 59
+        Top = 12
+        Width = 117
+        AutoFill = True
+        BorderSpacing.Bottom = 3
+        Caption = ' Ver bajas '
+        ChildSizing.LeftRightSpacing = 6
+        ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+        ChildSizing.EnlargeVertical = crsHomogenousChildResize
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 2
+        ClientHeight = 32
+        ClientWidth = 113
+        Columns = 2
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ItemIndex = 1
+        Items.Strings = (
+          'Si'
+          'No'
+        )
+        OnClick = RadioGroup_BajasClick
+        ParentFont = False
+        TabOrder = 1
+      end
+      object GroupBox_And_Or: TGroupBox
+        Left = 7
+        Height = 107
+        Top = 73
+        Width = 117
+        ClientHeight = 80
+        ClientWidth = 113
+        Enabled = False
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 2
+        object Radio_AND: TRadioButton
+          Left = 9
+          Height = 33
+          Top = 4
+          Width = 71
+          Caption = 'AND'
+          Checked = True
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 0
+          TabStop = True
+        end
+        object Radio_OR: TRadioButton
+          Left = 9
+          Height = 33
+          Top = 44
+          Width = 55
+          Caption = 'OR'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 1
+        end
+      end
+      object GroupBox_Not_Null: TGroupBox
+        Left = 132
+        Height = 107
+        Top = 73
+        Width = 117
+        ClientHeight = 80
+        ClientWidth = 113
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 3
+        object CheckBox_NOT: TCheckBox
+          Left = 9
+          Height = 33
+          Top = 4
+          Width = 70
+          Caption = 'NOT'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 0
+        end
+        object CheckBox_NULL: TCheckBox
+          Left = 9
+          Height = 33
+          Top = 44
+          Width = 84
+          Caption = 'NULL'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          OnChange = CheckBox_NULLChange
+          ParentFont = False
+          TabOrder = 1
+        end
+      end
+      object GroupBox_Operador: TGroupBox
+        Left = 258
+        Height = 168
+        Top = 12
+        Width = 177
+        Caption = ' Operador '
+        ClientHeight = 141
+        ClientWidth = 173
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 4
+        object Radio_Igual_A: TRadioButton
+          Left = 16
+          Height = 33
+          Top = 5
+          Width = 34
+          Caption = '='
+          Checked = True
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 0
+          TabStop = True
+        end
+        object Radio_Menor_Que: TRadioButton
+          Left = 16
+          Height = 33
+          Top = 35
+          Width = 34
+          Caption = '<'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 1
+        end
+        object Radio_Mayor_Que: TRadioButton
+          Left = 16
+          Height = 33
+          Top = 65
+          Width = 34
+          Caption = '>'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 2
+        end
+        object Radio_Distinto_De: TRadioButton
+          Left = 102
+          Height = 33
+          Top = 5
+          Width = 48
+          Caption = '<>'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 3
+        end
+        object Radio_Menor_Igual_Que: TRadioButton
+          Left = 102
+          Height = 33
+          Top = 35
+          Width = 48
+          Caption = '<='
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 4
+        end
+        object Radio_Mayor_Igual_Que: TRadioButton
+          Left = 102
+          Height = 33
+          Top = 65
+          Width = 48
+          Caption = '>='
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 5
+        end
+        object Panel1: TPanel
+          Left = 0
+          Height = 30
+          Top = 111
+          Width = 173
+          Align = alBottom
+          ClientHeight = 30
+          ClientWidth = 173
+          TabOrder = 6
+          object Radio_Contenga_Texto: TRadioButton
+            Left = 16
+            Height = 23
+            Top = 4
+            Width = 137
+            Caption = 'Contenga texto'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 0
+          end
+        end
+      end
+      object GroupBox_Contenido: TGroupBox
+        Left = 442
+        Height = 168
+        Top = 12
+        Width = 305
+        Caption = ' para buscar '
+        ClientHeight = 141
+        ClientWidth = 301
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 5
+        object Label_Fecha: TLabel
+          AnchorSideLeft.Control = DateEdit_Fecha_Contenido
+          AnchorSideBottom.Control = DateEdit_Fecha_Contenido
+          Left = 12
+          Height = 19
+          Top = 13
+          Width = 47
+          Anchors = [akLeft, akBottom]
+          Caption = 'Fecha'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DateEdit_Fecha_Contenido: TDateEdit
+          Left = 12
+          Height = 26
+          Top = 32
+          Width = 104
+          CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+          DateOrder = doDMY
+          ButtonWidth = 23
+          NumGlyphs = 1
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 10
+          ParentFont = False
+          TabOrder = 0
+          Text = '  /  /    '
+        end
+        object Label_Hora: TLabel
+          AnchorSideLeft.Control = MaskEdit_Hora_Contenido
+          AnchorSideBottom.Control = MaskEdit_Hora_Contenido
+          Left = 155
+          Height = 19
+          Top = 13
+          Width = 37
+          Anchors = [akLeft, akBottom]
+          Caption = 'Hora'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object MaskEdit_Hora_Contenido: TMaskEdit
+          Left = 155
+          Height = 26
+          Top = 32
+          Width = 88
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 8
+          ParentFont = False
+          TabOrder = 1
+          EditMask = '!99:99:99;1;_'
+          Text = '  :  :  '
+          SpaceChar = '_'
+        end
+        object Label_Contenido: TLabel
+          AnchorSideLeft.Control = Edit_Contenido
+          AnchorSideBottom.Control = Edit_Contenido
+          Left = 12
+          Height = 19
+          Top = 58
+          Width = 80
+          Anchors = [akLeft, akBottom]
+          Caption = 'Contenido'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Contenido: TEdit
+          Left = 12
+          Height = 26
+          Top = 77
+          Width = 272
+          Anchors = [akLeft]
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          TabOrder = 2
+        end
+        object CheckBox_Contenido: TCheckBox
+          Left = 146
+          Height = 23
+          Top = 118
+          Width = 134
+          Caption = 'Activado / True'
+          Checked = True
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          State = cbChecked
+          TabOrder = 3
+        end
+      end
+      object BitBtn_Ignorar: TBitBtn
+        Left = 534
+        Height = 30
+        Top = 188
+        Width = 105
+        Caption = '&Vaciar'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Kind = bkIgnore
+        OnClick = BitBtn_IgnorarClick
+        ParentFont = False
+        TabOrder = 6
+      end
+      object BitBtn_Add: TBitBtn
+        Left = 642
+        Height = 30
+        Top = 188
+        Width = 105
+        Caption = '&Añadir'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Kind = bkYesToAll
+        OnClick = BitBtn_AddClick
+        ParentFont = False
+        TabOrder = 7
+      end
+    end
+    object GroupBox1: TGroupBox
+      Left = 6
+      Height = 197
+      Top = 346
+      Width = 759
+      Caption = ' ORDENADO POR '
+      ClientHeight = 170
+      ClientWidth = 755
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      object GroupBox_ASC_DESC: TGroupBox
+        Left = 7
+        Height = 56
+        Top = 1
+        Width = 174
+        ClientHeight = 29
+        ClientWidth = 170
+        TabOrder = 0
+        object Radio_ASC: TRadioButton
+          Left = 0
+          Height = 33
+          Top = 2
+          Width = 70
+          BidiMode = bdRightToLeft
+          Caption = 'ASC'
+          Checked = True
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentBidiMode = False
+          ParentFont = False
+          TabOrder = 0
+          TabStop = True
+        end
+        object Radio_OR1: TRadioButton
+          Left = 79
+          Height = 33
+          Top = 2
+          Width = 86
+          Caption = 'DESC'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentBidiMode = False
+          ParentFont = False
+          TabOrder = 1
+        end
+      end
+      object BitBtn_Ignorar_OrderBy: TBitBtn
+        Left = 534
+        Height = 27
+        Top = 30
+        Width = 105
+        Caption = '&Vaciar'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Kind = bkIgnore
+        OnClick = BitBtn_Ignorar_OrderByClick
+        ParentFont = False
+        TabOrder = 1
+      end
+      object BitBtn_Add_OrderBy: TBitBtn
+        Left = 642
+        Height = 27
+        Top = 30
+        Width = 105
+        Caption = '&Añadir'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Kind = bkYesToAll
+        OnClick = BitBtn_Add_OrderByClick
+        ParentFont = False
+        TabOrder = 2
+      end
+      object Memo_OrderBy: TMemo
+        Left = 7
+        Height = 102
+        Top = 66
+        Width = 740
+        Color = clWhite
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ScrollBars = ssAutoBoth
+        TabOrder = 3
+      end
+      object ComboBox_Filtros: TComboBox
+        Left = 190
+        Height = 26
+        Top = 31
+        Width = 338
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ItemHeight = 18
+        OnChange = ComboBox_FiltrosChange
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 4
+      end
+      object Label_Fecha2: TLabel
+        AnchorSideLeft.Control = DateEdit_Fecha_Contenido
+        AnchorSideBottom.Control = DateEdit_Fecha_Contenido
+        Left = 189
+        Height = 19
+        Top = 11
+        Width = 160
+        Anchors = [akLeft, akBottom]
+        Caption = 'Cambiar el orden por'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+  end
+end

@@ -1,0 +1,1029 @@
+object Form_Estado_Registro: TForm_Estado_Registro
+  Left = 39
+  Height = 696
+  Top = -1
+  Width = 1266
+  ActiveControl = Edit_Motivo_Baja
+  BorderIcons = []
+  Caption = 'ESTADO DEL REGISTRO.-'
+  ClientHeight = 696
+  ClientWidth = 1266
+  Color = 9221227
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.6'
+  object GroupBox3: TGroupBox
+    Left = 26
+    Height = 67
+    Top = 148
+    Width = 594
+    Caption = ' ALTA '
+    ClientHeight = 46
+    ClientWidth = 590
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    object Label4: TLabel
+      Left = 11
+      Height = 13
+      Top = 5
+      Width = 53
+      Caption = 'FECHA'
+      Color = 9221227
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold, fsItalic]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Label7: TLabel
+      Left = 130
+      Height = 13
+      Top = 5
+      Width = 69
+      Caption = 'USUARIO'
+      Color = 9221227
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold, fsItalic]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Edit_Usuario_Alta: TEdit
+      Left = 130
+      Height = 21
+      Top = 17
+      Width = 452
+      Color = 7001047
+      Font.Color = clRed
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      MaxLength = 255
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object Edit_Fecha_Alta: TEdit
+      Left = 11
+      Height = 21
+      Top = 17
+      Width = 114
+      Color = 7001047
+      Font.Color = clRed
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      MaxLength = 255
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 26
+    Height = 67
+    Top = 223
+    Width = 594
+    Caption = ' ULTIMA MODIFICACION '
+    ClientHeight = 46
+    ClientWidth = 590
+    Color = 9221227
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    object Label5: TLabel
+      Left = 11
+      Height = 13
+      Top = 5
+      Width = 53
+      Caption = 'FECHA'
+      Color = 9221227
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold, fsItalic]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Label6: TLabel
+      Left = 130
+      Height = 13
+      Top = 5
+      Width = 69
+      Caption = 'USUARIO'
+      Color = 9221227
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold, fsItalic]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Edit_Usuario_Ult_Modificacion: TEdit
+      Left = 130
+      Height = 21
+      Top = 17
+      Width = 452
+      Color = 7001047
+      Font.Color = clRed
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      MaxLength = 255
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object Edit_Fecha_Ult_Modificacion: TEdit
+      Left = 11
+      Height = 21
+      Top = 17
+      Width = 114
+      Color = 7001047
+      Font.Color = clRed
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      MaxLength = 255
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 26
+    Height = 104
+    Top = 312
+    Width = 594
+    Caption = ' BAJA '
+    ClientHeight = 83
+    ClientWidth = 590
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 11
+      Height = 13
+      Top = 5
+      Width = 61
+      Caption = 'MOTIVO'
+      Color = 9221227
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold, fsItalic]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Label2: TLabel
+      Left = 11
+      Height = 13
+      Top = 43
+      Width = 53
+      Caption = 'FECHA'
+      Color = 9221227
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold, fsItalic]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Label3: TLabel
+      Left = 130
+      Height = 13
+      Top = 43
+      Width = 69
+      Caption = 'USUARIO'
+      Color = 9221227
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold, fsItalic]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Edit_Usuario_Baja: TEdit
+      Left = 130
+      Height = 21
+      Top = 55
+      Width = 452
+      Color = 7001047
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      MaxLength = 255
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object Edit_Motivo_Baja: TEdit
+      Left = 11
+      Height = 21
+      Top = 17
+      Width = 571
+      Color = clWhite
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      MaxLength = 255
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Edit_Fecha_Baja: TEdit
+      Left = 11
+      Height = 21
+      Top = 55
+      Width = 115
+      Color = 7001047
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      MaxLength = 255
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 2
+    end
+  end
+  object ButtonPanel_Estado_Registro: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 1254
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 3
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object GroupBox4: TGroupBox
+    Left = 643
+    Height = 521
+    Top = 142
+    Width = 593
+    Caption = ' HISTORICO '
+    ClientHeight = 487
+    ClientWidth = 589
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+    object BitBtn_Filtrar: TBitBtn
+      Left = 11
+      Height = 98
+      Hint = 'Filtrar'
+      Top = 5
+      Width = 60
+      BorderSpacing.Bottom = 3
+      Font.Color = clBlack
+      Font.Height = -12
+      Font.Name = 'Times New Roman'
+      Glyph.Data = {
+        F6060000424DF606000000000000360000002800000018000000180000000100
+        180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF02558E0B5B
+        890B669802558EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        086EA919749C0505050202020D344605649DFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FF02558E1597D523BDFE3C7A88EEB47A664F3A00000016475FFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FF035B930973AF23BDFE23BDFE3C7A88FFBF81FFBF8134291F0A
+        0D0F176A9DFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FF004B820E81BD23BDFE0E81BD24BDFE30C1FE3A8EADEEB4
+        7AFFBF81987452020202417EA0FF00FFFF00FF00386C186C9F004B82FF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FF05649D1AA6E523BDFE26BFFE137DB658CEFF
+        7AD8FF99E0FF97846CFFBF81BF9167020202377598004B822C81B14A87A40B0D
+        0F0D1F2905578BFF00FFFF00FFFF00FFFF00FF0973AF23BDFE2AC0FE41C7FE64
+        D0FF2B84B696D9F7C2EDFFDCF4FFE1EAEF907F6C694F371D34402076A768C5EE
+        60D0FF437481866749010101071924004B82FF00FF02558E096CA631C2FE4DCA
+        FE6FD4FF90DDFFAFE7FFABD8EE3E86AFF2FBFFEBF8FFD3F2FFA9DEF74392BF05
+        7EB23DB1E637C4FE27BFFE3C7A88FFBF8152402E010101044169055D961F93CE
+        359ACE7AD8FF9AE1FFB8EAFFD4F2FFEAF8FFF2FBFF1B86B41984B44BA5CC2D84
+        B4046FA400588F0198CB1CA6E523BDFE23BDFE1C84ACEEB47ABF91670000000D
+        5882004B827BD1F72376A7C2EDFFDDF4FFEFFAFFEFFAFFDCF4FFBFEBFF77C2E6
+        0D84B80189BD0179AF0198CB006BA10193C613A5E123BDFE23BDFE23BDFE6D7A
+        6CBF91670000000B527B004B82CBEFFF6AA5C6609DBFEBF8FFD1F0FFB4E7FF95
+        DEFF75D5FF55CCFF36C4FE0E8BC7015A92017FB4006298018EC10388BF23BDFE
+        23BDFE23BDFE23B2EE3B666C02203102558E004B8272A9C6C2E0EE1767981365
+        9849A1CE46A6D549C9FE2FC1FE24BDFE23BDFE23BDFE1FB6F60E86C20277AD01
+        89BD018EC10A91CA1FB6F60F96D40679B5005B9500386CFF00FFFF00FF004B82
+        004B82FF00FFFF00FF04568E158AC51390CE1390CE1FB6F623BDFE23BDFE23BD
+        FE23BDFE1FB6F61390CE005187005B8F00386CFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF04629A1597D50973AF
+        0E81BD0A88C40679B501659E00518800386CFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FF005991016099004A80FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      }
+      OnClick = BitBtn_FiltrarClick
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object Memo_Filtros: TMemo
+      Left = 74
+      Height = 46
+      Top = 16
+      Width = 502
+      Color = 7001047
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 1
+    end
+    object Memo_OrderBy: TMemo
+      Left = 74
+      Height = 30
+      Top = 71
+      Width = 502
+      Color = 7001047
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -11
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 2
+    end
+    object DBGrid_Principal1: TDBGrid
+      Left = 11
+      Height = 124
+      Top = 104
+      Width = 565
+      Anchors = [akLeft]
+      BorderSpacing.Top = 4
+      Color = 7001047
+      Columns = <      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'Usuario'
+          Width = 300
+          FieldName = 'OT_Descripcion_Nick_Calc'
+        end      
+        item
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Title.Alignment = taCenter
+          Title.Caption = 'Cambiado el'
+          Width = 180
+          FieldName = 'Momento'
+        end      
+        item
+          Title.Caption = 'Term'
+          Width = 50
+          FieldName = 'id_terminales'
+        end>
+      DataSource = DataSource_users_row_changes
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection]
+      ParentFont = False
+      Scrollbars = ssAutoBoth
+      TabOrder = 3
+      TitleFont.CharSet = ANSI_CHARSET
+      TitleFont.Color = clBlack
+      TitleFont.Height = -16
+      TitleFont.Name = 'Arial'
+      TitleFont.Pitch = fpVariable
+      TitleFont.Quality = fqDraft
+      TitleFont.Style = [fsBold]
+    end
+    object DBNavigator1: TDBNavigator
+      AnchorSideTop.Side = asrBottom
+      Left = 11
+      Height = 38
+      Top = 226
+      Width = 157
+      BeforeAction = DBNavigator1BeforeAction
+      BevelOuter = bvNone
+      BorderSpacing.Top = 4
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 38
+      ClientWidth = 157
+      DataSource = DataSource_users_row_changes
+      Options = []
+      TabOrder = 4
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+    end
+    object DBGrid_Principal2: TDBGrid
+      Left = 180
+      Height = 128
+      Top = 248
+      Width = 396
+      Anchors = [akLeft]
+      BorderSpacing.Top = 4
+      Color = 7001047
+      Columns = <      
+        item
+          Title.Caption = 'Campo'
+          Width = 357
+          FieldName = 'Campo_Nombre'
+        end>
+      DataSource = DataSource_users_row_changes_fields
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection]
+      ParentFont = False
+      Scrollbars = ssAutoBoth
+      TabOrder = 5
+      TitleFont.CharSet = ANSI_CHARSET
+      TitleFont.Color = clBlack
+      TitleFont.Height = -16
+      TitleFont.Name = 'Arial'
+      TitleFont.Pitch = fpVariable
+      TitleFont.Quality = fqDraft
+      TitleFont.Style = [fsBold]
+    end
+    object DBNavigator2: TDBNavigator
+      AnchorSideTop.Side = asrBottom
+      Left = 392
+      Height = 20
+      Top = 249
+      Width = 159
+      BeforeAction = DBNavigator2BeforeAction
+      BevelOuter = bvNone
+      BorderSpacing.Top = 4
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 20
+      ClientWidth = 159
+      DataSource = DataSource_users_row_changes_fields
+      Options = []
+      TabOrder = 6
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+    end
+    object DBMemo1: TDBMemo
+      Left = 11
+      Height = 43
+      Top = 383
+      Width = 565
+      Color = 7001047
+      DataField = 'Campo_Valor_OLD'
+      DataSource = DataSource_users_row_changes_fields
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 7
+    end
+    object Label8: TLabel
+      Left = 180
+      Height = 20
+      Top = 230
+      Width = 201
+      Caption = 'CAMBIOS REALIZADOS'
+      Color = 9221227
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Label10: TLabel
+      Left = 11
+      Height = 20
+      Top = 364
+      Width = 124
+      Caption = 'VALOR ANTES'
+      Color = 9221227
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object Label11: TLabel
+      Left = 11
+      Height = 20
+      Top = 428
+      Width = 129
+      Caption = 'VALOR AHORA'
+      Color = 9221227
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object DBMemo2: TDBMemo
+      Left = 11
+      Height = 43
+      Top = 447
+      Width = 565
+      Color = 7001047
+      DataField = 'Campo_Valor'
+      DataSource = DataSource_users_row_changes_fields
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 8
+    end
+    object Label12: TLabel
+      Left = 74
+      Height = 11
+      Top = 5
+      Width = 91
+      Caption = 'Último filtro general'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -9
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label13: TLabel
+      Left = 74
+      Height = 11
+      Top = 61
+      Width = 64
+      Caption = 'Ordenado por'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -9
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object Label9: TLabel
+    Left = 26
+    Height = 22
+    Top = -125
+    Width = 78
+    Anchors = [akLeft, akBottom]
+    Caption = 'Registro'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object GroupBox5: TGroupBox
+    Left = 26
+    Height = 90
+    Top = 48
+    Width = 1210
+    Caption = ' REGISTRO A COMPROBAR '
+    ClientHeight = 69
+    ClientWidth = 1206
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 5
+    object DBGrid_Principal: TDBGrid
+      Left = 11
+      Height = 74
+      Top = -4
+      Width = 1181
+      Anchors = [akLeft]
+      BorderSpacing.Top = 4
+      Color = 13290239
+      Columns = <>
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Options = [dgTitles, dgIndicator, dgRowLines, dgTabs, dgAlwaysShowSelection]
+      ParentFont = False
+      ReadOnly = True
+      Scrollbars = ssHorizontal
+      TabOrder = 0
+      TitleFont.CharSet = ANSI_CHARSET
+      TitleFont.Color = clBlack
+      TitleFont.Height = -16
+      TitleFont.Name = 'Arial'
+      TitleFont.Pitch = fpVariable
+      TitleFont.Quality = fqDraft
+      TitleFont.Style = [fsBold]
+      OnKeyDown = DBGrid_PrincipalKeyDown
+    end
+  end
+  object SQLQuery_users_row_changes: TSQLQuery
+    PacketRecords = 20
+    FieldDefs = <    
+      item
+        Name = 'tb'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Momento'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Id_Users'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_terminales'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'OT_Descripcion_Nick'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end>
+    AfterScroll = SQLQuery_users_row_changesAfterScroll
+    OnCalcFields = SQLQuery_users_row_changesCalcFields
+    Database = DataModule_historico_registros.SQLConnector
+    Transaction = DataModule_historico_registros.SQLTransaction
+    SQL.Strings = (
+      'SELECT r.*,'
+      '       u.Descripcion_Nick AS OT_Descripcion_Nick'
+      ''
+      'FROM users_row_changes AS r'
+      ''
+      'LEFT JOIN users AS u'
+      'ON r.Id_Users = u.id'
+      ''
+    )
+    InsertSQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 760
+    top = 295
+    object SQLQuery_users_row_changestb: TStringField
+      DisplayWidth = 150
+      FieldKind = fkData
+      FieldName = 'tb'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 150
+    end
+    object SQLQuery_users_row_changesid: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_users_row_changesMomento: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Momento'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_users_row_changesId_Users: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Id_Users'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_users_row_changesid_terminales: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'id_terminales'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_users_row_changesOT_Descripcion_Nick: TStringField
+      DisplayWidth = 450
+      FieldKind = fkData
+      FieldName = 'OT_Descripcion_Nick'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+    object SQLQuery_users_row_changesOT_Descripcion_Nick_Calc1: TStringField
+      DisplayWidth = 150
+      FieldKind = fkCalculated
+      FieldName = 'OT_Descripcion_Nick_Calc'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 150
+    end
+  end
+  object DataSource_users_row_changes: TDataSource
+    DataSet = SQLQuery_users_row_changes
+    left = 1000
+    top = 328
+  end
+  object SQLQuery_users_row_changes_fields: TSQLQuery
+    PacketRecords = 20
+    FieldDefs = <    
+      item
+        Name = 'tb'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'id'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Momento'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'Id_Users'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'id_terminales'
+        DataType = ftLargeint
+        Precision = -1
+      end    
+      item
+        Name = 'Campo_Nombre'
+        DataType = ftString
+        Precision = -1
+        Size = 765
+      end    
+      item
+        Name = 'Campo_Valor'
+        DataType = ftString
+        Precision = -1
+        Size = 24000
+      end    
+      item
+        Name = 'Campo_Valor_OLD'
+        DataType = ftString
+        Precision = -1
+        Size = 24000
+      end    
+      item
+        Name = 'OT_Descripcion_Nick'
+        DataType = ftString
+        Precision = -1
+        Size = 450
+      end>
+    Database = DataModule_historico_registros.SQLConnector1
+    Transaction = DataModule_historico_registros.SQLTransaction1
+    SQL.Strings = (
+      'SELECT rf.*,'
+      '       u.Descripcion_Nick AS OT_Descripcion_Nick'
+      'FROM users_row_changes_fields rf'
+      'LEFT JOIN users u'
+      'ON rf.Id_Users = u.id'
+      'WHERE rf.Momento = "2018-01-29 18:29:47"'
+      'AND rf.Id_Users = 0'
+      'AND rf.id = 3'
+      'AND rf.tb = "clientes"'
+      'ORDER BY rf.tb ASC,'
+      '         rf.id ASC,'
+      '         rf.Momento ASC,'
+      '         rf.Id_Users ASC,'
+      '         rf.Campo_Nombre ASC'
+    )
+    InsertSQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 856
+    top = 455
+    object SQLQuery_users_row_changes_fieldstb: TStringField
+      FieldKind = fkData
+      FieldName = 'tb'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 150
+    end
+    object SQLQuery_users_row_changes_fieldsid: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_users_row_changes_fieldsMomento: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'Momento'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_users_row_changes_fieldsId_Users: TLargeintField
+      FieldKind = fkData
+      FieldName = 'Id_Users'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_users_row_changes_fieldsid_terminales: TLargeintField
+      FieldKind = fkData
+      FieldName = 'id_terminales'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object SQLQuery_users_row_changes_fieldsCampo_Nombre: TStringField
+      FieldKind = fkData
+      FieldName = 'Campo_Nombre'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 765
+    end
+    object SQLQuery_users_row_changes_fieldsCampo_Valor: TStringField
+      FieldKind = fkData
+      FieldName = 'Campo_Valor'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 24000
+    end
+    object SQLQuery_users_row_changes_fieldsCampo_Valor_OLD: TStringField
+      FieldKind = fkData
+      FieldName = 'Campo_Valor_OLD'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 24000
+    end
+    object SQLQuery_users_row_changes_fieldsOT_Descripcion_Nick: TStringField
+      FieldKind = fkData
+      FieldName = 'OT_Descripcion_Nick'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 450
+    end
+  end
+  object DataSource_users_row_changes_fields: TDataSource
+    DataSet = SQLQuery_users_row_changes_fields
+    left = 1000
+    top = 480
+  end
+end

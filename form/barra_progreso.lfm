@@ -1,0 +1,19 @@
+object form_barra_progreso: Tform_barra_progreso
+  Left = 663
+  Height = 73
+  Top = 189
+  Width = 320
+  Caption = 'Ejecutándose'
+  ClientHeight = 73
+  ClientWidth = 320
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object ProgressBar_Principal: TProgressBar
+    Left = 0
+    Height = 73
+    Top = 0
+    Width = 320
+    Align = alClient
+    TabOrder = 0
+  end
+end

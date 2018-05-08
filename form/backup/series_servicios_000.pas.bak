@@ -1,0 +1,650 @@
+unit series_servicios_000;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, DBDateTimePicker, Forms, Controls, Graphics, Dialogs, ExtCtrls, Grids,
+  StdCtrls, Buttons, ComCtrls, ButtonPanel, DbCtrls, DBGrids, plantilla_000, types, sqldb, db,
+  variants, utilidades_datos_tablas, utilidades_forms_Filtrar, utilidades_general, utilidades_bd,
+  utilidades_rgtro, utilidades_usuarios, utilidades_contabilidad;
+
+resourcestring
+  rs_sries_serv_001 = 'Mantenimiento de series para servicios';
+  rs_sries_serv_002 = 'Por serie + empresa';
+  rs_sries_serv_003 = 'Por la descripción';
+  rs_sries_serv_004 = '* La descripción';
+  rs_sries_serv_005 = '* El código';
+  rs_sries_serv_006 = '* El inicio(desde) del periodo';
+  rs_sries_serv_007 = '* La empresa';
+  rs_sries_serv_008 = '* El tipo de diario';
+  rs_sries_serv_009 = ', con descripción = %';
+  rs_sries_serv_010 = ', con código = ';
+  rs_sries_serv_011 = ', con empresa = ';
+  rs_sries_serv_012 = ', con tipo de diario = ';
+
+type
+
+  { Tform_series_servicios_000 }
+
+  Tform_series_servicios_000 = class(Tform_plantilla_000)
+    BitBtn_Elegir_Empresa: TBitBtn;
+    BitBtn_Elegir_TipoDiario: TBitBtn;
+    BitBtn_filtro_empresa: TBitBtn;
+    BitBtn_filtro_Tipo_Diario: TBitBtn;
+    DBDateTimePicker_DesdeFecha: TDBDateTimePicker;
+    DBDateTimePicker_HastaFecha: TDBDateTimePicker;
+    DBEdit_Descripcion: TDBEdit;
+    DBEdit_serie_codigo: TDBEdit;
+    DBEdit_numero_siguiente: TDBEdit;
+    Edit_Descripcion_Empresa: TEdit;
+    Edit_Descripcion_TipoDiario: TEdit;
+    Edit_filtro_Codigo: TEdit;
+    Edit_filtro_Descripcion: TEdit;
+    Edit_filtro_descripcion_empresa: TEdit;
+    Edit_filtro_descripcion_Tipo_Diario: TEdit;
+    Edit_filtro_id_empresas: TEdit;
+    Edit_filtro_id_Tipo_Diario: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label46: TLabel;
+    Label47: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label61: TLabel;
+    Label63: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Panel_1: TPanel;
+    Panel_2: TPanel;
+    Panel_3: TPanel;
+    SQLQuery_PrincipalChange_Id_User: TLargeintField;
+    SQLQuery_PrincipalChange_WHEN: TDateTimeField;
+    SQLQuery_PrincipalDel_Id_User: TLargeintField;
+    SQLQuery_PrincipalDel_WHEN: TDateTimeField;
+    SQLQuery_PrincipalDel_WHY: TStringField;
+    SQLQuery_Principaldescripcion: TStringField;
+    SQLQuery_Principaldesde_fecha: TDateTimeField;
+    SQLQuery_Principalhasta_fecha: TDateTimeField;
+    SQLQuery_Principalid_diarios_tipos: TLargeintField;
+    SQLQuery_Principalid_empresas: TLargeintField;
+    SQLQuery_PrincipalInsert_Id_User: TLargeintField;
+    SQLQuery_PrincipalInsert_WHEN: TDateTimeField;
+    SQLQuery_Principalnumero_siguiente: TLargeintField;
+    SQLQuery_PrincipalOT_descripcion_diarios_tipos: TStringField;
+    SQLQuery_PrincipalOT_descripcion_empresa: TStringField;
+    SQLQuery_Principalserie_codigo: TStringField;
+    SQLQuery_Principalsubcuenta_ventas: TStringField;
+
+    procedure BitBtn_Elegir_EmpresaClick(Sender: TObject);
+    procedure BitBtn_Elegir_TipoDiarioClick(Sender: TObject);
+    procedure BitBtn_filtro_empresaClick(Sender: TObject);
+    procedure BitBtn_filtro_Tipo_DiarioClick(Sender: TObject);
+    procedure DBGrid_PrincipalDrawColumnCell(Sender: TObject;
+      const Rect: TRect; DataCol: Integer; Column: TColumn;
+      State: TGridDrawState);
+    procedure Edit_Descripcion_EmpresaClick(Sender: TObject);
+
+    procedure que_Hacer_para_un_Insert; override;
+    function  Antes_de_hacer_Post_tabla_Principal : Boolean; override;
+    procedure Edit_Descripcion_TipoDiarioClick(Sender: TObject);
+    procedure Edit_filtro_descripcion_empresaClick(Sender: TObject);
+    procedure Edit_filtro_descripcion_Tipo_DiarioClick(Sender: TObject);
+    procedure Filtrar_tablas_ligadas_II( var p_Lineas_Filtro : TStrings; var p_Lineas_OrderBy : TStrings ); override;
+    procedure Cambiar_Nombre_Tabla_Principal; override;
+    procedure Cambiar_Titulo_Form; override;
+    procedure Rellenar_Filtros_Impresion(var p_Ordenado_por : String); override;
+    procedure Crear_tipos_orden_Principal; override;
+    procedure Crear_tipos_orden_TablasLigadas; override;
+    procedure Refrescar_Registros; override;
+    procedure Refrescar_Registros_TablasLigadas; override;
+    procedure Tabla_Principal_que_Filtrar( var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
+    procedure Presentar_Datos; override;
+    procedure Presentar_Datos_GroupBox_Registro; override;
+    procedure para_Empezar_GroupBox_Registro; override;
+    function  SeCambioAlgoEnRgtro : Boolean; override;
+    procedure Cambiar_WindowState; override;
+    procedure Abrir_Conexiones_con_BD_II; override;
+    procedure Cerramos_Tablas_Ligadas; override;
+    procedure Borrar_Registro; override;
+    procedure falta_algo_por_completar_II(p_msg : TStrings); override;
+    procedure Dibujar_Grid_Principal( p_Sender: TObject; const p_Rect: TRect; p_DataCol: Integer; p_Column: TColumn; p_State: TGridDrawState ); override;
+
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  form_series_servicios_000: Tform_series_servicios_000;
+
+implementation
+
+{$R *.lfm}
+
+uses menu;
+
+{ Tform_series_servicios_000 }
+
+procedure Tform_series_servicios_000.BitBtn_Elegir_EmpresaClick(Sender: TObject);
+var var_Registro : TRecord_Rgtro_Comun;
+begin
+  with SQLQuery_Principal do
+  begin
+    var_Registro := UTI_Abrir_Form( true, false, '', 250 );
+    if var_Registro.id_1 <> '' then
+    begin
+      FieldByName('id_empresas').AsString := Trim(var_Registro.id_1);
+      Edit_Descripcion_Empresa.Text       := var_Registro.descripcion_1;
+    end;
+  end;
+end;
+
+procedure Tform_series_servicios_000.BitBtn_filtro_empresaClick(Sender: TObject);
+var v_Registro : TRecord_Rgtro_Comun;
+begin
+  v_Registro := UTI_Abrir_Form( true, false, '', 250 );
+  if v_Registro.id_1 <> '' then
+  begin
+    Edit_filtro_id_empresas.Text         := Trim(v_Registro.id_1);
+    Edit_filtro_descripcion_empresa.Text := v_Registro.descripcion_1;
+  end;
+end;
+
+procedure Tform_series_servicios_000.Edit_Descripcion_EmpresaClick(Sender: TObject);
+var var_msg : TStrings;
+begin
+  var_msg := TStringList.Create;
+  var_msg.Add('¿QUITAMOS la EMPRESA?');
+
+  if UTI_GEN_Aviso(true, var_msg, rs_OK, True, True) = true then
+  begin
+    SQLQuery_Principal.FieldByName('id_empresas').Clear;
+    Edit_Descripcion_Empresa.Text := '';
+  end;
+
+  var_msg.Free;
+end;
+
+procedure Tform_series_servicios_000.Edit_filtro_descripcion_empresaClick(Sender: TObject);
+begin
+  Edit_filtro_id_empresas.Text         := '';
+  Edit_filtro_descripcion_empresa.Text := '';
+end;
+
+procedure Tform_series_servicios_000.Filtrar_tablas_ligadas_II( var p_Lineas_Filtro : TStrings;
+                                                                var p_Lineas_OrderBy : TStrings );
+begin
+  // *********************************************************************************************** //
+  // ** no hay tablas ligadas                                                                     ** //
+  // *********************************************************************************************** //
+end;
+
+procedure Tform_series_servicios_000.Cambiar_Nombre_Tabla_Principal;
+begin
+  pubic_nombre_tabla_Principal := 'series_servicios';
+end;
+
+procedure Tform_series_servicios_000.Cambiar_Titulo_Form;
+begin
+  Self.Caption := rs_sries_serv_001;
+end;
+
+procedure Tform_series_servicios_000.Crear_tipos_orden_Principal;
+begin
+  SetLength(public_Order_By, 2);
+
+  public_Order_By[0].Titulo       := rs_sries_serv_002; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  public_Order_By[0].Memo_OrderBy := 'ss.serie_codigo ASC, ss.id_empresas ASC';
+
+  public_Order_By[1].Titulo       := rs_sries_serv_003;
+  public_Order_By[1].Memo_OrderBy := 'ss.descripcion ASC';
+
+  Memo_OrderBy.Lines.Text         := public_Order_By[0].Memo_OrderBy;
+
+  UTI_TB_Rellenar_ComboBox_Orden( true,
+                                  ComboBox_Filtros,
+                                  public_Order_By,
+                                  0 );
+end;
+
+procedure Tform_series_servicios_000.Crear_tipos_orden_TablasLigadas;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // Tabla ligada 001
+  SetLength(private_Order_By_TablaLigada001, 1);
+
+  private_Order_By_TablaLigada001[0].Titulo       := 'Por la id del impuesto'; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  private_Order_By_TablaLigada001[0].Memo_OrderBy := 'ic.id_impuestos_al_que_pertenece ASC, ic.id_impuestos ASC';
+
+  // Tabla ligada 002
+  SetLength(private_Order_By_TablaLigada002, 1);
+
+  private_Order_By_TablaLigada002[0].Titulo       := 'Por la id del impuesto'; // El índice 0 siempre será por el que empezará la aplicación y los filtros
+  private_Order_By_TablaLigada002[0].Memo_OrderBy := 'ic.id_impuestos_al_que_pertenece ASC, ic.id_impuestos ASC';
+  }
+end;
+
+procedure Tform_series_servicios_000.Refrescar_Registros;
+var v_serie_codigo : String;
+    v_id_empresas  : Integer;
+begin
+  // *********************************************************************************************** //
+  // ** OJITO ... NO USAR CAMPOS AUTOINCREMENTABLES                                               ** //
+  // *********************************************************************************************** //
+  v_serie_codigo := '';
+  v_id_empresas  := 0;
+
+  if SQLQuery_Principal.RecordCount > 0 then
+  begin
+    v_serie_codigo := SQLQuery_Principal.FieldByName('serie_codigo').Value;
+    v_id_empresas  := SQLQuery_Principal.FieldByName('id_empresas').Value;
+  end;
+
+  Filtrar_Principal_Sin_Preguntar;
+
+  if Trim(v_serie_codigo) <> '' then
+  begin
+    SQLQuery_Principal.Locate( 'serie_codigo;id_empresas',
+                               VarArrayOf( [ v_serie_codigo, v_id_empresas ] ),
+                               [] );
+  end;
+
+end;
+
+procedure Tform_series_servicios_000.Refrescar_Registros_TablasLigadas;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  Refrescar_Tabla_001;
+  Refrescar_Tabla_002;
+  Refrescar_Tabla_003;
+  }
+end;
+
+procedure Tform_series_servicios_000.Tabla_Principal_que_Filtrar( var p_Registro_CRUD : TRegistro_CRUD;
+                                                                  var p_ctdad_Rgtros  : Integer;
+                                                                  var p_a_Filtrar     : TStrings );
+begin
+  p_Registro_CRUD := UTI_DATOS_TABLA_series_servicios_CRUD(SQLQuery_Principal);
+  p_ctdad_Rgtros  := -1;
+
+  // ********************************************************************************************* //
+  // ** AHORA PONDREMOS EL RESTO DE LOS FILTROS QUE NO SON GENERALES                            ** //
+  // ********************************************************************************************* //
+
+  if Trim(Edit_filtro_Descripcion.Text) <> '' then
+  begin
+    UTI_RGTRO_Add_to_Where( false,
+                            p_a_Filtrar,
+                            'ss.descripcion LIKE ' +
+                            UTI_GEN_Comillas('%' + Trim(Edit_filtro_Descripcion.Text) + '%') );
+  end;
+
+  if Trim(Edit_filtro_Codigo.Text) <> '' then
+  begin
+    UTI_RGTRO_Add_to_Where( false,
+                            p_a_Filtrar,
+                            'ss.serie_codigo LIKE ' +
+                            UTI_GEN_Comillas( Trim(Edit_filtro_Codigo.Text) + '%') );
+  end;
+
+  if Trim(Edit_filtro_id_empresas.Text) <> '' then
+  begin
+    UTI_RGTRO_Add_to_Where( false,
+                            p_a_Filtrar,
+                            'ss.id_empresas = ' + Trim(Edit_filtro_id_empresas.Text) );
+  end;
+
+  if Trim(Edit_filtro_id_Tipo_Diario.Text) <> '' then
+  begin
+    UTI_RGTRO_Add_to_Where( false,
+                            p_a_Filtrar,
+                            'ss.id_diarios_tipos = ' + Trim(Edit_filtro_id_Tipo_Diario.Text) );
+  end;
+
+end;
+
+procedure Tform_series_servicios_000.Presentar_Datos;
+begin
+  // *********************************************************************************************** //
+  // ** En el Panel_Barra_Superior                                                                ** //
+  // *********************************************************************************************** //
+
+  // *********************************************************************************************** //
+  // ** En el TabSheet_Busqueda_Concreta                                                          ** //
+  // *********************************************************************************************** //
+
+  // *********************************************************************************************** //
+  // ** En el GroupBox_Grid                                                                       ** //
+  // *********************************************************************************************** //
+
+  // *********************************************************************************************** //
+  // ** En el GroupBox_Registro                                                                   ** //
+  // *********************************************************************************************** //
+  Presentar_Datos_GroupBox_Registro;
+end;
+
+procedure Tform_series_servicios_000.Presentar_Datos_GroupBox_Registro;
+begin
+  with SQLQuery_Principal do
+  begin
+    if RecordCount > 0 then
+    begin
+      Edit_Descripcion_Empresa.Text    := fieldByName('OT_descripcion_empresa').asString;
+      Edit_Descripcion_TipoDiario.Text := fieldByName('OT_descripcion_diarios_tipos').asString;
+    end;
+  end;
+end;
+
+procedure Tform_series_servicios_000.para_Empezar_GroupBox_Registro;
+begin
+  with SQLQuery_Principal do
+  begin
+    public_Record_Rgtro := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                       FieldByName('id_empresas').AsString,
+                                                       FieldByName('subcuenta_ventas').AsString,
+                                                       FieldByName('descripcion').AsString,
+                                                       FieldByName('serie_codigo').AsString,
+                                                       FieldByName('numero_siguiente').AsString );
+  end;
+
+  Presentar_Datos_GroupBox_Registro;
+end;
+
+function Tform_series_servicios_000.SeCambioAlgoEnRgtro : Boolean;
+begin
+  Result := true;
+
+  with SQLQuery_Principal do
+  begin
+    if falta_algo_por_completar = false then
+    begin
+      if State = dsEdit then
+      begin
+        Result := false;
+        if (Trim(Params.ParamByName('COPY_' + 'id_diarios_tipos').AsString) <> Trim(FieldByName('id_diarios_tipos').AsString)) or
+           (Trim(Params.ParamByName('COPY_' + 'descripcion').AsString)      <> Trim(FieldByName('descripcion').AsString))      or
+           (Trim(Params.ParamByName('COPY_' + 'id_empresas').AsString)      <> Trim(FieldByName('id_empresas').AsString))      or
+           (Trim(Params.ParamByName('COPY_' + 'serie_codigo').AsString)     <> Trim(FieldByName('serie_codigo').AsString))     or
+           (Trim(Params.ParamByName('COPY_' + 'numero_siguiente').AsString) <> Trim(FieldByName('numero_siguiente').AsString)) or
+           (Trim(Params.ParamByName('COPY_' + 'desde_fecha').AsString)      <> Trim(FieldByName('desde_fecha').AsString))      or
+           (Trim(Params.ParamByName('COPY_' + 'hasta_fecha').AsString)      <> Trim(FieldByName('hasta_fecha').AsString))      or
+           (Trim(Params.ParamByName('COPY_' + 'subcuenta_ventas').AsString) <> Trim(FieldByName('subcuenta_ventas').AsString)) then
+        begin
+          Result := true;
+        end;
+      end;
+    end
+    else
+    begin
+      Result := false;
+    end;
+  end;
+end;
+
+procedure Tform_series_servicios_000.Cambiar_WindowState;
+begin
+  Self.WindowState := wsNormal; // Puede ser wsNormal, wsFullScreen, wsMaximized o wsMinimized
+end;
+
+procedure Tform_series_servicios_000.Abrir_Conexiones_con_BD_II;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  Abrir_Conexion_con_BD( SQLTransaction_TablaHija001, SQLConnector_TablaHija001);
+  Abrir_Conexion_con_BD( SQLTransaction_TablaHija002, SQLConnector_TablaHija002);
+  }
+end;
+
+procedure Tform_series_servicios_000.Cerramos_Tablas_Ligadas;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  Cerrar_Tabla( SQLConnector_Tabla001,
+                SQLTransaction_Tabla001,
+                SQLQuery_Tabla001 );
+  }
+end;
+
+procedure Tform_series_servicios_000.Borrar_Registro;
+begin
+  if UTI_USR_Permiso_SN(public_Menu_Worked, 'B', True) = True then
+  begin
+    UTI_RGTRO_Borrar( pubic_nombre_tabla_Principal,
+                      SQLQuery_Principal,
+                      public_Solo_Ver,
+                      public_Menu_Worked );
+  end;
+end;
+
+procedure Tform_series_servicios_000.Dibujar_Grid_Principal( p_Sender: TObject;
+                                                             const p_Rect: TRect;
+                                                             p_DataCol: Integer;
+                                                             p_Column: TColumn;
+                                                             p_State: TGridDrawState );
+begin
+  UTI_GEN_Dibujar_Grid( p_Sender, SQLQuery_Principal, p_Rect, p_DataCol, p_Column, p_State );
+end;
+
+procedure Tform_series_servicios_000.Rellenar_Filtros_Impresion(var p_Ordenado_por : String);
+begin
+  // ********************************************************************************************* //
+  // ** Configuramos el título del listado                                                      ** //
+  // ********************************************************************************************* //
+  p_Ordenado_por := rs_Filtros_Otros_1 +
+                    Trim(ComboBox_Filtros.Text);
+
+  if Trim(Memo_Filtros.Lines.Text) <> '' then
+  begin
+    p_Ordenado_por := p_Ordenado_por +
+                      rs_Filtros_Otros_2 +
+                      Trim(Memo_Filtros.Lines.Text);
+  end;
+
+  if Trim(Edit_filtro_Descripcion.Text) <> '' then
+  begin
+    p_Ordenado_por := p_Ordenado_por +
+                      rs_sries_serv_009 +
+                      Trim(Edit_filtro_Descripcion.Text) + '%';
+  end;
+
+  if Trim(Edit_filtro_Codigo.Text) <> '' then
+  begin
+    p_Ordenado_por := p_Ordenado_por +
+                      rs_sries_serv_010 +
+                      Trim(Edit_filtro_Codigo.Text) + '%';
+  end;
+
+  if Trim(Edit_filtro_descripcion_empresa.Text) <> '' then
+  begin
+    p_Ordenado_por := p_Ordenado_por +
+                      rs_sries_serv_011 +
+                      Trim(Edit_filtro_descripcion_empresa.Text);
+  end;
+
+  if Trim(Edit_filtro_descripcion_Tipo_Diario.Text) <> '' then
+  begin
+    p_Ordenado_por := p_Ordenado_por +
+                      rs_sries_serv_012 +
+                      Trim(Edit_filtro_descripcion_Tipo_Diario.Text);
+  end;
+
+end;
+
+procedure Tform_series_servicios_000.BitBtn_filtro_Tipo_DiarioClick(Sender: TObject);
+var var_Registro : TRecord_Rgtro_Comun;
+begin
+  var_Registro := UTI_CONTA_Elegir_Diario_tipo;
+
+  if var_Registro.id_1 <> '' then
+  begin
+    Edit_filtro_id_Tipo_Diario.Text := var_Registro.id_1;
+  end;
+end;
+
+procedure Tform_series_servicios_000.DBGrid_PrincipalDrawColumnCell(
+  Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn;
+  State: TGridDrawState);
+begin
+  inherited;
+end;
+
+procedure Tform_series_servicios_000.BitBtn_Elegir_TipoDiarioClick(Sender: TObject);
+var var_Registro : TRecord_Rgtro_Comun;
+begin
+  var_Registro := UTI_CONTA_Elegir_Diario_tipo;
+
+  if var_Registro.id_1 <> '' then
+  begin
+    SQLQuery_Principalid_diarios_tipos.AsString := var_Registro.id_1;
+    Edit_Descripcion_TipoDiario.Text            := var_Registro.descripcion_1;
+  end;
+end;
+
+procedure Tform_series_servicios_000.Edit_filtro_descripcion_Tipo_DiarioClick(Sender: TObject);
+begin
+  Edit_filtro_id_Tipo_Diario.Text          := '';
+  Edit_filtro_descripcion_Tipo_Diario.Text := '';
+end;
+
+procedure Tform_series_servicios_000.Edit_Descripcion_TipoDiarioClick(Sender: TObject);
+var var_msg : TStrings;
+begin
+  var_msg := TStringList.Create;
+  var_msg.Add('¿QUITAMOS el TIPO DE DIARIO?');
+
+  if UTI_GEN_Aviso(true, var_msg, rs_OK, True, True) = true then
+  begin
+    SQLQuery_Principal.FieldByName('id_diarios_tipos').Clear;
+    Edit_Descripcion_TipoDiario.Text := '';
+  end;
+
+  var_msg.Free;
+end;
+
+procedure Tform_series_servicios_000.falta_algo_por_completar_II(p_msg : TStrings);
+begin
+{
+  with SQLQuery_Principal do
+  begin
+    if Trim(DBEdit_Descripcion.Text) <> '' then
+    begin
+      FieldByName('descripcion').asString := AnsiUpperCase(Trim(FieldByName('descripcion').AsString));
+    end else begin
+      p_msg.Add( rs_sries_serv_004);
+    end;
+
+    if Trim(DBEdit_serie_codigo.Text) <> '' then
+    begin
+      FieldByName('serie_codigo').asString := AnsiUpperCase(Trim(FieldByName('serie_codigo').AsString));
+    end else begin
+      p_msg.Add( rs_sries_serv_005);
+    end;
+
+    if Trim(FieldByName('numero_siguiente').asString) = '' then
+    begin
+      p_msg.Add( rs_sries_serv_006);
+    end;
+
+    if Trim(FieldByName('id_empresas').asString) = '' then
+    begin
+      p_msg.Add( rs_sries_serv_007);
+    end;
+
+    if Trim(FieldByName('id_diarios_tipos').asString) = '' then
+    begin
+      p_msg.Add( rs_sries_serv_008);
+    end;
+
+  end;
+}
+end;
+
+function Tform_series_servicios_000.Antes_de_hacer_Post_tabla_Principal : Boolean;
+var var_msg : TStrings;
+begin
+  Result := true;
+
+  var_msg := TStringList.Create;
+  var_msg.Clear;
+
+  with SQLQuery_Principal do
+  begin
+    // ********************************************************************************************* //
+    // ** Asignamos valores si no los tenían                                                      ** //
+    // ********************************************************************************************* //
+    if (FieldByName('numero_siguiente').IsNull)              or
+       (Trim(FieldByName('numero_siguiente').asString) = '') then
+    begin
+      FieldByName('numero_siguiente').AsString := '1';
+    end;
+
+    // ********************************************************************************************* //
+    // ** Ahora vienen las comprobaciones de porque no grabamos                                   ** //
+    // ********************************************************************************************* //
+    if Trim(DBEdit_Descripcion.Text) <> '' then
+    begin
+      FieldByName('descripcion').asString := AnsiUpperCase(Trim(FieldByName('descripcion').AsString));
+    end else begin
+      var_msg.Add(rs_sries_serv_004);
+      Result := false;
+    end;
+
+    if Trim(DBEdit_serie_codigo.Text) <> '' then
+    begin
+      FieldByName('serie_codigo').asString := AnsiUpperCase(Trim(FieldByName('serie_codigo').AsString));
+    end else begin
+      var_msg.Add(rs_sries_serv_005);
+      Result := false;
+    end;
+
+    if Trim(FieldByName('id_empresas').asString) = '' then
+    begin
+      var_msg.Add(rs_sries_serv_007);
+      Result := false;
+    end;
+
+    if Trim(FieldByName('id_diarios_tipos').asString) = '' then
+    begin
+      var_msg.Add(rs_sries_serv_008);
+      Result := false;
+    end;
+
+    if FieldByName('desde_fecha').isNull then
+    begin
+      var_msg.Add(rs_sries_serv_006);
+      Result := false;
+    end;
+
+  end;
+
+  if Trim(var_msg.Text) <> '' then
+  begin
+    UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
+  end;
+
+  var_msg.Free;
+
+end;
+
+procedure Tform_series_servicios_000.que_Hacer_para_un_Insert;
+begin
+  with SQLQuery_Principal do
+  begin
+    // ********************************************************************************************* //
+    // ** Asignamos valores de iniciosi no los tenían                                             ** //
+    // ********************************************************************************************* //
+    FieldByName('numero_siguiente').AsString := '1';
+
+  end;
+
+end;
+
+end.
+
+

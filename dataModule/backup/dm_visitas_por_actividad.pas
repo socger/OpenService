@@ -1,0 +1,42 @@
+unit dm_visitas_por_actividad;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, sqldb, FileUtil, utilidades_bd, utilidades_general;
+
+type
+
+  { TDataModule_visitas_por_actividad }
+
+  TDataModule_visitas_por_actividad = class(TDataModule)
+    SQLCon_Act: TSQLConnector;
+    SQLCon_Visita: TSQLConnector;
+    SQLTran_Act: TSQLTransaction;
+    SQLTran_Visita: TSQLTransaction;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  DataModule_visitas_por_actividad: TDataModule_visitas_por_actividad;
+
+implementation
+
+{$R *.lfm}
+
+{ TDataModule_visitas_por_actividad }
+
+procedure TDataModule_visitas_por_actividad.DataModuleCreate(Sender: TObject);
+begin
+    if UTI_CN_Abrir(SQLTran_Act, SQLCon_Act) = False then UTI_GEN_Salir;
+    if UTI_CN_Abrir(SQLTran_Visita, SQLCon_Visita) = False then UTI_GEN_Salir;
+end;
+
+end.
+

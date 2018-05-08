@@ -1,0 +1,29 @@
+object DataModule_visitas_planificacion_por_zona: TDataModule_visitas_planificacion_por_zona
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 280
+  HorizontalOffset = 650
+  VerticalOffset = 61
+  Width = 315
+  object SQLTran_Plan_Zona: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLCon_Plan_Zona
+    left = 144
+    top = 56
+  end
+  object SQLCon_Plan_Zona: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTran_Plan_Zona
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.5'
+    left = 144
+    top = 128
+  end
+end

@@ -1,0 +1,329 @@
+object Form_users_002: TForm_users_002
+  Left = 107
+  Height = 456
+  Top = 141
+  Width = 842
+  ActiveControl = DBEdit_pwd
+  Caption = 'Ficha contraseña ... usuario'
+  ClientHeight = 456
+  ClientWidth = 842
+  Color = 9221227
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object Panel1: TPanel
+    Left = 25
+    Height = 141
+    Top = 71
+    Width = 786
+    ClientHeight = 141
+    ClientWidth = 786
+    TabOrder = 1
+    object Label1: TLabel
+      AnchorSideLeft.Control = DBEdit_Nick
+      AnchorSideBottom.Control = DBEdit_Nick
+      Left = 100
+      Height = 22
+      Top = 24
+      Width = 40
+      Anchors = [akLeft, akBottom]
+      Caption = 'Nick'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_Nick: TDBEdit
+      Left = 100
+      Height = 23
+      Top = 46
+      Width = 583
+      DataField = 'Descripcion_Nick'
+      DataSource = form_users_000.DataSource_Users
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      Font.Color = clRed
+      MaxLength = 0
+      ParentFont = False
+      TabOrder = 0
+    end
+    object DBCheckBox1: TDBCheckBox
+      Left = 161
+      Height = 34
+      Top = 80
+      Width = 522
+      BiDiMode = bdRightToLeft
+      Caption = 'CON / SIN PERMISO TOTAL '
+      DataField = 'Permiso_Total_SN'
+      DataSource = form_users_000.DataSource_Users
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -37
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+      ValueChecked = 'S'
+      ValueUnchecked = 'N'
+    end
+  end
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 830
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object Panel_Mantenimiento: TPanel
+    Left = 25
+    Height = 183
+    Top = 240
+    Width = 786
+    ClientHeight = 183
+    ClientWidth = 786
+    TabOrder = 2
+    object Label3: TLabel
+      AnchorSideLeft.Control = DBEdit_pwd
+      AnchorSideBottom.Control = DBEdit_pwd
+      Left = 24
+      Height = 22
+      Top = 15
+      Width = 108
+      Anchors = [akLeft, akBottom]
+      Caption = 'Contraseña'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_pwd: TDBEdit
+      Left = 24
+      Height = 23
+      Top = 37
+      Width = 736
+      DataField = 'Password'
+      DataSource = form_users_000.DataSource_Users_Passwords
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object DBCheckBox2: TDBCheckBox
+      Left = 482
+      Height = 17
+      Top = 16
+      Width = 278
+      BiDiMode = bdRightToLeft
+      Caption = 'Obligado introducir el Nick '
+      DataField = 'Obligado_NICK_SN'
+      DataSource = form_users_000.DataSource_Users_Passwords
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentBiDiMode = False
+      ParentFont = False
+      TabOrder = 1
+      ValueChecked = 'S'
+      ValueUnchecked = 'N'
+    end
+    object GroupBox2: TGroupBox
+      Left = 24
+      Height = 92
+      Top = 76
+      Width = 741
+      Caption = ' CADUCIDAD '
+      ClientHeight = 67
+      ClientWidth = 737
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      object DBCheckBox3: TDBCheckBox
+        Left = 16
+        Height = 34
+        Top = 28
+        Width = 234
+        BiDiMode = bdRightToLeft
+        Caption = 'La contraseña caduca '
+        DataField = 'Password_Expira_SN'
+        DataSource = form_users_000.DataSource_Users_Passwords
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentBiDiMode = False
+        ParentFont = False
+        TabOrder = 0
+        ValueChecked = 'S'
+        ValueUnchecked = 'N'
+      end
+      object Label_Fecha: TLabel
+        AnchorSideLeft.Control = DateEdit_Dia_Inicio
+        AnchorSideBottom.Control = DateEdit_Dia_Inicio
+        Left = 265
+        Height = 22
+        Top = 8
+        Width = 106
+        Anchors = [akLeft, akBottom]
+        Caption = 'Inicio etapa'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DateEdit_Dia_Inicio: TDateEdit
+        Left = 265
+        Height = 28
+        Top = 30
+        Width = 104
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+        OKCaption = 'OK'
+        CancelCaption = 'Cancel'
+        DateOrder = doDMY
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 10
+        TabOrder = 1
+        Text = '  /  /    '
+      end
+      object MaskEdit_Hora_Inicio: TMaskEdit
+        Left = 396
+        Height = 28
+        Top = 30
+        Width = 88
+        CharCase = ecNormal
+        MaxLength = 8
+        TabOrder = 2
+        EditMask = '!99:99:99;1;_'
+        Text = '  :  :  '
+        SpaceChar = '_'
+      end
+      object Label_Fecha1: TLabel
+        AnchorSideLeft.Control = DateEdit_Dia_Fin
+        AnchorSideBottom.Control = DateEdit_Dia_Fin
+        Left = 494
+        Height = 22
+        Top = 8
+        Width = 85
+        Anchors = [akLeft, akBottom]
+        Caption = 'Fin etapa'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DateEdit_Dia_Fin: TDateEdit
+        Left = 494
+        Height = 28
+        Top = 30
+        Width = 104
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+        OKCaption = 'OK'
+        CancelCaption = 'Cancel'
+        DateOrder = doDMY
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 10
+        TabOrder = 3
+        Text = '  /  /    '
+      end
+      object MaskEdit_Hora_Fin: TMaskEdit
+        Left = 625
+        Height = 28
+        Top = 30
+        Width = 88
+        CharCase = ecNormal
+        MaxLength = 8
+        TabOrder = 4
+        EditMask = '!99:99:99;1;_'
+        Text = '  :  :  '
+        SpaceChar = '_'
+      end
+    end
+  end
+  object GroupBox11: TGroupBox
+    Left = 25
+    Height = 38
+    Top = -3
+    Width = 174
+    ClientHeight = 18
+    ClientWidth = 170
+    TabOrder = 3
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -4
+      Width = 56
+      Anchors = [akLeft, akBottom]
+      Caption = 'Código'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 77
+      Height = 23
+      Top = -7
+      Width = 90
+      DataField = 'id'
+      DataSource = form_users_000.DataSource_Users_Passwords
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+end

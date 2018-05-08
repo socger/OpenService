@@ -1,0 +1,410 @@
+unit medio_000;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+    Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, Buttons, StdCtrls,
+    ExtCtrls, DBGrids, DbCtrls, Grids;
+
+type
+
+    { Tform_medio_000 }
+
+    Tform_medio_000 = class(TForm)
+        BitBtn_Filtrar: TBitBtn;
+        BitBtn_Imprimir: TBitBtn;
+        BitBtn_Seleccionar: TBitBtn;
+        BitBtn_Ver_Situacion_Registro: TBitBtn;
+        DataSource_Medios: TDataSource;
+        DBGrid_Registros: TDBGrid;
+        DBNavigator1: TDBNavigator;
+        Image_Confirmado: TImage;
+        Memo_Filtros: TMemo;
+        RadioGroup_Bajas: TRadioGroup;
+        SALIR: TBitBtn;
+        SQLQuery_Medios: TSQLQuery;
+        SQLQuery_MediosChange_Id_User: TLargeintField;
+        SQLQuery_MediosChange_WHEN: TDateTimeField;
+        SQLQuery_MediosDel_Id_User: TLargeintField;
+        SQLQuery_MediosDel_WHEN: TDateTimeField;
+        SQLQuery_MediosDel_WHY: TStringField;
+        SQLQuery_Mediosid: TAutoIncField;
+        SQLQuery_Mediosid_medio: TLongintField;
+        SQLQuery_MediosInsert_Id_User: TLargeintField;
+        SQLQuery_MediosInsert_WHEN: TDateTimeField;
+        SQLQuery_MediosNumero: TLongintField;
+        SQLQuery_Mediostitulo: TStringField;
+
+        procedure Editar_Registro;
+        procedure BitBtn_ImprimirClick(Sender: TObject);
+        procedure BitBtn_SeleccionarClick(Sender: TObject);
+        procedure BitBtn_Ver_Situacion_RegistroClick(Sender: TObject);
+        procedure DBGrid_RegistrosCellClick(Column: TColumn);
+        procedure DBGrid_RegistrosKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+        procedure DBNavigator1BeforeAction(Sender: TObject; Button: TDBNavButtonType);
+        procedure Seleccionado_Rgtro;
+        procedure DBGrid_RegistrosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+        procedure Dibujar_Grid( param_Sender: TObject; param_SQLQuery : TSQLQuery; param_Rect: TRect; param_DataCol: Integer; param_Column: TColumn; param_State: TGridDrawState );
+        procedure DBGrid_RegistrosDblClick(Sender: TObject);
+        procedure DBGrid_RegistrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+        procedure Refrescar_Registros;
+        procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+        procedure FormCreate(Sender: TObject);
+        procedure no_Tocar;
+        procedure BitBtn_FiltrarClick(Sender: TObject);
+        procedure FormActivate(Sender: TObject);
+        procedure RadioGroup_BajasClick(Sender: TObject);
+        procedure SALIRClick(Sender: TObject);
+        procedure SQLQuery_MediosAfterPost(DataSet: TDataSet);
+    private
+        { private declarations }
+    public
+        { public declarations }
+    end;
+
+var
+    form_medio_000: Tform_medio_000;
+
+implementation
+
+{$R *.lfm}
+
+uses dm_medios, principio, informe;
+
+{ Tform_medio_000 }
+
+procedure Tform_medio_000.BitBtn_FiltrarClick(Sender: TObject);
+begin
+     Filtrar(Memo_Filtros.Lines, true);
+end;
+
+procedure Tform_medio_000.FormActivate(Sender: TObject);
+begin
+     If public_Elegimos = true then
+     begin
+          BitBtn_Seleccionar.Visible := True;
+          BitBtn_Imprimir.Visible  := False;
+     end;
+
+     if public_Solo_Ver = true then no_Tocar;
+end;
+
+procedure Tform_medio_000.RadioGroup_BajasClick(Sender: TObject);
+begin
+     Refrescar_Registros;
+end;
+
+procedure Tform_medio_000.no_Tocar;
+begin
+     BitBtn_Imprimir.Enabled := False;
+end;
+
+procedure Tform_medio_000.FormCreate(Sender: TObject);
+begin
+     { ****************************************************************************
+       Obligado en cada formulario para no olvidarlo
+       **************************************************************************** }
+       with form_medio_000 do
+       begin
+           Position    := poScreenCenter;
+           BorderIcons := [];
+           BorderStyle := bsSingle;
+       end;
+
+       private_Salir_OK := false;
+
+     { ****************************************************************************
+       Solo para formularios que traten con datos
+       **************************************************************************** }
+       public_Solo_Ver      := false;
+       public_Elegimos      := false;
+       private_ctdad_Rgtros := 20;
+
+       Filtrar(Memo_Filtros.Lines, false);
+end;
+
+procedure Tform_medio_000.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+     if private_Salir_OK = False then
+         begin
+           { ********************************************************************
+             Intento salir de la aplicación de un modo no permitido
+             ******************************************************************** }
+             CloseAction := caNone;
+         end
+     else
+         begin
+           { ********************************************************************
+             Fue correcto el modo como quiere salir de la aplicación
+             ******************************************************************** }
+             if TB_Cerrar( DataModule_Medios.SQLConnector,
+                           DataModule_Medios.SQLTransaction,
+                           SQLQuery_Medios ) then
+             begin
+                 Application.Terminate;
+             end;
+
+             DataModule_Medio.Destroy;
+         end;
+end;
+
+procedure Tform_medio_000.Refrescar_Registros;
+var var_id : Integer;
+begin
+    var_id := 0;
+    if SQLQuery_Medios.RecordCount > 0 then
+    begin
+        var_id := SQLQuery_Medios.FieldByName('id').Value;
+    end;
+
+    Filtrar(Memo_Filtros.Lines, false);
+
+    if var_id <> 0 then SQLQuery_Medios.Locate('id', var_id, []);
+end;
+
+procedure Tform_medio_000.DBGrid_RegistrosDblClick(Sender: TObject);
+begin
+    If public_Elegimos then
+         Seleccionado_Rgtro
+    else Editar_Registro;
+end;
+
+procedure Tform_medio_000.DBGrid_RegistrosDrawColumnCell(Sender: TObject; const Rect: TRect;
+    DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+    Dibujar_Grid( Sender, SQLQuery_Medios, Rect, DataCol, Column, State );
+end;
+
+procedure Tform_medio_000.SALIRClick(Sender: TObject);
+begin
+    private_Salir_OK := true;  { La pongo a true para controlar el modo de salir del programa}
+    public_Elegimos  := false; { la pongo a false para que si viene de un programa, no del menu, no devuelva nada }
+
+    Close;
+end;
+
+procedure Tform_medio_000.SQLQuery_MediosAfterPost(DataSet: TDataSet);
+begin
+    RGTRO_Grabar( DataModule_Pelis.SQLTransaction,
+                  SQLQuery_Medios,
+                  True );
+end;
+
+procedure Tform_medio_000.Dibujar_Grid( param_Sender: TObject;
+                                        param_SQLQuery : TSQLQuery;
+                                        param_Rect: TRect;
+                                        param_DataCol: Integer;
+                                        param_Column: TColumn;
+                                        param_State: TGridDrawState );
+var var_Color_Normal : TColor;
+    // Pintar_Prepago : Boolean;
+begin
+    with param_Sender as TDBGrid do
+    begin
+        if param_SQLQuery.RecordCount = 0 then Exit;
+
+        var_Color_Normal := Canvas.Brush.Color;
+
+      { ************************************************************************
+        Primero comprobamos si es un registro dado de baja o no
+        ************************************************************************ }
+        if not param_SQLQuery.FieldByName('Del_WHEN').IsNull then
+            begin
+              { ****************************************************************
+                Registro DADO de BAJA
+                **************************************************************** }
+                Canvas.Font.Color := clSilver;
+            end
+        else
+            begin
+              { ****************************************************************
+                Registro DADO de ALTA, NO BAJA
+                ****************************************************************
+                Así que las pinto, pero sólo si no son las columnas que van a
+                ser dibujadas
+                **************************************************************** }
+                if param_State <> [gdSelected] then
+                begin
+                    if (param_Column.FieldName <> 'COLUMNA_CON_IMAGEN') then
+                    begin
+                        Canvas.font.Color := clBlack;
+                    end;
+                end;
+            end;
+
+      { ************************************************************************
+        Ahora paso a dibujar una celda normal con los colores elegidos o una
+        dibujada
+        ************************************************************************ }
+        if (param_Column.FieldName <> 'COLUMNA_CON_IMAGEN') then
+            begin
+              { ****************************************************************
+                No es una de las columnas a dibujar por lo que la pinto con los
+                colores elegidos
+                **************************************************************** }
+                DefaultDrawColumnCell(param_Rect, param_DataCol, param_Column, param_State)
+            end
+        else
+            begin
+              { ****************************************************************
+                Es una de las columnas a dibujar
+                **************************************************************** }
+                // COLUMNA CONFIRMADA
+                if param_Column.FieldName = 'COLUMNA_CON_IMAGEN'  then
+                begin
+                    {
+                    if Trim(param_SQLQuery.FieldByName('id_medio').asString) = '1' then
+                    begin
+                        Canvas.StretchDraw(param_Rect, Image_Confirmado.Picture.Graphic);
+                    end;
+                    }
+                end;
+            end;
+
+        Canvas.Font.Color := var_Color_Normal;
+    end;
+end;
+
+procedure Tform_medio_000.DBGrid_RegistrosKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+    );
+begin
+    if Key = 13 then
+    begin
+        If public_Elegimos then
+             Seleccionado_Rgtro
+        else Editar_Registro;
+    end;
+end;
+
+procedure Tform_medio_000.Seleccionado_Rgtro;
+begin
+    Close;
+end;
+
+procedure Tform_medio_000.DBGrid_RegistrosKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+    if (key = 40) or
+       (key = 38) then
+    begin
+        // SinoAbroMeVoy( Bajas.ItemIndex );
+    end;
+end;
+
+procedure Tform_medio_000.DBNavigator1BeforeAction(Sender: TObject; Button: TDBNavButtonType);
+begin
+    case Button of
+        nbInsert : begin
+            Insertar_Registro;
+
+            Abort;
+        end;
+
+        nbEdit : begin
+            Editar_Registro;
+
+            Abort;
+        end;
+
+        nbDelete : begin
+            if Permiso_SN(public_Menu_Worked, 'B', True) = True then
+            begin
+                RGTRO_Borrar( SQLQuery_Medios,
+                              public_Solo_Ver,
+                              public_Menu_Worked );
+            end;
+
+            Abort;
+        end;
+
+        nbRefresh : begin
+            Refrescar_Registros;
+
+            Abort;
+        end;
+    end;
+end;
+
+procedure Tform_medio_000.DBGrid_RegistrosCellClick(Column: TColumn);
+begin
+    // SinoAbroMeVoy( Bajas.ItemIndex );
+end;
+
+procedure Tform_medio_000.BitBtn_Ver_Situacion_RegistroClick(Sender: TObject);
+begin
+    if Permiso_SN(public_Menu_Worked, '', True) = True then
+    begin
+        RGTRO_Ver_Estado_Registro( SQLQuery_Medios );
+    end;
+end;
+
+procedure Tform_medio_000.BitBtn_ImprimirClick(Sender: TObject);
+begin
+    if Permiso_SN(public_Menu_Worked, 'I', True) = True then
+    begin
+        Application.CreateForm(Tform_Informe, form_Informe);
+        form_Informe.frDBDataSet1.DataSource := DataSource_Medios;
+        form_Informe.public_Menu_Worked      := public_Menu_Worked;
+        form_Informe.public_informe          := 'informes/medios.lrf';
+        form_Informe.ShowModal;
+        form_Informe.Destroy;
+    end;
+end;
+
+procedure Tform_medio_000.BitBtn_SeleccionarClick(Sender: TObject);
+begin
+    Seleccionado_Rgtro;
+end;
+
+procedure Tform_medio_000.Editar_Registro;
+var var_msg : TStrings;
+begin
+    with SQLQuery_Medios do
+    begin
+        var_msg := TStringList.Create;
+
+        if RecordCount > 0 then
+            begin
+                if Permiso_SN(public_Menu_Worked, 'M', True) = True then
+                begin
+                    Edit;
+
+                    Application.CreateForm(tForm_peliculas_001, Form_peliculas_001);
+
+                    Form_peliculas_001.public_Menu_Worked := public_Menu_Worked;
+
+                    if public_Solo_Ver = true then
+                    begin
+                        Form_peliculas_001.public_Solo_Ver := true;
+                    end;
+
+                    if Form_peliculas_001.ShowModal = mrOk then
+                        begin
+                            Form_peliculas_001.Destroy;
+
+                            FieldByName('Change_WHEN').Value   := CN_Fecha_Hora;
+                            FieldByName('Change_Id_User').Value := Form_Principio.public_User;
+
+                            //Grabar_Registro;
+                            Post;
+                        end
+                    else
+                        begin
+                            Form_peliculas_001.Destroy;
+                            Cancel;
+                        end;
+                end;
+            end
+        else
+            begin
+                var_msg.Add('No hay registros.');
+                Aviso(var_msg, '¿QUE VAS A VER?', True, False);
+            end;
+    end;
+    var_msg.Free;
+end;
+
+end.
+
+

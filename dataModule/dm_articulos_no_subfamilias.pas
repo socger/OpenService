@@ -1,0 +1,39 @@
+unit dm_articulos_no_subfamilias;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+    Classes, SysUtils, sqldb, FileUtil, utilidades_bd, utilidades_general;
+
+type
+
+    { TDataModule_Articulos_No_SubFamilias }
+
+    TDataModule_Articulos_No_SubFamilias = class(TDataModule)
+        SQLConnector_ArtFamNOSub: TSQLConnector;
+        SQLTransaction_ArtFamNOSub: TSQLTransaction;
+        procedure DataModuleCreate(Sender: TObject);
+    private
+        { private declarations }
+    public
+        { public declarations }
+    end;
+
+var
+    DataModule_Articulos_No_SubFamilias: TDataModule_Articulos_No_SubFamilias;
+
+implementation
+
+{$R *.lfm}
+
+{ TDataModule_Articulos_No_SubFamilias }
+
+procedure TDataModule_Articulos_No_SubFamilias.DataModuleCreate(Sender: TObject);
+begin
+     if UTI_CN_Connector_Open( SQLTransaction_ArtFamNOSub, SQLConnector_ArtFamNOSub ) = False then UTI_GEN_Salir;
+end;
+
+end.
+

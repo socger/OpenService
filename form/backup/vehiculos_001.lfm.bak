@@ -1,0 +1,4608 @@
+object form_vehiculos_001: Tform_vehiculos_001
+  Left = 33
+  Height = 682
+  Top = 36
+  Width = 1283
+  Caption = 'Ficha - Vehículo'
+  ClientHeight = 682
+  ClientWidth = 1283
+  Color = 14737613
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 1271
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object GroupBox11: TGroupBox
+    Left = 26
+    Height = 38
+    Top = 0
+    Width = 158
+    ClientHeight = 18
+    ClientWidth = 154
+    TabOrder = 1
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -4
+      Width = 47
+      Anchors = [akLeft, akBottom]
+      Caption = 'Rgtro.'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 58
+      Height = 23
+      Top = -7
+      Width = 90
+      DataField = 'id'
+      DataSource = form_vehiculos_000.DataSource_Vehiculos
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+  object RadioGroup_Bajas: TRadioGroup
+    Left = 186
+    Height = 49
+    Top = 0
+    Width = 96
+    AutoFill = True
+    BorderSpacing.Bottom = 3
+    Caption = ' Ver bajas '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 29
+    ClientWidth = 92
+    Columns = 2
+    ItemIndex = 1
+    Items.Strings = (
+      'Si'
+      'No'
+    )
+    OnClick = RadioGroup_BajasClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Boton_ver_imagenes: TBitBtn
+    Left = 285
+    Height = 43
+    Top = 7
+    Width = 140
+    Caption = '&Ver imagen asociada'
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Glyph.Data = {
+      36030000424D3603000000000000360000002800000010000000100000000100
+      18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+      B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+      D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+      C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+      AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+      F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+      A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+      62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+      C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+      976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+      FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+      FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+      00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+      FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Boton_ver_documentacion: TBitBtn
+    Left = 433
+    Height = 43
+    Top = 6
+    Width = 175
+    Caption = '&Ver documentación asociada'
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Glyph.Data = {
+      36030000424D3603000000000000360000002800000010000000100000000100
+      18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+      B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+      D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+      C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+      AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+      F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+      A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+      62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+      C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+      976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+      FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+      FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+      00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+      FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    ParentFont = False
+    TabOrder = 4
+  end
+  object GroupBox2: TGroupBox
+    Left = 657
+    Height = 49
+    Top = 0
+    Width = 419
+    Caption = 'ULTIMOS KILOMETROS'
+    ClientHeight = 29
+    ClientWidth = 415
+    TabOrder = 5
+    object Label15: TLabel
+      Left = 8
+      Height = 19
+      Top = 7
+      Width = 30
+      Caption = 'Km.'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label16: TLabel
+      Left = 135
+      Height = 19
+      Top = 7
+      Width = 13
+      Caption = 'al'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Edit_Km_Ultimos_Ctdad: TEdit
+      Left = 45
+      Height = 24
+      Top = 2
+      Width = 88
+      Alignment = taRightJustify
+      Anchors = [akLeft]
+      Color = 7001047
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object Label96: TLabel
+      Left = 278
+      Height = 19
+      Top = 7
+      Width = 75
+      Caption = 'Consumo'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Edit_Km_Ultimos_Consumo: TEdit
+      Left = 355
+      Height = 24
+      Top = 2
+      Width = 50
+      Alignment = taRightJustify
+      Anchors = [akLeft]
+      Color = 7001047
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+    end
+    object Edit_Km_Ultimos_Fecha: TEdit
+      Left = 150
+      Height = 24
+      Top = 2
+      Width = 126
+      Alignment = taRightJustify
+      Anchors = [akLeft]
+      Color = 7001047
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 2
+    end
+  end
+  object Label1: TLabel
+    Left = 26
+    Height = 22
+    Top = 59
+    Width = 117
+    Anchors = [akLeft, akBottom]
+    Caption = 'Ref. / Código'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Codigo_Vehiculo: TDBEdit
+    Left = 26
+    Height = 26
+    Top = 82
+    Width = 143
+    DataField = 'referencia'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 6
+  end
+  object Label3: TLabel
+    Left = 175
+    Height = 22
+    Top = 59
+    Width = 86
+    Anchors = [akLeft, akBottom]
+    Caption = 'Matrícula'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Matricula: TDBEdit
+    Left = 175
+    Height = 26
+    Top = 82
+    Width = 160
+    DataField = 'matricula'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 7
+  end
+  object Boton_Elegir_Tipo_Vehiculo: TBitBtn
+    Left = 339
+    Height = 47
+    Top = 61
+    Width = 33
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Glyph.Data = {
+      36030000424D3603000000000000360000002800000010000000100000000100
+      18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+      B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+      D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+      C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+      AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+      F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+      A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+      62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+      C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+      976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+      FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+      FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+      00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+      FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = Boton_Elegir_Tipo_VehiculoClick
+    ParentFont = False
+    TabOrder = 8
+  end
+  object Label9: TLabel
+    Left = 373
+    Height = 22
+    Top = 61
+    Width = 126
+    Caption = 'Tipo vehículo'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit_Descripcion_Tipo_Vehiculo: TEdit
+    Left = 373
+    Height = 26
+    Top = 82
+    Width = 221
+    Anchors = [akLeft]
+    Color = 7001047
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = Edit_Descripcion_Tipo_VehiculoClick
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 9
+  end
+  object Boton_Elegir_Marca: TBitBtn
+    Left = 601
+    Height = 47
+    Top = 61
+    Width = 33
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Glyph.Data = {
+      36030000424D3603000000000000360000002800000010000000100000000100
+      18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+      B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+      D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+      C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+      AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+      F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+      A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+      62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+      C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+      976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+      FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+      FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+      00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+      FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+      FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+      FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+      00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+    }
+    OnClick = Boton_Elegir_MarcaClick
+    ParentFont = False
+    TabOrder = 10
+  end
+  object Label10: TLabel
+    Left = 636
+    Height = 22
+    Top = 61
+    Width = 58
+    Caption = 'Marca'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit_Descripcion_Marca: TEdit
+    Left = 636
+    Height = 26
+    Top = 82
+    Width = 212
+    Anchors = [akLeft]
+    Color = 7001047
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = Edit_Descripcion_MarcaClick
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 11
+  end
+  object Label2: TLabel
+    Left = 853
+    Height = 22
+    Top = 59
+    Width = 69
+    Anchors = [akLeft, akBottom]
+    Caption = 'Modelo'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Modelo: TDBEdit
+    Left = 853
+    Height = 26
+    Top = 82
+    Width = 252
+    DataField = 'modelo'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 12
+  end
+  object Label6: TLabel
+    Left = 1109
+    Height = 22
+    Top = 59
+    Width = 121
+    Anchors = [akLeft, akBottom]
+    Caption = 'Versión / año'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Version: TDBEdit
+    Left = 1109
+    Height = 26
+    Top = 82
+    Width = 146
+    DataField = 'version'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 13
+  end
+  object Label4: TLabel
+    Left = 26
+    Height = 22
+    Top = 114
+    Width = 51
+    Anchors = [akLeft, akBottom]
+    Caption = 'Color'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Color: TDBEdit
+    Left = 26
+    Height = 26
+    Top = 137
+    Width = 167
+    DataField = 'color'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 14
+  end
+  object Label5: TLabel
+    Left = 199
+    Height = 22
+    Top = 114
+    Width = 120
+    Anchors = [akLeft, akBottom]
+    Caption = 'Código color'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Codigo_Color: TDBEdit
+    Left = 199
+    Height = 26
+    Top = 137
+    Width = 144
+    DataField = 'codigo_color'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 15
+  end
+  object Label11: TLabel
+    Left = 349
+    Height = 22
+    Top = 114
+    Width = 224
+    Anchors = [akLeft, akBottom]
+    Caption = 'Nº.bastidor / chasis / VIN'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Bastidor: TDBEdit
+    Left = 349
+    Height = 26
+    Top = 137
+    Width = 232
+    DataField = 'bastidor_chasis_VIN'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 16
+  end
+  object Label13: TLabel
+    Left = 587
+    Height = 22
+    Top = 114
+    Width = 68
+    Anchors = [akLeft, akBottom]
+    Caption = 'Nº.obra'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_No_Obra: TDBEdit
+    Left = 587
+    Height = 26
+    Top = 137
+    Width = 167
+    DataField = 'numero_Obra'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 17
+  end
+  object Label14: TLabel
+    Left = 760
+    Height = 22
+    Top = 114
+    Width = 99
+    Anchors = [akLeft, akBottom]
+    Caption = 'Carrocería'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Carroceria: TDBEdit
+    Left = 760
+    Height = 26
+    Top = 137
+    Width = 250
+    DataField = 'carroceria'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 18
+  end
+  object Label18: TLabel
+    Left = 1016
+    Height = 22
+    Top = 114
+    Width = 55
+    Anchors = [akLeft, akBottom]
+    Caption = 'Motor'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Motor: TDBEdit
+    Left = 1016
+    Height = 26
+    Top = 137
+    Width = 239
+    DataField = 'motor'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 19
+  end
+  object GroupBox3: TGroupBox
+    Left = 26
+    Height = 73
+    Top = 169
+    Width = 318
+    Caption = 'FECHA MATRICULACIÓN'
+    ClientHeight = 53
+    ClientWidth = 314
+    TabOrder = 20
+    object Label23: TLabel
+      Left = 6
+      Height = 22
+      Top = 0
+      Width = 73
+      Anchors = [akLeft, akBottom]
+      Caption = 'Primera'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBDateTimePicker_Fecha_Matriculacion_Primera: TDBDateTimePicker
+      Left = 6
+      Height = 26
+      Top = 21
+      Width = 105
+      DataField = 'fecha_matriculacion_Primera'
+      DataSource = form_vehiculos_000.DataSource_Vehiculos
+      ReadOnly = False
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      TabOrder = 0
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object Label24: TLabel
+      Left = 114
+      Height = 22
+      Top = 0
+      Width = 57
+      Anchors = [akLeft, akBottom]
+      Caption = 'Última'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBDateTimePicker_Fecha_Matriculacion_Ultima: TDBDateTimePicker
+      Left = 114
+      Height = 26
+      Top = 21
+      Width = 105
+      DataField = 'fecha_matriculacion_Ultima'
+      DataSource = form_vehiculos_000.DataSource_Vehiculos
+      ReadOnly = False
+      CenturyFrom = 1941
+      MaxDate = 2958465
+      MinDate = -53780
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      TabOrder = 1
+      TrailingSeparator = False
+      TextForNullDate = 'NULL'
+      LeadingZeros = True
+      Kind = dtkDate
+      TimeFormat = tf24
+      TimeDisplay = tdHMS
+      DateMode = dmComboBox
+      UseDefaultSeparators = True
+      HideDateTimeParts = []
+      MonthNames = 'Long'
+    end
+    object Edit_Edad: TEdit
+      Left = 222
+      Height = 26
+      Top = 21
+      Width = 87
+      Alignment = taRightJustify
+      Anchors = [akLeft]
+      Color = 7001047
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object Label25: TLabel
+      Left = 222
+      Height = 22
+      Top = 0
+      Width = 48
+      Anchors = [akLeft, akBottom]
+      Caption = 'Edad'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object Label27: TLabel
+    Left = 349
+    Height = 22
+    Top = 187
+    Width = 82
+    Anchors = [akLeft, akBottom]
+    Caption = 'Tracción'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Traccion: TDBEdit
+    Left = 349
+    Height = 26
+    Top = 208
+    Width = 218
+    DataField = 'Traccion'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 21
+  end
+  object Label28: TLabel
+    Left = 573
+    Height = 22
+    Top = 187
+    Width = 95
+    Anchors = [akLeft, akBottom]
+    Caption = 'Cilindrada'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Cilindrada: TDBEdit
+    Left = 573
+    Height = 26
+    Top = 208
+    Width = 218
+    DataField = 'Cilindrada'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 22
+  end
+  object Label29: TLabel
+    Left = 797
+    Height = 22
+    Top = 187
+    Width = 81
+    Anchors = [akLeft, akBottom]
+    Caption = 'Potencia'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Potencia: TDBEdit
+    Left = 797
+    Height = 26
+    Top = 208
+    Width = 203
+    DataField = 'Potencia'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 23
+  end
+  object Label22: TLabel
+    Left = 1033
+    Height = 22
+    Top = 187
+    Width = 96
+    Anchors = [akLeft, akBottom]
+    Caption = 'Nº.puertas'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Numero_Puertas: TDBEdit
+    Left = 1033
+    Height = 26
+    Top = 208
+    Width = 96
+    DataField = 'numero_puertas'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 24
+  end
+  object PageControl_Otros_Datos: TPageControl
+    Left = 26
+    Height = 316
+    Top = 248
+    Width = 1229
+    ActivePage = TabSheet_Datos_Tecnicos
+    TabIndex = 0
+    TabOrder = 25
+    object TabSheet_Datos_Tecnicos: TTabSheet
+      Caption = 'DATOS &TECNICOS  '
+      ClientHeight = 288
+      ClientWidth = 1221
+      object Boton_Elegir_Tipo_Combustible: TBitBtn
+        Left = 16
+        Height = 47
+        Top = 6
+        Width = 33
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_Tipo_CombustibleClick
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Label17: TLabel
+        Left = 50
+        Height = 22
+        Top = 3
+        Width = 161
+        Caption = 'Tipo combustible'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Tipo_Combustible: TEdit
+        Left = 50
+        Height = 26
+        Top = 26
+        Width = 221
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_Tipo_CombustibleClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object Boton_Elegir_Tipo_Cambio: TBitBtn
+        Left = 277
+        Height = 47
+        Top = 6
+        Width = 33
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_Tipo_CambioClick
+        ParentFont = False
+        TabOrder = 2
+      end
+      object Label19: TLabel
+        Left = 311
+        Height = 22
+        Top = 3
+        Width = 143
+        Caption = 'Tipo de cambio'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Tipo_Cambio: TEdit
+        Left = 311
+        Height = 26
+        Top = 26
+        Width = 221
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_Tipo_CambioClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object Label20: TLabel
+        Left = 536
+        Height = 22
+        Top = 3
+        Width = 120
+        Anchors = [akLeft, akBottom]
+        Caption = 'Código radio'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Codigo_Radio: TDBEdit
+        Left = 536
+        Height = 26
+        Top = 27
+        Width = 196
+        DataField = 'codigo_radio'
+        DataSource = form_vehiculos_000.DataSource_Vehiculos
+        CharCase = ecNormal
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 4
+      end
+      object Label21: TLabel
+        Left = 737
+        Height = 22
+        Top = 3
+        Width = 115
+        Anchors = [akLeft, akBottom]
+        Caption = 'Código llave'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Codigo_Llave: TDBEdit
+        Left = 737
+        Height = 26
+        Top = 27
+        Width = 200
+        DataField = 'codigo_llave'
+        DataSource = form_vehiculos_000.DataSource_Vehiculos
+        CharCase = ecNormal
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 5
+      end
+      object GroupBox4: TGroupBox
+        Left = 16
+        Height = 75
+        Top = 52
+        Width = 1185
+        Caption = 'FILTROS'
+        ClientHeight = 55
+        ClientWidth = 1181
+        TabOrder = 6
+        object Label32: TLabel
+          Left = 8
+          Height = 22
+          Top = 0
+          Width = 136
+          Anchors = [akLeft, akBottom]
+          Caption = 'Filtro de aceite'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Codigo_Vehiculo1: TDBEdit
+          Left = 8
+          Height = 26
+          Top = 21
+          Width = 230
+          DataField = 'filtro_aceite'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Label33: TLabel
+          Left = 243
+          Height = 22
+          Top = 0
+          Width = 150
+          Anchors = [akLeft, akBottom]
+          Caption = 'Filtro habitáculo'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Filtro_Habitaculo: TDBEdit
+          Left = 243
+          Height = 26
+          Top = 21
+          Width = 219
+          DataField = 'filtro_habitaculo'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 1
+        end
+        object Label34: TLabel
+          Left = 466
+          Height = 22
+          Top = 0
+          Width = 116
+          Anchors = [akLeft, akBottom]
+          Caption = 'Filtro de aire'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Codigo_Vehiculo3: TDBEdit
+          Left = 466
+          Height = 26
+          Top = 21
+          Width = 230
+          DataField = 'filtro_aire'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 2
+        end
+        object Label35: TLabel
+          Left = 702
+          Height = 22
+          Top = 0
+          Width = 139
+          Anchors = [akLeft, akBottom]
+          Caption = 'Filtro antipolen'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Codigo_Vehiculo4: TDBEdit
+          Left = 702
+          Height = 26
+          Top = 21
+          Width = 230
+          DataField = 'filtro_antipo_polen'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 3
+        end
+        object Label36: TLabel
+          Left = 939
+          Height = 22
+          Top = 0
+          Width = 167
+          Anchors = [akLeft, akBottom]
+          Caption = 'Filtro combustible'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Codigo_Vehiculo5: TDBEdit
+          Left = 939
+          Height = 26
+          Top = 21
+          Width = 232
+          DataField = 'filtro_combustible'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 4
+        end
+      end
+      object GroupBox8: TGroupBox
+        Left = 16
+        Height = 75
+        Top = 126
+        Width = 1185
+        Caption = 'AIRE ACONDICIONADO'
+        ClientHeight = 55
+        ClientWidth = 1181
+        TabOrder = 7
+        object Label46: TLabel
+          Left = 8
+          Height = 22
+          Top = 0
+          Width = 58
+          Anchors = [akLeft, akBottom]
+          Caption = 'Marca'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Aire_Acondicionado_Marca: TDBEdit
+          Left = 8
+          Height = 26
+          Top = 21
+          Width = 230
+          DataField = 'Aire_Acondicionado_Marca'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Label47: TLabel
+          Left = 243
+          Height = 22
+          Top = 0
+          Width = 109
+          Anchors = [akLeft, akBottom]
+          Caption = 'Tipo de gas'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Aire_Acondicionado_Tipo_Gas: TDBEdit
+          Left = 243
+          Height = 26
+          Top = 21
+          Width = 219
+          DataField = 'Aire_Acondicionado_Tipo_Gas'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 1
+        end
+        object Label48: TLabel
+          Left = 466
+          Height = 22
+          Top = 0
+          Width = 99
+          Anchors = [akLeft, akBottom]
+          Caption = 'Nº.de serie'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Aire_Acondicionado_Numero_Serie: TDBEdit
+          Left = 466
+          Height = 26
+          Top = 21
+          Width = 240
+          DataField = 'Aire_Acondicionado_Numero_Serie'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 2
+        end
+        object Label49: TLabel
+          Left = 712
+          Height = 22
+          Top = 0
+          Width = 202
+          Anchors = [akLeft, akBottom]
+          Caption = 'Nº.compresor original'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Aire_Acondicionado_Numero_Compresor_Original: TDBEdit
+          Left = 712
+          Height = 26
+          Top = 21
+          Width = 227
+          DataField = 'Aire_Acondicionado_Numero_Compresor_Original'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 3
+        end
+        object Label50: TLabel
+          Left = 945
+          Height = 22
+          Top = 0
+          Width = 188
+          Anchors = [akLeft, akBottom]
+          Caption = 'Nº.compresor actual'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Aire_Acondicionado_Numero_Compresor_Actual: TDBEdit
+          Left = 945
+          Height = 26
+          Top = 21
+          Width = 226
+          DataField = 'Aire_Acondicionado_Numero_Compresor_Actual'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 4
+        end
+      end
+      object GroupBox5: TGroupBox
+        Left = 16
+        Height = 75
+        Top = 205
+        Width = 365
+        Caption = 'ACEITES'
+        ClientHeight = 55
+        ClientWidth = 361
+        TabOrder = 8
+        object Label37: TLabel
+          Left = 8
+          Height = 22
+          Top = 0
+          Width = 55
+          Anchors = [akLeft, akBottom]
+          Caption = 'Motor'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Aceite_Motor: TDBEdit
+          Left = 69
+          Height = 26
+          Top = 0
+          Width = 283
+          DataField = 'aceite_motor'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Label38: TLabel
+          Left = 8
+          Height = 22
+          Top = 28
+          Width = 84
+          Anchors = [akLeft, akBottom]
+          Caption = 'Valvulina'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Aceite_Valvulina: TDBEdit
+          Left = 106
+          Height = 26
+          Top = 24
+          Width = 246
+          DataField = 'aceite_valvulina'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 1
+        end
+      end
+      object GroupBox6: TGroupBox
+        Left = 387
+        Height = 75
+        Top = 207
+        Width = 814
+        Caption = 'TIPO DE FRENOS'
+        ClientHeight = 55
+        ClientWidth = 810
+        TabOrder = 9
+        object Label39: TLabel
+          Left = 8
+          Height = 22
+          Top = 0
+          Width = 101
+          Anchors = [akLeft, akBottom]
+          Caption = 'Delanteros'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Tipo_Frenos_Delanteros: TDBEdit
+          Left = 8
+          Height = 26
+          Top = 21
+          Width = 391
+          DataField = 'Frenos_Delanteros'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Label40: TLabel
+          Left = 406
+          Height = 22
+          Top = 0
+          Width = 84
+          Anchors = [akLeft, akBottom]
+          Caption = 'Traseros'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Tipo_Frenos_Traseros: TDBEdit
+          Left = 406
+          Height = 26
+          Top = 21
+          Width = 394
+          DataField = 'Frenos_Traseros'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 1
+        end
+      end
+    end
+    object TabSheet_Datos_Adicionales: TTabSheet
+      Caption = 'DATOS &ADICIONALES  '
+      ClientHeight = 288
+      ClientWidth = 1221
+      object Boton_Elegir_Conductor: TBitBtn
+        Left = 23
+        Height = 47
+        Top = 6
+        Width = 33
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_ConductorClick
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Label60: TLabel
+        Left = 57
+        Height = 22
+        Top = 6
+        Width = 178
+        Caption = 'Conductor habitual'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Conductor: TEdit
+        Left = 57
+        Height = 26
+        Top = 27
+        Width = 376
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_ConductorClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object Label92: TLabel
+        Left = 435
+        Height = 22
+        Top = 6
+        Width = 97
+        Anchors = [akLeft, akBottom]
+        Caption = 'N.I.F./ C.I.F.'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Conductor_NIF: TEdit
+        Left = 435
+        Height = 26
+        Top = 27
+        Width = 185
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_Conductor_NIFClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object Boton_Elegir_Tarjeta_Transporte: TBitBtn
+        Left = 668
+        Height = 47
+        Top = 6
+        Width = 33
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_Tarjeta_TransporteClick
+        ParentFont = False
+        TabOrder = 3
+      end
+      object Label85: TLabel
+        Left = 702
+        Height = 22
+        Top = 6
+        Width = 194
+        Caption = 'Tarjeta de transporte'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Tjta_Tte: TEdit
+        Left = 702
+        Height = 26
+        Top = 27
+        Width = 245
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_Tjta_TteClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 4
+      end
+      object Label86: TLabel
+        Left = 952
+        Height = 22
+        Top = 6
+        Width = 65
+        Caption = 'Ambito'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Tjta_Tte_Ambito: TEdit
+        Left = 952
+        Height = 26
+        Top = 27
+        Width = 245
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_Tjta_Tte_AmbitoClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 5
+      end
+      object GroupBox_Plazas: TGroupBox
+        Left = 23
+        Height = 52
+        Top = 59
+        Width = 721
+        Caption = 'PLAZAS'
+        ClientHeight = 32
+        ClientWidth = 717
+        TabOrder = 6
+        object Label87: TLabel
+          Left = 7
+          Height = 22
+          Top = 4
+          Width = 141
+          Anchors = [akLeft, akBottom]
+          Caption = 'Según permiso'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Tipo_Frenos_Delanteros1: TDBEdit
+          Left = 152
+          Height = 26
+          Top = 0
+          Width = 72
+          DataField = 'Plazas_Segun_Permiso'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Label88: TLabel
+          Left = 244
+          Height = 22
+          Top = 4
+          Width = 182
+          Anchors = [akLeft, akBottom]
+          Caption = 'Según ficha técnica'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Tipo_Frenos_Delanteros2: TDBEdit
+          Left = 432
+          Height = 26
+          Top = 0
+          Width = 72
+          DataField = 'Plazas_Segun_Ficha_Tecnica'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 1
+        end
+        object Label89: TLabel
+          Left = 527
+          Height = 22
+          Top = 4
+          Width = 96
+          Anchors = [akLeft, akBottom]
+          Caption = 'Ofertables'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEdit_Tipo_Frenos_Delanteros3: TDBEdit
+          Left = 628
+          Height = 26
+          Top = 0
+          Width = 72
+          DataField = 'Plazas_Ofertables'
+          DataSource = form_vehiculos_000.DataSource_Vehiculos
+          CharCase = ecNormal
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          MaxLength = 0
+          ParentFont = False
+          TabOrder = 2
+        end
+      end
+      object Boton_Elegir_Comprado_a: TBitBtn
+        Left = 752
+        Height = 47
+        Top = 64
+        Width = 33
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_Comprado_aClick
+        ParentFont = False
+        TabOrder = 7
+      end
+      object Label95: TLabel
+        Left = 786
+        Height = 22
+        Top = 64
+        Width = 114
+        Caption = 'Comprado a'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Comprado_a: TEdit
+        Left = 786
+        Height = 26
+        Top = 85
+        Width = 294
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_Comprado_aClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 8
+      end
+      object Label94: TLabel
+        Left = 1092
+        Height = 22
+        Top = 64
+        Width = 86
+        Anchors = [akLeft, akBottom]
+        Caption = 'F.compra'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBDateTimePicker_Fecha_Compra: TDBDateTimePicker
+        Left = 1092
+        Height = 26
+        Top = 85
+        Width = 105
+        DataField = 'fecha_fabricacion'
+        DataSource = form_vehiculos_000.DataSource_Vehiculos
+        ReadOnly = False
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 9
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Label90: TLabel
+        Left = 23
+        Height = 22
+        Top = 137
+        Width = 375
+        Caption = 'Configuraciones especiales del vehículo'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBMemo_Configuraciones_Especiales: TDBMemo
+        Left = 23
+        Height = 117
+        Top = 161
+        Width = 662
+        DataField = 'Configuraciones_Especiales'
+        DataSource = form_vehiculos_000.DataSource_Vehiculos
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        ScrollBars = ssAutoVertical
+        TabOrder = 10
+      end
+      object DBCheckBox_Beneficiacio_Gasoleo_Profesional: TDBCheckBox
+        Left = 707
+        Height = 23
+        Top = 120
+        Width = 289
+        Align = alCustom
+        AutoSize = True
+        Caption = 'Beneficiario de gasoleo profesional'
+        DataField = 'Agrupar_Albaranes_SN'
+        DataSource = form_clientes_000.DataSource_Clientes
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 11
+        ValueChecked = 'S'
+        ValueUnchecked = 'N'
+      end
+      object DBCheckBox_Con_Tacografo_Digital: TDBCheckBox
+        Left = 1018
+        Height = 23
+        Top = 120
+        Width = 179
+        Align = alCustom
+        AutoSize = True
+        Caption = 'Con tacógrafo digital'
+        DataField = 'Agrupar_Albaranes_SN'
+        DataSource = form_clientes_000.DataSource_Clientes
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 12
+        ValueChecked = 'S'
+        ValueUnchecked = 'N'
+      end
+      object DBGrid_Vehiculos_su_Equipamiento: TDBGrid
+        Left = 707
+        Height = 96
+        Top = 148
+        Width = 490
+        Anchors = [akLeft]
+        BorderSpacing.Top = 4
+        Color = 7001047
+        Columns = <        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'EQUIPADO CON'
+            Width = 450
+            FieldName = 'OT_descripcion_equipamiento'
+          end>
+        DataSource = form_vehiculos_000.DataSource_Vehiculos_su_Equipamiento
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection]
+        ParentBiDiMode = False
+        ParentFont = False
+        Scrollbars = ssAutoBoth
+        TabOrder = 13
+        TitleFont.CharSet = ANSI_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -16
+        TitleFont.Name = 'Arial'
+        TitleFont.Pitch = fpVariable
+        TitleFont.Quality = fqDraft
+        TitleFont.Style = [fsBold]
+        OnDrawColumnCell = DBGrid_Vehiculos_su_EquipamientoDrawColumnCell
+        OnDblClick = DBGrid_Vehiculos_su_EquipamientoDblClick
+        OnKeyDown = DBGrid_Vehiculos_su_EquipamientoKeyDown
+      end
+      object DBNavigator_Vehiculos_su_Equipamiento: TDBNavigator
+        AnchorSideTop.Side = asrBottom
+        Left = 707
+        Height = 32
+        Top = 246
+        Width = 248
+        BeforeAction = DBNavigator_Vehiculos_su_EquipamientoBeforeAction
+        BevelOuter = bvNone
+        BorderSpacing.Top = 4
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 32
+        ClientWidth = 248
+        DataSource = form_vehiculos_000.DataSource_Vehiculos_su_Equipamiento
+        Options = []
+        TabOrder = 14
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbRefresh]
+      end
+      object BitBtn_Ver_Situacion_Registro_Vehiculos_su_Equipamiento: TBitBtn
+        Left = 963
+        Height = 32
+        Hint = 'Ver situación del registro'
+        Top = 246
+        Width = 35
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Times New Roman'
+        Glyph.Data = {
+          F6060000424DF606000000000000360000002800000018000000180000000100
+          180000000000C0060000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD3A793C2A195BD9C
+          8ED1A490FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7AB9A
+          BDB0ABAAA3A3988F8F9A8882C99E8EFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFD7AB9AD1C4C2C4C1C2BAB6B7ADA5A7988F8F988681C7A08EFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFD8AD9ADED1CFD9D9DAD1CFD3C2AAA1B79E96ADA7A99A909197
+          8680C9A08FFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFD9B09DE7DDD9E9EAEFE2E2E5C27859AF3812AF38
+          12B16749ADA5A79A9193988681C69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFD9AF9CEEE5E2F0F6FAEFF4FAC67754
+          A72806A72907A92907A92907B05E3EAFA7A79A919393827FC69D8CFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F0E7E2FAFEFFF6
+          FEFFCE8868B13C15CE7752D38460D38460CE7752B43A13B05B39ADA7A99A9193
+          93827FC69D8CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AB98F3E7
+          E2FEFFFFFEFFFFD49072AA300CAA300CD38664FFFFFFFFFFFFCF7F5BAB310CAD
+          300BB16041ADA5A79C9395968480C69D8CFF00FFFF00FFFF00FFFF00FFFF00FF
+          D8AD9AF6EBE9FFFFFFFFFFFFD78F6EAB310CAB320DAA2E0AC4653CFFFFFFFFFF
+          FFC15D35AA2E0BAD350FAD310BB05A38AFA4A49C939593827FC09A8AFF00FFFF
+          00FFFF00FFD8AA97F6EAE5FFFFFFFFFFFFE0A486B53F14B43A13AF3711AA2E0A
+          C6673FFFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD300BB05735ABA1A19A91
+          9390817FC09A8AFF00FFD7A793F0E2D9FFFFFFFFFFFFE9BB9CC15523BC4D1EBA
+          491CB64117AF340DC76840FFFFFFFFFFFFC25F38AA2E0BAD350FAD350FAD350F
+          AD2E0AB05D3DADA5A79A908F95827FCCA18FE0BBAAFFFFFFFFFFFFFEFAF6D17A
+          42C75F29C45C28C15523BD4E1FB53F14CB7048FFFFFFFFFFFFC25F38AA2E0BAD
+          350FAD350FAD350FAD330EAF3611B69C91ADA7A99A908FBC9A8EE0BAAAFFFFFF
+          FFFFFFFEFAF6D9894ECF6F32CC6A31C7632CC45B28BC4C1CCF794FFFFFFFFFFF
+          FFC4633AAA2E0BAD350FAD350FAD350FAB310CAF3C16C4AFA9BAB6B7ABA3A3C6
+          A193D7A793F3E2DAFFFFFFFFFFFFF0D1B1D88241D37638CF6F35CB682FC25723
+          D88C60FFFFFFFFFFFFC96D43AF350EAF360FAD350FAB320DAB310CC7896ED1D3
+          D7C4C1C2C1AFAAD7A793FF00FFD8AA97F6EAE3FFFFFFFFFFFFF0D1AFD98744D4
+          7D3CCF7537D1753CE9B693F0D4C0F0D3BDCB6C3EB74116B54016AF360FAB320D
+          CC886AE2E7EBD9D9DAD1C1BCD7A996FF00FFFF00FFFF00FFD8AA97F3E5DDFFFF
+          FFFFFFFFF4D9BBDE904CD88240D78041D3773BCE6E35C9662EC25925C05322BB
+          4A1CB64116D79A7FEEF4FAE7EAEEDDCEC9D7A996FF00FFFF00FFFF00FFFF00FF
+          FF00FFD7A996F0E2D9FFFFFFFFFFFFF6DDC0E29752D98641DA8F52F4DAC6F3D4
+          C0CF733DC45B26C15421E0A486F6FEFFF0F6FAE7D9D4D7AA97FF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFD7A996F0E2DAFFFFFFFFFFFFF8E2C6E2964C
+          EABA87FFFFFFFFFFFFE09E6DC96328E2A984FEFFFFFAFEFFEBE2DED8AD9AFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA97F0E0D8FF
+          FFFFFFFFFFF6DEC0EAAF6CF4D7B1F3CFABDA894AE9B78FFFFFFFFEFFFFF3E7E2
+          D9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFAE7CBEBB470E5A45FF0CCA5FFFFFFFF
+          FFFFF4E9E3D8AD9AFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFD7A793EFDDD4FFFFFFFFFFFFFFFEFBFEFA
+          F6FFFFFFFFFFFFF8EFEBD9AF9CFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFD7A793F0E0D8
+          FFFFFFFFFFFFFFFFFFFFFFFFF8EFEBDAB1A0FF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFD7A793EED7CBFEFBFBFFFEFEF4E9E3DAB19EFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFD8AA96DEB5A4E0BAAAD8AA96FF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = BitBtn_Ver_Situacion_Registro_Vehiculos_su_EquipamientoClick
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 15
+      end
+    end
+    object TabSheet_Neumaticos: TTabSheet
+      Caption = '&NEUMATICOS  '
+      ClientHeight = 288
+      ClientWidth = 1221
+      object Boton_Elegir_Tipo_Neumaticos: TBitBtn
+        Left = 8
+        Height = 47
+        Top = 6
+        Width = 33
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_Tipo_NeumaticosClick
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Label31: TLabel
+        Left = 42
+        Height = 22
+        Top = 3
+        Width = 225
+        Caption = 'Tipo neumáticos/ruedas'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Descripcion_Tipo_Neumaticos: TEdit
+        Left = 42
+        Height = 26
+        Top = 26
+        Width = 225
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Descripcion_Tipo_NeumaticosClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+      end
+    end
+    object TabSheet_Datos_Propietario: TTabSheet
+      Caption = 'DATOS &PROPIETARIO  '
+      ClientHeight = 288
+      ClientWidth = 1221
+      object DBRadioGroup_Propietario_Tipo: TDBRadioGroup
+        Left = 9
+        Height = 82
+        Top = 8
+        Width = 119
+        Caption = 'TIPO PROPIETARIO'
+        DataField = 'tipo_propietario'
+        DataSource = form_vehiculos_000.DataSource_Vehiculos
+        Items.Strings = (
+          'Cliente'
+          'Empresa'
+          'Colaborador'
+        )
+        TabOrder = 0
+        Values.Strings = (
+          '1'
+          '2'
+          '3'
+        )
+      end
+      object GroupBox1: TGroupBox
+        Left = 135
+        Height = 82
+        Top = 8
+        Width = 1074
+        Caption = 'PROPIETARIO DEL VEHICULO'
+        ClientHeight = 62
+        ClientWidth = 1070
+        TabOrder = 1
+        object Boton_Elegir_Propietario: TBitBtn
+          Left = 8
+          Height = 47
+          Top = 5
+          Width = 38
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+            B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+            D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+            C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+            AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+            F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+            A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+            62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+            C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+            976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+            FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+            FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+            00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+            FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          }
+          OnClick = Boton_Elegir_PropietarioClick
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Label41: TLabel
+          Left = 47
+          Height = 22
+          Top = 6
+          Width = 201
+          Anchors = [akLeft, akBottom]
+          Caption = 'Nombre / razón social'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Propietario_Razon_Social: TEdit
+          Left = 48
+          Height = 26
+          Top = 26
+          Width = 281
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Razon_SocialClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object Label42: TLabel
+          Left = 334
+          Height = 22
+          Top = 4
+          Width = 169
+          Anchors = [akLeft, akBottom]
+          Caption = 'Nombre comercial'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Propietario_Nombre_Comercial: TEdit
+          Left = 334
+          Height = 26
+          Top = 26
+          Width = 266
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Razon_SocialClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 2
+        end
+        object Label43: TLabel
+          Left = 604
+          Height = 22
+          Top = 5
+          Width = 97
+          Anchors = [akLeft, akBottom]
+          Caption = 'N.I.F./ C.I.F.'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Propietario_NIF: TEdit
+          Left = 604
+          Height = 26
+          Top = 26
+          Width = 164
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Razon_SocialClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 3
+        end
+        object Boton_Elegir_Almacen: TBitBtn
+          Left = 794
+          Height = 47
+          Top = 5
+          Width = 38
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+            B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+            D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+            C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+            AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+            F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+            A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+            62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+            C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+            976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+            FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+            FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+            00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+            FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          }
+          OnClick = Boton_Elegir_AlmacenClick
+          ParentFont = False
+          TabOrder = 4
+        end
+        object Label12: TLabel
+          Left = 834
+          Height = 22
+          Top = 4
+          Width = 174
+          Caption = 'Almacén / Cochera'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Descripcion_Almacen: TEdit
+          Left = 834
+          Height = 26
+          Top = 26
+          Width = 229
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Descripcion_AlmacenClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 5
+        end
+      end
+      object Label44: TLabel
+        Left = 9
+        Height = 22
+        Top = 92
+        Width = 89
+        Anchors = [akLeft, akBottom]
+        Caption = 'Dirección'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Propietario_Direccion: TEdit
+        Left = 9
+        Height = 26
+        Top = 114
+        Width = 610
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Propietario_Razon_SocialClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object Label45: TLabel
+        Left = 626
+        Height = 22
+        Top = 92
+        Width = 73
+        Anchors = [akLeft, akBottom]
+        Caption = 'Número'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Propietario_Direccion_Numero: TEdit
+        Left = 626
+        Height = 26
+        Top = 114
+        Width = 73
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Propietario_Razon_SocialClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object Label51: TLabel
+        Left = 705
+        Height = 22
+        Top = 92
+        Width = 104
+        Anchors = [akLeft, akBottom]
+        Caption = 'Piso / Letra'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Propietario_Direccion_Piso_Letra: TEdit
+        Left = 705
+        Height = 26
+        Top = 114
+        Width = 104
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Propietario_Razon_SocialClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 4
+      end
+      object Label52: TLabel
+        Left = 816
+        Height = 22
+        Top = 92
+        Width = 129
+        Anchors = [akLeft, akBottom]
+        Caption = 'Código postal'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Propietario_Direccion_Codigo_Postal: TEdit
+        Left = 816
+        Height = 26
+        Top = 114
+        Width = 131
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Propietario_Razon_SocialClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 5
+      end
+      object Boton_Propietario_Buscar_en_gooble: TBitBtn
+        Left = 953
+        Height = 44
+        Hint = 'Ver en mapa'
+        Top = 96
+        Width = 34
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          12090000424D12090000000000003600000028000000150000001B0000000100
+          200000000000DC08000064000000640000000000000000000000C4DFD5FFB8CD
+          C4FFCFD7D0FFE4E1DCFFF5E8E6FFF1DFE0FFE3D2D5FFE6DEDFFFDDE1E2FFD6E4
+          E3FFD0E4E5FFCCE4E2FFCEE3E1FFD4E2E1FFDEE3E4FFE5E5E5FFEBE6E5FFEAE2
+          E2FFDFD7D7FFD3CECFFFD6D1D2FFD1E9E1FFD1E4DBFFEFF7F0FFCECBC6FFD9CE
+          CAFFD7C8C6FFD9C8CBFFD1C6C9FFB4B3B7FFAEB4B9FFABB7BBFFA9BBBCFFADBD
+          BCFFB5C2C0FFBFC9C3FFC9CDC7FFCEC9C6FFE6DFDCFFF3ECE9FFEDE9E8FFEFEB
+          EAFFDBE7E1FFE4EEE8FFD6DDD6FF3F4239FF15120AFF16100BFF2D2323FF1A11
+          14FF1D191FFF191821FF14171FFF10161BFF0D1816FF101D15FF172317FF1F28
+          1BFF18150DFF7F7974FFE4DED9FFFFFEFAFFFAF7F3FFFFFAFAFFFEF9F6FFBCBD
+          B4FF23291EFF697166FF677066FF363C37FF3C3B3DFF463F46FF453B47FF3F36
+          40FF554F54FF4B4C48FF40493CFF506049FF3C4A32FF424234FF353027FFFFFF
+          F9FFFFFDF8FFFFFEFAFFFFFAFAFFFFFFFCFFC0BDB5FF36382CFF707566FF5F68
+          5BFF49514AFF3D4544FF33393EFF383E45FF373A42FF3D4142FF3E4237FF4348
+          33FF515636FF474A2AFF504C39FF322E23FFFFFFF6FFF9F7EFFFFFFDF8FFEEF7
+          F4FFFBFFFCFFBCBAB0FF483F32FF7D7062FF6B6254FF6C6D63FF4B5B54FF4A6A
+          69FF4A7473FF4D7875FF45685EFF566956FF6F7153FF7E6C43FF89724CFF7D73
+          5BFF444132FFFFFFF7FFFBFAF0FFFFFFFAFFDCF6F0FFEFFFF7FFC9C7BCFF6B5B
+          4EFFB69D8DFFC3B3A3FFD0D2C6FFB0CEC3FF93D0C6FF88D7CEFF8FE1D4FF89CB
+          B8FFA8CAACFFC7C79FFFD3AE7CFFEDC394FFA08F74FF514F3DFFFFFFF5FFFDFC
+          F2FFFFFFFBFFE1FFFEFFE2FBF1FFCCCCBEFF5C4C3CFFA88E7DFFC4B5A2FFB5C1
+          AFFF98CAB8FF72CEBDFF5DD0BDFF67DCC5FF6FCFB1FF99CBA3FFB8B987FFC899
+          5CFFE9B17AFF9E8969FF474632FFFFFDEEFFF9F9EDFFFFFFF9FFE6FFFAFFDFF2
+          E9FFC8C8BAFF504936FFA69F86FFCAD0B7FFADD4BAFF9FE9CFFF5CCBB5FF47C9
+          B0FF4ECEB1FF64CBA6FF8FC695FFAEB479FFC99F58FFD9A667FF978461FF4746
+          32FFFFFFEFFFFCFCEEFFFFFFF9FFFFFFFEFFFFFFFBFFCACDBDFF45533BFF8EAD
+          8CFF94CAA5FF7DCDAAFF72DAB9FF62D8BFFF5ED9BFFF5ECCAFFF71C6A0FF8FBF
+          8BFFB4C17DFFD8C371FFC4A95FFF938961FF504F3AFFFFFFF2FFFFFFF2FFFFFF
+          F9FFFCEBE8FFFFFFF9FFB5BFAFFF35553CFF7CB594FF70C09BFF6AD0ADFF63D4
+          B3FF69DCC1FF73E0C6FF69C5A8FF6FB590FF7FAD79FFA8BE7DFFD1D183FFA49D
+          58FF84815BFF4B4B39FFFFFFF4FFFCFCF0FFFFFFF7FFFFF8EEFFFFFFF7FFB3C9
+          B7FF2F5D47FF63AA90FF6FC8AEFF5BC2A7FF64CFB4FF64CAB1FF85E0C6FF95E1
+          C2FF91CEAAFF88B688FF90B07AFFC2D89DFF94A16DFF74795EFF535549FFFFFF
+          F8FFFFFFF7FFF9FAF6FFFFFEF5FFFDFFF8FFB2CCBFFF2A5B4BFF5BA291FF68C2
+          AFFF60C3AFFF71D4C0FF7BD6C1FF7FCDB6FFAAE8D0FFBAEBCFFFA3CBA8FF8DAF
+          87FF8FAE81FF859C76FF828D79FF4C5045FFF4F6F0FFFFFFFBFFFFFFFEFFFFFC
+          FDFFFDFFFFFFB4C9C6FF2C564FFF549389FF5FAEA3FF58B0A3FF65BDB0FF7DCC
+          C1FF69AEA1FF95CCBDFFABD5C4FFB2D3BEFFC8E5CBFFB6D1B0FFB8CCAFFF838D
+          7DFF505449FFF9FBF5FFFFFFFBFFFFFFFEFFF8F1F8FFFBFEFFFFB4C6C7FF355A
+          56FF5F9890FF70B5AAFF6AB6ABFF71BDB2FF88CDC3FF8FCAC2FFAEDDD5FFACCF
+          C5FFB0CDBEFFD1EAD6FFA4BCA4FF7B8D76FF697363FF52564BFFFFFFFBFFFFFF
+          FBFFF5F6F4FFFFFBFFFFFBFEFFFFB4C4C3FF365750FF5F8F83FF72AD9EFF70AE
+          A0FF70AEA0FF75ADA2FF80B1A9FF92B8B2FF9EBDB6FFB3CDC0FFCAE1D2FFC8DE
+          CBFFB5C6B1FF6B7467FF505449FFFFFFFBFFFBFDF7FFF7F8F6FFFFFEFFFFFAFF
+          FFFFB6C6BFFF3A5748FF608974FF7AAC94FF82B69FFF83B6A2FF9FCCBCFF739B
+          90FF708F88FF8BA69DFFBED6CAFFBED3C4FFD9EED8FFEDFEE9FF929B8EFF5458
+          4DFFF3F5EFFFFDFFF9FFFFFFFEFFF2F6F1FFF4FDF3FFBBCDBCFF466048FF6789
+          6AFF82AA87FF90B999FF94BCA0FF9DC0ACFF84A394FFB1CAC0FFA5BDB3FFDCF0
+          E3FFD1E5D2FFD4EAD1FFE4F6DFFF8C9686FF53574CFFF6F8F2FFFFFFFBFFFFFF
+          FEFFF5FBF6FFFAFFF9FFC6D4C2FF42583CFF476240FF486742FF476443FF3F5C
+          43FF3B5545FF657A72FFBFD2CFFF4E5F5CFF52635AFF586B5CFF5D725CFF6C7D
+          68FF565F52FF45493EFFFFFFFBFFFFFFFBFFF7F8F6FFF5FAFBFFFAFFFCFFEDF7
+          EAFFA1AD99FF819277FF8FA287FF84967FFF88998CFF8B9998FF7E8991FFB5BE
+          CCFF828B98FF8E9AA0FF7A8785FF7B8B80FF8A9789FF81877CFFBABEB3FFF1F3
+          EDFFFFFFFBFFFDFEFCFFF9FBFFFFECF0F5FFEEF3F1FFEAF0E5FFEDF4E5FFF5FC
+          EFFFEDF3EEFFEEF1F9FFEEF1FFFFBCBFDEFF7F80A6FFC8CAEDFFDADEFAFFF1F8
+          FFFFF3FCFFFFEDF4F1FFE9EEE5FFF9FDF2FFFFFFFBFFFDFFF9FFFCFDFBFFF8F8
+          FFFFF5F4FFFFFAF8FFFFFFFDFFFFFFFCFEFFFBF6FFFFFFF9FFFFF9F2FFFF8D86
+          B9FF1F1855FF201C5EFF14114FFF9E9BCDFFE0DFFFFFF8F8FFFFDBDCE6FFFDFF
+          FCFFFFFFF8FFFAFCF6FFF3F5EFFFF8F9F7FFEEECFFFFFAF7FFFFFDFAFFFFFFFA
+          FFFFF1E7F3FFF8EDFFFFFFF4FFFFC7BBEDFF170C52FF211869FF1F166CFF2C26
+          75FF0B0546FFD5D1FFFFEEE9FFFFFDFAFFFFF2F3F1FFFAFEF3FFFFFFFBFFFEFF
+          FAFFFEFFFDFFF2F0FFFFFBF9FFFFFCF8FFFFFFFBFFFFFFF9FFFFFFF8FFFFF8EB
+          FFFF9286C0FF291F6CFF665DB7FF5D55B2FF5852A9FF241C62FF9A94C5FFF6F1
+          FFFFFEFAFFFFFCFDFBFFFFFFF8FFFFFFFBFFFEFFFAFFFBFCFAFFFAFDFFFFFBFE
+          FFFFFDFBFBFFFFFFFEFFFFFDFFFFFFF9FFFFEAE0FFFFAEA5DDFF4D4794FF847F
+          DAFF7D7AD6FF7674C6FF4A4687FFD1CDF7FFF7F3FFFFF3F0F2FFFFFFFBFFFDFF
+          F6FFFAFCF6FFFBFDF7FFFEFFFDFFF7FFF4FFF1F8EBFFFEFFEDFFFFFFEDFFFFFC
+          EEFFFEF9FAFFF5F2FFFFF4F1FFFF6D6CB0FF8488D7FFA9ADFEFF8D91D8FF7A7E
+          AFFFEFF0FFFFF2F1F3FFFFFFF8FFFBFCF2FFF8FCF1FFFAFCF6FFFFFFFBFFFFFF
+          FEFFEEFAE4FFE7F1DAFFF5FADFFFEBEED4FFF6F5E1FFFCF9F4FFE2E1F1FFEAEA
+          FFFFD7D9FFFF9AA0EBFF888EDBFF9DA6E6FFE1E7FFFFDDE1F3FFF3F5EFFFEAEC
+          D9FFEEF0E4FFEEF2E7FFEFF1EBFFEDEFE9FFE7E8E6FF
+        }
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Spacing = 0
+        TabOrder = 6
+      end
+      object Label53: TLabel
+        Left = 9
+        Height = 22
+        Top = 139
+        Width = 93
+        Caption = 'Población'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Propietario_Direccion_Poblacion: TEdit
+        Left = 9
+        Height = 26
+        Top = 160
+        Width = 376
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Propietario_Razon_SocialClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 7
+      end
+      object Label54: TLabel
+        Left = 393
+        Height = 22
+        Top = 139
+        Width = 88
+        Caption = 'Provincia'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Propietario_Direccion_Provincia: TEdit
+        Left = 394
+        Height = 26
+        Top = 160
+        Width = 312
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Propietario_Razon_SocialClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 8
+      end
+      object Label55: TLabel
+        Left = 713
+        Height = 22
+        Top = 139
+        Width = 40
+        Caption = 'País'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Propietario_Direccion_Pais: TEdit
+        Left = 714
+        Height = 26
+        Top = 160
+        Width = 273
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Propietario_Razon_SocialClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 9
+      end
+      object GroupBox7: TGroupBox
+        Left = 1007
+        Height = 120
+        Top = 90
+        Width = 202
+        Caption = ' TELEFONOS '
+        ClientHeight = 100
+        ClientWidth = 198
+        TabOrder = 10
+        object Label56: TLabel
+          Left = 11
+          Height = 19
+          Top = 2
+          Width = 15
+          Anchors = [akLeft, akBottom]
+          Caption = '1º'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label57: TLabel
+          Left = 11
+          Height = 19
+          Top = 26
+          Width = 15
+          Anchors = [akLeft, akBottom]
+          Caption = '2º'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label58: TLabel
+          Left = 11
+          Height = 19
+          Top = 50
+          Width = 31
+          Anchors = [akLeft, akBottom]
+          Caption = 'FAX'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label59: TLabel
+          Left = 11
+          Height = 19
+          Top = 74
+          Width = 40
+          Anchors = [akLeft, akBottom]
+          Caption = 'Móvil'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object BitBtn_Propietario_SMS: TBitBtn
+          Left = 54
+          Height = 23
+          Top = 70
+          Width = 32
+          Caption = 'SMS'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          OnClick = BitBtn_Propietario_SMSClick
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Edit_Propietario_Direccion_Tfno_1: TEdit
+          Left = 67
+          Height = 24
+          Top = -3
+          Width = 120
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Razon_SocialClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object Edit_Propietario_Direccion_Tfno_2: TEdit
+          Left = 67
+          Height = 24
+          Top = 21
+          Width = 120
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Razon_SocialClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 2
+        end
+        object Edit_Propietario_Direccion_FAX: TEdit
+          Left = 67
+          Height = 24
+          Top = 45
+          Width = 120
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Razon_SocialClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 3
+        end
+        object Edit_Propietario_Direccion_Tfno_Movil: TEdit
+          Left = 89
+          Height = 24
+          Top = 69
+          Width = 98
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Razon_SocialClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 4
+        end
+      end
+      object GroupBox_Propietario_Contacto: TGroupBox
+        Left = 9
+        Height = 78
+        Top = 205
+        Width = 1200
+        Caption = 'CONTACTO'
+        ClientHeight = 58
+        ClientWidth = 1196
+        TabOrder = 11
+        object Boton_Elegir_Propietario_Contacto: TBitBtn
+          Left = 8
+          Height = 54
+          Top = 0
+          Width = 45
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+            B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+            D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+            C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+            AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+            F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+            A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+            62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+            C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+            976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+            FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+            FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+            00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+            FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          }
+          OnClick = Boton_Elegir_Propietario_ContactoClick
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Label7: TLabel
+          Left = 55
+          Height = 22
+          Top = 3
+          Width = 73
+          Anchors = [akLeft, akBottom]
+          Caption = 'Nombre'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Propietario_Contacto_Nombre: TEdit
+          Left = 130
+          Height = 26
+          Top = 0
+          Width = 491
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object Label8: TLabel
+          Left = 630
+          Height = 22
+          Top = 3
+          Width = 136
+          Anchors = [akLeft, akBottom]
+          Caption = 'Cargo / puesto'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Propietario_Contacto_Cargo_Puesto: TEdit
+          Left = 769
+          Height = 26
+          Top = 0
+          Width = 416
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 2
+        end
+        object Label30: TLabel
+          Left = 55
+          Height = 22
+          Top = 31
+          Width = 71
+          Anchors = [akLeft, akBottom]
+          Caption = 'Tfno.1º.'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Propietario_Contacto_Tfno_1: TEdit
+          Left = 130
+          Height = 26
+          Top = 27
+          Width = 200
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 3
+        end
+        object Label65: TLabel
+          Left = 333
+          Height = 22
+          Top = 31
+          Width = 71
+          Anchors = [akLeft, akBottom]
+          Caption = 'Tfno.2º.'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Propietario_Contacto_Tfno_2: TEdit
+          Left = 404
+          Height = 26
+          Top = 27
+          Width = 200
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 4
+        end
+        object Label66: TLabel
+          Left = 608
+          Height = 22
+          Top = 31
+          Width = 37
+          Anchors = [akLeft, akBottom]
+          Caption = 'FAX'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Propietario_Contacto_FAX: TEdit
+          Left = 651
+          Height = 26
+          Top = 27
+          Width = 200
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 5
+        end
+        object Label67: TLabel
+          Left = 852
+          Height = 22
+          Top = 31
+          Width = 93
+          Anchors = [akLeft, akBottom]
+          Caption = 'Tfnº.móvil'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object BitBtn_Propietario_Contacto_SMS: TBitBtn
+          Left = 947
+          Height = 26
+          Top = 27
+          Width = 37
+          Caption = 'SMS'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 6
+        end
+        object Edit_Propietario_Contacto_Tfno_Movil: TEdit
+          Left = 985
+          Height = 26
+          Top = 27
+          Width = 200
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Propietario_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 7
+        end
+      end
+    end
+    object TabSheet_Aseguradora: TTabSheet
+      Caption = 'DATOS COMPAÑÍA DE &SEGUROS  '
+      ClientHeight = 288
+      ClientWidth = 1221
+      object Boton_Elegir_Aseguradora: TBitBtn
+        Left = 9
+        Height = 47
+        Top = 20
+        Width = 38
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+          B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+          D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+          C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+          AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+          F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+          A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+          62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+          C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+          976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+          FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+          FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+          00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+          FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        }
+        OnClick = Boton_Elegir_AseguradoraClick
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Label61: TLabel
+        Left = 48
+        Height = 22
+        Top = 21
+        Width = 374
+        Anchors = [akLeft, akBottom]
+        Caption = 'Nombre / razón social de la aseguradora'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Aseguradora_Razon_Social: TEdit
+        Left = 48
+        Height = 26
+        Top = 41
+        Width = 425
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Aseguradora_Razon_SocialClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object Label63: TLabel
+        Left = 478
+        Height = 22
+        Top = 21
+        Width = 169
+        Anchors = [akLeft, akBottom]
+        Caption = 'Nombre comercial'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Aseguradora_Nombre_Comercial: TEdit
+        Left = 478
+        Height = 26
+        Top = 41
+        Width = 355
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Aseguradora_Nombre_ComercialClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object Label64: TLabel
+        Left = 837
+        Height = 22
+        Top = 21
+        Width = 97
+        Anchors = [akLeft, akBottom]
+        Caption = 'N.I.F./ C.I.F.'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Aseguradora_NIF: TEdit
+        Left = 837
+        Height = 26
+        Top = 41
+        Width = 182
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Aseguradora_NIFClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object Label91: TLabel
+        Left = 1024
+        Height = 22
+        Top = 21
+        Width = 80
+        Anchors = [akLeft, akBottom]
+        Caption = 'Nº.póliza'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Codigo_Vehiculo2: TDBEdit
+        Left = 1024
+        Height = 26
+        Top = 41
+        Width = 185
+        DataField = 'nombre_propietario'
+        DataSource = form_clientes_000.DataSource_Clientes
+        CharCase = ecNormal
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 4
+      end
+      object Label68: TLabel
+        Left = 9
+        Height = 22
+        Top = 79
+        Width = 89
+        Anchors = [akLeft, akBottom]
+        Caption = 'Dirección'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Aseguradora_Direccion: TEdit
+        Left = 9
+        Height = 26
+        Top = 101
+        Width = 610
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Aseguradora_DireccionClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 5
+      end
+      object Label69: TLabel
+        Left = 626
+        Height = 22
+        Top = 79
+        Width = 73
+        Anchors = [akLeft, akBottom]
+        Caption = 'Número'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Aseguradora_Direccion_Numero: TEdit
+        Left = 626
+        Height = 26
+        Top = 101
+        Width = 73
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Aseguradora_Direccion_NumeroClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 6
+      end
+      object Label70: TLabel
+        Left = 705
+        Height = 22
+        Top = 79
+        Width = 104
+        Anchors = [akLeft, akBottom]
+        Caption = 'Piso / Letra'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Aseguradora_Direccion_Piso_Letra: TEdit
+        Left = 705
+        Height = 26
+        Top = 101
+        Width = 104
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Aseguradora_Direccion_NumeroClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 7
+      end
+      object Label71: TLabel
+        Left = 816
+        Height = 22
+        Top = 79
+        Width = 129
+        Anchors = [akLeft, akBottom]
+        Caption = 'Código postal'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Aseguradora_Direccion_Codigo_Postal: TEdit
+        Left = 816
+        Height = 26
+        Top = 101
+        Width = 131
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Aseguradora_Direccion_NumeroClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 8
+      end
+      object Boton_Aseguradora_Buscar_en_gooble: TBitBtn
+        Left = 953
+        Height = 44
+        Hint = 'Ver en mapa'
+        Top = 83
+        Width = 34
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'MS Sans Serif'
+        Glyph.Data = {
+          12090000424D12090000000000003600000028000000150000001B0000000100
+          200000000000DC08000064000000640000000000000000000000C4DFD5FFB8CD
+          C4FFCFD7D0FFE4E1DCFFF5E8E6FFF1DFE0FFE3D2D5FFE6DEDFFFDDE1E2FFD6E4
+          E3FFD0E4E5FFCCE4E2FFCEE3E1FFD4E2E1FFDEE3E4FFE5E5E5FFEBE6E5FFEAE2
+          E2FFDFD7D7FFD3CECFFFD6D1D2FFD1E9E1FFD1E4DBFFEFF7F0FFCECBC6FFD9CE
+          CAFFD7C8C6FFD9C8CBFFD1C6C9FFB4B3B7FFAEB4B9FFABB7BBFFA9BBBCFFADBD
+          BCFFB5C2C0FFBFC9C3FFC9CDC7FFCEC9C6FFE6DFDCFFF3ECE9FFEDE9E8FFEFEB
+          EAFFDBE7E1FFE4EEE8FFD6DDD6FF3F4239FF15120AFF16100BFF2D2323FF1A11
+          14FF1D191FFF191821FF14171FFF10161BFF0D1816FF101D15FF172317FF1F28
+          1BFF18150DFF7F7974FFE4DED9FFFFFEFAFFFAF7F3FFFFFAFAFFFEF9F6FFBCBD
+          B4FF23291EFF697166FF677066FF363C37FF3C3B3DFF463F46FF453B47FF3F36
+          40FF554F54FF4B4C48FF40493CFF506049FF3C4A32FF424234FF353027FFFFFF
+          F9FFFFFDF8FFFFFEFAFFFFFAFAFFFFFFFCFFC0BDB5FF36382CFF707566FF5F68
+          5BFF49514AFF3D4544FF33393EFF383E45FF373A42FF3D4142FF3E4237FF4348
+          33FF515636FF474A2AFF504C39FF322E23FFFFFFF6FFF9F7EFFFFFFDF8FFEEF7
+          F4FFFBFFFCFFBCBAB0FF483F32FF7D7062FF6B6254FF6C6D63FF4B5B54FF4A6A
+          69FF4A7473FF4D7875FF45685EFF566956FF6F7153FF7E6C43FF89724CFF7D73
+          5BFF444132FFFFFFF7FFFBFAF0FFFFFFFAFFDCF6F0FFEFFFF7FFC9C7BCFF6B5B
+          4EFFB69D8DFFC3B3A3FFD0D2C6FFB0CEC3FF93D0C6FF88D7CEFF8FE1D4FF89CB
+          B8FFA8CAACFFC7C79FFFD3AE7CFFEDC394FFA08F74FF514F3DFFFFFFF5FFFDFC
+          F2FFFFFFFBFFE1FFFEFFE2FBF1FFCCCCBEFF5C4C3CFFA88E7DFFC4B5A2FFB5C1
+          AFFF98CAB8FF72CEBDFF5DD0BDFF67DCC5FF6FCFB1FF99CBA3FFB8B987FFC899
+          5CFFE9B17AFF9E8969FF474632FFFFFDEEFFF9F9EDFFFFFFF9FFE6FFFAFFDFF2
+          E9FFC8C8BAFF504936FFA69F86FFCAD0B7FFADD4BAFF9FE9CFFF5CCBB5FF47C9
+          B0FF4ECEB1FF64CBA6FF8FC695FFAEB479FFC99F58FFD9A667FF978461FF4746
+          32FFFFFFEFFFFCFCEEFFFFFFF9FFFFFFFEFFFFFFFBFFCACDBDFF45533BFF8EAD
+          8CFF94CAA5FF7DCDAAFF72DAB9FF62D8BFFF5ED9BFFF5ECCAFFF71C6A0FF8FBF
+          8BFFB4C17DFFD8C371FFC4A95FFF938961FF504F3AFFFFFFF2FFFFFFF2FFFFFF
+          F9FFFCEBE8FFFFFFF9FFB5BFAFFF35553CFF7CB594FF70C09BFF6AD0ADFF63D4
+          B3FF69DCC1FF73E0C6FF69C5A8FF6FB590FF7FAD79FFA8BE7DFFD1D183FFA49D
+          58FF84815BFF4B4B39FFFFFFF4FFFCFCF0FFFFFFF7FFFFF8EEFFFFFFF7FFB3C9
+          B7FF2F5D47FF63AA90FF6FC8AEFF5BC2A7FF64CFB4FF64CAB1FF85E0C6FF95E1
+          C2FF91CEAAFF88B688FF90B07AFFC2D89DFF94A16DFF74795EFF535549FFFFFF
+          F8FFFFFFF7FFF9FAF6FFFFFEF5FFFDFFF8FFB2CCBFFF2A5B4BFF5BA291FF68C2
+          AFFF60C3AFFF71D4C0FF7BD6C1FF7FCDB6FFAAE8D0FFBAEBCFFFA3CBA8FF8DAF
+          87FF8FAE81FF859C76FF828D79FF4C5045FFF4F6F0FFFFFFFBFFFFFFFEFFFFFC
+          FDFFFDFFFFFFB4C9C6FF2C564FFF549389FF5FAEA3FF58B0A3FF65BDB0FF7DCC
+          C1FF69AEA1FF95CCBDFFABD5C4FFB2D3BEFFC8E5CBFFB6D1B0FFB8CCAFFF838D
+          7DFF505449FFF9FBF5FFFFFFFBFFFFFFFEFFF8F1F8FFFBFEFFFFB4C6C7FF355A
+          56FF5F9890FF70B5AAFF6AB6ABFF71BDB2FF88CDC3FF8FCAC2FFAEDDD5FFACCF
+          C5FFB0CDBEFFD1EAD6FFA4BCA4FF7B8D76FF697363FF52564BFFFFFFFBFFFFFF
+          FBFFF5F6F4FFFFFBFFFFFBFEFFFFB4C4C3FF365750FF5F8F83FF72AD9EFF70AE
+          A0FF70AEA0FF75ADA2FF80B1A9FF92B8B2FF9EBDB6FFB3CDC0FFCAE1D2FFC8DE
+          CBFFB5C6B1FF6B7467FF505449FFFFFFFBFFFBFDF7FFF7F8F6FFFFFEFFFFFAFF
+          FFFFB6C6BFFF3A5748FF608974FF7AAC94FF82B69FFF83B6A2FF9FCCBCFF739B
+          90FF708F88FF8BA69DFFBED6CAFFBED3C4FFD9EED8FFEDFEE9FF929B8EFF5458
+          4DFFF3F5EFFFFDFFF9FFFFFFFEFFF2F6F1FFF4FDF3FFBBCDBCFF466048FF6789
+          6AFF82AA87FF90B999FF94BCA0FF9DC0ACFF84A394FFB1CAC0FFA5BDB3FFDCF0
+          E3FFD1E5D2FFD4EAD1FFE4F6DFFF8C9686FF53574CFFF6F8F2FFFFFFFBFFFFFF
+          FEFFF5FBF6FFFAFFF9FFC6D4C2FF42583CFF476240FF486742FF476443FF3F5C
+          43FF3B5545FF657A72FFBFD2CFFF4E5F5CFF52635AFF586B5CFF5D725CFF6C7D
+          68FF565F52FF45493EFFFFFFFBFFFFFFFBFFF7F8F6FFF5FAFBFFFAFFFCFFEDF7
+          EAFFA1AD99FF819277FF8FA287FF84967FFF88998CFF8B9998FF7E8991FFB5BE
+          CCFF828B98FF8E9AA0FF7A8785FF7B8B80FF8A9789FF81877CFFBABEB3FFF1F3
+          EDFFFFFFFBFFFDFEFCFFF9FBFFFFECF0F5FFEEF3F1FFEAF0E5FFEDF4E5FFF5FC
+          EFFFEDF3EEFFEEF1F9FFEEF1FFFFBCBFDEFF7F80A6FFC8CAEDFFDADEFAFFF1F8
+          FFFFF3FCFFFFEDF4F1FFE9EEE5FFF9FDF2FFFFFFFBFFFDFFF9FFFCFDFBFFF8F8
+          FFFFF5F4FFFFFAF8FFFFFFFDFFFFFFFCFEFFFBF6FFFFFFF9FFFFF9F2FFFF8D86
+          B9FF1F1855FF201C5EFF14114FFF9E9BCDFFE0DFFFFFF8F8FFFFDBDCE6FFFDFF
+          FCFFFFFFF8FFFAFCF6FFF3F5EFFFF8F9F7FFEEECFFFFFAF7FFFFFDFAFFFFFFFA
+          FFFFF1E7F3FFF8EDFFFFFFF4FFFFC7BBEDFF170C52FF211869FF1F166CFF2C26
+          75FF0B0546FFD5D1FFFFEEE9FFFFFDFAFFFFF2F3F1FFFAFEF3FFFFFFFBFFFEFF
+          FAFFFEFFFDFFF2F0FFFFFBF9FFFFFCF8FFFFFFFBFFFFFFF9FFFFFFF8FFFFF8EB
+          FFFF9286C0FF291F6CFF665DB7FF5D55B2FF5852A9FF241C62FF9A94C5FFF6F1
+          FFFFFEFAFFFFFCFDFBFFFFFFF8FFFFFFFBFFFEFFFAFFFBFCFAFFFAFDFFFFFBFE
+          FFFFFDFBFBFFFFFFFEFFFFFDFFFFFFF9FFFFEAE0FFFFAEA5DDFF4D4794FF847F
+          DAFF7D7AD6FF7674C6FF4A4687FFD1CDF7FFF7F3FFFFF3F0F2FFFFFFFBFFFDFF
+          F6FFFAFCF6FFFBFDF7FFFEFFFDFFF7FFF4FFF1F8EBFFFEFFEDFFFFFFEDFFFFFC
+          EEFFFEF9FAFFF5F2FFFFF4F1FFFF6D6CB0FF8488D7FFA9ADFEFF8D91D8FF7A7E
+          AFFFEFF0FFFFF2F1F3FFFFFFF8FFFBFCF2FFF8FCF1FFFAFCF6FFFFFFFBFFFFFF
+          FEFFEEFAE4FFE7F1DAFFF5FADFFFEBEED4FFF6F5E1FFFCF9F4FFE2E1F1FFEAEA
+          FFFFD7D9FFFF9AA0EBFF888EDBFF9DA6E6FFE1E7FFFFDDE1F3FFF3F5EFFFEAEC
+          D9FFEEF0E4FFEEF2E7FFEFF1EBFFEDEFE9FFE7E8E6FF
+        }
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Spacing = 0
+        TabOrder = 9
+      end
+      object Label76: TLabel
+        Left = 9
+        Height = 22
+        Top = 131
+        Width = 93
+        Caption = 'Población'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Aseguradora_Direccion_Poblacion: TEdit
+        Left = 9
+        Height = 26
+        Top = 152
+        Width = 376
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Aseguradora_Direccion_NumeroClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 10
+      end
+      object Label77: TLabel
+        Left = 393
+        Height = 22
+        Top = 131
+        Width = 88
+        Caption = 'Provincia'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Aseguradora_Direccion_Provincia: TEdit
+        Left = 394
+        Height = 26
+        Top = 152
+        Width = 312
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Aseguradora_Direccion_NumeroClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 11
+      end
+      object Label78: TLabel
+        Left = 713
+        Height = 22
+        Top = 131
+        Width = 40
+        Caption = 'País'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit_Aseguradora_Direccion_Pais: TEdit
+        Left = 714
+        Height = 26
+        Top = 152
+        Width = 273
+        Anchors = [akLeft]
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        OnClick = Edit_Aseguradora_Direccion_NumeroClick
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 12
+      end
+      object GroupBox12: TGroupBox
+        Left = 1007
+        Height = 120
+        Top = 75
+        Width = 202
+        Caption = ' TELEFONOS '
+        ClientHeight = 100
+        ClientWidth = 198
+        TabOrder = 13
+        object Label72: TLabel
+          Left = 11
+          Height = 19
+          Top = 2
+          Width = 15
+          Anchors = [akLeft, akBottom]
+          Caption = '1º'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label73: TLabel
+          Left = 11
+          Height = 19
+          Top = 26
+          Width = 15
+          Anchors = [akLeft, akBottom]
+          Caption = '2º'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label74: TLabel
+          Left = 11
+          Height = 19
+          Top = 50
+          Width = 31
+          Anchors = [akLeft, akBottom]
+          Caption = 'FAX'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label75: TLabel
+          Left = 11
+          Height = 19
+          Top = 74
+          Width = 40
+          Anchors = [akLeft, akBottom]
+          Caption = 'Móvil'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object BitBtn_Aseguradora_SMS: TBitBtn
+          Left = 54
+          Height = 23
+          Top = 70
+          Width = 32
+          Caption = 'SMS'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          OnClick = BitBtn_Aseguradora_SMSClick
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Edit_Aseguradora_Direccion_Tfno_1: TEdit
+          Left = 67
+          Height = 24
+          Top = -3
+          Width = 120
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Aseguradora_Direccion_NumeroClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object Edit_Aseguradora_Direccion_Tfno_2: TEdit
+          Left = 67
+          Height = 24
+          Top = 21
+          Width = 120
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Aseguradora_Direccion_NumeroClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 2
+        end
+        object Edit_Aseguradora_Direccion_FAX: TEdit
+          Left = 67
+          Height = 24
+          Top = 45
+          Width = 120
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Aseguradora_Direccion_NumeroClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 3
+        end
+        object Edit_Aseguradora_Direccion_Tfno_Movil: TEdit
+          Left = 89
+          Height = 24
+          Top = 69
+          Width = 98
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Aseguradora_Direccion_NumeroClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 4
+        end
+      end
+      object GroupBox_Aseguradora_Contacto: TGroupBox
+        Left = 9
+        Height = 91
+        Top = 192
+        Width = 1200
+        Caption = 'CONTACTO'
+        ClientHeight = 71
+        ClientWidth = 1196
+        TabOrder = 14
+        object Boton_Elegir_Aseguradora_Contacto: TBitBtn
+          Left = 8
+          Height = 60
+          Top = 2
+          Width = 45
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'MS Sans Serif'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FF0F59E11A57CA3767BF415B9F1344B4FF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF317BEB5D8CD19EA7B7C5
+            B4AADEAB8BF0995BA4908C2358C2FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            1676FF5F98E3FAD3A3FFD7A5FFDDA7FFD1A3E6A478D9834FFCC08BE9D4C25F8B
+            D71E60D8FF00FFFF00FFFF00FFFF00FF2A68B8CAB79EFFEAC6FEE6C7FCE2C5EF
+            C9ABDA9268E69D69F8D5B4FFEAD4FFFAEBA6C5EF2D75E9FF00FFFF00FF1C76FF
+            AB753DFFDDA1FEF4EAFEF3E3FAE5D3E9BC9FD48051EAAC81FCE6CFFFF3E9FFFA
+            F6FFFFFF99B6E3135DE0FF00FF1A6AC76EB459FFF6E6FFFAF4FFFAF3F7E0D0E0
+            A584E19666F3CCADB5B0A9DAD5D0FEFEFCFFFFFEB691932A69D1FF00FF186F75
+            62D188FFFFFFFFFEFBFEFBF7EFD0BCD99168E39F73FEE5D0F3EDE5BABBB8C2C4
+            C1F4F0EF807AA12378FAFF00FF093BC2C0D5EEFFFFFFFFFFFFFEFCFAE7CABCDA
+            976DF2C098E1D8CFFBF6F2FFFFFFEAE9E7A1C7F72378FAFF00FF1864E31F42EF
+            FFFFFFD8EAFFA7CFFF80B7FF3289FF5C96E5D5D7DCD3CBC0B4B4B1E0E0E0FFFF
+            FF569EFF1673FFFF00FF1B75FF398AFF4D99FF589FFFFF00FFFF00FFFF00FFFF
+            00FF1974FF9DCAFFEDEDEBD5CEC0CEE2F8287FFFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF1974FFADD3FF5BA0
+            FE1873FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FF1974FFFF00FFFF00FFFF00FFFF00FFFF00FF
+            FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+            FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+            00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          }
+          OnClick = Boton_Elegir_Aseguradora_ContactoClick
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Label79: TLabel
+          Left = 55
+          Height = 22
+          Top = 6
+          Width = 73
+          Anchors = [akLeft, akBottom]
+          Caption = 'Nombre'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Aseguradora_Contacto_Nombre: TEdit
+          Left = 130
+          Height = 26
+          Top = 2
+          Width = 491
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Aseguradora_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 1
+        end
+        object Label80: TLabel
+          Left = 630
+          Height = 22
+          Top = 6
+          Width = 136
+          Anchors = [akLeft, akBottom]
+          Caption = 'Cargo / puesto'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Aseguradora_Cargo_Puesto: TEdit
+          Left = 769
+          Height = 26
+          Top = 2
+          Width = 416
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Aseguradora_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 2
+        end
+        object Label81: TLabel
+          Left = 55
+          Height = 22
+          Top = 40
+          Width = 71
+          Anchors = [akLeft, akBottom]
+          Caption = 'Tfno.1º.'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Aseguradora_Contacto_Tfno_1: TEdit
+          Left = 130
+          Height = 26
+          Top = 36
+          Width = 200
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Aseguradora_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 3
+        end
+        object Label82: TLabel
+          Left = 333
+          Height = 22
+          Top = 40
+          Width = 71
+          Anchors = [akLeft, akBottom]
+          Caption = 'Tfno.2º.'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Aseguradora_Contacto_Tfno_2: TEdit
+          Left = 404
+          Height = 26
+          Top = 36
+          Width = 200
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Aseguradora_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 4
+        end
+        object Label83: TLabel
+          Left = 608
+          Height = 22
+          Top = 40
+          Width = 37
+          Anchors = [akLeft, akBottom]
+          Caption = 'FAX'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Edit_Aseguradora_Contacto_FAX: TEdit
+          Left = 651
+          Height = 26
+          Top = 36
+          Width = 200
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Aseguradora_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 5
+        end
+        object Label84: TLabel
+          Left = 852
+          Height = 22
+          Top = 40
+          Width = 93
+          Anchors = [akLeft, akBottom]
+          Caption = 'Tfnº.móvil'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object BitBtn_Aseguradora_Contacto_SMS: TBitBtn
+          Left = 947
+          Height = 26
+          Top = 36
+          Width = 37
+          Caption = 'SMS'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 6
+        end
+        object Edit_Aseguradora_Contacto_Tfno_Movil: TEdit
+          Left = 985
+          Height = 26
+          Top = 36
+          Width = 200
+          Anchors = [akLeft]
+          Color = 7001047
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          OnClick = Edit_Aseguradora_Contacto_NombreClick
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 7
+        end
+      end
+    end
+    object TabSheet_Avisos: TTabSheet
+      Caption = '&AVISOS  '
+    end
+  end
+  object Label26: TLabel
+    Left = 26
+    Height = 22
+    Top = 566
+    Width = 272
+    Caption = 'Observaciones / comentarios'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBMemo_Observaciones_Comentarios: TDBMemo
+    Left = 26
+    Height = 74
+    Top = 588
+    Width = 1229
+    DataField = 'Observaciones_Comentarios'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ScrollBars = ssAutoVertical
+    TabOrder = 26
+  end
+  object DBDateTimePicker_Fecha_ITV_Ultima: TDBDateTimePicker
+    Left = 1150
+    Height = 26
+    Top = 208
+    Width = 105
+    DataField = 'ITV_fecha_ultima'
+    DataSource = form_vehiculos_000.DataSource_Vehiculos
+    ReadOnly = False
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 27
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object Label93: TLabel
+    Left = 1152
+    Height = 22
+    Top = 187
+    Width = 92
+    Anchors = [akLeft, akBottom]
+    Caption = 'ITV última'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+end

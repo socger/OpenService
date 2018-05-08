@@ -1,0 +1,150 @@
+object form_terminales_001: Tform_terminales_001
+  Left = 597
+  Height = 171
+  Top = 155
+  Width = 631
+  ActiveControl = DBEdit_Descripcion
+  Caption = 'Ficha - terminal'
+  ClientHeight = 171
+  ClientWidth = 631
+  Color = 14737613
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.4.2.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 619
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object GroupBox11: TGroupBox
+    Left = 24
+    Height = 38
+    Top = -2
+    Width = 174
+    ClientHeight = 18
+    ClientWidth = 170
+    TabOrder = 1
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -4
+      Width = 56
+      Anchors = [akLeft, akBottom]
+      Caption = 'Código'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 74
+      Height = 23
+      Top = -7
+      Width = 90
+      DataField = 'id'
+      DataSource = form_terminales_000.DataSource_Terminales
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = DBEdit_Descripcion
+    AnchorSideBottom.Control = DBEdit_Descripcion
+    Left = 24
+    Height = 22
+    Top = 48
+    Width = 112
+    Anchors = [akLeft, akBottom]
+    Caption = 'Descripción'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Descripcion: TDBEdit
+    Left = 24
+    Height = 23
+    Top = 70
+    Width = 583
+    DataField = 'descripcion'
+    DataSource = form_terminales_000.DataSource_Terminales
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 2
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = DBEdit_Saldo
+    AnchorSideBottom.Control = DBEdit_Saldo
+    Left = 24
+    Height = 22
+    Top = 93
+    Width = 53
+    Anchors = [akLeft, akBottom]
+    Caption = 'Saldo'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Saldo: TDBEdit
+    Left = 24
+    Height = 23
+    Top = 115
+    Width = 224
+    DataField = 'Saldo'
+    DataSource = form_terminales_000.DataSource_Terminales
+    BiDiMode = bdRightToLeft
+    CharCase = ecNormal
+    MaxLength = 0
+    ParentBiDiMode = False
+    TabOrder = 3
+  end
+  object BitBtn_Configurar_Terminal: TBitBtn
+    Left = 415
+    Height = 38
+    Hint = 'Asignar descuentos a los artículos de esta familia'
+    Top = 104
+    Width = 192
+    Caption = 'CONFIGURAR TERMINAL'
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Times New Roman'
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
+  end
+end

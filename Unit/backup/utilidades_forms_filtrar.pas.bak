@@ -1,0 +1,2638 @@
+unit utilidades_forms_Filtrar;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+    Dialogs, sqldb, db, Forms, Classes, SysUtils, utilidades_usuarios, utilidades_general;
+
+type
+    TRecord_Rgtro_Comun = record
+        { COMUN A TODAS LAS TABLAS }
+        id_1          : String;
+        id_2          : String;
+        id_3          : String;
+        descripcion_1 : String;
+        descripcion_2 : String;
+        descripcion_3 : String;
+    end;
+
+    function  UTI_Guardar_Datos_Registro( param_id_1, param_id_2, param_id_3, param_descripcion_1, param_descripcion_2, param_descripcion_3 : String ) : TRecord_Rgtro_Comun;
+    function  UTI_Abrir_Form( param_Elegimos, param_Solo_Ver : Boolean; param_Campo : ShortString; param_Menu_Worked : Integer ) : TRecord_Rgtro_Comun;
+
+implementation
+
+uses menu, formas_pago_000, users_000, menus_000, medios_000, peliculas_000, clientes_000, paises_000,
+     tarifas_000, clientes_tipos_000, provincias_000, poblaciones_000, representantes_000, articulos_000,
+     proveedores_000, proveedores_tipos_000, articulos_familias_000, terminales_000, impresoras_000,
+     grupos_cocina_000, impuestos_000, personal_familias_000, personal_000, personal_contratos_familias_000,
+     personal_contratos_000, empresas_000, almacenes_000, gastos_tipos_000, cuentas_pagos_cobros_000,
+     conceptos_almacen_traspaso_000, series_servicios_000, articulos_ofertas_000, bancos_ctas_empresas_000,
+     almacenes_movimientos_000, vehiculos_tipos_000, vehiculos_marcas_000, combustibles_000,
+     vehiculos_tipo_cambios_000, tarjetas_transporte_000, vehiculos_000, vehiculos_tipo_ruedas_000,
+     vehiculos_equipamientos_000, albaranes_ventas_000, presupuestos_ventas_000, pedidos_ventas_000,
+     configuracion_000, visitas_tipos_000, visitas_resultados_000, visitas_000, actividades_000,
+     rutas_000, visitas_por_zona_000, visitas_por_provincia_000, visitas_por_cliente_000,
+     visitas_por_tipo_cliente_000, visitas_por_actividad_000, visitas_por_representante_000,
+     visitas_planificacion_por_zona_000, visitas_planificacion_por_provincia_000, facturas_ventas_000,
+     margenes_tarifas_000, presupuestos_compras_000, pedidos_compras_000, albaranes_compras_000,
+     facturas_compras_000, utilidades_000, facturas_cerrar_000, articulos_ultimas_ventas_000,
+     reportes_000, servicios_regulares_000, servicios_tipos_000;
+
+function UTI_Guardar_Datos_Registro( param_id_1,
+                                     param_id_2,
+                                     param_id_3,
+                                     param_descripcion_1,
+                                     param_descripcion_2,
+                                     param_descripcion_3 : String ) : TRecord_Rgtro_Comun;
+begin
+    Result.id_1          := param_id_1;
+    Result.id_2          := param_id_2;
+    Result.id_3          := param_id_3;
+
+    Result.descripcion_1 := param_descripcion_1;
+    Result.descripcion_2 := param_descripcion_2;
+    Result.descripcion_3 := param_descripcion_3;
+end;
+
+function UTI_Abrir_Form( param_Elegimos,
+                         param_Solo_Ver : Boolean;
+                         param_Campo : ShortString;
+                         param_Menu_Worked : Integer ) : TRecord_Rgtro_Comun;
+var var_msg            : TStrings;
+    var_msg_ya_abierto : ShortString;
+begin
+     var_msg_ya_abierto := rs_Modulo_Abierto;
+
+     var_msg := TStringList.Create;
+     var_msg.Clear;
+
+     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+   { ***********************************************************************************************
+     EMPEZAMOS A VER A QUE MODULO LLAMAREMOS
+     *********************************************************************************************** }
+     { MEDIOS }
+     If ( Pos( UpperCase('id_medio'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+        ( param_Menu_Worked = 10 )                                          then
+     begin
+          if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+          begin
+              if UTI_GEN_Form_Abierto_Ya('form_medios_000') = false then
+                  begin
+                      Application.CreateForm(TForm_medios_000, Form_medios_000);
+                      Form_medios_000.public_Solo_Ver    := param_Solo_Ver;
+                      Form_medios_000.public_Elegimos    := param_Elegimos;
+                      Form_medios_000.public_Menu_Worked := param_Menu_Worked;
+                      Form_medios_000.para_Empezar;
+
+                      Form_medios_000.ShowModal;
+
+                      if form_medios_000.public_Rgtro_Seleccionado = true then
+                      begin
+                          with Form_medios_000.SQLQuery_Medios do
+                          begin
+                              Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                    '',
+                                                                    '',
+                                                                    FieldByName('Descripcion').AsString,
+                                                                    '',
+                                                                    '' );
+                          end;
+                      end;
+
+                      Form_medios_000.Free;
+                      param_Campo := '';
+                  end
+              else
+                  begin
+                      var_msg.Add(var_msg_ya_abierto);
+                  end;
+          end;
+     end;
+
+     { PELICULAS }
+     If ( Pos( UpperCase('id_pelicula'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+        ( param_Menu_Worked = 20 )                                             then
+     begin
+          if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+          begin
+              if UTI_GEN_Form_Abierto_Ya('form_peliculas_000') = false then
+                  begin
+                      Application.CreateForm(TForm_peliculas_000, Form_peliculas_000);
+                      //var_Form_peliculas_000 := TForm_peliculas_000.Create(nil);
+                      Form_peliculas_000.public_Solo_Ver    := param_Solo_Ver;
+                      Form_peliculas_000.public_Elegimos    := param_Elegimos;
+                      Form_peliculas_000.public_Menu_Worked := param_Menu_Worked;
+                      Form_peliculas_000.para_Empezar;
+
+                      Form_peliculas_000.ShowModal;
+
+                      if Form_peliculas_000.public_Rgtro_Seleccionado = true then
+                      begin
+                          with Form_peliculas_000.SQLQuery_Pelis do
+                          begin
+                              Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                    '',
+                                                                    '',
+                                                                    FieldByName('Descripcion').AsString,
+                                                                    '',
+                                                                    '' );
+                          end;
+                      end;
+
+                      Form_peliculas_000.Free;
+                      param_Campo := '';
+                  end
+              else
+                  begin
+                      var_msg.Add(var_msg_ya_abierto);
+                  end;
+          end;
+     end;
+
+     { USUARIOS }
+     If ( Pos( UpperCase('Id_Users'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+        ( param_Menu_Worked = 30 )                                          then
+     begin
+          if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+          begin
+              if UTI_GEN_Form_Abierto_Ya('form_users_000') = false then
+                  begin
+                      Application.CreateForm(TForm_users_000, Form_users_000);
+                      Form_users_000.public_Solo_Ver    := param_Solo_Ver;
+                      Form_users_000.public_Elegimos    := param_Elegimos;
+                      Form_users_000.public_Menu_Worked := param_Menu_Worked;
+                      Form_users_000.para_Empezar;
+
+                      Form_users_000.ShowModal;
+
+                      if Form_users_000.public_Rgtro_Seleccionado = true then
+                      begin
+                          with Form_users_000.SQLQuery_Users do
+                          begin
+                              Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                    '',
+                                                                    '',
+                                                                    FieldByName('Descripcion_Nick').AsString,
+                                                                    '',
+                                                                    '' );
+                          end;
+                      end;
+
+                      Form_users_000.Free;
+                      param_Campo := '';
+                  end
+              else
+                  begin
+                      var_msg.Add(var_msg_ya_abierto);
+                  end;
+          end;
+     end;
+
+     { MENUS }
+     If ( Pos( UpperCase('Id_Menus'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+        ( param_Menu_Worked = 40 )                                          then
+     begin
+          if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+          begin
+             if UTI_GEN_Form_Abierto_Ya('form_menus_000') = false then
+                  begin
+                      Application.CreateForm(TForm_menus_000, Form_menus_000);
+                      Form_menus_000.public_Solo_Ver    := param_Solo_Ver;
+                      Form_menus_000.public_Elegimos    := param_Elegimos;
+                      Form_menus_000.public_Menu_Worked := param_Menu_Worked;
+                      Form_menus_000.para_Empezar;
+
+                      Form_menus_000.ShowModal;
+
+                     if Form_menus_000.public_Rgtro_Seleccionado = true then
+                     begin
+                          with Form_menus_000.SQLQuery_Menus do
+                          begin
+                              Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                    '',
+                                                                    '',
+                                                                    FieldByName('Descripcion').AsString,
+                                                                    '',
+                                                                    '' );
+                          end;
+                     end;
+
+                      Form_menus_000.Free;
+                      param_Campo := '';
+                  end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+          end;
+     end;
+
+     { CLIENTES }
+     If ( Pos( UpperCase('id_clientes'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+        ( param_Menu_Worked = 50 )                                             then
+     begin
+          if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+          begin
+              if UTI_GEN_Form_Abierto_Ya('f_clientes_000') = false then
+                  begin
+                      Application.CreateForm(Tf_clientes_000, f_clientes_000);
+
+                      f_clientes_000.public_Solo_Ver    := param_Solo_Ver;
+                      f_clientes_000.public_Elegimos    := param_Elegimos;
+                      f_clientes_000.public_Menu_Worked := param_Menu_Worked;
+                      f_clientes_000.para_Empezar;
+
+                      f_clientes_000.ShowModal;
+
+                      if f_clientes_000.public_Rgtro_Seleccionado = true then
+                      begin
+                          with f_clientes_000.SQLQuery_Clientes do
+                          begin
+                              Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                    FieldByName('id_Agencias_Transporte').AsString,
+                                                                    '',
+                                                                    FieldByName('nombre_propietario').AsString,
+                                                                    FieldByName('nombre_comercial').AsString,
+                                                                    FieldByName('Cuenta_Contable').AsString );
+                          end;
+                      end;
+
+                      f_clientes_000.Free;
+                      param_Campo := '';
+                  end
+              else
+                  begin
+                      var_msg.Add(var_msg_ya_abierto);
+                  end;
+          end;
+     end;
+
+     { PAISES }
+     If ( Pos( UpperCase('id_paises'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+        ( param_Menu_Worked = 60 )                                           then
+     begin
+          if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+          begin
+              if UTI_GEN_Form_Abierto_Ya('form_paises_000') = false then
+                  begin
+                      Application.CreateForm(Tform_paises_000, form_paises_000);
+                      form_paises_000.public_Solo_Ver    := param_Solo_Ver;
+                      form_paises_000.public_Elegimos    := param_Elegimos;
+                      form_paises_000.public_Menu_Worked := param_Menu_Worked;
+                      form_paises_000.para_Empezar;
+
+                      form_paises_000.ShowModal;
+
+                      if form_paises_000.public_Rgtro_Seleccionado = true then
+                      begin
+                          with form_paises_000.SQLQuery_Paises do
+                          begin
+                              Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                    '',
+                                                                    '',
+                                                                    FieldByName('descripcion').AsString,
+                                                                    '',
+                                                                    '' );
+                          end;
+                      end;
+
+                      form_paises_000.Free;
+                      param_Campo := '';
+                  end
+              else
+                  begin
+                      var_msg.Add(var_msg_ya_abierto);
+                  end;
+          end;
+     end;
+
+     { CLIENTES TIPOS }
+     If ( Pos( UpperCase('id_clientes_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+        ( param_Menu_Worked = 70 )                                                   then
+     begin
+          if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+          begin
+              if UTI_GEN_Form_Abierto_Ya('f_clientes_tipos_000') = false then
+                  begin
+                      Application.CreateForm(Tf_clientes_tipos_000, f_clientes_tipos_000);
+                      f_clientes_tipos_000.public_Solo_Ver    := param_Solo_Ver;
+                      f_clientes_tipos_000.public_Elegimos    := param_Elegimos;
+                      f_clientes_tipos_000.public_Menu_Worked := param_Menu_Worked;
+                      f_clientes_tipos_000.para_Empezar;
+
+                      f_clientes_tipos_000.ShowModal;
+
+                      if f_clientes_tipos_000.public_Rgtro_Seleccionado = true then
+                      begin
+                          with f_clientes_tipos_000.SQLQuery_Principal do
+                          begin
+                              Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                    '',
+                                                                    '',
+                                                                    FieldByName('descripcion').AsString,
+                                                                    FieldByName('Cuenta_Contable').AsString,
+                                                                    FieldByName('Cuenta_Contable').AsString );
+                          end;
+                      end;
+
+                      f_clientes_tipos_000.Free;
+                      param_Campo := '';
+                  end
+              else
+                  begin
+                      var_msg.Add(var_msg_ya_abierto);
+                  end;
+          end;
+     end;
+
+     { FORMAS PAGO }
+     If ( Pos( UpperCase('id_formas_pago'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+        ( param_Menu_Worked = 80 )                                                then
+     begin
+          if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+          begin
+              if UTI_GEN_Form_Abierto_Ya('form_formas_pago_000') = false then
+                  begin
+                      Application.CreateForm(Tform_formas_pago_000, form_formas_pago_000);
+                      form_formas_pago_000.public_Solo_Ver    := param_Solo_Ver;
+                      form_formas_pago_000.public_Elegimos    := param_Elegimos;
+                      form_formas_pago_000.public_Menu_Worked := param_Menu_Worked;
+                      form_formas_pago_000.para_Empezar;
+
+                      form_formas_pago_000.ShowModal;
+
+                      if form_formas_pago_000.public_Rgtro_Seleccionado = true then
+                      begin
+                          with form_formas_pago_000.SQLQuery_Formas_Pago do
+                          begin
+                              Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                    FieldByName('Vencimientos_Cantidad').AsString,
+                                                                    FieldByName('Vencimientos_1_Dias').AsString,
+                                                                    FieldByName('descripcion').AsString,
+                                                                    FieldByName('Vencimientos_Dias_Entre').AsString,
+                                                                    '' );
+                          end;
+                      end;
+
+                      form_formas_pago_000.Free;
+                      param_Campo := '';
+                  end
+              else
+                  begin
+                      var_msg.Add(var_msg_ya_abierto);
+                  end;
+          end;
+     end;
+
+     { TARIFAS }
+     If ( Pos( UpperCase('id_tarifas'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+        ( param_Menu_Worked = 90 )                                            then
+     begin
+          if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+          begin
+              if UTI_GEN_Form_Abierto_Ya('form_tarifas_000') = false then
+                  begin
+                      Application.CreateForm(Tform_tarifas_000, form_tarifas_000);
+                      form_tarifas_000.public_Solo_Ver    := param_Solo_Ver;
+                      form_tarifas_000.public_Elegimos    := param_Elegimos;
+                      form_tarifas_000.public_Menu_Worked := param_Menu_Worked;
+                      form_tarifas_000.para_Empezar;
+
+                      form_tarifas_000.ShowModal;
+
+                      if form_tarifas_000.public_Rgtro_Seleccionado = true then
+                      begin
+                          with form_tarifas_000.SQLQuery_Tarifas do
+                          begin
+                              Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                    '',
+                                                                    '',
+                                                                    FieldByName('descripcion').AsString,
+                                                                    '',
+                                                                    '' );
+                          end;
+                      end;
+
+                      form_tarifas_000.Free;
+                      param_Campo := '';
+                  end
+              else
+                  begin
+                      var_msg.Add(var_msg_ya_abierto);
+                  end;
+          end;
+     end;
+
+    { PROVINCIAS }
+    If ( Pos( UpperCase('id_provincias'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 100 )                                              then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_provincias_000') = false then
+               begin
+                   Application.CreateForm(Tform_provincias_000, form_provincias_000);
+                   form_provincias_000.public_Solo_Ver    := param_Solo_Ver;
+                   form_provincias_000.public_Elegimos    := param_Elegimos;
+                   form_provincias_000.public_Menu_Worked := param_Menu_Worked;
+                   form_provincias_000.para_Empezar;
+
+                   form_provincias_000.ShowModal;
+
+                   if form_provincias_000.public_Rgtro_Seleccionado = true then
+                   begin
+                       with form_provincias_000.SQLQuery_Provincias do
+                       begin
+                           Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                 FieldByName('id_paises').AsString,
+                                                                 '',
+                                                                 FieldByName('descripcion').AsString,
+                                                                 FieldByName('OT_descripcion_pais').AsString,
+                                                                 '' );
+                       end;
+                   end;
+
+                   form_provincias_000.Free;
+                   param_Campo := '';
+               end
+           else
+               begin
+                   var_msg.Add(var_msg_ya_abierto);
+               end;
+       end;
+    end;
+
+    { POBLACIONES }
+    If ( Pos( UpperCase('id_poblaciones'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 110 )                                               then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_poblaciones_000') = false then
+               begin
+                   Application.CreateForm(Tform_poblaciones_000, form_poblaciones_000);
+                   form_poblaciones_000.public_Solo_Ver    := param_Solo_Ver;
+                   form_poblaciones_000.public_Elegimos    := param_Elegimos;
+                   form_poblaciones_000.public_Menu_Worked := param_Menu_Worked;
+                   form_poblaciones_000.para_Empezar;
+
+                   form_poblaciones_000.ShowModal;
+
+                   if form_poblaciones_000.public_Rgtro_Seleccionado = true then
+                   begin
+                       with form_poblaciones_000.SQLQuery_Poblaciones do
+                       begin
+                           Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                 FieldByName('id_provincias').AsString,
+                                                                 FieldByName('id_paises').AsString,
+                                                                 FieldByName('descripcion').AsString,
+                                                                 FieldByName('OT_descripcion_provincia').AsString,
+                                                                 FieldByName('OT_descripcion_pais').AsString );
+                       end;
+                   end;
+
+                   form_poblaciones_000.Free;
+                   param_Campo := '';
+               end
+           else
+               begin
+                   var_msg.Add(var_msg_ya_abierto);
+               end;
+       end;
+    end;
+
+    { PROVEEDORES }
+    If ( Pos( UpperCase('id_proveedores'), UpperCase(Trim(param_Campo)) ) <> 0 )         or
+       ( Pos( UpperCase('id_Empleado_de'), UpperCase(Trim(param_Campo)) ) <> 0 )         or
+       ( Pos( UpperCase('id_Agencias_Transporte'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 120 )                                                       then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_proveedores_000') = false then
+               begin
+                   Application.CreateForm(Tform_proveedores_000, form_proveedores_000);
+                   form_proveedores_000.public_Solo_Ver    := param_Solo_Ver;
+                   form_proveedores_000.public_Elegimos    := param_Elegimos;
+                   form_proveedores_000.public_Menu_Worked := param_Menu_Worked;
+                   form_proveedores_000.para_Empezar;
+
+                   form_proveedores_000.ShowModal;
+
+                   if form_proveedores_000.public_Rgtro_Seleccionado = true then
+                   begin
+                       with form_proveedores_000.SQLQuery_Proveedores do
+                       begin
+                           Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                 '',
+                                                                 '',
+                                                                 FieldByName('nombre_propietario').AsString,
+                                                                 FieldByName('Tfno_Fijo_1').AsString,
+                                                                 FieldByName('Movil').AsString );
+                       end;
+                   end;
+
+                   form_proveedores_000.Free;
+                   param_Campo := '';
+               end
+           else
+               begin
+                   var_msg.Add(var_msg_ya_abierto);
+               end;
+       end;
+    end;
+
+    { REPRESENTANTES }
+    If ( Pos( UpperCase('id_representantes'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 130 )                                                  then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_representantes_000') = false then
+               begin
+                   Application.CreateForm(Tform_representantes_000, form_representantes_000);
+                   form_representantes_000.public_Solo_Ver    := param_Solo_Ver;
+                   form_representantes_000.public_Elegimos    := param_Elegimos;
+                   form_representantes_000.public_Menu_Worked := param_Menu_Worked;
+                   form_representantes_000.para_Empezar;
+
+                   form_representantes_000.ShowModal;
+
+                   if form_representantes_000.public_Rgtro_Seleccionado = true then
+                   begin
+                       with form_representantes_000.SQLQuery_Representantes do
+                       begin
+                           Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                 FieldByName('Comision').AsString,
+                                                                 FieldByName('Retencion').AsString,
+
+                                                                 FieldByName('nombre_propietario').AsString,
+                                                                 FieldByName('Tfno_Fijo_1').AsString,
+                                                                 FieldByName('Movil').AsString );
+                       end;
+                   end;
+
+                   form_representantes_000.Free;
+                   param_Campo := '';
+               end
+           else
+               begin
+                   var_msg.Add(var_msg_ya_abierto);
+               end;
+       end;
+    end;
+
+    { PROVEEDORES TIPOS }
+    If ( Pos( UpperCase('id_proveedores_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 140 )                                                     then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_proveedores_tipos_000') = false then
+                 begin
+                     Application.CreateForm(Tform_proveedores_tipos_000, form_proveedores_tipos_000);
+                     form_proveedores_tipos_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_proveedores_tipos_000.public_Elegimos    := param_Elegimos;
+                     form_proveedores_tipos_000.public_Menu_Worked := param_Menu_Worked;
+                     form_proveedores_tipos_000.para_Empezar;
+
+                     form_proveedores_tipos_000.ShowModal;
+
+                     if form_proveedores_tipos_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_proveedores_tipos_000.SQLQuery_Proveedores_Tipos do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   FieldByName('Cuenta_Contable').AsString,
+                                                                   FieldByName('Cuenta_Contable').AsString );
+                         end;
+                     end;
+
+                     form_proveedores_tipos_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { ARTICULOS FAMILIAS }
+    If ( Pos( UpperCase('id_articulos_familias'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 150 )                                                      then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_articulos_familias_000') = false then
+                 begin
+                     Application.CreateForm(Tform_articulos_familias_000, form_articulos_familias_000);
+                     form_articulos_familias_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_articulos_familias_000.public_Elegimos    := param_Elegimos;
+                     form_articulos_familias_000.public_Menu_Worked := param_Menu_Worked;
+                     form_articulos_familias_000.para_Empezar;
+
+                     form_articulos_familias_000.ShowModal;
+
+                     if form_articulos_familias_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_articulos_familias_000.SQLQuery_Articulos_Familias do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     form_articulos_familias_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { TARIFAS }
+    If ( Pos( UpperCase('id_terminales'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 160 )                                              then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('f_terminales_000') = false then
+                 begin
+                     Application.CreateForm(Tf_terminales_000, f_terminales_000);
+                     f_terminales_000.public_Solo_Ver    := param_Solo_Ver;
+                     f_terminales_000.public_Elegimos    := param_Elegimos;
+                     f_terminales_000.public_Menu_Worked := param_Menu_Worked;
+                     f_terminales_000.para_Empezar;
+
+                     f_terminales_000.ShowModal;
+
+                     if f_terminales_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with f_terminales_000.SQLQuery_Principal do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     f_terminales_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { ARTICULOS }
+    If ( Pos( UpperCase('id_articulos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 170 )                                             then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_articulos_000') = false then
+                 begin
+                     Application.CreateForm(Tform_articulos_000, form_articulos_000);
+                     form_articulos_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_articulos_000.public_Elegimos    := param_Elegimos;
+                     form_articulos_000.public_Menu_Worked := param_Menu_Worked;
+                     form_articulos_000.para_Empezar;
+
+                     form_articulos_000.ShowModal;
+
+                     if form_articulos_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_articulos_000.SQLQuery_Articulos do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+
+                                                                   FieldByName('descripcion').AsString,
+                                                                   FieldByName('descripcion_para_TPV').AsString,
+                                                                   '' );
+                         end;
+                     end;
+
+                     form_articulos_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { GRUPOS COCINA }
+    If ( Pos( UpperCase('id_grupos_cocina'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 180 )                                                 then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_grupos_cocina_000') = false then
+                 begin
+                     Application.CreateForm(Tform_grupos_cocina_000, form_grupos_cocina_000);
+                     form_grupos_cocina_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_grupos_cocina_000.public_Elegimos    := param_Elegimos;
+                     form_grupos_cocina_000.public_Menu_Worked := param_Menu_Worked;
+                     form_grupos_cocina_000.para_Empezar;
+
+                     form_grupos_cocina_000.ShowModal;
+
+                     if form_grupos_cocina_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_grupos_cocina_000.SQLQuery_Grupos_Cocina do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     form_grupos_cocina_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { IMPRESORAS }
+    If ( Pos( UpperCase('id_impresoras'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 190 )                                              then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('f_impresoras_000') = false then
+                 begin
+                     Application.CreateForm(Tf_impresoras_000, f_impresoras_000);
+                     f_impresoras_000.public_Solo_Ver    := param_Solo_Ver;
+                     f_impresoras_000.public_Elegimos    := param_Elegimos;
+                     f_impresoras_000.public_Menu_Worked := param_Menu_Worked;
+                     f_impresoras_000.para_Empezar;
+
+                     f_impresoras_000.ShowModal;
+
+                     if f_impresoras_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with f_impresoras_000.SQLQuery_Principal do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     f_impresoras_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { IMPUESTOS }
+    If ( Pos( UpperCase('id_impuestos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 200 )                                             then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('f_impuestos_000') = false then
+                 begin
+                     Application.CreateForm(Tf_impuestos_000, f_impuestos_000);
+                     f_impuestos_000.public_Solo_Ver    := param_Solo_Ver;
+                     f_impuestos_000.public_Elegimos    := param_Elegimos;
+                     f_impuestos_000.public_Menu_Worked := param_Menu_Worked;
+                     f_impuestos_000.para_Empezar;
+
+                     f_impuestos_000.ShowModal;
+
+                     if f_impuestos_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with f_impuestos_000.SQLQuery_Principal do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   FieldByName('Tanto_Por_Ciento').AsString,
+                                                                   FieldByName('Sumado_A_Ftra_SN').AsString );
+                         end;
+                     end;
+
+                     f_impuestos_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { PERSONAL FAMILIAS }
+    If ( Pos( UpperCase('id_personal_familias'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 210 )                                                     then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_personal_familias_000') = false then
+                 begin
+                     Application.CreateForm(Tform_personal_familias_000, form_personal_familias_000);
+                     form_personal_familias_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_personal_familias_000.public_Elegimos    := param_Elegimos;
+                     form_personal_familias_000.public_Menu_Worked := param_Menu_Worked;
+                     form_personal_familias_000.para_Empezar;
+
+                     form_personal_familias_000.ShowModal;
+
+                     if form_personal_familias_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_personal_familias_000.SQLQuery_Personal_Familias do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   FieldByName('Cuenta_Contable').AsString,
+                                                                   FieldByName('Cuenta_Contable').AsString );
+                         end;
+                     end;
+
+                     form_personal_familias_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { PERSONAL }
+    If ( Pos( UpperCase('id_personal'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 220 )                                            then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_personal_000') = false then
+                 begin
+                     Application.CreateForm(Tform_personal_000, form_personal_000);
+                     form_personal_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_personal_000.public_Elegimos    := param_Elegimos;
+                     form_personal_000.public_Menu_Worked := param_Menu_Worked;
+                     form_personal_000.para_Empezar;
+
+                     form_personal_000.ShowModal;
+
+                     if form_personal_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_personal_000.SQLQuery_Personal do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('nombre').AsString,
+                                                                   FieldByName('nif_cif').AsString,
+                                                                   '' );
+                         end;
+                     end;
+
+                     form_personal_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { PERSONAL CONTRATOS FAMILIAS }
+    If ( Pos( UpperCase('id_personal_contratos_familias'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 230 )                                                               then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_personal_contratos_familias_000') = false then
+                 begin
+                     Application.CreateForm(Tform_personal_contratos_familias_000, form_personal_contratos_familias_000);
+                     form_personal_contratos_familias_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_personal_contratos_familias_000.public_Elegimos    := param_Elegimos;
+                     form_personal_contratos_familias_000.public_Menu_Worked := param_Menu_Worked;
+                     form_personal_contratos_familias_000.para_Empezar;
+
+                     form_personal_contratos_familias_000.ShowModal;
+
+                     if form_personal_contratos_familias_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_personal_contratos_familias_000.SQLQuery_Personal_Contratos_Familias do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     form_personal_contratos_familias_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { PERSONAL CONTRATOS }
+    If ( Pos( UpperCase('id_personal_contratos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 240 )                                                      then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_personal_contratos_000') = false then
+                 begin
+                     Application.CreateForm(Tform_personal_contratos_000, form_personal_contratos_000);
+                     form_personal_contratos_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_personal_contratos_000.public_Elegimos    := param_Elegimos;
+                     form_personal_contratos_000.public_Menu_Worked := param_Menu_Worked;
+                     form_personal_contratos_000.para_Empezar;
+
+                     form_personal_contratos_000.ShowModal;
+
+                     if form_personal_contratos_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_personal_contratos_000.SQLQuery_Personal_Contratos do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('OT_Descripcion_Contrato').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     form_personal_contratos_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { EMPRESAS }
+    If ( Pos( UpperCase('id_empresas'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 250 )                                            then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_empresas_000') = false then
+                 begin
+                     Application.CreateForm(Tform_empresas_000, form_empresas_000);
+                     form_empresas_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_empresas_000.public_Elegimos    := param_Elegimos;
+                     form_empresas_000.public_Menu_Worked := param_Menu_Worked;
+                     form_empresas_000.para_Empezar;
+
+                     form_empresas_000.ShowModal;
+
+                     if form_empresas_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_empresas_000.SQLQuery_Empresas do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('nombre_comercial').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     form_empresas_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { ALMACENES }
+    If ( Pos( UpperCase('id_almacenes'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 260 )                                            then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('f_almacenes_000') = false then
+                 begin
+                     Application.CreateForm(Tf_almacenes_000, f_almacenes_000);
+                     f_almacenes_000.public_Solo_Ver    := param_Solo_Ver;
+                     f_almacenes_000.public_Elegimos    := param_Elegimos;
+                     f_almacenes_000.public_Menu_Worked := param_Menu_Worked;
+                     f_almacenes_000.para_Empezar;
+
+                     f_almacenes_000.ShowModal;
+
+                     if f_almacenes_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with f_almacenes_000.SQLQuery_Principal do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     f_almacenes_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { GASTOS TIPOS }
+    If ( Pos( UpperCase('id_gastos_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 270 )                                                then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_gastos_tipos_000') = false then
+                 begin
+                     Application.CreateForm(Tform_gastos_tipos_000, form_gastos_tipos_000);
+                     form_gastos_tipos_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_gastos_tipos_000.public_Elegimos    := param_Elegimos;
+                     form_gastos_tipos_000.public_Menu_Worked := param_Menu_Worked;
+                     form_gastos_tipos_000.para_Empezar;
+
+                     form_gastos_tipos_000.ShowModal;
+
+                     if form_gastos_tipos_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_gastos_tipos_000.SQLQuery_Gastos_Tipos do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     form_gastos_tipos_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { CUENTAS PAGOS COBROS }
+    If ( Pos( UpperCase('id_cuentas_pagos_cobros'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 280 )                                                        then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_cuentas_pagos_cobros_000') = false then
+                 begin
+                     Application.CreateForm(Tform_cuentas_pagos_cobros_000, form_cuentas_pagos_cobros_000);
+                     form_cuentas_pagos_cobros_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_cuentas_pagos_cobros_000.public_Elegimos    := param_Elegimos;
+                     form_cuentas_pagos_cobros_000.public_Menu_Worked := param_Menu_Worked;
+                     form_cuentas_pagos_cobros_000.para_Empezar;
+
+                     form_cuentas_pagos_cobros_000.ShowModal;
+
+                     if form_cuentas_pagos_cobros_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_cuentas_pagos_cobros_000.SQLQuery_Cuentas_Pagos_Cobros do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     form_cuentas_pagos_cobros_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { CONCEPTOS ALMACEN TRASPASO }
+    If ( Pos( UpperCase('id_conceptos_almacen_traspaso'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 290 )                                                              then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_conceptos_almacen_traspaso_000') = false then
+                 begin
+                     Application.CreateForm(Tform_conceptos_almacen_traspaso_000, form_conceptos_almacen_traspaso_000);
+                     form_conceptos_almacen_traspaso_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_conceptos_almacen_traspaso_000.public_Elegimos    := param_Elegimos;
+                     form_conceptos_almacen_traspaso_000.public_Menu_Worked := param_Menu_Worked;
+                     form_conceptos_almacen_traspaso_000.para_Empezar;
+
+                     form_conceptos_almacen_traspaso_000.ShowModal;
+
+                     if form_conceptos_almacen_traspaso_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_conceptos_almacen_traspaso_000.SQLQuery_Conceptos_Almacen_Traspaso do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     form_conceptos_almacen_traspaso_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { ARTICULOS OFERTAS }
+    If ( Pos( UpperCase('id_articulos_ofertas'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 300 )                                                     then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('form_articulos_ofertas_000') = false then
+                 begin
+                     Application.CreateForm(Tform_articulos_ofertas_000, form_articulos_ofertas_000);
+                     form_articulos_ofertas_000.public_Solo_Ver    := param_Solo_Ver;
+                     form_articulos_ofertas_000.public_Elegimos    := param_Elegimos;
+                     form_articulos_ofertas_000.public_Menu_Worked := param_Menu_Worked;
+                     form_articulos_ofertas_000.para_Empezar;
+
+                     form_articulos_ofertas_000.ShowModal;
+
+                     if form_articulos_ofertas_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with form_articulos_ofertas_000.SQLQuery_AO do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     form_articulos_ofertas_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { ARTICULOS OFERTAS }
+    If ( Pos( UpperCase('id_bancos_empresas'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 310 )                                                   then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('f_bancos_ctas_empresas_000') = false then
+                 begin
+                     Application.CreateForm(Tf_bancos_ctas_empresas_000, f_bancos_ctas_empresas_000);
+                     f_bancos_ctas_empresas_000.public_Solo_Ver    := param_Solo_Ver;
+                     f_bancos_ctas_empresas_000.public_Elegimos    := param_Elegimos;
+                     f_bancos_ctas_empresas_000.public_Menu_Worked := param_Menu_Worked;
+                     f_bancos_ctas_empresas_000.para_Empezar;
+
+                     f_bancos_ctas_empresas_000.ShowModal;
+
+                     if f_bancos_ctas_empresas_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with f_bancos_ctas_empresas_000.SQLQuery_Principal do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   FieldByName('descripcion').AsString,
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     f_bancos_ctas_empresas_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { ALMACENES MOVIMIENTOS }
+    If ( Pos( UpperCase('id_almacenes_movimientos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 320 )                                                         then
+    begin
+         if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+         begin
+             if UTI_GEN_Form_Abierto_Ya('f_almacenes_movimientos_000') = false then
+                 begin
+                     Application.CreateForm(Tf_almacenes_movimientos_000, f_almacenes_movimientos_000);
+                     f_almacenes_movimientos_000.public_Solo_Ver    := param_Solo_Ver;
+                     f_almacenes_movimientos_000.public_Elegimos    := param_Elegimos;
+                     f_almacenes_movimientos_000.public_Menu_Worked := param_Menu_Worked;
+                     f_almacenes_movimientos_000.para_Empezar;
+
+                     f_almacenes_movimientos_000.ShowModal;
+
+                     if f_almacenes_movimientos_000.public_Rgtro_Seleccionado = true then
+                     begin
+                         with f_almacenes_movimientos_000.SQLQuery_Principal do
+                         begin
+                             Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                                   '',
+                                                                   '',
+                                                                   '',
+                                                                   '',
+                                                                   '' );
+                         end;
+                     end;
+
+                     f_almacenes_movimientos_000.Free;
+                     param_Campo := '';
+                 end
+             else
+                 begin
+                     var_msg.Add(var_msg_ya_abierto);
+                 end;
+         end;
+    end;
+
+    { VEHICULOS }
+    If ( Pos( UpperCase('id_vehiculos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 350 )                                             then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_vehiculos_000') = false then
+            begin
+                Application.CreateForm(Tform_vehiculos_000, form_vehiculos_000);
+
+                form_vehiculos_000.public_Solo_Ver    := param_Solo_Ver;
+                form_vehiculos_000.public_Elegimos    := param_Elegimos;
+                form_vehiculos_000.public_Menu_Worked := param_Menu_Worked;
+                form_vehiculos_000.para_Empezar;
+
+                form_vehiculos_000.ShowModal;
+
+                if form_vehiculos_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_vehiculos_000.SQLQuery_Vehiculos do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              '',
+                                                              '',
+                                                              FieldByName('matricula').AsString,
+                                                              '',
+                                                              '' );
+                    end;
+                end;
+
+                form_vehiculos_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { VEHICULOS TIPOS }
+    If ( Pos( UpperCase('id_vehiculos_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 360 )                                                   then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_vehiculos_tipos_000') = false then
+            begin
+                Application.CreateForm(Tform_vehiculos_tipos_000, form_vehiculos_tipos_000);
+
+                form_vehiculos_tipos_000.public_Solo_Ver    := param_Solo_Ver;
+                form_vehiculos_tipos_000.public_Elegimos    := param_Elegimos;
+                form_vehiculos_tipos_000.public_Menu_Worked := param_Menu_Worked;
+                form_vehiculos_tipos_000.para_Empezar;
+
+                form_vehiculos_tipos_000.ShowModal;
+
+                if form_vehiculos_tipos_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_vehiculos_tipos_000.SQLQuery_Vehiculos_Tipos do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              '',
+                                                              '',
+                                                              FieldByName('descripcion').AsString,
+                                                              '',
+                                                              '' );
+                    end;
+                end;
+
+                form_vehiculos_tipos_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { VEHICULOS MARCAS }
+    If ( Pos( UpperCase('id_vehiculos_marcas'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 370 )                                                    then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_vehiculos_marcas_000') = false then
+            begin
+                Application.CreateForm(Tform_vehiculos_marcas_000, form_vehiculos_marcas_000);
+
+                form_vehiculos_marcas_000.public_Solo_Ver    := param_Solo_Ver;
+                form_vehiculos_marcas_000.public_Elegimos    := param_Elegimos;
+                form_vehiculos_marcas_000.public_Menu_Worked := param_Menu_Worked;
+                form_vehiculos_marcas_000.para_Empezar;
+
+                form_vehiculos_marcas_000.ShowModal;
+
+                if form_vehiculos_marcas_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_vehiculos_marcas_000.SQLQuery_Vehiculos_Marcas do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              '',
+                                                              '',
+                                                              FieldByName('descripcion').AsString,
+                                                              '',
+                                                              '' );
+                    end;
+                end;
+
+                form_vehiculos_marcas_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { COMBUSTIBLES }
+    If ( Pos( UpperCase('id_combustibles'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 380 )                                                then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_combustibles_000') = false then
+            begin
+                Application.CreateForm(Tform_combustibles_000, form_combustibles_000);
+
+                form_combustibles_000.public_Solo_Ver    := param_Solo_Ver;
+                form_combustibles_000.public_Elegimos    := param_Elegimos;
+                form_combustibles_000.public_Menu_Worked := param_Menu_Worked;
+                form_combustibles_000.para_Empezar;
+
+                form_combustibles_000.ShowModal;
+
+                if form_combustibles_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_combustibles_000.SQLQuery_Combustibles do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              '',
+                                                              '',
+                                                              FieldByName('descripcion').AsString,
+                                                              '',
+                                                              '' );
+                    end;
+                end;
+
+                form_combustibles_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { VEHICULOS TIPO CAMBIOS }
+    If ( Pos( UpperCase('id_vehiculos_tipo_cambios'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 390 )                                                          then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_vehiculos_tipo_cambios_000') = false then
+            begin
+                Application.CreateForm(Tform_vehiculos_tipo_cambios_000, form_vehiculos_tipo_cambios_000);
+
+                form_vehiculos_tipo_cambios_000.public_Solo_Ver    := param_Solo_Ver;
+                form_vehiculos_tipo_cambios_000.public_Elegimos    := param_Elegimos;
+                form_vehiculos_tipo_cambios_000.public_Menu_Worked := param_Menu_Worked;
+                form_vehiculos_tipo_cambios_000.para_Empezar;
+
+                form_vehiculos_tipo_cambios_000.ShowModal;
+
+                if form_vehiculos_tipo_cambios_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_vehiculos_tipo_cambios_000.SQLQuery_VTCambios do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              '',
+                                                              '',
+                                                              FieldByName('descripcion').AsString,
+                                                              '',
+                                                              '' );
+                    end;
+                end;
+
+                form_vehiculos_tipo_cambios_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { VEHICULOS TIPO RUEDAS }
+    If ( Pos( UpperCase('id_vehiculos_tipo_ruedas'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 400 )                                                         then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_vehiculos_tipo_ruedas_000') = false then
+            begin
+                Application.CreateForm(Tform_vehiculos_tipo_ruedas_000, form_vehiculos_tipo_ruedas_000);
+
+                form_vehiculos_tipo_ruedas_000.public_Solo_Ver    := param_Solo_Ver;
+                form_vehiculos_tipo_ruedas_000.public_Elegimos    := param_Elegimos;
+                form_vehiculos_tipo_ruedas_000.public_Menu_Worked := param_Menu_Worked;
+                form_vehiculos_tipo_ruedas_000.para_Empezar;
+
+                form_vehiculos_tipo_ruedas_000.ShowModal;
+
+                if form_vehiculos_tipo_ruedas_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_vehiculos_tipo_ruedas_000.SQLQuery_VTRuedas do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              '',
+                                                              '',
+                                                              FieldByName('descripcion').AsString,
+                                                              '',
+                                                              '' );
+                    end;
+                end;
+
+                form_vehiculos_tipo_ruedas_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { TARJETAS TRANSPORTE }
+    If ( Pos( UpperCase('id_tarjetas_transporte'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 410 )                                                         then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_tarjetas_transporte_000') = false then
+            begin
+                Application.CreateForm(Tform_tarjetas_transporte_000, form_tarjetas_transporte_000);
+
+                form_tarjetas_transporte_000.public_Solo_Ver    := param_Solo_Ver;
+                form_tarjetas_transporte_000.public_Elegimos    := param_Elegimos;
+                form_tarjetas_transporte_000.public_Menu_Worked := param_Menu_Worked;
+                form_tarjetas_transporte_000.para_Empezar;
+
+                form_tarjetas_transporte_000.ShowModal;
+
+                if form_tarjetas_transporte_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_tarjetas_transporte_000.SQLQuery_TjtaTte do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              '',
+                                                              '',
+                                                              FieldByName('numero_tarjeta').AsString,
+                                                              FieldByName('ambito').AsString,
+                                                              '' );
+                    end;
+                end;
+
+                form_tarjetas_transporte_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { VEHICULOS EQUIPAMIENTOS }
+    If ( Pos( UpperCase('id_vehiculos_equipamientos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 420 )                                                           then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_vehiculos_equipamientos_000') = false then
+            begin
+                Application.CreateForm(Tform_vehiculos_equipamientos_000, form_vehiculos_equipamientos_000);
+
+                form_vehiculos_equipamientos_000.public_Solo_Ver    := param_Solo_Ver;
+                form_vehiculos_equipamientos_000.public_Elegimos    := param_Elegimos;
+                form_vehiculos_equipamientos_000.public_Menu_Worked := param_Menu_Worked;
+                form_vehiculos_equipamientos_000.para_Empezar;
+
+                form_vehiculos_equipamientos_000.ShowModal;
+
+                if form_vehiculos_equipamientos_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_vehiculos_equipamientos_000.SQLQuery_Vehiculos_Equip do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              '',
+                                                              '',
+                                                              FieldByName('descripcion').AsString,
+                                                              '',
+                                                              '' );
+                    end;
+                end;
+
+                form_vehiculos_equipamientos_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { ALBARANES VENTAS }
+    If ( Pos( UpperCase('id_albaranes'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 430 )                                             then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_albaranes_ventas_000') = false then
+            begin
+                Application.CreateForm(Tform_albaranes_ventas_000, form_albaranes_ventas_000);
+
+                form_albaranes_ventas_000.public_Solo_Ver    := param_Solo_Ver;
+                form_albaranes_ventas_000.public_Elegimos    := param_Elegimos;
+                form_albaranes_ventas_000.public_Menu_Worked := param_Menu_Worked;
+                form_albaranes_ventas_000.para_Empezar;
+
+                form_albaranes_ventas_000.ShowModal;
+
+                if form_albaranes_ventas_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_albaranes_ventas_000.SQLQuery_Alb do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              FieldByName('id_clientes').AsString,
+                                                              FieldByName('Fecha').AsString,
+                                                              '',
+                                                              FieldByName('Serie_Albaran').AsString,
+                                                              FieldByName('Numero_Albaran').AsString );
+                    end;
+                end;
+
+                form_albaranes_ventas_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { PRESUPUESTOS VENTAS }
+    If ( Pos( UpperCase('id_presupuestos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 440 )                                                then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_presupuestos_ventas_000') = false then
+            begin
+                Application.CreateForm(Tform_presupuestos_ventas_000, form_presupuestos_ventas_000);
+
+                form_presupuestos_ventas_000.public_Solo_Ver    := param_Solo_Ver;
+                form_presupuestos_ventas_000.public_Elegimos    := param_Elegimos;
+                form_presupuestos_ventas_000.public_Menu_Worked := param_Menu_Worked;
+                form_presupuestos_ventas_000.para_Empezar;
+
+                form_presupuestos_ventas_000.ShowModal;
+
+                if form_presupuestos_ventas_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_presupuestos_ventas_000.SQLQuery_Presup do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              FieldByName('id_clientes').AsString,
+                                                              FieldByName('Fecha').AsString,
+                                                              '',
+                                                              FieldByName('Serie_Presupuesto').AsString,
+                                                              FieldByName('Numero_Presupuesto').AsString );
+                    end;
+                end;
+
+                form_presupuestos_ventas_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { PEDIDOS VENTAS }
+    If ( Pos( UpperCase('id_pedidos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 450 )                                           then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_pedidos_ventas_000') = false then
+            begin
+                Application.CreateForm(Tform_pedidos_ventas_000, form_pedidos_ventas_000);
+
+                form_pedidos_ventas_000.public_Solo_Ver    := param_Solo_Ver;
+                form_pedidos_ventas_000.public_Elegimos    := param_Elegimos;
+                form_pedidos_ventas_000.public_Menu_Worked := param_Menu_Worked;
+                form_pedidos_ventas_000.para_Empezar;
+
+                form_pedidos_ventas_000.ShowModal;
+
+                if form_pedidos_ventas_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_pedidos_ventas_000.SQLQuery_Pdo do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              FieldByName('id_clientes').AsString,
+                                                              FieldByName('Fecha').AsString,
+                                                              '',
+                                                              FieldByName('Serie_Pedidos').AsString,
+                                                              FieldByName('Numero_Pedidos').AsString );
+                    end;
+                end;
+
+                form_pedidos_ventas_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { CONFIGURACION }
+    If ( Pos( UpperCase('id_configuracion'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 460 )                                                 then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_configuracion_000') = false then
+            begin
+                Application.CreateForm(Tform_configuracion_000, form_configuracion_000);
+
+                form_configuracion_000.public_Solo_Ver    := param_Solo_Ver;
+                form_configuracion_000.public_Elegimos    := param_Elegimos;
+                form_configuracion_000.public_Menu_Worked := param_Menu_Worked;
+                form_configuracion_000.para_Empezar;
+
+                // form_configuracion_000.ShowModal;
+                form_configuracion_000.Insertamos_o_Editamos;
+
+                if form_configuracion_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_configuracion_000.SQLQuery_Configuracion do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              FieldByName('descripcion').AsString,
+                                                              '',
+                                                              '',
+                                                              '',
+                                                              '' );
+                    end;
+                end;
+
+                form_configuracion_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { VISITAS TIPOS }
+    If ( Pos( UpperCase('id_visitas_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+      ( param_Menu_Worked = 470 )                                                  then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_visitas_tipos_000') = false then
+           begin
+               Application.CreateForm(Tform_visitas_tipos_000, form_visitas_tipos_000);
+
+               form_visitas_tipos_000.public_Solo_Ver    := param_Solo_Ver;
+               form_visitas_tipos_000.public_Elegimos    := param_Elegimos;
+               form_visitas_tipos_000.public_Menu_Worked := param_Menu_Worked;
+               form_visitas_tipos_000.para_Empezar;
+
+               form_visitas_tipos_000.ShowModal;
+
+               if form_visitas_tipos_000.public_Rgtro_Seleccionado = true then
+               begin
+                   with form_visitas_tipos_000.SQLQuery_Visitas_Tipos do
+                   begin
+                       Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                             '',
+                                                             '',
+                                                             FieldByName('descripcion').AsString,
+                                                             '',
+                                                             '' );
+                   end;
+               end;
+
+               form_visitas_tipos_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { VISITAS RESULTADOS }
+    If ( Pos( UpperCase('id_visitas_resultados'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+      ( param_Menu_Worked = 480 )                                                       then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_visitas_resultados_000') = false then
+           begin
+               Application.CreateForm(Tform_visitas_resultados_000, form_visitas_resultados_000);
+
+               form_visitas_resultados_000.public_Solo_Ver    := param_Solo_Ver;
+               form_visitas_resultados_000.public_Elegimos    := param_Elegimos;
+               form_visitas_resultados_000.public_Menu_Worked := param_Menu_Worked;
+               form_visitas_resultados_000.para_Empezar;
+
+               form_visitas_resultados_000.ShowModal;
+
+               if form_visitas_resultados_000.public_Rgtro_Seleccionado = true then
+               begin
+                   with form_visitas_resultados_000.SQLQuery_Visitas_Resultados do
+                   begin
+                       Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                             '',
+                                                             '',
+                                                             FieldByName('descripcion').AsString,
+                                                             '',
+                                                             '' );
+                   end;
+               end;
+
+               form_visitas_resultados_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { VISITAS }
+    If ( Pos( UpperCase('id_visitas'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+      ( param_Menu_Worked = 490 )                                            then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_visitas_000') = false then
+           begin
+               Application.CreateForm(Tform_visitas_000, form_visitas_000);
+
+               form_visitas_000.public_Solo_Ver    := param_Solo_Ver;
+               form_visitas_000.public_Elegimos    := param_Elegimos;
+               form_visitas_000.public_Menu_Worked := param_Menu_Worked;
+               form_visitas_000.para_Empezar;
+
+               form_visitas_000.ShowModal;
+
+               if form_visitas_000.public_Rgtro_Seleccionado = true then
+               begin
+                   with form_visitas_000.SQLQuery_Visitas do
+                   begin
+                       Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                             FieldByName('Fecha_Visita').AsString,
+                                                             FieldByName('id_clientes').AsString,
+                                                             FieldByName('id_visitas_tipos').AsString,
+                                                             FieldByName('id_visitas_resultados').AsString,
+                                                             FieldByName('id_representantes').AsString );
+                   end;
+               end;
+
+               form_visitas_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { ACTIVIDADES }
+    If ( Pos( UpperCase('id_actividades'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+      ( param_Menu_Worked = 500 )                                                then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('f_actividades_000') = false then
+           begin
+               Application.CreateForm(Tf_actividades_000, f_actividades_000);
+
+               f_actividades_000.public_Solo_Ver    := param_Solo_Ver;
+               f_actividades_000.public_Elegimos    := param_Elegimos;
+               f_actividades_000.public_Menu_Worked := param_Menu_Worked;
+               f_actividades_000.para_Empezar;
+
+               f_actividades_000.ShowModal;
+
+               if f_actividades_000.public_Rgtro_Seleccionado = true then
+               begin
+                   with f_actividades_000.SQLQuery_Principal do
+                   begin
+                       Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                             '',
+                                                             '',
+                                                             FieldByName('descripcion').AsString,
+                                                             '',
+                                                             '' );
+                   end;
+               end;
+
+               f_actividades_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { RUTAS / ZONAS }
+    If ( Pos( UpperCase('id_rutas'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 510 )                                         then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_rutas_000') = false then
+           begin
+               Application.CreateForm(Tform_rutas_000, form_rutas_000);
+
+               form_rutas_000.public_Solo_Ver    := param_Solo_Ver;
+               form_rutas_000.public_Elegimos    := param_Elegimos;
+               form_rutas_000.public_Menu_Worked := param_Menu_Worked;
+               form_rutas_000.para_Empezar;
+
+               form_rutas_000.ShowModal;
+
+               if form_rutas_000.public_Rgtro_Seleccionado = true then
+               begin
+                   with form_rutas_000.SQLQuery_Rutas do
+                   begin
+                       Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                             '',
+                                                             '',
+                                                             FieldByName('descripcion').AsString,
+                                                             '',
+                                                             '' );
+                   end;
+               end;
+
+               form_rutas_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { VISITAS EXPLOTACION DE RUTAS }
+    If param_Menu_Worked = 520 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_visitas_por_zona_000') = false then
+           begin
+               Application.CreateForm(Tform_visitas_por_zona_000, form_visitas_por_zona_000);
+
+               form_visitas_por_zona_000.public_Menu_Worked := param_Menu_Worked;
+               form_visitas_por_zona_000.para_Empezar;
+
+               form_visitas_por_zona_000.ShowModal;
+
+               form_visitas_por_zona_000.Free;
+
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { VISITAS EXPLOTACION DE PROVINCIAS }
+    If param_Menu_Worked = 530 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_visitas_por_provincia_000') = false then
+           begin
+               Application.CreateForm(Tform_visitas_por_provincia_000, form_visitas_por_provincia_000);
+
+               form_visitas_por_provincia_000.public_Menu_Worked := param_Menu_Worked;
+               form_visitas_por_provincia_000.para_Empezar;
+
+               form_visitas_por_provincia_000.ShowModal;
+
+               form_visitas_por_provincia_000.Free;
+
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { VISITAS EXPLOTACION DE CLIENTES }
+    If param_Menu_Worked = 540 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_visitas_por_cliente_000') = false then
+           begin
+               Application.CreateForm(Tform_visitas_por_cliente_000, form_visitas_por_cliente_000);
+
+               form_visitas_por_cliente_000.public_Menu_Worked := param_Menu_Worked;
+               form_visitas_por_cliente_000.para_Empezar;
+
+               form_visitas_por_cliente_000.ShowModal;
+
+               form_visitas_por_cliente_000.Free;
+
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { VISITAS EXPLOTACION DE TIPO DE CLIENTES }
+    If param_Menu_Worked = 550 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_visitas_por_tipo_cliente_000') = false then
+           begin
+               Application.CreateForm(Tform_visitas_por_tipo_cliente_000, form_visitas_por_tipo_cliente_000);
+
+               form_visitas_por_tipo_cliente_000.public_Menu_Worked := param_Menu_Worked;
+               form_visitas_por_tipo_cliente_000.para_Empezar;
+
+               form_visitas_por_tipo_cliente_000.ShowModal;
+
+               form_visitas_por_tipo_cliente_000.Free;
+
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { VISITAS EXPLOTACION DE ACTIVIDADES }
+    If param_Menu_Worked = 560 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_visitas_por_actividad_000') = false then
+           begin
+               Application.CreateForm(Tform_visitas_por_actividad_000, form_visitas_por_actividad_000);
+
+               form_visitas_por_actividad_000.public_Menu_Worked := param_Menu_Worked;
+               form_visitas_por_actividad_000.para_Empezar;
+
+               form_visitas_por_actividad_000.ShowModal;
+
+               form_visitas_por_actividad_000.Free;
+
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { VISITAS EXPLOTACION DE REPRESENTANTES }
+    If param_Menu_Worked = 570 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_visitas_por_representante_000') = false then
+           begin
+               Application.CreateForm(Tform_visitas_por_representante_000, form_visitas_por_representante_000);
+
+               form_visitas_por_representante_000.public_Menu_Worked := param_Menu_Worked;
+               form_visitas_por_representante_000.para_Empezar;
+
+               form_visitas_por_representante_000.ShowModal;
+
+               form_visitas_por_representante_000.Free;
+
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { VISITAS PLANIFICACION DE RUTAS }
+    If param_Menu_Worked = 580 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_visitas_planificacion_por_zona_000') = false then
+           begin
+               Application.CreateForm(Tform_visitas_planificacion_por_zona_000, form_visitas_planificacion_por_zona_000);
+
+               form_visitas_planificacion_por_zona_000.public_Menu_Worked := param_Menu_Worked;
+               form_visitas_planificacion_por_zona_000.para_Empezar;
+
+               form_visitas_planificacion_por_zona_000.ShowModal;
+
+               form_visitas_planificacion_por_zona_000.Free;
+
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { VISITAS PLANIFICACION DE RUTAS }
+    If param_Menu_Worked = 590 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_visitas_planificacion_por_provincia_000') = false then
+           begin
+               Application.CreateForm(Tform_visitas_planificacion_por_provincia_000, form_visitas_planificacion_por_provincia_000);
+
+               form_visitas_planificacion_por_provincia_000.public_Menu_Worked := param_Menu_Worked;
+               form_visitas_planificacion_por_provincia_000.para_Empezar;
+
+               form_visitas_planificacion_por_provincia_000.ShowModal;
+
+               form_visitas_planificacion_por_provincia_000.Free;
+
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { FACTURAS VENTAS }
+    If ( Pos( UpperCase('id_facturas'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 600 )                                            then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_facturas_ventas_000') = false then
+           begin
+               Application.CreateForm(Tform_facturas_ventas_000, form_facturas_ventas_000);
+
+               form_facturas_ventas_000.public_Solo_Ver    := param_Solo_Ver;
+               form_facturas_ventas_000.public_Elegimos    := param_Elegimos;
+               form_facturas_ventas_000.public_Menu_Worked := param_Menu_Worked;
+               form_facturas_ventas_000.para_Empezar;
+
+               form_facturas_ventas_000.ShowModal;
+
+               if form_facturas_ventas_000.public_Rgtro_Seleccionado = true then
+               begin
+                   with form_facturas_ventas_000.SQLQuery_Ftra do
+                   begin
+                       Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                             FieldByName('id_clientes').AsString,
+                                                             FieldByName('Fecha').AsString,
+                                                             '',
+                                                             FieldByName('Serie_Factura').AsString,
+                                                             FieldByName('Numero_Factura').AsString );
+                   end;
+               end;
+
+               form_facturas_ventas_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { MARGENES PARA INCREMENTO DE TARIFAS }
+    If ( Pos( UpperCase('id_margenes_tarifas'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 610 )                                                    then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_margenes_tarifas_000') = false then
+           begin
+               Application.CreateForm(Tform_margenes_tarifas_000, form_margenes_tarifas_000);
+
+               form_margenes_tarifas_000.public_Solo_Ver    := param_Solo_Ver;
+               form_margenes_tarifas_000.public_Elegimos    := param_Elegimos;
+               form_margenes_tarifas_000.public_Menu_Worked := param_Menu_Worked;
+               form_margenes_tarifas_000.para_Empezar;
+
+               form_margenes_tarifas_000.ShowModal;
+
+               if form_margenes_tarifas_000.public_Rgtro_Seleccionado = true then
+               begin
+                   with form_margenes_tarifas_000.SQLQuery_Margenes do
+                   begin
+                       Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                             FieldByName('mayor_igual_que').AsString,
+                                                             FieldByName('menor_igual_que').AsString,
+                                                             '',
+                                                             '',
+                                                             '' );
+                   end;
+               end;
+
+               form_margenes_tarifas_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { PRESUPUESTOS COMPRAS }
+    If ( Pos( UpperCase('id_presupuestos_compras'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 620 )                                                        then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_presupuestos_compras_000') = false then
+            begin
+                Application.CreateForm(Tform_presupuestos_compras_000, form_presupuestos_compras_000);
+
+                form_presupuestos_compras_000.public_Solo_Ver    := param_Solo_Ver;
+                form_presupuestos_compras_000.public_Elegimos    := param_Elegimos;
+                form_presupuestos_compras_000.public_Menu_Worked := param_Menu_Worked;
+                form_presupuestos_compras_000.para_Empezar;
+
+                form_presupuestos_compras_000.ShowModal;
+
+                if form_presupuestos_compras_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_presupuestos_compras_000.SQLQuery_Presup do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              FieldByName('id_proveedores').AsString,
+                                                              FieldByName('Fecha').AsString,
+                                                              '',
+                                                              FieldByName('Serie_Presupuesto').AsString,
+                                                              FieldByName('Numero_Presupuesto').AsString );
+                    end;
+                end;
+
+                form_presupuestos_compras_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { PEDIDOS COMPRAS }
+    If ( Pos( UpperCase('id_pedidos_compras'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 630 )                                                   then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_pedidos_compras_000') = false then
+            begin
+                Application.CreateForm(Tform_pedidos_compras_000, form_pedidos_compras_000);
+
+                form_pedidos_compras_000.public_Solo_Ver    := param_Solo_Ver;
+                form_pedidos_compras_000.public_Elegimos    := param_Elegimos;
+                form_pedidos_compras_000.public_Menu_Worked := param_Menu_Worked;
+                form_pedidos_compras_000.para_Empezar;
+
+                form_pedidos_compras_000.ShowModal;
+
+                if form_pedidos_compras_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_pedidos_compras_000.SQLQuery_Pdo do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              FieldByName('id_proveedores').AsString,
+                                                              FieldByName('Fecha').AsString,
+                                                              '',
+                                                              FieldByName('Serie_Pedidos').AsString,
+                                                              FieldByName('Numero_Pedidos').AsString );
+                    end;
+                end;
+
+                form_pedidos_compras_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { ALBARANES COMPRAS }
+    If ( Pos( UpperCase('id_albaranes'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 640 )                                             then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('form_albaranes_compras_000') = false then
+            begin
+                Application.CreateForm(Tform_albaranes_compras_000, form_albaranes_compras_000);
+
+                form_albaranes_compras_000.public_Solo_Ver    := param_Solo_Ver;
+                form_albaranes_compras_000.public_Elegimos    := param_Elegimos;
+                form_albaranes_compras_000.public_Menu_Worked := param_Menu_Worked;
+                form_albaranes_compras_000.para_Empezar;
+
+                form_albaranes_compras_000.ShowModal;
+
+                if form_albaranes_compras_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with form_albaranes_compras_000.SQLQuery_Alb do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              FieldByName('id_proveedores').AsString,
+                                                              FieldByName('Fecha').AsString,
+                                                              '',
+                                                              FieldByName('Serie_Albaran').AsString,
+                                                              FieldByName('Numero_Albaran').AsString );
+                    end;
+                end;
+
+                form_albaranes_compras_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { FACTURAS COMPRAS }
+    If ( Pos( UpperCase('id_facturas'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 650 )                                            then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_facturas_compras_000') = false then
+           begin
+               Application.CreateForm(Tform_facturas_compras_000, form_facturas_compras_000);
+
+               form_facturas_compras_000.public_Solo_Ver    := param_Solo_Ver;
+               form_facturas_compras_000.public_Elegimos    := param_Elegimos;
+               form_facturas_compras_000.public_Menu_Worked := param_Menu_Worked;
+               form_facturas_compras_000.para_Empezar;
+
+               form_facturas_compras_000.ShowModal;
+
+               if form_facturas_compras_000.public_Rgtro_Seleccionado = true then
+               begin
+                   with form_facturas_compras_000.SQLQuery_Ftra do
+                   begin
+                       Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                             FieldByName('id_proveedores').AsString,
+                                                             FieldByName('Fecha').AsString,
+                                                             '',
+                                                             FieldByName('Serie_Factura').AsString,
+                                                             FieldByName('Numero_Factura').AsString );
+                   end;
+               end;
+
+               form_facturas_compras_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { UTILIDADES PARA EL SUPER USUARIO }
+    If param_Menu_Worked = 660 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_utilidades_000') = false then
+           begin
+               Application.CreateForm(Tform_utilidades_000, form_utilidades_000);
+
+               form_utilidades_000.para_Empezar;
+
+               form_utilidades_000.ShowModal;
+
+               form_utilidades_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { FACTURAS DE VENTAS... CIERRE }
+    If param_Menu_Worked = 670 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_facturas_cerrar_000') = false then
+           begin
+               Application.CreateForm(Tform_facturas_cerrar_000, form_facturas_cerrar_000);
+
+               form_facturas_cerrar_000.public_ventas_o_compras := 'V';
+
+               form_facturas_cerrar_000.para_Empezar;
+
+               form_facturas_cerrar_000.ShowModal;
+
+               form_facturas_cerrar_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { FACTURAS DE COMPRAS... CIERRE }
+    If param_Menu_Worked = 680 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_facturas_cerrar_000') = false then
+           begin
+               Application.CreateForm(Tform_facturas_cerrar_000, form_facturas_cerrar_000);
+
+               form_facturas_cerrar_000.public_ventas_o_compras := 'C';
+
+               form_facturas_cerrar_000.para_Empezar;
+
+               form_facturas_cerrar_000.ShowModal;
+
+               form_facturas_cerrar_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { ULTIMAS VENTAS... CIERRE }
+    If param_Menu_Worked = 690 then
+    begin
+       if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+       begin
+           if UTI_GEN_Form_Abierto_Ya('form_articulos_ultimas_ventas_000') = false then
+           begin
+               Application.CreateForm(Tform_articulos_ultimas_ventas_000, form_articulos_ultimas_ventas_000);
+
+               form_articulos_ultimas_ventas_000.para_Empezar;
+
+               form_articulos_ultimas_ventas_000.ShowModal;
+
+               form_articulos_ultimas_ventas_000.Free;
+               param_Campo := '';
+           end else begin
+               var_msg.Add(var_msg_ya_abierto);
+           end;
+       end;
+    end;
+
+    { REPORTES / INFORMES }
+    If ( Pos( UpperCase('id_informes'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 700 )                                           then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('f_reportes_000') = false then
+            begin
+                Application.CreateForm(Tf_reportes_000, f_reportes_000);
+                f_reportes_000.public_Solo_Ver    := param_Solo_Ver;
+                f_reportes_000.public_Elegimos    := param_Elegimos;
+                f_reportes_000.public_Menu_Worked := param_Menu_Worked;
+                f_reportes_000.para_Empezar;
+
+                f_reportes_000.ShowModal;
+
+                if f_reportes_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with f_reportes_000.SQLQuery_Principal do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              FieldByName('id_menus').AsString,
+                                                              '',
+                                                              FieldByName('nombre_fichero').AsString,
+                                                              FieldByName('descripcion').AsString,
+                                                              '' );
+                    end;
+                end;
+
+                f_reportes_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { SERVICIOS TIPOS }
+    If ( Pos( UpperCase('id_servicios_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 710 )                                                   then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('f_servicios_tipos_000') = false then
+            begin
+                Application.CreateForm(Tf_servicios_tipos_000, f_servicios_tipos_000);
+                f_servicios_tipos_000.public_Solo_Ver    := param_Solo_Ver;
+                f_servicios_tipos_000.public_Elegimos    := param_Elegimos;
+                f_servicios_tipos_000.public_Menu_Worked := param_Menu_Worked;
+                f_servicios_tipos_000.para_Empezar;
+
+                f_servicios_tipos_000.ShowModal;
+
+                if f_servicios_tipos_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with f_servicios_tipos_000.SQLQuery_Principal do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              '',
+                                                              '',
+                                                              FieldByName('descripcion').AsString,
+                                                              '',
+                                                              '' );
+                    end;
+                end;
+
+                f_servicios_tipos_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { SERVICIOS REGULARES }
+    If ( Pos( UpperCase('id_servicios_regulares'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 720 )                                                       then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('f_servicios_regulares_000') = false then
+            begin
+                Application.CreateForm(Tf_servicios_regulares_000, f_servicios_regulares_000);
+                f_servicios_regulares_000.public_Solo_Ver    := param_Solo_Ver;
+                f_servicios_regulares_000.public_Elegimos    := param_Elegimos;
+                f_servicios_regulares_000.public_Menu_Worked := param_Menu_Worked;
+                f_servicios_regulares_000.para_Empezar;
+
+                f_servicios_regulares_000.ShowModal;
+
+                if f_servicios_regulares_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with f_servicios_regulares_000.SQLQuery_Principal do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                              '',
+                                                              '',
+                                                              FieldByName('descripcion').AsString,
+                                                              '',
+                                                              '' );
+                    end;
+                end;
+
+                f_servicios_regulares_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    { SERIES DE SERVICIOS }
+    If ( Pos( UpperCase('id_series_servicios'), UpperCase(Trim(param_Campo)) ) <> 0 ) or
+       ( param_Menu_Worked = 730 )                                                    then
+    begin
+        if UTI_USR_Permiso_SN(param_Menu_Worked, '', True) = true then
+        begin
+            if UTI_GEN_Form_Abierto_Ya('f_series_servicios_000') = false then
+            begin
+                Application.CreateForm(Tf_series_servicios_000, f_series_servicios_000);
+                f_series_servicios_000.public_Solo_Ver    := param_Solo_Ver;
+                f_series_servicios_000.public_Elegimos    := param_Elegimos;
+                f_series_servicios_000.public_Menu_Worked := param_Menu_Worked;
+                f_series_servicios_000.para_Empezar;
+
+                f_series_servicios_000.ShowModal;
+
+                if f_series_servicios_000.public_Rgtro_Seleccionado = true then
+                begin
+                    with f_series_servicios_000 do
+                    begin
+                        Result := UTI_Guardar_Datos_Registro( SQLQuery_Principalid.AsString,
+                                                              SQLQuery_Principalid_empresas.AsString,
+                                                              SQLQuery_Principalsubcuenta_ventas.AsString,
+                                                              SQLQuery_Principaldescripcion.AsString,
+                                                              SQLQuery_Principalserie_codigo.AsString,
+                                                              SQLQuery_Principalnumero_siguiente.AsString );
+                    end;
+                end;
+
+                f_series_servicios_000.Free;
+                param_Campo := '';
+            end else begin
+                var_msg.Add(var_msg_ya_abierto);
+            end;
+        end;
+    end;
+
+    // ********************************************************************************************* //
+    // ** EL MODULO QUE QUERIAMOS LLAMAR YA ESTABA ABIERTO, NO PERMITIMOS ABRIRLO DOS VECES       ** //
+    // ********************************************************************************************* //
+     if Trim(var_msg.Text) <> '' then
+     begin
+       UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
+     end;
+
+     var_msg.Free;
+end;
+
+end.
+
+

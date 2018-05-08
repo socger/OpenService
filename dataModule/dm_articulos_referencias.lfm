@@ -1,0 +1,30 @@
+object DataModule_Articulos_Referencias: TDataModule_Articulos_Referencias
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 377
+  HorizontalOffset = 142
+  VerticalOffset = 68
+  Width = 656
+  object SQLTransaction_Art_Ref_Elegir: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Art_Ref_Elegir
+    left = 144
+    top = 144
+  end
+  object SQLConnector_Art_Ref_Elegir: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Password = 'sasa'
+    Transaction = SQLTransaction_Art_Ref_Elegir
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 144
+    top = 216
+  end
+end

@@ -1,0 +1,85 @@
+inherited f_filtros_001: Tf_filtros_001
+  inherited GroupBox_Registro_Principal: TGroupBox
+    inherited Panel11: TPanel
+      object Label1: TLabel[0]
+        AnchorSideLeft.Control = DBEdit_a_quien_facturamos
+        AnchorSideBottom.Control = DBEdit_a_quien_facturamos
+        Left = 16
+        Height = 19
+        Top = 3
+        Width = 252
+        Anchors = [akLeft, akBottom]
+        Caption = 'A quien facturamos / razón social'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_a_quien_facturamos: TDBEdit[1]
+        Left = 16
+        Height = 24
+        Top = 22
+        Width = 348
+        DataField = 'nombre_propietario'
+        DataSource = f_clientes_000.DataSource_Principal
+        ReadOnly = True
+        CharCase = ecNormal
+        Color = 7001047
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 0
+      end
+    end
+  end
+  inherited GroupBox_Registro: TGroupBox
+    inherited Panel22: TPanel
+      object Label4: TLabel[1]
+        AnchorSideLeft.Control = DBEdit_Nombre_Contacto
+        AnchorSideBottom.Control = DBEdit_Nombre_Contacto
+        Left = 15
+        Height = 19
+        Top = 8
+        Width = 159
+        Anchors = [akLeft, akBottom]
+        Caption = 'Nombre del contacto'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object DBEdit_Nombre_Contacto: TDBEdit[2]
+        Left = 15
+        Height = 24
+        Top = 27
+        Width = 381
+        DataField = 'nombre'
+        DataSource = f_clientes_000.DataSource_Clientes_Contactos
+        CharCase = ecNormal
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 1
+      end
+    end
+  end
+end

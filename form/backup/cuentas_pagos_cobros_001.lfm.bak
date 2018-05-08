@@ -1,0 +1,246 @@
+object form_cuentas_pagos_cobros_001: Tform_cuentas_pagos_cobros_001
+  Left = 434
+  Height = 287
+  Top = 101
+  Width = 575
+  ActiveControl = DBEdit_Descripcion
+  Caption = 'Ficha - Cuenta de pagos/cobros'
+  ClientHeight = 287
+  ClientWidth = 575
+  Color = 14737613
+  OnActivate = FormActivate
+  OnClose = FormClose
+  LCLVersion = '1.4.2.0'
+  object ButtonPanel1: TButtonPanel
+    Left = 6
+    Height = 34
+    Top = 6
+    Width = 563
+    Align = alTop
+    OKButton.Name = 'OKButton'
+    OKButton.DefaultCaption = True
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    CancelButton.OnClick = CancelButtonClick
+    TabOrder = 0
+    ShowButtons = [pbOK, pbCancel]
+  end
+  object GroupBox11: TGroupBox
+    Left = 30
+    Height = 37
+    Top = 0
+    Width = 174
+    ClientHeight = 17
+    ClientWidth = 170
+    TabOrder = 1
+    object Label62: TLabel
+      Left = 8
+      Height = 19
+      Top = -5
+      Width = 56
+      Anchors = [akLeft, akBottom]
+      Caption = 'Código'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBEdit_eMail1: TDBEdit
+      Left = 77
+      Height = 23
+      Top = -7
+      Width = 90
+      DataField = 'id'
+      DataSource = form_cuentas_pagos_cobros_000.DataSource_CtasPC
+      ReadOnly = True
+      CharCase = ecNormal
+      Color = 7001047
+      MaxLength = 0
+      TabOrder = 0
+    end
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = DBEdit_Descripcion
+    AnchorSideBottom.Control = DBEdit_Descripcion
+    Left = 30
+    Height = 22
+    Top = 61
+    Width = 112
+    Anchors = [akLeft, akBottom]
+    Caption = 'Descripción'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Descripcion: TDBEdit
+    Left = 30
+    Height = 24
+    Top = 83
+    Width = 512
+    DataField = 'descripcion'
+    DataSource = form_cuentas_pagos_cobros_000.DataSource_CtasPC
+    CharCase = ecNormal
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    MaxLength = 0
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Label24: TLabel
+    AnchorSideLeft.Control = DBEdit_Cuenta_Contable
+    AnchorSideBottom.Control = DBEdit_Cuenta_Contable
+    Left = 30
+    Height = 22
+    Top = 120
+    Width = 151
+    Anchors = [akLeft, akBottom]
+    Caption = 'Cuenta contable'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit_Cuenta_Contable: TDBEdit
+    Left = 30
+    Height = 23
+    Top = 142
+    Width = 152
+    DataField = 'Cuenta_Contable'
+    DataSource = form_cuentas_pagos_cobros_000.DataSource_CtasPC
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object Panel1: TPanel
+    Left = 223
+    Height = 127
+    Top = 120
+    Width = 154
+    BevelOuter = bvNone
+    ClientHeight = 127
+    ClientWidth = 154
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 4
+    object DBRadioGroup_Modalidad: TDBRadioGroup
+      Left = 0
+      Height = 112
+      Top = 15
+      Width = 154
+      Align = alBottom
+      DataField = 'Modalidad'
+      DataSource = form_cuentas_pagos_cobros_000.DataSource_CtasPC
+      Items.Strings = (
+        'Efectivo'
+        'Tarjeta de crédito'
+        'Efecto bancario'
+      )
+      TabOrder = 0
+      Values.Strings = (
+        '1'
+        '2'
+        '3'
+      )
+    end
+    object Label63: TLabel
+      Left = -5
+      Height = 22
+      Top = 0
+      Width = 107
+      Anchors = [akLeft, akBottom]
+      Caption = ' Modalidad '
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 388
+    Height = 127
+    Top = 120
+    Width = 154
+    BevelOuter = bvNone
+    ClientHeight = 127
+    ClientWidth = 154
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 5
+    object DBRadioGroup_Tipo_Cuenta: TDBRadioGroup
+      Left = 0
+      Height = 112
+      Top = 15
+      Width = 154
+      Align = alBottom
+      DataField = 'Tipo_Cuenta'
+      DataSource = form_cuentas_pagos_cobros_000.DataSource_CtasPC
+      Items.Strings = (
+        'Pago'
+        'Cobro'
+        'Pago/Cobro'
+        'Impagado'
+      )
+      TabOrder = 0
+      Values.Strings = (
+        '1'
+        '2'
+        '3'
+        '4'
+      )
+    end
+    object Label64: TLabel
+      Left = -5
+      Height = 22
+      Top = 0
+      Width = 148
+      Anchors = [akLeft, akBottom]
+      Caption = ' Tipo de cuenta '
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+end

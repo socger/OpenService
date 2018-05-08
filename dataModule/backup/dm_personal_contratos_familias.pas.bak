@@ -1,0 +1,39 @@
+unit dm_personal_contratos_familias;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, sqldb, FileUtil, utilidades_bd;
+
+type
+
+  { TDataModule_Personal_Contratos_Familias }
+
+  TDataModule_Personal_Contratos_Familias = class(TDataModule)
+    SQLConnector: TSQLConnector;
+    SQLTransaction: TSQLTransaction;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  DataModule_Personal_Contratos_Familias: TDataModule_Personal_Contratos_Familias;
+
+implementation
+
+{$R *.lfm}
+
+{ TDataModule_Personal_Contratos_Familias }
+
+procedure TDataModule_Personal_Contratos_Familias.DataModuleCreate(Sender: TObject);
+begin
+    if UTI_CN_Abrir(SQLTransaction, SQLConnector) = False then UTI_GEN_Salir;
+end;
+
+end.
+

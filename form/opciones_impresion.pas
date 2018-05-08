@@ -1,0 +1,157 @@
+unit opciones_impresion;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+    Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, Spin, ButtonPanel,
+    utilidades_general, Printers, utilidades_impresoras;
+
+type
+
+    { Tform_opciones_impresion }
+
+    Tform_opciones_impresion = class(TForm)
+        ButtonPanel1: TButtonPanel;
+        ComboBox_Elegir_Impresora: TComboBox;
+        Label1: TLabel;
+        Label_Copias: TLabel;
+        SpinEdit_Copias: TSpinEdit;
+
+        procedure Copias_Visible(param_visible : Boolean);
+        procedure para_Empezar;
+        procedure Presentar_Datos;
+        procedure CancelButtonClick(Sender: TObject);
+        procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+        procedure FormCreate(Sender: TObject);
+        procedure OKButtonClick(Sender: TObject);
+    private
+        { private declarations }
+        private_Salir_OK : Boolean;
+    public
+        { public declarations }
+        public_Pulso_Aceptar : Boolean;
+    end;
+
+var
+    form_opciones_impresion: Tform_opciones_impresion;
+
+implementation
+
+{$R *.lfm}
+
+uses menu;
+
+{ Tform_opciones_impresion }
+
+procedure Tform_opciones_impresion.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+var var_msg : TStrings;
+begin
+  ButtonPanel1.SetFocus; // Con esto consigo que salga del campo que este y pueda actualizarlo
+
+  var_msg := TStringList.Create;
+
+  if public_Pulso_Aceptar = true then
+  begin
+      form_Menu.public_Impresora_descripcion_Elegida := ComboBox_Elegir_Impresora.Text;
+      form_Menu.public_Impresora_Ctdad_Copias        := IntToStr(SpinEdit_Copias.Value);
+  end;
+
+  if private_Salir_OK = false then
+  begin
+    // ********************************************************************************************* //
+    // ** Intento BitBtn_SALIR de la aplicación de un modo no permitido.                          ** //
+    // ********************************************************************************************* //
+    // ** Pero si desde el menu principal está a true la variable public_Salir_Ok, significa      ** //
+    // ** que hay que salir si o si pues se pulsó cancelar al preguntar otra vez por la pwd       ** //
+    // ********************************************************************************************* //
+    if form_Menu.public_Salir_OK = False then CloseAction := caNone;
+  end else
+  begin
+    // ********************************************************************************************* //
+    // ** Fue correcto el modo como quiere salir de la aplicación                                 ** //
+    // ********************************************************************************************* //
+    // ** Comprobaremos si no se generó algún error por falta de completar algun campo y si se    ** //
+    // ** salió con el botón Ok o Cancel                                                          ** //
+    // ********************************************************************************************* //
+    if (Trim(var_msg.Text) <> '') and (public_Pulso_Aceptar = true) then
+    begin
+      UTI_GEN_Aviso(true, var_msg, rs_Falta, True, False);
+      CloseAction := caNone;
+    end else
+    begin
+      CloseAction := caFree;
+    end;
+  end;
+
+  var_msg.Free;
+end;
+
+procedure Tform_opciones_impresion.CancelButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := True;
+    public_Pulso_Aceptar := false;
+end;
+
+procedure Tform_opciones_impresion.FormCreate(Sender: TObject);
+begin
+  { ****************************************************************************
+    Obligado en cada formulario para no olvidarlo
+    **************************************************************************** }
+    with Self do
+    begin
+        Color       := $00C2C29E;
+        Position    := poScreenCenter;
+        BorderIcons := [];
+        BorderStyle := bsSingle;
+    end;
+
+    private_Salir_OK := false;
+end;
+
+procedure Tform_opciones_impresion.para_Empezar;
+begin
+    Presentar_Datos;
+end;
+
+procedure Tform_opciones_impresion.Presentar_Datos;
+var var_Impresora : String;
+begin
+  ComboBox_Elegir_Impresora.Items.Assign(Printer.Printers);
+  // ComboBox_Elegir_Impresora.Items.AddStrings(Printer.Printers);
+
+  if Trim(form_menu.public_Impresora_descripcion_Elegida) <> '' then
+  begin
+    var_Impresora := UTI_IMPRESORAS_Devolver_Numero_Impresora(form_Menu.public_Impresora_descripcion_Elegida);
+    if Trim(var_Impresora) = '' then
+    begin
+      try
+        ComboBox_Elegir_Impresora.ItemIndex := StrToInt(var_Impresora);
+        ComboBox_Elegir_Impresora.Text      := ComboBox_Elegir_Impresora.Items[ComboBox_Elegir_Impresora.ItemIndex];
+      Except
+        ComboBox_Elegir_Impresora.ItemIndex := 0;
+        ComboBox_Elegir_Impresora.Text      := '';
+      end;
+    end;
+
+    SpinEdit_Copias.Value := StrToInt(form_Menu.public_Impresora_Ctdad_Copias);
+  end;
+
+  Copias_Visible(false);
+end;
+
+procedure Tform_opciones_impresion.Copias_Visible(param_visible : Boolean);
+begin
+    Label_Copias.Visible    := param_visible;
+    SpinEdit_Copias.Visible := param_visible;
+end;
+
+procedure Tform_opciones_impresion.OKButtonClick(Sender: TObject);
+begin
+    private_Salir_OK     := true;
+    public_Pulso_Aceptar := true;
+end;
+
+end.
+

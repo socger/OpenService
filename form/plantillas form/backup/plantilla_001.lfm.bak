@@ -1,0 +1,176 @@
+object form_plantilla_001: Tform_plantilla_001
+  Left = 449
+  Height = 454
+  Top = 119
+  Width = 717
+  Caption = 'form_plantilla_001'
+  ClientHeight = 454
+  ClientWidth = 717
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  LCLVersion = '1.8.0.6'
+  object GroupBox_Registro_Principal: TGroupBox
+    Left = 0
+    Height = 150
+    Top = 0
+    Width = 717
+    Align = alTop
+    Caption = ' Registro principal elegido '
+    ClientHeight = 130
+    ClientWidth = 713
+    TabOrder = 0
+    object Panel10: TPanel
+      Left = 0
+      Height = 130
+      Top = 0
+      Width = 17
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 0
+    end
+    object Panel13: TPanel
+      Left = 696
+      Height = 130
+      Top = 0
+      Width = 17
+      Align = alRight
+      BevelOuter = bvNone
+      TabOrder = 1
+    end
+    object Panel11: TPanel
+      Left = 17
+      Height = 130
+      Top = 0
+      Width = 679
+      Align = alClient
+      BevelOuter = bvNone
+      Color = 14079702
+      ParentColor = False
+      TabOrder = 2
+    end
+  end
+  object GroupBox_Registro: TGroupBox
+    Left = 0
+    Height = 304
+    Top = 150
+    Width = 717
+    Align = alClient
+    Caption = ' Registro detalle '
+    ClientHeight = 284
+    ClientWidth = 713
+    TabOrder = 1
+    object Panel20: TPanel
+      Left = 0
+      Height = 284
+      Top = 0
+      Width = 17
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 0
+    end
+    object Panel21: TPanel
+      Left = 696
+      Height = 284
+      Top = 0
+      Width = 17
+      Align = alRight
+      BevelOuter = bvNone
+      TabOrder = 1
+    end
+    object Panel22: TPanel
+      Left = 17
+      Height = 284
+      Top = 0
+      Width = 679
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 284
+      ClientWidth = 679
+      TabOrder = 2
+      object Panel23: TPanel
+        Left = 0
+        Height = 37
+        Top = 247
+        Width = 679
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 37
+        ClientWidth = 679
+        TabOrder = 0
+        object ButtonPanel1: TButtonPanel
+          Left = 6
+          Height = 34
+          Top = 7
+          Width = 667
+          Align = alTop
+          OKButton.Name = 'OKButton'
+          OKButton.DefaultCaption = True
+          OKButton.OnClick = OKButtonClick
+          HelpButton.Name = 'HelpButton'
+          HelpButton.DefaultCaption = True
+          CloseButton.Name = 'CloseButton'
+          CloseButton.DefaultCaption = True
+          CancelButton.Name = 'CancelButton'
+          CancelButton.DefaultCaption = True
+          CancelButton.OnClick = CancelButtonClick
+          TabOrder = 0
+          ShowButtons = [pbOK, pbCancel]
+        end
+        object Panel3: TPanel
+          Left = 4
+          Height = 32
+          Top = 5
+          Width = 202
+          BevelOuter = bvNone
+          ClientHeight = 32
+          ClientWidth = 202
+          TabOrder = 1
+          object Label62: TLabel
+            Left = 3
+            Height = 19
+            Top = 9
+            Width = 14
+            Caption = 'Id'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -16
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object DBEdit_Id: TDBEdit
+            Left = 21
+            Height = 24
+            Top = 4
+            Width = 132
+            DataField = 'id'
+            ReadOnly = True
+            CharCase = ecNormal
+            Color = 7001047
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clRed
+            Font.Height = -13
+            Font.Name = 'Arial'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            MaxLength = 0
+            ParentFont = False
+            TabOrder = 0
+          end
+        end
+        object Shape1: TShape
+          Left = 0
+          Height = 1
+          Top = 0
+          Width = 679
+          Align = alTop
+        end
+      end
+    end
+  end
+end

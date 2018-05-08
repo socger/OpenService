@@ -1,0 +1,29 @@
+object DataModule_Combustibles: TDataModule_Combustibles
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 343
+  HorizontalOffset = 643
+  VerticalOffset = 183
+  Width = 447
+  object SQLTransaction_Combustibles: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Combustibles
+    left = 200
+    top = 72
+  end
+  object SQLConnector_Combustibles: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Transaction = SQLTransaction_Combustibles
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 200
+    top = 144
+  end
+end

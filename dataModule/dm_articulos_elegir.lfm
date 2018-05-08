@@ -1,0 +1,30 @@
+object DataModule_Articulos_Elegir: TDataModule_Articulos_Elegir
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 323
+  HorizontalOffset = 765
+  VerticalOffset = 158
+  Width = 298
+  object SQLTransaction_Art_Elegir: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = SQLConnector_Art_Elegir
+    left = 116
+    top = 116
+  end
+  object SQLConnector_Art_Elegir: TSQLConnector
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'socger'
+    KeepConnection = False
+    Password = 'sasa'
+    Transaction = SQLTransaction_Art_Elegir
+    UserName = 'root'
+    CharSet = 'utf8'
+    HostName = '127.0.0.1'
+    LogEvents = [detCustom, detCommit]
+    ConnectorType = 'MySQL 5.6'
+    left = 116
+    top = 188
+  end
+end

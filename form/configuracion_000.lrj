@@ -1,0 +1,17 @@
+{"version":1,"strings":[
+{"hash":262397141,"name":"tform_configuracion_000.caption","sourcebytes":[67,111,110,102,105,103,117,114,97,99,105,195,179,110,32,100,101,108,32,112,114,111,103,114,97,109,97,32,45,32,69,83,84,69,32,70,79,82,77,32,78,79,32,83,69,32,86,69],"value":"Configuraci\u00F3n del programa - ESTE FORM NO SE VE"},
+{"hash":254498766,"name":"tform_configuracion_000.tabsheet_busqueda_concreta.caption","sourcebytes":[70,105,108,116,114,97,109,111,115,32,112,111,114,32,46,46,46],"value":"Filtramos por ..."},
+{"hash":80135182,"name":"tform_configuracion_000.label6.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
+{"hash":186825597,"name":"tform_configuracion_000.tabsheet_filtros_generales.caption","sourcebytes":[70,105,108,116,114,97,100,111,32,112,101,114,115,111,110,97,108,105,122,97,100,111,46,45],"value":"Filtrado personalizado.-"},
+{"hash":145727212,"name":"tform_configuracion_000.label9.caption","sourcebytes":[195,154,108,116,105,109,111,32,102,105,108,116,114,111,32,103,101,110,101,114,97,108],"value":"\u00DAltimo filtro general"},
+{"hash":47831842,"name":"tform_configuracion_000.label10.caption","sourcebytes":[79,114,100,101,110,97,100,111,32,112,111,114],"value":"Ordenado por"},
+{"hash":111395856,"name":"tform_configuracion_000.radiogroup_bajas.caption","sourcebytes":[32,86,101,114,32,98,97,106,97,115,32],"value":" Ver bajas "},
+{"hash":218347714,"name":"tform_configuracion_000.bitbtn_filtrar.hint","sourcebytes":[70,105,108,116,114,97,114],"value":"Filtrar"},
+{"hash":5866242,"name":"tform_configuracion_000.bitbtn_salir.hint","sourcebytes":[83,97,108,105,114],"value":"Salir"},
+{"hash":80135182,"name":"tform_configuracion_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
+{"hash":244642687,"name":"tform_configuracion_000.bitbtn_ver_situacion_registro.hint","sourcebytes":[86,101,114,32,115,105,116,117,97,99,105,195,179,110,32,100,101,108,32,114,101,103,105,115,116,114,111],"value":"Ver situaci\u00F3n del registro"},
+{"hash":48,"name":"tform_configuracion_000.label_ctdad_rgtros.caption","sourcebytes":[48],"value":"0"},
+{"hash":244642687,"name":"tform_configuracion_000.bitbtn_seleccionar.hint","sourcebytes":[86,101,114,32,115,105,116,117,97,99,105,195,179,110,32,100,101,108,32,114,101,103,105,115,116,114,111],"value":"Ver situaci\u00F3n del registro"},
+{"hash":194804325,"name":"tform_configuracion_000.bitbtn_seleccionar.caption","sourcebytes":[83,101,108,101,99,99,105,111,110,101],"value":"Seleccione"},
+{"hash":47831842,"name":"tform_configuracion_000.label_fecha2.caption","sourcebytes":[79,114,100,101,110,97,100,111,32,112,111,114],"value":"Ordenado por"}
+]}
