@@ -1897,7 +1897,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="SALIDA EJECUTABLE\OpenService"/>
+      <Filename Value="SALIDA EJECUTABLE/OpenService"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
