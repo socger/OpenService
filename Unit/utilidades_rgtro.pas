@@ -1267,8 +1267,9 @@ function UTI_RGTRO_Campo_es_DiaHora( param_FieldType : TFieldType;
 begin
   Result := false;
 
-  if ( param_FieldType = ftDateTime )                                  or
-     ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('DIAHORA') ) then
+  if    ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('DIAHORA') )
+     or ( param_FieldType = ftDateTime )
+  then
   begin
     Result := true;
   end;
@@ -1279,8 +1280,9 @@ function UTI_RGTRO_Campo_es_Dia( param_FieldType : TFieldType;
 begin
   Result := false;
 
-  if ( param_FieldType = ftDate )                                  or
-     ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('DIA') ) then
+  if    ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('DIA') )
+     or ( param_FieldType = ftDate )
+  then
   begin
     Result := true;
   end;
@@ -1291,8 +1293,9 @@ function UTI_RGTRO_Campo_es_Hora( param_FieldType : TFieldType;
 begin
   Result := false;
 
-  if ( param_FieldType = ftTime )                                   or
-     ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('HORA') ) then
+  if    ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('HORA') )
+     or ( param_FieldType = ftTime )
+  then
   begin
     Result := true;
   end;
@@ -1303,17 +1306,22 @@ function UTI_RGTRO_Campo_es_Numero( param_FieldType : TFieldType;
 begin
   Result := false;
 
-  if ( param_FieldType = ftAutoInc )                                  or
-     ( param_FieldType = ftCurrency )                                 or
-     ( param_FieldType = ftWord )                                     or
-     ( param_FieldType = ftSmallint )                                 or
-     ( param_FieldType = ftInteger )                                  or
-     ( param_FieldType = ftFloat )                                    or
-     ( param_FieldType = ftBCD )                                      or
-     ( param_FieldType = ftLargeint )                                 or
-     ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('NUMERO') ) or
-     ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('NÙMERO') ) or
-     ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('NÚMERO') ) then
+  if    (
+           ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('NUMERO') ) or
+           ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('NÙMERO') ) or
+           ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('NÚMERO') )
+        )
+     or (
+           ( param_FieldType = ftAutoInc )                                  or
+           ( param_FieldType = ftCurrency )                                 or
+           ( param_FieldType = ftWord )                                     or
+           ( param_FieldType = ftSmallint )                                 or
+           ( param_FieldType = ftInteger )                                  or
+           ( param_FieldType = ftFloat )                                    or
+           ( param_FieldType = ftBCD )                                      or
+           ( param_FieldType = ftLargeint )
+        )
+  then
   begin
     Result := true;
   end;
@@ -1324,12 +1332,17 @@ function UTI_RGTRO_Campo_es_Texto( param_FieldType : TFieldType;
 begin
   Result := false;
 
-  if ( param_FieldType = ftWideString )                              or
-     ( param_FieldType = ftMemo )                                    or
-     ( param_FieldType = ftFmtMemo )                                 or
-     ( param_FieldType = ftFixedChar )                               or
-     ( param_FieldType = ftString )                                  or
-     ( UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('TEXTO') ) then
+  if    (
+          UpperCase(param_parte_de_SQL_tipoDato) = UpperCase('TEXTO')
+        )
+     or (
+          ( param_FieldType = ftWideString ) or
+          ( param_FieldType = ftMemo )       or
+          ( param_FieldType = ftFmtMemo )    or
+          ( param_FieldType = ftFixedChar )  or
+          ( param_FieldType = ftString )
+        )
+  then
   begin
     Result := true;
   end;
