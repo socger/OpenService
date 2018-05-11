@@ -188,13 +188,24 @@ type
     procedure Filtrar_Principal_queFiltro_es_DiaHora( p_errores : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
     procedure Filtrar_Principal_queFiltro_es_DiaHora_Comprobar_Errores( p_errores : TStrings);
     procedure Filtrar_Principal_queFiltro_es_DiaHora_Crear_Filtro( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros  : Integer; var p_a_Filtrar : TStrings );
-    procedure Filtrar_Principal_queFiltro_es_DiaHora_Crear_Filtro_sonIGUALES( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
-    procedure Filtrar_Principal_queFiltro_es_DiaHora_Crear_Filtro_sonDIFERENTES( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
-    procedure Filtrar_Principal_queFiltro_es_DiaHora_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
 
     procedure Filtrar_Principal_queFiltro_es_Texto( p_errores : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
     procedure Filtrar_Principal_queFiltro_es_Texto_Comprobar_Errores( p_errores : TStrings );
     procedure Filtrar_Principal_queFiltro_es_Texto_Crear_Filtro( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros  : Integer; var p_a_Filtrar : TStrings );
+
+    procedure Filtrar_Principal_queFiltro_es_DiaHora_Crear_Filtro_sonDIFERENTES( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
+    procedure Filtrar_Principal_queFiltro_es_Numero_Crear_Filtro_sonDIFERENTES( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
+    procedure Filtrar_Principal_queFiltro_es_Dia_Crear_Filtro_sonDIFERENTES( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
+    procedure Filtrar_Principal_queFiltro_es_Hora_Crear_Filtro_sonDIFERENTES( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
+    procedure Filtrar_Principal_queFiltro_es_Texto_Crear_Filtro_sonDIFERENTES( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
+
+    procedure Filtrar_Principal_queFiltro_es_DiaHora_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
+    procedure Filtrar_Principal_queFiltro_es_Numero_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
+    procedure Filtrar_Principal_queFiltro_es_Dia_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
+    procedure Filtrar_Principal_queFiltro_es_Hora_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
+    procedure Filtrar_Principal_queFiltro_es_Texto_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
+
+    procedure Filtrar_Principal_queFiltro_sonIGUALES( p_SQL_ADD : TStrings; p_que_es : Integer; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
 
     procedure Guardar_Filtros;
     procedure NewRecord_Insert_SQLQuery_Filtros;
@@ -2024,174 +2035,6 @@ begin
 
 end;
 
-procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Texto_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD           : TStrings;
-                                                                                                var p_Registro_CRUD : TRegistro_CRUD;
-                                                                                                var p_ctdad_Rgtros  : Integer;
-                                                                                                var p_a_Filtrar     : TStrings );
-begin
-  // o el desde o el hasta no están rellenos
-
-  if Trim(v_Desde_Valor) <> '' then
-  begin
-    p_SQL_ADD.Clear;
-    p_SQL_ADD.Add( 'UPPER(' + Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) + ')' +
-                   ' >= UPPER(' + UTI_GEN_Comillas(Trim(v_Desde_Valor)) + ')' );
-    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-  end;
-
-  if Trim(v_Hasta_Valor) <> '' then
-  begin
-    p_SQL_ADD.Clear;
-    p_SQL_ADD.Add( 'UPPER(' + Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) + ')' +
-                   ' <= UPPER(' + UTI_GEN_Comillas(Trim(v_Hasta_Valor)) + ')' );
-    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-  end;
-end;
-
-procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Numero_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD           : TStrings;
-                                                                                                 var p_Registro_CRUD : TRegistro_CRUD;
-                                                                                                 var p_ctdad_Rgtros  : Integer;
-                                                                                                 var p_a_Filtrar     : TStrings );
-begin
-  // o el desde o el hasta no están rellenos
-
-  if Trim(v_Desde_Valor) <> '' then
-  begin
-    p_SQL_ADD.Clear;
-    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                   ' >= ' + Trim(v_Desde_Valor) );
-    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-  end;
-
-  if Trim(v_Hasta_Valor) <> '' then
-  begin
-    p_SQL_ADD.Clear;
-    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                   ' <= ' + Trim(v_Hasta_Valor) );
-    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-  end;
-
-end;
-
-procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Hora_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD           : TStrings;
-                                                                                               var p_Registro_CRUD : TRegistro_CRUD;
-                                                                                               var p_ctdad_Rgtros  : Integer;
-                                                                                               var p_a_Filtrar     : TStrings );
-begin
-  // o el desde o el hasta no están rellenos
-
-  if Trim(v_Desde_Valor) <> '' then
-  begin
-    p_SQL_ADD.Clear;
-    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                    ' >= ' + UTI_GEN_Comillas(Trim(v_Desde_Valor))
-                 );
-    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-  end;
-
-  if Trim(v_Hasta_Valor) <> '' then
-  begin
-    p_SQL_ADD.Clear;
-    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                    ' <= ' + UTI_GEN_Comillas(Trim(v_Hasta_Valor))
-                 );
-    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-  end;
-
-end;
-
-procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Dia_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD           : TStrings;
-                                                                                              var p_Registro_CRUD : TRegistro_CRUD;
-                                                                                              var p_ctdad_Rgtros  : Integer;
-                                                                                              var p_a_Filtrar     : TStrings );
-begin
-  // o el desde o el hasta no están rellenos
-  if Trim(v_Desde_Valor) <> '' then
-  begin
-    p_SQL_ADD.Clear;
-    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                    ' >= ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Desde_Valor').asDateTime, false )  )
-                 );
-    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-  end;
-
-  if Trim(v_Hasta_Valor) <> '' then
-  begin
-    p_SQL_ADD.Clear;
-    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                    ' <= ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Hasta_Valor').asDateTime, false )  )
-                 );
-    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-  end;
-
-end;
-
-procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_DiaHora_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD           : TStrings;
-                                                                                                  var p_Registro_CRUD : TRegistro_CRUD;
-                                                                                                  var p_ctdad_Rgtros  : Integer;
-                                                                                                  var p_a_Filtrar     : TStrings );
-var
-  v_Desde_Valor                      : String;
-  v_Hasta_Valor                      : String;
-  v_Desde_Valor_parte_de_SQL_antes   : AnsiString;
-  v_Desde_Valor_parte_de_SQL_despues : AnsiString;
-  v_Hasta_Valor_parte_de_SQL_antes   : AnsiString;
-  v_Hasta_Valor_parte_de_SQL_despues : AnsiString;
-begin
-  jerofa esto hay que hacerlo igual
-
-  v_Desde_Valor                      := SQLQuery_Filtros.FieldByName('Desde_Valor').asString;
-  v_Hasta_Valor                      := SQLQuery_Filtros.FieldByName('Hasta_Valor').asString;
-
-  v_Desde_Valor_parte_de_SQL_antes   := SQLQuery_Filtros.FieldByName('Desde_Valor_parte_de_SQL_antes').asString;
-  v_Desde_Valor_parte_de_SQL_despues := SQLQuery_Filtros.FieldByName('Desde_Valor_parte_de_SQL_despues').asString;
-  v_Hasta_Valor_parte_de_SQL_antes   := SQLQuery_Filtros.FieldByName('Hasta_Valor_parte_de_SQL_antes').asString;
-  v_Hasta_Valor_parte_de_SQL_despues := SQLQuery_Filtros.FieldByName('Hasta_Valor_parte_de_SQL_despues').asString;
-
-  // O EL DESDE O EL HASTA NO ESTAN RELLENOS
-
-  if Trim(v_Desde_Valor) <> '' then
-  begin
-    if ( Trim(v_Desde_Valor_parte_de_SQL_antes) = '' )   and
-       ( Trim(v_Desde_Valor_parte_de_SQL_despues) = '' ) then
-    begin
-      // No hay nada para sustituir al standard de filtro
-      p_SQL_ADD.Clear;
-      p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                     ' >= ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Desde_Valor').asDateTime, true )  )
-                   );
-    end
-
-    else
-    begin
-      // Hay algo que va a sustituir al standard del filtro
-    end;
-
-    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-  end;
-
-  if Trim(v_Hasta_Valor) <> '' then
-  begin
-
-    if ( Trim(v_Hasta_Valor_parte_de_SQL_antes) = '' )   and
-       ( Trim(v_Hasta_Valor_parte_de_SQL_despues) = '' ) then
-    begin
-      // No hay nada para sustituir al standard de filtro
-      p_SQL_ADD.Clear;
-      p_SQL_ADD.Add(  Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                      ' <= ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Hasta_Valor').asDateTime, true )  )
-                   );
-    end
-
-    else
-    begin
-      // Hay algo que va a sustituir al standard del filtro
-    end;
-
-    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-  end;
-end;
-
 procedure Tform_plantilla_000.Filtrar_Principal_HemosFiltradoPor(var p_Ordenado_por : String);
 var
   v_Desde_Valor : String;
@@ -2349,7 +2192,7 @@ begin
     if (UpperCase(key) <> 'S') and
        (UpperCase(key) <> 'N') then
     begin
-      key := char(''); ... jerofa comprobar si esto funciona (f_servicios_Regulares_000) con los campos lunes_SN, martes_SN, etc ... en general todos los boolean
+      key := char('');
     end;
   end;
 
@@ -2672,7 +2515,11 @@ begin
   begin
     // ESTAN RELLENADOS EL DESDE Y EL HASTA
     if SQLQuery_Filtros.FieldByName('Hasta_Valor').Value = SQLQuery_Filtros.FieldByName('Desde_Valor').Value then
-      Filtrar_Principal_queFiltro_es_Numero_Crear_Filtro_sonIGUALES( p_SQL_ADD, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar )
+      Filtrar_Principal_queFiltro_sonIGUALES( p_SQL_ADD,
+                                              2, // ES NUMERO
+                                              p_Registro_CRUD,
+                                              p_ctdad_Rgtros,
+                                              p_a_Filtrar )
     else
       Filtrar_Principal_queFiltro_es_Numero_Crear_Filtro_sonDIFERENTES( p_SQL_ADD, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
   end
@@ -2720,7 +2567,11 @@ begin
   begin
     // ESTAN RELLENADOS EL DESDE Y EL HASTA
     if SQLQuery_Filtros.FieldByName('Hasta_Valor').Value = SQLQuery_Filtros.FieldByName('Desde_Valor').Value then
-      Filtrar_Principal_queFiltro_es_DiaHora_Crear_Filtro_sonIGUALES( p_SQL_ADD, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar )
+      Filtrar_Principal_queFiltro_sonIGUALES( p_SQL_ADD,
+                                              3, // ES NUMERO
+                                              p_Registro_CRUD,
+                                              p_ctdad_Rgtros,
+                                              p_a_Filtrar )
     else
       Filtrar_Principal_queFiltro_es_DiaHora_Crear_Filtro_sonDIFERENTES( p_SQL_ADD, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
   end
@@ -2768,7 +2619,11 @@ begin
   begin
     // ESTAN RELLENADOS EL DESDE Y EL HASTA
     if SQLQuery_Filtros.FieldByName('Hasta_Valor').Value = SQLQuery_Filtros.FieldByName('Desde_Valor').Value then
-      Filtrar_Principal_queFiltro_es_Dia_Crear_Filtro_sonIGUALES( p_SQL_ADD, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar )
+      Filtrar_Principal_queFiltro_sonIGUALES( p_SQL_ADD,
+                                              4, // ES DIA
+                                              p_Registro_CRUD,
+                                              p_ctdad_Rgtros,
+                                              p_a_Filtrar )
     else
       Filtrar_Principal_queFiltro_es_Dia_Crear_Filtro_sonDIFERENTES( p_SQL_ADD, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
   end
@@ -2814,7 +2669,11 @@ begin
   begin
     // ESTAN RELLENADOS EL DESDE Y EL HASTA
     if SQLQuery_Filtros.FieldByName('Hasta_Valor').Value = SQLQuery_Filtros.FieldByName('Desde_Valor').Value then
-      Filtrar_Principal_queFiltro_es_Hora_Crear_Filtro_sonIGUALES( p_SQL_ADD, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar )
+      Filtrar_Principal_queFiltro_sonIGUALES( p_SQL_ADD,
+                                              5, // ES NUMERO
+                                              p_Registro_CRUD,
+                                              p_ctdad_Rgtros,
+                                              p_a_Filtrar )
     else
       Filtrar_Principal_queFiltro_es_Hora_Crear_Filtro_sonDIFERENTES( p_SQL_ADD, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
   end
@@ -2839,7 +2698,11 @@ begin
   begin
     // ESTAN RELLENADOS EL DESDE Y EL HASTA
     if SQLQuery_Filtros.FieldByName('Hasta_Valor').Value = SQLQuery_Filtros.FieldByName('Desde_Valor').Value then
-      Filtrar_Principal_queFiltro_es_Texto_Crear_Filtro_sonIGUALES( p_SQL_ADD, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar )
+      Filtrar_Principal_queFiltro_sonIGUALES( p_SQL_ADD,
+                                              1, // ES TEXTO
+                                              p_Registro_CRUD,
+                                              p_ctdad_Rgtros,
+                                              p_a_Filtrar )
     else
       Filtrar_Principal_queFiltro_es_Texto_Crear_Filtro_sonDIFERENTES( p_SQL_ADD, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
   end
@@ -2852,72 +2715,11 @@ end;
 // ************************************************************** //
 // ** Filtrar_Principal_queFiltro_es_ ... algo ... _sonIGUALES ** //
 // ************************************************************** //
-procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Texto_Crear_Filtro_sonIGUALES( p_SQL_ADD           : TStrings;
-                                                                                            var p_Registro_CRUD : TRegistro_CRUD;
-                                                                                            var p_ctdad_Rgtros  : Integer;
-                                                                                            var p_a_Filtrar     : TStrings );
-begin
-  // Son iguales el desde y el hasta ...
-
-  // así que vamos a intentar hacer algo parecido a
-  // upper(menus.Descripcion) like CONCAT('%', upper('nus'), '%')
-
-  // ó podríamos haber hecho algo parecido a
-  // upper(menus.Descripcion) like '%NUS%'
-
-  p_SQL_ADD.Clear;
-  p_SQL_ADD.Add( 'UPPER(' + Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) + ')' +
-                 ' LIKE CONCAT(' + UTI_GEN_Comillas('%') + ',' +
-                                  ' UPPER(' +  UTI_GEN_Comillas(Trim(v_Hasta_Valor)) + '), ' +
-                                    UTI_GEN_Comillas('%') + ')' );
-  UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-end;
-
-procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Numero_Crear_Filtro_sonIGUALES( p_SQL_ADD           : TStrings;
-                                                                                             var p_Registro_CRUD : TRegistro_CRUD;
-                                                                                             var p_ctdad_Rgtros  : Integer;
-                                                                                             var p_a_Filtrar     : TStrings );
-begin
-  // Son iguales el desde y el hasta ...
-
-  p_SQL_ADD.Clear;
-  p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                 ' = ' + Trim(v_Hasta_Valor) );
-  UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-end;
-
-procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Hora_Crear_Filtro_sonIGUALES( p_SQL_ADD           : TStrings;
-                                                                                           var p_Registro_CRUD : TRegistro_CRUD;
-                                                                                           var p_ctdad_Rgtros  : Integer;
-                                                                                           var p_a_Filtrar     : TStrings );
-begin
-  // Son iguales el desde y el hasta ...
-
-  p_SQL_ADD.Clear;
-  p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                    ' = ' + UTI_GEN_Comillas(Trim(v_Hasta_Valor))
-               );
-  UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-end;
-
-procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Dia_Crear_Filtro_sonIGUALES( p_SQL_ADD           : TStrings;
-                                                                                          var p_Registro_CRUD : TRegistro_CRUD;
-                                                                                          var p_ctdad_Rgtros  : Integer;
-                                                                                          var p_a_Filtrar     : TStrings );
-begin
-  // Son iguales el desde y el hasta ...
-
-  p_SQL_ADD.Clear;
-  p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                    ' = ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Hasta_Valor').asDateTime, false )  )
-               );
-  UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
-end;
-
-procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_DiaHora_Crear_Filtro_sonIGUALES( p_SQL_ADD           : TStrings;
-                                                                                              var p_Registro_CRUD : TRegistro_CRUD;
-                                                                                              var p_ctdad_Rgtros  : Integer;
-                                                                                              var p_a_Filtrar     : TStrings );
+procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_sonIGUALES( p_SQL_ADD           : TStrings;
+                                                                      p_que_es            : Integer;
+                                                                      var p_Registro_CRUD : TRegistro_CRUD;
+                                                                      var p_ctdad_Rgtros  : Integer;
+                                                                      var p_a_Filtrar     : TStrings );
 var
   v_Desde_Valor_parte_de_SQL_antes   : AnsiString;
   v_Desde_Valor_parte_de_SQL_despues : AnsiString;
@@ -2930,22 +2732,97 @@ begin
   v_Hasta_Valor_parte_de_SQL_antes   := SQLQuery_Filtros.FieldByName('Hasta_Valor_parte_de_SQL_antes').asString;
   v_Hasta_Valor_parte_de_SQL_despues := SQLQuery_Filtros.FieldByName('Hasta_Valor_parte_de_SQL_despues').asString;
 
-  JEROFA TODO ESTO TENGO QUE IMPLEMENTARLO EN EL RESTO DE ES_NUMERO, ES_TEXTO, ETC
   if ( Trim(v_Desde_Valor_parte_de_SQL_antes) = '' )   and
      ( Trim(v_Desde_Valor_parte_de_SQL_despues) = '' ) and
      ( Trim(v_Hasta_Valor_parte_de_SQL_antes) = '' )   and
      ( Trim(v_Hasta_Valor_parte_de_SQL_despues) = '' ) then
   begin
     // No hay nada para sustituir al standard de filtro
-    p_SQL_ADD.Clear;
-    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
-                   ' = ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Hasta_Valor').asDateTime, true )  )
-                 );
+
+    if p_que_es = 1 then
+    begin
+      // Es ... TEXTO
+
+      // Así que vamos a intentar hacer algo parecido a upper(menus.Descripcion) like CONCAT('%', upper('nus'), '%')
+      // ó podríamos haber hecho algo parecido a upper(menus.Descripcion) like '%NUS%'
+      p_SQL_ADD.Clear;
+      p_SQL_ADD.Add( 'UPPER(' + Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) + ')' +
+                     ' LIKE CONCAT(' + UTI_GEN_Comillas('%') + ',' +
+                                      ' UPPER(' +  UTI_GEN_Comillas(Trim(v_Hasta_Valor)) + '), ' +
+                                        UTI_GEN_Comillas('%') + ')' );
+    end;
+
+    if p_que_es = 2 then
+    begin
+      // Es ... NUMERO
+      p_SQL_ADD.Clear;
+      p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                     ' = ' + Trim(v_Hasta_Valor) );
+    end;
+
+    if p_que_es = 3 then
+    begin
+      // Es ... DIAHORA
+      p_SQL_ADD.Clear;
+      p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                     ' = ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Hasta_Valor').asDateTime, true )  )
+                   );
+    end;
+
+    if p_que_es = 4 then
+    begin
+      // Es ... DIA
+      p_SQL_ADD.Clear;
+      p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                        ' = ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Hasta_Valor').asDateTime, false )  )
+                   );
+    end;
+
+    if p_que_es = 5 then
+    begin
+      // Es ... HORA
+      p_SQL_ADD.Clear;
+      p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                        ' = ' + UTI_GEN_Comillas(Trim(v_Hasta_Valor))
+                   );
+    end;
+
   end
 
   else
   begin
     // Hay algo que va a sustituir al standard del filtro
+
+    if p_que_es = 1 then
+    begin
+      // Es ... TEXTO
+
+    end;
+
+    if p_que_es = 2 then
+    begin
+      // Es ... NUMERO
+
+    end;
+
+    if p_que_es = 3 then
+    begin
+      // Es ... DIAHORA
+
+    end;
+
+    if p_que_es = 4 then
+    begin
+      // Es ... DIA
+
+    end;
+
+    if p_que_es = 5 then
+    begin
+      // Es ... HORA
+
+    end;
+
   end;
 
   UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
@@ -3064,12 +2941,182 @@ begin
   UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
 end;
 
-// ***************************************************************** //
-// ** Filtrar_Principal_queFiltro_es_ ... algo ... _sonDIFERENTES ** //
-// ***************************************************************** //
+// ****************************************************************** //
+// ** Filtrar_Principal_queFiltro_es_ ... algo ... _UNOsinRELLENAR ** //
+// ****************************************************************** //
+procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Texto_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD           : TStrings;
+                                                                                                var p_Registro_CRUD : TRegistro_CRUD;
+                                                                                                var p_ctdad_Rgtros  : Integer;
+                                                                                                var p_a_Filtrar     : TStrings );
+begin
+  // o el desde o el hasta no están rellenos
+
+  if Trim(v_Desde_Valor) <> '' then
+  begin
+    p_SQL_ADD.Clear;
+    p_SQL_ADD.Add( 'UPPER(' + Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) + ')' +
+                   ' >= UPPER(' + UTI_GEN_Comillas(Trim(v_Desde_Valor)) + ')' );
+    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
+  end;
+
+  if Trim(v_Hasta_Valor) <> '' then
+  begin
+    p_SQL_ADD.Clear;
+    p_SQL_ADD.Add( 'UPPER(' + Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) + ')' +
+                   ' <= UPPER(' + UTI_GEN_Comillas(Trim(v_Hasta_Valor)) + ')' );
+    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
+  end;
+end;
+
+procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Numero_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD           : TStrings;
+                                                                                                 var p_Registro_CRUD : TRegistro_CRUD;
+                                                                                                 var p_ctdad_Rgtros  : Integer;
+                                                                                                 var p_a_Filtrar     : TStrings );
+begin
+  // o el desde o el hasta no están rellenos
+
+  if Trim(v_Desde_Valor) <> '' then
+  begin
+    p_SQL_ADD.Clear;
+    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                   ' >= ' + Trim(v_Desde_Valor) );
+    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
+  end;
+
+  if Trim(v_Hasta_Valor) <> '' then
+  begin
+    p_SQL_ADD.Clear;
+    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                   ' <= ' + Trim(v_Hasta_Valor) );
+    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
+  end;
+
+end;
+
+procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Hora_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD           : TStrings;
+                                                                                               var p_Registro_CRUD : TRegistro_CRUD;
+                                                                                               var p_ctdad_Rgtros  : Integer;
+                                                                                               var p_a_Filtrar     : TStrings );
+begin
+  // o el desde o el hasta no están rellenos
+
+  if Trim(v_Desde_Valor) <> '' then
+  begin
+    p_SQL_ADD.Clear;
+    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                    ' >= ' + UTI_GEN_Comillas(Trim(v_Desde_Valor))
+                 );
+    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
+  end;
+
+  if Trim(v_Hasta_Valor) <> '' then
+  begin
+    p_SQL_ADD.Clear;
+    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                    ' <= ' + UTI_GEN_Comillas(Trim(v_Hasta_Valor))
+                 );
+    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
+  end;
+
+end;
+
+procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Dia_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD           : TStrings;
+                                                                                              var p_Registro_CRUD : TRegistro_CRUD;
+                                                                                              var p_ctdad_Rgtros  : Integer;
+                                                                                              var p_a_Filtrar     : TStrings );
+begin
+  // o el desde o el hasta no están rellenos
+  if Trim(v_Desde_Valor) <> '' then
+  begin
+    p_SQL_ADD.Clear;
+    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                    ' >= ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Desde_Valor').asDateTime, false )  )
+                 );
+    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
+  end;
+
+  if Trim(v_Hasta_Valor) <> '' then
+  begin
+    p_SQL_ADD.Clear;
+    p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                    ' <= ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Hasta_Valor').asDateTime, false )  )
+                 );
+    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
+  end;
+
+end;
+
+procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_DiaHora_Crear_Filtro_UNOsinRELLENAR( p_SQL_ADD           : TStrings;
+                                                                                                  var p_Registro_CRUD : TRegistro_CRUD;
+                                                                                                  var p_ctdad_Rgtros  : Integer;
+                                                                                                  var p_a_Filtrar     : TStrings );
+var
+  v_Desde_Valor                      : String;
+  v_Hasta_Valor                      : String;
+  v_Desde_Valor_parte_de_SQL_antes   : AnsiString;
+  v_Desde_Valor_parte_de_SQL_despues : AnsiString;
+  v_Hasta_Valor_parte_de_SQL_antes   : AnsiString;
+  v_Hasta_Valor_parte_de_SQL_despues : AnsiString;
+begin
+  jerofa esto hay que hacerlo igual
+
+  v_Desde_Valor                      := SQLQuery_Filtros.FieldByName('Desde_Valor').asString;
+  v_Hasta_Valor                      := SQLQuery_Filtros.FieldByName('Hasta_Valor').asString;
+
+  v_Desde_Valor_parte_de_SQL_antes   := SQLQuery_Filtros.FieldByName('Desde_Valor_parte_de_SQL_antes').asString;
+  v_Desde_Valor_parte_de_SQL_despues := SQLQuery_Filtros.FieldByName('Desde_Valor_parte_de_SQL_despues').asString;
+  v_Hasta_Valor_parte_de_SQL_antes   := SQLQuery_Filtros.FieldByName('Hasta_Valor_parte_de_SQL_antes').asString;
+  v_Hasta_Valor_parte_de_SQL_despues := SQLQuery_Filtros.FieldByName('Hasta_Valor_parte_de_SQL_despues').asString;
+
+  // O EL DESDE O EL HASTA NO ESTAN RELLENOS
+
+  if Trim(v_Desde_Valor) <> '' then
+  begin
+    if ( Trim(v_Desde_Valor_parte_de_SQL_antes) = '' )   and
+       ( Trim(v_Desde_Valor_parte_de_SQL_despues) = '' ) then
+    begin
+      // No hay nada para sustituir al standard de filtro
+      p_SQL_ADD.Clear;
+      p_SQL_ADD.Add( Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                     ' >= ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Desde_Valor').asDateTime, true )  )
+                   );
+    end
+
+    else
+    begin
+      // Hay algo que va a sustituir al standard del filtro
+    end;
+
+    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
+  end;
+
+  if Trim(v_Hasta_Valor) <> '' then
+  begin
+
+    if ( Trim(v_Hasta_Valor_parte_de_SQL_antes) = '' )   and
+       ( Trim(v_Hasta_Valor_parte_de_SQL_despues) = '' ) then
+    begin
+      // No hay nada para sustituir al standard de filtro
+      p_SQL_ADD.Clear;
+      p_SQL_ADD.Add(  Trim(p_Registro_CRUD.name_tabla) + '.' + Trim(SQLQuery_Filtros.FieldByName('nombre_campo').asString) +
+                      ' <= ' + UTI_GEN_Comillas(  UTI_GEN_Format_Fecha_Hora( SQLQuery_Filtros.FieldByName('Hasta_Valor').asDateTime, true )  )
+                   );
+    end
+
+    else
+    begin
+      // Hay algo que va a sustituir al standard del filtro
+    end;
+
+    UTI_TB_SQL_ADD( false, p_a_Filtrar, p_SQL_ADD );
+  end;
+end;
+
 end.
 
 (*
+
+... jerofa comprobar si esto funciona (f_servicios_Regulares_000) con los campos lunes_SN, martes_SN, etc ... en general todos los boolean
 
 CUANDO ESTAS PIDIENDO EL VALOR DESDE O HASTA DEL FILTRO PONERLE UN MAX SIZE SEGUN EL SIZE DEL CAMPO DE LA TABLA
 
