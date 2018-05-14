@@ -1277,7 +1277,7 @@ begin
                                      'AND ' +  UTI_GEN_Comillas(v_desde_fecha) + ' BETWEEN srp.desde_fecha AND srp.hasta_fecha' + ' ' +
                                      'AND ' +  UTI_GEN_Comillas(v_hasta_fecha) + ' BETWEEN srp.desde_fecha AND srp.hasta_fecha';
 
-    {jerofa esto cambiarlo por ... en el where del filtro
+    jerofa esto cambiarlo por ... en el where del filtro
 
     exists ( select *
              from servicios_regulares_periodos srp
@@ -1285,7 +1285,7 @@ begin
     			and '01/01/2018' BETWEEN srp.desde_fecha AND srp.hasta_fecha
     			order by srp.id_servicios_regulares );
 
-     }
+
   end;
 
   p_Registro_CRUD.SELECT_SQL := p_Registro_CRUD.SELECT_SQL + ' ' +
@@ -2000,7 +2000,7 @@ begin
 
                             p_Cambiamos_Filtro,
                             false,   // param_ver_SQL_despues_Abrir : Boolean;
-                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
+                            true );  // no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;

@@ -5124,36 +5124,6 @@ inherited f_servicios_regulares_000: Tf_servicios_regulares_000
         Precision = -1
       end>
     left = 88
-    inherited SQLQuery_Filtrosorden: TLargeintField[4]
-      Index = 4
-    end
-    inherited SQLQuery_FiltrosInsert_WHEN: TDateTimeField[5]
-      Index = 5
-    end
-    inherited SQLQuery_FiltrosInsert_Id_User: TLargeintField[6]
-      Index = 6
-    end
-    inherited SQLQuery_FiltrosDel_WHEN: TDateTimeField[7]
-      Index = 7
-    end
-    inherited SQLQuery_FiltrosDel_Id_User: TLargeintField[8]
-      Index = 8
-    end
-    inherited SQLQuery_FiltrosDel_WHY: TStringField[9]
-      Index = 9
-    end
-    inherited SQLQuery_FiltrosChange_WHEN: TDateTimeField[10]
-      Index = 10
-    end
-    inherited SQLQuery_FiltrosChange_Id_User: TLargeintField[11]
-      Index = 11
-    end
-    inherited SQLQuery_FiltrosDesde_Valor: TStringField[12]
-      Index = 12
-    end
-    inherited SQLQuery_FiltrosHasta_Valor: TStringField[13]
-      Index = 13
-    end
   end
   inherited DataSource_Filtros: TDataSource
     left = 136

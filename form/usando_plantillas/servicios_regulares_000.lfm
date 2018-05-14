@@ -5046,7 +5046,6 @@ inherited f_servicios_regulares_000: Tf_servicios_regulares_000
     left = 144
   end
   inherited SQLQuery_Filtros: TSQLQuery
-    IndexName = ''
     FieldDefs = <    
       item
         Name = 'id'
