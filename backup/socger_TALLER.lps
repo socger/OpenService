@@ -2678,9 +2678,10 @@
         <ComponentName Value="form_plantilla_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="14"/>
-        <TopLine Value="2967"/>
-        <CursorPos X="47" Y="2973"/>
+        <TopLine Value="3268"/>
+        <CursorPos X="101" Y="3283"/>
         <UsageCount Value="206"/>
         <Bookmarks Count="7">
           <Item0 X="31" Y="1608" ID="8"/>
@@ -2953,9 +2954,8 @@
         <ComponentName Value="form_plantilla_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
-        <CursorPos X="74" Y="21"/>
+        <CursorPos X="22" Y="12"/>
         <UsageCount Value="182"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
