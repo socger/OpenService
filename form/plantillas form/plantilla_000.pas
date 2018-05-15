@@ -41,6 +41,7 @@ type
     GroupBox_Grid: TGroupBox;
     GroupBox_Registro: TGroupBox;
     Image_Boton_Busqueda: TImage;
+    Image_Boton_Busqueda_NO: TImage;
     Image_Boton_Calendario: TImage;
     Label62: TLabel;
     Label_Ctdad_Rgtros: TLabel;
@@ -117,6 +118,8 @@ type
     procedure DBGrid_FiltrosCellClick(Column: TColumn);
     procedure DBGrid_FiltrosColEnter(Sender: TObject);
     procedure DBGrid_FiltrosDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure DBGrid_FiltrosKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
     procedure DBGrid_FiltrosKeyPress(Sender: TObject; var Key: char);
     procedure DBGrid_PrincipalCellClick(Column: TColumn);
     procedure DBGrid_PrincipalDblClick(Sender: TObject);
@@ -172,6 +175,9 @@ type
     { private declarations }
     private_Salir_OK         : Boolean;
     private_Order_By_Filtros : array of TOrder_By;
+
+    procedure Que_Hacemos_Si_DobleClick_o_Enter_enFiltros;
+    procedure Que_Hacemos_conReadOnly_enFiltros;
 
     procedure Filtrar_Principal_queFiltro_es_Numero( p_errores : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros  : Integer; var p_a_Filtrar : TStrings );
     procedure Filtrar_Principal_queFiltro_es_Numero_Comprobar_Errores( p_errores : TStrings );
@@ -284,12 +290,31 @@ begin
   PulsoBotonFiltrar;
 end;
 
-procedure Tform_plantilla_000.DBGrid_FiltrosCellClick(Column: TColumn);
-var
-  v_nombre_campo : String;
-  v_Registro     : TRecord_Rgtro_Comun;
+procedure Tform_plantilla_000.Que_Hacemos_conReadOnly_enFiltros;
 begin
-  // Por si queremos hacer algo al pulsar una celda;
+  if DBGrid_Filtros.SelectedIndex = 1 then  // Desde_Valor
+  begin
+    DBGrid_Filtros.SelectedField.ReadOnly := false;
+    if UpperCase(SQLQuery_FiltrosDesde_Valor_pedir_SN.asString) = UpperCase('N') then
+      DBGrid_Filtros.SelectedField.ReadOnly := true;
+  end;
+
+  if DBGrid_Filtros.SelectedIndex = 3 then  // Hasta_Valor
+  begin
+    DBGrid_Filtros.SelectedField.ReadOnly := false;
+    if UpperCase(SQLQuery_FiltrosHasta_Valor_pedir_SN.asString) = UpperCase('N') then
+      DBGrid_Filtros.SelectedField.ReadOnly := true;
+  end;
+
+end;
+procedure Tform_plantilla_000.Que_Hacemos_Si_DobleClick_o_Enter_enFiltros;
+var
+  v_nombre_campo  : String;
+  v_Registro      : TRecord_Rgtro_Comun;
+  v_Hemos_Llamado : Boolean;
+begin
+  // Por si queremos hacer algo al hacer doble click en una celda;
+
   if (DBGrid_Filtros.SelectedIndex = 2) or
      (DBGrid_Filtros.SelectedIndex = 4) then
   begin
@@ -297,13 +322,14 @@ begin
 
     if DBGrid_Filtros.SelectedIndex = 2 then
     begin
-
+      v_Hemos_Llamado := false;
 
       if (UTI_RGTRO_Campo_es_DiaHora( SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
                                          SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) or
          (UTI_RGTRO_Campo_es_Dia( SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
                                   SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true)        then
       begin
+        v_Hemos_Llamado := true;
         if CalendarDialog1.Execute then
         begin
           if SQLQuery_Filtros.State <> dsEdit then
@@ -317,7 +343,8 @@ begin
                                      SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) and
          (UpperCase(Copy(v_nombre_campo, 1, 3)) = 'ID_')                                                      then
       begin
-        v_Registro := UTI_Abrir_Form( true, true, v_nombre_campo );
+        v_Hemos_Llamado := true;
+        v_Registro      := UTI_Abrir_Form( true, true, v_nombre_campo );
 
         if v_Registro.id_1 <> '' then
         begin
@@ -328,15 +355,21 @@ begin
         end;
       end;
 
+      if v_Hemos_Llamado = false then
+        DBGrid_Filtros.SelectedIndex := DBGrid_Filtros.SelectedIndex + 1;
+
     end;
 
     if DBGrid_Filtros.SelectedIndex = 4 then
     begin
+      v_Hemos_Llamado := false;
+
       if (UTI_RGTRO_Campo_es_DiaHora( SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
                                       SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) or
          (UTI_RGTRO_Campo_es_Dia( SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
                                   SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true)     then
       begin
+        v_Hemos_Llamado := true;
         if CalendarDialog1.Execute then
         begin
           if SQLQuery_Filtros.State <> dsEdit then
@@ -350,7 +383,8 @@ begin
                                      SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) and
          (UpperCase(Copy(v_nombre_campo, 1, 3)) = 'ID_')                                                      then
       begin
-        v_Registro := UTI_Abrir_Form( true, true, v_nombre_campo );
+        v_Hemos_Llamado := true;
+        v_Registro      := UTI_Abrir_Form( true, true, v_nombre_campo );
 
         if v_Registro.id_1 <> '' then
         begin
@@ -361,15 +395,27 @@ begin
         end;
       end;
 
+      if v_Hemos_Llamado = false then
+        DBGrid_Filtros.SelectedIndex := 1;
+
     end;
   end;
 
+end;
+
+procedure Tform_plantilla_000.DBGrid_FiltrosCellClick(Column: TColumn);
+begin
+  // Por si queremos hacer algo al hacer doble click en una celda;
+  Que_Hacemos_Si_DobleClick_o_Enter_enFiltros;
+  Que_Hacemos_conReadOnly_enFiltros;
 end;
 
 procedure Tform_plantilla_000.DBGrid_FiltrosColEnter(Sender: TObject);
 var
   v_nombre_campo    : String;
   v_es_Hora_o_Fecha : Boolean;
+  v_aceptada        : Boolean;
+
 begin
 {
   s := DBGrid_Filtros.DataSource.DataSet.FieldByName('ID').AsString;
@@ -390,11 +436,16 @@ begin
   end;
 }
 
-  if (DBGrid_Filtros.SelectedIndex = 1) or
-     (DBGrid_Filtros.SelectedIndex = 3) then
-  begin
-    v_nombre_campo := SQLQuery_Filtros.FieldByName('nombre_campo').asString;
+  v_nombre_campo := SQLQuery_Filtros.FieldByName('nombre_campo').asString;
 
+  // DBGrid_Filtros.SelectedField.Size:=; Se podría completar si nos interesara
+
+  if DBGrid_Filtros.SelectedIndex = 0 then
+    DBGrid_Filtros.SelectedIndex := DBGrid_Filtros.SelectedIndex + 1;
+
+  if (DBGrid_Filtros.SelectedIndex = 1) or    // Desde_Valor
+     (DBGrid_Filtros.SelectedIndex = 3) then  // Hasta_Valor
+  begin
     v_es_Hora_o_Fecha := false;
 
     if UTI_RGTRO_Campo_es_Hora( SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
@@ -455,6 +506,36 @@ begin
         SQLQuery_FiltrosHasta_Valor.asString := SQLQuery_FiltrosDesde_Valor.asString;
       end;
     end;
+  end;
+
+  if (DBGrid_Filtros.SelectedIndex = 2) or
+     (DBGrid_Filtros.SelectedIndex = 4) then
+  begin
+    v_aceptada := false;
+
+    if (UTI_RGTRO_Campo_es_DiaHora( SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
+                                    SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) or
+       (UTI_RGTRO_Campo_es_Dia( SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
+                                SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true)     then
+    begin
+      v_aceptada := true;
+    end;
+
+    if (UTI_RGTRO_Campo_es_Numero( SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
+                                   SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) and
+       (UpperCase(Copy(v_nombre_campo, 1, 3)) = 'ID_')                                                      then
+    begin
+      v_aceptada := true;
+    end;
+
+    if v_aceptada = false then
+    begin
+      if DBGrid_Filtros.SelectedIndex = 4 then
+        DBGrid_Filtros.SelectedIndex := 1
+      else
+        DBGrid_Filtros.SelectedIndex := DBGrid_Filtros.SelectedIndex + 1;
+    end;
+
   end;
 
 end;
@@ -582,11 +663,20 @@ end;
 procedure Tform_plantilla_000.BitBtn_Filtros_AbrirClick(Sender: TObject);
 begin
   Abrir_Panel_Filtros;
+
+  if DBGrid_Filtros.CanFocus then
+  begin
+    DBGrid_Filtros.SetFocus;
+    DBGrid_Filtros.SelectedIndex := 1;
+  end;
 end;
 
 procedure Tform_plantilla_000.BitBtn_Filtros_CerrarClick(Sender: TObject);
 begin
   Cerrar_Panel_Filtros;
+
+  if DBGrid_Principal.canFocus then
+    DBGrid_Principal.SetFocus;
 end;
 
 procedure Tform_plantilla_000.BitBtn_FiltrarClick(Sender: TObject);
@@ -613,9 +703,16 @@ begin
     While not Eof do
     begin
       Edit;
+        DBGrid_Filtros.SelectedIndex := 1;
+        DBGrid_Filtros.SelectedField.ReadOnly := false;
+
+        DBGrid_Filtros.SelectedIndex := 3;
+        DBGrid_Filtros.SelectedField.ReadOnly := false;
+
         FieldByName('Desde_Valor').Clear;
         FieldByName('Hasta_Valor').Clear;
       Post;
+
       Next;
     end;
 
@@ -2091,8 +2188,9 @@ procedure Tform_plantilla_000.DBGrid_FiltrosDrawColumnCell( Sender: TObject;
                                                             Column: TColumn;
                                                             State: TGridDrawState );
 var
-  var_Color_Normal : TColor;
-  v_nombre_campo   : String;
+  var_Color_Normal   : TColor;
+  v_nombre_campo     : String;
+  v_Pintamos_en_Gris : Boolean;
 
 begin
   with Sender as TDBGrid do
@@ -2128,7 +2226,19 @@ begin
        (Column.FieldName <> 'Boton_Hasta_Filtro') then
     begin
       // No es una de las columnas a dibujar por lo que la pinto con los colores elegidos
-      DefaultDrawColumnCell(Rect, DataCol, Column, State)
+      v_Pintamos_en_Gris := false;
+      if    (     (Column.FieldName = 'Desde_Valor')
+              and (UpperCase(SQLQuery_Filtros.FieldByName('Desde_Valor_pedir_SN').asString) = UpperCase('N')) )
+         or (     (Column.FieldName = 'Hasta_Valor')
+              and (UpperCase(SQLQuery_Filtros.FieldByName('Hasta_Valor_pedir_SN').asString) = UpperCase('N')) ) then
+     begin
+       v_Pintamos_en_Gris := true;
+     end;
+
+     if v_Pintamos_en_Gris = false then
+       DefaultDrawColumnCell(Rect, DataCol, Column, State)
+     else
+       DBGrid_Filtros.Canvas.StretchDraw(Rect, Image_Boton_Busqueda_NO.Picture.Graphic);
     end
 
     else
@@ -2148,6 +2258,16 @@ begin
   end;
 end;
 
+procedure Tform_plantilla_000.DBGrid_FiltrosKeyDown(Sender: TObject;
+  var Key: Word; Shift: TShiftState);
+begin
+  // Por si queremos hacer algo al hacer enter en una celda;
+  if key = 13 then
+    Que_Hacemos_Si_DobleClick_o_Enter_enFiltros;
+
+  Que_Hacemos_conReadOnly_enFiltros;
+end;
+
 procedure Tform_plantilla_000.Filtros_Comprobar_que_Boton_Pintar( p_nombre_campo : String;
                                                                   Sender: TObject;
                                                                   const Rect: TRect;
@@ -2160,14 +2280,19 @@ begin
      (UpperCase(Copy(p_nombre_campo, 1, 3)) = 'ID_')                                                      then
   begin
     DBGrid_Filtros.Canvas.StretchDraw(Rect, Image_Boton_Busqueda.Picture.Graphic);
-  end;
+  end
 
-  if (UTI_RGTRO_Campo_es_DiaHora( SQLQuery_Principal.FieldByName(p_nombre_campo).DataType,
-                                  SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) or
-     (UTI_RGTRO_Campo_es_Dia( SQLQuery_Principal.FieldByName(p_nombre_campo).DataType,
-                              SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true)     then
+  else if (UTI_RGTRO_Campo_es_DiaHora( SQLQuery_Principal.FieldByName(p_nombre_campo).DataType,
+                                       SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) or
+          (UTI_RGTRO_Campo_es_Dia( SQLQuery_Principal.FieldByName(p_nombre_campo).DataType,
+                                   SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true)     then
   begin
     DBGrid_Filtros.Canvas.StretchDraw(Rect, Image_Boton_Calendario.Picture.Graphic);
+  end
+
+  else
+  begin
+    DBGrid_Filtros.Canvas.StretchDraw(Rect, Image_Boton_Busqueda_NO.Picture.Graphic);
   end;
 end;
 
@@ -2190,25 +2315,6 @@ begin
 
 end;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ********************************************** //
-// ** Filtrar_Principal_queFiltro_es_ ... algo ** //
-// ********************************************** //
 procedure Tform_plantilla_000.Filtrar_Principal_queFiltro_es_Texto( p_errores           : TStrings;
                                                                     var p_Registro_CRUD : TRegistro_CRUD;
                                                                     var p_ctdad_Rgtros  : Integer;
@@ -3201,9 +3307,6 @@ end.
 
 CUANDO ESTAS PIDIENDO EL VALOR DESDE O HASTA DEL FILTRO PONERLE UN MAX SIZE SEGUN EL SIZE DEL CAMPO DE LA TABLA
 
-Ahora en los filtros tengo pedir_Desde_Valor_SN y pedir_Hasta_Valor_SN ... controlarlos para que no se introduzcan valores en el
-desde hasta de este tipo de campos
-
 En el módulo f_servicios_regulares_000 uno de los filtros es NO_CAMPO_activo_al
 lo hace sobre la sql que trae los servicios regulares
 habría que mirar, que ya no lo tiene, como implementarle la parte que hacía antes que era ...
@@ -3280,6 +3383,4 @@ end;
 *)
 
 
-exists ( select * from servicios_regulares_periodos srp where srp.id_servicios_regulares = sr.id and
 
-BETWEEN srp.desde_fecha AND srp.hasta_fecha order by srp.id_servicios_regulares )

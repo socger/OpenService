@@ -623,7 +623,7 @@ object form_plantilla_000: Tform_plantilla_000
             Font.Name = 'Arial'
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
-            Options = [dgEditing, dgTitles, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+            Options = [dgEditing, dgTitles, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
             ParentFont = False
             Scrollbars = ssAutoHorizontal
             TabOrder = 1
@@ -636,6 +636,7 @@ object form_plantilla_000: Tform_plantilla_000
             OnCellClick = DBGrid_FiltrosCellClick
             OnColEnter = DBGrid_FiltrosColEnter
             OnDrawColumnCell = DBGrid_FiltrosDrawColumnCell
+            OnKeyDown = DBGrid_FiltrosKeyDown
             OnKeyPress = DBGrid_FiltrosKeyPress
           end
         end
@@ -904,6 +905,22 @@ object form_plantilla_000: Tform_plantilla_000
         648B439D017EFB3DCB2FC9248B8B7F11FFE9471B6CBB0259F7E87FDBB64FEC6D
         6AE1D507731E35A20ABFDFCF21E5D88EC0DCE27F0902D3EFD660CB4700000000
         49454E44AE426082
+      }
+      Visible = False
+    end
+    object Image_Boton_Busqueda_NO: TImage
+      Left = 664
+      Height = 23
+      Top = 8
+      Width = 24
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B47726170686963BD00000089504E47
+        0D0A1A0A0000000D4948445200000018000000180806000000E0773DF8000000
+        017352474200AECE1CE90000000467414D410000B18F0BFC6105000000097048
+        597300000EC400000EC401952B0E1B00000001624B47440088051D4800000007
+        74494D4507E0021A0C132A2CBA24990000003249444154484BEDCDA10100300C
+        84C0B4FB6FF583A5A61EF58E33484E929DA2FB5BE30039400E9003E40039400E
+        507930F300B34C03787FF7B50F0000000049454E44AE426082
       }
       Visible = False
     end
