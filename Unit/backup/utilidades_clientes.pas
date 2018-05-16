@@ -24,10 +24,10 @@ begin
     begin
         Application.CreateForm(Tf_elegir_cliente_contacto, f_elegir_cliente_contacto);
 
-        f_elegir_cliente_contacto.public_hacemos_commit_alFinalizar := '1';
-        f_elegir_cliente_contacto.public_Solo_Ver                   := true;
-        f_elegir_cliente_contacto.public_Elegimos                   := true;
-        f_elegir_cliente_contacto.public_Menu_Worked                := 51 (*public_Menu_Worked*);
+        f_clientes_000.public_hacemos_commit_alFinalizar := '1';
+        f_elegir_cliente_contacto.public_Solo_Ver    := true;
+        f_elegir_cliente_contacto.public_Elegimos    := true;
+        f_elegir_cliente_contacto.public_Menu_Worked := 51 (*public_Menu_Worked*);
 
         f_elegir_cliente_contacto.para_Empezar;
 

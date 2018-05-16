@@ -39,7 +39,7 @@ type
     procedure Crear_tipos_orden_Principal; override;
     procedure Refrescar_Registros; override;
     procedure Refrescar_Registros_TablasLigadas; override;
-    procedure Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
+    procedure Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
     procedure Cambiar_WindowState; override;
     procedure Dibujar_Grid_Principal( p_Sender: TObject; const p_Rect: TRect; p_DataCol: Integer; p_Column: TColumn; p_State: TGridDrawState ); override;
     function  Fue_Utilizado_Rgtro_SQLQuery_Principal : ShortInt; override;
@@ -121,7 +121,8 @@ begin
   // No hay tablas ligadas de momento
 end;
 
-procedure Tf_elegir_impuestos.Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD;
+procedure Tf_elegir_impuestos.Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings;
+                                                           var p_Registro_CRUD : TRegistro_CRUD;
                                                            var p_ctdad_Rgtros  : Integer;
                                                            var p_a_Filtrar     : TStrings );
 var
@@ -155,7 +156,7 @@ begin
                       var_SQL_ADD );
   end;
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
   var_SQL_ADD.Free;
 end;
 

@@ -137,9 +137,6 @@ inherited f_elegir_impuestos: Tf_elegir_impuestos
               inherited DBNavigatorDBGrid_Filtros: TDBNavigator
                 Hints.Strings = (                )
               end
-              inherited BitBtn_Vaciar_Filtros: TBitBtn
-                Left = 212
-              end
             end
           end
         end

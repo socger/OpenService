@@ -19,3 +19,17 @@ Este es el mensaje de error:
 TMySQL56Connection : Server connect failed.
  
 
+[mi. 16 may., 08:04:04]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Existe_Impuesto_Composicion_Ya desde f_impuestos_000
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+
+[mi. 16 may., 08:04:12]- SUPER USUARIO ... Error al ABRIR la TABLA SQLQuery_Impuestos_Composiciones desde f_impuestos_000
+ 
+Este es el mensaje de error: 
+ 
+Database not assigned!
+ 
+

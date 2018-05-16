@@ -67,7 +67,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="11"/>
         <TopLine Value="276"/>
-        <CursorPos X="6" Y="278"/>
+        <CursorPos X="80" Y="292"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -156,9 +156,9 @@
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="utilidades_forms_Filtrar"/>
-        <EditorIndex Value="13"/>
-        <TopLine Value="417"/>
-        <CursorPos X="42" Y="439"/>
+        <EditorIndex Value="19"/>
+        <TopLine Value="500"/>
+        <CursorPos X="36" Y="508"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
       </Unit13>
@@ -1836,10 +1836,12 @@
         <ComponentName Value="form_visitas_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="22"/>
         <TopLine Value="1297"/>
         <CursorPos X="5" Y="1310"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit167>
       <Unit168>
         <Filename Value="dataModule\dm_visitas.pas"/>
@@ -1857,10 +1859,12 @@
         <ComponentName Value="form_visitas_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="502"/>
-        <CursorPos Y="514"/>
+        <EditorIndex Value="21"/>
+        <TopLine Value="535"/>
+        <CursorPos Y="559"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit169>
       <Unit170>
         <Filename Value="form\rutas_000.pas"/>
@@ -1897,10 +1901,11 @@
       <Unit173>
         <Filename Value="Unit\utilidades_clientes.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="59"/>
-        <CursorPos X="45" Y="61"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="50"/>
+        <CursorPos X="36" Y="57"/>
         <UsageCount Value="203"/>
+        <Loaded Value="True"/>
       </Unit173>
       <Unit174>
         <Filename Value="form\visitas_por_zona_000.pas"/>
@@ -2679,18 +2684,17 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="14"/>
-        <TopLine Value="703"/>
-        <CursorPos X="46" Y="708"/>
+        <EditorIndex Value="20"/>
+        <TopLine Value="3283"/>
+        <CursorPos Y="3305"/>
         <UsageCount Value="206"/>
-        <Bookmarks Count="7">
+        <Bookmarks Count="6">
           <Item0 X="31" Y="1705" ID="8"/>
           <Item1 Y="2082" ID="9"/>
-          <Item2 Y="2257" ID="5"/>
-          <Item3 X="33" Y="315" ID="6"/>
-          <Item4 Y="2744" ID="2"/>
-          <Item5 Y="2935" ID="3"/>
-          <Item6 Y="713" ID="1"/>
+          <Item2 X="33" Y="315" ID="6"/>
+          <Item3 Y="2744" ID="2"/>
+          <Item4 Y="2935" ID="3"/>
+          <Item5 X="85" Y="1987" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -2723,10 +2727,15 @@
         <ComponentName Value="f_impuestos_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="941"/>
-        <CursorPos X="104" Y="946"/>
+        <EditorIndex Value="17"/>
+        <TopLine Value="787"/>
+        <CursorPos X="64" Y="809"/>
         <UsageCount Value="204"/>
+        <Bookmarks Count="1">
+          <Item0 X="51" Y="801" ID="5"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit248>
       <Unit249>
         <Filename Value="form\usando_plantillas\elegir_impuestos.pas"/>
@@ -2734,10 +2743,12 @@
         <ComponentName Value="f_elegir_impuestos"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="18"/>
         <TopLine Value="150"/>
-        <CursorPos X="44" Y="159"/>
+        <CursorPos X="104" Y="153"/>
         <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit249>
       <Unit250>
         <Filename Value="form\usando_plantillas\almacenes_000.pas"/>
@@ -2854,10 +2865,12 @@
         <ComponentName Value="f_elegir_diarios_tipos"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="16"/>
         <TopLine Value="161"/>
         <CursorPos X="44" Y="174"/>
         <UsageCount Value="207"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit260>
       <Unit261>
         <Filename Value="form\usando_plantillas\bancos_ctas_empresas_000.pas"/>
@@ -2909,10 +2922,12 @@
         <ComponentName Value="f_clientes_002"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="14"/>
         <TopLine Value="114"/>
-        <CursorPos X="50" Y="137"/>
+        <CursorPos X="78" Y="123"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit265>
       <Unit266>
         <Filename Value="form\usando_plantillas\elegir_cliente_contacto.pas"/>
@@ -2921,7 +2936,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="67" Y="18"/>
+        <CursorPos X="50" Y="13"/>
         <UsageCount Value="200"/>
       </Unit266>
       <Unit267>
@@ -2930,10 +2945,12 @@
         <ComponentName Value="f_elegir_cliente_direccion_envio"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="15"/>
         <TopLine Value="340"/>
         <CursorPos X="86" Y="346"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit267>
       <Unit268>
         <Filename Value="form\usando_plantillas\servicios_regulares_001.pas"/>
@@ -2954,7 +2971,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="7"/>
         <CursorPos X="22" Y="12"/>
-        <UsageCount Value="187"/>
+        <UsageCount Value="192"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit269>
@@ -3650,139 +3667,138 @@
       <Unit350>
         <Filename Value="C:\lazarus\lcl\dbgrids.pas"/>
         <UnitName Value="DBGrids"/>
-        <EditorIndex Value="16"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="3018"/>
         <CursorPos Y="3032"/>
         <UsageCount Value="12"/>
-        <Loaded Value="True"/>
       </Unit350>
       <Unit351>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="446"/>
         <CursorPos Y="460"/>
         <UsageCount Value="12"/>
-        <Loaded Value="True"/>
       </Unit351>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="180" Column="48" TopLine="161"/>
+        <Filename Value="form\usando_plantillas\impuestos_000.pas"/>
+        <Caret Line="461" Column="71" TopLine="454"/>
       </Position1>
       <Position2>
         <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="293" Column="53" TopLine="285"/>
+        <Caret Line="636" Column="55" TopLine="640"/>
       </Position2>
       <Position3>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="180" Column="48" TopLine="167"/>
+        <Filename Value="form\usando_plantillas\impuestos_000.pas"/>
+        <Caret Line="1091" Column="65" TopLine="1077"/>
       </Position3>
       <Position4>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="310" Column="48" TopLine="300"/>
+        <Filename Value="Unit\utilidades_clientes.pas"/>
+        <Caret Line="61" Column="45" TopLine="59"/>
       </Position4>
       <Position5>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="179" Column="58" TopLine="166"/>
+        <Filename Value="Unit\utilidades_clientes.pas"/>
+        <Caret Line="22" Column="80" TopLine="9"/>
       </Position5>
       <Position6>
         <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="310" Column="74" TopLine="287"/>
+        <Caret Line="3284" Column="19" TopLine="3280"/>
       </Position6>
       <Position7>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="410" Column="37" TopLine="392"/>
+        <Filename Value="Unit\utilidades_clientes.pas"/>
+        <Caret Line="21" Column="62" TopLine="15"/>
       </Position7>
       <Position8>
         <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="2237" Column="63" TopLine="2224"/>
+        <Caret Line="3298" Column="55" TopLine="3294"/>
       </Position8>
       <Position9>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="2185" Column="22" TopLine="2173"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="227" Column="11" TopLine="225"/>
       </Position9>
       <Position10>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="2218" TopLine="2211"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="508" Column="28" TopLine="498"/>
       </Position10>
       <Position11>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="2219" Column="17" TopLine="2211"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="26" Column="39" TopLine="12"/>
       </Position11>
       <Position12>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="2228" TopLine="2211"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="27" Column="39" TopLine="12"/>
       </Position12>
       <Position13>
         <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="2224" Column="70" TopLine="2214"/>
+        <Caret Line="734" Column="44" TopLine="727"/>
       </Position13>
       <Position14>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="710" TopLine="697"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="164" Column="43" TopLine="143"/>
       </Position14>
       <Position15>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="707" TopLine="697"/>
+        <Filename Value="form\visitas_001.pas"/>
+        <Caret Line="514" TopLine="502"/>
       </Position15>
       <Position16>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="506" Column="29" TopLine="496"/>
       </Position16>
       <Position17>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="293" Column="43" TopLine="288"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
       </Position17>
       <Position18>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="180" Column="48" TopLine="172"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="100" Column="90" TopLine="77"/>
       </Position18>
       <Position19>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="293" Column="64" TopLine="284"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="508" Column="33" TopLine="493"/>
       </Position19>
       <Position20>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="410" Column="36" TopLine="401"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="26" Column="40" TopLine="12"/>
       </Position20>
       <Position21>
         <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="2262" Column="36" TopLine="2247"/>
+        <Caret Line="734" Column="44" TopLine="727"/>
       </Position21>
       <Position22>
         <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="706" Column="3" TopLine="699"/>
+        <Caret Line="347" Column="73" TopLine="334"/>
       </Position22>
       <Position23>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="2263" Column="36" TopLine="2248"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="131" Column="42" TopLine="122"/>
       </Position23>
       <Position24>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="26" Column="40" TopLine="12"/>
       </Position24>
       <Position25>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="297" Column="22" TopLine="287"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="165" Column="44" TopLine="143"/>
       </Position25>
       <Position26>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="299" Column="24" TopLine="287"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="523" Column="56" TopLine="516"/>
       </Position26>
       <Position27>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="302" Column="23" TopLine="287"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="26" Column="40" TopLine="12"/>
       </Position27>
       <Position28>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="304" Column="22" TopLine="289"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="155" Column="51" TopLine="143"/>
       </Position28>
       <Position29>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="306" Column="24" TopLine="291"/>
+        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
+        <Caret Line="165" Column="44" TopLine="143"/>
       </Position29>
       <Position30>
         <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="319" TopLine="303"/>
+        <Caret Line="344" Column="52" TopLine="334"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

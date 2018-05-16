@@ -497,107 +497,70 @@ var var_Registro         : TRecord_Rgtro_Comun;
     var_Registro_Cliente : TClientes;
     var_msg              : TStrings;
 begin
-    if UTI_USR_Permiso_SN(50, '', True) = true then
-    begin
-        if UTI_GEN_Form_Abierto_Ya('f_clientes_000') = false then
-        begin
-            Application.CreateForm(Tf_clientes_000, f_clientes_000);
+  if UTI_USR_Permiso_SN(50, '', True) = true then
+  begin
+    { jerofa desde que quité los filtros no puedes hacer esto
 
-            f_clientes_000.public_Solo_Ver    := public_Solo_Ver;
-            f_clientes_000.public_Elegimos    := true;
-            f_clientes_000.public_Menu_Worked := 50;
-
-            // ********************************************************************************* //
-            // ** Puede que sea llamado desde otro modulo                                     ** //
-            // ********************************************************************************* //
-{ jerofa desde que quité los filtros no puedes hacer esto
-
-            if Trim(form_visitas_000.public_llamado_desde) <> '' then
-            begin
-                if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_actividad_000' then
+                if Trim(form_visitas_000.public_llamado_desde) <> '' then
                 begin
-                    f_clientes_000.Edit_Filtro_id_Actividad.Text          := form_visitas_000.public_llamado_desde_id;
-                    f_clientes_000.Edit_Filtro_Descripcion_Actividad.Text := form_visitas_000.public_llamado_desde_Descripcion;
-                end;
-
-                if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_provincia_000' then
-                begin
-                    f_clientes_000.Edit_Filtro_id_provincias.Text         := form_visitas_000.public_llamado_desde_id;
-                    f_clientes_000.Edit_Filtro_Descripcion_Provincia.Text := form_visitas_000.public_llamado_desde_Descripcion;
-                end;
-
-                if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_tipo_cliente_000' then
-                begin
-                    f_clientes_000.Edit_id_clientes_tipos.Text          := form_visitas_000.public_llamado_desde_id;
-                    f_clientes_000.Edit_Descripcion_clientes_tipos.Text := form_visitas_000.public_llamado_desde_Descripcion;
-                end;
-
-                if Trim(form_visitas_000.public_llamado_desde) = 'Tform_visitas_por_zona_000' then
-                begin
-                    f_clientes_000.Edit_Filtro_id_Ruta.Text          := form_visitas_000.public_llamado_desde_id;
-                    f_clientes_000.Edit_Filtro_Descripcion_Ruta.Text := form_visitas_000.public_llamado_desde_Descripcion;
-                end;
-            end;
-}
-            f_clientes_000.para_Empezar;
-
-            f_clientes_000.ShowModal;
-
-            if f_clientes_000.public_Rgtro_Seleccionado = true then
-            begin
-                with f_clientes_000.SQLQuery_Principal do
-                begin
-                    var_Registro := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                                                FieldByName('id_Agencias_Transporte').AsString,
-                                                                '',
-                                                                FieldByName('nombre_propietario').AsString,
-                                                                FieldByName('nombre_comercial').AsString,
-                                                                '' );
-                    if var_Registro.id_1 <> '' then
+                    if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_actividad_000' then
                     begin
-                        form_visitas_000.SQLQuery_Visitas.FieldByName('id_clientes').AsString := Trim(var_Registro.id_1);
+                        f_clientes_000.Edit_Filtro_id_Actividad.Text          := form_visitas_000.public_llamado_desde_id;
+                        f_clientes_000.Edit_Filtro_Descripcion_Actividad.Text := form_visitas_000.public_llamado_desde_Descripcion;
+                    end;
 
-                        if Trim(var_Registro.descripcion_1) <> '' then
-                        begin
-                            Edit_Descripcion_Cliente.Text := var_Registro.descripcion_1;
-                        end else begin
-                            Edit_Descripcion_Cliente.Text := var_Registro.descripcion_2;
-                        end;
+                    if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_provincia_000' then
+                    begin
+                        f_clientes_000.Edit_Filtro_id_provincias.Text         := form_visitas_000.public_llamado_desde_id;
+                        f_clientes_000.Edit_Filtro_Descripcion_Provincia.Text := form_visitas_000.public_llamado_desde_Descripcion;
+                    end;
 
-                        // FieldByName('OT_descripcion_cliente').AsString := Edit_Descripcion_Cliente.Text;
+                    if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_tipo_cliente_000' then
+                    begin
+                        f_clientes_000.Edit_id_clientes_tipos.Text          := form_visitas_000.public_llamado_desde_id;
+                        f_clientes_000.Edit_Descripcion_clientes_tipos.Text := form_visitas_000.public_llamado_desde_Descripcion;
+                    end;
 
-
-                        var_Registro_Cliente := Traer_Clientes_xID( Trim(var_Registro.id_1) );
-
-                        if var_Registro_Cliente.id <> '0' then
-                        begin
-                            Edit_nif.Text                      := var_Registro_Cliente.nif_cif;
-                            Edit_Descripcion_Cliente_Tipo.Text := var_Registro_Cliente.OT_descripcion_cliente_tipo;
-                            Edit_Descripcion_Ruta.Text         := var_Registro_Cliente.OT_descripcion_ruta;
-                            Edit_Descripcion_Provincia.Text    := var_Registro_Cliente.OT_descripcion_provincia;
-                            Edit_Descripcion_Actividad.Text    := var_Registro_Cliente.OT_descripcion_actividad;
-                            Edit_Descripcion_Poblacion.Text    := var_Registro_Cliente.OT_descripcion_poblacion;
-                            Edit_Descripcion_Pais.Text         := var_Registro_Cliente.OT_descripcion_pais;
-                            Edit_Descripcion_Tfno1.Text        := var_Registro_Cliente.Tfno_Fijo_1;
-                            Edit_Descripcion_Tfno2.Text        := var_Registro_Cliente.Tfno_Fijo_2;
-                            Edit_Descripcion_Fax.Text          := var_Registro_Cliente.FAX;
-                            Edit_Descripcion_Movil.Text        := var_Registro_Cliente.Movil;
-                        end;
+                    if Trim(form_visitas_000.public_llamado_desde) = 'Tform_visitas_por_zona_000' then
+                    begin
+                        f_clientes_000.Edit_Filtro_id_Ruta.Text          := form_visitas_000.public_llamado_desde_id;
+                        f_clientes_000.Edit_Filtro_Descripcion_Ruta.Text := form_visitas_000.public_llamado_desde_Descripcion;
                     end;
                 end;
-            end;
+    }
+    var_Registro := UTI_Abrir_Form( true, true, 'id_clientes' );
 
-            f_clientes_000.Free;
-        end
+    if var_Registro.id_1 <> '' then
+    begin
+      form_visitas_000.SQLQuery_Visitas.FieldByName('id_clientes').AsString := Trim(var_Registro.id_1);
 
-        else
-        begin
-            var_msg := TStringList.Create;
-            var_msg.Add(rs_Modulo_Abierto);
-            UTI_GEN_Aviso(true, var_msg, 'NO SE PUEDE ABRIR.-', True, False);
-            var_msg.Free;
-        end;
+      if Trim(var_Registro.descripcion_1) <> '' then
+        Edit_Descripcion_Cliente.Text := var_Registro.descripcion_1
+      else
+        Edit_Descripcion_Cliente.Text := var_Registro.descripcion_2;
+
+      // FieldByName('OT_descripcion_cliente').AsString := Edit_Descripcion_Cliente.Text;
+
+
+      var_Registro_Cliente := Traer_Clientes_xID( Trim(var_Registro.id_1) );
+
+      if var_Registro_Cliente.id <> '0' then
+      begin
+        Edit_nif.Text                      := var_Registro_Cliente.nif_cif;
+        Edit_Descripcion_Cliente_Tipo.Text := var_Registro_Cliente.OT_descripcion_cliente_tipo;
+        Edit_Descripcion_Ruta.Text         := var_Registro_Cliente.OT_descripcion_ruta;
+        Edit_Descripcion_Provincia.Text    := var_Registro_Cliente.OT_descripcion_provincia;
+        Edit_Descripcion_Actividad.Text    := var_Registro_Cliente.OT_descripcion_actividad;
+        Edit_Descripcion_Poblacion.Text    := var_Registro_Cliente.OT_descripcion_poblacion;
+        Edit_Descripcion_Pais.Text         := var_Registro_Cliente.OT_descripcion_pais;
+        Edit_Descripcion_Tfno1.Text        := var_Registro_Cliente.Tfno_Fijo_1;
+        Edit_Descripcion_Tfno2.Text        := var_Registro_Cliente.Tfno_Fijo_2;
+        Edit_Descripcion_Fax.Text          := var_Registro_Cliente.FAX;
+        Edit_Descripcion_Movil.Text        := var_Registro_Cliente.Movil;
+      end;
     end;
+
+  end;
 end;
 
 function Tform_visitas_001.Traer_Clientes_xID( param_id : ShortString ) : TClientes;

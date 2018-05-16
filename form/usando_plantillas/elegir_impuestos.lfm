@@ -152,7 +152,7 @@ inherited f_elegir_impuestos: Tf_elegir_impuestos
     inherited Panel1: TPanel
       Left = 504
     end
-    object Image_Compuesto: TImage[4]
+    object Image_Compuesto: TImage[7]
       Left = 474
       Height = 30
       Top = 9
@@ -454,5 +454,9 @@ inherited f_elegir_impuestos: Tf_elegir_impuestos
       ReadOnly = False
       Required = False
     end
+  end
+  inherited CalendarDialog1: TCalendarDialog
+    left = 512
+    top = 8
   end
 end

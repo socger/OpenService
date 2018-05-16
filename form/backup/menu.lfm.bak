@@ -2906,8 +2906,8 @@ object form_Menu: Tform_Menu
   end
   object ActionList_Botones: TActionList
     Images = ImageList_Botones
-    left = 392
-    top = 15
+    left = 496
+    top = 32
     object BitBtn_Ver_Situacion_Registro: TAction
       Category = 'Botones'
       Hint = '¿Vemos la situación del registro ... ?'
@@ -2918,6 +2918,7 @@ object form_Menu: Tform_Menu
       Category = 'Botones'
       Hint = '¿Buscamos ... ?'
       ImageIndex = 1
+      OnExecute = para_sustituir_actionListOnExecute
     end
     object BitBtn_ver_direccion_en_Maps: TAction
       Category = 'Botones'

@@ -3302,7 +3302,17 @@ end;
 end.
 
 (*
+En form_visitas_001 hay una llamada desde el botón de elegir cliente a clientes_000 que antes se hacía a pelo
+en vez de usar utilidades_forms_filtrar ... esto se tiene que solucionar todos deben de llamar a utilidades_forms_filtrar ... pero
+lo que me preocupa es que antes de llamar pasa unos filtros que yo todavía no he preparado para que plantilla_000 los absorva y los
+ponga al filtrar la tabla principal
 
+Desde clientes no se pueden crear direcciones de envio. Tampoco se pueden crear clientes contactos ni direcciones de envío cuando se
+está creando el cliente. Luego en modificaciones del cliente si que se pueden dar de alta contactos, pero no direcciones
+
+
+Desde f_impuestos_000 cuando intengas añadir un nuevo impuesto (composición) da errores ... verlos detenídamente.
+Los f_elige cuando son llamados podemos ponerle el public_Menu_Worked que queramos en la llamada, en vez de poner el mismo desde el que son llamados
 ... jerofa comprobar si esto funciona (f_servicios_Regulares_000) con los campos lunes_SN, martes_SN, etc ... en general todos los boolean
 
 CUANDO ESTAS PIDIENDO EL VALOR DESDE O HASTA DEL FILTRO PONERLE UN MAX SIZE SEGUN EL SIZE DEL CAMPO DE LA TABLA
@@ -3382,19 +3392,5 @@ end;
 
 *)
 
-
-if DBGrid_Filtros.SelectedIndex = 1 then    // Desde_Valor
-begin
-  DBGrid_Filtros.SelectedField.ReadOnly := false;
-  if UpperCase(SQLQuery_FiltrosDesde_Valor_pedir_SN.asString) = UpperCase('N') then
-    DBGrid_Filtros.SelectedField.ReadOnly := true;
-end;
-
-if DBGrid_Filtros.SelectedIndex = 3 then    // Hasta_Valor
-begin
-  DBGrid_Filtros.SelectedField.ReadOnly := false;
-  if UpperCase(SQLQuery_FiltrosHasta_Valor_pedir_SN.asString) = UpperCase('N') then
-    DBGrid_Filtros.SelectedField.ReadOnly := true;
-end;
 
 
