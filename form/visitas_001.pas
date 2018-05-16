@@ -115,7 +115,7 @@ implementation
 
 {$R *.lfm}
 
-uses menu, visitas_000, clientes_000;
+uses menu, visitas_000;
 
 { Tform_visitas_001 }
 

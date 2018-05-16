@@ -546,17 +546,17 @@ begin
 
       if var_Registro_Cliente.id <> '0' then
       begin
-          Edit_nif.Text                      := var_Registro_Cliente.nif_cif;
-          Edit_Descripcion_Cliente_Tipo.Text := var_Registro_Cliente.OT_descripcion_cliente_tipo;
-          Edit_Descripcion_Ruta.Text         := var_Registro_Cliente.OT_descripcion_ruta;
-          Edit_Descripcion_Provincia.Text    := var_Registro_Cliente.OT_descripcion_provincia;
-          Edit_Descripcion_Actividad.Text    := var_Registro_Cliente.OT_descripcion_actividad;
-          Edit_Descripcion_Poblacion.Text    := var_Registro_Cliente.OT_descripcion_poblacion;
-          Edit_Descripcion_Pais.Text         := var_Registro_Cliente.OT_descripcion_pais;
-          Edit_Descripcion_Tfno1.Text        := var_Registro_Cliente.Tfno_Fijo_1;
-          Edit_Descripcion_Tfno2.Text        := var_Registro_Cliente.Tfno_Fijo_2;
-          Edit_Descripcion_Fax.Text          := var_Registro_Cliente.FAX;
-          Edit_Descripcion_Movil.Text        := var_Registro_Cliente.Movil;
+        Edit_nif.Text                      := var_Registro_Cliente.nif_cif;
+        Edit_Descripcion_Cliente_Tipo.Text := var_Registro_Cliente.OT_descripcion_cliente_tipo;
+        Edit_Descripcion_Ruta.Text         := var_Registro_Cliente.OT_descripcion_ruta;
+        Edit_Descripcion_Provincia.Text    := var_Registro_Cliente.OT_descripcion_provincia;
+        Edit_Descripcion_Actividad.Text    := var_Registro_Cliente.OT_descripcion_actividad;
+        Edit_Descripcion_Poblacion.Text    := var_Registro_Cliente.OT_descripcion_poblacion;
+        Edit_Descripcion_Pais.Text         := var_Registro_Cliente.OT_descripcion_pais;
+        Edit_Descripcion_Tfno1.Text        := var_Registro_Cliente.Tfno_Fijo_1;
+        Edit_Descripcion_Tfno2.Text        := var_Registro_Cliente.Tfno_Fijo_2;
+        Edit_Descripcion_Fax.Text          := var_Registro_Cliente.FAX;
+        Edit_Descripcion_Movil.Text        := var_Registro_Cliente.Movil;
       end;
     end;
 

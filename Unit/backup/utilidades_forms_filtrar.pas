@@ -100,7 +100,7 @@ implementation
 uses menu, formas_pago_000, users_000, menus_000, medios_000, peliculas_000, clientes_000, paises_000,
      tarifas_000, clientes_tipos_000, provincias_000, poblaciones_000, representantes_000, articulos_000,
      proveedores_000, proveedores_tipos_000, articulos_familias_000, terminales_000, impresoras_000,
-     grupos_cocina_000, impuestos_000, personal_familias_000, personal_000, personal_contratos_familias_000,
+     grupos_cocina_000, impuestos_000, elegir_impuestos, personal_familias_000, personal_000,
      personal_contratos_000, empresas_000, almacenes_000, gastos_tipos_000, cuentas_pagos_cobros_000,
      conceptos_almacen_traspaso_000, series_servicios_000, articulos_ofertas_000, bancos_ctas_empresas_000,
      almacenes_movimientos_000, vehiculos_tipos_000, vehiculos_marcas_000, combustibles_000,
@@ -112,7 +112,7 @@ uses menu, formas_pago_000, users_000, menus_000, medios_000, peliculas_000, cli
      visitas_planificacion_por_zona_000, visitas_planificacion_por_provincia_000, facturas_ventas_000,
      margenes_tarifas_000, presupuestos_compras_000, pedidos_compras_000, albaranes_compras_000,
      facturas_compras_000, utilidades_000, facturas_cerrar_000, articulos_ultimas_ventas_000,
-     reportes_000, servicios_regulares_000, servicios_tipos_000;
+     reportes_000, servicios_regulares_000, servicios_tipos_000, personal_contratos_familias_000,;
 
 function UTI_Guardar_Datos_Registro( param_id_1,
                                      param_id_2,
@@ -140,65 +140,50 @@ begin
      EMPEZAMOS A VER A QUE MODULO LLAMAREMOS
      *********************************************************************************************** }
      { MEDIOS }
-     // If Pos( UpperCase('id_medio'), UpperCase(Trim(param_Campo)) ) <> 0 then
      If UpperCase('id_medio') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_Medios( param_Elegimos, param_Solo_Ver, 10, '1' );
 
      { PELICULAS }
-     // If Pos( UpperCase('id_pelicula'), UpperCase(Trim(param_Campo)) ) <> 0 then
      If UpperCase('id_pelicula') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_Peliculas( param_Elegimos, param_Solo_Ver, 20, '1' );
 
      { USUARIOS }
-     // If Pos( UpperCase('Id_Users'), UpperCase(Trim(param_Campo)) ) <> 0 then
      If UpperCase('Id_Users') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_Usuarios( param_Elegimos, param_Solo_Ver, 30, '1' );
 
      { MENUS }
-     // If Pos( UpperCase('Id_Menus'), UpperCase(Trim(param_Campo)) ) <> 0 then
      If UpperCase('Id_Menus') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_Menus( param_Elegimos, param_Solo_Ver, 40, '1' );
 
      { CLIENTES }
-     // If Pos( UpperCase('id_clientes'), UpperCase(Trim(param_Campo)) ) <> 0 then
      If UpperCase('id_clientes') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_Clientes( param_Elegimos, param_Solo_Ver, 50, '1' );
 
      { PAISES }
-     // If Pos( UpperCase('id_paises'), UpperCase(Trim(param_Campo)) ) <> 0 then
      If UpperCase('id_paises') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_Paises( param_Elegimos, param_Solo_Ver, 60, '1' );
 
      { CLIENTES TIPOS }
-     // If Pos( UpperCase('id_clientes_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 then
      If UpperCase('id_clientes_tipos') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_Clientes_tipos( param_Elegimos, param_Solo_Ver, 70, '1' );
 
      { FORMAS PAGO }
-     // If Pos( UpperCase('id_formas_pago'), UpperCase(Trim(param_Campo)) ) <> 0 then
      If UpperCase('id_formas_pago') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_FormasPago( param_Elegimos, param_Solo_Ver, 80, '1' );
 
      { TARIFAS }
-     // If Pos( UpperCase('id_tarifas'), UpperCase(Trim(param_Campo)) ) <> 0 then
      If UpperCase('id_tarifas') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_Tarifas( param_Elegimos, param_Solo_Ver, 90, '1' );
 
     { PROVINCIAS }
-    // If Pos( UpperCase('id_provincias'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_provincias') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Provincias( param_Elegimos, param_Solo_Ver, 100, '1' );
 
     { POBLACIONES }
-    // If Pos( UpperCase('id_poblaciones'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_poblaciones') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Poblaciones( param_Elegimos, param_Solo_Ver, 110, '1' );
 
     { PROVEEDORES }
-    { If ( Pos( UpperCase('id_proveedores'), UpperCase(Trim(param_Campo)) ) <> 0 )         or
-         ( Pos( UpperCase('id_Empleado_de'), UpperCase(Trim(param_Campo)) ) <> 0 )         or
-         ( Pos( UpperCase('id_Agencias_Transporte'), UpperCase(Trim(param_Campo)) ) <> 0 ) then }
-
     If ( UpperCase('id_proveedores') = UpperCase(Trim(param_Campo)) )         or
        ( UpperCase('id_Empleado_de') = UpperCase(Trim(param_Campo)) )         or
        ( UpperCase('id_Agencias_Transporte') = UpperCase(Trim(param_Campo)) ) then
@@ -207,239 +192,194 @@ begin
     end;
 
     { REPRESENTANTES }
-    // If Pos( UpperCase('id_representantes'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_representantes') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Representantes( param_Elegimos, param_Solo_Ver, 130, '1' );
 
     { PROVEEDORES TIPOS }
-    // If Pos( UpperCase('id_proveedores_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_proveedores_tipos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_TiposProveedores( param_Elegimos, param_Solo_Ver, 140, '1' );
 
     { ARTICULOS FAMILIAS }
-    // If Pos( UpperCase('id_articulos_familias'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_articulos_familias') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_FamiliasArticulos( param_Elegimos, param_Solo_Ver, 150, '1' );
 
     { TERMINALES }
-    // If Pos( UpperCase('id_terminales'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_terminales') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Terminales( param_Elegimos, param_Solo_Ver, 160, '1' );
 
     { ARTICULOS }
-    // If Pos( UpperCase('id_articulos'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_articulos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Articulos( param_Elegimos, param_Solo_Ver, 170, '1' );
 
     { GRUPOS COCINA }
-    // If Pos( UpperCase('id_grupos_cocina'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_grupos_cocina') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_GruposDeCocina( param_Elegimos, param_Solo_Ver, 180, '1' );
 
     { IMPRESORAS }
-    // If Pos( UpperCase('id_impresoras'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_impresoras') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Impresoras( param_Elegimos, param_Solo_Ver, 190, '1' );
 
     { IMPUESTOS }
-    // If Pos( UpperCase('id_impuestos'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_impuestos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Impuestos( param_Elegimos, param_Solo_Ver, 200, '1' );
 
     { PERSONAL FAMILIAS }
-    // If Pos( UpperCase('id_personal_familias'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_personal_familias') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_FamiliasPersonal( param_Elegimos, param_Solo_Ver, 210, '1' );
 
     { PERSONAL }
-    // If Pos( UpperCase('id_personal'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_personal') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Personal( param_Elegimos, param_Solo_Ver, 220, '1' );
 
     { PERSONAL CONTRATOS FAMILIAS }
-    // If Pos( UpperCase('id_personal_contratos_familias'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_personal_contratos_familias') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_FamiliasContratosPersonal( param_Elegimos, param_Solo_Ver, 230, '1' );
 
     { PERSONAL CONTRATOS }
-    // If Pos( UpperCase('id_personal_contratos'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_personal_contratos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_ContratosPersonal( param_Elegimos, param_Solo_Ver, 240, '1' );
 
     { EMPRESAS }
-    // If Pos( UpperCase('id_empresas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_empresas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Empresas( param_Elegimos, param_Solo_Ver, 250, '1' );
 
     { ALMACENES }
-    // If Pos( UpperCase('id_almacenes'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If (UpperCase('id_almacenes') = UpperCase(Trim(param_Campo)))         or
        (UpperCase('id_almacenes_origen') = UpperCase(Trim(param_Campo)))  or
        (UpperCase('id_almacenes_destino') = UpperCase(Trim(param_Campo))) then
+    begin
       Result := UTI_Abrir_Modulo_Almacenes( param_Elegimos, param_Solo_Ver, 260, '1' );
+    end;
 
     { GASTOS TIPOS }
-    // If Pos( UpperCase('id_gastos_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_gastos_tipos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_FamiliasGastos( param_Elegimos, param_Solo_Ver, 270, '1' );
 
     { CUENTAS PAGOS COBROS }
-    // If Pos( UpperCase('id_cuentas_pagos_cobros'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_cuentas_pagos_cobros') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_CtasPagosCobros( param_Elegimos, param_Solo_Ver, 280, '1' );
 
     { CONCEPTOS ALMACEN TRASPASO }
-    // If Pos( UpperCase('id_conceptos_almacen_traspaso'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_conceptos_almacen_traspaso') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( param_Elegimos, param_Solo_Ver, 290, '1' );
 
     { ARTICULOS OFERTAS }
-    // If Pos( UpperCase('id_articulos_ofertas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_articulos_ofertas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_OfertasArticulos( param_Elegimos, param_Solo_Ver, 300, '1' );
 
     { bancos empresas }
-    // If Pos( UpperCase('id_bancos_empresas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_bancos_empresas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_CuentasBancos( param_Elegimos, param_Solo_Ver, 310, '1' );
 
     { ALMACENES MOVIMIENTOS }
-    // If Pos( UpperCase('id_almacenes_movimientos'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_almacenes_movimientos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_MovimientosAlmacen( param_Elegimos, param_Solo_Ver, 320, '1' );
 
     { VEHICULOS }
-    // If Pos( UpperCase('id_vehiculos'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_vehiculos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Vehiculos( param_Elegimos, param_Solo_Ver, 350, '1' );
 
     { VEHICULOS TIPOS }
-    // If Pos( UpperCase('id_vehiculos_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_vehiculos_tipos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_TiposVehiculos( param_Elegimos, param_Solo_Ver, 360, '1' );
 
     { VEHICULOS MARCAS }
-    // If Pos( UpperCase('id_vehiculos_marcas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_vehiculos_marcas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_MarcasVehiculos( param_Elegimos, param_Solo_Ver, 370, '1' );
 
     { COMBUSTIBLES }
-    // If Pos( UpperCase('id_combustibles'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_combustibles') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Combustibles( param_Elegimos, param_Solo_Ver, 380, '1' );
 
     { VEHICULOS TIPO CAMBIOS }
-    // If Pos( UpperCase('id_vehiculos_tipo_cambios'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_vehiculos_tipo_cambios') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_TipoCambiosVehiculos( param_Elegimos, param_Solo_Ver, 390, '1' );
 
     { VEHICULOS TIPO RUEDAS }
-    // If Pos( UpperCase('id_vehiculos_tipo_ruedas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_vehiculos_tipo_ruedas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_TipoRuedasVehiculos( param_Elegimos, param_Solo_Ver, 400, '1' );
 
     { TARJETAS TRANSPORTE }
-    // If Pos( UpperCase('id_tarjetas_transporte'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_tarjetas_transporte') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Tarjetas_Transporte( param_Elegimos, param_Solo_Ver, 410, '1' );
 
     { VEHICULOS EQUIPAMIENTOS }
-    // If Pos( UpperCase('id_vehiculos_equipamientos'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_vehiculos_equipamientos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_VehiculosEquipamientos( param_Elegimos, param_Solo_Ver, 420, '1' );
 
     { ALBARANES VENTAS }
-    // If Pos( UpperCase('id_albaranes_ventas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_albaranes_ventas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_AlbaranesVentas( param_Elegimos, param_Solo_Ver, 430, '1' );
 
     { PRESUPUESTOS VENTAS }
-    // If Pos( UpperCase('id_presupuestos_ventas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_presupuestos_ventas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_PresupuestosVentas( param_Elegimos, param_Solo_Ver, 440, '1' );
 
     { PEDIDOS VENTAS }
-    // If Pos( UpperCase('id_pedidos_ventas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_pedidos_ventas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_PedidosVentas( param_Elegimos, param_Solo_Ver, 450, '1' );
 
     { CONFIGURACION }
-    // If Pos( UpperCase('id_configuracion'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_configuracion') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_ConfigurarAPP( param_Elegimos, param_Solo_Ver, 460, '1' );
 
     { VISITAS TIPOS }
-    // If Pos( UpperCase('id_visitas_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_visitas_tipos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_VisitasTipos( param_Elegimos, param_Solo_Ver, 470, '1' );
 
     { VISITAS RESULTADOS }
-    // If Pos( UpperCase('id_visitas_resultados'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_visitas_resultados') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_VisitasResultados( param_Elegimos, param_Solo_Ver, 480, '1' );
 
     { VISITAS }
-    // If Pos( UpperCase('id_visitas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_visitas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Visitas( param_Elegimos, param_Solo_Ver, 490, '1' );
 
     { ACTIVIDADES }
-    // If Pos( UpperCase('id_actividades'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_actividades') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Actividades( param_Elegimos, param_Solo_Ver, 500, '1' );
 
     { RUTAS / ZONAS }
-    // If Pos( UpperCase('id_rutas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_rutas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Rutas( param_Elegimos, param_Solo_Ver, 510, '1' );
 
     { FACTURAS VENTAS }
-    // If Pos( UpperCase('id_facturas_ventas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_facturas_ventas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_FacturasVentas( param_Elegimos, param_Solo_Ver, 600, '1' );
 
     { MARGENES PARA INCREMENTO DE TARIFAS }
-    // If Pos( UpperCase('id_margenes_tarifas'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_margenes_tarifas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_MargenesIncrementoTarifas( param_Elegimos, param_Solo_Ver, 610, '1' );
 
     { PRESUPUESTOS COMPRAS }
-    // If Pos( UpperCase('id_presupuestos_compras'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_presupuestos_compras') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_PresupuestosCompras( param_Elegimos, param_Solo_Ver, 620, '1' );
 
     { PEDIDOS COMPRAS }
-    // If Pos( UpperCase('id_pedidos_compras'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_pedidos_compras') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_PedidosCompras( param_Elegimos, param_Solo_Ver, 630, '1' );
 
     { ALBARANES COMPRAS }
-    // If Pos( UpperCase('id_albaranes_compras'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_albaranes_compras') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_AlbaranesCompras( param_Elegimos, param_Solo_Ver, 640, '1' );
 
     { FACTURAS COMPRAS }
-    // If Pos( UpperCase('id_facturas_compras'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_facturas_compras') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_FacturasCompras( param_Elegimos, param_Solo_Ver, 650, '1' );
 
     { REPORTES / INFORMES }
-    // If Pos( UpperCase('id_informes'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_informes') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Reportes( param_Elegimos, param_Solo_Ver, 700, '1' );
 
     { SERVICIOS TIPOS }
-    // If Pos( UpperCase('id_servicios_tipos'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_servicios_tipos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_ServiciosTipos( param_Elegimos, param_Solo_Ver, 710, '1' );
 
     { SERVICIOS REGULARES }
-    // If Pos( UpperCase('id_servicios_regulares'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_servicios_regulares') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_ServiciosRegulares( param_Elegimos, param_Solo_Ver, 720, '1' );
 
     { SERIES DE SERVICIOS }
-    // If Pos( UpperCase('id_series_servicios'), UpperCase(Trim(param_Campo)) ) <> 0 then
     If UpperCase('id_series_servicios') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_ServiciosSeries( param_Elegimos, param_Solo_Ver, 730, '1' );
 
@@ -2852,6 +2792,45 @@ begin
     end;
 
     form_proveedores_tipos_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_Elegir_Impuestos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
+                                            param_Menu_Worked : Integer;
+                                            param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_elegir_impuestos, f_elegir_impuestos );
+
+
+    f_elegir_impuestos.public_id_impuesto_que_no_tiene_que_aparecer := p_familia;
+
+    f_elegir_impuestos.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_elegir_impuestos.public_Solo_Ver                   := param_Solo_Ver;
+    f_elegir_impuestos.public_Elegimos                   := param_Elegimos;
+    f_elegir_impuestos.public_Menu_Worked                := param_Menu_Worked;
+
+    f_elegir_impuestos.para_Empezar;
+
+    f_elegir_impuestos.ShowModal;
+
+    if f_elegir_impuestos.public_Rgtro_Seleccionado = true then
+    begin
+      with f_elegir_impuestos.SQLQuery_Principal do
+      begin
+          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                '',
+                                                '',
+                                                FieldByName('descripcion').AsString,
+                                                '',
+                                                '' );
+      end;
+    end;
+
+    f_elegir_impuestos.Free;
   end;
 end;
 

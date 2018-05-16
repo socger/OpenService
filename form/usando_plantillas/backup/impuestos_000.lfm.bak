@@ -1,34 +1,34 @@
 inherited f_impuestos_000: Tf_impuestos_000
   Left = 376
-  Height = 608
+  Height = 479
   Top = 25
   Width = 727
-  ClientHeight = 608
+  ClientHeight = 479
   ClientWidth = 727
   inherited Panel_de_Abajo: TPanel
-    Height = 564
+    Height = 435
     Width = 727
-    ClientHeight = 564
+    ClientHeight = 435
     ClientWidth = 727
     inherited GroupBox_Registro: TGroupBox
-      Height = 562
+      Height = 433
       Width = 725
-      ClientHeight = 542
+      ClientHeight = 413
       ClientWidth = 721
       inherited Panel20: TPanel
-        Height = 542
+        Height = 413
       end
       inherited Panel21: TPanel
         Left = 704
-        Height = 542
+        Height = 413
       end
       inherited Panel22: TPanel
-        Height = 542
+        Height = 413
         Width = 687
-        ClientHeight = 542
+        ClientHeight = 413
         ClientWidth = 687
         inherited Panel23: TPanel
-          Top = 505
+          Top = 376
           Width = 687
           ClientWidth = 687
           inherited ButtonPanel1: TButtonPanel
@@ -324,12 +324,12 @@ inherited f_impuestos_000: Tf_impuestos_000
       end
     end
     inherited GroupBox_Grid: TGroupBox
-      Height = 562
+      Height = 433
       Width = 725
-      ClientHeight = 542
+      ClientHeight = 413
       ClientWidth = 721
       inherited Panel_Barra_Superior1: TPanel
-        Top = 484
+        Top = 355
         Width = 721
         ClientWidth = 721
         inherited Panel4: TPanel
@@ -357,19 +357,19 @@ inherited f_impuestos_000: Tf_impuestos_000
         end
       end
       inherited Panel5: TPanel
-        Height = 484
+        Height = 355
       end
       inherited Panel6: TPanel
         Left = 704
-        Height = 484
+        Height = 355
       end
       inherited Panel7: TPanel
-        Height = 484
+        Height = 355
         Width = 687
-        ClientHeight = 484
+        ClientHeight = 355
         ClientWidth = 687
         inherited DBGrid_Principal: TDBGrid
-          Height = 480
+          Height = 351
           Width = 687
           Columns = <          
             item
@@ -403,47 +403,16 @@ inherited f_impuestos_000: Tf_impuestos_000
       end
     end
     inherited GroupBox_Filtros: TGroupBox
-      Width = 727
-      ClientWidth = 723
-      inherited Panel13: TPanel
-        Left = 706
-      end
+      Left = 80
+      Top = 224
       inherited Panel11: TPanel
-        Width = 689
-        ClientWidth = 689
         inherited Panel_Filtramos_por: TPanel
-          Width = 689
-          ClientWidth = 689
           inherited Panel_Barra_DBGrid_Filtros: TPanel
-            Width = 687
-            ClientWidth = 687
-            inherited GroupBox3: TGroupBox
-              Width = 687
-              ClientWidth = 683
-              inherited Memo_OrderBy: TMemo
-                Width = 683
-              end
-            end
             inherited Panel_Barra_Filtros: TPanel
-              Width = 687
-              ClientWidth = 687
               inherited DBNavigatorDBGrid_Filtros: TDBNavigator
                 Hints.Strings = (                )
               end
-              inherited BitBtn_Filtrar1: TBitBtn
-                Left = 652
-              end
             end
-            inherited GroupBox1: TGroupBox
-              Width = 687
-              ClientWidth = 683
-              inherited Memo_Filtros: TMemo
-                Width = 683
-              end
-            end
-          end
-          inherited DBGrid_Filtros: TDBGrid
-            Width = 687
           end
         end
       end
@@ -458,7 +427,7 @@ inherited f_impuestos_000: Tf_impuestos_000
     inherited Panel1: TPanel
       Left = 505
     end
-    object Image_Compuesto: TImage[4]
+    object Image_Compuesto: TImage[7]
       Left = 474
       Height = 30
       Top = 9
@@ -771,7 +740,7 @@ inherited f_impuestos_000: Tf_impuestos_000
   inherited SQLConnector_Principal: TSQLConnector
     left = 88
   end
-  object SQLQuery_ImptosComp: TSQLQuery[8]
+  object SQLQuery_ImptosComp: TSQLQuery[9]
     PacketRecords = 20
     FieldDefs = <    
       item
@@ -1031,7 +1000,7 @@ inherited f_impuestos_000: Tf_impuestos_000
       Size = 2
     end
   end
-  object DataSource_ImptosComp: TDataSource[9]
+  object DataSource_ImptosComp: TDataSource[10]
     DataSet = SQLQuery_ImptosComp
     left = 408
     top = 8

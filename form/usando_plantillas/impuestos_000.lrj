@@ -1,8 +1,4 @@
 {"version":1,"strings":[
-{"hash":1268,"name":"tf_impuestos_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
-{"hash":80135182,"name":"tf_impuestos_000.dbgrid_principal.columns[1].title.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
-{"hash":37,"name":"tf_impuestos_000.dbgrid_principal.columns[2].title.caption","sourcebytes":[37],"value":"%"},
-{"hash":1184,"name":"tf_impuestos_000.dbgrid_principal.columns[3].title.caption","sourcebytes":[67,112],"value":"Cp"},
 {"hash":80135182,"name":"tf_impuestos_000.label17.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
 {"hash":37,"name":"tf_impuestos_000.label25.caption","sourcebytes":[37],"value":"%"},
 {"hash":167773461,"name":"tf_impuestos_000.label24.caption","sourcebytes":[67,117,101,110,116,97,32,99,111,110,116,97,98,108,101],"value":"Cuenta contable"},
@@ -11,5 +7,9 @@
 {"hash":1268,"name":"tf_impuestos_000.dbgrid_impuestos_composiciones.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
 {"hash":80135182,"name":"tf_impuestos_000.dbgrid_impuestos_composiciones.columns[1].title.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
 {"hash":37,"name":"tf_impuestos_000.dbgrid_impuestos_composiciones.columns[2].title.caption","sourcebytes":[37],"value":"%"},
-{"hash":244642687,"name":"tf_impuestos_000.bitbtn_ver_situacion_registro_composiciones.hint","sourcebytes":[86,101,114,32,115,105,116,117,97,99,105,195,179,110,32,100,101,108,32,114,101,103,105,115,116,114,111],"value":"Ver situaci\u00F3n del registro"}
+{"hash":244642687,"name":"tf_impuestos_000.bitbtn_ver_situacion_registro_composiciones.hint","sourcebytes":[86,101,114,32,115,105,116,117,97,99,105,195,179,110,32,100,101,108,32,114,101,103,105,115,116,114,111],"value":"Ver situaci\u00F3n del registro"},
+{"hash":1268,"name":"tf_impuestos_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":80135182,"name":"tf_impuestos_000.dbgrid_principal.columns[1].title.caption","sourcebytes":[68,101,115,99,114,105,112,99,105,195,179,110],"value":"Descripci\u00F3n"},
+{"hash":37,"name":"tf_impuestos_000.dbgrid_principal.columns[2].title.caption","sourcebytes":[37],"value":"%"},
+{"hash":1184,"name":"tf_impuestos_000.dbgrid_principal.columns[3].title.caption","sourcebytes":[67,112],"value":"Cp"}
 ]}

@@ -1316,9 +1316,10 @@ begin
   begin
     Application.CreateForm(Tf_elegir_diarios_tipos, f_elegir_diarios_tipos);
 
-    f_elegir_diarios_tipos.public_Solo_Ver    := true;
-    f_elegir_diarios_tipos.public_Elegimos    := true;
-    f_elegir_diarios_tipos.public_Menu_Worked := 0 (*public_Menu_Worked*);
+    f_elegir_diarios_tipos.public_hacemos_commit_alFinalizar := '1';
+    f_elegir_diarios_tipos.public_Solo_Ver                   := true;
+    f_elegir_diarios_tipos.public_Elegimos                   := true;
+    f_elegir_diarios_tipos.public_Menu_Worked                := 740; // public_Menu_Worked
 
     f_elegir_diarios_tipos.para_Empezar;
 

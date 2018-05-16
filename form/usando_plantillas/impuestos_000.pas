@@ -133,7 +133,7 @@ implementation
 
 {$R *.lfm}
 
-uses menu, elegir_impuestos;
+uses menu;
 
 function Tf_impuestos_000.Filtrar_impuestos_composiciones( p_ver_bajas : ShortInt;
                                                            p_Cambiamos_Filtro : Boolean;
@@ -796,6 +796,9 @@ end;
 function Tf_impuestos_000.Elegir_Impuesto(p_familia : ShortString) : TRecord_Rgtro_Comun;
 var var_msg : TStrings;
 begin
+  jerofa esto esta sustituido por UTI_Abrir_Modulo_Elegir_Impuestos
+  y hay que hacer lo mismo con todos los elige
+
   Result.id_1 := '';
 
   if UTI_GEN_Form_Abierto_Ya('f_elegir_impuestos') = false then
@@ -804,9 +807,10 @@ begin
 
     f_elegir_impuestos.public_id_impuesto_que_no_tiene_que_aparecer := p_familia;
 
-    f_elegir_impuestos.public_Solo_Ver    := true;
-    f_elegir_impuestos.public_Elegimos    := true;
-    f_elegir_impuestos.public_Menu_Worked := public_Menu_Worked;
+    f_elegir_impuestos.public_hacemos_commit_alFinalizar := '1';
+    f_elegir_impuestos.public_Solo_Ver                   := true;
+    f_elegir_impuestos.public_Elegimos                   := true;
+    f_elegir_impuestos.public_Menu_Worked                := 201; // public_Menu_Worked;
 
     f_elegir_impuestos.para_Empezar;
 
