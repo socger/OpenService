@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, DBDateTimePicker, Forms, Controls, Graphics, Dialogs, ButtonPanel, db,
   ExtCtrls, StdCtrls, DbCtrls, Buttons, ComCtrls, DBGrids, Grids, utilidades_forms_Filtrar, sqldb,
   utilidades_datos_tablas, utilidades_general, utilidades_usuarios, utilidades_bd, utilidades_ventas,
-  utilidades_clientes, utilidades_impuestos, utilidades_rgtro, utilidades_stock;
+  utilidades_impuestos, utilidades_rgtro, utilidades_stock;
 
 type
 
@@ -1135,8 +1135,7 @@ begin
         Exit;
     end;
 
-    Result := UTI_CLIENTES_Elegir_Direccion_Envio( form_pedidos_ventas_000.SQLQuery_Pdo.FieldByName('id_clientes').AsString,
-                                                   public_Menu_Worked );
+    Result := UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( true, true, 52, '1' );
 end;
 
 procedure Tform_pedidos_ventas_001.Boton_Elegir_Direccion_EnvioClick(Sender: TObject);

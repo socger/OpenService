@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, DBDateTimePicker, DateTimePicker, Forms, Controls, Graphics, Dialogs,
   ButtonPanel, ExtCtrls, Buttons, StdCtrls, DbCtrls, ComCtrls, DBGrids, utilidades_forms_Filtrar, db,
   sqldb, utilidades_rgtro, utilidades_general, utilidades_datos_tablas, Grids, utilidades_usuarios,
-  utilidades_bd, utilidades_clientes;
+  utilidades_bd;
 
 type
 
@@ -1177,8 +1177,7 @@ var var_Registro                    : TRecord_Rgtro_Comun;
 begin
     with form_Vehiculos_000.SQLQuery_Vehiculos do
     begin
-        var_Registro := UTI_CLIENTES_Elegir_Contacto( FieldByName('id_clientes_propietario').AsString,
-                                                      public_Menu_Worked );
+        var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, 51, '1' );
 
         if var_Registro.id_1 <> '' then
         begin

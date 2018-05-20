@@ -8,8 +8,8 @@
       <Unit0>
         <Filename Value="socger_TALLER.pas"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="69"/>
-        <CursorPos X="60" Y="76"/>
+        <TopLine Value="44"/>
+        <CursorPos X="24" Y="58"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -100,8 +100,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="1632"/>
-        <CursorPos X="64" Y="1637"/>
+        <TopLine Value="1945"/>
+        <CursorPos X="29" Y="1968"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -156,9 +156,9 @@
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="utilidades_forms_Filtrar"/>
-        <EditorIndex Value="14"/>
-        <TopLine Value="2791"/>
-        <CursorPos X="43" Y="2798"/>
+        <EditorIndex Value="22"/>
+        <TopLine Value="84"/>
+        <CursorPos Y="99"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
       </Unit13>
@@ -1236,10 +1236,10 @@
         <ComponentName Value="form_albaranes_ventas_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="979"/>
-        <CursorPos X="42" Y="993"/>
+        <EditorIndex Value="17"/>
+        <CursorPos X="75" Y="11"/>
         <UsageCount Value="202"/>
+        <Loaded Value="True"/>
       </Unit113>
       <Unit114>
         <Filename Value="form\albaranes_ventas_000.pas"/>
@@ -1283,10 +1283,10 @@
         <ComponentName Value="form_vehiculos_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="406"/>
-        <CursorPos X="42" Y="420"/>
+        <EditorIndex Value="16"/>
+        <CursorPos X="16" Y="11"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit117>
       <Unit118>
         <Filename Value="form\vehiculos_000.pas"/>
@@ -1577,7 +1577,7 @@
       <Unit144>
         <Filename Value="Unit\utilidades_contabilidad.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="24"/>
+        <EditorIndex Value="29"/>
         <TopLine Value="1316"/>
         <CursorPos X="91" Y="1322"/>
         <UsageCount Value="201"/>
@@ -1663,10 +1663,10 @@
         <ComponentName Value="form_presupuestos_ventas_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="914"/>
-        <CursorPos X="42" Y="928"/>
+        <EditorIndex Value="18"/>
+        <CursorPos X="3" Y="11"/>
         <UsageCount Value="201"/>
+        <Loaded Value="True"/>
       </Unit151>
       <Unit152>
         <Filename Value="form\presupuestos_ventas_002.pas"/>
@@ -1707,10 +1707,10 @@
         <ComponentName Value="form_pedidos_ventas_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="918"/>
-        <CursorPos X="42" Y="932"/>
+        <EditorIndex Value="19"/>
+        <CursorPos X="3" Y="11"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit155>
       <Unit156>
         <Filename Value="form\pedidos_ventas_002.pas"/>
@@ -1837,7 +1837,7 @@
         <ComponentName Value="form_visitas_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="27"/>
+        <EditorIndex Value="32"/>
         <TopLine Value="1297"/>
         <CursorPos X="5" Y="1310"/>
         <UsageCount Value="200"/>
@@ -1860,9 +1860,8 @@
         <ComponentName Value="form_visitas_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="26"/>
-        <TopLine Value="518"/>
-        <CursorPos X="14" Y="497"/>
+        <EditorIndex Value="31"/>
+        <CursorPos X="37" Y="10"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -1902,11 +1901,9 @@
       <Unit173>
         <Filename Value="Unit\utilidades_clientes.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="17"/>
-        <TopLine Value="15"/>
-        <CursorPos Y="28"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="19" Y="7"/>
         <UsageCount Value="203"/>
-        <Loaded Value="True"/>
       </Unit173>
       <Unit174>
         <Filename Value="form\visitas_por_zona_000.pas"/>
@@ -2132,10 +2129,10 @@
         <ComponentName Value="form_facturas_ventas_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1343"/>
-        <CursorPos X="78" Y="1346"/>
+        <EditorIndex Value="20"/>
+        <CursorPos X="10" Y="12"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit194>
       <Unit195>
         <Filename Value="form\facturas_ventas_002.pas"/>
@@ -2176,10 +2173,10 @@
         <ComponentName Value="form_facturas_ventas_005"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="599"/>
-        <CursorPos X="38" Y="613"/>
+        <EditorIndex Value="21"/>
+        <CursorPos X="87" Y="10"/>
         <UsageCount Value="202"/>
+        <Loaded Value="True"/>
       </Unit198>
       <Unit199>
         <Filename Value="form\barra_progreso.pas"/>
@@ -2464,7 +2461,7 @@
         <ComponentName Value="form_facturas_compras_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="20"/>
+        <EditorIndex Value="25"/>
         <TopLine Value="1332"/>
         <CursorPos X="42" Y="1346"/>
         <UsageCount Value="200"/>
@@ -2477,7 +2474,7 @@
         <ComponentName Value="form_facturas_compras_002"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="21"/>
+        <EditorIndex Value="26"/>
         <TopLine Value="779"/>
         <CursorPos X="5" Y="783"/>
         <UsageCount Value="200"/>
@@ -2688,9 +2685,10 @@
         <ComponentName Value="form_plantilla_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="25"/>
-        <TopLine Value="3281"/>
-        <CursorPos Y="3305"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="30"/>
+        <TopLine Value="3289"/>
+        <CursorPos Y="3306"/>
         <UsageCount Value="206"/>
         <Bookmarks Count="6">
           <Item0 X="31" Y="1705" ID="8"/>
@@ -2731,13 +2729,12 @@
         <ComponentName Value="f_impuestos_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="15"/>
-        <TopLine Value="787"/>
-        <CursorPos X="47" Y="800"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="463"/>
+        <CursorPos Y="477"/>
         <UsageCount Value="204"/>
         <Bookmarks Count="1">
-          <Item0 X="51" Y="804" ID="5"/>
+          <Item0 Y="795" ID="5"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -2748,9 +2745,7 @@
         <ComponentName Value="f_elegir_impuestos"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="16"/>
-        <TopLine Value="144"/>
-        <CursorPos X="41" Y="158"/>
+        <EditorIndex Value="15"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -2859,7 +2854,7 @@
         <ComponentName Value="f_series_servicios_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="23"/>
+        <EditorIndex Value="28"/>
         <TopLine Value="362"/>
         <CursorPos X="19" Y="376"/>
         <UsageCount Value="200"/>
@@ -2871,7 +2866,7 @@
         <ComponentName Value="f_elegir_diarios_tipos"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="22"/>
+        <EditorIndex Value="27"/>
         <TopLine Value="160"/>
         <CursorPos X="12" Y="177"/>
         <UsageCount Value="207"/>
@@ -2929,8 +2924,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="13"/>
-        <TopLine Value="114"/>
-        <CursorPos X="78" Y="123"/>
+        <CursorPos X="100" Y="10"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -2941,8 +2935,8 @@
         <ComponentName Value="f_elegir_cliente_contacto"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="18"/>
-        <CursorPos X="31" Y="17"/>
+        <EditorIndex Value="23"/>
+        <CursorPos X="19" Y="8"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit266>
@@ -2952,7 +2946,7 @@
         <ComponentName Value="f_elegir_cliente_direccion_envio"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="24"/>
         <TopLine Value="339"/>
         <CursorPos X="12" Y="356"/>
         <UsageCount Value="200"/>
@@ -2978,7 +2972,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="7"/>
         <CursorPos X="22" Y="12"/>
-        <UsageCount Value="196"/>
+        <UsageCount Value="197"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit269>
@@ -3687,127 +3681,123 @@
         <UsageCount Value="12"/>
       </Unit351>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2585" Column="45" TopLine="2575"/>
+        <Caret Line="2895" Column="37" TopLine="2871"/>
       </Position1>
       <Position2>
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2589" Column="68" TopLine="2575"/>
+        <Caret Line="2896" Column="37" TopLine="2872"/>
       </Position2>
       <Position3>
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2591" Column="23" TopLine="2575"/>
+        <Caret Line="2897" Column="37" TopLine="2873"/>
       </Position3>
       <Position4>
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2592" Column="23" TopLine="2575"/>
+        <Caret Line="2898" Column="37" TopLine="2874"/>
       </Position4>
       <Position5>
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2593" Column="23" TopLine="2575"/>
+        <Caret Line="2900" Column="37" TopLine="2876"/>
       </Position5>
       <Position6>
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2594" Column="23" TopLine="2575"/>
+        <Caret Line="2902" Column="37" TopLine="2878"/>
       </Position6>
       <Position7>
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2596" Column="23" TopLine="2575"/>
+        <Caret Line="2904" Column="40" TopLine="2880"/>
       </Position7>
       <Position8>
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2598" Column="23" TopLine="2575"/>
+        <Caret Line="2906" Column="44" TopLine="2883"/>
       </Position8>
       <Position9>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2600" Column="26" TopLine="2576"/>
+        <Filename Value="form\albaranes_ventas_001.pas"/>
+        <Caret Line="993" Column="42" TopLine="979"/>
       </Position9>
       <Position10>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2602" Column="30" TopLine="2578"/>
+        <Filename Value="form\albaranes_ventas_001.pas"/>
+        <Caret Line="1198" TopLine="1183"/>
       </Position10>
       <Position11>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2585" Column="47" TopLine="2575"/>
+        <Filename Value="form\presupuestos_ventas_001.pas"/>
+        <Caret Line="928" Column="42" TopLine="914"/>
       </Position11>
       <Position12>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2589" Column="62" TopLine="2578"/>
+        <Filename Value="form\pedidos_ventas_001.pas"/>
+        <Caret Line="932" Column="42" TopLine="918"/>
       </Position12>
       <Position13>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2591" Column="20" TopLine="2578"/>
+        <Filename Value="form\facturas_ventas_001.pas"/>
+        <Caret Line="1346" Column="78" TopLine="1343"/>
       </Position13>
       <Position14>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2592" Column="20" TopLine="2578"/>
+        <Filename Value="form\facturas_ventas_005.pas"/>
+        <Caret Line="613" Column="38" TopLine="599"/>
       </Position14>
       <Position15>
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2593" Column="20" TopLine="2578"/>
+        <Caret Line="2841" Column="43" TopLine="2835"/>
       </Position15>
       <Position16>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2594" Column="20" TopLine="2578"/>
+        <Filename Value="form\vehiculos_001.pas"/>
+        <Caret Line="1181" TopLine="1166"/>
       </Position16>
       <Position17>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2596" Column="20" TopLine="2578"/>
+        <Filename Value="form\visitas_001.pas"/>
+        <Caret Line="267" Column="69" TopLine="253"/>
       </Position17>
       <Position18>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2598" Column="20" TopLine="2578"/>
+        <Filename Value="form\usando_plantillas\clientes_002.pas"/>
+        <Caret Line="142" Column="63" TopLine="128"/>
       </Position18>
       <Position19>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2600" Column="23" TopLine="2578"/>
+        <Filename Value="socger_TALLER.pas"/>
+        <Caret Line="76" Column="60" TopLine="69"/>
       </Position19>
       <Position20>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2602" Column="27" TopLine="2578"/>
+        <Filename Value="form\albaranes_ventas_001.pas"/>
+        <Caret Line="1197" Column="86" TopLine="1180"/>
       </Position20>
       <Position21>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2613" Column="20" TopLine="2596"/>
+        <Filename Value="form\vehiculos_001.pas"/>
+        <Caret Line="1180" Column="25" TopLine="1166"/>
       </Position21>
       <Position22>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2806" Column="68" TopLine="2782"/>
+        <Filename Value="form\presupuestos_ventas_001.pas"/>
+        <Caret Line="1134" Column="86" TopLine="1120"/>
       </Position22>
       <Position23>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2808" Column="23" TopLine="2784"/>
+        <Filename Value="form\pedidos_ventas_001.pas"/>
+        <Caret Line="1138" Column="86" TopLine="1124"/>
       </Position23>
       <Position24>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2809" Column="23" TopLine="2785"/>
+        <Filename Value="form\visitas_001.pas"/>
+        <Caret Line="267" Column="29" TopLine="253"/>
       </Position24>
       <Position25>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2810" Column="23" TopLine="2786"/>
+        <Filename Value="form\facturas_ventas_001.pas"/>
+        <Caret Line="1505" Column="86" TopLine="1491"/>
       </Position25>
       <Position26>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2811" Column="23" TopLine="2787"/>
+        <Filename Value="form\facturas_ventas_005.pas"/>
+        <Caret Line="2448" Column="86" TopLine="2434"/>
       </Position26>
       <Position27>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2813" Column="23" TopLine="2789"/>
+        <Filename Value="form\usando_plantillas\clientes_002.pas"/>
+        <Caret Line="141" Column="59" TopLine="128"/>
       </Position27>
       <Position28>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2815" Column="23" TopLine="2791"/>
+        <Filename Value="socger_TALLER.pas"/>
+        <Caret Line="58" Column="24" TopLine="44"/>
       </Position28>
       <Position29>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2817" Column="26" TopLine="2793"/>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="3305" TopLine="3281"/>
       </Position29>
-      <Position30>
-        <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
-        <Caret Line="2819" Column="30" TopLine="2795"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

@@ -3302,6 +3302,8 @@ end;
 end.
 
 (*
+en utilidades_form_filtrar ... quitar de las llamadas todos los menu_worked y que lo tenga en si la functio desde la que se llama al módulo
+
 En el init debería de tener los colores con los que configuro las plantillas (grids, etc)
 
 En form_visitas_001 hay una llamada desde el botón de elegir cliente a clientes_000 que antes se hacía a pelo

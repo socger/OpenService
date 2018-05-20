@@ -94,12 +94,14 @@ type
     function UTI_Abrir_Modulo_Representantes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Terminales( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_TiposProveedores( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Elegir_Impuestos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Elegir_cliente_contacto( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 
 implementation
 
-uses menu, formas_pago_000, users_000, menus_000, medios_000, peliculas_000, clientes_000, paises_000,
-     tarifas_000, clientes_tipos_000, provincias_000, poblaciones_000, representantes_000, articulos_000,
-     proveedores_000, proveedores_tipos_000, articulos_familias_000, terminales_000, impresoras_000,
+uses menu, formas_pago_000, users_000, menus_000, medios_000, peliculas_000, clientes_000, elegir_cliente_contacto,
+     elegir_cliente_direccion_envio, tarifas_000, clientes_tipos_000, provincias_000, poblaciones_000, representantes_000,
+     proveedores_000, proveedores_tipos_000, articulos_familias_000, terminales_000, impresoras_000, articulos_000, paises_000,
      grupos_cocina_000, impuestos_000, elegir_impuestos, personal_familias_000, personal_000,
      personal_contratos_000, empresas_000, almacenes_000, gastos_tipos_000, cuentas_pagos_cobros_000,
      conceptos_almacen_traspaso_000, series_servicios_000, articulos_ofertas_000, bancos_ctas_empresas_000,
@@ -2795,7 +2797,8 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Elegir_Impuestos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
+function UTI_Abrir_Modulo_Elegir_Impuestos( param_Elegimos : Boolean;
+                                            param_Solo_Ver : Boolean;
                                             param_Menu_Worked : Integer;
                                             param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
@@ -2824,13 +2827,94 @@ begin
           Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
                                                 '',
                                                 '',
+
                                                 FieldByName('descripcion').AsString,
+                                                FieldByName('Tanto_Por_Ciento').AsString,
+                                                FieldByName('Sumado_A_Ftra_SN').AsString );
+      end;
+    end;
+
+    f_elegir_impuestos.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_Elegir_cliente_contacto( param_Elegimos : Boolean;
+                                                   param_Solo_Ver : Boolean;
+                                                   param_Menu_Worked : Integer;
+                                                   param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_elegir_cliente_contacto, f_elegir_cliente_contacto );
+
+
+    f_elegir_cliente_contacto.public_id_impuesto_que_no_tiene_que_aparecer := p_familia;
+
+    f_elegir_cliente_contacto.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_elegir_cliente_contacto.public_Solo_Ver                   := param_Solo_Ver;
+    f_elegir_cliente_contacto.public_Elegimos                   := param_Elegimos;
+    f_elegir_cliente_contacto.public_Menu_Worked                := param_Menu_Worked;
+
+    f_elegir_cliente_contacto.para_Empezar;
+
+    f_elegir_cliente_contacto.ShowModal;
+
+    if f_elegir_cliente_contacto.public_Rgtro_Seleccionado = true then
+    begin
+      with f_elegir_cliente_contacto.SQLQuery_Principal do
+      begin
+          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                '',
+                                                '',
+                                                FieldByName('nombre').AsString,
                                                 '',
                                                 '' );
       end;
     end;
 
-    f_elegir_impuestos.Free;
+    f_elegir_cliente_contacto.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( param_Elegimos : Boolean;
+                                                          param_Solo_Ver : Boolean;
+                                                          param_Menu_Worked : Integer;
+                                                          param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_elegir_cliente_direccion_envio, f_elegir_cliente_direccion_envio );
+
+
+    f_elegir_cliente_direccion_envio.public_id_impuesto_que_no_tiene_que_aparecer := p_familia;
+
+    f_elegir_cliente_direccion_envio.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_elegir_cliente_direccion_envio.public_Solo_Ver                   := param_Solo_Ver;
+    f_elegir_cliente_direccion_envio.public_Elegimos                   := param_Elegimos;
+    f_elegir_cliente_direccion_envio.public_Menu_Worked                := param_Menu_Worked;
+
+    f_elegir_cliente_direccion_envio.para_Empezar;
+
+    f_elegir_cliente_direccion_envio.ShowModal;
+
+    if f_elegir_cliente_direccion_envio.public_Rgtro_Seleccionado = true then
+    begin
+      with f_elegir_cliente_direccion_envio.SQLQuery_Principal do
+      begin
+          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                '',
+                                                '',
+                                                FieldByName('OT_Direccion_Entera').AsString,
+                                                '',
+                                                '' );
+      end;
+    end;
+
+    f_elegir_cliente_direccion_envio.Free;
   end;
 end;
 

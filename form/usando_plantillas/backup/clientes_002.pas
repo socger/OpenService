@@ -65,7 +65,6 @@ type
     procedure Boton_Elegir_PaisClick(Sender: TObject);
     procedure Boton_Elegir_PoblacionClick(Sender: TObject);
     procedure Boton_Elegir_ProvinciaClick(Sender: TObject);
-    procedure DBCheckBox_IVA_Excluido_SNChange(Sender: TObject);
     procedure Edit_Descripcion_ContactoClick(Sender: TObject);
     procedure Edit_Descripcion_PaisClick(Sender: TObject);
     procedure Edit_Descripcion_PoblacionClick(Sender: TObject);
@@ -133,12 +132,6 @@ begin
   var_msg.Free;
 end;
 
-procedure Tf_clientes_002.DBCheckBox_IVA_Excluido_SNChange(
-  Sender: TObject);
-begin
-
-end;
-
 procedure Tf_clientes_002.Boton_Elegir_ContactoClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
@@ -146,9 +139,7 @@ begin
   begin
     if UTI_USR_Permiso_SN(f_clientes_000.public_Menu_Worked, 'M', True) = True then
     begin
-      var_Registro := UTI_CLIENTES_Elegir_Contacto( f_clientes_000.SQLQuery_Principal.FieldByName('id').AsString,
-                                                    f_clientes_000.public_Menu_Worked );
-
+      var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, 51, '1' );
       if var_Registro.id_1 <> '' then
       begin
         FieldByName('id_clientes_contactos').AsString := Trim(var_Registro.id_1);

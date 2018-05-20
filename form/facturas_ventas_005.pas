@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, sqldb, db, FileUtil, DateTimePicker, DBDateTimePicker, Forms, Controls,
   Graphics, Dialogs, ButtonPanel, StdCtrls, ExtCtrls, ComCtrls, Buttons, DBGrids, DbCtrls, Grids,
-  variants, utilidades_general, utilidades_bd, utilidades_rgtro, utilidades_usuarios, utilidades_clientes,
+  variants, utilidades_general, utilidades_bd, utilidades_rgtro, utilidades_usuarios,
   utilidades_datos_tablas, utilidades_forms_Filtrar;
 
 type
@@ -2445,8 +2445,7 @@ begin
         Exit;
     end;
 
-    Result := UTI_CLIENTES_Elegir_Direccion_Envio( form_facturas_ventas_000.SQLQuery_Ftra.FieldByName('id_clientes').AsString,
-                                                   form_facturas_ventas_000.public_Menu_Worked );
+    Result := UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( true, true, 52, '1' );
 end;
 
 procedure Tform_facturas_ventas_005.Boton_Elegir_Direccion_EnvioClick(Sender: TObject);

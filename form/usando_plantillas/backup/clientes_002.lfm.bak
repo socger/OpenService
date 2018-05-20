@@ -159,7 +159,19 @@ inherited f_clientes_002: Tf_clientes_002
       Width = 1043
       ClientHeight = 192
       ClientWidth = 1043
-      object DBCheckBox_IVA_Excluido_SN: TDBCheckBox[0]
+      inherited Panel23: TPanel
+        Top = 155
+        Width = 1043
+        ClientWidth = 1043
+        TabOrder = 15
+        inherited ButtonPanel1: TButtonPanel
+          Width = 1031
+        end
+        inherited Shape1: TShape
+          Width = 1043
+        end
+      end
+      object DBCheckBox_IVA_Excluido_SN: TDBCheckBox[1]
         Left = 883
         Height = 21
         Top = 99
@@ -175,24 +187,11 @@ inherited f_clientes_002: Tf_clientes_002
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         Font.Style = [fsBold]
-        OnChange = DBCheckBox_IVA_Excluido_SNChange
         ParentBiDiMode = False
         ParentFont = False
         TabOrder = 14
         ValueChecked = 'S'
         ValueUnchecked = 'N'
-      end
-      inherited Panel23: TPanel[1]
-        Top = 155
-        Width = 1043
-        ClientWidth = 1043
-        TabOrder = 15
-        inherited ButtonPanel1: TButtonPanel
-          Width = 1031
-        end
-        inherited Shape1: TShape
-          Width = 1043
-        end
       end
       object Label19: TLabel[2]
         Left = 16

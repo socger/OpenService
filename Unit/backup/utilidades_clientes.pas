@@ -7,57 +7,10 @@ interface
 uses
   Classes, Forms, SysUtils, sqldb, utilidades_forms_Filtrar, utilidades_general;
 
-  function  UTI_CLIENTES_Elegir_Contacto( param_id : ShortString; param_Menu_Worked : Integer ) : TRecord_Rgtro_Comun;
-  function  UTI_CLIENTES_Elegir_Direccion_Envio( param_id : ShortString; param_Menu_Worked : Integer ) : TRecord_Rgtro_Comun;
 
 implementation
 
-uses menu, elegir_cliente_contacto, elegir_cliente_direccion_envio;
-
-function UTI_CLIENTES_Elegir_Contacto( param_id : ShortString;
-                                       param_Menu_Worked : Integer ) : TRecord_Rgtro_Comun;
-var var_msg : TStrings;
-begin
-    Result.id_1 := '';
-
-    if UTI_GEN_Form_Abierto_Ya('f_elegir_cliente_contacto') = false then
-    begin
-        Application.CreateForm(Tf_elegir_cliente_contacto, f_elegir_cliente_contacto);
-
-        f_clientes_000.public_hacemos_commit_alFinalizar := '1';
-        f_elegir_cliente_contacto.public_Solo_Ver    := true;
-        f_elegir_cliente_contacto.public_Elegimos    := true;
-        f_elegir_cliente_contacto.public_Menu_Worked := 51 (*public_Menu_Worked*);
-
-        f_elegir_cliente_contacto.para_Empezar;
-
-        f_elegir_cliente_contacto.ShowModal;
-
-        if f_elegir_cliente_contacto.public_Rgtro_Seleccionado = true then
-        begin
-            with f_elegir_cliente_contacto.SQLQuery_Principal do
-            begin
-                Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                                      '',
-                                                      '',
-                                                      FieldByName('nombre').AsString,
-                                                      '',
-                                                      '' );
-            end;
-        end;
-
-        f_elegir_cliente_contacto.Free;
-    end
-
-    else
-    begin
-        var_msg := TStringList.Create;
-        var_msg.Add(rs_Modulo_Abierto);
-        UTI_GEN_Aviso(true, var_msg, 'AVISAMOS DE ... ', True, False);
-        var_msg.Free;
-        Exit;
-    end;
-end;
+uses menu;
 
 function UTI_CLIENTES_Elegir_Direccion_Envio( param_id : ShortString;
                                               param_Menu_Worked : Integer ) : TRecord_Rgtro_Comun;
@@ -107,3 +60,8 @@ end;
 end.
 
 
+
+
+{
+
+}

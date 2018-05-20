@@ -115,7 +115,7 @@ implementation
 
 {$R *.lfm}
 
-uses menu, visitas_000, clientes_000;
+uses menu, visitas_000;
 
 { Tform_visitas_001 }
 
@@ -264,8 +264,7 @@ begin
     begin
         if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
         begin
-            var_Registro := UTI_CLIENTES_Elegir_Contacto( FieldByName('id_clientes').AsString,
-                                                          public_Menu_Worked );
+            var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, 51, '1' );
             if var_Registro.id_1 <> '' then
             begin
                  FieldByName('id_clientes_contactos').AsString := Trim(var_Registro.id_1);
@@ -499,6 +498,7 @@ var var_Registro         : TRecord_Rgtro_Comun;
 begin
   if UTI_USR_Permiso_SN(50, '', True) = true then
   begin
+      jerofa desde que quité los filtros no puedes hacer esto
     { jerofa desde que quité los filtros no puedes hacer esto
 
                 if Trim(form_visitas_000.public_llamado_desde) <> '' then

@@ -103,7 +103,6 @@ begin
   RequireDerivedFormResource := True;
   Application.Initialize;
   Application.CreateForm(TForm_Arrancar, Form_Arrancar);
-  Application.CreateForm(Tform_plantilla_001, form_plantilla_001);
   Application.Run;
 end.
 

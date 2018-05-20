@@ -9,7 +9,7 @@ uses
   Dialogs, ButtonPanel, ExtCtrls, StdCtrls, DbCtrls, Buttons, ComCtrls, DBGrids, Grids, db,
   utilidades_bd, utilidades_forms_Filtrar, utilidades_datos_tablas, utilidades_general,
   utilidades_usuarios, utilidades_impuestos, utilidades_rgtro, utilidades_stock, utilidades_lineas_detalle,
-  types, utilidades_clientes, utilidades_contabilidad;
+  types, utilidades_contabilidad;
 
 type
 
@@ -1502,8 +1502,7 @@ begin
         Exit;
     end;
 
-    Result := UTI_CLIENTES_Elegir_Direccion_Envio( form_facturas_ventas_000.SQLQuery_Ftra.FieldByName('id_clientes').AsString,
-                                                   public_Menu_Worked );
+    Result := UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( true, true, 52, '1' );
 end;
 
 procedure Tform_facturas_ventas_001.Vaciar_Datos_Envio;

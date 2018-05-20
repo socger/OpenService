@@ -109,7 +109,6 @@ type
     procedure DBNavigator_Impuestos_ComposicionesBeforeAction(Sender: TObject; Button: TDBNavButtonType);
     function  Filtrar_impuestos_composiciones( p_ver_bajas : ShortInt; p_Cambiamos_Filtro : Boolean; p_Lineas_Filtro, p_Lineas_OrderBy : TStrings ) : ShortInt;
     function  Existe_Impuesto_Composicion_Ya( p_id_impuestos, p_id_impuestos_al_que_pertenece : ShortString ) : Trecord_Existe;
-    function  Elegir_Impuesto(p_familia : ShortString) : TRecord_Rgtro_Comun;
     procedure SQLQuery_ImptosCompAfterPost(DataSet: TDataSet);
     procedure SQLQuery_ImptosCompBeforeEdit(DataSet: TDataSet);
     procedure SQLQuery_ImptosCompBeforePost(DataSet: TDataSet);
@@ -474,7 +473,7 @@ begin
   begin
     if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
     begin
-      var_Registro := Elegir_Impuesto(SQLQuery_Principal.FieldByName('id').AsString);
+      var_Registro := UTI_Abrir_Modulo_Elegir_Impuestos( true, true, 201, '1' );
 
       if var_Registro.id_1 <> '' then
       begin
@@ -790,53 +789,6 @@ begin
         var_msg.Free;
       end;
     end;
-  end;
-end;
-
-function Tf_impuestos_000.Elegir_Impuesto(p_familia : ShortString) : TRecord_Rgtro_Comun;
-var var_msg : TStrings;
-begin
-  jerofa esto esta sustituido por UTI_Abrir_Modulo_Elegir_Impuestos
-  y hay que hacer lo mismo con todos los elige
-
-  Result.id_1 := '';
-
-  if UTI_GEN_Form_Abierto_Ya('f_elegir_impuestos') = false then
-  begin
-    Application.CreateForm(Tf_elegir_impuestos, f_elegir_impuestos);
-
-    f_elegir_impuestos.public_id_impuesto_que_no_tiene_que_aparecer := p_familia;
-
-    f_elegir_impuestos.public_hacemos_commit_alFinalizar := '1';
-    f_elegir_impuestos.public_Solo_Ver                   := true;
-    f_elegir_impuestos.public_Elegimos                   := true;
-    f_elegir_impuestos.public_Menu_Worked                := 201; // public_Menu_Worked;
-
-    f_elegir_impuestos.para_Empezar;
-
-    f_elegir_impuestos.ShowModal;
-
-    if f_elegir_impuestos.public_Rgtro_Seleccionado = true then
-    begin
-      with f_elegir_impuestos.SQLQuery_Principal do
-      begin
-        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                              '',
-                                              '',
-
-                                              FieldByName('descripcion').AsString,
-                                              FieldByName('Tanto_Por_Ciento').AsString,
-                                              FieldByName('Sumado_A_Ftra_SN').AsString );
-      end;
-    end;
-
-    f_elegir_impuestos.Free;
-  end else begin
-    var_msg := TStringList.Create;
-    var_msg.Add(rs_Modulo_Abierto);
-    UTI_GEN_Aviso(true, var_msg, rs_impto_009, True, False);
-    var_msg.Free;
-    Exit;
   end;
 end;
 

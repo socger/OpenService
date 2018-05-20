@@ -7,8 +7,7 @@ interface
 uses
 
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, db, ExtCtrls, DbCtrls,
-  Buttons, plantilla_detalle_000, utilidades_general, utilidades_forms_Filtrar, utilidades_usuarios,
-  utilidades_clientes;
+  Buttons, plantilla_detalle_000, utilidades_general, utilidades_forms_Filtrar, utilidades_usuarios;
 
 resourcestring
   rs_clientes_002_001 = '* La dirección.';
@@ -139,9 +138,7 @@ begin
   begin
     if UTI_USR_Permiso_SN(f_clientes_000.public_Menu_Worked, 'M', True) = True then
     begin
-      var_Registro := UTI_CLIENTES_Elegir_Contacto( f_clientes_000.SQLQuery_Principal.FieldByName('id').AsString,
-                                                    f_clientes_000.public_Menu_Worked );
-
+      var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, 51, '1' );
       if var_Registro.id_1 <> '' then
       begin
         FieldByName('id_clientes_contactos').AsString := Trim(var_Registro.id_1);

@@ -3302,6 +3302,8 @@ end;
 end.
 
 (*
+En el init debería de tener los colores con los que configuro las plantillas (grids, etc)
+
 En form_visitas_001 hay una llamada desde el botón de elegir cliente a clientes_000 que antes se hacía a pelo
 en vez de usar utilidades_forms_filtrar ... esto se tiene que solucionar todos deben de llamar a utilidades_forms_filtrar ... pero
 lo que me preocupa es que antes de llamar pasa unos filtros que yo todavía no he preparado para que plantilla_000 los absorva y los
