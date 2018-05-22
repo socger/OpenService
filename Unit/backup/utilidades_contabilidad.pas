@@ -26,8 +26,6 @@ resourcestring
   function  UTI_CONTA_Existe_el_NIF_Ya( param_id, param_nif_cif, param_nombre_tabla : ShortString ) : Trecord_Existe;
   function  IsValidNIF(param_NIF : String) : Boolean;
 
-  function UTI_CONTA_Elegir_Diario_tipo : TRecord_Rgtro_Comun;
-
 implementation
 
 uses menu, elegir_diarios_tipos;
@@ -1305,51 +1303,6 @@ begin
             Result := false
         end;
     end;
-end;
-
-function UTI_CONTA_Elegir_Diario_tipo : TRecord_Rgtro_Comun;
-var var_msg : TStrings;
-begin
-  Result.id_1 := '';
-
-  if UTI_GEN_Form_Abierto_Ya('f_elegir_diarios_tipos') = false then
-  begin
-    Application.CreateForm(Tf_elegir_diarios_tipos, f_elegir_diarios_tipos);
-
-    f_elegir_diarios_tipos.public_hacemos_commit_alFinalizar := '1';
-    f_elegir_diarios_tipos.public_Solo_Ver                   := true;
-    f_elegir_diarios_tipos.public_Elegimos                   := true;
-    f_elegir_diarios_tipos.public_Menu_Worked                := 0 (*public_Menu_Worked*);
-
-    f_elegir_diarios_tipos.para_Empezar;
-
-    f_elegir_diarios_tipos.ShowModal;
-
-    if f_elegir_diarios_tipos.public_Rgtro_Seleccionado = true then
-    begin
-      with f_elegir_diarios_tipos.SQLQuery_Principal do
-      begin
-        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                              '',
-                                              '',
-
-                                              FieldByName('descripcion').AsString,
-                                              '',
-                                              '' );
-      end;
-    end;
-
-    f_elegir_diarios_tipos.Free;
-  end
-
-  else
-  begin
-    var_msg := TStringList.Create;
-    var_msg.Add(rs_Modulo_Abierto);
-    UTI_GEN_Aviso(true, var_msg, rs_uti_conta_001, True, False);
-    var_msg.Free;
-    Exit;
-  end;
 end;
 
 end.

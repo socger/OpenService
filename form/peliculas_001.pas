@@ -132,7 +132,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with Form_peliculas_000.SQLQuery_Pelis do
     begin
-        var_Registro := UTI_Abrir_Modulo_Medios( true, false, 10, '1' );
+        var_Registro := UTI_Abrir_Modulo_Medios( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_medio').AsString := Trim(var_Registro.id_1);

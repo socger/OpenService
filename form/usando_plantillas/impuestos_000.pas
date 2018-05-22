@@ -473,7 +473,10 @@ begin
   begin
     if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
     begin
-      var_Registro := UTI_Abrir_Modulo_Elegir_Impuestos( true, true, 201, '1' );
+      var_Registro := UTI_Abrir_Modulo_Elegir_Impuestos( true,
+                                                         true,
+                                                         SQLQuery_Principal.FieldByName('id').asString,
+                                                         '1' );
 
       if var_Registro.id_1 <> '' then
       begin

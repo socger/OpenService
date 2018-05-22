@@ -1830,7 +1830,7 @@ end;
 
 procedure Tform_Menu.MenuItem_PeliculasClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_Peliculas( false, false, 20, '1' );
+  UTI_Abrir_Modulo_Peliculas( false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_PersonalClick(Sender: TObject);
@@ -1875,7 +1875,7 @@ end;
 
 procedure Tform_Menu.MenuItem_UsuariosClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_Usuarios( false, false, 30, '1' );
+  UTI_Abrir_Modulo_Usuarios( false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_MenusClick(Sender: TObject);
@@ -1940,7 +1940,7 @@ end;
 
 procedure Tform_Menu.MenuItem_MediosClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_Medios( false, false, 10, '1' );
+  UTI_Abrir_Modulo_Medios( false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_PoblacionesClick(Sender: TObject);

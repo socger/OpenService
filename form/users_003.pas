@@ -166,7 +166,7 @@ end;
 procedure TForm_users_003.Boton_Elegir_ModuloClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Menus( true, false, 40, '1' );
+    var_Registro := UTI_Abrir_Modulo_Menus( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
          Form_Users_000.SQLQuery_Users_Menus.FieldByName('Id_Menus').AsString := Trim(var_Registro.id_1);

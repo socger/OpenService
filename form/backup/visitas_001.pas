@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, DBDateTimePicker, Forms, Controls, Graphics, Dialogs, ButtonPanel, db, sqldb,
   StdCtrls, DbCtrls, Buttons, EditBtn, utilidades_forms_Filtrar, utilidades_general, utilidades_datos_tablas,
-  utilidades_bd, utilidades_usuarios, utilidades_clientes;
+  utilidades_bd, utilidades_usuarios;
 
 type
 

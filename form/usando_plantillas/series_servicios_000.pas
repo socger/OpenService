@@ -373,7 +373,7 @@ end;
 procedure Tf_series_servicios_000.BitBtn_Elegir_TipoDiarioClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-  var_Registro := UTI_CONTA_Elegir_Diario_tipo;
+  var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, 740, '1' );
 
   if var_Registro.id_1 <> '' then
   begin

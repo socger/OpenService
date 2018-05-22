@@ -81,7 +81,7 @@ type
     procedure Crear_OrderBy_tablas_adicionales; override;
     procedure Refrescar_Registros; override;
     procedure Refrescar_Registros_TablasLigadas; override;
-    procedure Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
+    procedure Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
     procedure Presentar_Datos; override;
     procedure Presentar_Datos_GroupBox_Registro; override;
     procedure para_Empezar_GroupBox_Registro; override;
@@ -228,7 +228,8 @@ begin
   }
 end;
 
-procedure Tf_series_servicios_000.Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD;
+procedure Tf_series_servicios_000.Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings;
+                                                               var p_Registro_CRUD : TRegistro_CRUD;
                                                                var p_ctdad_Rgtros  : Integer;
                                                                var p_a_Filtrar     : TStrings );
 begin
@@ -260,7 +261,7 @@ begin
 
   p_ctdad_Rgtros  := -1;
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_series_servicios_000.Presentar_Datos;
@@ -372,6 +373,7 @@ end;
 procedure Tf_series_servicios_000.BitBtn_Elegir_TipoDiarioClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
+  var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, 740, '1' );
   var_Registro := UTI_CONTA_Elegir_Diario_tipo;
 
   if var_Registro.id_1 <> '' then

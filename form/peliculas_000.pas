@@ -721,7 +721,7 @@ end;
 procedure TForm_peliculas_000.Boton_Elegir_id_mediosClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Medios( true, false, 10, '1' );
+    var_Registro := UTI_Abrir_Modulo_Medios( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_medios.Text             := Trim(var_Registro.id_1);

@@ -1,7 +1,7 @@
 object form_Menu: Tform_Menu
-  Left = 541
+  Left = 427
   Height = 365
-  Top = 94
+  Top = 50
   Width = 505
   BorderStyle = bsSingle
   Caption = 'openSOCGER'

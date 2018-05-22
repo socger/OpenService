@@ -498,7 +498,6 @@ var var_Registro         : TRecord_Rgtro_Comun;
 begin
   if UTI_USR_Permiso_SN(50, '', True) = true then
   begin
-      jerofa desde que quité los filtros no puedes hacer esto
     { jerofa desde que quité los filtros no puedes hacer esto
 
                 if Trim(form_visitas_000.public_llamado_desde) <> '' then

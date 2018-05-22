@@ -66,7 +66,7 @@ type
     procedure Crear_tipos_orden_Principal; override;
     procedure Crear_OrderBy_tablas_adicionales; override;
     procedure Refrescar_Registros; override;
-    procedure Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
+    procedure Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
     procedure Presentar_Datos; override;
     procedure Presentar_Datos_GroupBox_Registro; override;
     procedure para_Empezar_GroupBox_Registro; override;
@@ -214,7 +214,8 @@ begin
   end;
 end;
 
-procedure Tf_reportes_000.Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD;
+procedure Tf_reportes_000.Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings;
+                                                       var p_Registro_CRUD : TRegistro_CRUD;
                                                        var p_ctdad_Rgtros  : Integer;
                                                        var p_a_Filtrar     : TStrings );
 begin
@@ -242,7 +243,7 @@ begin
                                 'LEFT JOIN menus AS m' + ' ' +
                                 'ON i.id_menus = m.id' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_reportes_000.Presentar_Datos_GroupBox_Registro;
