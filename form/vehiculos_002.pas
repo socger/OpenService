@@ -141,7 +141,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_vehiculos_000.SQLQuery_Vehiculos_su_Equipamiento do
     begin
-        var_Registro := UTI_Abrir_Modulo_VehiculosEquipamientos( true, false, 420, '1' );
+        var_Registro := UTI_Abrir_Modulo_VehiculosEquipamientos( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_vehiculos_equipamientos').AsString := Trim(var_Registro.id_1);

@@ -82,7 +82,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with f_almacenes_movimientos_000.SQLQuery_AMD do
   begin
-    var_Registro := UTI_Abrir_Modulo_Articulos( true, false, 170, '1' );
+    var_Registro := UTI_Abrir_Modulo_Articulos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_articulos').AsString := Trim(var_Registro.id_1);

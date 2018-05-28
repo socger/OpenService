@@ -235,7 +235,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_visitas_000.SQLQuery_Visitas do
     begin
-        var_Registro := UTI_Abrir_Modulo_VisitasTipos( true, false, 470, '1' );
+        var_Registro := UTI_Abrir_Modulo_VisitasTipos( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_visitas_tipos').AsString := Trim(var_Registro.id_1);
@@ -264,7 +264,7 @@ begin
     begin
         if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
         begin
-            var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, 51, '1' );
+            var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, '1' );
             if var_Registro.id_1 <> '' then
             begin
                  FieldByName('id_clientes_contactos').AsString := Trim(var_Registro.id_1);
@@ -344,7 +344,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_visitas_000.SQLQuery_Visitas do
     begin
-        var_Registro := UTI_Abrir_Modulo_Representantes( true, false, 130, '1' );
+        var_Registro := UTI_Abrir_Modulo_Representantes( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_representantes').AsString := Trim(var_Registro.id_1);
@@ -361,7 +361,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_visitas_000.SQLQuery_Visitas do
     begin
-        var_Registro := UTI_Abrir_Modulo_VisitasResultados( true, false, 480, '1' );
+        var_Registro := UTI_Abrir_Modulo_VisitasResultados( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_visitas_resultados').AsString := Trim(var_Registro.id_1);

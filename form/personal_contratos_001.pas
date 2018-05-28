@@ -249,7 +249,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_personal_contratos_000.SQLQuery_Personal_Contratos do
     begin
-        var_Registro := UTI_Abrir_Modulo_Personal( true, false, 220, '1' );
+        var_Registro := UTI_Abrir_Modulo_Personal( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_personal').AsString := Trim(var_Registro.id_1);
@@ -263,7 +263,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_personal_contratos_000.SQLQuery_Personal_Contratos do
     begin
-        var_Registro := UTI_Abrir_Modulo_Empresas( true, false, 250, '1' );
+        var_Registro := UTI_Abrir_Modulo_Empresas( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_empresas').AsString := Trim(var_Registro.id_1);
@@ -277,7 +277,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_personal_contratos_000.SQLQuery_Personal_Contratos do
     begin
-        var_Registro := UTI_Abrir_Modulo_FamiliasContratosPersonal( true, false, 230, '1' );
+        var_Registro := UTI_Abrir_Modulo_FamiliasContratosPersonal( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_personal_contratos_familias').AsString := Trim(var_Registro.id_1);

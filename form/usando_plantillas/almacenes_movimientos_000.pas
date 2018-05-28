@@ -372,7 +372,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( true, false, 290, '1' );
+    var_Registro := UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_conceptos_almacen_traspaso').AsString := Trim(var_Registro.id_1);
@@ -386,7 +386,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, 260, '1' );
+    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_almacenes_origen').AsString := Trim(var_Registro.id_1);
@@ -414,7 +414,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, 260, '1' );
+    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_almacenes_destino').AsString := Trim(var_Registro.id_1);

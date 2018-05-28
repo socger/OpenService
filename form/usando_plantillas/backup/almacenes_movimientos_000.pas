@@ -117,7 +117,7 @@ type
     procedure Cambiar_Titulo_Form; override;
     procedure Cambiar_Nombre_Tabla_Principal; override;
     procedure Refrescar_Registros_TablasLigadas; override;
-    procedure Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
+    procedure Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
     procedure Filtrar_tablas_adicionales( var p_Lineas_Filtro : TStrings; var p_Lineas_OrderBy : TStrings ); override;
     function  Fue_Utilizado_Rgtro_SQLQuery_Principal : ShortInt; override;
 
@@ -386,7 +386,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, 260, '1' );
+    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_almacenes_origen').AsString := Trim(var_Registro.id_1);
@@ -414,7 +414,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, 260, '1' );
+    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_almacenes_destino').AsString := Trim(var_Registro.id_1);
@@ -879,7 +879,8 @@ begin
   end;
 end;
 
-procedure Tf_almacenes_movimientos_000.Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD;
+procedure Tf_almacenes_movimientos_000.Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings;
+                                                                    var p_Registro_CRUD : TRegistro_CRUD;
                                                                     var p_ctdad_Rgtros  : Integer;
                                                                     var p_a_Filtrar     : TStrings );
 begin
@@ -915,7 +916,7 @@ begin
                                 'LEFT JOIN conceptos_almacen_traspaso AS cat' + ' ' +
                                 'ON am.id_conceptos_almacen_traspaso = cat.id' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_almacenes_movimientos_000.Filtrar_tablas_adicionales( var p_Lineas_Filtro : TStrings;

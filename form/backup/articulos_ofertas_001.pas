@@ -351,7 +351,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_articulos_ofertas_000.SQLQuery_AO do
     begin
-        var_Registro := UTI_Abrir_Modulo_Tarifas( 90, '1' );
+        var_Registro := UTI_Abrir_Modulo_Tarifas( true, false, 90, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_tarifas').AsString := Trim(var_Registro.id_1);

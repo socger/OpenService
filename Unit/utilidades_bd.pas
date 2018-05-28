@@ -5,9 +5,11 @@ unit utilidades_bd;
 interface
 
 uses
-  Controls, Forms, LazFileUtils, Classes, SysUtils, DB, sqldb, IniFiles, Dialogs, utilidades_general,
-  StdCtrls;
+  Controls, Forms, LazFileUtils, Classes, SysUtils, DB, sqldb, IniFiles, Dialogs,
+  utilidades_general, StdCtrls, Graphics;
 
+Const
+  const_Path_Ini = '\ini\socger.ini';
 type
 
   TOrder_By = record
@@ -15,8 +17,16 @@ type
       Memo_OrderBy : String;
   end;
 
+  Trecord_Skin = record
+      con_Exito                             : Boolean;
+      DbGrid_Color                          : TColor;
+      DbGrid_Color_Eligiendo                : TColor;
+      DbGrid_Color_AlternateColor           : TColor;
+      DbGrid_Color_AlternateColor_Eligiendo : TColor;
+  end;
+
   Trecord_CN_Conexion = record
-      con_Exito                     : boolean;
+      con_Exito                     : Boolean;
       ConnectorType                 : String;
       DatabaseName                  : String;
       HostName                      : String;
@@ -42,6 +52,7 @@ function  UTI_CN_Connector_Close( param_SQLTransaction: TSQLTransaction; param_S
 function  UTI_CN_Fecha_Hora : TDateTime;
 function  UTI_CN_Configuracion_INI_Traerla : Trecord_CN_Conexion;
 function  UTI_CN_Configuracion_INI_Grabar_Idioma( param_Idioma : ShortString ) : Boolean;
+function  UTI_CN_Traer_Configuracion_Skin : Trecord_Skin;
 
 function  UTI_TB_Borrar_Tabla_Sin_Respetar_Autoinc( param_tabla : String ) : Boolean;
 function  UTI_TB_Borrar_Tabla_Respetando_Autoinc( param_tabla : String ) : Boolean;
@@ -533,10 +544,11 @@ end;
 function UTI_CN_Configuracion_INI_Traerla : Trecord_CN_Conexion;
 var var_fichero_ini : TIniFile;
 begin
-    if (FileExists(GetCurrentDirUTF8 + '\ini\socger.ini')) then
+    if (FileExists(GetCurrentDirUTF8 + const_Path_Ini)) then
     begin
         try
-            var_fichero_ini                      := TIniFile.Create(GetCurrentDirUTF8 + '\ini\socger.ini');
+            var_fichero_ini                      := TIniFile.Create(GetCurrentDirUTF8 + const_Path_Ini);
+
             Result.con_Exito                     := true;
             Result.ConnectorType                 := var_fichero_ini.ReadString('HowConnectBD', 'ConnectorType', '');
             Result.DatabaseName                  := var_fichero_ini.ReadString('HowConnectBD', 'DatabaseName', '');
@@ -723,7 +735,7 @@ var var_fichero_ini : TIniFile;
 begin
     Result := true;
     try
-        var_fichero_ini := TIniFile.Create(GetCurrentDirUTF8 + '\ini\socger.ini');
+        var_fichero_ini := TIniFile.Create(GetCurrentDirUTF8 + const_Path_Ini);
 
         var_fichero_ini.WriteString('Config', 'Language', param_Idioma);
 
@@ -1630,6 +1642,40 @@ begin
   param_WHERE_OLD.AddStrings( UTI_TB_Quitar_AndOr_Principio( var_valor_old.Text) ); // jeromillo aqui paso un tstrings pero la funcion UTI_TB_Quitar_AndOr_Principio quiere un string
 
   var_valor_old.Free;
+end;
+
+function UTI_CN_Traer_Configuracion_Skin : Trecord_Skin;
+var var_fichero_ini : TIniFile;
+begin
+    if (FileExists(GetCurrentDirUTF8 + const_Path_Ini)) then
+    begin
+        try
+            var_fichero_ini                              := TIniFile.Create(GetCurrentDirUTF8 + const_Path_Ini);
+
+            Result.con_Exito                             := true;
+
+            Result.DbGrid_Color                          := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Color', ''));
+            Result.DbGrid_Color_Eligiendo                := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Color_Eligiendo', ''));
+
+            Result.DbGrid_Color_AlternateColor           := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Color_AlternateColor', ''));
+            Result.DbGrid_Color_AlternateColor_Eligiendo := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Color_AlternateColor_Eligiendo', ''));
+
+            var_fichero_ini.Free;
+        except
+            on error : Exception do
+            begin
+                UTI_GEN_Error_Log( 'Error al ABRIR el fichero de CONFIGURACION' + ' desde ' +
+                                   Screen.ActiveForm.Name,
+                                   error );
+                try
+                    var_fichero_ini.Free;
+                Except
+                end;
+
+                Result.con_Exito := False;
+            end;
+        end;
+    end;
 end;
 
 end.

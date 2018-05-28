@@ -166,7 +166,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_provincias_000.SQLQuery_Provincias do
     begin
-        var_Registro := UTI_Abrir_Modulo_Paises( 60, '1' );
+        var_Registro := UTI_Abrir_Modulo_Paises( true, false, 60, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_paises').AsString := Trim(var_Registro.id_1);

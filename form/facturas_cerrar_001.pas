@@ -207,7 +207,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_facturas_cerrar_000.SQLQuery_Ftras_Cerrar do
     begin
-        var_Registro := UTI_Abrir_Modulo_Empresas( true, false, 250, '1' );
+        var_Registro := UTI_Abrir_Modulo_Empresas( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_empresas').AsString            := Trim(var_Registro.id_1);

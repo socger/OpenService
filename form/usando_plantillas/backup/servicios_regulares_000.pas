@@ -1163,28 +1163,7 @@ procedure Tf_servicios_regulares_000.Filtrar_Principal_queFiltro( var p_errores_
                                                                   var p_Registro_CRUD : TRegistro_CRUD;
                                                                   var p_ctdad_Rgtros  : Integer;
                                                                   var p_a_Filtrar     : TStrings );
-var v_desde_fecha : String;
-    v_hasta_fecha : String;
 begin
-  // *********************************************************************************************** //
-  // ** Ahora buscaremos por todavia activo al ... pero sólo si no está Null                      ** //
-  // *********************************************************************************************** //
-  // ** Se lo pasamos a la function _CRUD para que lo filtre como un RIGHT JOIN                   ** //
-  // *********************************************************************************************** //
-  v_desde_fecha := '';
-  v_hasta_fecha := '';
-
-{ jerofa desde que quitastes los filtros no se puede hacer esto
-
-
-  if not DateTimePicker_activo_todavia_al.DateIsNull then ... buscar el valor para el campo NO_CAMPO_activo_al
-  begin
-    v_desde_fecha := UTI_GEN_Format_Fecha_Hora(DateTimePicker_activo_todavia_al.Date, false) +
-                     ' 00:00:00';
-    v_hasta_fecha := UTI_GEN_Format_Fecha_Hora(DateTimePicker_activo_todavia_al.Date, false) +
-                     ' 23:59:59';
-  end;
-}
   p_Registro_CRUD.name_tabla := 'sr';
 
   p_Registro_CRUD.Delete_SQL := '';
@@ -1267,28 +1246,8 @@ begin
                                                        'servicios_regulares_periodos.clientes_recogida_inicio DESC,' + ' ' +
                                                        'servicios_regulares_periodos.clientes_fin_servicio DESC' + ' ' +
                                              'LIMIT 1 ) as per' + ' ' +
-                                'ON sr.id = per.id_servicios_regulares ';
+                                'ON sr.id = per.id_servicios_regulares ' +
 
-  if Trim(v_desde_fecha) <> '' then
-  begin
-    p_Registro_CRUD.SELECT_SQL := p_Registro_CRUD.SELECT_SQL + ' ' +
-                                  'RIGHT JOIN servicios_regulares_periodos AS srp' + ' ' +
-                                  'ON sr.id = srp.id_servicios_regulares' + ' ' +
-                                     'AND ' +  UTI_GEN_Comillas(v_desde_fecha) + ' BETWEEN srp.desde_fecha AND srp.hasta_fecha' + ' ' +
-                                     'AND ' +  UTI_GEN_Comillas(v_hasta_fecha) + ' BETWEEN srp.desde_fecha AND srp.hasta_fecha';
-
-    jerofa esto cambiarlo por ... en el where del filtro
-
-    exists ( select *
-             from servicios_regulares_periodos srp
-    			where srp.id_servicios_regulares = sr.id
-    			and '01/01/2018' BETWEEN srp.desde_fecha AND srp.hasta_fecha
-    			order by srp.id_servicios_regulares );
-
-
-  end;
-
-  p_Registro_CRUD.SELECT_SQL := p_Registro_CRUD.SELECT_SQL + ' ' +
                                 'LEFT JOIN empresas AS e' + ' ' +
                                 'ON sr.id_empresas = e.id' + ' ' +
 
@@ -1463,7 +1422,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-      var_Registro := UTI_Abrir_Modulo_Clientes( true, false, 50, '1' );
+      var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
       if var_Registro.id_1 <> '' then
       begin
            FieldByName('id_clientes').AsString := Trim(var_Registro.id_1);
@@ -1478,7 +1437,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_TiposVehiculos( true, false, 360, '1' );
+    var_Registro := UTI_Abrir_Modulo_TiposVehiculos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_vehiculos_tipos').AsString := Trim(var_Registro.id_1);
@@ -1567,7 +1526,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_ServiciosTipos( true, false, 710, '1' );
+    var_Registro := UTI_Abrir_Modulo_ServiciosTipos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_servicios_tipos').AsString := Trim(var_Registro.id_1);
@@ -1581,7 +1540,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_ServiciosSeries( true, false, 730, '1' );
+    var_Registro := UTI_Abrir_Modulo_ServiciosSeries( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_series_servicios').AsString             := Trim(var_Registro.id_1);
@@ -1612,7 +1571,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, 50, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_personal_acompanante').AsString := Trim(var_Registro.id_1);

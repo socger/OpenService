@@ -817,7 +817,7 @@ end;
 procedure Tform_vehiculos_000.Boton_Elegir_id_vehiculos_tiposClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_TiposVehiculos( true, false, 360, '1' );
+    var_Registro := UTI_Abrir_Modulo_TiposVehiculos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_vehiculos_tipos.Text             := Trim(var_Registro.id_1);
@@ -834,7 +834,7 @@ end;
 procedure Tform_vehiculos_000.Boton_Elegir_id_vehiculos_marcasClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_MarcasVehiculos( true, false, 370, '1' );
+    var_Registro := UTI_Abrir_Modulo_MarcasVehiculos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_vehiculos_marcas.Text             := Trim(var_Registro.id_1);
@@ -851,7 +851,7 @@ end;
 procedure Tform_vehiculos_000.Boton_Elegir_id_combustiblesClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Combustibles( true, false, 380, '1' );
+    var_Registro := UTI_Abrir_Modulo_Combustibles( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_combustibles.Text             := Trim(var_Registro.id_1);
@@ -868,7 +868,7 @@ end;
 procedure Tform_vehiculos_000.Boton_Elegir_id_vehiculos_tipo_cambiosClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_TipoCambiosVehiculos( true, false, 390, '1' );
+    var_Registro := UTI_Abrir_Modulo_TipoCambiosVehiculos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_vehiculos_tipo_cambios.Text             := Trim(var_Registro.id_1);
@@ -885,7 +885,7 @@ end;
 procedure Tform_vehiculos_000.Boton_Elegir_id_personal_conductor_habitualClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Personal( true, false, 220, '1' );
+    var_Registro := UTI_Abrir_Modulo_Personal( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_personal_conductor_habitual.Text             := Trim(var_Registro.id_1);
@@ -902,7 +902,7 @@ end;
 procedure Tform_vehiculos_000.Boton_Elegir_id_tarjetas_transporteClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Tarjetas_Transporte( true, false, 410, '1' );
+    var_Registro := UTI_Abrir_Modulo_Tarjetas_Transporte( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_tarjetas_transporte.Text             := Trim(var_Registro.id_1);
@@ -925,7 +925,7 @@ end;
 procedure Tform_vehiculos_000.Boton_Elegir_id_vehiculos_tipo_ruedasClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_TipoRuedasVehiculos( true, false, 400, '1' );
+    var_Registro := UTI_Abrir_Modulo_TipoRuedasVehiculos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_vehiculos_tipo_ruedas.Text             := Trim(var_Registro.id_1);
@@ -968,7 +968,7 @@ end;
 procedure Tform_vehiculos_000.Elegir_Datos_Propietario_Cliente;
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, 50, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_Propietario.Text             := Trim(var_Registro.id_1);
@@ -992,7 +992,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_Vehiculos_000.SQLQuery_Vehiculos do
     begin
-        var_Registro := UTI_Abrir_Modulo_Proveedores( true, false, 120, '1' );
+        var_Registro := UTI_Abrir_Modulo_Proveedores( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             Edit_Propietario.Text             := Trim(var_Registro.id_1);
@@ -1010,7 +1010,7 @@ end;
 procedure Tform_vehiculos_000.Boton_Elegir_id_proveedores_aseguradoraClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Proveedores( true, false, 120, '1' );
+    var_Registro := UTI_Abrir_Modulo_Proveedores( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_proveedores_aseguradora.Text             := Trim(var_Registro.id_1);
@@ -1128,7 +1128,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -1542,7 +1544,9 @@ begin
                                Memo_OrderBy.Lines,
                                var_a_Filtrar,
 
-                               param_Cambiamos_Filtro );
+                               param_Cambiamos_Filtro,
+                               false,   // param_ver_SQL_despues_Abrir : Boolean;
+                               true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
     var_a_Filtrar.Free;
 

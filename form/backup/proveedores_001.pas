@@ -320,7 +320,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_proveedores_000.SQLQuery_Proveedores do
     begin
-        var_Registro := UTI_Abrir_Modulo_Paises( 60, '1' );
+        var_Registro := UTI_Abrir_Modulo_Paises( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_paises').AsString := Trim(var_Registro.id_1);
@@ -334,7 +334,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_proveedores_000.SQLQuery_Proveedores do
     begin
-        var_Registro := UTI_Abrir_Modulo_Provincias( 100, '1' );
+        var_Registro := UTI_Abrir_Modulo_Provincias( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_provincias').AsString := Trim(var_Registro.id_1);
@@ -350,7 +350,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_proveedores_000.SQLQuery_Proveedores do
     begin
-        var_Registro := UTI_Abrir_Modulo_Poblaciones( 110, '1' );
+        var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_poblaciones').AsString := Trim(var_Registro.id_1);
@@ -522,7 +522,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_proveedores_000.SQLQuery_Proveedores do
     begin
-        var_Registro := UTI_Abrir_Modulo_Poblaciones( 110, '1' );
+        var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_Cta_Bco_poblaciones').AsString := Trim(var_Registro.id_1);
@@ -540,7 +540,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_proveedores_000.SQLQuery_Proveedores do
     begin
-        var_Registro := UTI_Abrir_Modulo_Paises( 60, '1' );
+        var_Registro := UTI_Abrir_Modulo_Paises( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_Cta_Bco_pais').AsString := Trim(var_Registro.id_1);
@@ -554,7 +554,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_proveedores_000.SQLQuery_Proveedores do
     begin
-        var_Registro := UTI_Abrir_Modulo_Provincias( 100, '1' );
+        var_Registro := UTI_Abrir_Modulo_Provincias( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_Cta_Bco_provincias').AsString := Trim(var_Registro.id_1);
@@ -609,7 +609,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_proveedores_000.SQLQuery_Proveedores do
     begin
-        var_Registro := UTI_Abrir_Modulo_FormasPago( 80, '1' );
+        var_Registro := UTI_Abrir_Modulo_FormasPago( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_formas_pago').AsString := Trim(var_Registro.id_1);
@@ -944,7 +944,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_proveedores_000.SQLQuery_Proveedores do
     begin
-        var_Registro := UTI_Abrir_Modulo_TiposProveedores( 140, '1' );
+        var_Registro := UTI_Abrir_Modulo_TiposProveedores( true, false, 140, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_proveedores_tipos').AsString := Trim(var_Registro.id_1);
@@ -1263,7 +1263,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_proveedores_000.SQLQuery_Proveedores do
     begin
-        var_Registro := UTI_Abrir_Modulo_Actividades( 500, '1' );
+        var_Registro := UTI_Abrir_Modulo_Actividades( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_actividades').AsString := Trim(var_Registro.id_1);

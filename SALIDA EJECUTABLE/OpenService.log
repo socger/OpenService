@@ -33,3 +33,59 @@ Este es el mensaje de error:
 Database not assigned!
  
 
+[mi. 23 may., 18:13:37]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Can not load default MySQL library ("libmysql.dll" or "libmysql.dll"). Check your installation.
+ 
+
+[mi. 23 may., 18:14:42]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Can not load default MySQL library ("libmysql.dll" or "libmysql.dll"). Check your installation.
+ 
+
+[mi. 23 may., 18:15:16]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Can not load default MySQL library ("libmysql.dll" or "libmysql.dll"). Check your installation.
+ 
+
+[mi. 23 may., 18:16:21]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Can not load default MySQL library ("libmysql.dll" or "libmysql.dll"). Check your installation.
+ 
+
+[sá. 26 may., 16:23:18]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Can not load default MySQL library ("libmysql.dll" or "libmysql.dll"). Check your installation.
+ 
+
+[sá. 26 may., 16:26:58]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+Can not load default MySQL library ("libmysql.dll" or "libmysql.dll"). Check your installation.
+ 
+
+[sá. 26 may., 16:27:40]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Server connect failed.
+ 
+
+[lu. 28 may., 18:35:16]- SUPER USUARIO ... Ocurrió un error al intentar traer todos los datos de configuración de esta aplicación. La tabla ha sido SQLQuery_Traer_Configuracion_APP_xID desde el módulo form_Menu
+ 
+Este es el mensaje de error: 
+ 
+TMySQL56Connection : Server connect failed.
+ 
+

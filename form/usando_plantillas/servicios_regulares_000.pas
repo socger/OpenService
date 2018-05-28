@@ -1422,7 +1422,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-      var_Registro := UTI_Abrir_Modulo_Clientes( true, false, 50, '1' );
+      var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
       if var_Registro.id_1 <> '' then
       begin
            FieldByName('id_clientes').AsString := Trim(var_Registro.id_1);
@@ -1437,7 +1437,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_TiposVehiculos( true, false, 360, '1' );
+    var_Registro := UTI_Abrir_Modulo_TiposVehiculos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_vehiculos_tipos').AsString := Trim(var_Registro.id_1);
@@ -1526,7 +1526,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_ServiciosTipos( true, false, 710, '1' );
+    var_Registro := UTI_Abrir_Modulo_ServiciosTipos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_servicios_tipos').AsString := Trim(var_Registro.id_1);
@@ -1540,7 +1540,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_ServiciosSeries( true, false, 730, '1' );
+    var_Registro := UTI_Abrir_Modulo_ServiciosSeries( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_series_servicios').AsString             := Trim(var_Registro.id_1);
@@ -1557,7 +1557,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, 250, '1' );
+    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_empresas').AsString := Trim(var_Registro.id_1);
@@ -1571,7 +1571,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, 50, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_personal_acompanante').AsString := Trim(var_Registro.id_1);

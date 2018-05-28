@@ -11,7 +11,7 @@ object form_plantilla_000: Tform_plantilla_000
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
-  LCLVersion = '1.8.0.6'
+  LCLVersion = '1.8.4.0'
   object Panel_de_Abajo: TPanel
     Left = 0
     Height = 412

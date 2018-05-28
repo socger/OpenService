@@ -196,7 +196,7 @@ end;
 
 procedure Tform_facturas_compras_004.BitBtn_Configurar_EmpresaClick(Sender: TObject);
 begin
-    UTI_Abrir_Modulo_Empresas( 250, '1' );
+    UTI_Abrir_Modulo_Empresas( true, false, 250, '1' );
 end;
 
 procedure Tform_facturas_compras_004.BitBtn_Ver_Ftras_BorradasClick(Sender: TObject);

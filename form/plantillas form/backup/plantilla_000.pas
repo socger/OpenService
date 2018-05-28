@@ -590,6 +590,9 @@ begin
 end;
 
 procedure Tform_plantilla_000.Cambiar_Estilo_Form;
+var
+  v_i    : Integer;
+  v_Skin : Trecord_Skin;
 begin
   with Self do
   begin
@@ -600,6 +603,23 @@ begin
   end;
 
   Cambiar_WindowState;
+
+  v_Skin := UTI_CN_Traer_Configuracion_Skin;
+
+  for v_i := 0 to (ComponentCount - 1) do
+  begin
+    if (Components[v_i] is TDBGrid) then
+    begin
+      TDBGrid(Components[v_i]).Color          := TColor(v_Skin.DbGrid_Color);
+      TDBGrid(Components[v_i]).AlternateColor := TColor(v_Skin.DbGrid_Color_AlternateColor);
+
+      jerofa hay que ver también cuando es elegido como se van a rellenar los colores de los grids
+      y del fondo del form
+
+      y los dbEdit y Edit
+    end;
+
+  end;
 end;
 
 procedure Tform_plantilla_000.RadioGroup_BajasClick(Sender: TObject);

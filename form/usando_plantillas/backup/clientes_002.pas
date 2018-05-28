@@ -7,8 +7,7 @@ interface
 uses
 
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, db, ExtCtrls, DbCtrls,
-  Buttons, plantilla_detalle_000, utilidades_general, utilidades_forms_Filtrar, utilidades_usuarios,
-  utilidades_clientes;
+  Buttons, plantilla_detalle_000, utilidades_general, utilidades_forms_Filtrar, utilidades_usuarios;
 
 resourcestring
   rs_clientes_002_001 = '* La dirección.';
@@ -154,7 +153,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with f_clientes_000.SQLQuery_Clientes_Envios do
   begin
-    var_Registro := UTI_Abrir_Modulo_Paises( true, false, 60, '1' );
+    var_Registro := UTI_Abrir_Modulo_Paises( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
        FieldByName('id_paises').AsString := Trim(var_Registro.id_1);
@@ -169,7 +168,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with f_clientes_000.SQLQuery_Clientes_Envios do
   begin
-    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, 110, '1' );
+    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, '1' );
 
     if var_Registro.id_1 <> '' then
     begin
@@ -189,7 +188,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with f_clientes_000.SQLQuery_Clientes_Envios do
   begin
-    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, 100, '1' );
+    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_provincias').AsString := Trim(var_Registro.id_1);

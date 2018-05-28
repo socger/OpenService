@@ -1214,7 +1214,7 @@ end;
 procedure Tform_visitas_por_provincia_000.Boton_Elegir_ClienteClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, 50, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Cliente.Text          := Trim(var_Registro.id_1);
@@ -1225,7 +1225,7 @@ end;
 procedure Tform_visitas_por_provincia_000.Boton_Elegir_Tipo_ClienteClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Clientes_tipos( true, false, 70, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes_tipos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Tipo_Cliente.Text          := Trim(var_Registro.id_1);
@@ -1236,7 +1236,7 @@ end;
 procedure Tform_visitas_por_provincia_000.Boton_Elegir_Visita_TipoClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_VisitasTipos( true, false, 470, '1' );
+    var_Registro := UTI_Abrir_Modulo_VisitasTipos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Visita_Tipo.Text          := Trim(var_Registro.id_1);
@@ -1286,7 +1286,7 @@ end;
 procedure Tform_visitas_por_provincia_000.Boton_Elegir_Visita_ResultadoClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_VisitasResultados( true, false, 480, '1' );
+    var_Registro := UTI_Abrir_Modulo_VisitasResultados( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Visita_Resultado.Text          := Trim(var_Registro.id_1);
@@ -1297,7 +1297,7 @@ end;
 procedure Tform_visitas_por_provincia_000.Boton_Elegir_RutaClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Rutas( true, false, 510, '1' );
+    var_Registro := UTI_Abrir_Modulo_Rutas( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Ruta.Text          := Trim(var_Registro.id_1);
@@ -1308,7 +1308,7 @@ end;
 procedure Tform_visitas_por_provincia_000.Boton_Elegir_ActividadClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Actividades( true, false, 500, '1' );
+    var_Registro := UTI_Abrir_Modulo_Actividades( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Actividad.Text          := Trim(var_Registro.id_1);
@@ -1319,7 +1319,7 @@ end;
 procedure Tform_visitas_por_provincia_000.Boton_Elegir_RepresentanteClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Representantes( true, false, 130, '1' );
+    var_Registro := UTI_Abrir_Modulo_Representantes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_representantes.Text         := Trim(var_Registro.id_1);
@@ -1411,12 +1411,12 @@ end;
 
 procedure Tform_visitas_por_provincia_000.BitBtn_ver_PedidosClick(Sender: TObject);
 begin
-    UTI_Abrir_Modulo_PedidosVentas( true, false, 450, '1' );
+    UTI_Abrir_Modulo_PedidosVentas( true, false, '1' );
 end;
 
 procedure Tform_visitas_por_provincia_000.BitBtn_ver_PresupuestosClick(Sender: TObject);
 begin
-    UTI_Abrir_Modulo_PresupuestosVentas( true, false, 440, '1' );
+    UTI_Abrir_Modulo_PresupuestosVentas( true, false, '1' );
 end;
 
 end.

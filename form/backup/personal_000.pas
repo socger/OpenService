@@ -1027,7 +1027,9 @@ begin
                               Memo_OrderBy.Lines,
                               var_a_Filtrar,
 
-                              param_Cambiamos_Filtro );
+                              param_Cambiamos_Filtro,
+                              false,   // param_ver_SQL_despues_Abrir : Boolean;
+                              true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
     var_a_Filtrar.Free;
 
@@ -1045,7 +1047,7 @@ end;
 procedure Tform_personal_000.Boton_Elegir_PoblacionClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, 110, '1' );
+    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_poblaciones.Text        := Trim(var_Registro.id_1);
@@ -1056,7 +1058,7 @@ end;
 procedure Tform_personal_000.Boton_Elegir_PaisClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Paises( true, false, 60, '1' );
+    var_Registro := UTI_Abrir_Modulo_Paises( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_paises.Text        := Trim(var_Registro.id_1);
@@ -1068,7 +1070,7 @@ procedure Tform_personal_000.Boton_Elegir_id_personal_familiasClick(
   Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_FamiliasPersonal( true, false, 210, '1' );
+    var_Registro := UTI_Abrir_Modulo_FamiliasPersonal( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_personal_familias.Text             := Trim(var_Registro.id_1);

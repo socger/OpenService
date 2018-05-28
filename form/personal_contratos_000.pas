@@ -810,7 +810,7 @@ procedure Tform_personal_contratos_000.Boton_Elegir_id_EmpresasClick(
   Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, 250, '1' );
+    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Empresas.Text             := Trim(var_Registro.id_1);
@@ -821,7 +821,7 @@ end;
 procedure Tform_personal_contratos_000.Boton_Elegir_id_personal_contratos_familiasClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_FamiliasContratosPersonal( true, false, 230, '1' );
+    var_Registro := UTI_Abrir_Modulo_FamiliasContratosPersonal( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_personal_contratos_familias.Text             := Trim(var_Registro.id_1);
@@ -833,7 +833,7 @@ procedure Tform_personal_contratos_000.Boton_Elegir_PersonalClick(
   Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Personal( true, false, 220, '1' );
+    var_Registro := UTI_Abrir_Modulo_Personal( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Personal.Text          := Trim(var_Registro.id_1);

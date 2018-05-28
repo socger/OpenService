@@ -203,7 +203,7 @@ procedure Tform_proveedores_004.Boton_Elegir_proveedores_tiposClick(
   Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_TiposProveedores( true, false, 140, '1' );
+    var_Registro := UTI_Abrir_Modulo_TiposProveedores( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_proveedores_tipos.Text          := Trim(var_Registro.id_1);
@@ -214,7 +214,7 @@ end;
 procedure Tform_proveedores_004.Boton_Elegir_ProvinciaClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, 100, '1' );
+    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_provincias.Text         := Trim(var_Registro.id_1);
@@ -323,7 +323,7 @@ end;
 procedure Tform_proveedores_004.Boton_Elegir_Forma_PagoClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_FormasPago( true, false, 80, '1' );
+    var_Registro := UTI_Abrir_Modulo_FormasPago( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Forma_Pago.Text          := Trim(var_Registro.id_1);
@@ -334,7 +334,7 @@ end;
 procedure Tform_proveedores_004.Boton_Elegir_PaisClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Paises( true, false, 60, '1' );
+    var_Registro := UTI_Abrir_Modulo_Paises( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_paises.Text        := Trim(var_Registro.id_1);
@@ -345,7 +345,7 @@ end;
 procedure Tform_proveedores_004.Boton_Elegir_PoblacionClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, 110, '1' );
+    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_poblaciones.Text        := Trim(var_Registro.id_1);

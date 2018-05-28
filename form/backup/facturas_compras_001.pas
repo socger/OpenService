@@ -1343,7 +1343,7 @@ begin
 
     with form_facturas_compras_000.SQLQuery_Ftra do
     begin
-        var_Registro := UTI_Abrir_Modulo_Empresas( 250, '1' );
+        var_Registro := UTI_Abrir_Modulo_Empresas( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             // ************************************************************************************* //
@@ -1465,7 +1465,7 @@ begin
         // ***************************************************************************************** //
         // ** Continuamos con el cambio de almacén                                                ** //
         // ***************************************************************************************** //
-        var_Registro := UTI_Abrir_Modulo_Almacenes( 260, '1' );
+        var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             FieldByName('id_almacenes').AsString           := Trim(var_Registro.id_1);
@@ -1504,7 +1504,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_facturas_compras_000.SQLQuery_Ftra do
     begin
-        var_Registro := UTI_Abrir_Modulo_FormasPago( 80, '1' );
+        var_Registro := UTI_Abrir_Modulo_FormasPago( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             FieldByName('id_formas_pago').AsString            := Trim(var_Registro.id_1);
@@ -1680,7 +1680,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_facturas_compras_000.SQLQuery_Ftra do
     begin
-        var_Registro := UTI_Abrir_Modulo_Poblaciones( 110, '1' );
+        var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             FieldByName('Envio_id_poblaciones').AsString           := Trim(var_Registro.id_1);
@@ -1703,7 +1703,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_facturas_compras_000.SQLQuery_Ftra do
     begin
-        var_Registro := UTI_Abrir_Modulo_Paises( 60, '1' );
+        var_Registro := UTI_Abrir_Modulo_Paises( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('Envio_id_paises').AsString           := Trim(var_Registro.id_1);
@@ -1721,7 +1721,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_facturas_compras_000.SQLQuery_Ftra do
     begin
-        var_Registro := UTI_Abrir_Modulo_Provincias( 100, '1' );
+        var_Registro := UTI_Abrir_Modulo_Provincias( true, false, 100, '1' );
         if var_Registro.id_1 <> '' then
         begin
             FieldByName('Envio_id_provincias').AsString            := Trim(var_Registro.id_1);
@@ -1792,7 +1792,7 @@ begin
         // ***************************************************************************************** //
         // ** Elegimos en el mantenimiento de proveedores una AGENCIA DE TRANSPORTE               ** //
         // ***************************************************************************************** //
-        var_Registro := UTI_Abrir_Modulo_Proveedores( 120, '1' );
+        var_Registro := UTI_Abrir_Modulo_Proveedores( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              Edit_Direccion_de_Envio_Agencia_Transporte_Descripcion.Text := var_Registro.descripcion_1;
@@ -2352,7 +2352,7 @@ begin
         // ***************************************************************************************** //
         // ** Continuamos                                                                         ** //
         // ***************************************************************************************** //
-        var_Rgtro := UTI_Abrir_Modulo_Proveedores( 120, '1' );
+        var_Rgtro := UTI_Abrir_Modulo_Proveedores( true, false, '1' );
         if var_Rgtro.id_1 <> '' then
         begin
             form_facturas_compras_000.Rellenar_Datos_Proveedor_a_Ftra( Trim(var_Rgtro.id_1) );

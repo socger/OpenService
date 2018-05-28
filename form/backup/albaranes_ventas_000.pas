@@ -1152,7 +1152,7 @@ end;
 procedure Tform_albaranes_ventas_000.Boton_Elegir_EmpresaClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, 250, '1' );
+    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Empresas.Text         := Trim(var_Registro.id_1);
@@ -1163,7 +1163,7 @@ end;
 procedure Tform_albaranes_ventas_000.Boton_Elegir_id_ClientesClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, 50, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Clientes.Text          := Trim(var_Registro.id_1);
@@ -1180,7 +1180,7 @@ end;
 procedure Tform_albaranes_ventas_000.Boton_Elegir_id_AlmacenesClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, 260, '1' );
+    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Almacenes.Text             := Trim(var_Registro.id_1);
@@ -1197,7 +1197,7 @@ end;
 procedure Tform_albaranes_ventas_000.Boton_Elegir_id_VehiculosClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Vehiculos( true, false, 350, '1' );
+    var_Registro := UTI_Abrir_Modulo_Vehiculos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Vehiculos.Text             := Trim(var_Registro.id_1);
@@ -2457,7 +2457,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -2921,7 +2923,9 @@ begin
                               Memo_OrderBy.Lines,
                               var_a_Filtrar,
 
-                              param_Cambiamos_Filtro );
+                              param_Cambiamos_Filtro,
+                              false,   // param_ver_SQL_despues_Abrir : Boolean;
+                              true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
     var_a_Filtrar.Free;
 
@@ -3254,7 +3258,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;

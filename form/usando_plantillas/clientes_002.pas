@@ -138,7 +138,7 @@ begin
   begin
     if UTI_USR_Permiso_SN(f_clientes_000.public_Menu_Worked, 'M', True) = True then
     begin
-      var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, 51, '1' );
+      var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, '1' );
       if var_Registro.id_1 <> '' then
       begin
         FieldByName('id_clientes_contactos').AsString := Trim(var_Registro.id_1);
@@ -153,7 +153,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with f_clientes_000.SQLQuery_Clientes_Envios do
   begin
-    var_Registro := UTI_Abrir_Modulo_Paises( true, false, 60, '1' );
+    var_Registro := UTI_Abrir_Modulo_Paises( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
        FieldByName('id_paises').AsString := Trim(var_Registro.id_1);
@@ -168,7 +168,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with f_clientes_000.SQLQuery_Clientes_Envios do
   begin
-    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, 110, '1' );
+    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, '1' );
 
     if var_Registro.id_1 <> '' then
     begin
@@ -188,7 +188,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with f_clientes_000.SQLQuery_Clientes_Envios do
   begin
-    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, 100, '1' );
+    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_provincias').AsString := Trim(var_Registro.id_1);

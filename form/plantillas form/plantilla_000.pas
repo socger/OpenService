@@ -590,6 +590,9 @@ begin
 end;
 
 procedure Tform_plantilla_000.Cambiar_Estilo_Form;
+var
+  v_i    : Integer;
+  v_Skin : Trecord_Skin;
 begin
   with Self do
   begin
@@ -600,6 +603,25 @@ begin
   end;
 
   Cambiar_WindowState;
+
+  v_Skin := UTI_CN_Traer_Configuracion_Skin;
+
+  for v_i := 0 to (ComponentCount - 1) do
+  begin
+    if (Components[v_i] is TDBGrid) then
+    begin
+      TDBGrid(Components[v_i]).Color          := TColor(v_Skin.DbGrid_Color);
+      TDBGrid(Components[v_i]).AlternateColor := TColor(v_Skin.DbGrid_Color_AlternateColor);
+
+      jerofa hay que ver también cuando es elegido como se van a rellenar los colores de los grids
+      y del fondo del form
+
+      y los dbEdit y Edit
+
+      También los grids de filtros ... ver sus colores
+    end;
+
+  end;
 end;
 
 procedure Tform_plantilla_000.RadioGroup_BajasClick(Sender: TObject);
@@ -3302,8 +3324,6 @@ end;
 end.
 
 (*
-en utilidades_form_filtrar ... quitar de las llamadas todos los menu_worked y que lo tenga en si la functio desde la que se llama al módulo
-
 En el init debería de tener los colores con los que configuro las plantillas (grids, etc)
 
 En form_visitas_001 hay una llamada desde el botón de elegir cliente a clientes_000 que antes se hacía a pelo

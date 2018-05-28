@@ -23,81 +23,81 @@ type
     function UTI_Abrir_Form( param_Elegimos, param_Solo_Ver : Boolean; param_Campo : ShortString ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_SN( param_Menu_Worked : Integer ) : Boolean;
 
-    function UTI_Abrir_Modulo_Clientes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Clientes_Tipos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Actividades( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Reportes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_ServiciosRegulares( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_ServiciosTipos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_ServiciosSeries( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_ConfigurarAPP( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_FacturasVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_FacturasCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_AlbaranesCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_FacturasCompras_Cerrar( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_FacturasVentas_Cerrar( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_UltimasVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_MargenesIncrementoTarifas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_PedidosCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_PresupuestosCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Tarifas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Tablas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_VisitasPorRepresentante( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_VisitasPorActividad( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_VisitasPorTipoCliente( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_VisitasPorCliente( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_VisitasPorProvincia( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_VisitasPorZona( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_PlanificacionPorZona( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_PlanificacionPorProvincia( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_VisitasTipos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_PresupuestosVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_PedidosVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_VisitasResultados( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Visitas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Rutas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_AlbaranesVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_VehiculosEquipamientos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Almacenes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Articulos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Combustibles( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Clientes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Clientes_Tipos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Actividades( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Reportes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_ServiciosRegulares( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_ServiciosTipos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_ServiciosSeries( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_ConfigurarAPP( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_FacturasVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_FacturasCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_AlbaranesCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_FacturasCompras_Cerrar( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_FacturasVentas_Cerrar( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_UltimasVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_MargenesIncrementoTarifas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_PedidosCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_PresupuestosCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Tarifas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Tablas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_VisitasPorRepresentante( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_VisitasPorActividad( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_VisitasPorTipoCliente( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_VisitasPorCliente( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_VisitasPorProvincia( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_VisitasPorZona( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_PlanificacionPorZona( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_PlanificacionPorProvincia( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_VisitasTipos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_PresupuestosVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_PedidosVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_VisitasResultados( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Visitas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Rutas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_AlbaranesVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_VehiculosEquipamientos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Almacenes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Articulos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Combustibles( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Peliculas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Personal( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Proveedores( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Tarjetas_Transporte( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_MarcasVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_TiposVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Vehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_TipoCambiosVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_TipoRuedasVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Personal( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Proveedores( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Tarjetas_Transporte( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_MarcasVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_TiposVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Vehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_TipoCambiosVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_TipoRuedasVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Usuarios( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Menus( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_FamiliasArticulos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_FamiliasPersonal( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_FamiliasContratosPersonal( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_ContratosPersonal( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Empresas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_FamiliasGastos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_CuentasBancos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_MovimientosAlmacen( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_OfertasArticulos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_CtasPagosCobros( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Menus( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_FamiliasArticulos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_FamiliasPersonal( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_FamiliasContratosPersonal( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_ContratosPersonal( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Empresas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_FamiliasGastos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_CuentasBancos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_MovimientosAlmacen( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_OfertasArticulos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_CtasPagosCobros( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Medios( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Poblaciones( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_FormasPago( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_GruposDeCocina( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Impresoras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Impuestos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Paises( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Provincias( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Representantes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Terminales( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_TiposProveedores( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Poblaciones( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_FormasPago( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_GruposDeCocina( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Impresoras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Impuestos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Paises( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Provincias( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Representantes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Terminales( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_TiposProveedores( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Elegir_Impuestos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_id_impuesto_que_no_tiene_que_aparecer : String; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Elegir_cliente_contacto( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Elegir_Diario_Tipo( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Menu_Worked : Integer; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Elegir_cliente_contacto( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Elegir_Diario_Tipo( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 
 implementation
 
@@ -157,235 +157,235 @@ begin
 
      { MENUS }
      If UpperCase('Id_Menus') = UpperCase(Trim(param_Campo)) then
-       Result := UTI_Abrir_Modulo_Menus( param_Elegimos, param_Solo_Ver, 40, '1' );
+       Result := UTI_Abrir_Modulo_Menus( param_Elegimos, param_Solo_Ver, '1' );
 
      { CLIENTES }
      If UpperCase('id_clientes') = UpperCase(Trim(param_Campo)) then
-       Result := UTI_Abrir_Modulo_Clientes( param_Elegimos, param_Solo_Ver, 50, '1' );
+       Result := UTI_Abrir_Modulo_Clientes( param_Elegimos, param_Solo_Ver, '1' );
 
      { PAISES }
      If UpperCase('id_paises') = UpperCase(Trim(param_Campo)) then
-       Result := UTI_Abrir_Modulo_Paises( param_Elegimos, param_Solo_Ver, 60, '1' );
+       Result := UTI_Abrir_Modulo_Paises( param_Elegimos, param_Solo_Ver, '1' );
 
      { CLIENTES TIPOS }
      If UpperCase('id_clientes_tipos') = UpperCase(Trim(param_Campo)) then
-       Result := UTI_Abrir_Modulo_Clientes_tipos( param_Elegimos, param_Solo_Ver, 70, '1' );
+       Result := UTI_Abrir_Modulo_Clientes_tipos( param_Elegimos, param_Solo_Ver, '1' );
 
      { FORMAS PAGO }
      If UpperCase('id_formas_pago') = UpperCase(Trim(param_Campo)) then
-       Result := UTI_Abrir_Modulo_FormasPago( param_Elegimos, param_Solo_Ver, 80, '1' );
+       Result := UTI_Abrir_Modulo_FormasPago( param_Elegimos, param_Solo_Ver, '1' );
 
      { TARIFAS }
      If UpperCase('id_tarifas') = UpperCase(Trim(param_Campo)) then
-       Result := UTI_Abrir_Modulo_Tarifas( param_Elegimos, param_Solo_Ver, 90, '1' );
+       Result := UTI_Abrir_Modulo_Tarifas( param_Elegimos, param_Solo_Ver, '1' );
 
     { PROVINCIAS }
     If UpperCase('id_provincias') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Provincias( param_Elegimos, param_Solo_Ver, 100, '1' );
+      Result := UTI_Abrir_Modulo_Provincias( param_Elegimos, param_Solo_Ver, '1' );
 
     { POBLACIONES }
     If UpperCase('id_poblaciones') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Poblaciones( param_Elegimos, param_Solo_Ver, 110, '1' );
+      Result := UTI_Abrir_Modulo_Poblaciones( param_Elegimos, param_Solo_Ver, '1' );
 
     { PROVEEDORES }
     If ( UpperCase('id_proveedores') = UpperCase(Trim(param_Campo)) )         or
        ( UpperCase('id_Empleado_de') = UpperCase(Trim(param_Campo)) )         or
        ( UpperCase('id_Agencias_Transporte') = UpperCase(Trim(param_Campo)) ) then
     begin
-      Result := UTI_Abrir_Modulo_Proveedores( param_Elegimos, param_Solo_Ver, 120, '1' );
+      Result := UTI_Abrir_Modulo_Proveedores( param_Elegimos, param_Solo_Ver, '1' );
     end;
 
     { REPRESENTANTES }
     If UpperCase('id_representantes') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Representantes( param_Elegimos, param_Solo_Ver, 130, '1' );
+      Result := UTI_Abrir_Modulo_Representantes( param_Elegimos, param_Solo_Ver, '1' );
 
     { PROVEEDORES TIPOS }
     If UpperCase('id_proveedores_tipos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_TiposProveedores( param_Elegimos, param_Solo_Ver, 140, '1' );
+      Result := UTI_Abrir_Modulo_TiposProveedores( param_Elegimos, param_Solo_Ver, '1' );
 
     { ARTICULOS FAMILIAS }
     If UpperCase('id_articulos_familias') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_FamiliasArticulos( param_Elegimos, param_Solo_Ver, 150, '1' );
+      Result := UTI_Abrir_Modulo_FamiliasArticulos( param_Elegimos, param_Solo_Ver, '1' );
 
     { TERMINALES }
     If UpperCase('id_terminales') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Terminales( param_Elegimos, param_Solo_Ver, 160, '1' );
+      Result := UTI_Abrir_Modulo_Terminales( param_Elegimos, param_Solo_Ver, '1' );
 
     { ARTICULOS }
     If UpperCase('id_articulos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Articulos( param_Elegimos, param_Solo_Ver, 170, '1' );
+      Result := UTI_Abrir_Modulo_Articulos( param_Elegimos, param_Solo_Ver, '1' );
 
     { GRUPOS COCINA }
     If UpperCase('id_grupos_cocina') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_GruposDeCocina( param_Elegimos, param_Solo_Ver, 180, '1' );
+      Result := UTI_Abrir_Modulo_GruposDeCocina( param_Elegimos, param_Solo_Ver, '1' );
 
     { IMPRESORAS }
     If UpperCase('id_impresoras') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Impresoras( param_Elegimos, param_Solo_Ver, 190, '1' );
+      Result := UTI_Abrir_Modulo_Impresoras( param_Elegimos, param_Solo_Ver, '1' );
 
     { IMPUESTOS }
     If UpperCase('id_impuestos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Impuestos( param_Elegimos, param_Solo_Ver, 200, '1' );
+      Result := UTI_Abrir_Modulo_Impuestos( param_Elegimos, param_Solo_Ver, '1' );
 
     { PERSONAL FAMILIAS }
     If UpperCase('id_personal_familias') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_FamiliasPersonal( param_Elegimos, param_Solo_Ver, 210, '1' );
+      Result := UTI_Abrir_Modulo_FamiliasPersonal( param_Elegimos, param_Solo_Ver, '1' );
 
     { PERSONAL }
     If UpperCase('id_personal') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Personal( param_Elegimos, param_Solo_Ver, 220, '1' );
+      Result := UTI_Abrir_Modulo_Personal( param_Elegimos, param_Solo_Ver, '1' );
 
     { PERSONAL CONTRATOS FAMILIAS }
     If UpperCase('id_personal_contratos_familias') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_FamiliasContratosPersonal( param_Elegimos, param_Solo_Ver, 230, '1' );
+      Result := UTI_Abrir_Modulo_FamiliasContratosPersonal( param_Elegimos, param_Solo_Ver, '1' );
 
     { PERSONAL CONTRATOS }
     If UpperCase('id_personal_contratos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_ContratosPersonal( param_Elegimos, param_Solo_Ver, 240, '1' );
+      Result := UTI_Abrir_Modulo_ContratosPersonal( param_Elegimos, param_Solo_Ver, '1' );
 
     { EMPRESAS }
     If UpperCase('id_empresas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Empresas( param_Elegimos, param_Solo_Ver, 250, '1' );
+      Result := UTI_Abrir_Modulo_Empresas( param_Elegimos, param_Solo_Ver, '1' );
 
     { ALMACENES }
     If (UpperCase('id_almacenes') = UpperCase(Trim(param_Campo)))         or
        (UpperCase('id_almacenes_origen') = UpperCase(Trim(param_Campo)))  or
        (UpperCase('id_almacenes_destino') = UpperCase(Trim(param_Campo))) then
     begin
-      Result := UTI_Abrir_Modulo_Almacenes( param_Elegimos, param_Solo_Ver, 260, '1' );
+      Result := UTI_Abrir_Modulo_Almacenes( param_Elegimos, param_Solo_Ver, '1' );
     end;
 
     { GASTOS TIPOS }
     If UpperCase('id_gastos_tipos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_FamiliasGastos( param_Elegimos, param_Solo_Ver, 270, '1' );
+      Result := UTI_Abrir_Modulo_FamiliasGastos( param_Elegimos, param_Solo_Ver, '1' );
 
     { CUENTAS PAGOS COBROS }
     If UpperCase('id_cuentas_pagos_cobros') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_CtasPagosCobros( param_Elegimos, param_Solo_Ver, 280, '1' );
+      Result := UTI_Abrir_Modulo_CtasPagosCobros( param_Elegimos, param_Solo_Ver, '1' );
 
     { CONCEPTOS ALMACEN TRASPASO }
     If UpperCase('id_conceptos_almacen_traspaso') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( param_Elegimos, param_Solo_Ver, 290, '1' );
+      Result := UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( param_Elegimos, param_Solo_Ver, '1' );
 
     { ARTICULOS OFERTAS }
     If UpperCase('id_articulos_ofertas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_OfertasArticulos( param_Elegimos, param_Solo_Ver, 300, '1' );
+      Result := UTI_Abrir_Modulo_OfertasArticulos( param_Elegimos, param_Solo_Ver, '1' );
 
     { bancos empresas }
     If UpperCase('id_bancos_empresas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_CuentasBancos( param_Elegimos, param_Solo_Ver, 310, '1' );
+      Result := UTI_Abrir_Modulo_CuentasBancos( param_Elegimos, param_Solo_Ver, '1' );
 
     { ALMACENES MOVIMIENTOS }
     If UpperCase('id_almacenes_movimientos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_MovimientosAlmacen( param_Elegimos, param_Solo_Ver, 320, '1' );
+      Result := UTI_Abrir_Modulo_MovimientosAlmacen( param_Elegimos, param_Solo_Ver, '1' );
 
     { VEHICULOS }
     If UpperCase('id_vehiculos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Vehiculos( param_Elegimos, param_Solo_Ver, 350, '1' );
+      Result := UTI_Abrir_Modulo_Vehiculos( param_Elegimos, param_Solo_Ver, '1' );
 
     { VEHICULOS TIPOS }
     If UpperCase('id_vehiculos_tipos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_TiposVehiculos( param_Elegimos, param_Solo_Ver, 360, '1' );
+      Result := UTI_Abrir_Modulo_TiposVehiculos( param_Elegimos, param_Solo_Ver, '1' );
 
     { VEHICULOS MARCAS }
     If UpperCase('id_vehiculos_marcas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_MarcasVehiculos( param_Elegimos, param_Solo_Ver, 370, '1' );
+      Result := UTI_Abrir_Modulo_MarcasVehiculos( param_Elegimos, param_Solo_Ver, '1' );
 
     { COMBUSTIBLES }
     If UpperCase('id_combustibles') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Combustibles( param_Elegimos, param_Solo_Ver, 380, '1' );
+      Result := UTI_Abrir_Modulo_Combustibles( param_Elegimos, param_Solo_Ver, '1' );
 
     { VEHICULOS TIPO CAMBIOS }
     If UpperCase('id_vehiculos_tipo_cambios') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_TipoCambiosVehiculos( param_Elegimos, param_Solo_Ver, 390, '1' );
+      Result := UTI_Abrir_Modulo_TipoCambiosVehiculos( param_Elegimos, param_Solo_Ver, '1' );
 
     { VEHICULOS TIPO RUEDAS }
     If UpperCase('id_vehiculos_tipo_ruedas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_TipoRuedasVehiculos( param_Elegimos, param_Solo_Ver, 400, '1' );
+      Result := UTI_Abrir_Modulo_TipoRuedasVehiculos( param_Elegimos, param_Solo_Ver, '1' );
 
     { TARJETAS TRANSPORTE }
     If UpperCase('id_tarjetas_transporte') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Tarjetas_Transporte( param_Elegimos, param_Solo_Ver, 410, '1' );
+      Result := UTI_Abrir_Modulo_Tarjetas_Transporte( param_Elegimos, param_Solo_Ver, '1' );
 
     { VEHICULOS EQUIPAMIENTOS }
     If UpperCase('id_vehiculos_equipamientos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_VehiculosEquipamientos( param_Elegimos, param_Solo_Ver, 420, '1' );
+      Result := UTI_Abrir_Modulo_VehiculosEquipamientos( param_Elegimos, param_Solo_Ver, '1' );
 
     { ALBARANES VENTAS }
     If UpperCase('id_albaranes_ventas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_AlbaranesVentas( param_Elegimos, param_Solo_Ver, 430, '1' );
+      Result := UTI_Abrir_Modulo_AlbaranesVentas( param_Elegimos, param_Solo_Ver, '1' );
 
     { PRESUPUESTOS VENTAS }
     If UpperCase('id_presupuestos_ventas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_PresupuestosVentas( param_Elegimos, param_Solo_Ver, 440, '1' );
+      Result := UTI_Abrir_Modulo_PresupuestosVentas( param_Elegimos, param_Solo_Ver, '1' );
 
     { PEDIDOS VENTAS }
     If UpperCase('id_pedidos_ventas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_PedidosVentas( param_Elegimos, param_Solo_Ver, 450, '1' );
+      Result := UTI_Abrir_Modulo_PedidosVentas( param_Elegimos, param_Solo_Ver, '1' );
 
     { CONFIGURACION }
     If UpperCase('id_configuracion') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_ConfigurarAPP( param_Elegimos, param_Solo_Ver, 460, '1' );
+      Result := UTI_Abrir_Modulo_ConfigurarAPP( param_Elegimos, param_Solo_Ver, '1' );
 
     { VISITAS TIPOS }
     If UpperCase('id_visitas_tipos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_VisitasTipos( param_Elegimos, param_Solo_Ver, 470, '1' );
+      Result := UTI_Abrir_Modulo_VisitasTipos( param_Elegimos, param_Solo_Ver, '1' );
 
     { VISITAS RESULTADOS }
     If UpperCase('id_visitas_resultados') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_VisitasResultados( param_Elegimos, param_Solo_Ver, 480, '1' );
+      Result := UTI_Abrir_Modulo_VisitasResultados( param_Elegimos, param_Solo_Ver, '1' );
 
     { VISITAS }
     If UpperCase('id_visitas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Visitas( param_Elegimos, param_Solo_Ver, 490, '1' );
+      Result := UTI_Abrir_Modulo_Visitas( param_Elegimos, param_Solo_Ver, '1' );
 
     { ACTIVIDADES }
     If UpperCase('id_actividades') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Actividades( param_Elegimos, param_Solo_Ver, 500, '1' );
+      Result := UTI_Abrir_Modulo_Actividades( param_Elegimos, param_Solo_Ver, '1' );
 
     { RUTAS / ZONAS }
     If UpperCase('id_rutas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Rutas( param_Elegimos, param_Solo_Ver, 510, '1' );
+      Result := UTI_Abrir_Modulo_Rutas( param_Elegimos, param_Solo_Ver, '1' );
 
     { FACTURAS VENTAS }
     If UpperCase('id_facturas_ventas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_FacturasVentas( param_Elegimos, param_Solo_Ver, 600, '1' );
+      Result := UTI_Abrir_Modulo_FacturasVentas( param_Elegimos, param_Solo_Ver, '1' );
 
     { MARGENES PARA INCREMENTO DE TARIFAS }
     If UpperCase('id_margenes_tarifas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_MargenesIncrementoTarifas( param_Elegimos, param_Solo_Ver, 610, '1' );
+      Result := UTI_Abrir_Modulo_MargenesIncrementoTarifas( param_Elegimos, param_Solo_Ver, '1' );
 
     { PRESUPUESTOS COMPRAS }
     If UpperCase('id_presupuestos_compras') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_PresupuestosCompras( param_Elegimos, param_Solo_Ver, 620, '1' );
+      Result := UTI_Abrir_Modulo_PresupuestosCompras( param_Elegimos, param_Solo_Ver, '1' );
 
     { PEDIDOS COMPRAS }
     If UpperCase('id_pedidos_compras') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_PedidosCompras( param_Elegimos, param_Solo_Ver, 630, '1' );
+      Result := UTI_Abrir_Modulo_PedidosCompras( param_Elegimos, param_Solo_Ver, '1' );
 
     { ALBARANES COMPRAS }
     If UpperCase('id_albaranes_compras') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_AlbaranesCompras( param_Elegimos, param_Solo_Ver, 640, '1' );
+      Result := UTI_Abrir_Modulo_AlbaranesCompras( param_Elegimos, param_Solo_Ver, '1' );
 
     { FACTURAS COMPRAS }
     If UpperCase('id_facturas_compras') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_FacturasCompras( param_Elegimos, param_Solo_Ver, 650, '1' );
+      Result := UTI_Abrir_Modulo_FacturasCompras( param_Elegimos, param_Solo_Ver, '1' );
 
     { REPORTES / INFORMES }
     If UpperCase('id_informes') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Reportes( param_Elegimos, param_Solo_Ver, 700, '1' );
+      Result := UTI_Abrir_Modulo_Reportes( param_Elegimos, param_Solo_Ver, '1' );
 
     { SERVICIOS TIPOS }
     If UpperCase('id_servicios_tipos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_ServiciosTipos( param_Elegimos, param_Solo_Ver, 710, '1' );
+      Result := UTI_Abrir_Modulo_ServiciosTipos( param_Elegimos, param_Solo_Ver, '1' );
 
     { SERVICIOS REGULARES }
     If UpperCase('id_servicios_regulares') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_ServiciosRegulares( param_Elegimos, param_Solo_Ver, 720, '1' );
+      Result := UTI_Abrir_Modulo_ServiciosRegulares( param_Elegimos, param_Solo_Ver, '1' );
 
     { SERIES DE SERVICIOS }
     If UpperCase('id_series_servicios') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_ServiciosSeries( param_Elegimos, param_Solo_Ver, 730, '1' );
+      Result := UTI_Abrir_Modulo_ServiciosSeries( param_Elegimos, param_Solo_Ver, '1' );
 
 end;
 
@@ -447,11 +447,11 @@ begin
 
 end;
 
-function UTI_Abrir_Modulo_Clientes( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                    param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Clientes( param_Elegimos : Boolean;
+                                    param_Solo_Ver : Boolean;
                                     param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 50 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -460,7 +460,7 @@ begin
     f_clientes_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_clientes_000.public_Solo_Ver                   := param_Solo_Ver;
     f_clientes_000.public_Elegimos                   := param_Elegimos;
-    f_clientes_000.public_Menu_Worked                := param_Menu_Worked;
+    f_clientes_000.public_Menu_Worked                := 50;
 
     f_clientes_000.para_Empezar;
 
@@ -483,11 +483,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Clientes_Tipos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                          param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Clientes_Tipos( param_Elegimos : Boolean;
+                                          param_Solo_Ver : Boolean;
                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 70 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -496,7 +496,7 @@ begin
     f_clientes_tipos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_clientes_tipos_000.public_Solo_Ver                   := param_Solo_Ver;
     f_clientes_tipos_000.public_Elegimos                   := param_Elegimos;
-    f_clientes_tipos_000.public_Menu_Worked                := param_Menu_Worked;
+    f_clientes_tipos_000.public_Menu_Worked                := 70;
 
     f_clientes_tipos_000.para_Empezar;
 
@@ -519,11 +519,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Actividades( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                       param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Actividades( param_Elegimos : Boolean;
+                                       param_Solo_Ver : Boolean;
                                        param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 500 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -532,7 +532,7 @@ begin
     f_actividades_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_actividades_000.public_Solo_Ver                   := param_Solo_Ver;
     f_actividades_000.public_Elegimos                   := param_Elegimos;
-    f_actividades_000.public_Menu_Worked                := param_Menu_Worked;
+    f_actividades_000.public_Menu_Worked                := 500;
 
     f_actividades_000.para_Empezar;
 
@@ -555,11 +555,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Reportes( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                    param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Reportes( param_Elegimos : Boolean;
+                                    param_Solo_Ver : Boolean;
                                     param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 700 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -568,7 +568,7 @@ begin
     f_reportes_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_reportes_000.public_Solo_Ver                   := param_Solo_Ver;
     f_reportes_000.public_Elegimos                   := param_Elegimos;
-    f_reportes_000.public_Menu_Worked                := param_Menu_Worked;
+    f_reportes_000.public_Menu_Worked                := 700;
 
     f_reportes_000.para_Empezar;
 
@@ -591,11 +591,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_ServiciosRegulares( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                              param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_ServiciosRegulares( param_Elegimos : Boolean;
+                                              param_Solo_Ver : Boolean;
                                               param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 720 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -604,7 +604,7 @@ begin
     f_servicios_regulares_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_servicios_regulares_000.public_Solo_Ver                   := param_Solo_Ver;
     f_servicios_regulares_000.public_Elegimos                   := param_Elegimos;
-    f_servicios_regulares_000.public_Menu_Worked                := param_Menu_Worked;
+    f_servicios_regulares_000.public_Menu_Worked                := 720;
 
     f_servicios_regulares_000.para_Empezar;
 
@@ -627,11 +627,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_ServiciosTipos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                          param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_ServiciosTipos( param_Elegimos : Boolean;
+                                          param_Solo_Ver : Boolean;
                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 710 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -640,7 +640,7 @@ begin
     f_servicios_tipos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_servicios_tipos_000.public_Solo_Ver                   := param_Solo_Ver;
     f_servicios_tipos_000.public_Elegimos                   := param_Elegimos;
-    f_servicios_tipos_000.public_Menu_Worked                := param_Menu_Worked;
+    f_servicios_tipos_000.public_Menu_Worked                := 710;
 
     f_servicios_tipos_000.para_Empezar;
 
@@ -663,11 +663,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_ServiciosSeries( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                           param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_ServiciosSeries( param_Elegimos : Boolean;
+                                           param_Solo_Ver : Boolean;
                                            param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 730 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -676,7 +676,7 @@ begin
     f_series_servicios_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_series_servicios_000.public_Solo_Ver                   := param_Solo_Ver;
     f_series_servicios_000.public_Elegimos                   := param_Elegimos;
-    f_series_servicios_000.public_Menu_Worked                := param_Menu_Worked;
+    f_series_servicios_000.public_Menu_Worked                := 730;
 
     f_series_servicios_000.para_Empezar;
 
@@ -699,20 +699,20 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_ConfigurarAPP( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                         param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_ConfigurarAPP( param_Elegimos : Boolean;
+                                         param_Solo_Ver : Boolean;
                                          param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 460 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
     Application.CreateForm( Tform_configuracion_000, form_configuracion_000 );
 
 //    form_configuracion_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    form_configuracion_000.public_Solo_Ver                   := param_Solo_Ver;
-    form_configuracion_000.public_Elegimos                   := param_Elegimos;
-    form_configuracion_000.public_Menu_Worked                := param_Menu_Worked;
+    form_configuracion_000.public_Solo_Ver                     := param_Solo_Ver;
+    form_configuracion_000.public_Elegimos                     := param_Elegimos;
+    form_configuracion_000.public_Menu_Worked                  := 460;
 
     form_configuracion_000.para_Empezar;
 
@@ -735,11 +735,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_FacturasCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                           param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_FacturasCompras( param_Elegimos : Boolean;
+                                           param_Solo_Ver : Boolean;
                                            param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 650 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -748,7 +748,7 @@ begin
 //    form_facturas_compras_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_facturas_compras_000.public_Solo_Ver                   := param_Solo_Ver;
     form_facturas_compras_000.public_Elegimos                   := param_Elegimos;
-    form_facturas_compras_000.public_Menu_Worked                := param_Menu_Worked;
+    form_facturas_compras_000.public_Menu_Worked                := 650;
 
     form_facturas_compras_000.para_Empezar;
 
@@ -771,11 +771,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_FacturasVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                          param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_FacturasVentas( param_Elegimos : Boolean;
+                                          param_Solo_Ver : Boolean;
                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 600 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -784,7 +784,7 @@ begin
 //    form_facturas_ventas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_facturas_ventas_000.public_Solo_Ver                   := param_Solo_Ver;
     form_facturas_ventas_000.public_Elegimos                   := param_Elegimos;
-    form_facturas_ventas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_facturas_ventas_000.public_Menu_Worked                := 600;
 
     form_facturas_ventas_000.para_Empezar;
 
@@ -807,20 +807,20 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_AlbaranesCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                            param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_AlbaranesCompras( param_Elegimos : Boolean;
+                                            param_Solo_Ver : Boolean;
                                             param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 640 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
     Application.CreateForm( Tform_albaranes_compras_000, form_albaranes_compras_000 );
 
 //    form_albaranes_compras_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    form_albaranes_compras_000.public_Solo_Ver                   := param_Solo_Ver;
-    form_albaranes_compras_000.public_Elegimos                   := param_Elegimos;
-    form_albaranes_compras_000.public_Menu_Worked                := param_Menu_Worked;
+    form_albaranes_compras_000.public_Solo_Ver                     := param_Solo_Ver;
+    form_albaranes_compras_000.public_Elegimos                     := param_Elegimos;
+    form_albaranes_compras_000.public_Menu_Worked                  := 640;
 
     form_albaranes_compras_000.para_Empezar;
 
@@ -843,11 +843,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_FacturasCompras_Cerrar( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                                  param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_FacturasCompras_Cerrar( param_Elegimos : Boolean;
+                                                  param_Solo_Ver : Boolean;
                                                   param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 680 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -862,11 +862,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_FacturasVentas_Cerrar( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                                 param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_FacturasVentas_Cerrar( param_Elegimos : Boolean;
+                                                 param_Solo_Ver : Boolean;
                                                  param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 670 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -881,11 +881,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_UltimasVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                         param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_UltimasVentas( param_Elegimos : Boolean;
+                                         param_Solo_Ver : Boolean;
                                          param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 690 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -899,20 +899,20 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_MargenesIncrementoTarifas( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                                     param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_MargenesIncrementoTarifas( param_Elegimos : Boolean;
+                                                     param_Solo_Ver : Boolean;
                                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 610 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
     Application.CreateForm( Tform_margenes_tarifas_000, form_margenes_tarifas_000 );
 
 //    form_margenes_tarifas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    form_margenes_tarifas_000.public_Solo_Ver                   := param_Solo_Ver;
-    form_margenes_tarifas_000.public_Elegimos                   := param_Elegimos;
-    form_margenes_tarifas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_margenes_tarifas_000.public_Solo_Ver                     := param_Solo_Ver;
+    form_margenes_tarifas_000.public_Elegimos                     := param_Elegimos;
+    form_margenes_tarifas_000.public_Menu_Worked                  := 610;
 
     form_margenes_tarifas_000.para_Empezar;
 
@@ -935,11 +935,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_PedidosCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                          param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_PedidosCompras( param_Elegimos : Boolean;
+                                          param_Solo_Ver : Boolean;
                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 630 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -948,7 +948,7 @@ begin
 //    form_pedidos_compras_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_pedidos_compras_000.public_Solo_Ver                   := param_Solo_Ver;
     form_pedidos_compras_000.public_Elegimos                   := param_Elegimos;
-    form_pedidos_compras_000.public_Menu_Worked                := param_Menu_Worked;
+    form_pedidos_compras_000.public_Menu_Worked                := 630;
 
     form_pedidos_compras_000.para_Empezar;
 
@@ -971,11 +971,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_PresupuestosCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                               param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_PresupuestosCompras( param_Elegimos : Boolean;
+                                               param_Solo_Ver : Boolean;
                                                param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 620 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -984,7 +984,7 @@ begin
 //    form_presupuestos_compras_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_presupuestos_compras_000.public_Solo_Ver                   := param_Solo_Ver;
     form_presupuestos_compras_000.public_Elegimos                   := param_Elegimos;
-    form_presupuestos_compras_000.public_Menu_Worked                := param_Menu_Worked;
+    form_presupuestos_compras_000.public_Menu_Worked                := 620;
 
     form_presupuestos_compras_000.para_Empezar;
 
@@ -1007,11 +1007,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Tarifas( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                   param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Tarifas( param_Elegimos : Boolean;
+                                   param_Solo_Ver : Boolean;
                                    param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 90 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1020,7 +1020,7 @@ begin
 //    form_tarifas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_tarifas_000.public_Solo_Ver                   := param_Solo_Ver;
     form_tarifas_000.public_Elegimos                   := param_Elegimos;
-    form_tarifas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_tarifas_000.public_Menu_Worked                := 90;
 
     form_tarifas_000.para_Empezar;
 
@@ -1043,11 +1043,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Tablas( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                  param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Tablas( param_Elegimos : Boolean;
+                                  param_Solo_Ver : Boolean;
                                   param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 660 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1061,17 +1061,17 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_VisitasPorRepresentante( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                                   param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_VisitasPorRepresentante( param_Elegimos : Boolean;
+                                                   param_Solo_Ver : Boolean;
                                                    param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 570 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
     Application.CreateForm( Tform_visitas_por_representante_000, form_visitas_por_representante_000 );
 
-    form_visitas_por_representante_000.public_Menu_Worked := param_Menu_Worked;
+    form_visitas_por_representante_000.public_Menu_Worked := 570;
     form_visitas_por_representante_000.para_Empezar;
 
     form_visitas_por_representante_000.ShowModal;
@@ -1080,17 +1080,17 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_VisitasPorActividad( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                               param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_VisitasPorActividad( param_Elegimos : Boolean;
+                                               param_Solo_Ver : Boolean;
                                                param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 560 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
     Application.CreateForm( Tform_visitas_por_actividad_000, form_visitas_por_actividad_000 );
 
-    form_visitas_por_actividad_000.public_Menu_Worked := param_Menu_Worked;
+    form_visitas_por_actividad_000.public_Menu_Worked := 560;
     form_visitas_por_actividad_000.para_Empezar;
 
     form_visitas_por_actividad_000.ShowModal;
@@ -1099,17 +1099,17 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_VisitasPorTipoCliente( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                                 param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_VisitasPorTipoCliente( param_Elegimos : Boolean;
+                                                 param_Solo_Ver : Boolean;
                                                  param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 550 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
     Application.CreateForm( Tform_visitas_por_tipo_cliente_000, form_visitas_por_tipo_cliente_000 );
 
-    form_visitas_por_tipo_cliente_000.public_Menu_Worked := param_Menu_Worked;
+    form_visitas_por_tipo_cliente_000.public_Menu_Worked := 550;
     form_visitas_por_tipo_cliente_000.para_Empezar;
 
     form_visitas_por_tipo_cliente_000.ShowModal;
@@ -1118,17 +1118,17 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_VisitasPorCliente( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                             param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_VisitasPorCliente( param_Elegimos : Boolean;
+                                             param_Solo_Ver : Boolean;
                                              param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 540 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
     Application.CreateForm( Tform_visitas_por_cliente_000, form_visitas_por_cliente_000 );
 
-    form_visitas_por_cliente_000.public_Menu_Worked := param_Menu_Worked;
+    form_visitas_por_cliente_000.public_Menu_Worked := 540;
     form_visitas_por_cliente_000.para_Empezar;
 
     form_visitas_por_cliente_000.ShowModal;
@@ -1137,17 +1137,17 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_VisitasPorProvincia( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                               param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_VisitasPorProvincia( param_Elegimos : Boolean;
+                                               param_Solo_Ver : Boolean;
                                                param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 530 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
     Application.CreateForm( Tform_visitas_por_provincia_000, form_visitas_por_provincia_000 );
 
-    form_visitas_por_provincia_000.public_Menu_Worked := param_Menu_Worked;
+    form_visitas_por_provincia_000.public_Menu_Worked := 530;
     form_visitas_por_provincia_000.para_Empezar;
 
     form_visitas_por_provincia_000.ShowModal;
@@ -1156,17 +1156,17 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_VisitasPorZona( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                          param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_VisitasPorZona( param_Elegimos : Boolean;
+                                          param_Solo_Ver : Boolean;
                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 520 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
     Application.CreateForm( Tform_visitas_por_zona_000, form_visitas_por_zona_000 );
 
-    form_visitas_por_zona_000.public_Menu_Worked := param_Menu_Worked;
+    form_visitas_por_zona_000.public_Menu_Worked := 520;
     form_visitas_por_zona_000.para_Empezar;
 
     form_visitas_por_zona_000.ShowModal;
@@ -1175,17 +1175,17 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_PlanificacionPorZona( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                                param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_PlanificacionPorZona( param_Elegimos : Boolean;
+                                                param_Solo_Ver : Boolean;
                                                 param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 580 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
     Application.CreateForm( Tform_visitas_planificacion_por_zona_000, form_visitas_planificacion_por_zona_000 );
 
-    form_visitas_planificacion_por_zona_000.public_Menu_Worked := param_Menu_Worked;
+    form_visitas_planificacion_por_zona_000.public_Menu_Worked := 580;
     form_visitas_planificacion_por_zona_000.para_Empezar;
 
     form_visitas_planificacion_por_zona_000.ShowModal;
@@ -1194,17 +1194,17 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_PlanificacionPorProvincia( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                                     param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_PlanificacionPorProvincia( param_Elegimos : Boolean;
+                                                     param_Solo_Ver : Boolean;
                                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 590 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
     Application.CreateForm( Tform_visitas_planificacion_por_provincia_000, form_visitas_planificacion_por_provincia_000 );
 
-    form_visitas_planificacion_por_provincia_000.public_Menu_Worked := param_Menu_Worked;
+    form_visitas_planificacion_por_provincia_000.public_Menu_Worked := 590;
     form_visitas_planificacion_por_provincia_000.para_Empezar;
 
     form_visitas_planificacion_por_provincia_000.ShowModal;
@@ -1213,11 +1213,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_VisitasTipos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                        param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_VisitasTipos( param_Elegimos : Boolean;
+                                        param_Solo_Ver : Boolean;
                                         param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 470 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1226,7 +1226,7 @@ begin
 //    form_visitas_tipos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_visitas_tipos_000.public_Solo_Ver                   := param_Solo_Ver;
     form_visitas_tipos_000.public_Elegimos                   := param_Elegimos;
-    form_visitas_tipos_000.public_Menu_Worked                := param_Menu_Worked;
+    form_visitas_tipos_000.public_Menu_Worked                := 470;
 
     form_visitas_tipos_000.para_Empezar;
 
@@ -1249,11 +1249,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_PresupuestosVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                              param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_PresupuestosVentas( param_Elegimos : Boolean;
+                                              param_Solo_Ver : Boolean;
                                               param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 440 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1262,7 +1262,7 @@ begin
 //    form_presupuestos_ventas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_presupuestos_ventas_000.public_Solo_Ver                   := param_Solo_Ver;
     form_presupuestos_ventas_000.public_Elegimos                   := param_Elegimos;
-    form_presupuestos_ventas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_presupuestos_ventas_000.public_Menu_Worked                := 440;
 
     form_presupuestos_ventas_000.para_Empezar;
 
@@ -1285,11 +1285,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_PedidosVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                         param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_PedidosVentas( param_Elegimos : Boolean;
+                                         param_Solo_Ver : Boolean;
                                          param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 450 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1298,7 +1298,7 @@ begin
 //    form_pedidos_ventas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_pedidos_ventas_000.public_Solo_Ver                   := param_Solo_Ver;
     form_pedidos_ventas_000.public_Elegimos                   := param_Elegimos;
-    form_pedidos_ventas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_pedidos_ventas_000.public_Menu_Worked                := 450;
 
     form_pedidos_ventas_000.para_Empezar;
 
@@ -1321,11 +1321,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_VisitasResultados( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                             param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_VisitasResultados( param_Elegimos : Boolean;
+                                             param_Solo_Ver : Boolean;
                                              param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 480 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1334,7 +1334,7 @@ begin
 //    form_visitas_resultados_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_visitas_resultados_000.public_Solo_Ver                   := param_Solo_Ver;
     form_visitas_resultados_000.public_Elegimos                   := param_Elegimos;
-    form_visitas_resultados_000.public_Menu_Worked                := param_Menu_Worked;
+    form_visitas_resultados_000.public_Menu_Worked                := 480;
 
     form_visitas_resultados_000.para_Empezar;
 
@@ -1357,11 +1357,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Visitas( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                   param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Visitas( param_Elegimos : Boolean;
+                                   param_Solo_Ver : Boolean;
                                    param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 490 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1370,7 +1370,7 @@ begin
 //    form_visitas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_visitas_000.public_Solo_Ver                   := param_Solo_Ver;
     form_visitas_000.public_Elegimos                   := param_Elegimos;
-    form_visitas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_visitas_000.public_Menu_Worked                := 490;
 
     form_visitas_000.para_Empezar;
 
@@ -1393,11 +1393,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Rutas( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                 param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Rutas( param_Elegimos : Boolean;
+                                 param_Solo_Ver : Boolean;
                                  param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 510 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1406,7 +1406,7 @@ begin
 //    form_rutas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_rutas_000.public_Solo_Ver                   := param_Solo_Ver;
     form_rutas_000.public_Elegimos                   := param_Elegimos;
-    form_rutas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_rutas_000.public_Menu_Worked                := 510;
 
     form_rutas_000.para_Empezar;
 
@@ -1429,11 +1429,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_AlbaranesVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                           param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_AlbaranesVentas( param_Elegimos : Boolean;
+                                           param_Solo_Ver : Boolean;
                                            param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 430 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1442,7 +1442,7 @@ begin
 //    form_albaranes_ventas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_albaranes_ventas_000.public_Solo_Ver                   := param_Solo_Ver;
     form_albaranes_ventas_000.public_Elegimos                   := param_Elegimos;
-    form_albaranes_ventas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_albaranes_ventas_000.public_Menu_Worked                := 430;
 
     form_albaranes_ventas_000.para_Empezar;
 
@@ -1465,11 +1465,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_VehiculosEquipamientos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                                  param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_VehiculosEquipamientos( param_Elegimos : Boolean;
+                                                  param_Solo_Ver : Boolean;
                                                   param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 420 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1478,7 +1478,7 @@ begin
 //    form_vehiculos_equipamientos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_vehiculos_equipamientos_000.public_Solo_Ver                   := param_Solo_Ver;
     form_vehiculos_equipamientos_000.public_Elegimos                   := param_Elegimos;
-    form_vehiculos_equipamientos_000.public_Menu_Worked                := param_Menu_Worked;
+    form_vehiculos_equipamientos_000.public_Menu_Worked                := 420;
 
     form_vehiculos_equipamientos_000.para_Empezar;
 
@@ -1501,11 +1501,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Almacenes( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                     param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Almacenes( param_Elegimos : Boolean;
+                                     param_Solo_Ver : Boolean;
                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 260 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1514,7 +1514,7 @@ begin
     f_almacenes_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_almacenes_000.public_Solo_Ver                   := param_Solo_Ver;
     f_almacenes_000.public_Elegimos                   := param_Elegimos;
-    f_almacenes_000.public_Menu_Worked                := param_Menu_Worked;
+    f_almacenes_000.public_Menu_Worked                := 260;
 
     f_almacenes_000.para_Empezar;
 
@@ -1537,11 +1537,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Articulos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                     param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Articulos( param_Elegimos : Boolean;
+                                     param_Solo_Ver : Boolean;
                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 170 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1550,7 +1550,7 @@ begin
     // form_articulos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_articulos_000.public_Solo_Ver                   := param_Solo_Ver;
     form_articulos_000.public_Elegimos                   := param_Elegimos;
-    form_articulos_000.public_Menu_Worked                := param_Menu_Worked;
+    form_articulos_000.public_Menu_Worked                := 170;
 
     form_articulos_000.para_Empezar;
 
@@ -1574,11 +1574,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Combustibles( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                        param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Combustibles( param_Elegimos : Boolean;
+                                        param_Solo_Ver : Boolean;
                                         param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 380 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1587,7 +1587,7 @@ begin
     // form_combustibles_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_combustibles_000.public_Solo_Ver                   := param_Solo_Ver;
     form_combustibles_000.public_Elegimos                   := param_Elegimos;
-    form_combustibles_000.public_Menu_Worked                := param_Menu_Worked;
+    form_combustibles_000.public_Menu_Worked                := 380;
 
     form_combustibles_000.para_Empezar;
 
@@ -1646,11 +1646,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Personal( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                    param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Personal( param_Elegimos : Boolean;
+                                    param_Solo_Ver : Boolean;
                                     param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 220 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1659,7 +1659,7 @@ begin
     // form_personal_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_personal_000.public_Solo_Ver                   := param_Solo_Ver;
     form_personal_000.public_Elegimos                   := param_Elegimos;
-    form_personal_000.public_Menu_Worked                := param_Menu_Worked;
+    form_personal_000.public_Menu_Worked                := 220;
 
     form_personal_000.para_Empezar;
 
@@ -1682,11 +1682,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Proveedores( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                       param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Proveedores( param_Elegimos : Boolean;
+                                       param_Solo_Ver : Boolean;
                                        param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 120 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1695,7 +1695,7 @@ begin
     // form_proveedores_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_proveedores_000.public_Solo_Ver                   := param_Solo_Ver;
     form_proveedores_000.public_Elegimos                   := param_Elegimos;
-    form_proveedores_000.public_Menu_Worked                := param_Menu_Worked;
+    form_proveedores_000.public_Menu_Worked                := 120;
 
     form_proveedores_000.para_Empezar;
 
@@ -1718,11 +1718,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Tarjetas_Transporte( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                               param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Tarjetas_Transporte( param_Elegimos : Boolean;
+                                               param_Solo_Ver : Boolean;
                                                param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 410 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1731,7 +1731,7 @@ begin
     // form_tarjetas_transporte_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_tarjetas_transporte_000.public_Solo_Ver                   := param_Solo_Ver;
     form_tarjetas_transporte_000.public_Elegimos                   := param_Elegimos;
-    form_tarjetas_transporte_000.public_Menu_Worked                := param_Menu_Worked;
+    form_tarjetas_transporte_000.public_Menu_Worked                := 410;
 
     form_tarjetas_transporte_000.para_Empezar;
 
@@ -1754,11 +1754,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_MarcasVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                           param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_MarcasVehiculos( param_Elegimos : Boolean;
+                                           param_Solo_Ver : Boolean;
                                            param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 370 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1767,7 +1767,7 @@ begin
     // form_vehiculos_marcas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_vehiculos_marcas_000.public_Solo_Ver                   := param_Solo_Ver;
     form_vehiculos_marcas_000.public_Elegimos                   := param_Elegimos;
-    form_vehiculos_marcas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_vehiculos_marcas_000.public_Menu_Worked                := 370;
 
     form_vehiculos_marcas_000.para_Empezar;
 
@@ -1790,11 +1790,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_TiposVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                          param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_TiposVehiculos( param_Elegimos : Boolean;
+                                          param_Solo_Ver : Boolean;
                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 360 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1803,7 +1803,7 @@ begin
     // form_vehiculos_tipos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_vehiculos_tipos_000.public_Solo_Ver                   := param_Solo_Ver;
     form_vehiculos_tipos_000.public_Elegimos                   := param_Elegimos;
-    form_vehiculos_tipos_000.public_Menu_Worked                := param_Menu_Worked;
+    form_vehiculos_tipos_000.public_Menu_Worked                := 360;
 
     form_vehiculos_tipos_000.para_Empezar;
 
@@ -1826,11 +1826,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Vehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                     param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Vehiculos( param_Elegimos : Boolean;
+                                     param_Solo_Ver : Boolean;
                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 350 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1839,7 +1839,7 @@ begin
     // form_vehiculos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_vehiculos_000.public_Solo_Ver                   := param_Solo_Ver;
     form_vehiculos_000.public_Elegimos                   := param_Elegimos;
-    form_vehiculos_000.public_Menu_Worked                := param_Menu_Worked;
+    form_vehiculos_000.public_Menu_Worked                := 350;
 
     form_vehiculos_000.para_Empezar;
 
@@ -1862,11 +1862,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_TipoCambiosVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                                param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_TipoCambiosVehiculos( param_Elegimos : Boolean;
+                                                param_Solo_Ver : Boolean;
                                                 param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 390 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1875,7 +1875,7 @@ begin
     // form_vehiculos_tipo_cambios_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_vehiculos_tipo_cambios_000.public_Solo_Ver                   := param_Solo_Ver;
     form_vehiculos_tipo_cambios_000.public_Elegimos                   := param_Elegimos;
-    form_vehiculos_tipo_cambios_000.public_Menu_Worked                := param_Menu_Worked;
+    form_vehiculos_tipo_cambios_000.public_Menu_Worked                := 390;
 
     form_vehiculos_tipo_cambios_000.para_Empezar;
 
@@ -1898,11 +1898,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_TipoRuedasVehiculos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                               param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_TipoRuedasVehiculos( param_Elegimos : Boolean;
+                                               param_Solo_Ver : Boolean;
                                                param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 400 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1911,7 +1911,7 @@ begin
     // form_vehiculos_tipo_ruedas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_vehiculos_tipo_ruedas_000.public_Solo_Ver                   := param_Solo_Ver;
     form_vehiculos_tipo_ruedas_000.public_Elegimos                   := param_Elegimos;
-    form_vehiculos_tipo_ruedas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_vehiculos_tipo_ruedas_000.public_Menu_Worked                := 400;
 
     form_vehiculos_tipo_ruedas_000.para_Empezar;
 
@@ -1970,11 +1970,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Menus( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                 param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Menus( param_Elegimos : Boolean;
+                                 param_Solo_Ver : Boolean;
                                  param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 40 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -1983,7 +1983,7 @@ begin
     // Form_menus_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     Form_menus_000.public_Solo_Ver                   := param_Solo_Ver;
     Form_menus_000.public_Elegimos                   := param_Elegimos;
-    Form_menus_000.public_Menu_Worked                := param_Menu_Worked;
+    Form_menus_000.public_Menu_Worked                := 40;
 
     Form_menus_000.para_Empezar;
 
@@ -2006,11 +2006,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_FamiliasArticulos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                             param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_FamiliasArticulos( param_Elegimos : Boolean;
+                                             param_Solo_Ver : Boolean;
                                              param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 150 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2019,7 +2019,7 @@ begin
     // form_articulos_familias_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_articulos_familias_000.public_Solo_Ver                   := param_Solo_Ver;
     form_articulos_familias_000.public_Elegimos                   := param_Elegimos;
-    form_articulos_familias_000.public_Menu_Worked                := param_Menu_Worked;
+    form_articulos_familias_000.public_Menu_Worked                := 150;
 
     form_articulos_familias_000.para_Empezar;
 
@@ -2042,11 +2042,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_FamiliasPersonal( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                            param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_FamiliasPersonal( param_Elegimos : Boolean;
+                                            param_Solo_Ver : Boolean;
                                             param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 210 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2055,7 +2055,7 @@ begin
     // form_personal_familias_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_personal_familias_000.public_Solo_Ver                   := param_Solo_Ver;
     form_personal_familias_000.public_Elegimos                   := param_Elegimos;
-    form_personal_familias_000.public_Menu_Worked                := param_Menu_Worked;
+    form_personal_familias_000.public_Menu_Worked                := 210;
 
     form_personal_familias_000.para_Empezar;
 
@@ -2078,11 +2078,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_FamiliasContratosPersonal( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                                     param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_FamiliasContratosPersonal( param_Elegimos : Boolean;
+                                                     param_Solo_Ver : Boolean;
                                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 230 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2091,7 +2091,7 @@ begin
     // form_personal_contratos_familias_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_personal_contratos_familias_000.public_Solo_Ver                   := param_Solo_Ver;
     form_personal_contratos_familias_000.public_Elegimos                   := param_Elegimos;
-    form_personal_contratos_familias_000.public_Menu_Worked                := param_Menu_Worked;
+    form_personal_contratos_familias_000.public_Menu_Worked                := 230;
 
     form_personal_contratos_familias_000.para_Empezar;
 
@@ -2114,11 +2114,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_ContratosPersonal( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                             param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_ContratosPersonal( param_Elegimos : Boolean;
+                                             param_Solo_Ver : Boolean;
                                              param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 240 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2127,7 +2127,7 @@ begin
     // form_personal_contratos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_personal_contratos_000.public_Solo_Ver                   := param_Solo_Ver;
     form_personal_contratos_000.public_Elegimos                   := param_Elegimos;
-    form_personal_contratos_000.public_Menu_Worked                := param_Menu_Worked;
+    form_personal_contratos_000.public_Menu_Worked                := 240;
 
     form_personal_contratos_000.para_Empezar;
 
@@ -2150,11 +2150,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Empresas( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                    param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Empresas( param_Elegimos : Boolean;
+                                    param_Solo_Ver : Boolean;
                                     param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 250 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2163,7 +2163,7 @@ begin
     // form_empresas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_empresas_000.public_Solo_Ver                   := param_Solo_Ver;
     form_empresas_000.public_Elegimos                   := param_Elegimos;
-    form_empresas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_empresas_000.public_Menu_Worked                := 250;
 
     form_empresas_000.para_Empezar;
 
@@ -2186,11 +2186,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_FamiliasGastos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                          param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_FamiliasGastos( param_Elegimos : Boolean;
+                                          param_Solo_Ver : Boolean;
                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 270 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2199,7 +2199,7 @@ begin
     // form_gastos_tipos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_gastos_tipos_000.public_Solo_Ver                   := param_Solo_Ver;
     form_gastos_tipos_000.public_Elegimos                   := param_Elegimos;
-    form_gastos_tipos_000.public_Menu_Worked                := param_Menu_Worked;
+    form_gastos_tipos_000.public_Menu_Worked                := 270;
 
     form_gastos_tipos_000.para_Empezar;
 
@@ -2222,11 +2222,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_CuentasBancos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                         param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_CuentasBancos( param_Elegimos : Boolean;
+                                         param_Solo_Ver : Boolean;
                                          param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 310 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2235,7 +2235,7 @@ begin
     f_bancos_ctas_empresas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_bancos_ctas_empresas_000.public_Solo_Ver                   := param_Solo_Ver;
     f_bancos_ctas_empresas_000.public_Elegimos                   := param_Elegimos;
-    f_bancos_ctas_empresas_000.public_Menu_Worked                := param_Menu_Worked;
+    f_bancos_ctas_empresas_000.public_Menu_Worked                := 310;
 
     f_bancos_ctas_empresas_000.para_Empezar;
 
@@ -2258,11 +2258,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_MovimientosAlmacen( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                              param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_MovimientosAlmacen( param_Elegimos : Boolean;
+                                              param_Solo_Ver : Boolean;
                                               param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 320 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2271,7 +2271,7 @@ begin
     f_almacenes_movimientos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_almacenes_movimientos_000.public_Solo_Ver                   := param_Solo_Ver;
     f_almacenes_movimientos_000.public_Elegimos                   := param_Elegimos;
-    f_almacenes_movimientos_000.public_Menu_Worked                := param_Menu_Worked;
+    f_almacenes_movimientos_000.public_Menu_Worked                := 320;
 
     f_almacenes_movimientos_000.para_Empezar;
 
@@ -2294,11 +2294,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_OfertasArticulos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                            param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_OfertasArticulos( param_Elegimos : Boolean;
+                                            param_Solo_Ver : Boolean;
                                             param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 300 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2307,7 +2307,7 @@ begin
     // form_articulos_ofertas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_articulos_ofertas_000.public_Solo_Ver                   := param_Solo_Ver;
     form_articulos_ofertas_000.public_Elegimos                   := param_Elegimos;
-    form_articulos_ofertas_000.public_Menu_Worked                := param_Menu_Worked;
+    form_articulos_ofertas_000.public_Menu_Worked                := 300;
 
     form_articulos_ofertas_000.para_Empezar;
 
@@ -2330,11 +2330,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                                       param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( param_Elegimos : Boolean;
+                                                       param_Solo_Ver : Boolean;
                                                        param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 290 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2343,7 +2343,7 @@ begin
     // form_conceptos_almacen_traspaso_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_conceptos_almacen_traspaso_000.public_Solo_Ver                   := param_Solo_Ver;
     form_conceptos_almacen_traspaso_000.public_Elegimos                   := param_Elegimos;
-    form_conceptos_almacen_traspaso_000.public_Menu_Worked                := param_Menu_Worked;
+    form_conceptos_almacen_traspaso_000.public_Menu_Worked                := 290;
 
     form_conceptos_almacen_traspaso_000.para_Empezar;
 
@@ -2366,11 +2366,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_CtasPagosCobros( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                           param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_CtasPagosCobros( param_Elegimos : Boolean;
+                                           param_Solo_Ver : Boolean;
                                            param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 280 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2379,7 +2379,7 @@ begin
     // form_cuentas_pagos_cobros_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_cuentas_pagos_cobros_000.public_Solo_Ver                   := param_Solo_Ver;
     form_cuentas_pagos_cobros_000.public_Elegimos                   := param_Elegimos;
-    form_cuentas_pagos_cobros_000.public_Menu_Worked                := param_Menu_Worked;
+    form_cuentas_pagos_cobros_000.public_Menu_Worked                := 280;
 
     form_cuentas_pagos_cobros_000.para_Empezar;
 
@@ -2438,11 +2438,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Poblaciones( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                       param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Poblaciones( param_Elegimos : Boolean;
+                                       param_Solo_Ver : Boolean;
                                        param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 110 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2451,7 +2451,7 @@ begin
     // form_poblaciones_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_poblaciones_000.public_Solo_Ver                   := param_Solo_Ver;
     form_poblaciones_000.public_Elegimos                   := param_Elegimos;
-    form_poblaciones_000.public_Menu_Worked                := param_Menu_Worked;
+    form_poblaciones_000.public_Menu_Worked                := 110;
 
     form_poblaciones_000.para_Empezar;
 
@@ -2474,11 +2474,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_FormasPago( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                      param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_FormasPago( param_Elegimos : Boolean;
+                                      param_Solo_Ver : Boolean;
                                       param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 80 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2487,7 +2487,7 @@ begin
     // form_formas_pago_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_formas_pago_000.public_Solo_Ver                   := param_Solo_Ver;
     form_formas_pago_000.public_Elegimos                   := param_Elegimos;
-    form_formas_pago_000.public_Menu_Worked                := param_Menu_Worked;
+    form_formas_pago_000.public_Menu_Worked                := 80;
 
     form_formas_pago_000.para_Empezar;
 
@@ -2510,11 +2510,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_GruposDeCocina( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                          param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_GruposDeCocina( param_Elegimos : Boolean;
+                                          param_Solo_Ver : Boolean;
                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 180 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2523,7 +2523,7 @@ begin
     // form_grupos_cocina_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_grupos_cocina_000.public_Solo_Ver                   := param_Solo_Ver;
     form_grupos_cocina_000.public_Elegimos                   := param_Elegimos;
-    form_grupos_cocina_000.public_Menu_Worked                := param_Menu_Worked;
+    form_grupos_cocina_000.public_Menu_Worked                := 180;
 
     form_grupos_cocina_000.para_Empezar;
 
@@ -2546,11 +2546,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Impresoras( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                      param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Impresoras( param_Elegimos : Boolean;
+                                      param_Solo_Ver : Boolean;
                                       param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 190 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2559,7 +2559,7 @@ begin
     f_impresoras_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_impresoras_000.public_Solo_Ver                   := param_Solo_Ver;
     f_impresoras_000.public_Elegimos                   := param_Elegimos;
-    f_impresoras_000.public_Menu_Worked                := param_Menu_Worked;
+    f_impresoras_000.public_Menu_Worked                := 190;
 
     f_impresoras_000.para_Empezar;
 
@@ -2582,11 +2582,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Impuestos( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                     param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Impuestos( param_Elegimos : Boolean;
+                                     param_Solo_Ver : Boolean;
                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 200 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2595,7 +2595,7 @@ begin
     f_impuestos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_impuestos_000.public_Solo_Ver                   := param_Solo_Ver;
     f_impuestos_000.public_Elegimos                   := param_Elegimos;
-    f_impuestos_000.public_Menu_Worked                := param_Menu_Worked;
+    f_impuestos_000.public_Menu_Worked                := 200;
 
     f_impuestos_000.para_Empezar;
 
@@ -2618,11 +2618,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Paises( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                  param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Paises( param_Elegimos : Boolean;
+                                  param_Solo_Ver : Boolean;
                                   param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 60 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2631,7 +2631,7 @@ begin
     // form_paises_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_paises_000.public_Solo_Ver                   := param_Solo_Ver;
     form_paises_000.public_Elegimos                   := param_Elegimos;
-    form_paises_000.public_Menu_Worked                := param_Menu_Worked;
+    form_paises_000.public_Menu_Worked                := 60;
 
     form_paises_000.para_Empezar;
 
@@ -2654,11 +2654,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Provincias( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                      param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Provincias( param_Elegimos : Boolean;
+                                      param_Solo_Ver : Boolean;
                                       param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 100 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2667,7 +2667,7 @@ begin
     // form_provincias_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_provincias_000.public_Solo_Ver                   := param_Solo_Ver;
     form_provincias_000.public_Elegimos                   := param_Elegimos;
-    form_provincias_000.public_Menu_Worked                := param_Menu_Worked;
+    form_provincias_000.public_Menu_Worked                := 100;
 
     form_provincias_000.para_Empezar;
 
@@ -2690,11 +2690,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Representantes( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                          param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Representantes( param_Elegimos : Boolean;
+                                          param_Solo_Ver : Boolean;
                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 130 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2703,7 +2703,7 @@ begin
     // form_representantes_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_representantes_000.public_Solo_Ver                   := param_Solo_Ver;
     form_representantes_000.public_Elegimos                   := param_Elegimos;
-    form_representantes_000.public_Menu_Worked                := param_Menu_Worked;
+    form_representantes_000.public_Menu_Worked                := 130;
 
     form_representantes_000.para_Empezar;
 
@@ -2727,11 +2727,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Terminales( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                      param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_Terminales( param_Elegimos : Boolean;
+                                      param_Solo_Ver : Boolean;
                                       param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 160 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2740,7 +2740,7 @@ begin
     f_terminales_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_terminales_000.public_Solo_Ver                   := param_Solo_Ver;
     f_terminales_000.public_Elegimos                   := param_Elegimos;
-    f_terminales_000.public_Menu_Worked                := param_Menu_Worked;
+    f_terminales_000.public_Menu_Worked                := 160;
 
     f_terminales_000.para_Empezar;
 
@@ -2763,11 +2763,11 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_TiposProveedores( param_Elegimos : Boolean; param_Solo_Ver : Boolean;
-                                            param_Menu_Worked : Integer;
+function UTI_Abrir_Modulo_TiposProveedores( param_Elegimos : Boolean;
+                                            param_Solo_Ver : Boolean;
                                             param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 140 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2776,7 +2776,7 @@ begin
     // form_proveedores_tipos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     form_proveedores_tipos_000.public_Solo_Ver                   := param_Solo_Ver;
     form_proveedores_tipos_000.public_Elegimos                   := param_Elegimos;
-    form_proveedores_tipos_000.public_Menu_Worked                := param_Menu_Worked;
+    form_proveedores_tipos_000.public_Menu_Worked                := 140;
 
     form_proveedores_tipos_000.para_Empezar;
 
@@ -2842,10 +2842,9 @@ end;
 
 function UTI_Abrir_Modulo_Elegir_cliente_contacto( param_Elegimos : Boolean;
                                                    param_Solo_Ver : Boolean;
-                                                   param_Menu_Worked : Integer;
                                                    param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 51 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2854,7 +2853,7 @@ begin
     f_elegir_cliente_contacto.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_elegir_cliente_contacto.public_Solo_Ver                   := param_Solo_Ver;
     f_elegir_cliente_contacto.public_Elegimos                   := param_Elegimos;
-    f_elegir_cliente_contacto.public_Menu_Worked                := param_Menu_Worked;
+    f_elegir_cliente_contacto.public_Menu_Worked                := 51;
 
     f_elegir_cliente_contacto.para_Empezar;
 
@@ -2879,10 +2878,9 @@ end;
 
 function UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( param_Elegimos : Boolean;
                                                           param_Solo_Ver : Boolean;
-                                                          param_Menu_Worked : Integer;
                                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 52 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2891,7 +2889,7 @@ begin
     f_elegir_cliente_direccion_envio.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_elegir_cliente_direccion_envio.public_Solo_Ver                   := param_Solo_Ver;
     f_elegir_cliente_direccion_envio.public_Elegimos                   := param_Elegimos;
-    f_elegir_cliente_direccion_envio.public_Menu_Worked                := param_Menu_Worked;
+    f_elegir_cliente_direccion_envio.public_Menu_Worked                := 52;
 
     f_elegir_cliente_direccion_envio.para_Empezar;
 
@@ -2917,10 +2915,9 @@ end;
 
 function UTI_Abrir_Modulo_Elegir_Diario_Tipo( param_Elegimos : Boolean;
                                               param_Solo_Ver : Boolean;
-                                              param_Menu_Worked : Integer;
                                               param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
-  if UTI_Abrir_Modulo_SN( param_Menu_Worked ) = true then
+  if UTI_Abrir_Modulo_SN( 740 ) = true then
   begin
     Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
@@ -2929,7 +2926,7 @@ begin
     f_elegir_diarios_tipos.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
     f_elegir_diarios_tipos.public_Solo_Ver                   := param_Solo_Ver;
     f_elegir_diarios_tipos.public_Elegimos                   := param_Elegimos;
-    f_elegir_diarios_tipos.public_Menu_Worked                := param_Menu_Worked;
+    f_elegir_diarios_tipos.public_Menu_Worked                := 740;
 
     f_elegir_diarios_tipos.para_Empezar;
 

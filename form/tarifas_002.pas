@@ -230,7 +230,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_tarifas_000.SQLQuery_Tarifas_Margenes do
     begin
-        var_Registro := UTI_Abrir_Modulo_MargenesIncrementoTarifas( true, false, 610, '1' );
+        var_Registro := UTI_Abrir_Modulo_MargenesIncrementoTarifas( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_margenes_tarifas').AsString := Trim(var_Registro.id_1);

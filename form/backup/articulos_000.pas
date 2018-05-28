@@ -1896,7 +1896,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   Calcular_Composicion_Total_Coste;
   var_a_Filtrar_Plus.Free;
@@ -1959,7 +1961,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -2017,7 +2021,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -2543,7 +2549,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -2905,7 +2913,9 @@ begin
                               Memo_OrderBy.Lines,
                               var_a_Filtrar,
 
-                              param_Cambiamos_Filtro );
+                              param_Cambiamos_Filtro,
+                              false,   // param_ver_SQL_despues_Abrir : Boolean;
+                              true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
     var_a_Filtrar.Free;
 
@@ -2975,7 +2985,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -3168,7 +3180,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -3351,7 +3365,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   Actualizar_Ultimas_Compras;
   var_a_Filtrar_Plus.Free;
@@ -3448,7 +3464,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -3630,7 +3648,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 
@@ -3887,7 +3907,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -4083,7 +4105,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -4202,7 +4226,9 @@ begin
                             param_Lineas_OrderBy,
                             var_a_Filtrar_Plus,
 
-                            param_Cambiamos_Filtro );
+                            param_Cambiamos_Filtro,
+                            false,   // param_ver_SQL_despues_Abrir : Boolean;
+                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;

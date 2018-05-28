@@ -1047,7 +1047,7 @@ end;
 procedure Tform_personal_000.Boton_Elegir_PoblacionClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, 110, '1' );
+    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_poblaciones.Text        := Trim(var_Registro.id_1);
@@ -1058,7 +1058,7 @@ end;
 procedure Tform_personal_000.Boton_Elegir_PaisClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Paises( true, false, 60, '1' );
+    var_Registro := UTI_Abrir_Modulo_Paises( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_paises.Text        := Trim(var_Registro.id_1);
@@ -1070,7 +1070,7 @@ procedure Tform_personal_000.Boton_Elegir_id_personal_familiasClick(
   Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_FamiliasPersonal( true, false, 210, '1' );
+    var_Registro := UTI_Abrir_Modulo_FamiliasPersonal( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_personal_familias.Text             := Trim(var_Registro.id_1);
@@ -1081,7 +1081,7 @@ end;
 procedure Tform_personal_000.Boton_Elegir_ProvinciaClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, 100, '1' );
+    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_provincias.Text         := Trim(var_Registro.id_1);

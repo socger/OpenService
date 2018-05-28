@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, DBDateTimePicker, Forms, Controls, Graphics, Dialogs, ButtonPanel, db,
   ExtCtrls, StdCtrls, DbCtrls, Buttons, ComCtrls, DBGrids, Grids, utilidades_forms_Filtrar, sqldb,
   utilidades_datos_tablas, utilidades_ventas, utilidades_general, utilidades_usuarios,
-  utilidades_clientes, utilidades_impuestos, utilidades_rgtro, utilidades_bd;
+  utilidades_impuestos, utilidades_rgtro, utilidades_bd;
 
 type
 
@@ -925,7 +925,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_presupuestos_ventas_000.SQLQuery_Presup do
     begin
-        var_Registro := UTI_Abrir_Modulo_Vehiculos( true, false, 350, '1' );
+        var_Registro := UTI_Abrir_Modulo_Vehiculos( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_vehiculos').AsString          := Trim(var_Registro.id_1);
@@ -940,7 +940,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_presupuestos_ventas_000.SQLQuery_Presup do
     begin
-        var_Registro := UTI_Abrir_Modulo_Empresas( true, false, 250, '1' );
+        var_Registro := UTI_Abrir_Modulo_Empresas( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_empresas').AsString            := Trim(var_Registro.id_1);
@@ -981,7 +981,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_presupuestos_ventas_000.SQLQuery_Presup do
     begin
-        var_Registro := UTI_Abrir_Modulo_FormasPago( true, false, 80, '1' );
+        var_Registro := UTI_Abrir_Modulo_FormasPago( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             FieldByName('id_formas_pago').AsString            := Trim(var_Registro.id_1);
@@ -1053,7 +1053,7 @@ begin
             // ************************************************************************************* //
             // ** Buscamos en la ficha de un cliente cual es su agencia de transporte             ** //
             // ************************************************************************************* //
-            var_Registro := UTI_Abrir_Modulo_Clientes( true, false, 50, '1' );   // 120
+            var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );   // 120
             if var_Registro.id_1 <> '' then
             begin
                  Edit_Direccion_de_Envio_Agencia_Transporte_Descripcion.Text := var_Registro.descripcion_1;
@@ -1064,7 +1064,7 @@ begin
             // ************************************************************************************* //
             // ** Elegimos en el mantenimiento de proveedores una AGENCIA DE TRANSPORTE           ** //
             // ************************************************************************************* //
-            var_Registro := UTI_Abrir_Modulo_Proveedores( true, false, 120, '1' );   //
+            var_Registro := UTI_Abrir_Modulo_Proveedores( true, false, '1' );   //
             if var_Registro.id_1 <> '' then
             begin
                  Edit_Direccion_de_Envio_Agencia_Transporte_Descripcion.Text := var_Registro.descripcion_1;
@@ -1099,7 +1099,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_presupuestos_ventas_000.SQLQuery_Presup do
     begin
-        var_Registro := UTI_Abrir_Modulo_Representantes( true, false, 130, '1' );
+        var_Registro := UTI_Abrir_Modulo_Representantes( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             FieldByName('id_representantes').AsString      := Trim(var_Registro.id_1);
@@ -1975,7 +1975,7 @@ begin
         // ***************************************************************************************** //
         // ** Continuamos con el cambio de almacén                                                ** //
         // ***************************************************************************************** //
-        var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, 260, '1' );
+        var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             FieldByName('id_almacenes').AsString           := Trim(var_Registro.id_1);
@@ -2048,7 +2048,7 @@ begin
         // ***************************************************************************************** //
         // ** Continuamos                                                                         ** //
         // ***************************************************************************************** //
-        var_Rgtro := UTI_Abrir_Modulo_Clientes( true, false, 50, '1' );
+        var_Rgtro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
         if var_Rgtro.id_1 <> '' then
         begin
              FieldByName('id_clientes').AsString := Trim(var_Rgtro.id_1);

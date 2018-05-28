@@ -11,7 +11,7 @@ object form_Menu: Tform_Menu
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
-  LCLVersion = '1.8.0.6'
+  LCLVersion = '1.8.4.0'
   object Image1: TImage
     Left = 0
     Height = 295

@@ -569,7 +569,7 @@ type
     procedure Crear_OrderBy_tablas_adicionales; override;
     procedure Crear_tipos_orden_Principal; override;
     procedure Rellenar_Filtros_Impresion(var p_Ordenado_por : String); override;
-    procedure Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
+    procedure Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
     function  Fue_Utilizado_Rgtro_SQLQuery_Principal : ShortInt; override;
 
   private
@@ -614,7 +614,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, 100, '1' );
+    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_provincias').AsString := Trim(var_Registro.id_1);
@@ -644,7 +644,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Rutas( true, false, 510, '1' );
+    var_Registro := UTI_Abrir_Modulo_Rutas( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_rutas').AsString := Trim(var_Registro.id_1);
@@ -658,7 +658,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Tarifas( true, false, 90, '1' );
+    var_Registro := UTI_Abrir_Modulo_Tarifas( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_tarifas').AsString := Trim(var_Registro.id_1);
@@ -672,7 +672,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Paises( true, false, 60, '1' );
+    var_Registro := UTI_Abrir_Modulo_Paises( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_paises').AsString := Trim(var_Registro.id_1);
@@ -735,7 +735,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Actividades( true, false, 500, '1' );
+    var_Registro := UTI_Abrir_Modulo_Actividades( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_actividades').AsString := Trim(var_Registro.id_1);
@@ -749,7 +749,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Proveedores( true, false, 120, '1' );
+    var_Registro := UTI_Abrir_Modulo_Proveedores( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_Agencias_Transporte').AsString := Trim(var_Registro.id_1);
@@ -767,7 +767,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Clientes_tipos( true, false, 70, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes_tipos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_clientes_tipos').AsString := Trim(var_Registro.id_1);
@@ -786,7 +786,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-      var_Registro := UTI_Abrir_Modulo_Paises( true, false, 60, '1' );
+      var_Registro := UTI_Abrir_Modulo_Paises( true, false, '1' );
       if var_Registro.id_1 <> '' then
       begin
            FieldByName('id_Cta_Bco_pais').AsString := Trim(var_Registro.id_1);
@@ -800,7 +800,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, 110, '1' );
+    var_Registro := UTI_Abrir_Modulo_Poblaciones( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_Cta_Bco_poblaciones').AsString := Trim(var_Registro.id_1);
@@ -819,7 +819,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, 100, '1' );
+    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
        FieldByName('id_Cta_Bco_provincias').AsString := Trim(var_Registro.id_1);
@@ -836,7 +836,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_FormasPago( true, false, 80, '1' );
+    var_Registro := UTI_Abrir_Modulo_FormasPago( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_formas_pago').AsString := Trim(var_Registro.id_1);
@@ -2904,7 +2904,8 @@ begin
                                             ' ce.id_paises ASC';
 end;
 
-procedure Tf_clientes_000.Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD;
+procedure Tf_clientes_000.Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings;
+                                                       var p_Registro_CRUD : TRegistro_CRUD;
                                                        var p_ctdad_Rgtros  : Integer;
                                                        var p_a_Filtrar     : TStrings );
 begin
@@ -2997,7 +2998,7 @@ begin
 
   p_ctdad_Rgtros  := -1;
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 function Tf_clientes_000.Fue_Utilizado_Rgtro_SQLQuery_Principal : ShortInt;
