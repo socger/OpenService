@@ -5,37 +5,14 @@ unit utilidades_bd;
 interface
 
 uses
-  Controls, Forms, LazFileUtils, Classes, SysUtils, DB, sqldb, IniFiles, Dialogs,
-  utilidades_general, StdCtrls, Graphics;
+  Controls, Forms, LazFileUtils, Classes, SysUtils, DB, sqldb, IniFiles, Dialogs, utilidades_general,
+  utilidades_ini, StdCtrls, Graphics;
 
-Const
-  const_Path_Ini = '\ini\socger.ini';
 type
 
   TOrder_By = record
       Titulo       : String;
       Memo_OrderBy : String;
-  end;
-
-  Trecord_Skin = record
-      con_Exito              : Boolean;
-      DbGrid_Color           : TColor;
-      DbGrid_Color_Eligiendo : TColor;
-  end;
-
-  Trecord_CN_Conexion = record
-      con_Exito                     : Boolean;
-      ConnectorType                 : String;
-      DatabaseName                  : String;
-      HostName                      : String;
-      Port                          : String;
-      Password                      : String;
-      UserName                      : String;
-      min_no_Work                   : String;
-      NumTerminal                   : String;
-      Language                      : String;
-      Impresora_descripcion_Elegida : String;
-      Impresora_Ctdad_Copias        : String;
   end;
 
   Trecord_Cambiar_Filtros_Devuelve = record
@@ -48,9 +25,6 @@ function  UTI_CN_Connector_Open( param_SQLTransaction: TSQLTransaction; param_SQ
 function  UTI_CN_Connector_Close( param_SQLTransaction: TSQLTransaction; param_SQLConnector: TSQLConnector ): Boolean;
 
 function  UTI_CN_Fecha_Hora : TDateTime;
-function  UTI_CN_Configuracion_INI_Traerla : Trecord_CN_Conexion;
-function  UTI_CN_Configuracion_INI_Grabar_Idioma( param_Idioma : ShortString ) : Boolean;
-function  UTI_CN_Traer_Configuracion_Skin : Trecord_Skin;
 
 function  UTI_TB_Borrar_Tabla_Sin_Respetar_Autoinc( param_tabla : String ) : Boolean;
 function  UTI_TB_Borrar_Tabla_Respetando_Autoinc( param_tabla : String ) : Boolean;
@@ -256,7 +230,7 @@ begin
     **************************************************************************** }
     var_SQL := TStringList.Create;
 
-    var_CN_Conexion := UTI_CN_Configuracion_INI_Traerla;
+    var_CN_Conexion := UTI_INI_Configuracion_Traerla;
     if var_CN_Conexion.con_Exito = False then UTI_GEN_Salir;
 
     if UpperCase(Copy(var_CN_Conexion.ConnectorType, 1, 5)) = UpperCase('MySQL') then
@@ -539,47 +513,6 @@ begin
 
 end;
 
-function UTI_CN_Configuracion_INI_Traerla : Trecord_CN_Conexion;
-var var_fichero_ini : TIniFile;
-begin
-    if (FileExists(GetCurrentDirUTF8 + const_Path_Ini)) then
-    begin
-        try
-            var_fichero_ini                      := TIniFile.Create(GetCurrentDirUTF8 + const_Path_Ini);
-
-            Result.con_Exito                     := true;
-            Result.ConnectorType                 := var_fichero_ini.ReadString('HowConnectBD', 'ConnectorType', '');
-            Result.DatabaseName                  := var_fichero_ini.ReadString('HowConnectBD', 'DatabaseName', '');
-            Result.HostName                      := var_fichero_ini.ReadString('HowConnectBD', 'HostName', '');
-            Result.Port                          := var_fichero_ini.ReadString('HowConnectBD', 'Port', '');
-            Result.Password                      := var_fichero_ini.ReadString('HowConnectBD', 'Password', '');
-            Result.UserName                      := var_fichero_ini.ReadString('HowConnectBD', 'UserName', '');
-
-            Result.min_no_Work                   := var_fichero_ini.ReadString('Config', 'min_no_Work', '');
-            Result.NumTerminal                   := var_fichero_ini.ReadString('Config', 'NumTerminal', '');
-            Result.Language                      := var_fichero_ini.ReadString('Config', 'Language', '');
-
-            Result.Impresora_descripcion_Elegida := var_fichero_ini.ReadString('Config', 'Impresora_descripcion_Elegida', '');
-            Result.Impresora_Ctdad_Copias        := var_fichero_ini.ReadString('Config', 'Impresora_Ctdad_Copias', '');
-
-            var_fichero_ini.Free;
-        except
-            on error : Exception do
-            begin
-                UTI_GEN_Error_Log( 'Error al ABRIR el fichero de CONFIGURACION' + ' desde ' +
-                                   Screen.ActiveForm.Name,
-                                   error );
-                try
-                    var_fichero_ini.Free;
-                Except
-                end;
-
-                Result.con_Exito := False;
-            end;
-        end;
-    end;
-end;
-
 function UTI_TB_Filtrar( param_Order_By : array of TOrder_By;
                          param_DeleteSQL,
                          param_UpdateSQL,
@@ -726,32 +659,6 @@ begin
     end;
 
     param_ComboBox.ItemIndex := param_Indice_donde_Arrancamos;
-end;
-
-function UTI_CN_Configuracion_INI_Grabar_Idioma( param_Idioma : ShortString ) : Boolean;
-var var_fichero_ini : TIniFile;
-begin
-    Result := true;
-    try
-        var_fichero_ini := TIniFile.Create(GetCurrentDirUTF8 + const_Path_Ini);
-
-        var_fichero_ini.WriteString('Config', 'Language', param_Idioma);
-
-        var_fichero_ini.Free;
-    except
-        on error : Exception do
-        begin
-            UTI_GEN_Error_Log( 'Error al actualizar el idioma de la aplicación' + ' desde ' +
-                               Screen.ActiveForm.Name,
-                               error );
-            try
-                var_fichero_ini.Free;
-            Except
-            end;
-
-            Result := false;
-        end;
-    end;
 end;
 
 procedure UTI_RGTROS_commit( param_SQLTransaction : TSQLTransaction );
@@ -1508,7 +1415,7 @@ begin
         Tag := 0;
     end;
 
-    var_CN_Conexion := UTI_CN_Configuracion_INI_Traerla;
+    var_CN_Conexion := UTI_INI_Configuracion_Traerla;
 
     if var_CN_Conexion.con_Exito = True then
     begin
@@ -1640,42 +1547,6 @@ begin
   param_WHERE_OLD.AddStrings( UTI_TB_Quitar_AndOr_Principio( var_valor_old.Text) ); // jeromillo aqui paso un tstrings pero la funcion UTI_TB_Quitar_AndOr_Principio quiere un string
 
   var_valor_old.Free;
-end;
-
-function UTI_CN_Traer_Configuracion_Skin : Trecord_Skin;
-var var_fichero_ini : TIniFile;
-begin
-    if (FileExists(GetCurrentDirUTF8 + const_Path_Ini)) then
-    begin
-        try
-            var_fichero_ini               := TIniFile.Create(GetCurrentDirUTF8 + const_Path_Ini);
-
-            Result.con_Exito              := true;
-
-            Result.DbGrid_Color           := StringToColor('$006AD3D7');
-            Result.DbGrid_Color           := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Color', ''));
-
-            Result.DbGrid_Color_Eligiendo := StringToColor('$006AD3D7');
-            Result.DbGrid_Color_Eligiendo := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Color_Eligiendo', ''));
-
-            DbGrid_Color_AlternateColor   _=
-
-            var_fichero_ini.Free;
-        except
-            on error : Exception do
-            begin
-                UTI_GEN_Error_Log( 'Error al ABRIR el fichero de CONFIGURACION' + ' desde ' +
-                                   Screen.ActiveForm.Name,
-                                   error );
-                try
-                    var_fichero_ini.Free;
-                Except
-                end;
-
-                Result.con_Exito := False;
-            end;
-        end;
-    end;
 end;
 
 end.

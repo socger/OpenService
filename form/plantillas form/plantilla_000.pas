@@ -5,11 +5,10 @@ unit plantilla_000;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  StdCtrls, Buttons, ComCtrls, DBGrids, DbCtrls, types, sqldb, db, Grids,
-  ButtonPanel, ExtDlgs, utilidades_datos_tablas, utilidades_bd, variants,
-  utilidades_general, utilidades_rgtro, utilidades_usuarios,
-  utilidades_forms_Filtrar;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Buttons,
+  ComCtrls, DBGrids, DbCtrls, types, sqldb, db, Grids, ButtonPanel, ExtDlgs, utilidades_datos_tablas,
+  variants, utilidades_general, utilidades_rgtro, utilidades_usuarios, utilidades_forms_Filtrar,
+  utilidades_bd, utilidades_ini;
 
 type
 
@@ -604,14 +603,23 @@ begin
 
   Cambiar_WindowState;
 
-  v_Skin := UTI_CN_Traer_Configuracion_Skin;
+  v_Skin := UTI_INI_Configuracion_Skin;
 
   for v_i := 0 to (ComponentCount - 1) do
   begin
     if (Components[v_i] is TDBGrid) then
     begin
-      TDBGrid(Components[v_i]).Color          := TColor(v_Skin.DbGrid_Color);
-      TDBGrid(Components[v_i]).AlternateColor := TColor(v_Skin.DbGrid_Color_AlternateColor);
+      if TDBGrid(Components[v_i]).Name <> 'DBGrid_Filtros' then
+      begin
+        TDBGrid(Components[v_i]).Color          := TColor(v_Skin.DbGrid_Color);
+        TDBGrid(Components[v_i]).AlternateColor := TColor(v_Skin.DbGrid_Color_AlternateColor);
+      end
+
+      else
+      begin
+        TDBGrid(Components[v_i]).Color          := TColor(v_Skin.DbGrid_Filtros_Color);
+        TDBGrid(Components[v_i]).AlternateColor := TColor(v_Skin.DbGrid_Filtros_Color_AlternateColor);
+      end;
 
       jerofa hay que ver también cuando es elegido como se van a rellenar los colores de los grids
       y del fondo del form
@@ -619,9 +627,13 @@ begin
       y los dbEdit y Edit
 
       También los grids de filtros ... ver sus colores
+
+
     end;
 
   end;
+
+  Application.ProcessMessages;
 end;
 
 procedure Tform_plantilla_000.RadioGroup_BajasClick(Sender: TObject);
@@ -3325,6 +3337,10 @@ end.
 
 (*
 En el init debería de tener los colores con los que configuro las plantillas (grids, etc)
+
+Hay que ver porque en clientes_tipo cuando entramos en los filtros y cambiamos de desde a hasta, y
+despues volvemos al debe, pues ya el debe no lo deja escribir ... y tambien porque el hasta no deja
+introducirlo ... además pinta el color de la celda en gris (como si estuviera desactivada)
 
 En form_visitas_001 hay una llamada desde el botón de elegir cliente a clientes_000 que antes se hacía a pelo
 en vez de usar utilidades_forms_filtrar ... esto se tiene que solucionar todos deben de llamar a utilidades_forms_filtrar ... pero

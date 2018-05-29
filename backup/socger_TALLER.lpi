@@ -52,7 +52,7 @@
         <PackageName Value="LCL"/>
       </Item8>
     </RequiredPackages>
-    <Units Count="270">
+    <Units Count="271">
       <Unit0>
         <Filename Value="socger_TALLER.pas"/>
         <IsPartOfProject Value="True"/>
@@ -1891,6 +1891,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit269>
+      <Unit270>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit270>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

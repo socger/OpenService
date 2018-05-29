@@ -7,8 +7,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, printer4lazarus, datetimectrls, lazcontrols, runtimetypeinfocontrols,
-  peliculas_000, dm_pelis, utilidades_bd, utilidades_usuarios,
+  Forms, printer4lazarus, datetimectrls, lazcontrols, runtimetypeinfocontrols, peliculas_000,
+  dm_pelis, utilidades_bd, utilidades_usuarios, utilidades_ini,
   utilidades_general, avisos, peliculas_001, menu, estado_registro, dm_medios,
   filtrar_registros, utilidades_rgtro, utilidades_forms_Filtrar, medios_000,
   informe, medios_001, users_000, dm_users, users_001, arrancar, users_002,
@@ -55,7 +55,7 @@ uses
   configuracion_000, dm_configuracion, dm_visitas_tipos, visitas_tipos_000,
   visitas_tipos_001, dm_visitas_resultados, visitas_resultados_000,
   visitas_resultados_001, visitas_000, dm_visitas, visitas_001, rutas_000,
-  rutas_001, dm_rutas, utilidades_clientes, visitas_por_zona_000,
+  rutas_001, dm_rutas, visitas_por_zona_000,
   dm_visitas_por_zona, visitas_por_provincia_000, dm_visitas_por_provincia,
   visitas_por_cliente_000, dm_visitas_por_cliente, visitas_por_tipo_cliente_000,
   dm_visitas_por_tipo_cliente, visitas_por_actividad_000,

@@ -39,16 +39,16 @@ uses
     procedure UTI_GEN_AclararFormatoFecha;
     procedure UTI_GEN_AclararFormatoHora;
 
-    function  UTI_GEN_Comprobar_Introducido_es_DiaHora( p_numero : String; p_Texto_paraVer_siError : String ) : Boolean;
-    function  UTI_GEN_Comprobar_Introducido_es_Dia( p_numero : String; p_Texto_paraVer_siError : String ) : Boolean;
-    function  UTI_GEN_Comprobar_Introducido_es_Hora( p_numero : String; p_Texto_paraVer_siError : String ) : Boolean;
-    function  UTI_GEN_Comprobar_Introducido_es_Numero( p_numero : String; p_Texto_paraVer_siError : String ) : Boolean;
+    function  UTI_GEN_Comprobar_Introducido_es_DiaHora( p_numero : String; p_Texto_paraVer_siError : String ) : String;
+    function  UTI_GEN_Comprobar_Introducido_es_Dia( p_numero : String; p_Texto_paraVer_siError : String ) : String;
+    function  UTI_GEN_Comprobar_Introducido_es_Hora( p_numero : String; p_Texto_paraVer_siError : String ) : String;
+    function  UTI_GEN_Comprobar_Introducido_es_Numero( p_numero : String; p_Texto_paraVer_siError : String ) : String;
 var
   var_Global_CriticalSection : TCriticalSection;
 
 implementation
 
-uses menu, avisos, barra_progreso, informe, utilidades_usuarios, utilidades_bd, elija_ano_trimestre;
+uses menu, avisos, barra_progreso, informe, utilidades_usuarios, utilidades_ini, elija_ano_trimestre;
 
 procedure UTI_GEN_Traer_Trimestre( p_DateTimePicker_Desde,
                                    p_DateTimePicker_Hasta : TDateTimePicker );
@@ -138,7 +138,7 @@ function UTI_GEN_Format_Fecha_Hora( param_Fecha : TDateTime;
                                     param_Devolver_Segundos : Boolean ) : ShortString;
 var var_CN_Conexion : Trecord_CN_Conexion;
 begin
-    var_CN_Conexion := UTI_CN_Configuracion_INI_Traerla;
+    var_CN_Conexion := UTI_INI_Configuracion_Traerla;
     if var_CN_Conexion.con_Exito = False then UTI_GEN_Salir;
 
     if UpperCase(Copy(var_CN_Conexion.ConnectorType, 1, 5)) = UpperCase('MySQL') then
@@ -360,7 +360,7 @@ begin
     // ** mySQL graba los decimales con punto en vez de con coma .... asi  que quito toda coma,   ** //
     // ** menos la última que la convierto a un punto para los decimales                          ** //
     // ********************************************************************************************* //
-    var_CN_Conexion := UTI_CN_Configuracion_INI_Traerla;
+    var_CN_Conexion := UTI_INI_Configuracion_Traerla;
     if var_CN_Conexion.con_Exito = False then UTI_GEN_Salir;
 
     if UpperCase(Copy(var_CN_Conexion.ConnectorType, 1, 5)) = UpperCase('MySQL') then

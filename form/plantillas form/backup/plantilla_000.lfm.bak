@@ -349,7 +349,7 @@ object form_plantilla_000: Tform_plantilla_000
           Anchors = [akLeft]
           AutoAdvance = aaLeft
           BorderSpacing.Top = 4
-          Color = 7001047
+          Color = 7390929
           Columns = <          
             item
               Title.Alignment = taCenter
@@ -564,7 +564,7 @@ object form_plantilla_000: Tform_plantilla_000
             Top = 1
             Width = 514
             Align = alClient
-            Color = 7658675
+            Color = 9751939
             Columns = <            
               item
                 ReadOnly = True

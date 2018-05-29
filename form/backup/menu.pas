@@ -5,9 +5,9 @@ unit menu;
 interface
 
 uses
-    utilidades_bd, utilidades_usuarios, Classes, SysUtils, FileUtil, Forms, Controls, Graphics,
+    utilidades_usuarios, Classes, SysUtils, FileUtil, Forms, Controls, Graphics, utilidades_ini,
     Buttons, Menus, utilidades_general, ExtCtrls, ComCtrls, utilidades_forms_Filtrar, ActnList,
-    utilidades_impresoras, utilidades_datos_tablas, LCLTranslator, sqldb;
+    utilidades_bd, utilidades_impresoras, utilidades_datos_tablas, LCLTranslator, sqldb;
 
 resourcestring
   rs_Titulo_1         = 'openSOCGER - Usuario : ';
@@ -441,7 +441,7 @@ begin
     // ********************************************************************************************* //
     // ** Traemos el tiempo que se necesita para volver a preguntar por la contraseña             ** //
     // ********************************************************************************************* //
-    var_CN_Conexion := UTI_CN_Configuracion_INI_Traerla;
+    var_CN_Conexion := UTI_INI_Configuracion_Traerla;
     if var_CN_Conexion.con_Exito = False then UTI_GEN_Salir;
 
     var_Valor_Minuto         := StrToTime('00:02:00') - StrToTime('00:01:00');
@@ -572,7 +572,7 @@ begin
     // ********************************************************************************************* //
     // ** Traemos la configuración con el servidor, si no se puede pues no continuamos con la APP ** //
     // ********************************************************************************************* //
-    var_CN_Conexion := UTI_CN_Configuracion_INI_Traerla;
+    var_CN_Conexion := UTI_INI_Configuracion_Traerla;
     if var_CN_Conexion.con_Exito = False then UTI_GEN_Salir;
 
     var_Valor_Minuto := StrToTime('00:02:00') - StrToTime('00:01:00');
@@ -747,25 +747,25 @@ end;
 procedure Tform_Menu.MenuItem_Cambiar_Idioma_EngishClick(Sender: TObject);
 begin
     UTI_GEN_Cambiar_Idioma('en');
-    UTI_CN_Configuracion_INI_Grabar_Idioma( 'en' );
+    UTI_INI_Grabar_Idioma( 'en' );
 end;
 
 procedure Tform_Menu.MenuItem_Cambiar_Idioma_FrenchClick(Sender: TObject);
 begin
     UTI_GEN_Cambiar_Idioma('fr');
-    UTI_CN_Configuracion_INI_Grabar_Idioma( 'fr' );
+    UTI_INI_Grabar_Idioma( 'fr' );
 end;
 
 procedure Tform_Menu.MenuItem_Cambiar_Idioma_RomanianClick(Sender: TObject);
 begin
     UTI_GEN_Cambiar_Idioma('ro');
-    UTI_CN_Configuracion_INI_Grabar_Idioma( 'ro' );
+    UTI_INI_Grabar_Idioma( 'ro' );
 end;
 
 procedure Tform_Menu.MenuItem_Cambiar_Idioma_SpanishClick(Sender: TObject);
 begin
     UTI_GEN_Cambiar_Idioma('es');
-    UTI_CN_Configuracion_INI_Grabar_Idioma( 'es' );
+    UTI_INI_Grabar_Idioma( 'es' );
 end;
 
 procedure Tform_Menu.Presentar_Titulo_form_Menu_Principal;
@@ -1990,7 +1990,7 @@ end;
 
 procedure Tform_Menu.MenuItem_Proveedores_TiposClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_TiposProveedores( false, false, 140, '1' );
+  UTI_Abrir_Modulo_TiposProveedores( false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem10Click(Sender: TObject);
