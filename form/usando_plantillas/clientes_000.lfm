@@ -540,8 +540,8 @@ inherited f_clientes_000: Tf_clientes_000
           Height = 172
           Top = 146
           Width = 1189
-          ActivePage = TabSheet_DatosAdicionales
-          TabIndex = 0
+          ActivePage = TabSheet1
+          TabIndex = 5
           TabOrder = 16
           object TabSheet_DatosAdicionales: TTabSheet
             Caption = 'DATOS &ADICIONALES'
@@ -1012,6 +1012,7 @@ inherited f_clientes_000: Tf_clientes_000
               Width = 193
               Align = alCustom
               Caption = 'Activar proximidad'
+              Color = clBlack
               DataField = 'Activar_Proximidad_SN'
               DataSource = DataSource_Principal
               Font.CharSet = ANSI_CHARSET
@@ -1021,6 +1022,7 @@ inherited f_clientes_000: Tf_clientes_000
               Font.Pitch = fpVariable
               Font.Quality = fqDraft
               Font.Style = [fsBold]
+              ParentColor = False
               ParentFont = False
               TabOrder = 11
               ValueChecked = 'S'
@@ -1065,9 +1067,9 @@ inherited f_clientes_000: Tf_clientes_000
               Height = 144
               Top = 0
               Width = 1181
-              ActivePage = TabSheet5
+              ActivePage = TabSheet_GestionCobro
               Align = alClient
-              TabIndex = 0
+              TabIndex = 1
               TabOrder = 0
               TabPosition = tpBottom
               object TabSheet5: TTabSheet
@@ -4443,7 +4445,7 @@ inherited f_clientes_000: Tf_clientes_000
     left = 112
     top = 88
   end
-  object SQLQuery_Clientes_Contactos: TSQLQuery[8]
+  object SQLQuery_Clientes_Contactos: TSQLQuery[9]
     PacketRecords = 20
     FieldDefs = <    
       item
@@ -4779,14 +4781,14 @@ inherited f_clientes_000: Tf_clientes_000
       Size = 70
     end
   end
-  object DataSource_Clientes_Contactos: TDataSource[9]
+  object DataSource_Clientes_Contactos: TDataSource[10]
     DataSet = SQLQuery_Clientes_Contactos
     left = 696
   end
-  object DataSource_Clientes_Envios: TDataSource[10]
+  object DataSource_Clientes_Envios: TDataSource[11]
     left = 896
   end
-  object SQLQuery_Clientes_Envios: TSQLQuery[11]
+  object SQLQuery_Clientes_Envios: TSQLQuery[12]
     PacketRecords = 20
     FieldDefs = <    
       item
@@ -5282,7 +5284,7 @@ inherited f_clientes_000: Tf_clientes_000
       Size = 600
     end
   end
-  object SQLQuery_Clientes_Presupuestos: TSQLQuery[12]
+  object SQLQuery_Clientes_Presupuestos: TSQLQuery[13]
     FieldDefs = <    
       item
         Name = 'id'
@@ -7374,7 +7376,7 @@ inherited f_clientes_000: Tf_clientes_000
       Required = False
     end
   end
-  object DataSource_Clientes_Presupuestos: TDataSource[13]
+  object DataSource_Clientes_Presupuestos: TDataSource[14]
     DataSet = SQLQuery_Clientes_Presupuestos
     left = 736
     top = 472

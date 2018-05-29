@@ -14,13 +14,39 @@ Const
 type
 
   Trecord_Skin = record
-      con_Exito                             : Boolean;
-      DbGrid_Color                          : TColor;
-      DbGrid_Color_Eligiendo                : TColor;
-      DbGrid_Color_AlternateColor           : TColor;
-      DbGrid_Color_AlternateColor_Eligiendo : TColor;
-      DbGrid_Filtros_Color                  : TColor;
-      DbGrid_Filtros_Color_AlternateColor   : TColor;
+      con_Exito                           : Boolean;
+
+      DbGrid_Color                        : TColor;
+      DbGrid_Color_AlternateColor         : TColor;
+      DbGrid_Font_Color                   : TColor;
+
+      DbGrid_Filtros_Color                : TColor;
+      DbGrid_Filtros_Color_AlternateColor : TColor;
+      DbGrid_Filtros_Font_Color           : TColor;
+
+      DbMemo_Color                        : TColor;
+      DbMemo_Font_Color                   : TColor;
+
+      Memo_Color                          : TColor;
+      Memo_Font_Color                     : TColor;
+
+      Memo_Color_Filtros                  : TColor;
+      Memo_Font_Color_Filtros             : TColor;
+
+      Memo_Color_OrderBy                  : TColor;
+      Memo_Font_Color_OrderBy             : TColor;
+
+      Form_Color                          : TColor;
+      Form_Color_Eligiendo                : TColor;
+
+      DBEdit_Color                        : TColor;
+      DBEdit_Font_Color                   : TColor;
+
+      Edit_Color                          : TColor;
+      Edit_Font_Color                     : TColor;
+
+      DBDateTimePicker_Color              : TColor;
+      DBDateTimePicker_Font_Color         : TColor;
   end;
 
   Trecord_CN_Conexion = record
@@ -124,13 +150,36 @@ begin
             Result.con_Exito                             := true;
 
             Result.DbGrid_Color                          := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Color', ''));
-            Result.DbGrid_Color_Eligiendo                := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Color_Eligiendo', ''));
-
             Result.DbGrid_Color_AlternateColor           := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Color_AlternateColor', ''));
-            Result.DbGrid_Color_AlternateColor_Eligiendo := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Color_AlternateColor_Eligiendo', ''));
+            Result.DbGrid_Font_Color                     := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Font_Color', ''));
 
             Result.DbGrid_Filtros_Color                  := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Filtros_Color', ''));
             Result.DbGrid_Filtros_Color_AlternateColor   := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Filtros_Color_AlternateColor', ''));
+            Result.DbGrid_Filtros_Font_Color             := StringToColor(var_fichero_ini.ReadString('Skin', 'DbGrid_Filtros_Font_Color', ''));
+
+            Result.DbMemo_Color                          := StringToColor(var_fichero_ini.ReadString('Skin', 'DbMemo_Color', ''));
+            Result.DbMemo_Font_Color                     := StringToColor(var_fichero_ini.ReadString('Skin', 'DbMemo_Font_Color', ''));
+
+            Result.Memo_Color                            := StringToColor(var_fichero_ini.ReadString('Skin', 'Memo_Color', ''));
+            Result.Memo_Font_Color                       := StringToColor(var_fichero_ini.ReadString('Skin', 'Memo_Font_Color', ''));
+
+            Result.Memo_Color_Filtros                    := StringToColor(var_fichero_ini.ReadString('Skin', 'Memo_Color_Filtros', ''));
+            Result.Memo_Font_Color_Filtros               := StringToColor(var_fichero_ini.ReadString('Skin', 'Memo_Font_Color_Filtros', ''));
+
+            Result.Memo_Color_OrderBy                    := StringToColor(var_fichero_ini.ReadString('Skin', 'Memo_Color_OrderBy', ''));
+            Result.Memo_Font_Color_OrderBy               := StringToColor(var_fichero_ini.ReadString('Skin', 'Memo_Font_Color_OrderBy', ''));
+
+            Result.Form_Color                            := StringToColor(var_fichero_ini.ReadString('Skin', 'Form_Color', ''));
+            Result.Form_Color_Eligiendo                  := StringToColor(var_fichero_ini.ReadString('Skin', 'Form_Color_Eligiendo', ''));
+
+            Result.DBEdit_Color                          := StringToColor(var_fichero_ini.ReadString('Skin', 'DBEdit_Color', ''));
+            Result.DBEdit_Font_Color                     := StringToColor(var_fichero_ini.ReadString('Skin', 'DBEdit_Font_Color', ''));
+
+            Result.Edit_Color                            := StringToColor(var_fichero_ini.ReadString('Skin', 'Edit_Color', ''));
+            Result.Edit_Font_Color                       := StringToColor(var_fichero_ini.ReadString('Skin', 'Edit_Font_Color', ''));
+
+            Result.DBDateTimePicker_Color                := StringToColor(var_fichero_ini.ReadString('Skin', 'DBDateTimePicker_Color', ''));
+            Result.DBDateTimePicker_Font_Color           := StringToColor(var_fichero_ini.ReadString('Skin', 'DBDateTimePicker_Font_Color', ''));
 
             var_fichero_ini.Free;
         except

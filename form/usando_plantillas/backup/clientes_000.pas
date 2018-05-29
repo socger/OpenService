@@ -630,7 +630,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Representantes( true, false, 130, '1' );
+    var_Registro := UTI_Abrir_Modulo_Representantes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_Representantes').AsString := Trim(var_Registro.id_1);

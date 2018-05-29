@@ -731,7 +731,7 @@ object form_plantilla_000: Tform_plantilla_000
       object RadioGroup_Bajas: TRadioGroup
         Left = 0
         Height = 45
-        Top = 0
+        Top = 1
         Width = 85
         AutoFill = True
         BorderSpacing.Bottom = 3

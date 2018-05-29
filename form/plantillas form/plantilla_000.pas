@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Buttons,
   ComCtrls, DBGrids, DbCtrls, types, sqldb, db, Grids, ButtonPanel, ExtDlgs, utilidades_datos_tablas,
   variants, utilidades_general, utilidades_rgtro, utilidades_usuarios, utilidades_forms_Filtrar,
-  utilidades_bd, utilidades_ini;
+  DBDateTimePicker, utilidades_bd, utilidades_ini;
 
 type
 
@@ -547,23 +547,6 @@ end;
 procedure Tform_plantilla_000.FormActivate(Sender: TObject);
 begin
   Cambiar_Estilo_Form;
-
-  If public_Elegimos = true then
-  begin
-    BitBtn_Seleccionar.Visible := true;
-    BitBtn_Imprimir.Visible    := false;
-
-    with Self do
-    begin
-      Color := $00B9959C;
-    end;
-  end;
-
-  if public_Solo_Ver = true then
-  begin
-    no_Tocar;
-  end;
-
 end;
 
 procedure Tform_plantilla_000.FormClose(Sender: TObject;
@@ -593,42 +576,111 @@ var
   v_i    : Integer;
   v_Skin : Trecord_Skin;
 begin
+  Cambiar_WindowState;
+
+  BitBtn_Seleccionar.Visible := false;
+  BitBtn_Imprimir.Visible    := true;
+  If public_Elegimos = true then
+  begin
+    BitBtn_Seleccionar.Visible := true;
+    BitBtn_Imprimir.Visible    := false;
+  end;
+
+  if public_Solo_Ver = true then
+  begin
+    no_Tocar;
+  end;
+
   with Self do
   begin
-    Color       := $00C2C29E;
     Position    := poScreenCenter;
     BorderIcons := [];
     BorderStyle := bsSingle;
   end;
 
-  Cambiar_WindowState;
-
   v_Skin := UTI_INI_Configuracion_Skin;
+
+  // Cambiamos los colores de todos los componentes y form ... INI - SKIN
+  with Self do
+  begin
+    Color := TColor(v_Skin.Form_Color);
+    If public_Elegimos = true then
+      Color := TColor(v_Skin.Form_Color_Eligiendo);
+  end;
 
   for v_i := 0 to (ComponentCount - 1) do
   begin
+
+    // Campo TDBDateTimePicker
+    if (Components[v_i] is TDBDateTimePicker) then
+    begin
+      TDBDateTimePicker(Components[v_i]).Color      := TColor(v_Skin.DBDateTimePicker_Color);
+      TDBDateTimePicker(Components[v_i]).Font.Color := TColor(v_Skin.DBDateTimePicker_Font_Color);
+    end;
+
+    // Campo TEdit
+    if (Components[v_i] is TEdit) then
+    begin
+      TEdit(Components[v_i]).Color      := TColor(v_Skin.Edit_Color);
+      TEdit(Components[v_i]).Font.Color := TColor(v_Skin.Edit_Font_Color);
+    end;
+
+    // Campo TDBEdit
+    if (Components[v_i] is TDBEdit) then
+    begin
+      TDBEdit(Components[v_i]).Color      := TColor(v_Skin.DBEdit_Color);
+      TDBEdit(Components[v_i]).Font.Color := TColor(v_Skin.DBEdit_Font_Color);
+    end;
+
+    // Campo TDBMemo
+    if (Components[v_i] is TDBMemo) then
+    begin
+      TDBMemo(Components[v_i]).Color      := TColor(v_Skin.DBMemo_Color);
+      TDBMemo(Components[v_i]).Font.Color := TColor(v_Skin.DBMemo_Font_Color);
+    end;
+
+    // Campo TMemo
+    if (Components[v_i] is TMemo) then
+    begin
+      if (TMemo(Components[v_i]).Name <> 'Memo_Filtros') and
+         (TMemo(Components[v_i]).Name <> 'Memo_OrderBy') then
+      begin
+        TMemo(Components[v_i]).Color      := TColor(v_Skin.Memo_Color);
+        TMemo(Components[v_i]).Font.Color := TColor(v_Skin.Memo_Font_Color);
+      end
+
+      else
+      begin
+        if TMemo(Components[v_i]).Name = 'Memo_Filtros' then
+        begin
+          TMemo(Components[v_i]).Color     := TColor(v_Skin.Memo_Color_Filtros);
+          TMemo(Components[v_i]).Font.Color := TColor(v_Skin.Memo_Font_Color_Filtros);
+        end;
+
+        if TMemo(Components[v_i]).Name = 'Memo_OrderBy' then
+        begin
+          TMemo(Components[v_i]).Color      := TColor(v_Skin.Memo_Color_OrderBy);
+          TMemo(Components[v_i]).Font.Color := TColor(v_Skin.Memo_Font_Color_OrderBy);
+        end;
+      end;
+    end;
+
+    // Campo TDBGrid
     if (Components[v_i] is TDBGrid) then
     begin
       if TDBGrid(Components[v_i]).Name <> 'DBGrid_Filtros' then
       begin
         TDBGrid(Components[v_i]).Color          := TColor(v_Skin.DbGrid_Color);
         TDBGrid(Components[v_i]).AlternateColor := TColor(v_Skin.DbGrid_Color_AlternateColor);
+        TDBGrid(Components[v_i]).Font.Color     := TColor(v_Skin.DbGrid_Font_Color);
       end
 
       else
       begin
         TDBGrid(Components[v_i]).Color          := TColor(v_Skin.DbGrid_Filtros_Color);
         TDBGrid(Components[v_i]).AlternateColor := TColor(v_Skin.DbGrid_Filtros_Color_AlternateColor);
+        TDBGrid(Components[v_i]).Font.Color     := TColor(v_Skin.DbGrid_Filtros_Font_Color);
       end;
-
-      jerofa hay que ver también cuando es elegido como se van a rellenar los colores de los grids
-      y del fondo del form
-
-      y los dbEdit y Edit
-
-      También los grids de filtros ... ver sus colores
-
-
     end;
 
   end;
@@ -3337,6 +3389,8 @@ end.
 
 (*
 En el init debería de tener los colores con los que configuro las plantillas (grids, etc)
+
+El mantenimiento de clientes da un error al cambiar el campo  cuenta contable ... aunque podría ser otro campo tmbién
 
 Hay que ver porque en clientes_tipo cuando entramos en los filtros y cambiamos de desde a hasta, y
 despues volvemos al debe, pues ya el debe no lo deja escribir ... y tambien porque el hasta no deja

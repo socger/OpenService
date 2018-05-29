@@ -4,11 +4,11 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="355">
+    <Units Count="358">
       <Unit0>
         <Filename Value="socger_TALLER.pas"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="48"/>
+        <TopLine Value="74"/>
         <CursorPos X="32" Y="80"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
@@ -38,22 +38,20 @@
       <Unit3>
         <Filename Value="Unit\utilidades_bd.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="1382"/>
-        <CursorPos X="52" Y="1418"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="328"/>
+        <CursorPos Y="345"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
-          <TopLine Value="328"/>
-          <CursorPos Y="345"/>
+          <TopLine Value="1520"/>
+          <CursorPos X="5" Y="1554"/>
         </ExtraEditor1>
         <UsageCount Value="202"/>
-        <Bookmarks Count="3">
+        <Bookmarks Count="2">
           <Item0 X="26" Y="1298" ID="4"/>
-          <Item1 Y="516" ID="1"/>
-          <Item2 Y="1552" ID="5"/>
+          <Item1 Y="1552" ID="5"/>
         </Bookmarks>
-        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="Unit\utilidades_usuarios.pas"/>
@@ -66,11 +64,10 @@
       <Unit5>
         <Filename Value="Unit\utilidades_general.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="327"/>
         <CursorPos X="52" Y="363"/>
         <UsageCount Value="201"/>
-        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="form\avisos.pas"/>
@@ -152,7 +149,7 @@
         <Filename Value="Unit\utilidades_forms_filtrar.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="utilidades_forms_Filtrar"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="2"/>
         <CursorPos X="90" Y="19"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
@@ -2664,16 +2661,17 @@
         <ComponentName Value="form_plantilla_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="594"/>
-        <CursorPos X="101" Y="621"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="621"/>
+        <CursorPos X="48" Y="636"/>
         <UsageCount Value="206"/>
-        <Bookmarks Count="5">
-          <Item0 X="31" Y="1728" ID="8"/>
-          <Item1 Y="2105" ID="9"/>
+        <Bookmarks Count="6">
+          <Item0 X="31" Y="1782" ID="8"/>
+          <Item1 Y="2159" ID="9"/>
           <Item2 X="33" Y="314" ID="6"/>
-          <Item3 Y="2767" ID="2"/>
-          <Item4 Y="2958" ID="3"/>
+          <Item3 Y="2821" ID="2"/>
+          <Item4 Y="3012" ID="3"/>
+          <Item5 Y="600" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -2753,7 +2751,7 @@
         <ComponentName Value="form_plantilla_detalle_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="194"/>
         <CursorPos Y="206"/>
         <UsageCount Value="200"/>
@@ -2874,8 +2872,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="616"/>
-        <CursorPos X="67" Y="633"/>
+        <CursorPos X="152" Y="5"/>
         <UsageCount Value="201"/>
       </Unit263>
       <Unit264>
@@ -2939,13 +2936,23 @@
         <ComponentName Value="form_plantilla_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="7"/>
-        <CursorPos X="22" Y="12"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="82" Y="12"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit269>
       <Unit270>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="10"/>
+        <CursorPos X="19" Y="27"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit270>
+      <Unit271>
         <Filename Value="form\clientes_000.pas"/>
         <ComponentName Value="form_clientes_000"/>
         <HasResources Value="True"/>
@@ -2953,9 +2960,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1399"/>
         <CursorPos Y="1413"/>
-        <UsageCount Value="167"/>
-      </Unit270>
-      <Unit271>
+        <UsageCount Value="166"/>
+      </Unit271>
+      <Unit272>
         <Filename Value="dataModule\dm_clientes.pas"/>
         <ComponentName Value="DataModule_Clientes"/>
         <HasResources Value="True"/>
@@ -2963,9 +2970,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="25"/>
         <CursorPos X="40" Y="39"/>
-        <UsageCount Value="167"/>
-      </Unit271>
-      <Unit272>
+        <UsageCount Value="166"/>
+      </Unit272>
+      <Unit273>
         <Filename Value="form\clientes_001.pas"/>
         <ComponentName Value="form_clientes_001"/>
         <HasResources Value="True"/>
@@ -2973,9 +2980,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="456"/>
         <CursorPos X="5" Y="331"/>
-        <UsageCount Value="166"/>
-      </Unit272>
-      <Unit273>
+        <UsageCount Value="165"/>
+      </Unit273>
+      <Unit274>
         <Filename Value="form\clientes_002.pas"/>
         <ComponentName Value="form_clientes_002"/>
         <HasResources Value="True"/>
@@ -2983,9 +2990,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="105"/>
         <CursorPos X="42" Y="113"/>
-        <UsageCount Value="167"/>
-      </Unit273>
-      <Unit274>
+        <UsageCount Value="166"/>
+      </Unit274>
+      <Unit275>
         <Filename Value="form\clientes_003.pas"/>
         <ComponentName Value="form_clientes_003"/>
         <HasResources Value="True"/>
@@ -2993,9 +3000,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="369"/>
         <CursorPos X="42" Y="380"/>
-        <UsageCount Value="166"/>
-      </Unit274>
-      <Unit275>
+        <UsageCount Value="165"/>
+      </Unit275>
+      <Unit276>
         <Filename Value="form\clientes_004.pas"/>
         <ComponentName Value="form_clientes_004"/>
         <HasResources Value="True"/>
@@ -3003,9 +3010,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="78"/>
         <CursorPos X="26" Y="90"/>
-        <UsageCount Value="166"/>
-      </Unit275>
-      <Unit276>
+        <UsageCount Value="165"/>
+      </Unit276>
+      <Unit277>
         <Filename Value="form\clientes_005.pas"/>
         <ComponentName Value="form_clientes_005"/>
         <HasResources Value="True"/>
@@ -3013,9 +3020,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="86"/>
         <CursorPos X="22" Y="98"/>
-        <UsageCount Value="167"/>
-      </Unit276>
-      <Unit277>
+        <UsageCount Value="166"/>
+      </Unit277>
+      <Unit278>
         <Filename Value="form\clientes_tipos_000.pas"/>
         <ComponentName Value="form_clientes_tipos_000"/>
         <HasResources Value="True"/>
@@ -3023,17 +3030,17 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="413"/>
         <CursorPos X="61" Y="431"/>
-        <UsageCount Value="166"/>
-      </Unit277>
-      <Unit278>
+        <UsageCount Value="165"/>
+      </Unit278>
+      <Unit279>
         <Filename Value="dataModule\dm_clientes_tipos.pas"/>
         <ComponentName Value="DataModule_Clientes_Tipos"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="165"/>
-      </Unit278>
-      <Unit279>
+        <UsageCount Value="164"/>
+      </Unit279>
+      <Unit280>
         <Filename Value="form\clientes_tipos_001.pas"/>
         <ComponentName Value="form_clientes_tipos_001"/>
         <HasResources Value="True"/>
@@ -3041,18 +3048,18 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="72"/>
         <CursorPos Y="92"/>
-        <UsageCount Value="169"/>
-      </Unit279>
-      <Unit280>
+        <UsageCount Value="168"/>
+      </Unit280>
+      <Unit281>
         <Filename Value="dataModule\dm_bancos_empresas.pas"/>
         <ComponentName Value="DataModule_Bancos_Empresas"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="8"/>
-        <UsageCount Value="166"/>
-      </Unit280>
-      <Unit281>
+        <UsageCount Value="165"/>
+      </Unit281>
+      <Unit282>
         <Filename Value="form\bancos_empresas_000.pas"/>
         <ComponentName Value="form_bancos_empresas_000"/>
         <HasResources Value="True"/>
@@ -3060,9 +3067,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="542"/>
         <CursorPos X="37" Y="554"/>
-        <UsageCount Value="165"/>
-      </Unit281>
-      <Unit282>
+        <UsageCount Value="164"/>
+      </Unit282>
+      <Unit283>
         <Filename Value="form\bancos_empresas_001.pas"/>
         <ComponentName Value="form_bancos_empresas_001"/>
         <HasResources Value="True"/>
@@ -3070,9 +3077,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="442"/>
         <CursorPos X="33" Y="457"/>
-        <UsageCount Value="164"/>
-      </Unit282>
-      <Unit283>
+        <UsageCount Value="163"/>
+      </Unit283>
+      <Unit284>
         <Filename Value="dataModule\dm_terminales.pas"/>
         <ComponentName Value="DataModule_Terminales"/>
         <HasResources Value="True"/>
@@ -3080,9 +3087,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="18"/>
         <CursorPos Y="35"/>
-        <UsageCount Value="142"/>
-      </Unit283>
-      <Unit284>
+        <UsageCount Value="141"/>
+      </Unit284>
+      <Unit285>
         <Filename Value="form\terminales_001.pas"/>
         <ComponentName Value="form_terminales_001"/>
         <HasResources Value="True"/>
@@ -3090,29 +3097,29 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="45"/>
         <CursorPos X="92" Y="56"/>
-        <UsageCount Value="142"/>
-      </Unit284>
-      <Unit285>
+        <UsageCount Value="141"/>
+      </Unit285>
+      <Unit286>
         <Filename Value="dataModule\dm_impresoras.pas"/>
         <ComponentName Value="DataModule_Impresoras"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="138"/>
-      </Unit285>
-      <Unit286>
+        <UsageCount Value="137"/>
+      </Unit286>
+      <Unit287>
         <Filename Value="form\impresoras_001.pas"/>
         <ComponentName Value="form_impresoras_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="46" Y="9"/>
-        <UsageCount Value="138"/>
+        <UsageCount Value="137"/>
         <Bookmarks Count="1">
           <Item0 X="42" Y="119" ID="3"/>
         </Bookmarks>
-      </Unit286>
-      <Unit287>
+      </Unit287>
+      <Unit288>
         <Filename Value="dataModule\dm_almacenes_movimientos.pas"/>
         <ComponentName Value="DataModule_Almacenes_Movimientos"/>
         <HasResources Value="True"/>
@@ -3120,9 +3127,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="15"/>
         <CursorPos X="60" Y="18"/>
-        <UsageCount Value="137"/>
-      </Unit287>
-      <Unit288>
+        <UsageCount Value="136"/>
+      </Unit288>
+      <Unit289>
         <Filename Value="form\almacenes_movimientos_002.pas"/>
         <ComponentName Value="form_almacenes_movimientos_002"/>
         <HasResources Value="True"/>
@@ -3130,9 +3137,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="246"/>
         <CursorPos X="5" Y="257"/>
-        <UsageCount Value="138"/>
-      </Unit288>
-      <Unit289>
+        <UsageCount Value="137"/>
+      </Unit289>
+      <Unit290>
         <Filename Value="dataModule\dm_almacenes.pas"/>
         <ComponentName Value="DataModule_Almacenes"/>
         <HasResources Value="True"/>
@@ -3140,9 +3147,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="12"/>
         <CursorPos Y="36"/>
-        <UsageCount Value="135"/>
-      </Unit289>
-      <Unit290>
+        <UsageCount Value="134"/>
+      </Unit290>
+      <Unit291>
         <Filename Value="form\almacenes_001.pas"/>
         <ComponentName Value="form_almacenes_001"/>
         <HasResources Value="True"/>
@@ -3150,18 +3157,18 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="129"/>
         <CursorPos Y="143"/>
-        <UsageCount Value="135"/>
-      </Unit290>
-      <Unit291>
+        <UsageCount Value="134"/>
+      </Unit291>
+      <Unit292>
         <Filename Value="dataModule\dm_impuestos.pas"/>
         <ComponentName Value="DataModule_Impuestos"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="74" Y="8"/>
-        <UsageCount Value="133"/>
-      </Unit291>
-      <Unit292>
+        <UsageCount Value="132"/>
+      </Unit292>
+      <Unit293>
         <Filename Value="form\impuestos_001.pas"/>
         <ComponentName Value="form_impuestos_001"/>
         <HasResources Value="True"/>
@@ -3169,9 +3176,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="643"/>
         <CursorPos Y="660"/>
-        <UsageCount Value="134"/>
-      </Unit292>
-      <Unit293>
+        <UsageCount Value="133"/>
+      </Unit293>
+      <Unit294>
         <Filename Value="form\impuestos_002.pas"/>
         <ComponentName Value="form_impuestos_002"/>
         <HasResources Value="True"/>
@@ -3179,18 +3186,18 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="69"/>
         <CursorPos X="50" Y="78"/>
-        <UsageCount Value="133"/>
-      </Unit293>
-      <Unit294>
+        <UsageCount Value="132"/>
+      </Unit294>
+      <Unit295>
         <Filename Value="dataModule\dm_impuestos_para_composicion.pas"/>
         <ComponentName Value="DataModule_impuestos_para_composicion"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="74" Y="8"/>
-        <UsageCount Value="133"/>
-      </Unit294>
-      <Unit295>
+        <UsageCount Value="132"/>
+      </Unit295>
+      <Unit296>
         <Filename Value="form\actividades_001.pas"/>
         <ComponentName Value="form_actividades_001"/>
         <HasResources Value="True"/>
@@ -3198,9 +3205,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="102"/>
         <CursorPos Y="110"/>
-        <UsageCount Value="134"/>
-      </Unit295>
-      <Unit296>
+        <UsageCount Value="133"/>
+      </Unit296>
+      <Unit297>
         <Filename Value="dataModule\dm_actividades.pas"/>
         <ComponentName Value="DataModule_actividades"/>
         <HasResources Value="True"/>
@@ -3208,9 +3215,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos X="66" Y="25"/>
-        <UsageCount Value="136"/>
-      </Unit296>
-      <Unit297>
+        <UsageCount Value="135"/>
+      </Unit297>
+      <Unit298>
         <Filename Value="form\informes_000.pas"/>
         <ComponentName Value="form_informes_000"/>
         <HasResources Value="True"/>
@@ -3218,27 +3225,27 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="106"/>
         <CursorPos Y="114"/>
-        <UsageCount Value="44"/>
-      </Unit297>
-      <Unit298>
+        <UsageCount Value="43"/>
+      </Unit298>
+      <Unit299>
         <Filename Value="form\informes_001.pas"/>
         <ComponentName Value="form_informes_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="21" Y="8"/>
-        <UsageCount Value="44"/>
-      </Unit298>
-      <Unit299>
+        <UsageCount Value="43"/>
+      </Unit299>
+      <Unit300>
         <Filename Value="dataModule\dm_informes.pas"/>
         <ComponentName Value="DataModule_Informes"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="36"/>
-        <UsageCount Value="36"/>
-      </Unit299>
-      <Unit300>
+        <UsageCount Value="35"/>
+      </Unit300>
+      <Unit301>
         <Filename Value="form\alumnos_000.pas"/>
         <ComponentName Value="form_alumnos_000"/>
         <HasResources Value="True"/>
@@ -3246,9 +3253,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1129"/>
         <CursorPos X="26" Y="1129"/>
-        <UsageCount Value="93"/>
-      </Unit300>
-      <Unit301>
+        <UsageCount Value="92"/>
+      </Unit301>
+      <Unit302>
         <Filename Value="form\alumnos_001.pas"/>
         <ComponentName Value="form_alumnos_001"/>
         <HasResources Value="True"/>
@@ -3256,27 +3263,27 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="631"/>
         <CursorPos X="53" Y="644"/>
-        <UsageCount Value="93"/>
-      </Unit301>
-      <Unit302>
+        <UsageCount Value="92"/>
+      </Unit302>
+      <Unit303>
         <Filename Value="form\alumnos_002.pas"/>
         <ComponentName Value="form_alumnos_002"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="13"/>
-        <UsageCount Value="93"/>
-      </Unit302>
-      <Unit303>
+        <UsageCount Value="92"/>
+      </Unit303>
+      <Unit304>
         <Filename Value="form\alumnos_003.pas"/>
         <ComponentName Value="form_alumnos_003"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="16"/>
-        <UsageCount Value="93"/>
-      </Unit303>
-      <Unit304>
+        <UsageCount Value="92"/>
+      </Unit304>
+      <Unit305>
         <Filename Value="form\alumnos_004.pas"/>
         <ComponentName Value="form_alumnos_004"/>
         <HasResources Value="True"/>
@@ -3284,9 +3291,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="204"/>
         <CursorPos X="58" Y="218"/>
-        <UsageCount Value="93"/>
-      </Unit304>
-      <Unit305>
+        <UsageCount Value="92"/>
+      </Unit305>
+      <Unit306>
         <Filename Value="form\recibos_000.pas"/>
         <ComponentName Value="form_recibos_000"/>
         <HasResources Value="True"/>
@@ -3294,9 +3301,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="842"/>
         <CursorPos X="26" Y="842"/>
-        <UsageCount Value="94"/>
-      </Unit305>
-      <Unit306>
+        <UsageCount Value="93"/>
+      </Unit306>
+      <Unit307>
         <Filename Value="form\recibos_001.pas"/>
         <ComponentName Value="form_recibos_001"/>
         <HasResources Value="True"/>
@@ -3304,9 +3311,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="89"/>
         <CursorPos Y="111"/>
-        <UsageCount Value="93"/>
-      </Unit306>
-      <Unit307>
+        <UsageCount Value="92"/>
+      </Unit307>
+      <Unit308>
         <Filename Value="form\recibos_002.pas"/>
         <ComponentName Value="form_recibos_002"/>
         <HasResources Value="True"/>
@@ -3314,9 +3321,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="387"/>
         <CursorPos X="49" Y="400"/>
-        <UsageCount Value="96"/>
-      </Unit307>
-      <Unit308>
+        <UsageCount Value="95"/>
+      </Unit308>
+      <Unit309>
         <Filename Value="form\recibos_003.pas"/>
         <ComponentName Value="form_recibos_003"/>
         <HasResources Value="True"/>
@@ -3324,46 +3331,46 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="456"/>
         <CursorPos X="102" Y="471"/>
-        <UsageCount Value="93"/>
-      </Unit308>
-      <Unit309>
+        <UsageCount Value="92"/>
+      </Unit309>
+      <Unit310>
         <Filename Value="C:\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4494"/>
         <CursorPos Y="4509"/>
-        <UsageCount Value="8"/>
-      </Unit309>
-      <Unit310>
+        <UsageCount Value="7"/>
+      </Unit310>
+      <Unit311>
         <Filename Value="C:\lcl\dbctrls.pp"/>
         <UnitName Value="DbCtrls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1505"/>
         <CursorPos Y="1516"/>
-        <UsageCount Value="2"/>
-      </Unit310>
-      <Unit311>
+        <UsageCount Value="1"/>
+      </Unit311>
+      <Unit312>
         <Filename Value="C:\lcl\grids.pas"/>
         <UnitName Value="Grids"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="12250"/>
         <CursorPos Y="12264"/>
-        <UsageCount Value="6"/>
-      </Unit311>
-      <Unit312>
+        <UsageCount Value="5"/>
+      </Unit312>
+      <Unit313>
         <Filename Value="C:\lcl\include\pen.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="505"/>
         <CursorPos Y="519"/>
-        <UsageCount Value="10"/>
-      </Unit312>
-      <Unit313>
+        <UsageCount Value="9"/>
+      </Unit313>
+      <Unit314>
         <Filename Value="C:\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="926"/>
         <CursorPos Y="940"/>
-        <UsageCount Value="2"/>
-      </Unit313>
-      <Unit314>
+        <UsageCount Value="1"/>
+      </Unit314>
+      <Unit315>
         <Filename Value="form\BORRADO\clientes\clientes_001.pas"/>
         <ComponentName Value="form_clientes_001"/>
         <HasResources Value="True"/>
@@ -3371,9 +3378,9 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1959"/>
         <CursorPos X="57" Y="1976"/>
-        <UsageCount Value="6"/>
-      </Unit314>
-      <Unit315>
+        <UsageCount Value="5"/>
+      </Unit315>
+      <Unit316>
         <Filename Value="form\BORRADO\clientes\clientes_002.pas"/>
         <ComponentName Value="form_clientes_002"/>
         <HasResources Value="True"/>
@@ -3381,82 +3388,82 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="345"/>
         <CursorPos X="19" Y="350"/>
-        <UsageCount Value="1"/>
+        <UsageCount Value="0"/>
         <Bookmarks Count="1">
           <Item0 Y="92" ID="1"/>
         </Bookmarks>
-      </Unit315>
-      <Unit316>
-        <Filename Value="form\BORRADO\clientes\clientes_004.pas"/>
-        <ComponentName Value="form_clientes_004"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="2"/>
       </Unit316>
       <Unit317>
-        <Filename Value="form\BORRADO\clientes\clientes_005.pas"/>
-        <ComponentName Value="form_clientes_005"/>
+        <Filename Value="form\BORRADO\clientes\clientes_004.pas"/>
+        <ComponentName Value="form_clientes_004"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <UsageCount Value="1"/>
       </Unit317>
       <Unit318>
+        <Filename Value="form\BORRADO\clientes\clientes_005.pas"/>
+        <ComponentName Value="form_clientes_005"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="0"/>
+      </Unit318>
+      <Unit319>
         <Filename Value="C:\prueba para borrarla\servicios_regulares_001.pas"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <CursorPos X="19" Y="4"/>
-        <UsageCount Value="10"/>
-      </Unit318>
-      <Unit319>
+        <UsageCount Value="9"/>
+      </Unit319>
+      <Unit320>
         <Filename Value="C:\components\codetools\nonpascalcodetools.pas"/>
         <UnitName Value="NonPascalCodeTools"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="41"/>
         <CursorPos Y="52"/>
-        <UsageCount Value="10"/>
-      </Unit319>
-      <Unit320>
+        <UsageCount Value="9"/>
+      </Unit320>
+      <Unit321>
         <Filename Value="form\usando_plantillas\servicios_regulares_000.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="5292"/>
         <CursorPos Y="5319"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <Bookmarks Count="1">
           <Item0 X="9" Y="5497" ID="1"/>
         </Bookmarks>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit320>
-      <Unit321>
+      </Unit321>
+      <Unit322>
         <Filename Value="C:\components\lazutils\winlazfileutils.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="48"/>
         <CursorPos Y="70"/>
-        <UsageCount Value="2"/>
-      </Unit321>
-      <Unit322>
+        <UsageCount Value="1"/>
+      </Unit322>
+      <Unit323>
         <Filename Value="C:\components\lazutils\lazmethodlist.pas"/>
         <UnitName Value="LazMethodList"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="284"/>
         <CursorPos Y="305"/>
-        <UsageCount Value="2"/>
-      </Unit322>
-      <Unit323>
+        <UsageCount Value="1"/>
+      </Unit323>
+      <Unit324>
         <Filename Value="form\usando_plantillas\clientes_tipos_000.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="197"/>
         <CursorPos Y="211"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <Bookmarks Count="1">
           <Item0 X="28" Y="425" ID="5"/>
         </Bookmarks>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit323>
-      <Unit324>
+      </Unit324>
+      <Unit325>
         <Filename Value="form\usando_plantillas\filtros_001.pas"/>
         <ComponentName Value="f_filtros_001"/>
         <HasResources Value="True"/>
@@ -3464,16 +3471,16 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="132"/>
         <CursorPos Y="146"/>
-        <UsageCount Value="11"/>
-      </Unit324>
-      <Unit325>
+        <UsageCount Value="10"/>
+      </Unit325>
+      <Unit326>
         <Filename Value="C:\fpc\3.0.4\source\packages\fcl-db\src\base\db.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="94"/>
         <CursorPos X="26" Y="108"/>
-        <UsageCount Value="8"/>
-      </Unit325>
-      <Unit326>
+        <UsageCount Value="7"/>
+      </Unit326>
+      <Unit327>
         <Filename Value="C:\Users\Satellite\Desktop\plantilla_000.pas"/>
         <ComponentName Value="form_plantilla_000"/>
         <HasResources Value="True"/>
@@ -3481,321 +3488,314 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="425"/>
         <CursorPos X="3" Y="427"/>
-        <UsageCount Value="7"/>
-      </Unit326>
-      <Unit327>
-        <Filename Value="form\usando_plantillas\impresoras_000.lfm"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
+        <UsageCount Value="6"/>
       </Unit327>
       <Unit328>
-        <Filename Value="form\usando_plantillas\clientes_000.lfm"/>
+        <Filename Value="form\usando_plantillas\impresoras_000.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit328>
       <Unit329>
+        <Filename Value="form\usando_plantillas\clientes_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit329>
+      <Unit330>
         <Filename Value="C:\Users\Satellite\Desktop\filtrar_registros.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="614"/>
         <CursorPos X="29" Y="636"/>
-        <UsageCount Value="8"/>
-      </Unit329>
-      <Unit330>
+        <UsageCount Value="7"/>
+      </Unit330>
+      <Unit331>
         <Filename Value="form\menu.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2912"/>
         <CursorPos Y="2921"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit330>
-      <Unit331>
+      </Unit331>
+      <Unit332>
         <Filename Value="C:\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="8256"/>
         <CursorPos X="32" Y="8270"/>
-        <UsageCount Value="2"/>
-      </Unit331>
-      <Unit332>
-        <Filename Value="form\usando_plantillas\actividades_000.lfm"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
+        <UsageCount Value="1"/>
       </Unit332>
       <Unit333>
-        <Filename Value="form\usando_plantillas\almacenes_000.lfm"/>
+        <Filename Value="form\usando_plantillas\actividades_000.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit333>
       <Unit334>
-        <Filename Value="form\usando_plantillas\almacenes_movimientos_000.lfm"/>
+        <Filename Value="form\usando_plantillas\almacenes_000.lfm"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="98" Y="2"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit334>
       <Unit335>
-        <Filename Value="form\usando_plantillas\bancos_ctas_empresas_000.lfm"/>
+        <Filename Value="form\usando_plantillas\almacenes_movimientos_000.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <CursorPos X="98" Y="2"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit335>
       <Unit336>
-        <Filename Value="form\usando_plantillas\elegir_cliente_contacto.lfm"/>
+        <Filename Value="form\usando_plantillas\bancos_ctas_empresas_000.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit336>
       <Unit337>
-        <Filename Value="form\usando_plantillas\elegir_cliente_direccion_envio.lfm"/>
+        <Filename Value="form\usando_plantillas\elegir_cliente_contacto.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit337>
       <Unit338>
-        <Filename Value="form\usando_plantillas\elegir_diarios_tipos.lfm"/>
+        <Filename Value="form\usando_plantillas\elegir_cliente_direccion_envio.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit338>
       <Unit339>
-        <Filename Value="form\usando_plantillas\elegir_impuestos.lfm"/>
+        <Filename Value="form\usando_plantillas\elegir_diarios_tipos.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit339>
       <Unit340>
-        <Filename Value="form\usando_plantillas\impuestos_000.lfm"/>
+        <Filename Value="form\usando_plantillas\elegir_impuestos.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit340>
       <Unit341>
-        <Filename Value="form\usando_plantillas\reportes_000.lfm"/>
+        <Filename Value="form\usando_plantillas\impuestos_000.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit341>
       <Unit342>
-        <Filename Value="form\usando_plantillas\servicios_tipos_000.lfm"/>
+        <Filename Value="form\usando_plantillas\reportes_000.lfm"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit342>
       <Unit343>
+        <Filename Value="form\usando_plantillas\servicios_tipos_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="2"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit343>
+      <Unit344>
         <Filename Value="form\usando_plantillas\terminales_000.lfm"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="185"/>
         <CursorPos X="27" Y="212"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit343>
-      <Unit344>
+      </Unit344>
+      <Unit345>
         <Filename Value="C:\lcl\dbgrids.pas"/>
         <UnitName Value="DBGrids"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="835"/>
         <CursorPos Y="850"/>
-        <UsageCount Value="6"/>
-      </Unit344>
-      <Unit345>
+        <UsageCount Value="5"/>
+      </Unit345>
+      <Unit346>
         <Filename Value="C:\lcl\include\radiogroup.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="348"/>
         <CursorPos Y="374"/>
-        <UsageCount Value="8"/>
-      </Unit345>
-      <Unit346>
+        <UsageCount Value="7"/>
+      </Unit346>
+      <Unit347>
         <Filename Value="C:\Users\Satellite\Desktop\servicios_regulares_000.pas"/>
         <ComponentName Value="f_servicios_regulares_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="91" Y="16"/>
-        <UsageCount Value="8"/>
-      </Unit346>
-      <Unit347>
-        <Filename Value="C:\Users\Satellite\Desktop\servicios_regulares_000.lfm"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="8"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
+        <UsageCount Value="7"/>
       </Unit347>
       <Unit348>
+        <Filename Value="C:\Users\Satellite\Desktop\servicios_regulares_000.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit348>
+      <Unit349>
         <Filename Value="C:\lcl\extdlgs.pas"/>
         <UnitName Value="ExtDlgs"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="10"/>
-      </Unit348>
-      <Unit349>
-        <Filename Value="C:\components\fppkg\src\laz_pkgrepos.pas"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="58" Y="5"/>
         <UsageCount Value="9"/>
       </Unit349>
       <Unit350>
+        <Filename Value="C:\components\fppkg\src\laz_pkgrepos.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="58" Y="5"/>
+        <UsageCount Value="8"/>
+      </Unit350>
+      <Unit351>
         <Filename Value="..\lcl\dbgrids.pas"/>
         <UnitName Value="DBGrids"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3018"/>
         <CursorPos Y="3032"/>
-        <UsageCount Value="11"/>
-      </Unit350>
-      <Unit351>
+        <UsageCount Value="10"/>
+      </Unit351>
+      <Unit352>
         <Filename Value="..\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="446"/>
         <CursorPos Y="460"/>
-        <UsageCount Value="11"/>
-      </Unit351>
-      <Unit352>
+        <UsageCount Value="10"/>
+      </Unit352>
+      <Unit353>
         <Filename Value="..\lcl\graphics.pp"/>
         <UnitName Value="Graphics"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="31"/>
         <CursorPos X="23" Y="55"/>
-        <UsageCount Value="11"/>
-      </Unit352>
-      <Unit353>
+        <UsageCount Value="10"/>
+      </Unit353>
+      <Unit354>
         <Filename Value="..\lcl\graphtype.pp"/>
         <UnitName Value="GraphType"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="20"/>
         <CursorPos X="17" Y="37"/>
-        <UsageCount Value="10"/>
-      </Unit353>
-      <Unit354>
-        <Filename Value="Unit\utilidades_ini.pas"/>
-        <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="107"/>
-        <CursorPos X="146" Y="133"/>
-        <UsageCount Value="21"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="9"/>
       </Unit354>
+      <Unit355>
+        <Filename Value="..\Bear Messenger programa de mensajeria - src_27032011\componentes\DateControls\datepicker.pas"/>
+        <UnitName Value="DatePicker"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="342"/>
+        <CursorPos X="20" Y="359"/>
+        <UsageCount Value="9"/>
+      </Unit355>
+      <Unit356>
+        <Filename Value="C:\lazarus\components\datetimectrls\dbdatetimepicker.pas"/>
+        <UnitName Value="DBDateTimePicker"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="21"/>
+        <CursorPos X="3" Y="38"/>
+        <UsageCount Value="10"/>
+      </Unit356>
+      <Unit357>
+        <Filename Value="C:\lazarus\lcl\graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2599"/>
+        <CursorPos X="133" Y="2609"/>
+        <UsageCount Value="10"/>
+      </Unit357>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="25" HistoryIndex="24">
       <Position1>
-        <Filename Value="Unit\utilidades_general.pas"/>
-        <Caret Line="141" Column="53" TopLine="119"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="27" Column="23"/>
       </Position1>
       <Position2>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="10" Column="20"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="150" Column="134" TopLine="122"/>
       </Position2>
       <Position3>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="442" Column="24" TopLine="423"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="27" Column="15" TopLine="11"/>
       </Position3>
       <Position4>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="444" Column="53" TopLine="423"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="29" Column="17" TopLine="11"/>
       </Position4>
       <Position5>
         <Filename Value="Unit\utilidades_ini.pas"/>
-        <Caret Line="47" Column="39" TopLine="11"/>
+        <Caret Line="32" Column="17" TopLine="11"/>
       </Position5>
       <Position6>
         <Filename Value="Unit\utilidades_ini.pas"/>
-        <Caret Line="38" Column="27" TopLine="11"/>
+        <Caret Line="150" Column="35" TopLine="121"/>
       </Position6>
       <Position7>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="575" Column="53" TopLine="539"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="152" Column="121" TopLine="124"/>
       </Position7>
       <Position8>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="744" Column="29" TopLine="729"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="155" Column="121" TopLine="127"/>
       </Position8>
       <Position9>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="750" Column="26" TopLine="728"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="20" Column="77" TopLine="10"/>
       </Position9>
       <Position10>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="756" Column="26" TopLine="728"/>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="642" Column="85" TopLine="607"/>
       </Position10>
       <Position11>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="762" Column="26" TopLine="728"/>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="3372" TopLine="3349"/>
       </Position11>
       <Position12>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="768" Column="26" TopLine="732"/>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
       </Position12>
       <Position13>
-        <Filename Value="Unit\utilidades_general.pas"/>
-        <Caret Line="20" Column="15"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="39" Column="9" TopLine="10"/>
       </Position13>
       <Position14>
         <Filename Value="Unit\utilidades_ini.pas"/>
-        <Caret Line="86" Column="26" TopLine="53"/>
+        <Caret Line="174" TopLine="148"/>
       </Position14>
       <Position15>
         <Filename Value="Unit\utilidades_ini.pas"/>
-        <Caret Line="41" Column="11"/>
+        <Caret Line="46" Column="17" TopLine="20"/>
       </Position15>
       <Position16>
         <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="176" Column="47" TopLine="148"/>
       </Position16>
       <Position17>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="621" Column="66" TopLine="594"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
       </Position17>
       <Position18>
-        <Filename Value="Unit\utilidades_ini.pas"/>
-        <Caret Line="114" Column="36" TopLine="78"/>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="619" TopLine="610"/>
       </Position18>
       <Position19>
-        <Filename Value="Unit\utilidades_ini.pas"/>
-        <Caret Line="34" Column="42" TopLine="4"/>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="612" Column="55" TopLine="603"/>
       </Position19>
       <Position20>
-        <Filename Value="Unit\utilidades_ini.pas"/>
-        <Caret Line="39" Column="32" TopLine="4"/>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="15" Column="81"/>
       </Position20>
       <Position21>
-        <Filename Value="Unit\utilidades_bd.pas"/>
-        <Caret Line="1418" Column="53" TopLine="1382"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="30" Column="15" TopLine="18"/>
       </Position21>
       <Position22>
-        <Filename Value="Unit\utilidades_bd.pas"/>
-        <Caret Line="231" Column="39" TopLine="212"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="33" Column="17" TopLine="18"/>
       </Position22>
       <Position23>
-        <Filename Value="Unit\utilidades_bd.pas"/>
-        <Caret Line="233" Column="52" TopLine="212"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="36" Column="17" TopLine="18"/>
       </Position23>
       <Position24>
-        <Filename Value="Unit\utilidades_general.pas"/>
-        <Caret Line="951" Column="5" TopLine="949"/>
+        <Filename Value="Unit\utilidades_ini.pas"/>
+        <Caret Line="160" Column="123" TopLine="132"/>
       </Position24>
       <Position25>
-        <Filename Value="Unit\utilidades_general.pas"/>
-        <Caret Line="128" Column="58" TopLine="120"/>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="639" Column="77" TopLine="621"/>
       </Position25>
-      <Position26>
-        <Filename Value="Unit\utilidades_general.pas"/>
-        <Caret Line="141" Column="52" TopLine="119"/>
-      </Position26>
-      <Position27>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="768" Column="26" TopLine="732"/>
-      </Position27>
-      <Position28>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="442" Column="24" TopLine="423"/>
-      </Position28>
-      <Position29>
-        <Filename Value="form\menu.pas"/>
-        <Caret Line="444" Column="52" TopLine="423"/>
-      </Position29>
-      <Position30>
-        <Filename Value="Unit\utilidades_ini.pas"/>
-        <Caret Line="43" Column="25" TopLine="13"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
