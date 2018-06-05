@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Buttons,
   ComCtrls, ButtonPanel, DbCtrls, DBGrids, plantilla_000, db, sqldb, utilidades_datos_tablas, grids,
-  utilidades_rgtro, utilidades_bd, utilidades_general;
+  utilidades_Filtros, utilidades_rgtro, utilidades_bd, utilidades_general;
 
 resourcestring
   rs_elegir_cliente_direccion_envio_001 = 'Elegir dirección de envío de un cliente';
@@ -350,7 +350,7 @@ begin
                        'LEFT JOIN clientes_contactos AS cc' + ' ' +
                        'ON ce.id_clientes_contactos = cc.id' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_elegir_cliente_direccion_envio.Campo_Foco_en_modo_Edicion_Inserccion;

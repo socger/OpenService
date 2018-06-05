@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   grids, Buttons, ComCtrls, ButtonPanel, DbCtrls, DBGrids, plantilla_000, utilidades_datos_tablas,
-  utilidades_rgtro, utilidades_bd, utilidades_general;
+  utilidades_Filtros, utilidades_rgtro, utilidades_bd, utilidades_general;
 
 resourcestring
   rs_elegir_cliente_contacto_001 = 'Elegir el contacto de un cliente';
@@ -217,7 +217,7 @@ begin
   p_Registro_CRUD.SELECT_SQL := 'SELECT cc.*' + ' ' +
                                 'FROM clientes_contactos AS cc' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_elegir_cliente_contacto.Campo_Foco_en_modo_Edicion_Inserccion;

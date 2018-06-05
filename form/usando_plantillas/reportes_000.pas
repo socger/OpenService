@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Buttons,
   ComCtrls, DbCtrls, DBGrids, ButtonPanel, plantilla_000, types, sqldb, db, utilidades_datos_tablas,
   Grids, variants, utilidades_rgtro, utilidades_bd, utilidades_forms_Filtrar, utilidades_general,
-  utilidades_usuarios;
+  utilidades_Filtros, utilidades_usuarios;
 
 resourcestring
   rs_rep_001 = 'Por el nombre de fichero';
@@ -243,7 +243,7 @@ begin
                                 'LEFT JOIN menus AS m' + ' ' +
                                 'ON i.id_menus = m.id' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_reportes_000.Presentar_Datos_GroupBox_Registro;

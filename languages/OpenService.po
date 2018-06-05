@@ -6028,7 +6028,7 @@ msgstr ""
 
 #: tform_plantilla_000.label62.caption
 msgctxt "tform_plantilla_000.label62.caption"
-msgid "Id"
+msgid "Id:"
 msgstr ""
 
 #: tform_plantilla_000.label_ctdad_rgtros.caption

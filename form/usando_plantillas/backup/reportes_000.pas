@@ -147,7 +147,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Menus( true, false, 40, '1' );
+    var_Registro := UTI_Abrir_Modulo_Menus( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_menus').AsString := Trim(var_Registro.id_1);
@@ -243,7 +243,7 @@ begin
                                 'LEFT JOIN menus AS m' + ' ' +
                                 'ON i.id_menus = m.id' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_reportes_000.Presentar_Datos_GroupBox_Registro;

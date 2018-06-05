@@ -540,8 +540,8 @@ inherited f_clientes_000: Tf_clientes_000
           Height = 172
           Top = 146
           Width = 1189
-          ActivePage = TabSheet1
-          TabIndex = 5
+          ActivePage = TabSheet_DatosAdicionales
+          TabIndex = 0
           TabOrder = 16
           object TabSheet_DatosAdicionales: TTabSheet
             Caption = 'DATOS &ADICIONALES'
@@ -2886,6 +2886,7 @@ inherited f_clientes_000: Tf_clientes_000
                 'Todos'
               )
               ParentFont = False
+              ParentColor = False
               TabOrder = 3
             end
           end

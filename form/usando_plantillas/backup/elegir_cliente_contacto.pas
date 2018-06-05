@@ -217,7 +217,7 @@ begin
   p_Registro_CRUD.SELECT_SQL := 'SELECT cc.*' + ' ' +
                                 'FROM clientes_contactos AS cc' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_elegir_cliente_contacto.Campo_Foco_en_modo_Edicion_Inserccion;

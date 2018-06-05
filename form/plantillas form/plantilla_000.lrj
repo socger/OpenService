@@ -1,10 +1,10 @@
 {"version":1,"strings":[
 {"hash":196180495,"name":"tform_plantilla_000.caption","sourcebytes":[80,108,97,110,116,105,108,108,97,32,45,32,109,97,110,116,101,110,105,109,105,101,110,116,111],"value":"Plantilla - mantenimiento"},
-{"hash":235463072,"name":"tform_plantilla_000.groupbox_registro.caption","sourcebytes":[32,82,101,103,105,115,116,114,111,32],"value":" Registro "},
-{"hash":1268,"name":"tform_plantilla_000.label62.caption","sourcebytes":[73,100],"value":"Id"},
 {"hash":9313712,"name":"tform_plantilla_000.groupbox_grid.caption","sourcebytes":[32,82,101,103,105,115,116,114,111,115,32],"value":" Registros "},
 {"hash":48,"name":"tform_plantilla_000.label_ctdad_rgtros.caption","sourcebytes":[48],"value":"0"},
 {"hash":1268,"name":"tform_plantilla_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":235463072,"name":"tform_plantilla_000.groupbox_registro.caption","sourcebytes":[32,82,101,103,105,115,116,114,111,32],"value":" Registro "},
+{"hash":20346,"name":"tform_plantilla_000.label62.caption","sourcebytes":[73,100,58],"value":"Id:"},
 {"hash":3912320,"name":"tform_plantilla_000.groupbox_filtros.caption","sourcebytes":[32,70,105,108,116,114,111,115,32],"value":" Filtros "},
 {"hash":228438112,"name":"tform_plantilla_000.groupbox3.caption","sourcebytes":[32,79,114,100,101,110,97,100,111,32,112,111,114,32],"value":" Ordenado por "},
 {"hash":192682179,"name":"tform_plantilla_000.bitbtn_vaciar_filtros.caption","sourcebytes":[38,86,97,99,105,97,114,32,102,105,108,116,114,111,115],"value":"&Vaciar filtros"},

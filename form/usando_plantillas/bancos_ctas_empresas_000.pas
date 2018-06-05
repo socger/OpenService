@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   Buttons, ComCtrls, ButtonPanel, DbCtrls, DBGrids, plantilla_000, utilidades_forms_Filtrar, Grids,
   utilidades_usuarios, utilidades_bd, utilidades_rgtro, utilidades_datos_tablas, utilidades_general,
-  utilidades_contabilidad;
+  utilidades_Filtros, utilidades_contabilidad;
 
 resourcestring
   rs_bcta_001 = 'Mantenimiento de cuentas bancarias';
@@ -363,7 +363,7 @@ begin
                                 'LEFT JOIN paises AS ps ' + ' ' +
                                 'ON be.id_paises = ps.id ' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_bancos_ctas_empresas_000.BitBtn_SMSClick(Sender: TObject);

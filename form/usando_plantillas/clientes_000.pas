@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqldb, db, FileUtil, DateTimePicker, DBDateTimePicker, Forms, Controls, variants,
   Graphics, Dialogs, ExtCtrls, StdCtrls, Buttons, ComCtrls, ButtonPanel, DbCtrls, DBGrids, EditBtn,
   plantilla_000, Grids, utilidades_datos_tablas, utilidades_usuarios, utilidades_forms_Filtrar,
-  utilidades_general, utilidades_rgtro, utilidades_contabilidad, utilidades_bd;
+  utilidades_Filtros, utilidades_general, utilidades_rgtro, utilidades_contabilidad, utilidades_bd;
 
 resourcestring
   rs_clientes_000 = 'Mantenimiento de clientes';
@@ -548,7 +548,6 @@ type
 
     procedure Cambiar_Nombre_Tabla_Principal; override;
     procedure Cambiar_Titulo_Form; override;
-    procedure Configurar_los_Grids; override;
     procedure Abrir_Conexiones_con_BD_TablasAdicionales; override;
     procedure Filtrar_tablas_adicionales( var p_Lineas_Filtro : TStrings; var p_Lineas_OrderBy : TStrings ); override;
 
@@ -2706,18 +2705,6 @@ begin
   Self.Caption := rs_clientes_000;
 end;
 
-procedure Tf_clientes_000.Configurar_los_Grids;
-begin
-  { Para que al pulsar al return (key=13) no se vaya a otro registro }
-  DBGrid_Principal.AutoAdvance    := aaLeft;
-  DBGrid_Contactos.AutoAdvance    := aaLeft;
-  DBGrid_Envios.AutoAdvance       := aaLeft;
-  DBGrid_Presupuestos.AutoAdvance := aaLeft;
-  DBGrid_Pedidos.AutoAdvance      := aaLeft;
-  DBGrid_Albaranes.AutoAdvance    := aaLeft;
-  DBGrid_Facturas.AutoAdvance     := aaLeft;
-end;
-
 procedure Tf_clientes_000.Abrir_Conexiones_con_BD_TablasAdicionales;
 begin
   { Hacer algo parecido a lo de abajo ... pero ojito sólo si hay otras transacciones y otros conectores.
@@ -2775,8 +2762,7 @@ begin
   var_a_Filtrar := TStringList.Create;
   var_a_Filtrar.Clear;
 
-  Comprobar_si_Cambiamos_Orden( p_Lineas_OrderBy,
-                                private_Order_By_contactos[0].Memo_OrderBy );
+  UTI_FILTROS_Cambiamos_Orden_SN( p_Lineas_OrderBy, private_Order_By_contactos[0].Memo_OrderBy );
 
   { NO OLVIDEMOS que los campos que empiezan por OT_ son campos que pertenecen a otras tablas(JOIN de la SELECT)
     y que por lo se debe de permitir modificarlos en ningún módulo }
@@ -2821,8 +2807,7 @@ begin
   var_a_Filtrar := TStringList.Create;
   var_a_Filtrar.Clear;
 
-  Comprobar_si_Cambiamos_Orden( p_Lineas_OrderBy,
-                                private_Order_By_envios[0].Memo_OrderBy );
+  UTI_FILTROS_Cambiamos_Orden_SN( p_Lineas_OrderBy, private_Order_By_envios[0].Memo_OrderBy );
 
   { NO OLVIDEMOS que los campos que empiezan por OT_ son campos que pertenecen a otras tablas(JOIN de la SELECT)
     y que por lo se debe de permitir modificarlos en ningún módulo }
@@ -2998,7 +2983,7 @@ begin
 
   p_ctdad_Rgtros  := -1;
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 function Tf_clientes_000.Fue_Utilizado_Rgtro_SQLQuery_Principal : ShortInt;

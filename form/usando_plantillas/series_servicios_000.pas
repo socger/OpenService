@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, DBDateTimePicker, Forms, Controls, Graphics, Dialogs, ExtCtrls, Grids,
   StdCtrls, Buttons, ComCtrls, ButtonPanel, DbCtrls, DBGrids, plantilla_000, types, sqldb, db,
   variants, utilidades_datos_tablas, utilidades_forms_Filtrar, utilidades_general, utilidades_bd,
-  utilidades_rgtro, utilidades_usuarios, utilidades_contabilidad;
+  utilidades_Filtros, utilidades_rgtro, utilidades_usuarios, utilidades_contabilidad;
 
 resourcestring
   rs_sries_serv_001 = 'Mantenimiento de series para servicios';
@@ -261,7 +261,7 @@ begin
 
   p_ctdad_Rgtros  := -1;
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_series_servicios_000.Presentar_Datos;

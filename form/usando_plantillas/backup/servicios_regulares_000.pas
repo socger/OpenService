@@ -1292,7 +1292,7 @@ begin
 
   p_ctdad_Rgtros  := -1;
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_servicios_regulares_000.Edit_Acompanante_DireccionClick(Sender: TObject);
@@ -1557,7 +1557,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, 250, '1' );
+    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_empresas').AsString := Trim(var_Registro.id_1);
@@ -1916,8 +1916,7 @@ begin
   var_a_Filtrar_Plus := TStringList.Create;
   var_a_Filtrar_Plus.Clear;
 
-  Comprobar_si_Cambiamos_Orden( p_Lineas_OrderBy,
-                                private_Order_By_temporadas[0].Memo_OrderBy );
+  UTI_FILTROS_Cambiamos_Orden_SN( p_Lineas_OrderBy, private_Order_By_temporadas[0].Memo_OrderBy );
 
   { NO OLVIDEMOS que los campos que empiezan por OT_ son campos que pertenecen a otras tablas(JOIN de la SELECT)
     y que por lo se debe de permitir modificarlos en ningún módulo }

@@ -1,22 +1,22 @@
 inherited f_clientes_tipos_000: Tf_clientes_tipos_000
   Left = 483
-  Height = 269
+  Height = 333
   Top = 128
   Width = 743
-  ClientHeight = 269
+  ClientHeight = 333
   ClientWidth = 743
   inherited Panel_de_Abajo: TPanel
-    Height = 225
+    Height = 289
     Width = 743
-    ClientHeight = 225
+    ClientHeight = 289
     ClientWidth = 743
-    inherited GroupBox_Grid: TGroupBox[0]
-      Height = 223
+    inherited GroupBox_Grid: TGroupBox
+      Height = 287
       Width = 741
-      ClientHeight = 203
+      ClientHeight = 267
       ClientWidth = 737
       inherited Panel_Barra_Superior1: TPanel
-        Top = 145
+        Top = 209
         Width = 737
         ClientWidth = 737
         inherited Panel4: TPanel
@@ -38,19 +38,19 @@ inherited f_clientes_tipos_000: Tf_clientes_tipos_000
         end
       end
       inherited Panel5: TPanel
-        Height = 145
+        Height = 209
       end
       inherited Panel6: TPanel
         Left = 720
-        Height = 145
+        Height = 209
       end
       inherited Panel7: TPanel
-        Height = 145
+        Height = 209
         Width = 703
-        ClientHeight = 145
+        ClientHeight = 209
         ClientWidth = 703
         inherited DBGrid_Principal: TDBGrid
-          Height = 141
+          Height = 205
           Width = 703
           Columns = <          
             item
@@ -70,25 +70,25 @@ inherited f_clientes_tipos_000: Tf_clientes_tipos_000
         end
       end
     end
-    inherited GroupBox_Registro: TGroupBox[1]
-      Height = 223
+    inherited GroupBox_Registro: TGroupBox
+      Height = 287
       Width = 741
-      ClientHeight = 203
+      ClientHeight = 267
       ClientWidth = 737
       inherited Panel20: TPanel
-        Height = 203
+        Height = 267
       end
       inherited Panel21: TPanel
         Left = 720
-        Height = 203
+        Height = 267
       end
       inherited Panel22: TPanel
-        Height = 203
+        Height = 267
         Width = 703
-        ClientHeight = 203
+        ClientHeight = 267
         ClientWidth = 703
         inherited Panel23: TPanel
-          Top = 166
+          Top = 230
           Width = 703
           ClientWidth = 703
           inherited ButtonPanel1: TButtonPanel
@@ -173,8 +173,8 @@ inherited f_clientes_tipos_000: Tf_clientes_tipos_000
       end
     end
     inherited GroupBox_Filtros: TGroupBox
-      Left = 136
-      Top = 128
+      Left = 192
+      Top = 1
       inherited Panel11: TPanel
         inherited Panel_Filtramos_por: TPanel
           inherited Panel_Barra_DBGrid_Filtros: TPanel
@@ -355,7 +355,15 @@ inherited f_clientes_tipos_000: Tf_clientes_tipos_000
   inherited DataSource_Principal: TDataSource
     left = 244
   end
+  inherited SQLQuery_Filtros: TSQLQuery
+    AfterEdit = SQLQuery_FiltrosAfterEdit
+    AfterPost = SQLQuery_FiltrosAfterPost
+    BeforeEdit = SQLQuery_FiltrosBeforeEdit
+    BeforePost = SQLQuery_FiltrosBeforePost
+    OnNewRecord = SQLQuery_FiltrosNewRecord
+  end
   inherited DataSource_Filtros: TDataSource
     left = 128
+    top = 128
   end
 end

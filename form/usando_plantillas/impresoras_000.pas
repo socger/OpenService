@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   Buttons, ComCtrls, DbCtrls, DBGrids, ButtonPanel, plantilla_000, Grids, Spin, utilidades_datos_tablas,
   types, utilidades_rgtro, utilidades_general, utilidades_bd, utilidades_forms_Filtrar, utilidades_usuarios,
-  utilidades_impresoras;
+  utilidades_Filtros, utilidades_impresoras;
 
 resourcestring
   rs_impr_001 = 'Mantenimiento de impresoras';
@@ -110,7 +110,7 @@ begin
   p_Registro_CRUD.SELECT_SQL := 'SELECT i.*' + ' ' +
                                 'FROM impresoras AS i' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_impresoras_000.Filtrar_tablas_adicionales( var p_Lineas_Filtro : TStrings;

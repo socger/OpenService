@@ -144,8 +144,7 @@ begin
   var_a_Filtrar_Plus := TStringList.Create;
   var_a_Filtrar_Plus.Clear;
 
-  Comprobar_si_Cambiamos_Orden( p_Lineas_OrderBy,
-                                private_Order_By_composiciones[0].Memo_OrderBy );
+  UTI_FILTROS_Cambiamos_Orden_SN( p_Lineas_OrderBy, private_Order_By_composiciones[0].Memo_OrderBy );
 
   { NO OLVIDEMOS que los campos que empiezan por OT_ son campos que pertenecen a otras tablas(JOIN de la SELECT)
     y que por lo se debe de permitir modificarlos en ningún módulo }
@@ -912,7 +911,7 @@ begin
   p_Registro_CRUD.SELECT_SQL := 'SELECT i.*' + ' ' +
                                 'FROM impuestos AS i' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 

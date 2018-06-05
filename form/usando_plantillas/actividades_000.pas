@@ -5,10 +5,10 @@ unit actividades_000;
 interface
 
 uses
-  Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Buttons, ComCtrls, DbCtrls, DBGrids, ButtonPanel, plantilla_000, Grids, StdCtrls,
-  utilidades_datos_tablas, utilidades_rgtro, utilidades_general, utilidades_bd,
-  utilidades_forms_Filtrar, utilidades_usuarios;
+  Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
+  ComCtrls, DbCtrls, DBGrids, ButtonPanel, plantilla_000, Grids, StdCtrls, utilidades_datos_tablas,
+  utilidades_rgtro, utilidades_general, utilidades_bd, utilidades_forms_Filtrar, utilidades_Filtros,
+  utilidades_usuarios;
 
 resourcestring
   rs_act_002 = 'Por la descripción';
@@ -34,7 +34,6 @@ type
 
     procedure Cambiar_Nombre_Tabla_Principal; override;
     procedure Cambiar_Titulo_Form; override;
-    procedure Configurar_los_Grids; override;
     procedure Abrir_Conexiones_con_BD_TablasAdicionales; override;
     procedure Filtrar_tablas_adicionales( var p_Lineas_Filtro : TStrings; var p_Lineas_OrderBy : TStrings ); override;
 
@@ -96,7 +95,7 @@ begin
   p_Registro_CRUD.SELECT_SQL := 'SELECT act.* ' + ' ' +
                                 'FROM actividades AS act ' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_actividades_000.Rellenar_Filtros_Impresion(var p_Ordenado_por : String);
@@ -350,11 +349,6 @@ end;
 procedure Tf_actividades_000.Cambiar_Titulo_Form;
 begin
   Self.Caption := rs_act_004;
-end;
-
-procedure Tf_actividades_000.Configurar_los_Grids;
-begin
-  DBGrid_Principal.AutoAdvance := aaLeft; // Para que al pulsar al return (key=13) no se vaya a otro registro
 end;
 
 procedure Tf_actividades_000.Abrir_Conexiones_con_BD_TablasAdicionales;

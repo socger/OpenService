@@ -7,7 +7,8 @@ interface
 uses
   Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   Buttons, ComCtrls, DbCtrls, DBGrids, ButtonPanel, plantilla_000, utilidades_datos_tablas, Grids,
-  utilidades_rgtro, utilidades_general, utilidades_bd, utilidades_forms_Filtrar, utilidades_usuarios;
+  utilidades_Filtros, utilidades_rgtro, utilidades_general, utilidades_bd, utilidades_forms_Filtrar,
+  utilidades_usuarios;
 
 resourcestring
   rs_alm_001 = 'Mantenimiento de almacenes';
@@ -299,7 +300,7 @@ begin
                                 'LEFT JOIN paises AS ps ' + ' ' +
                                 'ON alm.id_paises = ps.id ' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_almacenes_000.Filtrar_tablas_adicionales( var p_Lineas_Filtro : TStrings;

@@ -7,7 +7,8 @@ interface
 uses
   Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   Buttons, ComCtrls, ButtonPanel, DbCtrls, DBGrids, Grids, plantilla_000, utilidades_datos_tablas,
-  utilidades_usuarios, utilidades_forms_Filtrar, utilidades_bd, utilidades_rgtro, utilidades_general;
+  utilidades_usuarios, utilidades_forms_Filtrar, utilidades_bd, utilidades_rgtro, utilidades_general,
+  utilidades_Filtros;
 
 resourcestring
   rs_term_001 = 'Mantenimiento de terminales';
@@ -95,7 +96,7 @@ begin
   p_Registro_CRUD.SELECT_SQL := 'SELECT t.*' + ' ' + ' ' +
                                 'FROM terminales AS t' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_terminales_000.Filtrar_tablas_adicionales( var p_Lineas_Filtro : TStrings;

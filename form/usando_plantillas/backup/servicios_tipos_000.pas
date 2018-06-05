@@ -45,7 +45,7 @@ type
     procedure Refrescar_Registros; override;
     procedure Refrescar_Registros_TablasLigadas; override;
     procedure SQLQuery_PrincipalNewRecord(DataSet: TDataSet);
-    procedure Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
+    procedure Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings ); override;
     procedure Presentar_Datos; override;
     procedure Presentar_Datos_GroupBox_Registro; override;
     procedure para_Empezar_GroupBox_Registro; override;
@@ -183,7 +183,8 @@ begin
 
 end;
 
-procedure Tf_servicios_tipos_000.Filtrar_Principal_queFiltro( var p_Registro_CRUD : TRegistro_CRUD;
+procedure Tf_servicios_tipos_000.Filtrar_Principal_queFiltro( var p_errores_Filtros : TStrings;
+                                                              var p_Registro_CRUD : TRegistro_CRUD;
                                                               var p_ctdad_Rgtros  : Integer;
                                                               var p_a_Filtrar     : TStrings );
 begin
@@ -204,7 +205,7 @@ begin
   p_Registro_CRUD.SELECT_SQL := 'SELECT srt.* ' + ' ' +
                                 'FROM servicios_tipos AS srt ' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_servicios_tipos_000.Presentar_Datos;

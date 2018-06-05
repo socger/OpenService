@@ -540,8 +540,8 @@ inherited f_clientes_000: Tf_clientes_000
           Height = 172
           Top = 146
           Width = 1189
-          ActivePage = TabSheet_DatosAdicionales
-          TabIndex = 0
+          ActivePage = TabSheet_Pedidos
+          TabIndex = 7
           TabOrder = 16
           object TabSheet_DatosAdicionales: TTabSheet
             Caption = 'DATOS &ADICIONALES'
@@ -1067,9 +1067,9 @@ inherited f_clientes_000: Tf_clientes_000
               Height = 144
               Top = 0
               Width = 1181
-              ActivePage = TabSheet5
+              ActivePage = TabSheet_GestionCobro
               Align = alClient
-              TabIndex = 0
+              TabIndex = 1
               TabOrder = 0
               TabPosition = tpBottom
               object TabSheet5: TTabSheet
@@ -2871,6 +2871,7 @@ inherited f_clientes_000: Tf_clientes_000
               ChildSizing.ControlsPerLine = 3
               ClientHeight = 13
               ClientWidth = 165
+              Color = clBlue
               Columns = 3
               Font.CharSet = ANSI_CHARSET
               Font.Color = clBlack
@@ -2886,6 +2887,7 @@ inherited f_clientes_000: Tf_clientes_000
                 'Todos'
               )
               ParentFont = False
+              ParentColor = False
               TabOrder = 3
             end
           end

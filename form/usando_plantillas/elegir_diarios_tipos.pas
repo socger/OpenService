@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   grids, Buttons, DbCtrls, DBGrids, plantilla_000, utilidades_datos_tablas, utilidades_bd,
-  utilidades_rgtro, utilidades_general;
+  utilidades_Filtros, utilidades_rgtro, utilidades_general;
 
 resourcestring
   rs_dia_tip_001 = 'Elegir tipo de diario';
@@ -171,7 +171,7 @@ begin
   p_Registro_CRUD.SELECT_SQL := 'SELECT dt.*' + ' ' +
                                 'FROM diarios_tipos AS dt' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_elegir_diarios_tipos.Campo_Foco_en_modo_Edicion_Inserccion;

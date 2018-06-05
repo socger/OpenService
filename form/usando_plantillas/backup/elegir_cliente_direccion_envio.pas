@@ -350,7 +350,7 @@ begin
                        'LEFT JOIN clientes_contactos AS cc' + ' ' +
                        'ON ce.id_clientes_contactos = cc.id' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_elegir_cliente_direccion_envio.Campo_Foco_en_modo_Edicion_Inserccion;

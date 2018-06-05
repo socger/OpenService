@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, plantilla_000, DbGrids,
   Grids, ExtCtrls, StdCtrls, Buttons, ComCtrls, DbCtrls, ButtonPanel, utilidades_datos_tablas,
-  utilidades_bd, utilidades_rgtro, utilidades_general;
+  utilidades_Filtros, utilidades_bd, utilidades_rgtro, utilidades_general;
 
 resourcestring
   rs_imptos_eleg_001 = 'Elegir impuesto';
@@ -156,7 +156,7 @@ begin
                       var_SQL_ADD );
   end;
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
   var_SQL_ADD.Free;
 end;
 

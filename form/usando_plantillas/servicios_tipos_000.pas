@@ -7,7 +7,8 @@ interface
 uses
   Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   Buttons, ComCtrls, DbCtrls, DBGrids, ButtonPanel, plantilla_000, utilidades_datos_tablas, Grids,
-  utilidades_rgtro, utilidades_general, utilidades_bd, utilidades_forms_Filtrar, utilidades_usuarios;
+  utilidades_Filtros, utilidades_rgtro, utilidades_general, utilidades_bd, utilidades_forms_Filtrar,
+  utilidades_usuarios;
 
 resourcestring
   rs_srt_002 = 'Por la descripción';
@@ -205,7 +206,7 @@ begin
   p_Registro_CRUD.SELECT_SQL := 'SELECT srt.* ' + ' ' +
                                 'FROM servicios_tipos AS srt ' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_servicios_tipos_000.Presentar_Datos;

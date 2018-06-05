@@ -52,7 +52,7 @@
         <PackageName Value="LCL"/>
       </Item8>
     </RequiredPackages>
-    <Units Count="271">
+    <Units Count="272">
       <Unit0>
         <Filename Value="socger_TALLER.pas"/>
         <IsPartOfProject Value="True"/>
@@ -1895,6 +1895,11 @@
         <Filename Value="Unit\utilidades_ini.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit270>
+      <Unit271>
+        <Filename Value="Unit\utilidades_filtros.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="utilidades_Filtros"/>
+      </Unit271>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

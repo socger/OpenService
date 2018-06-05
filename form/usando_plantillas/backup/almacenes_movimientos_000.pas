@@ -5,10 +5,9 @@ unit almacenes_movimientos_000;
 interface
 
 uses
-  Classes, SysUtils, sqldb, db, FileUtil, DBDateTimePicker, DateTimePicker,
-  Forms, Controls, Grids, Graphics, Dialogs, ExtCtrls, StdCtrls, Buttons,
-  ComCtrls, DbCtrls, DBGrids, ButtonPanel, ActnList, variants, plantilla_000,
-  utilidades_datos_tablas, utilidades_rgtro, utilidades_bd, utilidades_general,
+  Classes, SysUtils, sqldb, db, FileUtil, DBDateTimePicker, DateTimePicker, Forms, Controls, Grids,
+  Graphics, Dialogs, ExtCtrls, StdCtrls, Buttons, ComCtrls, DbCtrls, DBGrids, ButtonPanel, ActnList,
+  variants, plantilla_000, utilidades_datos_tablas, utilidades_rgtro, utilidades_bd, utilidades_general,
   utilidades_forms_Filtrar, utilidades_usuarios, utilidades_impuestos;
 
 resourcestring
@@ -372,7 +371,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( true, false, 290, '1' );
+    var_Registro := UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_conceptos_almacen_traspaso').AsString := Trim(var_Registro.id_1);
@@ -801,8 +800,7 @@ begin
   var_a_Filtrar_Plus := TStringList.Create;
   var_a_Filtrar_Plus.Clear;
 
-  Comprobar_si_Cambiamos_Orden( p_Lineas_OrderBy,
-                                private_Order_By_AMD[0].Memo_OrderBy );
+  UTI_FILTROS_Cambiamos_Orden_SN( p_Lineas_OrderBy, private_Order_By_AMD[0].Memo_OrderBy );
 
   { NO OLVIDEMOS que los campos que empiezan por OT_ son campos que pertenecen a otras tablas(JOIN de la SELECT)
     y que por lo se debe de permitir modificarlos en ningún módulo }
@@ -916,7 +914,7 @@ begin
                                 'LEFT JOIN conceptos_almacen_traspaso AS cat' + ' ' +
                                 'ON am.id_conceptos_almacen_traspaso = cat.id' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_almacenes_movimientos_000.Filtrar_tablas_adicionales( var p_Lineas_Filtro : TStrings;

@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   Grids, Buttons, ComCtrls, ButtonPanel, DbCtrls, DBGrids, plantilla_000, utilidades_datos_tablas,
   utilidades_rgtro, utilidades_general, utilidades_bd, utilidades_forms_Filtrar, utilidades_usuarios,
-  utilidades_contabilidad;
+  utilidades_Filtros, utilidades_contabilidad;
 
 resourcestring
   rs_tcli_002 = 'Por la descripción';
@@ -116,7 +116,7 @@ begin
   p_Registro_CRUD.SELECT_SQL := 'SELECT ct.*' + ' ' +
                                 'FROM clientes_tipos AS ct' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_clientes_tipos_000.Rellenar_Filtros_Impresion(var p_Ordenado_por : String);

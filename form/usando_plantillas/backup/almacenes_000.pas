@@ -194,7 +194,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, 100, '1' );
+    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_provincias').AsString := Trim(var_Registro.id_1);
@@ -299,7 +299,7 @@ begin
                                 'LEFT JOIN paises AS ps ' + ' ' +
                                 'ON alm.id_paises = ps.id ' + ' ';
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_almacenes_000.Filtrar_tablas_adicionales( var p_Lineas_Filtro : TStrings;

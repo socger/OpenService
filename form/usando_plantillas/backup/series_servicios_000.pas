@@ -261,7 +261,7 @@ begin
 
   p_ctdad_Rgtros  := -1;
 
-  Filtrar_Principal_queFiltro_sus_Filtros( p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
+  UTI_FILTROS_pasarFiltros_aQuery( SQLQuery_Principal, SQLQuery_Filtros, p_errores_Filtros, p_Registro_CRUD, p_ctdad_Rgtros, p_a_Filtrar );
 end;
 
 procedure Tf_series_servicios_000.Presentar_Datos;
@@ -373,7 +373,7 @@ end;
 procedure Tf_series_servicios_000.BitBtn_Elegir_TipoDiarioClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-  var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, 740, '1' );
+  var_Registro := UTI_Abrir_Modulo_Elegir_Diario_Tipo( true, true, '1' );
 
   if var_Registro.id_1 <> '' then
   begin
