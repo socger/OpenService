@@ -417,7 +417,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_Vehiculos_000.SQLQuery_Vehiculos do
     begin
-        var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
+        var_Registro := UTI_Abrir_Modulo_Almacenes( '', '', true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_almacenes').AsString := Trim(var_Registro.id_1);
@@ -917,7 +917,7 @@ var var_Registro          : TRecord_Rgtro_Comun;
 begin
     with form_Vehiculos_000.SQLQuery_Vehiculos do
     begin
-        var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
+        var_Registro := UTI_Abrir_Modulo_Clientes( '', '', true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_clientes_propietario').AsString := Trim(var_Registro.id_1);
@@ -1177,7 +1177,7 @@ var var_Registro                    : TRecord_Rgtro_Comun;
 begin
     with form_Vehiculos_000.SQLQuery_Vehiculos do
     begin
-        var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, 51, '1' );
+        var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, '1' );
 
         if var_Registro.id_1 <> '' then
         begin

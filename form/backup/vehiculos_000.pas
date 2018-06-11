@@ -968,7 +968,7 @@ end;
 procedure Tform_vehiculos_000.Elegir_Datos_Propietario_Cliente;
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_Propietario.Text             := Trim(var_Registro.id_1);
@@ -979,7 +979,7 @@ end;
 procedure Tform_vehiculos_000.Elegir_Datos_Propietario_Empresa;
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, 250, '1' );
+    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_Propietario.Text             := Trim(var_Registro.id_1);

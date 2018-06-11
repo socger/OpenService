@@ -782,7 +782,7 @@ begin
 
                             param_Cambiamos_Filtro,
                             false,   // param_ver_SQL_despues_Abrir : Boolean;
-                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
+                            true ); // no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 
@@ -864,7 +864,7 @@ begin
 
                               param_Cambiamos_Filtro,
                               false,   // param_ver_SQL_despues_Abrir : Boolean;
-                              true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
+                              true ); // no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
     if SQLQuery_1.RecordCount = 0 then
     begin
@@ -1232,7 +1232,7 @@ end;
 procedure Tform_visitas_por_actividad_000.Boton_Elegir_ClienteClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Cliente.Text          := Trim(var_Registro.id_1);
@@ -1243,7 +1243,7 @@ end;
 procedure Tform_visitas_por_actividad_000.Boton_Elegir_Tipo_ClienteClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Clientes_tipos( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes_tipos( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Tipo_Cliente.Text          := Trim(var_Registro.id_1);

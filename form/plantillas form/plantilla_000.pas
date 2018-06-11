@@ -207,7 +207,7 @@ type
 
     procedure Filtrar_Principal_HemosFiltradoPor(var p_Ordenado_por : String);
 
-    procedure para_Empezar;
+    procedure para_Empezar( p_Filtros : AnsiString; p_OrderBy : AnsiString );
     procedure Filtrar_Principal_Sin_Preguntar;
     procedure Abrir_Conexion_con_BD( p_SQLTransaction : TSQLTransaction; p_SQLConnector : TSQLConnector );
     procedure Cerrar_Tabla( p_SQLConnector: TSQLConnector; p_SQLTransaction: TSQLTransaction; p_SQLQuery : TSQLQuery );
@@ -1403,10 +1403,13 @@ begin
 }
 end;
 
-procedure Tform_plantilla_000.para_Empezar;
+procedure Tform_plantilla_000.para_Empezar( p_Filtros : AnsiString;
+                                            p_OrderBy : AnsiString );
 var var_Lineas_Filtro  : TStrings;
     var_Lineas_OrderBy : TStrings;
 begin
+  UTI_FILTROS_Rellenamos_Filtros_SN( p_Filtros, p_OrderBy, Memo_Filtros, Memo_OrderBy );
+
   // *********************************************************************************************** //
   // ** Traemos los tipos de filtros para la tabla principal                                      ** //
   // *********************************************************************************************** //

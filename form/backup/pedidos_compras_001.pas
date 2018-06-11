@@ -1252,7 +1252,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_pedidos_compras_000.SQLQuery_Pdo do
     begin
-        var_Registro := UTI_Abrir_Modulo_Provincias( true, false, 100, '1' );
+        var_Registro := UTI_Abrir_Modulo_Provincias( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             FieldByName('Envio_id_provincias').AsString            := Trim(var_Registro.id_1);

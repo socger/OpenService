@@ -1290,7 +1290,7 @@ end;
 procedure Tform_proveedores_000.Boton_Elegir_ActividadClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Actividades( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Actividades( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Actividad.Text          := Trim(var_Registro.id_1);
@@ -1324,7 +1324,7 @@ procedure Tform_proveedores_000.Boton_Elegir_proveedores_tiposClick(
   Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_TiposProveedores( true, false, 140, '1' );
+    var_Registro := UTI_Abrir_Modulo_TiposProveedores( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_proveedores_tipos.Text          := Trim(var_Registro.id_1);

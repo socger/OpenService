@@ -652,7 +652,7 @@ begin
 
     with form_facturas_ventas_000.SQLQuery_Ftra do
     begin
-        var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
+        var_Registro := UTI_Abrir_Modulo_Almacenes( '', '', true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             Desactivar_A_Facturar;
@@ -1295,7 +1295,7 @@ begin
         // ***************************************************************************************** //
         // ** Continuamos                                                                         ** //
         // ***************************************************************************************** //
-        var_Rgtro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
+        var_Rgtro := UTI_Abrir_Modulo_Clientes( '', '', true, false, '1' );
         if var_Rgtro.id_1 <> '' then
         begin
             Desactivar_A_Facturar;
@@ -1525,7 +1525,7 @@ begin
             // ************************************************************************************* //
             // ** Buscamos en la ficha de un cliente cual es su agencia de transporte             ** //
             // ************************************************************************************* //
-            var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );   // 120
+            var_Registro := UTI_Abrir_Modulo_Clientes( '', '', true, false, '1' );   // 120
             if var_Registro.id_1 <> '' then
             begin
                  Edit_Direccion_de_Envio_Agencia_Transporte_Descripcion.Text := var_Registro.descripcion_1;
@@ -2445,7 +2445,7 @@ begin
         Exit;
     end;
 
-    Result := UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( true, true, 52, '1' );
+    Result := UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( true, true, '1' );
 end;
 
 procedure Tform_facturas_ventas_005.Boton_Elegir_Direccion_EnvioClick(Sender: TObject);

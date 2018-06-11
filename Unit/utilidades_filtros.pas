@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, utilidades_forms_Filtrar, utilidades_rgtro, sqldb, DBGrids, ExtDlgs, variants,
-  utilidades_general, utilidades_bd, utilidades_datos_tablas, db;
+  utilidades_general, utilidades_bd, utilidades_datos_tablas, db, StdCtrls;
 
 procedure UTI_FILTROS_vaciarlos( p_SQLQuery_Filtros : TSQLQuery; p_DBGrid_Filtros : TDBGrid );
 procedure UTI_FILTROS_Esta_a_ReadOnLy( p_SQLQuery_Filtros : TSQLQuery; p_DBGrid_Filtros : TDBGrid );
@@ -42,10 +42,24 @@ procedure UTI_FILTROS_queFiltro_es_Hora_Comprobar_Errores( p_SQLQuery_Filtros : 
 procedure UTI_FILTROS_queFiltro_es_Hora_Crear_Filtro( p_SQLQuery_Filtros : TSQLQuery; p_SQL_ADD : TStrings; var p_Registro_CRUD : TRegistro_CRUD; var p_ctdad_Rgtros : Integer; var p_a_Filtrar : TStrings );
 
 procedure UTI_FILTROS_Cambiamos_Orden_SN( p_Lineas_OrderBy : TStrings; p_OrderBy : String );
+procedure UTI_FILTROS_Rellenamos_Filtros_SN( p_Filtros : AnsiString; p_OrderBy : AnsiString; p_Memo_Filtros : TMemo; p_Memo_OrderBy : TMemo );
 
 implementation
 
 // uses plantilla_000;
+
+procedure UTI_FILTROS_Rellenamos_Filtros_SN( p_Filtros       : AnsiString;
+                                             p_OrderBy       : AnsiString;
+                                             p_Memo_Filtros  : TMemo;
+                                             p_Memo_OrderBy  : TMemo );
+begin
+  if Trim(p_Filtros) <> '' then
+    p_Memo_Filtros.Lines.Add(p_Filtros);
+
+  if Trim(p_OrderBy) <> '' then
+    p_Memo_OrderBy.Lines.Add(p_OrderBy);
+
+end;
 
 procedure UTI_FILTROS_Cambiamos_Orden_SN( p_Lineas_OrderBy : TStrings;
                                           p_OrderBy : String );
@@ -1146,7 +1160,7 @@ begin
          (UpperCase(Copy(v_nombre_campo, 1, 3)) = 'ID_')                                                      then
       begin
         v_Hemos_Llamado := true;
-        v_Registro      := UTI_Abrir_Form( true, true, v_nombre_campo );
+        v_Registro      := UTI_Abrir_Form( '', '', true, true, v_nombre_campo );
 
         if v_Registro.id_1 <> '' then
         begin
@@ -1186,7 +1200,7 @@ begin
          (UpperCase(Copy(v_nombre_campo, 1, 3)) = 'ID_')                                                      then
       begin
         v_Hemos_Llamado := true;
-        v_Registro      := UTI_Abrir_Form( true, true, v_nombre_campo );
+        v_Registro      := UTI_Abrir_Form( '', '', true, true, v_nombre_campo );
 
         if v_Registro.id_1 <> '' then
         begin

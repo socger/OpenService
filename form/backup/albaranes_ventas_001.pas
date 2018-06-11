@@ -1116,7 +1116,7 @@ begin
             // ************************************************************************************* //
             // ** Buscamos en la ficha de un proveedor cual es su agencia de transporte           ** //
             // ************************************************************************************* //
-            var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );   // 120
+            var_Registro := UTI_Abrir_Modulo_Clientes( '', '', true, false, '1' );   // 120
             if var_Registro.id_1 <> '' then
             begin
                  Edit_Direccion_de_Envio_Agencia_Transporte_Descripcion.Text := var_Registro.descripcion_1;
@@ -1194,7 +1194,7 @@ begin
         Exit;
     end;
 
-    Result := UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( true, true, 52, '1' );
+    Result := UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( true, true, '1' );
 end;
 
 procedure Tform_albaranes_ventas_001.Boton_Elegir_Direccion_EnvioClick(Sender: TObject);
@@ -1814,7 +1814,7 @@ begin
         // ***************************************************************************************** //
         // ** Continuamos con el cambio de almacén                                                ** //
         // ***************************************************************************************** //
-        var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
+        var_Registro := UTI_Abrir_Modulo_Almacenes( '', '', true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             FieldByName('id_almacenes').AsString           := Trim(var_Registro.id_1);
@@ -1947,7 +1947,7 @@ begin
         // ***************************************************************************************** //
         // ** Continuamos                                                                         ** //
         // ***************************************************************************************** //
-        var_Rgtro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
+        var_Rgtro := UTI_Abrir_Modulo_Clientes( '', '', true, false, '1' );
         if var_Rgtro.id_1 <> '' then
         begin
              FieldByName('id_clientes').AsString := Trim(var_Rgtro.id_1);

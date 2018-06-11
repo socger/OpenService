@@ -1087,7 +1087,7 @@ begin
         // ***************************************************************************************** //
         // ** Continuamos con el cambio de almacén                                                ** //
         // ***************************************************************************************** //
-        var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
+        var_Registro := UTI_Abrir_Modulo_Almacenes( '', '', true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             FieldByName('id_almacenes').AsString           := Trim(var_Registro.id_1);

@@ -20,16 +20,28 @@ type
 
     function UTI_Guardar_Datos_Registro( param_id_1, param_id_2, param_id_3, param_descripcion_1, param_descripcion_2, param_descripcion_3 : String ) : TRecord_Rgtro_Comun;
 
-    function UTI_Abrir_Form( param_Elegimos, param_Solo_Ver : Boolean; param_Campo : ShortString ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_SN( param_Menu_Worked : Integer ) : Boolean;
+    function UTI_Abrir_Form( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_Campo : ShortString ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_SN( p_id_menus : Integer ) : Boolean;
 
-    function UTI_Abrir_Modulo_Clientes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Clientes_Tipos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Actividades( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Reportes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_ServiciosRegulares( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_ServiciosTipos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_ServiciosSeries( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Reportes( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Clientes( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Clientes_Tipos( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Actividades( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_ServiciosRegulares( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_ServiciosTipos( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_ServiciosSeries( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Almacenes( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_CuentasBancos( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_MovimientosAlmacen( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Impresoras( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Impuestos( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Terminales( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Elegir_Impuestos( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_id_impuesto_que_no_tiene_que_aparecer : String; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Elegir_cliente_contacto( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+    function UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( p_Filtros : AnsiString; p_OrderBy : AnsiString; param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+
+
+
     function UTI_Abrir_Modulo_ConfigurarAPP( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_FacturasVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_FacturasCompras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
@@ -58,7 +70,6 @@ type
     function UTI_Abrir_Modulo_Rutas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_AlbaranesVentas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_VehiculosEquipamientos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Almacenes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Articulos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Combustibles( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Peliculas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
@@ -78,8 +89,6 @@ type
     function UTI_Abrir_Modulo_ContratosPersonal( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Empresas( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_FamiliasGastos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_CuentasBancos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_MovimientosAlmacen( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_OfertasArticulos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_ConceptosPorTraspasoAlmacen( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_CtasPagosCobros( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
@@ -87,16 +96,10 @@ type
     function UTI_Abrir_Modulo_Poblaciones( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_FormasPago( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_GruposDeCocina( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Impresoras( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Impuestos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Paises( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Provincias( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Representantes( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Terminales( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_TiposProveedores( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Elegir_Impuestos( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_id_impuesto_que_no_tiene_que_aparecer : String; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Elegir_cliente_contacto( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-    function UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
     function UTI_Abrir_Modulo_Elegir_Diario_Tipo( param_Elegimos : Boolean; param_Solo_Ver : Boolean; param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 
 implementation
@@ -134,15 +137,73 @@ begin
     Result.descripcion_3 := param_descripcion_3;
 end;
 
-function UTI_Abrir_Form( param_Elegimos : Boolean;
+function UTI_Abrir_Form( p_Filtros      : AnsiString;
+                         p_OrderBy      : AnsiString;
+                         param_Elegimos : Boolean;
                          param_Solo_Ver : Boolean;
-                         param_Campo : ShortString ) : TRecord_Rgtro_Comun;
+                         param_Campo    : ShortString ) : TRecord_Rgtro_Comun;
 begin
      Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
 
    { ***********************************************************************************************
      EMPEZAMOS A VER A QUE MODULO LLAMAREMOS
      *********************************************************************************************** }
+     { REPORTES / INFORMES }
+     If UpperCase('id_informes') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_Reportes( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
+     { CLIENTES }
+     If UpperCase('id_clientes') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_Clientes( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
+     { CLIENTES TIPOS }
+     If UpperCase('id_clientes_tipos') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_Clientes_tipos( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
+     { ACTIVIDADES }
+     If UpperCase('id_actividades') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_Actividades( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
+     { SERVICIOS REGULARES }
+     If UpperCase('id_servicios_regulares') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_ServiciosRegulares( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
+     { SERVICIOS TIPOS }
+     If UpperCase('id_servicios_tipos') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_ServiciosTipos( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
+     { SERIES DE SERVICIOS }
+     If UpperCase('id_series_servicios') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_ServiciosSeries( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
+     { ALMACENES }
+     If (UpperCase('id_almacenes') = UpperCase(Trim(param_Campo)))         or
+        (UpperCase('id_almacenes_origen') = UpperCase(Trim(param_Campo)))  or
+        (UpperCase('id_almacenes_destino') = UpperCase(Trim(param_Campo))) then
+     begin
+       Result := UTI_Abrir_Modulo_Almacenes( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+     end;
+
+     { bancos empresas }
+     If UpperCase('id_bancos_empresas') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_CuentasBancos( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
+     { ALMACENES MOVIMIENTOS }
+     If UpperCase('id_almacenes_movimientos') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_MovimientosAlmacen( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
+     { IMPRESORAS }
+     If UpperCase('id_impresoras') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_Impresoras( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
+     { IMPUESTOS }
+     If UpperCase('id_impuestos') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_Impuestos( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
+     { TERMINALES }
+     If UpperCase('id_terminales') = UpperCase(Trim(param_Campo)) then
+       Result := UTI_Abrir_Modulo_Terminales( p_Filtros, p_OrderBy, param_Elegimos, param_Solo_Ver, '1' );
+
      { MEDIOS }
      If UpperCase('id_medio') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_Medios( param_Elegimos, param_Solo_Ver, '1' );
@@ -159,17 +220,9 @@ begin
      If UpperCase('Id_Menus') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_Menus( param_Elegimos, param_Solo_Ver, '1' );
 
-     { CLIENTES }
-     If UpperCase('id_clientes') = UpperCase(Trim(param_Campo)) then
-       Result := UTI_Abrir_Modulo_Clientes( param_Elegimos, param_Solo_Ver, '1' );
-
      { PAISES }
      If UpperCase('id_paises') = UpperCase(Trim(param_Campo)) then
        Result := UTI_Abrir_Modulo_Paises( param_Elegimos, param_Solo_Ver, '1' );
-
-     { CLIENTES TIPOS }
-     If UpperCase('id_clientes_tipos') = UpperCase(Trim(param_Campo)) then
-       Result := UTI_Abrir_Modulo_Clientes_tipos( param_Elegimos, param_Solo_Ver, '1' );
 
      { FORMAS PAGO }
      If UpperCase('id_formas_pago') = UpperCase(Trim(param_Campo)) then
@@ -207,10 +260,6 @@ begin
     If UpperCase('id_articulos_familias') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_FamiliasArticulos( param_Elegimos, param_Solo_Ver, '1' );
 
-    { TERMINALES }
-    If UpperCase('id_terminales') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Terminales( param_Elegimos, param_Solo_Ver, '1' );
-
     { ARTICULOS }
     If UpperCase('id_articulos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Articulos( param_Elegimos, param_Solo_Ver, '1' );
@@ -218,14 +267,6 @@ begin
     { GRUPOS COCINA }
     If UpperCase('id_grupos_cocina') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_GruposDeCocina( param_Elegimos, param_Solo_Ver, '1' );
-
-    { IMPRESORAS }
-    If UpperCase('id_impresoras') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Impresoras( param_Elegimos, param_Solo_Ver, '1' );
-
-    { IMPUESTOS }
-    If UpperCase('id_impuestos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Impuestos( param_Elegimos, param_Solo_Ver, '1' );
 
     { PERSONAL FAMILIAS }
     If UpperCase('id_personal_familias') = UpperCase(Trim(param_Campo)) then
@@ -247,14 +288,6 @@ begin
     If UpperCase('id_empresas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Empresas( param_Elegimos, param_Solo_Ver, '1' );
 
-    { ALMACENES }
-    If (UpperCase('id_almacenes') = UpperCase(Trim(param_Campo)))         or
-       (UpperCase('id_almacenes_origen') = UpperCase(Trim(param_Campo)))  or
-       (UpperCase('id_almacenes_destino') = UpperCase(Trim(param_Campo))) then
-    begin
-      Result := UTI_Abrir_Modulo_Almacenes( param_Elegimos, param_Solo_Ver, '1' );
-    end;
-
     { GASTOS TIPOS }
     If UpperCase('id_gastos_tipos') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_FamiliasGastos( param_Elegimos, param_Solo_Ver, '1' );
@@ -270,14 +303,6 @@ begin
     { ARTICULOS OFERTAS }
     If UpperCase('id_articulos_ofertas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_OfertasArticulos( param_Elegimos, param_Solo_Ver, '1' );
-
-    { bancos empresas }
-    If UpperCase('id_bancos_empresas') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_CuentasBancos( param_Elegimos, param_Solo_Ver, '1' );
-
-    { ALMACENES MOVIMIENTOS }
-    If UpperCase('id_almacenes_movimientos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_MovimientosAlmacen( param_Elegimos, param_Solo_Ver, '1' );
 
     { VEHICULOS }
     If UpperCase('id_vehiculos') = UpperCase(Trim(param_Campo)) then
@@ -339,10 +364,6 @@ begin
     If UpperCase('id_visitas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Visitas( param_Elegimos, param_Solo_Ver, '1' );
 
-    { ACTIVIDADES }
-    If UpperCase('id_actividades') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Actividades( param_Elegimos, param_Solo_Ver, '1' );
-
     { RUTAS / ZONAS }
     If UpperCase('id_rutas') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_Rutas( param_Elegimos, param_Solo_Ver, '1' );
@@ -371,42 +392,26 @@ begin
     If UpperCase('id_facturas_compras') = UpperCase(Trim(param_Campo)) then
       Result := UTI_Abrir_Modulo_FacturasCompras( param_Elegimos, param_Solo_Ver, '1' );
 
-    { REPORTES / INFORMES }
-    If UpperCase('id_informes') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_Reportes( param_Elegimos, param_Solo_Ver, '1' );
-
-    { SERVICIOS TIPOS }
-    If UpperCase('id_servicios_tipos') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_ServiciosTipos( param_Elegimos, param_Solo_Ver, '1' );
-
-    { SERVICIOS REGULARES }
-    If UpperCase('id_servicios_regulares') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_ServiciosRegulares( param_Elegimos, param_Solo_Ver, '1' );
-
-    { SERIES DE SERVICIOS }
-    If UpperCase('id_series_servicios') = UpperCase(Trim(param_Campo)) then
-      Result := UTI_Abrir_Modulo_ServiciosSeries( param_Elegimos, param_Solo_Ver, '1' );
-
 end;
 
-function UTI_Abrir_Modulo_SN( param_Menu_Worked : Integer ) : Boolean;
+function UTI_Abrir_Modulo_SN( p_id_menus : Integer ) : Boolean;
 var
   var_nombre_Modulo : String;
   var_msg           : TStrings;
 begin
-  // *********************************************************************************************** //
-  // ** param_Menu_Worked ... es el id de la tabla menus                                          ** //
-  // *********************************************************************************************** //
+  // **************************************************************************************** //
+  // ** p_id_menus ... es el id de la tabla menus                                          ** //
+  // **************************************************************************************** //
   Result := false;
 
-  if UTI_USR_Permiso_SN( param_Menu_Worked,
+  if UTI_USR_Permiso_SN( p_id_menus,
                          '',
                          true ) = false then
   begin
     Exit;
   end;
 
-  var_nombre_Modulo := UTI_USR_Permiso_SN_TraerNombreModulo(param_Menu_Worked);
+  var_nombre_Modulo := UTI_USR_Permiso_SN_TraerNombreModulo(p_id_menus);
 
   if Trim(var_nombre_Modulo) = '' then
   begin
@@ -416,7 +421,7 @@ begin
     var_msg := TStringList.Create;
     var_msg.Clear;
 
-    var_msg.Add( rs_menu_sin_Modulo + IntToStr(param_Menu_Worked) );
+    var_msg.Add( rs_menu_sin_Modulo + IntToStr(p_id_menus) );
 
     UTI_GEN_Aviso( true, var_msg, rs_No_Se_Puede, true, false );
     var_msg.Free;
@@ -445,258 +450,6 @@ begin
   // *********************************************************************************************** //
   Result := true;
 
-end;
-
-function UTI_Abrir_Modulo_Clientes( param_Elegimos : Boolean;
-                                    param_Solo_Ver : Boolean;
-                                    param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 50 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_clientes_000, f_clientes_000 );
-
-    f_clientes_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_clientes_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_clientes_000.public_Elegimos                   := param_Elegimos;
-    f_clientes_000.public_Menu_Worked                := 50;
-
-    f_clientes_000.para_Empezar;
-
-    f_clientes_000.ShowModal;
-
-    if f_clientes_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_clientes_000.SQLQuery_Principal do
-      begin
-        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                              FieldByName('id_Agencias_Transporte').AsString,
-                                              '',
-                                              FieldByName('nombre_propietario').AsString,
-                                              FieldByName('nombre_comercial').AsString,
-                                              FieldByName('Cuenta_Contable').AsString );
-      end;
-    end;
-
-    f_clientes_000.Free;
-  end;
-end;
-
-function UTI_Abrir_Modulo_Clientes_Tipos( param_Elegimos : Boolean;
-                                          param_Solo_Ver : Boolean;
-                                          param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 70 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_clientes_tipos_000, f_clientes_tipos_000 );
-
-    f_clientes_tipos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_clientes_tipos_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_clientes_tipos_000.public_Elegimos                   := param_Elegimos;
-    f_clientes_tipos_000.public_Menu_Worked                := 70;
-
-    f_clientes_tipos_000.para_Empezar;
-
-    f_clientes_tipos_000.ShowModal;
-
-    if f_clientes_tipos_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_clientes_tipos_000.SQLQuery_Principal do
-      begin
-        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                              '',
-                                              '',
-                                              FieldByName('descripcion').AsString,
-                                              FieldByName('Cuenta_Contable').AsString,
-                                              FieldByName('Cuenta_Contable').AsString );
-      end;
-    end;
-
-    f_clientes_tipos_000.Free;
-  end;
-end;
-
-function UTI_Abrir_Modulo_Actividades( param_Elegimos : Boolean;
-                                       param_Solo_Ver : Boolean;
-                                       param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 500 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_actividades_000, f_actividades_000 );
-
-    f_actividades_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_actividades_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_actividades_000.public_Elegimos                   := param_Elegimos;
-    f_actividades_000.public_Menu_Worked                := 500;
-
-    f_actividades_000.para_Empezar;
-
-    f_actividades_000.ShowModal;
-
-    if f_actividades_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_actividades_000.SQLQuery_Principal do
-      begin
-        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                              '',
-                                              '',
-                                              FieldByName('descripcion').AsString,
-                                              '',
-                                              '' );
-      end;
-    end;
-
-    f_actividades_000.Free;
-  end;
-end;
-
-function UTI_Abrir_Modulo_Reportes( param_Elegimos : Boolean;
-                                    param_Solo_Ver : Boolean;
-                                    param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 700 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_reportes_000, f_reportes_000 );
-
-    f_reportes_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_reportes_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_reportes_000.public_Elegimos                   := param_Elegimos;
-    f_reportes_000.public_Menu_Worked                := 700;
-
-    f_reportes_000.para_Empezar;
-
-    f_reportes_000.ShowModal;
-
-    if f_reportes_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_reportes_000.SQLQuery_Principal do
-      begin
-        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                              FieldByName('id_menus').AsString,
-                                              '',
-                                              FieldByName('nombre_fichero').AsString,
-                                              FieldByName('descripcion').AsString,
-                                              '' );
-      end;
-    end;
-
-    f_reportes_000.Free;
-  end;
-end;
-
-function UTI_Abrir_Modulo_ServiciosRegulares( param_Elegimos : Boolean;
-                                              param_Solo_Ver : Boolean;
-                                              param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 720 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_servicios_regulares_000, f_servicios_regulares_000 );
-
-    f_servicios_regulares_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_servicios_regulares_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_servicios_regulares_000.public_Elegimos                   := param_Elegimos;
-    f_servicios_regulares_000.public_Menu_Worked                := 720;
-
-    f_servicios_regulares_000.para_Empezar;
-
-    f_servicios_regulares_000.ShowModal;
-
-    if f_servicios_regulares_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_servicios_regulares_000.SQLQuery_Principal do
-      begin
-        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                              '',
-                                              '',
-                                              FieldByName('descripcion').AsString,
-                                              '',
-                                              '' );
-      end;
-    end;
-
-    f_servicios_regulares_000.Free;
-  end;
-end;
-
-function UTI_Abrir_Modulo_ServiciosTipos( param_Elegimos : Boolean;
-                                          param_Solo_Ver : Boolean;
-                                          param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 710 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_servicios_tipos_000, f_servicios_tipos_000 );
-
-    f_servicios_tipos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_servicios_tipos_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_servicios_tipos_000.public_Elegimos                   := param_Elegimos;
-    f_servicios_tipos_000.public_Menu_Worked                := 710;
-
-    f_servicios_tipos_000.para_Empezar;
-
-    f_servicios_tipos_000.ShowModal;
-
-    if f_servicios_tipos_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_servicios_tipos_000.SQLQuery_Principal do
-      begin
-        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                              '',
-                                              '',
-                                              FieldByName('descripcion').AsString,
-                                              '',
-                                              '' );
-      end;
-    end;
-
-    f_servicios_tipos_000.Free;
-  end;
-end;
-
-function UTI_Abrir_Modulo_ServiciosSeries( param_Elegimos : Boolean;
-                                           param_Solo_Ver : Boolean;
-                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 730 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_series_servicios_000, f_series_servicios_000 );
-
-    f_series_servicios_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_series_servicios_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_series_servicios_000.public_Elegimos                   := param_Elegimos;
-    f_series_servicios_000.public_Menu_Worked                := 730;
-
-    f_series_servicios_000.para_Empezar;
-
-    f_series_servicios_000.ShowModal;
-
-    if f_series_servicios_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_series_servicios_000 do
-      begin
-        Result := UTI_Guardar_Datos_Registro( SQLQuery_Principalid.AsString,
-                                              SQLQuery_Principalid_empresas.AsString,
-                                              SQLQuery_Principalsubcuenta_ventas.AsString,
-                                              SQLQuery_Principaldescripcion.AsString,
-                                              SQLQuery_Principalserie_codigo.AsString,
-                                              SQLQuery_Principalnumero_siguiente.AsString );
-      end;
-    end;
-
-    f_series_servicios_000.Free;
-  end;
 end;
 
 function UTI_Abrir_Modulo_ConfigurarAPP( param_Elegimos : Boolean;
@@ -1501,42 +1254,6 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Almacenes( param_Elegimos : Boolean;
-                                     param_Solo_Ver : Boolean;
-                                     param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 260 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_almacenes_000, f_almacenes_000 );
-
-    f_almacenes_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_almacenes_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_almacenes_000.public_Elegimos                   := param_Elegimos;
-    f_almacenes_000.public_Menu_Worked                := 260;
-
-    f_almacenes_000.para_Empezar;
-
-    f_almacenes_000.ShowModal;
-
-    if f_almacenes_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_almacenes_000.SQLQuery_Principal do
-      begin
-          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                                '',
-                                                '',
-                                                FieldByName('descripcion').AsString,
-                                                '',
-                                                '' );
-      end;
-    end;
-
-    f_almacenes_000.Free;
-  end;
-end;
-
 function UTI_Abrir_Modulo_Articulos( param_Elegimos : Boolean;
                                      param_Solo_Ver : Boolean;
                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
@@ -2222,78 +1939,6 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_CuentasBancos( param_Elegimos : Boolean;
-                                         param_Solo_Ver : Boolean;
-                                         param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 310 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_bancos_ctas_empresas_000, f_bancos_ctas_empresas_000 );
-
-    f_bancos_ctas_empresas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_bancos_ctas_empresas_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_bancos_ctas_empresas_000.public_Elegimos                   := param_Elegimos;
-    f_bancos_ctas_empresas_000.public_Menu_Worked                := 310;
-
-    f_bancos_ctas_empresas_000.para_Empezar;
-
-    f_bancos_ctas_empresas_000.ShowModal;
-
-    if f_bancos_ctas_empresas_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_bancos_ctas_empresas_000.SQLQuery_Principal do
-      begin
-          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                                '',
-                                                '',
-                                                FieldByName('descripcion').AsString,
-                                                '',
-                                                '' );
-      end;
-    end;
-
-    f_bancos_ctas_empresas_000.Free;
-  end;
-end;
-
-function UTI_Abrir_Modulo_MovimientosAlmacen( param_Elegimos : Boolean;
-                                              param_Solo_Ver : Boolean;
-                                              param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 320 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_almacenes_movimientos_000, f_almacenes_movimientos_000 );
-
-    f_almacenes_movimientos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_almacenes_movimientos_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_almacenes_movimientos_000.public_Elegimos                   := param_Elegimos;
-    f_almacenes_movimientos_000.public_Menu_Worked                := 320;
-
-    f_almacenes_movimientos_000.para_Empezar;
-
-    f_almacenes_movimientos_000.ShowModal;
-
-    if f_almacenes_movimientos_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_almacenes_movimientos_000.SQLQuery_Principal do
-      begin
-          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                                '',
-                                                '',
-                                                '',
-                                                '',
-                                                '' );
-      end;
-    end;
-
-    f_almacenes_movimientos_000.Free;
-  end;
-end;
-
 function UTI_Abrir_Modulo_OfertasArticulos( param_Elegimos : Boolean;
                                             param_Solo_Ver : Boolean;
                                             param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
@@ -2546,78 +2191,6 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Impresoras( param_Elegimos : Boolean;
-                                      param_Solo_Ver : Boolean;
-                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 190 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_impresoras_000, f_impresoras_000 );
-
-    f_impresoras_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_impresoras_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_impresoras_000.public_Elegimos                   := param_Elegimos;
-    f_impresoras_000.public_Menu_Worked                := 190;
-
-    f_impresoras_000.para_Empezar;
-
-    f_impresoras_000.ShowModal;
-
-    if f_impresoras_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_impresoras_000.SQLQuery_Principal do
-      begin
-          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                                '',
-                                                '',
-                                                FieldByName('descripcion').AsString,
-                                                '',
-                                                '' );
-      end;
-    end;
-
-    f_impresoras_000.Free;
-  end;
-end;
-
-function UTI_Abrir_Modulo_Impuestos( param_Elegimos : Boolean;
-                                     param_Solo_Ver : Boolean;
-                                     param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 200 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_impuestos_000, f_impuestos_000 );
-
-    f_impuestos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_impuestos_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_impuestos_000.public_Elegimos                   := param_Elegimos;
-    f_impuestos_000.public_Menu_Worked                := 200;
-
-    f_impuestos_000.para_Empezar;
-
-    f_impuestos_000.ShowModal;
-
-    if f_impuestos_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_impuestos_000.SQLQuery_Principal do
-      begin
-          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                                '',
-                                                '',
-                                                FieldByName('descripcion').AsString,
-                                                '',
-                                                '' );
-      end;
-    end;
-
-    f_impuestos_000.Free;
-  end;
-end;
-
 function UTI_Abrir_Modulo_Paises( param_Elegimos : Boolean;
                                   param_Solo_Ver : Boolean;
                                   param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
@@ -2727,42 +2300,6 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Terminales( param_Elegimos : Boolean;
-                                      param_Solo_Ver : Boolean;
-                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
-begin
-  if UTI_Abrir_Modulo_SN( 160 ) = true then
-  begin
-    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
-
-    Application.CreateForm( Tf_terminales_000, f_terminales_000 );
-
-    f_terminales_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
-    f_terminales_000.public_Solo_Ver                   := param_Solo_Ver;
-    f_terminales_000.public_Elegimos                   := param_Elegimos;
-    f_terminales_000.public_Menu_Worked                := 160;
-
-    f_terminales_000.para_Empezar;
-
-    f_terminales_000.ShowModal;
-
-    if f_terminales_000.public_Rgtro_Seleccionado = true then
-    begin
-      with f_terminales_000.SQLQuery_Principal do
-      begin
-          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
-                                                '',
-                                                '',
-                                                FieldByName('descripcion').AsString,
-                                                '',
-                                                '' );
-      end;
-    end;
-
-    f_terminales_000.Free;
-  end;
-end;
-
 function UTI_Abrir_Modulo_TiposProveedores( param_Elegimos : Boolean;
                                             param_Solo_Ver : Boolean;
                                             param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
@@ -2799,8 +2336,491 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Elegir_Impuestos( param_Elegimos : Boolean;
-                                            param_Solo_Ver : Boolean;
+function UTI_Abrir_Modulo_Reportes( p_Filtros                        : AnsiString;
+                                    p_OrderBy                        : AnsiString;
+                                    param_Elegimos                   : Boolean;
+                                    param_Solo_Ver                   : Boolean;
+                                    param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 700 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_reportes_000, f_reportes_000 );
+
+    f_reportes_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_reportes_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_reportes_000.public_Elegimos                   := param_Elegimos;
+    f_reportes_000.public_Menu_Worked                := 700;
+
+    f_reportes_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_reportes_000.ShowModal;
+
+    if f_reportes_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_reportes_000.SQLQuery_Principal do
+      begin
+        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                              FieldByName('id_menus').AsString,
+                                              '',
+                                              FieldByName('nombre_fichero').AsString,
+                                              FieldByName('descripcion').AsString,
+                                              '' );
+      end;
+    end;
+
+    f_reportes_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_Clientes( p_Filtros                        : AnsiString;
+                                    p_OrderBy                        : AnsiString;
+                                    param_Elegimos                   : Boolean;
+                                    param_Solo_Ver                   : Boolean;
+                                    param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 50 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_clientes_000, f_clientes_000 );
+
+    f_clientes_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_clientes_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_clientes_000.public_Elegimos                   := param_Elegimos;
+    f_clientes_000.public_Menu_Worked                := 50;
+
+    f_clientes_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_clientes_000.ShowModal;
+
+    if f_clientes_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_clientes_000.SQLQuery_Principal do
+      begin
+        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                              FieldByName('id_Agencias_Transporte').AsString,
+                                              '',
+                                              FieldByName('nombre_propietario').AsString,
+                                              FieldByName('nombre_comercial').AsString,
+                                              FieldByName('Cuenta_Contable').AsString );
+      end;
+    end;
+
+    f_clientes_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_Clientes_Tipos( p_Filtros                        : AnsiString;
+                                          p_OrderBy                        : AnsiString;
+                                          param_Elegimos                   : Boolean;
+                                          param_Solo_Ver                   : Boolean;
+                                          param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 70 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_clientes_tipos_000, f_clientes_tipos_000 );
+
+    f_clientes_tipos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_clientes_tipos_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_clientes_tipos_000.public_Elegimos                   := param_Elegimos;
+    f_clientes_tipos_000.public_Menu_Worked                := 70;
+
+    f_clientes_tipos_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_clientes_tipos_000.ShowModal;
+
+    if f_clientes_tipos_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_clientes_tipos_000.SQLQuery_Principal do
+      begin
+        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                              '',
+                                              '',
+                                              FieldByName('descripcion').AsString,
+                                              FieldByName('Cuenta_Contable').AsString,
+                                              FieldByName('Cuenta_Contable').AsString );
+      end;
+    end;
+
+    f_clientes_tipos_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_Actividades( p_Filtros                        : AnsiString;
+                                       p_OrderBy                        : AnsiString;
+                                       param_Elegimos                   : Boolean;
+                                       param_Solo_Ver                   : Boolean;
+                                       param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 500 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_actividades_000, f_actividades_000 );
+
+    f_actividades_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_actividades_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_actividades_000.public_Elegimos                   := param_Elegimos;
+    f_actividades_000.public_Menu_Worked                := 500;
+
+    f_actividades_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_actividades_000.ShowModal;
+
+    if f_actividades_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_actividades_000.SQLQuery_Principal do
+      begin
+        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                              '',
+                                              '',
+                                              FieldByName('descripcion').AsString,
+                                              '',
+                                              '' );
+      end;
+    end;
+
+    f_actividades_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_ServiciosRegulares( p_Filtros                        : AnsiString;
+                                              p_OrderBy                        : AnsiString;
+                                              param_Elegimos                   : Boolean;
+                                              param_Solo_Ver                   : Boolean;
+                                              param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 720 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_servicios_regulares_000, f_servicios_regulares_000 );
+
+    f_servicios_regulares_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_servicios_regulares_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_servicios_regulares_000.public_Elegimos                   := param_Elegimos;
+    f_servicios_regulares_000.public_Menu_Worked                := 720;
+
+    f_servicios_regulares_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_servicios_regulares_000.ShowModal;
+
+    if f_servicios_regulares_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_servicios_regulares_000.SQLQuery_Principal do
+      begin
+        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                              '',
+                                              '',
+                                              FieldByName('descripcion').AsString,
+                                              '',
+                                              '' );
+      end;
+    end;
+
+    f_servicios_regulares_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_ServiciosTipos( p_Filtros                        : AnsiString;
+                                          p_OrderBy                        : AnsiString;
+                                          param_Elegimos                   : Boolean;
+                                          param_Solo_Ver                   : Boolean;
+                                          param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 710 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_servicios_tipos_000, f_servicios_tipos_000 );
+
+    f_servicios_tipos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_servicios_tipos_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_servicios_tipos_000.public_Elegimos                   := param_Elegimos;
+    f_servicios_tipos_000.public_Menu_Worked                := 710;
+
+    f_servicios_tipos_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_servicios_tipos_000.ShowModal;
+
+    if f_servicios_tipos_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_servicios_tipos_000.SQLQuery_Principal do
+      begin
+        Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                              '',
+                                              '',
+                                              FieldByName('descripcion').AsString,
+                                              '',
+                                              '' );
+      end;
+    end;
+
+    f_servicios_tipos_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_ServiciosSeries( p_Filtros                        : AnsiString;
+                                           p_OrderBy                        : AnsiString;
+                                           param_Elegimos                   : Boolean;
+                                           param_Solo_Ver                   : Boolean;
+                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 730 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_series_servicios_000, f_series_servicios_000 );
+
+    f_series_servicios_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_series_servicios_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_series_servicios_000.public_Elegimos                   := param_Elegimos;
+    f_series_servicios_000.public_Menu_Worked                := 730;
+
+    f_series_servicios_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_series_servicios_000.ShowModal;
+
+    if f_series_servicios_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_series_servicios_000 do
+      begin
+        Result := UTI_Guardar_Datos_Registro( SQLQuery_Principalid.AsString,
+                                              SQLQuery_Principalid_empresas.AsString,
+                                              SQLQuery_Principalsubcuenta_ventas.AsString,
+                                              SQLQuery_Principaldescripcion.AsString,
+                                              SQLQuery_Principalserie_codigo.AsString,
+                                              SQLQuery_Principalnumero_siguiente.AsString );
+      end;
+    end;
+
+    f_series_servicios_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_Almacenes( p_Filtros                        : AnsiString;
+                                     p_OrderBy                        : AnsiString;
+                                     param_Elegimos                   : Boolean;
+                                     param_Solo_Ver                   : Boolean;
+                                     param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 260 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_almacenes_000, f_almacenes_000 );
+
+    f_almacenes_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_almacenes_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_almacenes_000.public_Elegimos                   := param_Elegimos;
+    f_almacenes_000.public_Menu_Worked                := 260;
+
+    f_almacenes_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_almacenes_000.ShowModal;
+
+    if f_almacenes_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_almacenes_000.SQLQuery_Principal do
+      begin
+          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                '',
+                                                '',
+                                                FieldByName('descripcion').AsString,
+                                                '',
+                                                '' );
+      end;
+    end;
+
+    f_almacenes_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_CuentasBancos( p_Filtros                        : AnsiString;
+                                         p_OrderBy                        : AnsiString;
+                                         param_Elegimos                   : Boolean;
+                                         param_Solo_Ver                   : Boolean;
+                                         param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 310 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_bancos_ctas_empresas_000, f_bancos_ctas_empresas_000 );
+
+    f_bancos_ctas_empresas_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_bancos_ctas_empresas_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_bancos_ctas_empresas_000.public_Elegimos                   := param_Elegimos;
+    f_bancos_ctas_empresas_000.public_Menu_Worked                := 310;
+
+    f_bancos_ctas_empresas_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_bancos_ctas_empresas_000.ShowModal;
+
+    if f_bancos_ctas_empresas_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_bancos_ctas_empresas_000.SQLQuery_Principal do
+      begin
+          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                '',
+                                                '',
+                                                FieldByName('descripcion').AsString,
+                                                '',
+                                                '' );
+      end;
+    end;
+
+    f_bancos_ctas_empresas_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_MovimientosAlmacen( p_Filtros                        : AnsiString;
+                                              p_OrderBy                        : AnsiString;
+                                              param_Elegimos                   : Boolean;
+                                              param_Solo_Ver                   : Boolean;
+                                              param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 320 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_almacenes_movimientos_000, f_almacenes_movimientos_000 );
+
+    f_almacenes_movimientos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_almacenes_movimientos_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_almacenes_movimientos_000.public_Elegimos                   := param_Elegimos;
+    f_almacenes_movimientos_000.public_Menu_Worked                := 320;
+
+    f_almacenes_movimientos_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_almacenes_movimientos_000.ShowModal;
+
+    if f_almacenes_movimientos_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_almacenes_movimientos_000.SQLQuery_Principal do
+      begin
+          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                '',
+                                                '',
+                                                '',
+                                                '',
+                                                '' );
+      end;
+    end;
+
+    f_almacenes_movimientos_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_Impresoras( p_Filtros                        : AnsiString;
+                                      p_OrderBy                        : AnsiString;
+                                      param_Elegimos                   : Boolean;
+                                      param_Solo_Ver                   : Boolean;
+                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 190 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_impresoras_000, f_impresoras_000 );
+
+    f_impresoras_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_impresoras_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_impresoras_000.public_Elegimos                   := param_Elegimos;
+    f_impresoras_000.public_Menu_Worked                := 190;
+
+    f_impresoras_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_impresoras_000.ShowModal;
+
+    if f_impresoras_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_impresoras_000.SQLQuery_Principal do
+      begin
+          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                '',
+                                                '',
+                                                FieldByName('descripcion').AsString,
+                                                '',
+                                                '' );
+      end;
+    end;
+
+    f_impresoras_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_Impuestos( p_Filtros                        : AnsiString;
+                                     p_OrderBy                        : AnsiString;
+                                     param_Elegimos                   : Boolean;
+                                     param_Solo_Ver                   : Boolean;
+                                     param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 200 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_impuestos_000, f_impuestos_000 );
+
+    f_impuestos_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_impuestos_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_impuestos_000.public_Elegimos                   := param_Elegimos;
+    f_impuestos_000.public_Menu_Worked                := 200;
+
+    f_impuestos_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_impuestos_000.ShowModal;
+
+    if f_impuestos_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_impuestos_000.SQLQuery_Principal do
+      begin
+          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                '',
+                                                '',
+                                                FieldByName('descripcion').AsString,
+                                                '',
+                                                '' );
+      end;
+    end;
+
+    f_impuestos_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_Terminales( p_Filtros                        : AnsiString;
+                                      p_OrderBy                        : AnsiString;
+                                      param_Elegimos                   : Boolean;
+                                      param_Solo_Ver                   : Boolean;
+                                      param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
+begin
+  if UTI_Abrir_Modulo_SN( 160 ) = true then
+  begin
+    Result.id_1 := ''; // Para confirmar que no hemos elegido ningún registro
+
+    Application.CreateForm( Tf_terminales_000, f_terminales_000 );
+
+    f_terminales_000.public_hacemos_commit_alFinalizar := param_hacemos_commit_alFinalizar;
+    f_terminales_000.public_Solo_Ver                   := param_Solo_Ver;
+    f_terminales_000.public_Elegimos                   := param_Elegimos;
+    f_terminales_000.public_Menu_Worked                := 160;
+
+    f_terminales_000.para_Empezar( p_Filtros, p_OrderBy );
+    f_terminales_000.ShowModal;
+
+    if f_terminales_000.public_Rgtro_Seleccionado = true then
+    begin
+      with f_terminales_000.SQLQuery_Principal do
+      begin
+          Result := UTI_Guardar_Datos_Registro( FieldByName('id').AsString,
+                                                '',
+                                                '',
+                                                FieldByName('descripcion').AsString,
+                                                '',
+                                                '' );
+      end;
+    end;
+
+    f_terminales_000.Free;
+  end;
+end;
+
+function UTI_Abrir_Modulo_Elegir_Impuestos( p_Filtros                                   : AnsiString;
+                                            p_OrderBy                                   : AnsiString;
+                                            param_Elegimos                              : Boolean;
+                                            param_Solo_Ver                              : Boolean;
                                             param_id_impuesto_que_no_tiene_que_aparecer : String;
                                             param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
@@ -2818,8 +2838,7 @@ begin
     f_elegir_impuestos.public_Elegimos                              := param_Elegimos;
     f_elegir_impuestos.public_Menu_Worked                           := 201;
 
-    f_elegir_impuestos.para_Empezar;
-
+    f_elegir_impuestos.para_Empezar( p_Filtros, p_OrderBy );
     f_elegir_impuestos.ShowModal;
 
     if f_elegir_impuestos.public_Rgtro_Seleccionado = true then
@@ -2840,8 +2859,10 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Elegir_cliente_contacto( param_Elegimos : Boolean;
-                                                   param_Solo_Ver : Boolean;
+function UTI_Abrir_Modulo_Elegir_cliente_contacto( p_Filtros                        : AnsiString;
+                                                   p_OrderBy                        : AnsiString;
+                                                   param_Elegimos                   : Boolean;
+                                                   param_Solo_Ver                   : Boolean;
                                                    param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
   if UTI_Abrir_Modulo_SN( 51 ) = true then
@@ -2855,8 +2876,7 @@ begin
     f_elegir_cliente_contacto.public_Elegimos                   := param_Elegimos;
     f_elegir_cliente_contacto.public_Menu_Worked                := 51;
 
-    f_elegir_cliente_contacto.para_Empezar;
-
+    f_elegir_cliente_contacto.para_Empezar( p_Filtros, p_OrderBy );
     f_elegir_cliente_contacto.ShowModal;
 
     if f_elegir_cliente_contacto.public_Rgtro_Seleccionado = true then
@@ -2876,8 +2896,10 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( param_Elegimos : Boolean;
-                                                          param_Solo_Ver : Boolean;
+function UTI_Abrir_Modulo_Elegir_cliente_Direccion_Envio( p_Filtros                        : AnsiString;
+                                                          p_OrderBy                        : AnsiString;
+                                                          param_Elegimos                   : Boolean;
+                                                          param_Solo_Ver                   : Boolean;
                                                           param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
   if UTI_Abrir_Modulo_SN( 52 ) = true then
@@ -2891,8 +2913,7 @@ begin
     f_elegir_cliente_direccion_envio.public_Elegimos                   := param_Elegimos;
     f_elegir_cliente_direccion_envio.public_Menu_Worked                := 52;
 
-    f_elegir_cliente_direccion_envio.para_Empezar;
-
+    f_elegir_cliente_direccion_envio.para_Empezar( p_Filtros, p_OrderBy );
     f_elegir_cliente_direccion_envio.ShowModal;
 
     if f_elegir_cliente_direccion_envio.public_Rgtro_Seleccionado = true then
@@ -2913,8 +2934,10 @@ begin
   end;
 end;
 
-function UTI_Abrir_Modulo_Elegir_Diario_Tipo( param_Elegimos : Boolean;
-                                              param_Solo_Ver : Boolean;
+function UTI_Abrir_Modulo_Elegir_Diario_Tipo( p_Filtros                        : AnsiString;
+                                              p_OrderBy                        : AnsiString;
+                                              param_Elegimos                   : Boolean;
+                                              param_Solo_Ver                   : Boolean;
                                               param_hacemos_commit_alFinalizar : String ) : TRecord_Rgtro_Comun;
 begin
   if UTI_Abrir_Modulo_SN( 740 ) = true then
@@ -2928,8 +2951,7 @@ begin
     f_elegir_diarios_tipos.public_Elegimos                   := param_Elegimos;
     f_elegir_diarios_tipos.public_Menu_Worked                := 740;
 
-    f_elegir_diarios_tipos.para_Empezar;
-
+    f_elegir_diarios_tipos.para_Empezar( p_Filtros, p_OrderBy );
     f_elegir_diarios_tipos.ShowModal;
 
     if f_elegir_diarios_tipos.public_Rgtro_Seleccionado = true then

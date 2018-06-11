@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqldb, db, FileUtil, DBDateTimePicker, DateTimePicker, Forms, Controls, Grids,
   Graphics, Dialogs, ExtCtrls, StdCtrls, Buttons, ComCtrls, DbCtrls, DBGrids, ButtonPanel, ActnList,
   variants, plantilla_000, utilidades_datos_tablas, utilidades_rgtro, utilidades_bd, utilidades_general,
-  utilidades_forms_Filtrar, utilidades_usuarios, utilidades_impuestos;
+  utilidades_Filtros, utilidades_forms_Filtrar, utilidades_usuarios, utilidades_impuestos;
 
 resourcestring
   rs_alm_mov_006 = 'Por fecha';
@@ -385,7 +385,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Almacenes( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_almacenes_origen').AsString := Trim(var_Registro.id_1);
@@ -413,7 +413,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Almacenes( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_almacenes_destino').AsString := Trim(var_Registro.id_1);

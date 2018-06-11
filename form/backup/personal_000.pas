@@ -1081,7 +1081,7 @@ end;
 procedure Tform_personal_000.Boton_Elegir_ProvinciaClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, 100, '1' );
+    var_Registro := UTI_Abrir_Modulo_Provincias( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_provincias.Text         := Trim(var_Registro.id_1);

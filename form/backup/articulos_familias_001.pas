@@ -1204,7 +1204,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_articulos_familias_000.SQLQuery_Articulos_Familias do
     begin
-        var_Registro := UTI_Abrir_Modulo_Impresoras( true, false, 190, '1' );
+        var_Registro := UTI_Abrir_Modulo_Impresoras( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_impresoras').AsString    := Trim(var_Registro.id_1);

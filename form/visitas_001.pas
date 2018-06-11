@@ -264,7 +264,7 @@ begin
     begin
         if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
         begin
-            var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, '1' );
+            var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( '', '', true, true, '1' );
             if var_Registro.id_1 <> '' then
             begin
                  FieldByName('id_clientes_contactos').AsString := Trim(var_Registro.id_1);
@@ -527,7 +527,7 @@ begin
                     end;
                 end;
     }
-    var_Registro := UTI_Abrir_Form( true, true, 'id_clientes' );
+    var_Registro := UTI_Abrir_Form( '', '', true, true, 'id_clientes' );
 
     if var_Registro.id_1 <> '' then
     begin

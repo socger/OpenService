@@ -360,7 +360,7 @@ end;
 procedure TForm_Filtrar_Registros.BitBtn_BuscarClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-  var_Registro := UTI_Abrir_Form( true, true, ComboBox_Campo.Text );
+  var_Registro := UTI_Abrir_Form( '', '', true, true, ComboBox_Campo.Text );
 
   if var_Registro.id_1 <> '' then
     Edit_Contenido.Text := var_Registro.id_1;

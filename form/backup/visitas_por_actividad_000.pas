@@ -1232,7 +1232,7 @@ end;
 procedure Tform_visitas_por_actividad_000.Boton_Elegir_ClienteClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Cliente.Text          := Trim(var_Registro.id_1);
@@ -1243,7 +1243,7 @@ end;
 procedure Tform_visitas_por_actividad_000.Boton_Elegir_Tipo_ClienteClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Clientes_tipos( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes_tipos( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Tipo_Cliente.Text          := Trim(var_Registro.id_1);
@@ -1298,7 +1298,7 @@ end;
 procedure Tform_visitas_por_actividad_000.Boton_Elegir_RepresentanteClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Representantes( true, false, 130, '1' );
+    var_Registro := UTI_Abrir_Modulo_Representantes( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_representantes.Text         := Trim(var_Registro.id_1);

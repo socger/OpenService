@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, DBDateTimePicker, Forms, Controls, Graphics, Dialogs, ExtCtrls, Grids,
   StdCtrls, Buttons, ComCtrls, ButtonPanel, DbCtrls, DBGrids, plantilla_000, types, sqldb, db,
   variants, utilidades_datos_tablas, utilidades_forms_Filtrar, utilidades_general, utilidades_bd,
-  utilidades_rgtro, utilidades_usuarios, utilidades_contabilidad;
+  utilidades_Filtros, utilidades_rgtro, utilidades_usuarios, utilidades_contabilidad;
 
 resourcestring
   rs_sries_serv_001 = 'Mantenimiento de series para servicios';

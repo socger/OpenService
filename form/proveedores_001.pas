@@ -1263,7 +1263,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_proveedores_000.SQLQuery_Proveedores do
     begin
-        var_Registro := UTI_Abrir_Modulo_Actividades( true, false, '1' );
+        var_Registro := UTI_Abrir_Modulo_Actividades( '', '', true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_actividades').AsString := Trim(var_Registro.id_1);

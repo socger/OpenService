@@ -782,7 +782,7 @@ end;
 procedure Tform_tarjetas_transporte_000.Boton_Elegir_id_EmpresasClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, 250, '1' );
+    var_Registro := UTI_Abrir_Modulo_Empresas( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Empresas.Text             := Trim(var_Registro.id_1);

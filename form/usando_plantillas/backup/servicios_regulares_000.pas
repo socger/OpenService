@@ -5,10 +5,11 @@ unit servicios_regulares_000;
 interface
 
 uses
-  Classes, SysUtils, sqldb, db, FileUtil, DateTimePicker, DBDateTimePicker, Forms, Controls, Graphics,
-  Dialogs, ExtCtrls, StdCtrls, Buttons, ComCtrls, ButtonPanel, DbCtrls, DBGrids, MaskEdit, Spin, EditBtn,
-  DBExtCtrls, plantilla_000, utilidades_datos_tablas, types, Grids, utilidades_usuarios, utilidades_general,
-  variants, utilidades_forms_Filtrar, utilidades_rgtro, utilidades_bd, utilidades_servicios;
+  Classes, SysUtils, sqldb, db, FileUtil, DateTimePicker, DBDateTimePicker, Forms, Controls,
+  Graphics, Dialogs, ExtCtrls, StdCtrls, Buttons, ComCtrls, ButtonPanel, DbCtrls, DBGrids, MaskEdit,
+  Spin, EditBtn, DBExtCtrls, plantilla_000, utilidades_datos_tablas, types, Grids, utilidades_usuarios,
+  utilidades_general, utilidades_Filtros, variants, utilidades_forms_Filtrar, utilidades_rgtro,
+  utilidades_bd, utilidades_servicios;
 
 resourcestring
   rs_serv_regulares_014 = 'Temporada repetida para este servicio regular.';
@@ -1422,7 +1423,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-      var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
+      var_Registro := UTI_Abrir_Modulo_Clientes( '', '', true, false, '1' );
       if var_Registro.id_1 <> '' then
       begin
            FieldByName('id_clientes').AsString := Trim(var_Registro.id_1);
@@ -1526,7 +1527,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_ServiciosTipos( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_ServiciosTipos( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_servicios_tipos').AsString := Trim(var_Registro.id_1);
@@ -1571,7 +1572,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_personal_acompanante').AsString := Trim(var_Registro.id_1);

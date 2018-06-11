@@ -138,7 +138,7 @@ begin
   begin
     if UTI_USR_Permiso_SN(f_clientes_000.public_Menu_Worked, 'M', True) = True then
     begin
-      var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, '1' );
+      var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( '', '', true, true, '1' );
       if var_Registro.id_1 <> '' then
       begin
         FieldByName('id_clientes_contactos').AsString := Trim(var_Registro.id_1);

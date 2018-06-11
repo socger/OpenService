@@ -582,7 +582,6 @@ type
     function  Filtrar_clientes_envios( p_ver_bajas : ShortInt; p_Cambiamos_Filtro : Boolean; p_Lineas_Filtro, p_Lineas_OrderBy : TStrings ) : ShortInt;
     procedure Refrescar_Registros_clientes_envios;
 
-    function  Existe_Cliente_Contacto_Ya( param_id, param_id_clientes, param_nombre : String ) : Trecord_Existe;
     procedure Comprobar_Resto_Datos_Poblacion(param_id : String);
     procedure Insertar_Registro_Envios;
     procedure Insertar_Registro_Contactos;
@@ -734,7 +733,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Actividades( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Actividades( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_actividades').AsString := Trim(var_Registro.id_1);
@@ -766,7 +765,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
   with SQLQuery_Principal do
   begin
-    var_Registro := UTI_Abrir_Modulo_Clientes_tipos( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes_tipos( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
       FieldByName('id_clientes_tipos').AsString := Trim(var_Registro.id_1);
@@ -2098,108 +2097,6 @@ begin
   end;
 end;
 
-function Tf_clientes_000.Existe_Cliente_Contacto_Ya( param_id,
-                                                     param_id_clientes,
-                                                     param_nombre : String ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-  // jerofa los existe ya o _ya ... hay que ver si los podemos hacer genericos que creo que ya existe algo
-
-  try
-    // ********************************************************************************************* //
-    // ** Creamos la Transaccion y la conexión con el motor BD, y la abrimos                      ** //
-    // ********************************************************************************************* //
-    var_SQLTransaction := TSQLTransaction.Create(nil);
-    var_SQLConnector   := TSQLConnector.Create(nil);
-
-    if UTI_CN_Connector_Open( var_SQLTransaction,
-                              var_SQLConnector ) = False then UTI_GEN_Salir;
-
-    // ********************************************************************************************* //
-    // ** Creamos la SQL Según el motor de BD                                                     ** //
-    // ********************************************************************************************* //
-    var_SQL := TStringList.Create;
-
-    var_SQL.Add('SELECT cc.*' );
-
-    var_SQL.Add(  'FROM clientes_contactos AS cc' );
-
-    var_SQL.Add(' WHERE cc.nombre = ' +  UTI_GEN_Comillas(Trim(param_nombre)) );
-    var_SQL.Add(  ' AND cc.id_clientes = ' +  Trim(param_id_clientes) );
-
-    if Trim(param_id) <> '' then
-    begin
-      var_SQL.Add(  ' AND NOT cc.id = ' + Trim(param_id) );
-    end;
-
-    var_SQL.Add(' ORDER BY cc.id_clientes ASC, cc.nombre ASC' );
-
-    // ********************************************************************************************* //
-    // **  Abrimos la tabla                                                                       ** //
-    // ********************************************************************************************* //
-    var_SQLQuery          := TSQLQuery.Create(nil);
-    var_SQLQuery.DataBase := var_SQLConnector;
-    var_SQLQuery.Name     := 'SQLQuery_Existe_Cliente_Contacto_Ya';
-
-    if UTI_TB_Query_Open( '',
-                          '',
-                          '',
-                          var_SQLConnector,
-                          var_SQLQuery,
-                          -1, // asi me trae todos los registros de golpe
-                          var_SQL.Text ) = False then UTI_GEN_Salir;
-
-    // ********************************************************************************************* //
-    // ** TRABAJAMOS CON LOS REGISTROS DEVUELTOS                                                  ** //
-    // ********************************************************************************************* //
-    // ** Si el módulo no se creó, no se permite entrar en él ... Result := False                 ** //
-    // ********************************************************************************************* //
-    Result.Fallo_en_Conexion_BD := false;
-    Result.Existe               := false;
-    Result.deBaja               := 'N';
-
-    if var_SQLQuery.RecordCount > 0 then
-    begin
-      Result.Existe := true;
-      if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-    end;
-
-    // ********************************************************************************************* //
-    // ** Cerramos la tabla                                                                       ** //
-    // ********************************************************************************************* //
-    if UTI_TB_Cerrar( var_SQLConnector,
-                      var_SQLTransaction,
-                      var_SQLQuery ) = false then UTI_GEN_Salir;
-
-    var_SQLQuery.Free;
-
-    var_SQL.Free;
-
-    var_SQLTransaction.Free;
-    var_SQLConnector.Free;
-  except
-    on error : Exception do
-    begin
-      UTI_GEN_Error_Log( 'Error al comprobar si el contacto existe ya.' +
-                         'La tabla ha sido ' + var_SQLQuery.Name + ' desde el módulo ' +
-                         Screen.ActiveForm.Name,
-                         error );
-      try
-        var_SQL.Free;
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-        var_SQLQuery.Free;
-      except
-      end;
-
-      Result.Fallo_en_Conexion_BD := true;
-    end;
-  end;
-end;
-
 procedure Tf_clientes_000.Insertar_Registro_Contactos;
 var var_msg           : TStrings;
     var_Form          : Tf_clientes_001;
@@ -2237,9 +2134,15 @@ begin
         if var_Form.public_Pulso_Aceptar = true then
         begin
           var_Form.Free;
-          var_record_Existe := Existe_Cliente_Contacto_Ya( '', // Estoy insertando
-                                                           FieldByName('id_clientes').AsString,
-                                                           FieldByName('nombre').AsString );
+
+          var_record_Existe := UTI_RGTRO_Existe_Ya( 'clientes_contactos',                             // param_nombre_tabla
+                                                    'ORDER BY clientes_contactos.id_clientes ASC, ' +
+                                                             'clientes_contactos.nombre ASC',         // param_order_by
+                                                    '',                                               // param_id_a_no_traer ... Estoy insertando
+                                                    FieldByName('id_clientes').AsString,              // param_que_id_buscar
+                                                    'id_clientes',                                    // param_que_id_buscar_nombre_campo
+                                                    FieldByName('nombre').AsString,                   // param_que_Buscar
+                                                    'nombre' );                                       // param_que_Buscar_nombre_campo
 
           if var_record_Existe.Fallo_en_Conexion_BD = true then
           begin
@@ -2327,9 +2230,17 @@ begin
         var_Form.ShowModal;
         if var_Form.public_Pulso_Aceptar = true then
         begin
-          var_record_Existe := Existe_Cliente_Contacto_Ya( FieldByName('id').AsString,
-                                                           FieldByName('id_clientes').AsString,
-                                                           FieldByName('nombre').AsString );
+
+          jerofa tienes que cambiar todos los existe_
+
+          var_record_Existe := UTI_RGTRO_Existe_Ya( 'clientes_contactos',                             // param_nombre_tabla
+                                                    'ORDER BY clientes_contactos.id_clientes ASC, ' +
+                                                             'clientes_contactos.nombre ASC',         // param_order_by
+                                                    FieldByName('id').AsString,                       // param_id_a_no_traer ... Estoy insertando
+                                                    FieldByName('id_clientes').AsString,              // param_que_id_buscar
+                                                    'id_clientes',                                    // param_que_id_buscar_nombre_campo
+                                                    FieldByName('nombre').AsString,                   // param_que_Buscar
+                                                    'nombre' );                                       // param_que_Buscar_nombre_campo
 
           if var_record_Existe.Fallo_en_Conexion_BD = true then
           begin
@@ -3000,7 +2911,5 @@ SQLQuery_Filtros.Prepare;
 SQLQuery_Filtros.Sequence;
 SQLQuery_Filtros.ApplyUpdates;
 SQLQuery_Filtros.PacketRecords:=;
-
-
 
 

@@ -792,7 +792,7 @@ procedure Tform_articulos_ultimas_ventas_000.Boton_Elegir_id_AlmacenesClick(
   Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Almacenes( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Almacenes.Text             := Trim(var_Registro.id_1);
@@ -826,7 +826,7 @@ procedure Tform_articulos_ultimas_ventas_000.Boton_Elegir_id_VehiculosClick(
   Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Vehiculos( true, false, 350, '1' );
+    var_Registro := UTI_Abrir_Modulo_Vehiculos( true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_Vehiculos.Text             := Trim(var_Registro.id_1);
@@ -1341,7 +1341,7 @@ end;
 procedure Tform_articulos_ultimas_ventas_000.Boton_Elegir_id_clientesClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
-    var_Registro := UTI_Abrir_Modulo_Clientes( true, false, '1' );
+    var_Registro := UTI_Abrir_Modulo_Clientes( '', '', true, false, '1' );
     if var_Registro.id_1 <> '' then
     begin
         Edit_id_clientes.Text         := Trim(var_Registro.id_1);

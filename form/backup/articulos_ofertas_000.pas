@@ -991,8 +991,8 @@ begin
                               var_a_Filtrar,
 
                               param_Cambiamos_Filtro,
-                            false,   // param_ver_SQL_despues_Abrir : Boolean;
-                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
+                              false,   // param_ver_SQL_despues_Abrir : Boolean;
+                              true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
     var_a_Filtrar.Free;
 

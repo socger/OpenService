@@ -1639,37 +1639,37 @@ end;
 
 procedure Tform_Menu.MenuItem_ClientesClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_Clientes( false, false, '1' );
+  UTI_Abrir_Modulo_Clientes( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_Clientes_TiposClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_Clientes_tipos( false, false, '1' );
+  UTI_Abrir_Modulo_Clientes_tipos( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_ActividadesClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_Actividades( false, false, '1' );
+  UTI_Abrir_Modulo_Actividades( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_InformesClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_Reportes( false, false, '1' );
+  UTI_Abrir_Modulo_Reportes( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_Maestros_Servicios_RegularesClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_ServiciosRegulares( false, false, '1' );
+  UTI_Abrir_Modulo_ServiciosRegulares( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_Servicios_TiposClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_ServiciosTipos( false, false, '1' );
+  UTI_Abrir_Modulo_ServiciosTipos( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem27Click(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_ServiciosSeries( false, false, '1' );
+  UTI_Abrir_Modulo_ServiciosSeries( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_Facturas_ComprasClick(Sender: TObject);
@@ -1815,7 +1815,7 @@ end;
 
 procedure Tform_Menu.MenuItem_AlmacenesClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_Almacenes( false, false, '1' );
+  UTI_Abrir_Modulo_Almacenes( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_ArticulosClick(Sender: TObject);
@@ -1915,12 +1915,12 @@ end;
 
 procedure Tform_Menu.MenuItem_Bancos_EmpresasClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_CuentasBancos( false, false, '1' );
+  UTI_Abrir_Modulo_CuentasBancos( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_Almacenes_MovimientosClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_MovimientosAlmacen( false, false, '1' );
+  UTI_Abrir_Modulo_MovimientosAlmacen( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_Articulos_OfertasClick(Sender: TObject);
@@ -1960,12 +1960,12 @@ end;
 
 procedure Tform_Menu.MenuItem_ImpresorasClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_Impresoras( false, false, '1' );
+  UTI_Abrir_Modulo_Impresoras( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_ImpuestosClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_Impuestos( false, false, '1' );
+  UTI_Abrir_Modulo_Impuestos( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_PaisesClick(Sender: TObject);
@@ -1985,7 +1985,7 @@ end;
 
 procedure Tform_Menu.MenuItem_TerminalesClick(Sender: TObject);
 begin
-  UTI_Abrir_Modulo_Terminales( false, false, '1' );
+  UTI_Abrir_Modulo_Terminales( '', '', false, false, '1' );
 end;
 
 procedure Tform_Menu.MenuItem_Proveedores_TiposClick(Sender: TObject);

@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   Buttons, ComCtrls, DbCtrls, DBGrids, ButtonPanel, plantilla_000, utilidades_datos_tablas, variants,
   utilidades_rgtro, utilidades_general, utilidades_bd, utilidades_forms_Filtrar, utilidades_usuarios,
-  utilidades_impuestos, Grids, utilidades_contabilidad;
+  utilidades_Filtros, utilidades_impuestos, Grids, utilidades_contabilidad;
 
 resourcestring
   rs_impto_001 = 'No se puede añadir una composición si ya el impuesto tiene %';
@@ -472,7 +472,8 @@ begin
   begin
     if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
     begin
-      var_Registro := UTI_Abrir_Modulo_Elegir_Impuestos( true,
+      var_Registro := UTI_Abrir_Modulo_Elegir_Impuestos( '', '',
+                                                         true,
                                                          true,
                                                          SQLQuery_Principal.FieldByName('id').asString,
                                                          '1' );

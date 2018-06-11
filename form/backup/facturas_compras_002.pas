@@ -238,7 +238,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_facturas_compras_000.SQLQuery_Ftra_Detalles do
     begin
-        var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
+        var_Registro := UTI_Abrir_Modulo_Almacenes( '', '', true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
              FieldByName('id_almacenes').AsString := Trim(var_Registro.id_1);
@@ -782,7 +782,7 @@ var var_Registro : TRecord_Rgtro_Comun;
 begin
     with form_facturas_compras_000.SQLQuery_Ftra_Detalles do
     begin
-        var_Registro := UTI_Abrir_Modulo_Impuestos( true, false, 200, '1' );
+        var_Registro := UTI_Abrir_Modulo_Impuestos( true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             if var_Registro.descripcion_2 <> '' then

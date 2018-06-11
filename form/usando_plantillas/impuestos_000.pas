@@ -195,7 +195,7 @@ begin
 
                             p_Cambiamos_Filtro,
                             false,   // param_ver_SQL_despues_Abrir : Boolean;
-                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
+                            true ); // no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -472,7 +472,8 @@ begin
   begin
     if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
     begin
-      var_Registro := UTI_Abrir_Modulo_Elegir_Impuestos( true,
+      var_Registro := UTI_Abrir_Modulo_Elegir_Impuestos( '', '',
+                                                         true,
                                                          true,
                                                          SQLQuery_Principal.FieldByName('id').asString,
                                                          '1' );

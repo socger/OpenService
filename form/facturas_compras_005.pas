@@ -598,7 +598,7 @@ begin
 
     with form_facturas_compras_000.SQLQuery_Ftra do
     begin
-        var_Registro := UTI_Abrir_Modulo_Almacenes( true, false, '1' );
+        var_Registro := UTI_Abrir_Modulo_Almacenes( '', '', true, false, '1' );
         if var_Registro.id_1 <> '' then
         begin
             Desactivar_A_Facturar;

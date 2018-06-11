@@ -593,7 +593,8 @@ begin
       MaskEdit_Hora_Contenido.Enabled := true;
     end;
 
-    if UTI_RGTRO_Campo_es_Numero(public_Campos.Items[var_posicion].DataType) = true then
+    if UTI_RGTRO_Campo_es_Numero( public_Campos.Items[var_posicion].DataType,
+                                  '' ) = true then
     begin
       Activar_Operadores(true);
 
@@ -601,7 +602,8 @@ begin
       Edit_Contenido.Enabled  := true;
     end;
 
-    if UTI_RGTRO_Campo_es_Texto(public_Campos.Items[var_posicion].DataType) = true then
+    if UTI_RGTRO_Campo_es_Texto( public_Campos.Items[var_posicion].DataType,
+                                 '' ) = true then
     begin
       Activar_Operadores(true);
 
