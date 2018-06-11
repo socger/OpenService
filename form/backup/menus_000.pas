@@ -61,8 +61,6 @@ type
         procedure ComboBox_FiltrosChange(Sender: TObject);
         procedure Filtrar_Principal_Sin_Preguntar;
         procedure Cerramos_Tablas_Ligadas;
-        function  Existe_el_menu_Ya( param_id, param_descripcion : ShortString ) : Trecord_Existe;
-        function  Existe_el_id_menu_Ya( param_id : ShortString ) : Trecord_Existe;
         procedure FormCreate(Sender: TObject);
         procedure Presentar_Datos;
         procedure Cerramos_Tablas;
@@ -378,8 +376,13 @@ begin
                     var_Form.ShowModal;
                     if var_Form.public_Pulso_Aceptar = true then
                         begin
-                            var_record_Existe := Existe_el_menu_Ya( '',
-                                                                    FieldByName('descripcion').AsString );
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'menus',                             // param_nombre_tabla
+                                                                      'ORDER BY menus.descripcion ASC',    // param_order_by
+                                                                      '',                                  // param_id_a_no_traer ... Estoy insertando
+                                                                      '',                                  // param_que_id_buscar
+                                                                      '',                                  // param_que_id_buscar_nombre_campo
+                                                                      FieldByName('descripcion').AsString, // param_enString
+                                                                      'descripcion' );                     // param_enString_nombre_campo
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -574,7 +577,7 @@ begin
 
                               param_Cambiamos_Filtro,
                               false,   // param_ver_SQL_despues_Abrir : Boolean;
-                              true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
+                              true ); // no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
     var_a_Filtrar.Free;
 
@@ -660,102 +663,138 @@ begin
     PageControl_Filtros.ActivePage := TabSheet_Busqueda_Concreta;
 end;
 
-function Tform_menus_000.Existe_el_menu_Ya( param_id,
-                                            param_descripcion : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
+procedure Tform_menus_000.SQLQuery_MenusBeforeEdit(DataSet: TDataSet);
 begin
-    try
-      { ****************************************************************************
-        Creamos la Transaccion y la conexión con el motor BD, y la abrimos
-        **************************************************************************** }
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        Creamos la SQL Según el motor de BD
-        **************************************************************************** }
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT m.*' );
-        var_SQL.Add(  'FROM menus AS m' );
-        var_SQL.Add(' WHERE m.descripcion = ' + UTI_GEN_Comillas('%' + Trim(param_descripcion) + '%') );
-
-        if Trim(param_id) <> '' then
-        begin
-             var_SQL.Add(  ' AND NOT m.id = ' + Trim(param_id) );
-        end;
-
-        var_SQL.Add(' ORDER BY m.descripcion ASC' );
-
-      { ****************************************************************************
-        Abrimos la tabla
-        **************************************************************************** }
-        var_SQLQuery          := TSQLQuery.Create(nil);
-        var_SQLQuery.Database := var_SQLConnector;
-
-        var_SQLQuery.Name     := 'SQLQuery_Existe_el_menu_Ya';
-
-        if UTI_TB_Query_Open( '',
-                              '',
-                              '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        TRABAJAMOS CON LOS REGISTROS DEVUELTOS
-        ****************************************************************************
-        Si el módulo no se creó, no se permite entrar en él ... Result := False
-        **************************************************************************** }
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-      { ****************************************************************************
-        Cerramos la tabla
-        **************************************************************************** }
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-         on error : Exception do
-         begin
-             UTI_GEN_Error_Log( 'Error al comprobar si el menu existe ya. La tabla ha sido ' +
-                                var_SQLQuery.Name + ' desde el módulo ' + Screen.ActiveForm.Name,
-                                error );
-             try
-                 var_SQL.Free;
-                 var_SQLTransaction.Free;
-                 var_SQLConnector.Free;
-                 var_SQLQuery.Free;
-             except
-             end;
-
-             Result.Fallo_en_Conexion_BD := true;
-         end;
-    end;
+    UTI_RGTROS_guardar_valorCampo_BoforeEdit( SQLQuery_Menus );
 end;
 
+procedure Tform_menus_000.Editar_Registro;
+var var_msg           : TStrings;
+    var_Form          : TForm_menus_001;
+    var_record_Existe : Trecord_Existe;
+    var_id            : ShortString;
+begin
+    with SQLQuery_Menus do
+    begin
+        var_msg := TStringList.Create;
+
+        if RecordCount > 0 then
+            begin
+                var_id := FieldByName('id').AsString;
+
+                if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
+                begin
+                    if UTI_RGTRO_isLock( 'menus',
+                                         FieldByName('id').AsString,
+                                         true ) = true then
+                        begin
+                            Exit;
+                        end
+                    else
+                        begin
+                            if UTI_RGTRO_Lock( 'menus',
+                                               FieldByName('id').AsString ) = true then
+                                 Edit
+                            else Exit;
+                        end;
+
+                    var_Form := TForm_menus_001.Create(nil);
+
+                    var_Form.DBEdit_Codigo.Color      := $006AD3D7;
+                    var_Form.DBEdit_Codigo.Font.Color := clRed;
+                    var_Form.DBEdit_Codigo.ReadOnly   := true;
+
+                    var_Form.public_Menu_Worked := public_Menu_Worked;
+
+                    if public_Solo_Ver = true then
+                    begin
+                        var_Form.public_Solo_Ver := true;
+                    end;
+
+                    var_Form.para_Empezar;
+
+                    var_Form.ShowModal;
+                    if var_Form.public_Pulso_Aceptar = true then
+                        begin
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'menus',                             // param_nombre_tabla
+                                                                      'ORDER BY menus.descripcion ASC',    // param_order_by
+                                                                      FieldByName('id').AsString,          // param_id_a_no_traer ... Estoy insertando
+                                                                      '',                                  // param_que_id_buscar
+                                                                      '',                                  // param_que_id_buscar_nombre_campo
+                                                                      FieldByName('descripcion').AsString, // param_enString
+                                                                      'descripcion' );                     // param_enString_nombre_campo
+
+                            if var_record_Existe.Fallo_en_Conexion_BD = true then
+                                begin
+                                    var_Form.Free;
+                                    Cancel;
+                                end
+                            else
+                                begin
+                                    if var_record_Existe.Existe = false then
+                                        begin
+                                            if UTI_DATOS_TABLA_SeCambioAlgoEnRgtro( SQLQuery_Menus ) = true then
+                                               begin
+                                                    FieldByName('Change_WHEN').Value    := UTI_CN_Fecha_Hora;
+                                                    FieldByName('Change_Id_User').Value := Form_Menu.public_User;
+
+                                                    UTI_RGTRO_Grabar_Antes( 'menus',
+                                                                            SQLQuery_Menus );
+                                               end
+                                            else Cancel;
+                                            var_Form.Free;
+                                        end
+                                    else
+                                        begin
+                                            var_Form.Free;
+                                            Cancel;
+                                            var_msg.Clear;
+                                            var_msg.Add( rs_Editar_Rgtro_1 );
+
+                                            if UpperCase(var_record_Existe.deBaja) = 'S' then
+                                            begin
+                                                var_msg.Add(rs_Rgtro_Borrado);
+                                            end;
+
+                                            UTI_GEN_Aviso(true, var_msg, rs_Ya_Existe, True, False);
+                                        end;
+                                end;
+
+                        end
+                    else
+                        begin
+                            var_Form.Free;
+                            Cancel;
+                        end;
+
+                    UTI_RGTRO_UnLock( 'menus',
+                                      var_id );
+                end;
+            end
+        else
+            begin
+                var_msg.Add(rs_no_Hay_Rgtros);
+                UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
+            end;
+    end;
+    var_msg.Free;
+end;
+
+procedure Tform_menus_000.Filtrar_Principal_Sin_Preguntar;
+begin
+    RadioGroup_Bajas.ItemIndex := Filtrar_Principal( false );
+end;
+
+procedure Tform_menus_000.ComboBox_FiltrosChange(Sender: TObject);
+begin
+    Memo_OrderBy.Lines.Clear;
+    Memo_OrderBy.Lines.Add( private_Order_By[ComboBox_Filtros.ItemIndex].Memo_OrderBy );
+    BitBtn_FiltrarClick(Nil);
+end;
+
+end.
+
+{
 function Tform_menus_000.Existe_el_id_menu_Ya( param_id : ShortString ) : Trecord_Existe;
 var var_SQL            : TStrings;
     var_SQLTransaction : TSQLTransaction;
@@ -845,129 +884,5 @@ begin
     end;
 end;
 
-procedure Tform_menus_000.SQLQuery_MenusBeforeEdit(DataSet: TDataSet);
-begin
-    UTI_RGTROS_guardar_valorCampo_BoforeEdit( SQLQuery_Menus );
-end;
-
-procedure Tform_menus_000.Editar_Registro;
-var var_msg           : TStrings;
-    var_Form          : TForm_menus_001;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
-begin
-    with SQLQuery_Menus do
-    begin
-        var_msg := TStringList.Create;
-
-        if RecordCount > 0 then
-            begin
-                var_id := FieldByName('id').AsString;
-
-                if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
-                begin
-                    if UTI_RGTRO_isLock( 'menus',
-                                         FieldByName('id').AsString,
-                                         true ) = true then
-                        begin
-                            Exit;
-                        end
-                    else
-                        begin
-                            if UTI_RGTRO_Lock( 'menus',
-                                               FieldByName('id').AsString ) = true then
-                                 Edit
-                            else Exit;
-                        end;
-
-                    var_Form := TForm_menus_001.Create(nil);
-
-                    var_Form.DBEdit_Codigo.Color      := $006AD3D7;
-                    var_Form.DBEdit_Codigo.Font.Color := clRed;
-                    var_Form.DBEdit_Codigo.ReadOnly   := true;
-
-                    var_Form.public_Menu_Worked := public_Menu_Worked;
-
-                    if public_Solo_Ver = true then
-                    begin
-                        var_Form.public_Solo_Ver := true;
-                    end;
-
-                    var_Form.para_Empezar;
-
-                    var_Form.ShowModal;
-                    if var_Form.public_Pulso_Aceptar = true then
-                        begin
-                            var_record_Existe := Existe_el_menu_Ya( FieldByName('id').AsString,
-                                                                    FieldByName('descripcion').AsString );
-
-                            if var_record_Existe.Fallo_en_Conexion_BD = true then
-                                begin
-                                    var_Form.Free;
-                                    Cancel;
-                                end
-                            else
-                                begin
-                                    if var_record_Existe.Existe = false then
-                                        begin
-                                            if UTI_DATOS_TABLA_SeCambioAlgoEnRgtro( SQLQuery_Menus ) = true then
-                                               begin
-                                                    FieldByName('Change_WHEN').Value    := UTI_CN_Fecha_Hora;
-                                                    FieldByName('Change_Id_User').Value := Form_Menu.public_User;
-
-                                                    UTI_RGTRO_Grabar_Antes( 'menus',
-                                                                            SQLQuery_Menus );
-                                               end
-                                            else Cancel;
-                                            var_Form.Free;
-                                        end
-                                    else
-                                        begin
-                                            var_Form.Free;
-                                            Cancel;
-                                            var_msg.Clear;
-                                            var_msg.Add( rs_Editar_Rgtro_1 );
-
-                                            if UpperCase(var_record_Existe.deBaja) = 'S' then
-                                            begin
-                                                var_msg.Add(rs_Rgtro_Borrado);
-                                            end;
-
-                                            UTI_GEN_Aviso(true, var_msg, rs_Ya_Existe, True, False);
-                                        end;
-                                end;
-
-                        end
-                    else
-                        begin
-                            var_Form.Free;
-                            Cancel;
-                        end;
-
-                    UTI_RGTRO_UnLock( 'menus',
-                                      var_id );
-                end;
-            end
-        else
-            begin
-                var_msg.Add(rs_no_Hay_Rgtros);
-                UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
-            end;
-    end;
-    var_msg.Free;
-end;
-
-procedure Tform_menus_000.Filtrar_Principal_Sin_Preguntar;
-begin
-    RadioGroup_Bajas.ItemIndex := Filtrar_Principal( false );
-end;
-
-procedure Tform_menus_000.ComboBox_FiltrosChange(Sender: TObject);
-begin
-    Memo_OrderBy.Lines.Clear;
-    Memo_OrderBy.Lines.Add( private_Order_By[ComboBox_Filtros.ItemIndex].Memo_OrderBy );
-    BitBtn_FiltrarClick(Nil);
-end;
-
-end.
+}
 

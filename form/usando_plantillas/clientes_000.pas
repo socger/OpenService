@@ -2141,8 +2141,8 @@ begin
                                                     '',                                               // param_id_a_no_traer ... Estoy insertando
                                                     FieldByName('id_clientes').AsString,              // param_que_id_buscar
                                                     'id_clientes',                                    // param_que_id_buscar_nombre_campo
-                                                    FieldByName('nombre').AsString,                   // param_que_Buscar
-                                                    'nombre' );                                       // param_que_Buscar_nombre_campo
+                                                    FieldByName('nombre').AsString,                   // param_enString
+                                                    'nombre' );                                       // param_enString_nombre_campo
 
           if var_record_Existe.Fallo_en_Conexion_BD = true then
           begin
@@ -2230,17 +2230,14 @@ begin
         var_Form.ShowModal;
         if var_Form.public_Pulso_Aceptar = true then
         begin
-
-          jerofa tienes que cambiar todos los existe_
-
           var_record_Existe := UTI_RGTRO_Existe_Ya( 'clientes_contactos',                             // param_nombre_tabla
                                                     'ORDER BY clientes_contactos.id_clientes ASC, ' +
                                                              'clientes_contactos.nombre ASC',         // param_order_by
                                                     FieldByName('id').AsString,                       // param_id_a_no_traer ... Estoy insertando
                                                     FieldByName('id_clientes').AsString,              // param_que_id_buscar
                                                     'id_clientes',                                    // param_que_id_buscar_nombre_campo
-                                                    FieldByName('nombre').AsString,                   // param_que_Buscar
-                                                    'nombre' );                                       // param_que_Buscar_nombre_campo
+                                                    FieldByName('nombre').AsString,                   // param_enString
+                                                    'nombre' );                                       // param_enString_nombre_campo
 
           if var_record_Existe.Fallo_en_Conexion_BD = true then
           begin

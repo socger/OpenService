@@ -11,7 +11,7 @@ object form_menus_000: Tform_menus_000
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '1.8.0.6'
+  LCLVersion = '1.8.4.0'
   object PageControl_Filtros: TPageControl
     Left = 26
     Height = 135
@@ -738,8 +738,8 @@ object form_menus_000: Tform_menus_000
     AfterScroll = SQLQuery_MenusAfterScroll
     BeforeEdit = SQLQuery_MenusBeforeEdit
     BeforePost = SQLQuery_MenusBeforePost
-    Database = DataModule_Medios.SQLConnector
-    Transaction = DataModule_Medios.SQLTransaction
+    Database = DataModule_Menus.SQLConnector
+    Transaction = DataModule_Menus.SQLTransaction
     SQL.Strings = (
       'SELECT me.*'
       'FROM menus AS me'

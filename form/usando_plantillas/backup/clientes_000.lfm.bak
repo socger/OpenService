@@ -10,96 +10,7 @@ inherited f_clientes_000: Tf_clientes_000
     Width = 1252
     ClientHeight = 403
     ClientWidth = 1252
-    inherited GroupBox_Grid: TGroupBox[0]
-      Height = 401
-      Width = 1250
-      ClientHeight = 381
-      ClientWidth = 1246
-      inherited Panel_Barra_Superior1: TPanel
-        Top = 323
-        Width = 1246
-        ClientWidth = 1246
-        inherited Panel4: TPanel
-          inherited Panel14: TPanel
-            inherited DBNavigatorPrincpal: TDBNavigator
-              Hints.Strings = (              )
-            end
-          end
-        end
-        inherited Panel15: TPanel
-          Left = 1229
-        end
-        inherited Panel_Otros_Campos_no_Grid: TPanel
-          Width = 854
-          ClientWidth = 854
-          inherited Label_Ctdad_Rgtros: TLabel
-            Left = 756
-          end
-        end
-      end
-      inherited Panel5: TPanel
-        Height = 323
-      end
-      inherited Panel6: TPanel
-        Left = 1229
-        Height = 323
-      end
-      inherited Panel7: TPanel
-        Height = 323
-        Width = 1212
-        ClientHeight = 323
-        ClientWidth = 1212
-        inherited DBGrid_Principal: TDBGrid
-          Height = 319
-          Width = 1212
-          Columns = <          
-            item
-              PickList.Strings = (              )
-              Title.Alignment = taCenter
-              Title.Caption = 'Id'
-              Width = 50
-              FieldName = 'id'
-            end          
-            item
-              PickList.Strings = (              )
-              Title.Alignment = taCenter
-              Title.Caption = 'A quien facturamos/razón social'
-              Width = 335
-              FieldName = 'nombre_propietario'
-            end          
-            item
-              PickList.Strings = (              )
-              Title.Alignment = taCenter
-              Title.Caption = 'Nombre comercial'
-              Width = 330
-              FieldName = 'nombre_comercial'
-            end          
-            item
-              PickList.Strings = (              )
-              Title.Alignment = taCenter
-              Title.Caption = 'N.I.F.'
-              Width = 110
-              FieldName = 'nif_cif'
-            end          
-            item
-              PickList.Strings = (              )
-              Title.Alignment = taCenter
-              Title.Caption = 'Tipo de cliente'
-              Width = 200
-              FieldName = 'OT_descripcion_cliente_tipo'
-            end          
-            item
-              PickList.Strings = (              )
-              Title.Alignment = taCenter
-              Title.Caption = 'Tfnos.'
-              Width = 150
-              FieldName = 'OT_todos_los_Tfnos'
-            end>
-          OnDblClick = DBGrid_PrincipalDblClick
-        end
-      end
-    end
-    inherited GroupBox_Registro: TGroupBox[1]
+    inherited GroupBox_Registro: TGroupBox
       Height = 401
       Width = 1250
       ClientHeight = 381
@@ -540,8 +451,8 @@ inherited f_clientes_000: Tf_clientes_000
           Height = 172
           Top = 146
           Width = 1189
-          ActivePage = TabSheet_Pedidos
-          TabIndex = 7
+          ActivePage = TabSheet_DatosAdicionales
+          TabIndex = 0
           TabOrder = 16
           object TabSheet_DatosAdicionales: TTabSheet
             Caption = 'DATOS &ADICIONALES'
@@ -2871,7 +2782,6 @@ inherited f_clientes_000: Tf_clientes_000
               ChildSizing.ControlsPerLine = 3
               ClientHeight = 13
               ClientWidth = 165
-              Color = clBlue
               Columns = 3
               Font.CharSet = ANSI_CHARSET
               Font.Color = clBlack
@@ -3234,6 +3144,95 @@ inherited f_clientes_000: Tf_clientes_000
             ParentFont = False
             TabOrder = 4
           end
+        end
+      end
+    end
+    inherited GroupBox_Grid: TGroupBox
+      Height = 401
+      Width = 1250
+      ClientHeight = 381
+      ClientWidth = 1246
+      inherited Panel_Barra_Superior1: TPanel
+        Top = 323
+        Width = 1246
+        ClientWidth = 1246
+        inherited Panel4: TPanel
+          inherited Panel14: TPanel
+            inherited DBNavigatorPrincpal: TDBNavigator
+              Hints.Strings = (              )
+            end
+          end
+        end
+        inherited Panel15: TPanel
+          Left = 1229
+        end
+        inherited Panel_Otros_Campos_no_Grid: TPanel
+          Width = 854
+          ClientWidth = 854
+          inherited Label_Ctdad_Rgtros: TLabel
+            Left = 756
+          end
+        end
+      end
+      inherited Panel5: TPanel
+        Height = 323
+      end
+      inherited Panel6: TPanel
+        Left = 1229
+        Height = 323
+      end
+      inherited Panel7: TPanel
+        Height = 323
+        Width = 1212
+        ClientHeight = 323
+        ClientWidth = 1212
+        inherited DBGrid_Principal: TDBGrid
+          Height = 319
+          Width = 1212
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Id'
+              Width = 50
+              FieldName = 'id'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'A quien facturamos/razón social'
+              Width = 335
+              FieldName = 'nombre_propietario'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Nombre comercial'
+              Width = 330
+              FieldName = 'nombre_comercial'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'N.I.F.'
+              Width = 110
+              FieldName = 'nif_cif'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Tipo de cliente'
+              Width = 200
+              FieldName = 'OT_descripcion_cliente_tipo'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Alignment = taCenter
+              Title.Caption = 'Tfnos.'
+              Width = 150
+              FieldName = 'OT_todos_los_Tfnos'
+            end>
+          OnDblClick = DBGrid_PrincipalDblClick
         end
       end
     end

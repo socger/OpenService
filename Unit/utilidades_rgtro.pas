@@ -8,7 +8,8 @@ uses
     Controls, Forms, FileUtil, Classes, SysUtils, DB, sqldb, ButtonPanel, Dialogs, DBGrids,
     utilidades_usuarios, utilidades_general, utilidades_bd;
 
-    function  UTI_RGTRO_Existe_Ya( param_nombre_tabla : String; param_order_by : String; param_id_a_no_traer : String; param_que_id_buscar : String; param_que_id_buscar_nombre_campo : String; param_que_Buscar : String; param_que_Buscar_nombre_campo : String ) : Trecord_Existe;
+    procedure UTI_RGTRO_where_o_And(var param_where_o_and : ShortString);
+    function  UTI_RGTRO_Existe_Ya( param_nombre_tabla : String; param_order_by : String; param_id_a_no_traer : String; param_que_id_buscar : String; param_que_id_buscar_nombre_campo : String; param_enString : String; param_enString_nombre_campo : String ) : Trecord_Existe;
 
     function  UTI_RGTRO_Campo_es_DiaHora( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
     function  UTI_RGTRO_Campo_es_Dia( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
@@ -1350,22 +1351,34 @@ begin
   end;
 end;
 
+procedure UTI_RGTRO_where_o_And(var param_where_o_and : ShortString);
+begin
+  if param_where_o_and = '' then
+       param_where_o_and := 'WHERE '
+  else param_where_o_and := 'AND ';
+
+end;
+
 function UTI_RGTRO_Existe_Ya( param_nombre_tabla               : String;
                               param_order_by                   : String;
                               param_id_a_no_traer              : String;
                               param_que_id_buscar              : String;
                               param_que_id_buscar_nombre_campo : String;
-                              param_que_Buscar                 : String;
-                              param_que_Buscar_nombre_campo    : String ) : Trecord_Existe;
+                              param_enString                   : String;
+                              param_enString_nombre_campo      : String ) : Trecord_Existe;
 
 var var_SQL            : TStrings;
     var_SQLTransaction : TSQLTransaction;
     var_SQLConnector   : TSQLConnector;
     var_SQLQuery       : TSQLQuery;
+    var_antes_de_campo : AnsiString;
+    var_where_o_and    : ShortString;
 begin
-  // jerofa los existe ya o _ya ... hay que ver si los podemos hacer genericos que creo que ya existe algo
-
   try
+    var_antes_de_campo := Trim(param_nombre_tabla) + '.';
+    var_where_o_and    := '';
+
+
     // ********************************************************************************************* //
     // ** Creamos la Transaccion y la conexión con el motor BD, y la abrimos                      ** //
     // ********************************************************************************************* //
@@ -1380,18 +1393,33 @@ begin
     // ********************************************************************************************* //
     var_SQL := TStringList.Create;
 
-    var_SQL.Add('SELECT ' + Trim(param_nombre_tabla) + '.*' );
+    var_SQL.Add('SELECT ' + var_antes_de_campo + '*' );
     var_SQL.Add(  'FROM ' + Trim(param_nombre_tabla) );
 
-    var_SQL.Add(' WHERE ' + Trim(param_nombre_tabla) + '.' + param_que_Buscar_nombre_campo    + ' = ' +  UTI_GEN_Comillas(Trim(param_que_Buscar)) );
-    var_SQL.Add(  ' AND ' + Trim(param_nombre_tabla) + '.' + param_que_id_buscar_nombre_campo + ' = ' +  Trim(param_que_id_buscar) );
+    if (Trim(param_enString_nombre_campo) <> '') and
+       (Trim(param_enString) <> '')              then
+    begin
+      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+                   var_antes_de_campo + param_enString_nombre_campo + ' = ' +
+                   UTI_GEN_Comillas(Trim(param_enString)) );
+    end;
+
+    if (Trim(param_que_id_buscar_nombre_campo) <> '') and
+       (Trim(param_que_id_buscar) <> '')              then
+    begin
+      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+                   var_antes_de_campo + param_que_id_buscar_nombre_campo + ' = ' +
+                   Trim(param_que_id_buscar) );
+    end;
 
     if Trim(param_id_a_no_traer) <> '' then
     begin
-      var_SQL.Add(  ' AND NOT ' + Trim(param_nombre_tabla) + '.id = ' + Trim(param_id_a_no_traer) );
+      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+                   var_antes_de_campo + 'id = ' +
+                   Trim(param_id_a_no_traer) );
     end;
 
-    var_SQL.Add(' ORDER BY cc.id_clientes ASC, cc.nombre ASC' );
+    var_SQL.Add(param_order_by );
 
     // ********************************************************************************************* //
     // **  Abrimos la tabla                                                                       ** //

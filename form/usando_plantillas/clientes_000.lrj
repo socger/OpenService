@@ -1,10 +1,4 @@
 {"version":1,"strings":[
-{"hash":1268,"name":"tf_clientes_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
-{"hash":106608876,"name":"tf_clientes_000.dbgrid_principal.columns[1].title.caption","sourcebytes":[65,32,113,117,105,101,110,32,102,97,99,116,117,114,97,109,111,115,47,114,97,122,195,179,110,32,115,111,99,105,97,108],"value":"A quien facturamos/raz\u00F3n social"},
-{"hash":172678924,"name":"tf_clientes_000.dbgrid_principal.columns[2].title.caption","sourcebytes":[78,111,109,98,114,101,32,99,111,109,101,114,99,105,97,108],"value":"Nombre comercial"},
-{"hash":85115534,"name":"tf_clientes_000.dbgrid_principal.columns[3].title.caption","sourcebytes":[78,46,73,46,70,46],"value":"N.I.F."},
-{"hash":255416773,"name":"tf_clientes_000.dbgrid_principal.columns[4].title.caption","sourcebytes":[84,105,112,111,32,100,101,32,99,108,105,101,110,116,101],"value":"Tipo de cliente"},
-{"hash":95245918,"name":"tf_clientes_000.dbgrid_principal.columns[5].title.caption","sourcebytes":[84,102,110,111,115,46],"value":"Tfnos."},
 {"hash":115187020,"name":"tf_clientes_000.label1.caption","sourcebytes":[65,32,113,117,105,101,110,32,102,97,99,116,117,114,97,109,111,115,32,47,32,114,97,122,195,179,110,32,115,111,99,105,97,108],"value":"A quien facturamos / raz\u00F3n social"},
 {"hash":172678924,"name":"tf_clientes_000.label7.caption","sourcebytes":[78,111,109,98,114,101,32,99,111,109,101,114,99,105,97,108],"value":"Nombre comercial"},
 {"hash":85115534,"name":"tf_clientes_000.label11.caption","sourcebytes":[78,46,73,46,70,46],"value":"N.I.F."},
@@ -103,5 +97,11 @@
 {"hash":16090,"name":"tf_clientes_000.label14.caption","sourcebytes":[50,194,186],"value":"2\u00BA"},
 {"hash":19048,"name":"tf_clientes_000.label17.caption","sourcebytes":[70,65,88],"value":"FAX"},
 {"hash":94285052,"name":"tf_clientes_000.label18.caption","sourcebytes":[77,195,179,118,105,108],"value":"M\u00F3vil"},
-{"hash":22563,"name":"tf_clientes_000.bitbtn_sms.caption","sourcebytes":[83,77,83],"value":"SMS"}
+{"hash":22563,"name":"tf_clientes_000.bitbtn_sms.caption","sourcebytes":[83,77,83],"value":"SMS"},
+{"hash":1268,"name":"tf_clientes_000.dbgrid_principal.columns[0].title.caption","sourcebytes":[73,100],"value":"Id"},
+{"hash":106608876,"name":"tf_clientes_000.dbgrid_principal.columns[1].title.caption","sourcebytes":[65,32,113,117,105,101,110,32,102,97,99,116,117,114,97,109,111,115,47,114,97,122,195,179,110,32,115,111,99,105,97,108],"value":"A quien facturamos/raz\u00F3n social"},
+{"hash":172678924,"name":"tf_clientes_000.dbgrid_principal.columns[2].title.caption","sourcebytes":[78,111,109,98,114,101,32,99,111,109,101,114,99,105,97,108],"value":"Nombre comercial"},
+{"hash":85115534,"name":"tf_clientes_000.dbgrid_principal.columns[3].title.caption","sourcebytes":[78,46,73,46,70,46],"value":"N.I.F."},
+{"hash":255416773,"name":"tf_clientes_000.dbgrid_principal.columns[4].title.caption","sourcebytes":[84,105,112,111,32,100,101,32,99,108,105,101,110,116,101],"value":"Tipo de cliente"},
+{"hash":95245918,"name":"tf_clientes_000.dbgrid_principal.columns[5].title.caption","sourcebytes":[84,102,110,111,115,46],"value":"Tfnos."}
 ]}
