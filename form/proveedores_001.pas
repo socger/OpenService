@@ -174,7 +174,6 @@ type
         procedure Insertar_Registro_Contactos;
         procedure Editar_Registro_Contactos;
         procedure RadioGroup_BajasClick(Sender: TObject);
-        function  Existe_Proveedor_Contacto_Ya( param_Id, param_nombre : String ) : Trecord_Existe;
         procedure BitBtn_Ver_Situacion_Registro_ContactosClick(Sender: TObject);
         procedure Boton_Elegir_Agencia_TransporteClick(Sender: TObject);
         procedure DBGrid_ContactosDblClick(Sender: TObject);
@@ -1163,101 +1162,6 @@ begin
     PageControl_Otros_Datos.ActivePage := TabSheet_DatosAdicionales;
 end;
 
-function Tform_proveedores_001.Existe_Proveedor_Contacto_Ya( param_Id,
-                                                             param_nombre : String ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-    try
-      { ****************************************************************************
-        Creamos la Transaccion y la conexión con el motor BD, y la abrimos
-        **************************************************************************** }
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        Creamos la SQL Según el motor de BD
-        **************************************************************************** }
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT prc.*' );
-
-        var_SQL.Add(  'FROM proveedores_contactos AS prc' );
-
-        var_SQL.Add(' WHERE prc.nombre = ' +  UTI_GEN_Comillas(Trim(param_nombre)) );
-
-        if Trim(param_Id) <> '' then
-        begin
-             var_SQL.Add(  ' AND NOT prc.id_proveedores = ' + Trim(param_Id) );
-        end;
-
-        var_SQL.Add(' ORDER BY prc.id_proveedores ASC, prc.nombre ASC' );
-
-      { ****************************************************************************
-        Abrimos la tabla
-        **************************************************************************** }
-        var_SQLQuery      := TSQLQuery.Create(nil);
-        var_SQLQuery.Name := 'SQLQuery_Existe_Proveedor_Contacto_Ya';
-
-        if UTI_TB_Query_Open( '', '', '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        TRABAJAMOS CON LOS REGISTROS DEVUELTOS
-        ****************************************************************************
-        Si el módulo no se creó, no se permite entrar en él ... Result := False
-        **************************************************************************** }
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-      { ****************************************************************************
-        Cerramos la tabla
-        **************************************************************************** }
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-        on error : Exception do
-        begin
-            UTI_GEN_Error_Log( 'Error al comprobar si el contacto existe ya.' +
-                               'La tabla ha sido ' + var_SQLQuery.Name + ' desde el módulo ' +
-                               Screen.ActiveForm.Name,
-                               error );
-            try
-                var_SQL.Free;
-                var_SQLTransaction.Free;
-                var_SQLConnector.Free;
-                var_SQLQuery.Free;
-            except
-            end;
-
-            Result.Fallo_en_Conexion_BD := true;
-        end;
-    end;
-end;
-
 procedure Tform_proveedores_001.Boton_Elegir_ActividadClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
@@ -1361,8 +1265,22 @@ begin
                 var_Form.ShowModal;
                 if var_Form.public_Pulso_Aceptar = true then
                 begin
-                    var_record_Existe := Existe_Proveedor_Contacto_Ya( FieldByName('id_proveedores').AsString,
-                                                                       FieldByName('nombre').AsString );
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'proveedores_contactos',                                // param_nombre_tabla
+                                                              'ORDER BY proveedores_contactos.id_proveedores ASC, ' +
+                                                                       'proveedores_contactos.nombre ASC',            // param_order_by
+                                                              FieldByName('id_proveedores').AsString,                 // param_id_a_no_traer ... Estoy insertando
+
+                                                              '',                                                     // param_que_id_buscar_1
+                                                              '',                                                     // param_que_id_buscar_1_nombre_campo
+
+                                                              '',                                                     // param_que_id_buscar_2
+                                                              '',                                                     // param_que_id_buscar_2_nombre_campo
+
+                                                              FieldByName('nombre').AsString,                         // param_enString_1
+                                                              'nombre',                                               // param_enString_1_nombre_campo
+
+                                                              '',                                                     // param_enString_2
+                                                              '' );                                                   // param_enString_2_nombre_campo
 
                     if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin
@@ -1450,8 +1368,22 @@ begin
                 begin
                     var_Form.Free;
 
-                    var_record_Existe := Existe_Proveedor_Contacto_Ya( '', // Estoy insertando/creando y lo que tengo que comprobar es que no exista la pwd en cualquier otro usuario, por lo que el campo id_Users no lo paso
-                                                                       FieldByName('nombre').AsString );
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'proveedores_contactos',                                // param_nombre_tabla
+                                                              'ORDER BY proveedores_contactos.id_proveedores ASC, ' +
+                                                                       'proveedores_contactos.nombre ASC',            // param_order_by
+                                                              '',                                                     // param_id_a_no_traer ... Estoy insertando
+
+                                                              '',                                                     // param_que_id_buscar_1
+                                                              '',                                                     // param_que_id_buscar_1_nombre_campo
+
+                                                              '',                                                     // param_que_id_buscar_2
+                                                              '',                                                     // param_que_id_buscar_2_nombre_campo
+
+                                                              FieldByName('nombre').AsString,                         // param_enString_1
+                                                              'nombre',                                               // param_enString_1_nombre_campo
+
+                                                              '',                                                     // param_enString_2
+                                                              '' );                                                   // param_enString_2_nombre_campo
 
                     if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin

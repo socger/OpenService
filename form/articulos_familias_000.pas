@@ -17,10 +17,6 @@ resourcestring
 
   rs_BitBtn_ImprimirClick_1 = ', con descripción %';
 
-  rs_Existe_el_Articulo_Familia_Ya_1 = 'Error al comprobar si la familia de artículos existe ya.';
-  rs_Existe_el_Articulo_Familia_Ya_2 = 'La tabla ha sido ';
-  rs_Existe_el_Articulo_Familia_Ya_3 = ' desde el módulo ';
-
   rs_DBNavigator1BeforeAction_1 = 'Esta familia de artículos, tiene asignadas otras familias como subfamilias suyas.';
   rs_DBNavigator1BeforeAction_2 = 'Hasta que no se las quite, no podrá borrar esta familia.';
 
@@ -138,7 +134,6 @@ type
 
         procedure ComboBox_FiltrosChange(Sender: TObject);
         procedure Filtrar_Principal_Sin_Preguntar;
-        function  Existe_el_Articulo_Familia_Ya( param_id, param_descripcion : ShortString ) : Trecord_Existe;
         procedure Editar_Registro;
         procedure FormCreate(Sender: TObject);
         procedure Insertar_Registro;
@@ -1079,99 +1074,6 @@ begin
     end;
 end;
 
-function Tform_articulos_familias_000.Existe_el_Articulo_Familia_Ya( param_id,
-                                                                     param_descripcion : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-    try
-      { ****************************************************************************
-        Creamos la Transaccion y la conexión con el motor BD, y la abrimos
-        **************************************************************************** }
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        Creamos la SQL Según el motor de BD
-        **************************************************************************** }
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT a.*' );
-        var_SQL.Add(  'FROM articulos_familias AS a' );
-        var_SQL.Add(' WHERE a.descripcion LIKE ' + UTI_GEN_Comillas('%' + Trim(param_descripcion) + '%') );
-
-        if Trim(param_id) <> '' then
-        begin
-             var_SQL.Add(  ' AND NOT a.id = ' + Trim(param_id) );
-        end;
-
-        var_SQL.Add(' ORDER BY a.descripcion ASC' );
-
-      { ****************************************************************************
-        Abrimos la tabla
-        **************************************************************************** }
-        var_SQLQuery      := TSQLQuery.Create(nil);
-        var_SQLQuery.Name := 'SQLQuery_Existe_el_Articulo_Familia_Ya';
-
-        if UTI_TB_Query_Open( '', '', '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        TRABAJAMOS CON LOS REGISTROS DEVUELTOS
-        ****************************************************************************
-        Si el módulo no se creó, no se permite entrar en él ... Result := False
-        **************************************************************************** }
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-      { ****************************************************************************
-        Cerramos la tabla
-        **************************************************************************** }
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-         on error : Exception do
-         begin
-             UTI_GEN_Error_Log( rs_Existe_el_Articulo_Familia_Ya_1 +
-                                rs_Existe_el_Articulo_Familia_Ya_2 + var_SQLQuery.Name +
-                                rs_Existe_el_Articulo_Familia_Ya_3 + Screen.ActiveForm.Name,
-                                error );
-             try
-                 var_SQL.Free;
-                 var_SQLTransaction.Free;
-                 var_SQLConnector.Free;
-                 var_SQLQuery.Free;
-             except
-             end;
-
-             Result.Fallo_en_Conexion_BD := true;
-         end;
-    end;
-end;
-
 procedure Tform_articulos_familias_000.DBNavigator1BeforeAction(Sender: TObject;
     Button: TDBNavButtonType);
 var var_id          : ShortString;
@@ -1269,8 +1171,21 @@ begin
 
                     if form_articulos_familias_001.public_Pulso_Aceptar = true then
                         begin
-                            var_record_Existe := Existe_el_Articulo_Familia_Ya( '',
-                                                                                FieldByName('descripcion').AsString );
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_familias',                         // param_nombre_tabla
+                                                                      'ORDER BY articulos_familias.descripcion ASC' // param_order_by
+                                                                      '',                                           // param_id_a_no_traer ... Estoy insertando
+
+                                                                      '',                                           // param_que_id_buscar_1
+                                                                      '',                                           // param_que_id_buscar_1_nombre_campo
+
+                                                                      '',                                           // param_que_id_buscar_2
+                                                                      '',                                           // param_que_id_buscar_2_nombre_campo
+
+                                                                      FieldByName('descripcion').AsString,          // param_enString_1
+                                                                      'descripcion',                                // param_enString_1_nombre_campo
+
+                                                                      '',                                           // param_enString_2
+                                                                      '' );                                         // param_enString_2_nombre_campo
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -1482,8 +1397,21 @@ begin
 
                     if form_articulos_familias_001.public_Pulso_Aceptar = true then
                         begin
-                            var_record_Existe := Existe_el_Articulo_Familia_Ya( FieldByName('id').AsString,
-                                                                                FieldByName('descripcion').AsString );
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_familias',                         // param_nombre_tabla
+                                                                      'ORDER BY articulos_familias.descripcion ASC' // param_order_by
+                                                                      FieldByName('id').AsString,                                           // param_id_a_no_traer ... Estoy insertando
+
+                                                                      '',                                           // param_que_id_buscar_1
+                                                                      '',                                           // param_que_id_buscar_1_nombre_campo
+
+                                                                      '',                                           // param_que_id_buscar_2
+                                                                      '',                                           // param_que_id_buscar_2_nombre_campo
+
+                                                                      FieldByName('descripcion').AsString,          // param_enString_1
+                                                                      'descripcion',                                // param_enString_1_nombre_campo
+
+                                                                      '',                                           // param_enString_2
+                                                                      '' );                                         // param_enString_2_nombre_campo
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin

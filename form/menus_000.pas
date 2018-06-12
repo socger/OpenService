@@ -379,10 +379,18 @@ begin
                             var_record_Existe := UTI_RGTRO_Existe_Ya( 'menus',                             // param_nombre_tabla
                                                                       'ORDER BY menus.descripcion ASC',    // param_order_by
                                                                       '',                                  // param_id_a_no_traer ... Estoy insertando
-                                                                      '',                                  // param_que_id_buscar
-                                                                      '',                                  // param_que_id_buscar_nombre_campo
-                                                                      FieldByName('descripcion').AsString, // param_enString
-                                                                      'descripcion' );                     // param_enString_nombre_campo
+
+                                                                      '',                                  // param_que_id_buscar_1
+                                                                      '',                                  // param_que_id_buscar_1_nombre_campo
+
+                                                                      '',                                  // param_que_id_buscar_2
+                                                                      '',                                  // param_que_id_buscar_2_nombre_campo
+
+                                                                      FieldByName('descripcion').AsString, // param_enString_1
+                                                                      'descripcion',                       // param_enString_1_nombre_campo
+
+                                                                      '',                                  // param_enString_2
+                                                                      '' );                                // param_enString_2_nombre_campo
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -401,8 +409,21 @@ begin
                                             FieldByName('Insert_WHEN').AsString := var_Fecha_Hora;
                                             FieldByName('Insert_Id_User').Value := Form_Menu.public_User;
 
-                                            jerofa vas por aqui ... quitando todos los existe_
-                                            var_record_Existe := Existe_el_id_menu_Ya( FieldByName('id').AsString );
+                                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'menus',                    // param_nombre_tabla
+                                                                                      'ORDER BY menus.id ASC',    // param_order_by
+                                                                                      '',                         // param_id_a_no_traer ... Estoy insertando
+
+                                                                                      FieldByName('id').AsString, // param_que_id_buscar_1
+                                                                                      'id',                       // param_que_id_buscar_1_nombre_campo
+
+                                                                                      '',                         // param_que_id_buscar_2
+                                                                                      '',                         // param_que_id_buscar_2_nombre_campo
+
+                                                                                      '',                         // param_enString_1
+                                                                                      '',                         // param_enString_1_nombre_campo
+
+                                                                                      '',                         // param_enString_2
+                                                                                      '' );                       // param_enString_2_nombre_campo
                                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                                 begin
                                                     // var_Form.Free;
@@ -720,10 +741,18 @@ begin
                             var_record_Existe := UTI_RGTRO_Existe_Ya( 'menus',                             // param_nombre_tabla
                                                                       'ORDER BY menus.descripcion ASC',    // param_order_by
                                                                       FieldByName('id').AsString,          // param_id_a_no_traer ... Estoy insertando
-                                                                      '',                                  // param_que_id_buscar
-                                                                      '',                                  // param_que_id_buscar_nombre_campo
-                                                                      FieldByName('descripcion').AsString, // param_enString
-                                                                      'descripcion' );                     // param_enString_nombre_campo
+
+                                                                      '',                                  // param_que_id_buscar_1
+                                                                      '',                                  // param_que_id_buscar_1_nombre_campo
+
+                                                                      '',                                  // param_que_id_buscar_2
+                                                                      '',                                  // param_que_id_buscar_2_nombre_campo
+
+                                                                      FieldByName('descripcion').AsString, // param_enString_1
+                                                                      'descripcion',                       // param_enString_1_nombre_campo
+
+                                                                      '',                                  // param_enString_2
+                                                                      '' );                                // param_enString_2_nombre_campo
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -794,96 +823,4 @@ begin
 end;
 
 end.
-
-{
-function Tform_menus_000.Existe_el_id_menu_Ya( param_id : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-    try
-      { ****************************************************************************
-        Creamos la Transaccion y la conexión con el motor BD, y la abrimos
-        **************************************************************************** }
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        Creamos la SQL Según el motor de BD
-        **************************************************************************** }
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT m.*' );
-        var_SQL.Add(  'FROM menus AS m' );
-        var_SQL.Add(' WHERE m.id = ' + Trim(param_id) );
-
-        var_SQL.Add(' ORDER BY m.id ASC' );
-
-      { ****************************************************************************
-        Abrimos la tabla
-        **************************************************************************** }
-        var_SQLQuery      := TSQLQuery.Create(nil);
-        var_SQLQuery.Name := 'Existe_el_id_menu_Ya';
-
-        if UTI_TB_Query_Open( '',
-                              '',
-                              '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        TRABAJAMOS CON LOS REGISTROS DEVUELTOS
-        ****************************************************************************
-        Si el módulo no se creó, no se permite entrar en él ... Result := False
-        **************************************************************************** }
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-      { ****************************************************************************
-        Cerramos la tabla
-        **************************************************************************** }
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-         on error : Exception do
-         begin
-             UTI_GEN_Error_Log( 'Error al comprobar si la id del menu existe ya.' +
-                                'La tabla ha sido ' + var_SQLQuery.Name + ' desde el módulo ' +
-                                Screen.ActiveForm.Name,
-                                error );
-             try
-                 var_SQL.Free;
-                 var_SQLTransaction.Free;
-                 var_SQLConnector.Free;
-                 var_SQLQuery.Free;
-             except
-             end;
-
-             Result.Fallo_en_Conexion_BD := true;
-         end;
-    end;
-end;
-
-}
 

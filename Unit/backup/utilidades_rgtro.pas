@@ -9,7 +9,8 @@ uses
     utilidades_usuarios, utilidades_general, utilidades_bd;
 
     procedure UTI_RGTRO_where_o_And(var param_where_o_and : ShortString);
-    function  UTI_RGTRO_Existe_Ya( param_nombre_tabla : String; param_order_by : String; param_id_a_no_traer : String; param_que_id_buscar : String; param_que_id_buscar_nombre_campo : String; param_que_Buscar : String; param_que_Buscar_nombre_campo : String ) : Trecord_Existe;
+    function  UTI_RGTRO_Existe_Ya( param_nombre_tabla : String; param_order_by : String; param_id_a_no_traer : String; param_que_id_buscar_1 : String; param_que_id_buscar_1_nombre_campo : String; param_que_id_buscar_2 : String; param_que_id_buscar_2_nombre_campo : String; param_enString_1 : String; param_enString_1_nombre_campo : String; param_enString_2 : String; param_enString_2_nombre_campo : String ) : Trecord_Existe;
+
 
     function  UTI_RGTRO_Campo_es_DiaHora( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
     function  UTI_RGTRO_Campo_es_Dia( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
@@ -1359,13 +1360,21 @@ begin
 
 end;
 
-function UTI_RGTRO_Existe_Ya( param_nombre_tabla               : String;
-                              param_order_by                   : String;
-                              param_id_a_no_traer              : String;
-                              param_que_id_buscar              : String;
-                              param_que_id_buscar_nombre_campo : String;
-                              param_que_Buscar                 : String;
-                              param_que_Buscar_nombre_campo    : String ) : Trecord_Existe;
+function UTI_RGTRO_Existe_Ya( param_nombre_tabla                 : String;
+                              param_order_by                     : String;
+                              param_id_a_no_traer                : String;
+
+                              param_que_id_buscar_1              : String;
+                              param_que_id_buscar_1_nombre_campo : String;
+
+                              param_que_id_buscar_2              : String;
+                              param_que_id_buscar_2_nombre_campo : String;
+
+                              param_enString_1                   : String;
+                              param_enString_1_nombre_campo      : String;
+
+                              param_enString_2                   : String;
+                              param_enString_2_nombre_campo      : String ) : Trecord_Existe;
 
 var var_SQL            : TStrings;
     var_SQLTransaction : TSQLTransaction;
@@ -1396,26 +1405,50 @@ begin
     var_SQL.Add('SELECT ' + var_antes_de_campo + '*' );
     var_SQL.Add(  'FROM ' + Trim(param_nombre_tabla) );
 
-    if (Trim(param_que_Buscar_nombre_campo) <> '') and
-       (Trim(param_que_Buscar) <> '')              then
+    if (Trim(param_enString_1_nombre_campo) <> '') and
+       (Trim(param_enString_1) <> '')              then
     begin
       var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
-                   var_antes_de_campo + param_que_Buscar_nombre_campo + ' = ' +
-                   UTI_GEN_Comillas(Trim(param_que_Buscar)) );
+                   var_antes_de_campo + param_enString_1_nombre_campo + ' = ' +
+                   UTI_GEN_Comillas(Trim(param_enString_1)) );
     end;
 
-    if (Trim(param_que_id_buscar_nombre_campo) <> '') and
-       (Trim(param_que_id_buscar) <> '')              then
+    if (Trim(param_enString_2_nombre_campo) <> '') and
+       (Trim(param_enString_2) <> '')              then
     begin
       var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
-                   var_antes_de_campo + param_que_id_buscar_nombre_campo + ' = ' +
-                   Trim(param_que_id_buscar) );
+                   var_antes_de_campo + param_enString_2_nombre_campo + ' = ' +
+                   UTI_GEN_Comillas(Trim(param_enString_2)) );
+    end;
+
+    if (Trim(param_enString_nombre_campo) <> '') and
+       (Trim(param_enString) <> '')              then
+    begin
+      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+                   var_antes_de_campo + param_enString_nombre_campo + ' = ' +
+                   UTI_GEN_Comillas(Trim(param_enString)) );
+    end;
+
+    if (Trim(param_que_id_buscar_1_nombre_campo) <> '') and
+       (Trim(param_que_id_buscar_1) <> '')              then
+    begin
+      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+                   var_antes_de_campo + param_que_id_buscar_1_nombre_campo + ' = ' +
+                   Trim(param_que_id_buscar_1) );
+    end;
+
+    if (Trim(param_que_id_buscar_2_nombre_campo) <> '') and
+       (Trim(param_que_id_buscar_2) <> '')              then
+    begin
+      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+                   var_antes_de_campo + param_que_id_buscar_2_nombre_campo + ' = ' +
+                   Trim(param_que_id_buscar_2) );
     end;
 
     if Trim(param_id_a_no_traer) <> '' then
     begin
       var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
-                   var_antes_de_campo + 'id = ' +
+                   ' NOT ' + var_antes_de_campo + 'id = ' +
                    Trim(param_id_a_no_traer) );
     end;
 

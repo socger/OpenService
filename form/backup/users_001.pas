@@ -432,7 +432,6 @@ begin
                   Memo_Filtros.Lines,
                   var_SQL_ADD );
 
-
   UTI_TB_Ver_Bajas_SN('um', Memo_Filtros.Lines, RadioGroup_Bajas.ItemIndex);
 
   Memo_Filtros.Lines.Text := UTI_TB_Quitar_AndOr_Principio(Memo_Filtros.Lines.Text);
@@ -686,9 +685,21 @@ begin
                     var_Form.ShowModal;
                     if var_Form.public_Pulso_Aceptar = true then
                         begin
-                            var_record_Existe := UTI_USR_Existe_PWD_Ya( FieldByName('Id_Users').AsString,
-                                                                        FieldByName('Password').AsString );
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'users_passwords',                   // param_nombre_tabla
+                                                                      'ORDER BY users_passwords.Password', // param_order_by
+                                                                      FieldByName('Id_Users').AsString,    // param_id_a_no_traer ... Estoy insertando
 
+                                                                      '',                                  // param_que_id_buscar_1
+                                                                      '',                                  // param_que_id_buscar_1_nombre_campo
+
+                                                                      '',                                  // param_que_id_buscar_2
+                                                                      '',                                  // param_que_id_buscar_2_nombre_campo
+
+                                                                      FieldByName('Password').AsString,    // param_enString_1
+                                                                      'Password',                          // param_enString_1_nombre_campo
+
+                                                                      '',                                  // param_enString_2
+                                                                      '' );                                // param_enString_2_nombre_campo
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
                                     var_Form.Free;
@@ -795,9 +806,26 @@ begin
                     Form_users_003.ShowModal;
                     if Form_users_003.public_Pulso_Aceptar = true then
                         begin
-                            var_record_Existe := UTI_USR_Existe_Menu_Ya( FieldByName('Id').AsString, // estoy en modificacion por lo que le paso el campo id para que compruebe que no existe ya fuera de él mismo
-                                                                         FieldByName('Id_Users').AsString,
-                                                                         FieldByName('Id_Menus').AsString );
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'users_menus',                      // param_nombre_tabla
+                                                                      'ORDER BY users_menus.Id_Users, ' +
+                                                                               'users_menus.id_Menus',    // param_order_by
+                                                                      FieldByName('Id').AsString,         // param_id_a_no_traer ... Estoy insertando
+
+                                                                      FieldByName('Id_Users').AsString,   // param_que_id_buscar_1
+                                                                      'Id_Users',                         // param_que_id_buscar_1_nombre_campo
+
+                                                                      FieldByName('Id_Menus').AsString,   // param_que_id_buscar_2
+                                                                      'Id_Menus',                         // param_que_id_buscar_2_nombre_campo
+
+                                                                      '',                                 // param_enString_1
+                                                                      '',                                 // param_enString_1_nombre_campo
+
+                                                                      '',                                 // param_enString_2
+                                                                      '' );                               // param_enString_2_nombre_campo
+
+                            var_record_Existe := UTI_USR_Existe_Menu_Ya( , // estoy en modificacion por lo que le paso el campo id para que compruebe que no existe ya fuera de él mismo
+                                                                         ,
+                                                                          );
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -906,10 +934,23 @@ begin
                     var_Form.ShowModal;
                     if var_Form.public_Pulso_Aceptar = true then
                         begin
-                            var_record_Existe := UTI_USR_Existe_Menus_Permisos_Ya( FieldByName('Id').AsString, // estoy en modificacion por lo que le paso el campo id para que compruebe que no existe ya fuera de él mismo
-                                                                                   FieldByName('Id_Users').AsString,
-                                                                                   FieldByName('Id_Menus').AsString,
-                                                                                   FieldByName('Tipo_CRUD').AsString );
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'users_menus_permissions',                      // param_nombre_tabla
+                                                                      'ORDER BY users_menus_permissions.Id_Users, ' +
+                                                                               'users_menus_permissions.id_Menus, ' +
+                                                                               'users_menus_permissions.Tipo_CRUD',   // param_order_by
+                                                                      FieldByName('Id').AsString,                     // param_id_a_no_traer ... Estoy insertando
+
+                                                                      FieldByName('Id_Users').AsString,               // param_que_id_buscar_1
+                                                                      'Id_Users',                                     // param_que_id_buscar_1_nombre_campo
+
+                                                                      FieldByName('Id_Menus').AsString,               // param_que_id_buscar_2
+                                                                      'Id_Menus',                                     // param_que_id_buscar_2_nombre_campo
+
+                                                                      FieldByName('Tipo_CRUD').AsString,              // param_enString_1
+                                                                      'Tipo_CRUD',                                    // param_enString_1_nombre_campo
+
+                                                                      '',                                             // param_enString_2
+                                                                      '' );                                           // param_enString_2_nombre_campo
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -1005,9 +1046,21 @@ begin
                         begin
                             var_Form.Free;
 
-                            var_record_Existe := UTI_USR_Existe_PWD_Ya( '', // Estoy insertando/creando y lo que tengo que comprobar es que no exista la pwd en cualquier otro usuario, por lo que el campo id_Users no lo paso
-                                                                        FieldByName('Password').AsString );
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'users_passwords',                   // param_nombre_tabla
+                                                                      'ORDER BY users_passwords.Password', // param_order_by
+                                                                      '',                                  // param_id_a_no_traer ... Estoy insertando
 
+                                                                      '',                                  // param_que_id_buscar_1
+                                                                      '',                                  // param_que_id_buscar_1_nombre_campo
+
+                                                                      '',                                  // param_que_id_buscar_2
+                                                                      '',                                  // param_que_id_buscar_2_nombre_campo
+
+                                                                      FieldByName('Password').AsString,    // param_enString_1
+                                                                      'Password' );                        // param_enString_1_nombre_campo
+
+                                                                      '',                                  // param_enString_2
+                                                                      '' );                                // param_enString_2_nombre_campo
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
                                     // var_Form.Free;
@@ -1185,10 +1238,23 @@ begin
                             begin
                                 var_Form.Free;
 
-                                var_record_Existe := UTI_USR_Existe_Menus_Permisos_Ya( '', // estoy en creación por lo que le paso el campo id vacío para que compruebe que no existe
-                                                                                       FieldByName('Id_Users').AsString,
-                                                                                       FieldByName('Id_Menus').AsString,
-                                                                                       FieldByName('Tipo_CRUD').AsString );
+                                var_record_Existe := UTI_RGTRO_Existe_Ya( 'users_menus_permissions',                      // param_nombre_tabla
+                                                                          'ORDER BY users_menus_permissions.Id_Users, ' +
+                                                                                   'users_menus_permissions.id_Menus, ' +
+                                                                                   'users_menus_permissions.Tipo_CRUD',   // param_order_by
+                                                                          '',                                             // param_id_a_no_traer ... Estoy insertando
+
+                                                                          FieldByName('Id_Users').AsString,               // param_que_id_buscar_1
+                                                                          'Id_Users',                                     // param_que_id_buscar_1_nombre_campo
+
+                                                                          FieldByName('Id_Menus').AsString,               // param_que_id_buscar_2
+                                                                          'Id_Menus',                                     // param_que_id_buscar_2_nombre_campo
+
+                                                                          FieldByName('Tipo_CRUD').AsString,              // param_enString_1
+                                                                          'Tipo_CRUD',                                    // param_enString_1_nombre_campo
+
+                                                                          '',                                             // param_enString_2
+                                                                          '' );                                           // param_enString_2_nombre_campo
 
                                 if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin

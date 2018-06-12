@@ -2139,10 +2139,18 @@ begin
                                                     'ORDER BY clientes_contactos.id_clientes ASC, ' +
                                                              'clientes_contactos.nombre ASC',         // param_order_by
                                                     '',                                               // param_id_a_no_traer ... Estoy insertando
-                                                    FieldByName('id_clientes').AsString,              // param_que_id_buscar
-                                                    'id_clientes',                                    // param_que_id_buscar_nombre_campo
-                                                    FieldByName('nombre').AsString,                   // param_que_Buscar
-                                                    'nombre' );                                       // param_que_Buscar_nombre_campo
+
+                                                    FieldByName('id_clientes').AsString,              // param_que_id_buscar_1
+                                                    'id_clientes',                                    // param_que_id_buscar_1_nombre_campo
+
+                                                    '',                                               // param_que_id_buscar_2
+                                                    '',                                               // param_que_id_buscar_2_nombre_campo
+
+                                                    FieldByName('nombre').AsString,                   // param_enString_1
+                                                    'nombre',                                         // param_enString_1_nombre_campo
+
+                                                    '',                                               // param_enString_2
+                                                    '' );                                             // param_enString_2_nombre_campo
 
           if var_record_Existe.Fallo_en_Conexion_BD = true then
           begin
@@ -2234,10 +2242,19 @@ begin
                                                     'ORDER BY clientes_contactos.id_clientes ASC, ' +
                                                              'clientes_contactos.nombre ASC',         // param_order_by
                                                     FieldByName('id').AsString,                       // param_id_a_no_traer ... Estoy insertando
-                                                    FieldByName('id_clientes').AsString,              // param_que_id_buscar
-                                                    'id_clientes',                                    // param_que_id_buscar_nombre_campo
-                                                    FieldByName('nombre').AsString,                   // param_que_Buscar
-                                                    'nombre' );                                       // param_que_Buscar_nombre_campo
+
+                                                    FieldByName('id_clientes').AsString,              // param_que_id_buscar_1
+                                                    'id_clientes',                                    // param_que_id_buscar_1_nombre_campo
+
+                                                    '',                                               // param_que_id_buscar_2
+                                                    '',                                               // param_que_id_buscar_2_nombre_campo
+
+                                                    FieldByName('nombre').AsString,                   // param_enString_1
+                                                    'nombre',                                         // param_enString_1_nombre_campo
+
+                                                    '',                                               // param_enString_2
+                                                    '' );                                             // param_enString_2_nombre_campo
+
 
           if var_record_Existe.Fallo_en_Conexion_BD = true then
           begin
