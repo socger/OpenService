@@ -636,10 +636,12 @@ begin
 end;
 
 procedure Tform_users_001.Editar_Registro_Passwords;
-var var_msg           : TStrings;
-    var_Form          : TForm_users_002;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : TForm_users_002;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -685,21 +687,17 @@ begin
                     var_Form.ShowModal;
                     if var_Form.public_Pulso_Aceptar = true then
                         begin
+                            SetLength(var_Campos_para_Existe_ya, 1);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('Password').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'Password';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                             var_record_Existe := UTI_RGTRO_Existe_Ya( 'users_passwords',                   // param_nombre_tabla
                                                                       'ORDER BY users_passwords.Password', // param_order_by
                                                                       FieldByName('Id_Users').AsString,    // param_id_a_no_traer ... Estoy insertando
+                                                                      var_Campos_para_Existe_ya );         // param_Campos_para_Existe_ya
 
-                                                                      '',                                  // param_que_id_buscar_1
-                                                                      '',                                  // param_que_id_buscar_1_nombre_campo
-
-                                                                      '',                                  // param_que_id_buscar_2
-                                                                      '',                                  // param_que_id_buscar_2_nombre_campo
-
-                                                                      FieldByName('Password').AsString,    // param_enString_1
-                                                                      'Password',                          // param_enString_1_nombre_campo
-
-                                                                      '',                                  // param_enString_2
-                                                                      '' );                                // param_enString_2_nombre_campo
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
                                     var_Form.Free;
@@ -758,10 +756,12 @@ begin
 end;
 
 procedure Tform_users_001.Editar_Registro_Menus;
-var var_msg           : TStrings;
-    // var_Formito       : TForm_users_003;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -792,7 +792,6 @@ begin
                     end;
 
                     Application.CreateForm(TForm_users_003, Form_users_003);
-                    //var_Formito := TForm_users_003.Create(nil);
 
                     Form_users_003.public_Menu_Worked := public_Menu_Worked;
 
@@ -806,22 +805,21 @@ begin
                     Form_users_003.ShowModal;
                     if Form_users_003.public_Pulso_Aceptar = true then
                         begin
+                            SetLength(var_Campos_para_Existe_ya, 2);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('Id_Users').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'Id_Users';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('Id_Menus').AsString;
+                            var_Campos_para_Existe_ya[1].Campo_Nombre := 'Id_Menus';
+                            var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                             var_record_Existe := UTI_RGTRO_Existe_Ya( 'users_menus',                      // param_nombre_tabla
                                                                       'ORDER BY users_menus.Id_Users, ' +
                                                                                'users_menus.id_Menus',    // param_order_by
                                                                       FieldByName('Id').AsString,         // param_id_a_no_traer ... Estoy insertando
-
-                                                                      FieldByName('Id_Users').AsString,   // param_que_id_buscar_1
-                                                                      'Id_Users',                         // param_que_id_buscar_1_nombre_campo
-
-                                                                      FieldByName('Id_Menus').AsString,   // param_que_id_buscar_2
-                                                                      'Id_Menus',                         // param_que_id_buscar_2_nombre_campo
-
-                                                                      '',                                 // param_enString_1
-                                                                      '',                                 // param_enString_1_nombre_campo
-
-                                                                      '',                                 // param_enString_2
-                                                                      '' );                               // param_enString_2_nombre_campo
+                                                                      var_Campos_para_Existe_ya );        // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -880,10 +878,12 @@ begin
 end;
 
 procedure Tform_users_001.Editar_Registro_Menus_Permisos;
-var var_msg           : TStrings;
-    var_Form          : TForm_users_004;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : TForm_users_004;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -930,23 +930,26 @@ begin
                     var_Form.ShowModal;
                     if var_Form.public_Pulso_Aceptar = true then
                         begin
+                            SetLength(var_Campos_para_Existe_ya, 3);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('Id_Users').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'Id_Users';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('Id_Menus').AsString;
+                            var_Campos_para_Existe_ya[1].Campo_Nombre := 'Id_Menus';
+                            var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_Campos_para_Existe_ya[2].Campo_Valor  := FieldByName('Tipo_CRUD').AsString;
+                            var_Campos_para_Existe_ya[2].Campo_Nombre := 'Tipo_CRUD';
+                            var_Campos_para_Existe_ya[2].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                             var_record_Existe := UTI_RGTRO_Existe_Ya( 'users_menus_permissions',                      // param_nombre_tabla
                                                                       'ORDER BY users_menus_permissions.Id_Users, ' +
                                                                                'users_menus_permissions.id_Menus, ' +
                                                                                'users_menus_permissions.Tipo_CRUD',   // param_order_by
                                                                       FieldByName('Id').AsString,                     // param_id_a_no_traer ... Estoy insertando
-
-                                                                      FieldByName('Id_Users').AsString,               // param_que_id_buscar_1
-                                                                      'Id_Users',                                     // param_que_id_buscar_1_nombre_campo
-
-                                                                      FieldByName('Id_Menus').AsString,               // param_que_id_buscar_2
-                                                                      'Id_Menus',                                     // param_que_id_buscar_2_nombre_campo
-
-                                                                      FieldByName('Tipo_CRUD').AsString,              // param_enString_1
-                                                                      'Tipo_CRUD',                                    // param_enString_1_nombre_campo
-
-                                                                      '',                                             // param_enString_2
-                                                                      '' );                                           // param_enString_2_nombre_campo
+                                                                      var_Campos_para_Existe_ya );                    // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -1004,9 +1007,11 @@ begin
 end;
 
 procedure TForm_users_001.Insertar_Registro_Passwords;
-var var_msg           : TStrings;
-    var_Form          : TForm_users_002;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : TForm_users_002;
+  var_record_Existe         : Trecord_Existe;
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -1042,21 +1047,17 @@ begin
                         begin
                             var_Form.Free;
 
+                            SetLength(var_Campos_para_Existe_ya, 1);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('Password').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'Password';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                             var_record_Existe := UTI_RGTRO_Existe_Ya( 'users_passwords',                   // param_nombre_tabla
                                                                       'ORDER BY users_passwords.Password', // param_order_by
                                                                       '',                                  // param_id_a_no_traer ... Estoy insertando
+                                                                      var_Campos_para_Existe_ya );         // param_Campos_para_Existe_ya
 
-                                                                      '',                                  // param_que_id_buscar_1
-                                                                      '',                                  // param_que_id_buscar_1_nombre_campo
-
-                                                                      '',                                  // param_que_id_buscar_2
-                                                                      '',                                  // param_que_id_buscar_2_nombre_campo
-
-                                                                      FieldByName('Password').AsString,    // param_enString_1
-                                                                      'Password' );                        // param_enString_1_nombre_campo
-
-                                                                      '',                                  // param_enString_2
-                                                                      '' );                                // param_enString_2_nombre_campo
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
                                     // var_Form.Free;
@@ -1100,9 +1101,12 @@ begin
 end;
 
 procedure TForm_users_001.Insertar_Registro_Menus;
-var var_msg           : TStrings;
-    var_Form          : TForm_users_003;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : TForm_users_003;
+  var_record_Existe         : Trecord_Existe;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -1142,22 +1146,21 @@ begin
                     begin
                         var_Form.Free;
 
+                        SetLength(var_Campos_para_Existe_ya, 2);
+
+                        var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('Id_Users').AsString;
+                        var_Campos_para_Existe_ya[0].Campo_Nombre := 'Id_Users';
+                        var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                        var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('Id_Menus').AsString;
+                        var_Campos_para_Existe_ya[1].Campo_Nombre := 'Id_Menus';
+                        var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                         var_record_Existe := UTI_RGTRO_Existe_Ya( 'users_menus',                      // param_nombre_tabla
                                                                   'ORDER BY users_menus.Id_Users, ' +
                                                                            'users_menus.id_Menus',    // param_order_by
                                                                   '',                                 // param_id_a_no_traer ... Estoy insertando
-
-                                                                  FieldByName('Id_Users').AsString,   // param_que_id_buscar_1
-                                                                  'Id_Users',                         // param_que_id_buscar_1_nombre_campo
-
-                                                                  FieldByName('Id_Menus').AsString,   // param_que_id_buscar_2
-                                                                  'Id_Menus',                         // param_que_id_buscar_2_nombre_campo
-
-                                                                  '',                                 // param_enString_1
-                                                                  '',                                 // param_enString_1_nombre_campo
-
-                                                                  '',                                 // param_enString_2
-                                                                  '' );                               // param_enString_2_nombre_campo
+                                                                  var_Campos_para_Existe_ya );        // param_Campos_para_Existe_ya
 
                         if var_record_Existe.Fallo_en_Conexion_BD = true then
                         begin
@@ -1197,9 +1200,11 @@ begin
 end;
 
 procedure TForm_users_001.Insertar_Registro_Menus_Permisos;
-var var_msg           : TStrings;
-    var_Form          : TForm_users_004;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : TForm_users_004;
+  var_record_Existe         : Trecord_Existe;
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -1247,23 +1252,26 @@ begin
                             begin
                                 var_Form.Free;
 
+                                SetLength(var_Campos_para_Existe_ya, 3);
+
+                                var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('Id_Users').AsString;
+                                var_Campos_para_Existe_ya[0].Campo_Nombre := 'Id_Users';
+                                var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                                var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('Id_Menus').AsString;
+                                var_Campos_para_Existe_ya[1].Campo_Nombre := 'Id_Menus';
+                                var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                                var_Campos_para_Existe_ya[2].Campo_Valor  := FieldByName('Tipo_CRUD').AsString;
+                                var_Campos_para_Existe_ya[2].Campo_Nombre := 'Tipo_CRUD';
+                                var_Campos_para_Existe_ya[2].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                                 var_record_Existe := UTI_RGTRO_Existe_Ya( 'users_menus_permissions',                      // param_nombre_tabla
                                                                           'ORDER BY users_menus_permissions.Id_Users, ' +
                                                                                    'users_menus_permissions.id_Menus, ' +
                                                                                    'users_menus_permissions.Tipo_CRUD',   // param_order_by
-                                                                          '',                                             // param_id_a_no_traer ... Estoy insertando
-
-                                                                          FieldByName('Id_Users').AsString,               // param_que_id_buscar_1
-                                                                          'Id_Users',                                     // param_que_id_buscar_1_nombre_campo
-
-                                                                          FieldByName('Id_Menus').AsString,               // param_que_id_buscar_2
-                                                                          'Id_Menus',                                     // param_que_id_buscar_2_nombre_campo
-
-                                                                          FieldByName('Tipo_CRUD').AsString,              // param_enString_1
-                                                                          'Tipo_CRUD',                                    // param_enString_1_nombre_campo
-
-                                                                          '',                                             // param_enString_2
-                                                                          '' );                                           // param_enString_2_nombre_campo
+                                                                          '',                                 // param_id_a_no_traer ... Estoy insertando
+                                                                          var_Campos_para_Existe_ya );        // param_Campos_para_Existe_ya
 
                                 if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin

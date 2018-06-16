@@ -1034,10 +1034,13 @@ begin
 end;
 
 procedure Tform_articulos_familias_001.Editar_Registro_Tarifas;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_familias_002;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_familias_002;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -1082,22 +1085,21 @@ begin
                     var_Form.ShowModal;
                     if var_Form.public_Pulso_Aceptar = true then
                         begin
+                            SetLength(var_Campos_para_Existe_ya, 2);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_articulos_familias').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_articulos_familias';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('id_tarifas').AsString;
+                            var_Campos_para_Existe_ya[1].Campo_Nombre := 'id_tarifas';
+                            var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                             var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_familias_tarifas',                                       // param_nombre_tabla
                                                                       'ORDER BY articulos_familias_tarifas.id_articulos_familias ASC, ' +
                                                                                'articulos_familias_tarifas.id_tarifas ASC',               // param_order_by
                                                                       FieldByName('id').AsString,                                         // param_id_a_no_traer ... Estoy insertando
-
-                                                                      FieldByName('id_articulos_familias').AsString,                      // param_que_id_buscar_1
-                                                                      'id_articulos_familias',                                            // param_que_id_buscar_1_nombre_campo
-
-                                                                      FieldByName('id_tarifas').AsString,                                 // param_que_id_buscar_2
-                                                                      'id_tarifas',                                                       // param_que_id_buscar_2_nombre_campo
-
-                                                                      '',                                                                 // param_enString_1
-                                                                      '',                                                                 // param_enString_1_nombre_campo
-
-                                                                      '',                                                                 // param_enString_2
-                                                                      '' );                                                               // param_enString_2_nombre_campo
+                                                                      var_Campos_para_Existe_ya );                                        // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -1156,10 +1158,12 @@ begin
 end;
 
 procedure Tform_articulos_familias_001.Editar_Registro_Terminales;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_familias_003;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_familias_003;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -1204,22 +1208,21 @@ begin
                     var_Form.ShowModal;
                     if var_Form.public_Pulso_Aceptar = true then
                         begin
+                            SetLength(var_Campos_para_Existe_ya, 2);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_articulos_familias').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_articulos_familias';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('id_tarifas').AsString;
+                            var_Campos_para_Existe_ya[1].Campo_Nombre := 'id_tarifas';
+                            var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                             var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_familias_terminales',                                        // param_nombre_tabla
                                                                       'ORDER BY articulos_familias_terminales.id_articulos_familias ASC, ' +
                                                                                'articulos_familias_terminales.id_terminales ASC',             // param_order_by
                                                                       FieldByName('id').AsString,                                             // param_id_a_no_traer ... Estoy insertando
-
-                                                                      FieldByName('id_articulos_familias').AsString,                          // param_que_id_buscar_1
-                                                                      'id_articulos_familias',                                                // param_que_id_buscar_1_nombre_campo
-
-                                                                      FieldByName('id_terminales').AsString,                                  // param_que_id_buscar_2
-                                                                      'id_terminales',                                                        // param_que_id_buscar_2_nombre_campo
-
-                                                                      '',                                                                     // param_enString_1
-                                                                      '',                                                                     // param_enString_1_nombre_campo
-
-                                                                      '',                                                                     // param_enString_2
-                                                                      '' );                                                                   // param_enString_2_nombre_campo
+                                                                      var_Campos_para_Existe_ya );                                            // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -1278,9 +1281,12 @@ begin
 end;
 
 procedure Tform_articulos_familias_001.Asignar_Familia_como_SubFamilia;
-var var_Registro      : TRecord_Rgtro_Comun;
-    var_msg           : TStrings;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_Registro              : TRecord_Rgtro_Comun;
+  var_msg                   : TStrings;
+  var_record_Existe         : Trecord_Existe;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -1297,21 +1303,16 @@ begin
 
             if var_Registro.id_1 <> '' then
             begin
+                SetLength(var_Campos_para_Existe_ya, 1);
+
+                var_Campos_para_Existe_ya[0].Campo_Valor  := var_Registro.id_1;
+                var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_articulos_familias';
+                var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                 var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_familias',                                     // param_nombre_tabla
                                                           'ORDER BY articulos_familias.id_articulos_familias ASC' + // param_order_by
                                                           '',                                                       // param_id_a_no_traer ... Estoy insertando
-
-                                                          var_Registro.id_1,                                        // param_que_id_buscar_1
-                                                          id_articulos_familias,                                    // param_que_id_buscar_1_nombre_campo
-
-                                                          '',                                                       // param_que_id_buscar_2
-                                                          '',                                                       // param_que_id_buscar_2_nombre_campo
-
-                                                          '',                                                       // param_enString_1
-                                                          '',                                                       // param_enString_1_nombre_campo
-
-                                                          '',                                                       // param_enString_2
-                                                          '' );                                                     // param_enString_2_nombre_campo
+                                                          var_Campos_para_Existe_ya );                              // param_Campos_para_Existe_ya
 
                 if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin

@@ -1132,10 +1132,13 @@ begin
 end;
 
 procedure Tform_articulos_familias_000.Insertar_Registro;
-var var_msg           : TStrings;
-    var_Fecha_Hora    : ShortString;
-    var_record_Existe : Trecord_Existe;
-    var_descripcion   : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Fecha_Hora            : ShortString;
+  var_record_Existe         : Trecord_Existe;
+  var_descripcion           : ShortString;
+
 begin
     with SQLQuery_Articulos_Familias do
     begin
@@ -1171,21 +1174,16 @@ begin
 
                     if form_articulos_familias_001.public_Pulso_Aceptar = true then
                         begin
+                            SetLength(var_Campos_para_Existe_ya, 1);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                             var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_familias',                         // param_nombre_tabla
                                                                       'ORDER BY articulos_familias.descripcion ASC' // param_order_by
                                                                       '',                                           // param_id_a_no_traer ... Estoy insertando
-
-                                                                      '',                                           // param_que_id_buscar_1
-                                                                      '',                                           // param_que_id_buscar_1_nombre_campo
-
-                                                                      '',                                           // param_que_id_buscar_2
-                                                                      '',                                           // param_que_id_buscar_2_nombre_campo
-
-                                                                      FieldByName('descripcion').AsString,          // param_enString_1
-                                                                      'descripcion',                                // param_enString_1_nombre_campo
-
-                                                                      '',                                           // param_enString_2
-                                                                      '' );                                         // param_enString_2_nombre_campo
+                                                                      var_Campos_para_Existe_ya );                  // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -1353,9 +1351,12 @@ begin
 end;
 
 procedure Tform_articulos_familias_000.Editar_Registro;
-var var_msg           : TStrings;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
     with SQLQuery_Articulos_Familias do
     begin
@@ -1397,21 +1398,16 @@ begin
 
                     if form_articulos_familias_001.public_Pulso_Aceptar = true then
                         begin
+                            SetLength(var_Campos_para_Existe_ya, 1);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                             var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_familias',                         // param_nombre_tabla
                                                                       'ORDER BY articulos_familias.descripcion ASC' // param_order_by
-                                                                      FieldByName('id').AsString,                                           // param_id_a_no_traer ... Estoy insertando
-
-                                                                      '',                                           // param_que_id_buscar_1
-                                                                      '',                                           // param_que_id_buscar_1_nombre_campo
-
-                                                                      '',                                           // param_que_id_buscar_2
-                                                                      '',                                           // param_que_id_buscar_2_nombre_campo
-
-                                                                      FieldByName('descripcion').AsString,          // param_enString_1
-                                                                      'descripcion',                                // param_enString_1_nombre_campo
-
-                                                                      '',                                           // param_enString_2
-                                                                      '' );                                         // param_enString_2_nombre_campo
+                                                                      FieldByName('id').AsString,                   // param_id_a_no_traer ... Estoy insertando
+                                                                      var_Campos_para_Existe_ya );                  // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin

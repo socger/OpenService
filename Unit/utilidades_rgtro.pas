@@ -8,37 +8,44 @@ uses
     Controls, Forms, FileUtil, Classes, SysUtils, DB, sqldb, ButtonPanel, Dialogs, DBGrids,
     utilidades_usuarios, utilidades_general, utilidades_bd;
 
-    procedure UTI_RGTRO_where_o_And(var param_where_o_and : ShortString);
-    function  UTI_RGTRO_Existe_Ya( param_nombre_tabla : String; param_order_by : String; param_id_a_no_traer : String; param_que_id_buscar_1 : String; param_que_id_buscar_1_nombre_campo : String; param_que_id_buscar_2 : String; param_que_id_buscar_2_nombre_campo : String; param_enString_1 : String; param_enString_1_nombre_campo : String; param_enString_2 : String; param_enString_2_nombre_campo : String ) : Trecord_Existe;
+type
 
+  TCampos_para_Existe_ya = record
+      Campo_Valor  : String;
+      Campo_Nombre : String;
+      Campo_Tipo   : ShortInteger; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+  end;
 
-    function  UTI_RGTRO_Campo_es_DiaHora( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
-    function  UTI_RGTRO_Campo_es_Dia( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
-    function  UTI_RGTRO_Campo_es_Hora( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
-    function  UTI_RGTRO_Campo_es_Numero( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
-    function  UTI_RGTRO_Campo_es_Texto( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
+  procedure UTI_RGTRO_where_o_And(var param_where_o_and : ShortString);
+  function  UTI_RGTRO_Existe_Ya( param_nombre_tabla : String; param_order_by : String; param_id_a_no_traer : String; param_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya ) : Trecord_Existe;
 
-    function  UTI_RGTRO_Borrar_Cabecera_y_Detalle( param_nombre_campo, param_tabla_Cabecera, param_tabla_Detalle : String; param_SQLQuery_Cabecera, param_SQLQuery_Detalle : TSQLQuery; param_Solo_Ver : Boolean; param_Menu_Worked : Integer ) : Boolean;
-    function  UTI_RGTRO_BAJA_o_ALTA_Rgtro( param_alta : Boolean; param_nombre_tabla, param_nombre_campo, param_valor_nombre_campo : String ) : Boolean;
-    function  UTI_RGTRO_Borrar_ALTA_Cabecera_y_Detalle( param_nombre_campo, param_tabla_Cabecera, param_tabla_Detalle : String; param_SQLQuery_Cabecera, param_SQLQuery_Detalle : TSQLQuery; param_msg : TStrings ) : Boolean;
-    function  UTI_RGTRO_Borrar_BAJA_Cabecera_y_Detalle( param_nombre_campo, param_tabla_Cabecera, param_tabla_Detalle : String; param_SQLQuery_Cabecera, param_SQLQuery_Detalle : TSQLQuery; param_msg : TStrings; param_Menu_Worked : Integer ) : Boolean;
+  function  UTI_RGTRO_Campo_es_DiaHora( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
+  function  UTI_RGTRO_Campo_es_Dia( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
+  function  UTI_RGTRO_Campo_es_Hora( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
+  function  UTI_RGTRO_Campo_es_Numero( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
+  function  UTI_RGTRO_Campo_es_Texto( param_FieldType : TFieldType; param_parte_de_SQL_tipoDato : String ) : Boolean;
 
-    function  UTI_RGTRO_Borrar( param_nombre_tabla : ShortString; param_SQLQuery : TSQLQuery; param_Solo_Ver : Boolean; param_Menu_Worked : Integer ) : Boolean;
-    function  UTI_RGTRO_Borrar_BAJA( param_nombre_tabla : ShortString; param_SQLQuery : TSQLQuery; param_msg : TStrings; param_Menu_Worked : Integer ) : Boolean;
-    function  UTI_RGTRO_Borrar_ALTA( param_nombre_tabla : ShortString; param_SQLQuery : TSQLQuery; param_msg : TStrings ) : Boolean;
+  function  UTI_RGTRO_Borrar_Cabecera_y_Detalle( param_nombre_campo, param_tabla_Cabecera, param_tabla_Detalle : String; param_SQLQuery_Cabecera, param_SQLQuery_Detalle : TSQLQuery; param_Solo_Ver : Boolean; param_Menu_Worked : Integer ) : Boolean;
+  function  UTI_RGTRO_BAJA_o_ALTA_Rgtro( param_alta : Boolean; param_nombre_tabla, param_nombre_campo, param_valor_nombre_campo : String ) : Boolean;
+  function  UTI_RGTRO_Borrar_ALTA_Cabecera_y_Detalle( param_nombre_campo, param_tabla_Cabecera, param_tabla_Detalle : String; param_SQLQuery_Cabecera, param_SQLQuery_Detalle : TSQLQuery; param_msg : TStrings ) : Boolean;
+  function  UTI_RGTRO_Borrar_BAJA_Cabecera_y_Detalle( param_nombre_campo, param_tabla_Cabecera, param_tabla_Detalle : String; param_SQLQuery_Cabecera, param_SQLQuery_Detalle : TSQLQuery; param_msg : TStrings; param_Menu_Worked : Integer ) : Boolean;
 
-    function  UTI_RGTRO_Lock( param_nombre_tabla, param_id : ShortString ) : Boolean;
+  function  UTI_RGTRO_Borrar( param_nombre_tabla : ShortString; param_SQLQuery : TSQLQuery; param_Solo_Ver : Boolean; param_Menu_Worked : Integer ) : Boolean;
+  function  UTI_RGTRO_Borrar_BAJA( param_nombre_tabla : ShortString; param_SQLQuery : TSQLQuery; param_msg : TStrings; param_Menu_Worked : Integer ) : Boolean;
+  function  UTI_RGTRO_Borrar_ALTA( param_nombre_tabla : ShortString; param_SQLQuery : TSQLQuery; param_msg : TStrings ) : Boolean;
 
-    function  UTI_RGTRO_isLock( param_nombre_tabla, param_id : ShortString; param_ver_mensaje : Boolean ) : Boolean;
-    function  UTI_RGTRO_isLock_Preguntar_si_Desbloqueamos( param_msg : TStrings ) : Boolean;
+  function  UTI_RGTRO_Lock( param_nombre_tabla, param_id : ShortString ) : Boolean;
 
-    procedure UTI_RGTRO_UnLock( param_nombre_tabla, param_id : ShortString );
+  function  UTI_RGTRO_isLock( param_nombre_tabla, param_id : ShortString; param_ver_mensaje : Boolean ) : Boolean;
+  function  UTI_RGTRO_isLock_Preguntar_si_Desbloqueamos( param_msg : TStrings ) : Boolean;
 
-    function  UTI_RGTRO_Grabar_Antes( param_Nombre_Tabla : ShortString; param_SQLQuery : TSQLQuery ) : Boolean;
+  procedure UTI_RGTRO_UnLock( param_nombre_tabla, param_id : ShortString );
 
-    function  UTI_RGTRO_Buscar_Rgtro_y_Grabar_Cambios_en_Historico( param_Nombre_Tabla : ShortString; param_SQL : TStrings ) : Boolean;
+  function  UTI_RGTRO_Grabar_Antes( param_Nombre_Tabla : ShortString; param_SQLQuery : TSQLQuery ) : Boolean;
 
-    procedure UTI_RGTRO_Ver_Estado_Registro( param_nombre_tabla : ShortString; param_SQLQuery : TSQLQuery; param_DataSource : TDataSource; param_DBGrid : TDBGrid );
+  function  UTI_RGTRO_Buscar_Rgtro_y_Grabar_Cambios_en_Historico( param_Nombre_Tabla : ShortString; param_SQL : TStrings ) : Boolean;
+
+  procedure UTI_RGTRO_Ver_Estado_Registro( param_nombre_tabla : ShortString; param_SQLQuery : TSQLQuery; param_DataSource : TDataSource; param_DBGrid : TDBGrid );
 
 implementation
 
@@ -1360,33 +1367,23 @@ begin
 
 end;
 
-function UTI_RGTRO_Existe_Ya( param_nombre_tabla                 : String;
-                              param_order_by                     : String;
-                              param_id_a_no_traer                : String;
+function UTI_RGTRO_Existe_Ya( param_nombre_tabla          : String;
+                              param_order_by              : String;
+                              param_id_a_no_traer         : String;
+                              param_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya ) : Trecord_Existe;
+var
+  var_SQL            : TStrings;
+  var_SQLTransaction : TSQLTransaction;
+  var_SQLConnector   : TSQLConnector;
+  var_SQLQuery       : TSQLQuery;
+  var_antes_de_campo : AnsiString;
+  var_where_o_and    : ShortString;
+  var_Contador       : Integer;
 
-                              param_que_id_buscar_1              : String;
-                              param_que_id_buscar_1_nombre_campo : String;
-
-                              param_que_id_buscar_2              : String;
-                              param_que_id_buscar_2_nombre_campo : String;
-
-                              param_enString_1                   : String;
-                              param_enString_1_nombre_campo      : String;
-
-                              param_enString_2                   : String;
-                              param_enString_2_nombre_campo      : String ) : Trecord_Existe;
-
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-    var_antes_de_campo : AnsiString;
-    var_where_o_and    : ShortString;
 begin
   try
     var_antes_de_campo := Trim(param_nombre_tabla) + '.';
     var_where_o_and    := '';
-
 
     // ********************************************************************************************* //
     // ** Creamos la Transaccion y la conexión con el motor BD, y la abrimos                      ** //
@@ -1405,44 +1402,40 @@ begin
     var_SQL.Add('SELECT ' + var_antes_de_campo + '*' );
     var_SQL.Add(  'FROM ' + Trim(param_nombre_tabla) );
 
-    if (Trim(param_enString_1_nombre_campo) <> '') and
-       (Trim(param_enString_1) <> '')              then
+    for var_Contador := 0 to Length(param_Campos_para_Existe_ya) do
     begin
-      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
-                   var_antes_de_campo + param_enString_1_nombre_campo + ' = ' +
-                   UTI_GEN_Comillas(Trim(param_enString_1)) );
-    end;
+      if     ( Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Valor) <> '' )
+         and ( Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Nombre) <> '' ) then
+      begin
+        if param_Campos_para_Existe_ya[var_Contador].Campo_Tipo = 0 then // Numerico
+          var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+                       var_antes_de_campo +
+                       Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Nombre) +
+                       ' = ' +
+                       Trim(param_enString) );
 
-    if (Trim(param_enString_2_nombre_campo) <> '') and
-       (Trim(param_enString_2) <> '')              then
-    begin
-      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
-                   var_antes_de_campo + param_enString_2_nombre_campo + ' = ' +
-                   UTI_GEN_Comillas(Trim(param_enString_2)) );
-    end;
+        if param_Campos_para_Existe_ya[var_Contador].Campo_Tipo = 1 then // String
+          var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+                       var_antes_de_campo +
+                       Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Nombre) +
+                       ' = ' +
+                       UTI_GEN_Comillas(Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Valor)) );
 
-    if (Trim(param_enString_nombre_campo) <> '') and
-       (Trim(param_enString) <> '')              then
-    begin
-      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
-                   var_antes_de_campo + param_enString_nombre_campo + ' = ' +
-                   UTI_GEN_Comillas(Trim(param_enString)) );
-    end;
+        if param_Campos_para_Existe_ya[var_Contador].Campo_Tipo = 2 then // Fecha ó Fecha+Hora
+          var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+                       var_antes_de_campo +
+                       Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Nombre) +
+                       ' = ' +
+                       UTI_GEN_Comillas(UTI_GEN_Format_Fecha_Hora(param_Campos_para_Existe_ya[var_Contador].Campo_Valor, true)) );
 
-    if (Trim(param_que_id_buscar_1_nombre_campo) <> '') and
-       (Trim(param_que_id_buscar_1) <> '')              then
-    begin
-      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
-                   var_antes_de_campo + param_que_id_buscar_1_nombre_campo + ' = ' +
-                   Trim(param_que_id_buscar_1) );
-    end;
+        if param_Campos_para_Existe_ya[var_Contador].Campo_Tipo = 3 then // Hora
+          var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+                       var_antes_de_campo +
+                       Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Nombre) +
+                       ' = ' +
+                       UTI_GEN_Comillas(Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Valor)) );
 
-    if (Trim(param_que_id_buscar_2_nombre_campo) <> '') and
-       (Trim(param_que_id_buscar_2) <> '')              then
-    begin
-      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
-                   var_antes_de_campo + param_que_id_buscar_2_nombre_campo + ' = ' +
-                   Trim(param_que_id_buscar_2) );
+      end;
     end;
 
     if Trim(param_id_a_no_traer) <> '' then

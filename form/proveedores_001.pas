@@ -1218,10 +1218,13 @@ begin
 end;
 
 procedure Tform_proveedores_001.Editar_Registro_Contactos;
-var var_msg           : TStrings;
-    var_Form          : Tform_proveedores_002;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_proveedores_002;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -1265,22 +1268,17 @@ begin
                 var_Form.ShowModal;
                 if var_Form.public_Pulso_Aceptar = true then
                 begin
+                    SetLength(var_Campos_para_Existe_ya, 1);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('nombre').AsString;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'nombre';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                     var_record_Existe := UTI_RGTRO_Existe_Ya( 'proveedores_contactos',                                // param_nombre_tabla
                                                               'ORDER BY proveedores_contactos.id_proveedores ASC, ' +
                                                                        'proveedores_contactos.nombre ASC',            // param_order_by
                                                               FieldByName('id_proveedores').AsString,                 // param_id_a_no_traer ... Estoy insertando
-
-                                                              '',                                                     // param_que_id_buscar_1
-                                                              '',                                                     // param_que_id_buscar_1_nombre_campo
-
-                                                              '',                                                     // param_que_id_buscar_2
-                                                              '',                                                     // param_que_id_buscar_2_nombre_campo
-
-                                                              FieldByName('nombre').AsString,                         // param_enString_1
-                                                              'nombre',                                               // param_enString_1_nombre_campo
-
-                                                              '',                                                     // param_enString_2
-                                                              '' );                                                   // param_enString_2_nombre_campo
+                                                              var_Campos_para_Existe_ya );                            // param_Campos_para_Existe_ya
 
                     if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin
@@ -1334,9 +1332,12 @@ begin
 end;
 
 procedure Tform_proveedores_001.Insertar_Registro_Contactos;
-var var_msg           : TStrings;
-    var_Form          : Tform_proveedores_002;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_proveedores_002;
+  var_record_Existe         : Trecord_Existe;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -1368,22 +1369,17 @@ begin
                 begin
                     var_Form.Free;
 
+                    SetLength(var_Campos_para_Existe_ya, 1);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('nombre').AsString;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'nombre';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
                     var_record_Existe := UTI_RGTRO_Existe_Ya( 'proveedores_contactos',                                // param_nombre_tabla
                                                               'ORDER BY proveedores_contactos.id_proveedores ASC, ' +
                                                                        'proveedores_contactos.nombre ASC',            // param_order_by
                                                               '',                                                     // param_id_a_no_traer ... Estoy insertando
-
-                                                              '',                                                     // param_que_id_buscar_1
-                                                              '',                                                     // param_que_id_buscar_1_nombre_campo
-
-                                                              '',                                                     // param_que_id_buscar_2
-                                                              '',                                                     // param_que_id_buscar_2_nombre_campo
-
-                                                              FieldByName('nombre').AsString,                         // param_enString_1
-                                                              'nombre',                                               // param_enString_1_nombre_campo
-
-                                                              '',                                                     // param_enString_2
-                                                              '' );                                                   // param_enString_2_nombre_campo
+                                                              var_Campos_para_Existe_ya );                            // param_Campos_para_Existe_ya
 
                     if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin

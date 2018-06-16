@@ -1092,6 +1092,9 @@ begin
 
   Result := 0;
 }
+
+  jerofa esto que es ... no es en si el existe_
+
   v_id    := SQLQuery_Principal.FieldByName('id').AsString;
   var_SQL := TStringList.Create;
 

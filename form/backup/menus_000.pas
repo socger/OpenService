@@ -348,11 +348,14 @@ begin
 end;
 
 procedure Tform_menus_000.Insertar_Registro;
-var var_msg           : TStrings;
-    var_Form          : TForm_menus_001;
-    var_record_Existe : Trecord_Existe;
-    var_descripcion   : ShortString;
-    var_Fecha_Hora    : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : TForm_menus_001;
+  var_record_Existe         : Trecord_Existe;
+  var_descripcion           : ShortString;
+  var_Fecha_Hora            : ShortString;
+
 begin
     with SQLQuery_Menus do
     begin
@@ -376,21 +379,17 @@ begin
                     var_Form.ShowModal;
                     if var_Form.public_Pulso_Aceptar = true then
                         begin
-                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'menus',                             // param_nombre_tabla
-                                                                      'ORDER BY menus.descripcion ASC',    // param_order_by
-                                                                      '',                                  // param_id_a_no_traer ... Estoy insertando
 
-                                                                      '',                                  // param_que_id_buscar_1
-                                                                      '',                                  // param_que_id_buscar_1_nombre_campo
+                            SetLength(var_Campos_para_Existe_ya, 1);
 
-                                                                      '',                                  // param_que_id_buscar_2
-                                                                      '',                                  // param_que_id_buscar_2_nombre_campo
+                            var_Campos_para_Existe_ya[2].Campo_Valor  := FieldByName('descripcion').AsString;
+                            var_Campos_para_Existe_ya[2].Campo_Nombre := 'descripcion';
+                            var_Campos_para_Existe_ya[2].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
 
-                                                                      FieldByName('descripcion').AsString, // param_enString_1
-                                                                      'descripcion',                       // param_enString_1_nombre_campo
-
-                                                                      '',                                  // param_enString_2
-                                                                      '' );                                // param_enString_2_nombre_campo
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'menus',                          // param_nombre_tabla
+                                                                      'ORDER BY menus.descripcion ASC', // param_order_by
+                                                                      '',                               // param_id_a_no_traer ... Estoy insertando
+                                                                      var_Campos_para_Existe_ya );      // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -409,21 +408,17 @@ begin
                                             FieldByName('Insert_WHEN').AsString := var_Fecha_Hora;
                                             FieldByName('Insert_Id_User').Value := Form_Menu.public_User;
 
-                                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'menus',                    // param_nombre_tabla
-                                                                                      'ORDER BY menus.id ASC',    // param_order_by
-                                                                                      '',                         // param_id_a_no_traer ... Estoy insertando
+                                            SetLength(var_Campos_para_Existe_ya, 1);
 
-                                                                                      FieldByName('id').AsString, // param_que_id_buscar_1
-                                                                                      'id',                       // param_que_id_buscar_1_nombre_campo
+                                            var_Campos_para_Existe_ya[2].Campo_Valor  := FieldByName('id').AsString;
+                                            var_Campos_para_Existe_ya[2].Campo_Nombre := 'id';
+                                            var_Campos_para_Existe_ya[2].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
 
-                                                                                      '',                         // param_que_id_buscar_2
-                                                                                      '',                         // param_que_id_buscar_2_nombre_campo
+                                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'menus',                     // param_nombre_tabla
+                                                                                      'ORDER BY menus.id ASC',     // param_order_by
+                                                                                      '',                          // param_id_a_no_traer ... Estoy insertando
+                                                                                      var_Campos_para_Existe_ya ); // param_Campos_para_Existe_ya
 
-                                                                                      '',                         // param_enString_1
-                                                                                      '',                         // param_enString_1_nombre_campo
-
-                                                                                      '',                         // param_enString_2
-                                                                                      '' );                       // param_enString_2_nombre_campo
                                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                                 begin
                                                     // var_Form.Free;
@@ -739,34 +734,16 @@ begin
                     if var_Form.public_Pulso_Aceptar = true then
                         begin
 
-                                                                        function UTI_RGTRO_Existe_Ya( param_nombre_tabla                 : String;
-                                                                                                      param_order_by                     : String;
-                                                                                                      param_id_a_no_traer                : String;
+                            SetLength(var_Campos_para_Existe_ya, 1);
 
-                                                                                                      param_que_id_buscar_1              : String;
-                                                                                                      param_que_id_buscar_1_nombre_campo : String;
+                            var_Campos_para_Existe_ya[2].Campo_Valor  := FieldByName('descripcion').AsString;
+                            var_Campos_para_Existe_ya[2].Campo_Nombre := 'descripcion';
+                            var_Campos_para_Existe_ya[2].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
 
-                                                                                                      param_que_id_buscar_2              : String;
-                                                                                                      param_que_id_buscar_2_nombre_campo : String;
-
-                                                                                                      param_enString_1                   : String;
-                                                                                                      param_enString_1_nombre_campo      : String;
-
-                                                                                                      param_enString_2                   : String;
-                                                                                                      param_enString_2_nombre_campo      : String ) : Trecord_Existe;
-
-                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'menus',                             // param_nombre_tabla
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'menus',                     // param_nombre_tabla
                                                                       'ORDER BY menus.descripcion ASC',    // param_order_by
                                                                       FieldByName('id').AsString,          // param_id_a_no_traer ... Estoy insertando
-
-                                                                      '',                                  // param_que_id_buscar_1
-                                                                      '',                                  // param_que_id_buscar_1_nombre_campo
-
-                                                                      '',                                  // param_que_id_buscar_2
-                                                                      '',                                  // param_que_id_buscar_2_nombre_campo
-
-                                                                      FieldByName('descripcion').AsString, // param_enString_1
-                                                                      'descripcion' );                     // param_enString_1_nombre_campo
+                                                                      var_Campos_para_Existe_ya ); // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin

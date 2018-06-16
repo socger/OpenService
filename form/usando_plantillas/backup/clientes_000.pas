@@ -2098,9 +2098,12 @@ begin
 end;
 
 procedure Tf_clientes_000.Insertar_Registro_Contactos;
-var var_msg           : TStrings;
-    var_Form          : Tf_clientes_001;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tf_clientes_001;
+  var_record_Existe         : Trecord_Existe;
+
 begin
   if public_Solo_Ver = true then
   begin
@@ -2135,22 +2138,21 @@ begin
         begin
           var_Form.Free;
 
+          SetLength(var_Campos_para_Existe_ya, 2);
+
+          var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_clientes').AsString;
+          var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_clientes';
+          var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+          var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('nombre').AsString;
+          var_Campos_para_Existe_ya[1].Campo_Nombre := 'nombre';
+          var_Campos_para_Existe_ya[1].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
           var_record_Existe := UTI_RGTRO_Existe_Ya( 'clientes_contactos',                             // param_nombre_tabla
                                                     'ORDER BY clientes_contactos.id_clientes ASC, ' +
                                                              'clientes_contactos.nombre ASC',         // param_order_by
                                                     '',                                               // param_id_a_no_traer ... Estoy insertando
-
-                                                    FieldByName('id_clientes').AsString,              // param_que_id_buscar_1
-                                                    'id_clientes',                                    // param_que_id_buscar_1_nombre_campo
-
-                                                    '',                                               // param_que_id_buscar_2
-                                                    '',                                               // param_que_id_buscar_2_nombre_campo
-
-                                                    FieldByName('nombre').AsString,                   // param_enString_1
-                                                    'nombre',                                         // param_enString_1_nombre_campo
-
-                                                    '',                                               // param_enString_2
-                                                    '' );                                             // param_enString_2_nombre_campo
+                                                    var_Campos_para_Existe_ya );                      // param_Campos_para_Existe_ya
 
           if var_record_Existe.Fallo_en_Conexion_BD = true then
           begin
@@ -2198,10 +2200,13 @@ begin
 end;
 
 procedure Tf_clientes_000.Editar_Registro_Contactos;
-var var_msg           : TStrings;
-    var_Form          : Tf_clientes_001;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tf_clientes_001;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
   if public_Solo_Ver = true then
   begin
@@ -2238,23 +2243,21 @@ begin
         var_Form.ShowModal;
         if var_Form.public_Pulso_Aceptar = true then
         begin
+          SetLength(var_Campos_para_Existe_ya, 2);
+
+          var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_clientes').AsString;
+          var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_clientes';
+          var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+          var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('nombre').AsString;
+          var_Campos_para_Existe_ya[1].Campo_Nombre := 'nombre';
+          var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
           var_record_Existe := UTI_RGTRO_Existe_Ya( 'clientes_contactos',                             // param_nombre_tabla
                                                     'ORDER BY clientes_contactos.id_clientes ASC, ' +
                                                              'clientes_contactos.nombre ASC',         // param_order_by
                                                     FieldByName('id').AsString,                       // param_id_a_no_traer ... Estoy insertando
-
-                                                    FieldByName('id_clientes').AsString,              // param_que_id_buscar_1
-                                                    'id_clientes',                                    // param_que_id_buscar_1_nombre_campo
-
-                                                    '',                                               // param_que_id_buscar_2
-                                                    '',                                               // param_que_id_buscar_2_nombre_campo
-
-                                                    FieldByName('nombre').AsString,                   // param_enString_1
-                                                    'nombre',                                         // param_enString_1_nombre_campo
-
-                                                    '',                                               // param_enString_2
-                                                    '' );                                             // param_enString_2_nombre_campo
-
+                                                    var_Campos_para_Existe_ya );                      // param_Campos_para_Existe_ya
 
           if var_record_Existe.Fallo_en_Conexion_BD = true then
           begin
