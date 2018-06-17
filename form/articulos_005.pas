@@ -45,7 +45,6 @@ type
         procedure RadioGroup_BajasClick(Sender: TObject);
         function  Comprobar_No_Tocar( param_Reproducir_Mensajes, param_Ejecutar_No_Tocar : Boolean ) : Boolean;
         procedure Refrescar_Registros;
-        function  Existe_art_Proporciones_Tarifa_Ya( param_id, param_id_articulos_proporciones, param_id_tarifas : ShortString ) : Trecord_Existe;
         procedure Editar_Registro_Proporciones_Tarifas;
         procedure BitBtn_Ver_Situacion_Registro_TarifasClick(Sender: TObject);
         procedure DBGrid_TarifasDblClick(Sender: TObject);
@@ -357,103 +356,6 @@ begin
     var_msg.Free;
 end;
 
-function Tform_articulos_005.Existe_art_Proporciones_Tarifa_Ya( param_id,
-                                                                param_id_articulos_proporciones,
-                                                                param_id_tarifas : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-    try
-      { ****************************************************************************
-        Creamos la Transaccion y la conexión con el motor BD, y la abrimos
-        **************************************************************************** }
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        Creamos la SQL Según el motor de BD
-        **************************************************************************** }
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT a.*' );
-        var_SQL.Add(  'FROM articulos_proporciones_tarifas AS a' );
-        var_SQL.Add(' WHERE a.id_articulos_proporciones = ' +  Trim(param_id_articulos_proporciones) );
-        var_SQL.Add(  ' AND a.id_tarifas = ' +  Trim(param_id_tarifas) );
-
-        if Trim(param_id) <> '' then
-        begin
-             var_SQL.Add(  ' AND NOT a.id = ' + Trim(param_id) );
-        end;
-
-        var_SQL.Add(' ORDER BY a.id_articulos_proporciones ASC, a.id_tarifas ASC' );
-
-      { ****************************************************************************
-        Abrimos la tabla
-        **************************************************************************** }
-        var_SQLQuery      := TSQLQuery.Create(nil);
-        var_SQLQuery.Name := 'SQLQuery_Existe_art_Proporciones_Tarifa_Ya';
-
-        if UTI_TB_Query_Open( '',
-                              '',
-                              '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        TRABAJAMOS CON LOS REGISTROS DEVUELTOS
-        ****************************************************************************
-        Si el módulo no se creó, no se permite entrar en él ... Result := False
-        **************************************************************************** }
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-      { ****************************************************************************
-        Cerramos la tabla
-        **************************************************************************** }
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-         on error : Exception do
-         begin
-             UTI_GEN_Error_Log( rs_EaPtY_1 +
-                                rs_EaPtY_2 + var_SQLQuery.Name +
-                                rs_EaPtY_3 + Screen.ActiveForm.Name,
-                                error );
-             try
-                 var_SQL.Free;
-                 var_SQLTransaction.Free;
-                 var_SQLConnector.Free;
-                 var_SQLQuery.Free;
-             except
-             end;
-
-             Result.Fallo_en_Conexion_BD := true;
-         end;
-    end;
-end;
-
 procedure Tform_articulos_005.no_Tocar;
 begin
     DBMemo_Descripcion.Enabled               := False;
@@ -490,10 +392,13 @@ begin
 end;
 
 procedure Tform_articulos_005.Editar_Registro_Proporciones_Tarifas;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_006;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_006;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -536,9 +441,21 @@ begin
                 var_Form.ShowModal;
                 if var_Form.public_Pulso_Aceptar = true then
                 begin
-                    var_record_Existe := Existe_art_Proporciones_Tarifa_Ya( FieldByName('id').AsString,
-                                                                            FieldByName('id_articulos_proporciones').AsString,
-                                                                            FieldByName('id_tarifas').AsString );
+                    SetLength(var_Campos_para_Existe_ya, 2);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_articulos_proporciones').AsString;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_articulos_proporciones';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('id_tarifas').AsString;
+                    var_Campos_para_Existe_ya[1].Campo_Nombre := 'id_tarifas';
+                    var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_proporciones_tarifas',                                           // param_nombre_tabla
+                                                              'ORDER BY articulos_proporciones_tarifas.id_articulos_proporciones ASC, ' +
+                                                                       'articulos_proporciones_tarifas.id_tarifas ASC',                   // param_order_by
+                                                              FieldByName('id').AsString,                                                 // param_id_a_no_traer ... Estoy insertando
+                                                              var_Campos_para_Existe_ya );                                                // param_Campos_para_Existe_ya
 
                     if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin
@@ -590,5 +507,4 @@ begin
 end;
 
 end.
-
 

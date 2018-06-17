@@ -14,14 +14,6 @@ resourcestring
   rs_Comprobar_PVP_1 = '* El PVP o el PVP CON IMPUESTOS INCLUIDOS, uno de ellos es obligado.';
   rs_Comprobar_PVP_2 = '* El artículo o tiene PVP o tiene PVP CON IMPUESTOS INCLUIDOS, no ambos.';
 
-  rs_Existe_Tarifa_Ya_1 = 'Error al comprobar si la tarifa existe ya para el artículo.';
-  rs_Existe_Tarifa_Ya_2 = 'La tabla ha sido ';
-  rs_Existe_Tarifa_Ya_3 = ' desde el módulo ';
-
-  rs_Existe_Terminal_Ya_1 = 'Error al comprobar si la terminal existe ya para el articulo.';
-  rs_Existe_Terminal_Ya_2 = 'La tabla ha sido ';
-  rs_Existe_Terminal_Ya_3 = ' desde el módulo ';
-
   rs_FormClose_x1  = '* La descripción.';
   rs_FormClose_x2  = '* La descripción para la terminal/TPV, por que la descripción es mayor de 50 caracteres.';
   rs_FormClose_3  = '* La familia de articulos.';
@@ -56,10 +48,6 @@ resourcestring
   rs_Existe_articulo_Referencia_Ya_3 = ' desde el módulo ';
 
   rs_Error = 'ERROR ... ';
-
-  rs_Existe_articulo_Proporcion_Ya_1 = 'Error al comprobar si la proporción existe ya para el articulo.';
-  rs_Existe_articulo_Proporcion_Ya_2 = 'La tabla ha sido ';
-  rs_Existe_articulo_Proporcion_Ya_3 = ' desde el módulo ';
 
   rs_Editar_Registro_Tarifas_1 = 'Tarifa repetida.';
 
@@ -354,8 +342,7 @@ type
         procedure DBGrid_ProporcionesDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
         procedure DBGrid_ProporcionesKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
         procedure Insertar_Registro_Proporciones;
-        function  Existe_articulo_Composicion_Ya( param_id, param_id_articulos, param_id_articulos_composiciones : ShortString ) : Trecord_Existe;
-        function  Existe_articulo_Proporcion_Ya( param_id, param_id_articulos, param_descripcion : ShortString ) : Trecord_Existe;
+
         procedure Insertar_Registro_Composiciones;
         procedure BitBtn_Ver_Situacion_Registro_ComposicionesClick(Sender: TObject);
         procedure BitBtn_Ver_Situacion_Registro_ProporcionesClick(Sender: TObject);
@@ -373,8 +360,6 @@ type
         procedure Edit_Descripcion_Impto_ComprasClick(Sender: TObject);
         procedure Edit_Descripcion_Impto_VentasClick(Sender: TObject);
         procedure Edit_Descripcion_ProveedorClick(Sender: TObject);
-        function  Existe_Terminal_Ya( param_id, param_id_articulos, param_id_terminales : ShortString ) : Trecord_Existe;
-        function  Existe_Tarifa_Ya( param_id, param_id_articulos, param_id_tarifas : ShortString ) : Trecord_Existe;
         procedure Boton_Elegir_FamiliaClick(Sender: TObject);
         procedure Edit_Descripcion_FamiliaClick(Sender: TObject);
         procedure no_Tocar;
@@ -800,197 +785,6 @@ begin
     var_msg.Free;
 end;
 
-function Tform_articulos_001.Existe_Tarifa_Ya( param_id,
-                                               param_id_articulos,
-                                               param_id_tarifas : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-    try
-      { ****************************************************************************
-        Creamos la Transaccion y la conexión con el motor BD, y la abrimos
-        **************************************************************************** }
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        Creamos la SQL Según el motor de BD
-        **************************************************************************** }
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT a.*' );
-        var_SQL.Add(  'FROM articulos_tarifas AS a' );
-        var_SQL.Add(' WHERE a.id_articulos = ' +  Trim(param_id_articulos) );
-        var_SQL.Add(  ' AND a.id_tarifas = ' +  Trim(param_id_tarifas) );
-
-        if Trim(param_id) <> '' then
-        begin
-             var_SQL.Add(  ' AND NOT a.id = ' + Trim(param_id) );
-        end;
-
-        var_SQL.Add(' ORDER BY a.id_articulos ASC, a.id_tarifas ASC' );
-
-      { ****************************************************************************
-        Abrimos la tabla
-        **************************************************************************** }
-        var_SQLQuery      := TSQLQuery.Create(nil);
-        var_SQLQuery.Name := 'SQLQuery_Existe_Tarifa_Ya';
-
-        if UTI_TB_Query_Open( '', '', '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        TRABAJAMOS CON LOS REGISTROS DEVUELTOS
-        ****************************************************************************
-        Si el módulo no se creó, no se permite entrar en él ... Result := False
-        **************************************************************************** }
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-      { ****************************************************************************
-        Cerramos la tabla
-        **************************************************************************** }
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-         on error : Exception do
-         begin
-             UTI_GEN_Error_Log( rs_Existe_Tarifa_Ya_1 +
-                                rs_Existe_Tarifa_Ya_2 + var_SQLQuery.Name +
-                                rs_Existe_Tarifa_Ya_3 + Screen.ActiveForm.Name,
-                                error );
-             try
-                 var_SQL.Free;
-                 var_SQLTransaction.Free;
-                 var_SQLConnector.Free;
-                 var_SQLQuery.Free;
-             except
-             end;
-
-             Result.Fallo_en_Conexion_BD := true;
-         end;
-    end;
-end;
-
-function Tform_articulos_001.Existe_Terminal_Ya( param_id,
-                                                 param_id_articulos,
-                                                 param_id_terminales : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-    try
-      { ****************************************************************************
-        Creamos la Transaccion y la conexión con el motor BD, y la abrimos
-        **************************************************************************** }
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        Creamos la SQL Según el motor de BD
-        **************************************************************************** }
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT a.*' );
-        var_SQL.Add(  'FROM articulos_terminales AS a' );
-
-        var_SQL.Add(' WHERE a.id_articulos = ' +  Trim(param_id_articulos) );
-        var_SQL.Add(  ' AND a.id_terminales = ' +  Trim(param_id_terminales) );
-
-        if Trim(param_id) <> '' then
-        begin
-             var_SQL.Add(  ' AND NOT a.id = ' + Trim(param_id) );
-        end;
-
-        var_SQL.Add(' ORDER BY a.id_articulos ASC, a.id_terminales ASC' );
-
-      { ****************************************************************************
-        Abrimos la tabla
-        **************************************************************************** }
-        var_SQLQuery      := TSQLQuery.Create(nil);
-        var_SQLQuery.Name := 'SQLQuery_Existe_Terminal_Ya';
-
-        if UTI_TB_Query_Open( '', '', '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        TRABAJAMOS CON LOS REGISTROS DEVUELTOS
-        ****************************************************************************
-        Si el módulo no se creó, no se permite entrar en él ... Result := False
-        **************************************************************************** }
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-      { ****************************************************************************
-        Cerramos la tabla
-        **************************************************************************** }
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-         on error : Exception do
-         begin
-             UTI_GEN_Error_Log( rs_Existe_Terminal_Ya_1 +
-                                rs_Existe_Terminal_Ya_2 + var_SQLQuery.Name +
-                                rs_Existe_Terminal_Ya_3 + Screen.ActiveForm.Name,
-                                error );
-             try
-                 var_SQL.Free;
-                 var_SQLTransaction.Free;
-                 var_SQLConnector.Free;
-                 var_SQLQuery.Free;
-             except
-             end;
-
-             Result.Fallo_en_Conexion_BD := true;
-         end;
-    end;
-end;
-
 procedure Tform_articulos_001.Boton_Elegir_ProveedorClick(Sender: TObject);
 var var_Registro : TRecord_Rgtro_Comun;
 begin
@@ -1318,102 +1112,6 @@ begin
     var_msg.Free;
 end;
 
-function Tform_articulos_001.Existe_articulo_Composicion_Ya( param_id,
-                                                             param_id_articulos,
-                                                             param_id_articulos_composiciones : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-    try
-      { ****************************************************************************
-        Creamos la Transaccion y la conexión con el motor BD, y la abrimos
-        **************************************************************************** }
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        Creamos la SQL Según el motor de BD
-        **************************************************************************** }
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT a.*' );
-        var_SQL.Add(  'FROM articulos_composiciones AS a' );
-
-        var_SQL.Add(' WHERE a.id_articulos = ' +  Trim(param_id_articulos) );
-        var_SQL.Add(  ' AND a.id_articulos_composiciones = ' +  Trim(param_id_articulos_composiciones) );
-
-        if Trim(param_id) <> '' then
-        begin
-             var_SQL.Add(  ' AND NOT a.id = ' + Trim(param_id) );
-        end;
-
-        var_SQL.Add(' ORDER BY a.id_articulos ASC, a.id_articulos_composiciones ASC' );
-
-      { ****************************************************************************
-        Abrimos la tabla
-        **************************************************************************** }
-        var_SQLQuery      := TSQLQuery.Create(nil);
-        var_SQLQuery.Name := 'SQLQuery_Existe_articulo_Composicion_Ya';
-
-        if UTI_TB_Query_Open( '', '', '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        TRABAJAMOS CON LOS REGISTROS DEVUELTOS
-        ****************************************************************************
-        Si el módulo no se creó, no se permite entrar en él ... Result := False
-        **************************************************************************** }
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-      { ****************************************************************************
-        Cerramos la tabla
-        **************************************************************************** }
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-         on error : Exception do
-         begin
-             UTI_GEN_Error_Log( rs_Existe_articulo_Composicion_Ya_1 +
-                                rs_Existe_articulo_Composicion_Ya_2 + var_SQLQuery.Name +
-                                rs_Existe_articulo_Composicion_Ya_3 + Screen.ActiveForm.Name,
-                                error );
-             try
-                 var_SQL.Free;
-                 var_SQLTransaction.Free;
-                 var_SQLConnector.Free;
-                 var_SQLQuery.Free;
-             except
-             end;
-
-             Result.Fallo_en_Conexion_BD := true;
-         end;
-    end;
-end;
-
 procedure Tform_articulos_001.DBGrid_ComposicionesDblClick(Sender: TObject);
 begin
     Editar_Registro_Composiciones;
@@ -1610,103 +1308,6 @@ begin
             form_articulos_000.Refrescar_Registros_Composiciones;
             Abort;
         end;
-    end;
-end;
-
-function Tform_articulos_001.Existe_articulo_Proporcion_Ya( param_id,
-                                                            param_id_articulos,
-                                                            param_descripcion : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-    try
-      { ****************************************************************************
-        Creamos la Transaccion y la conexión con el motor BD, y la abrimos
-        **************************************************************************** }
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        Creamos la SQL Según el motor de BD
-        **************************************************************************** }
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT ap.*' );
-        var_SQL.Add(  'FROM articulos_proporciones AS ap' );
-
-        var_SQL.Add(' WHERE ap.id_articulos = ' +  Trim(param_id_articulos) );
-        var_SQL.Add(  ' AND ap.descripcion = ' +  UTI_GEN_Comillas(Trim(param_descripcion)) );
-
-
-        if Trim(param_id) <> '' then
-        begin
-             var_SQL.Add(  ' AND NOT ap.id = ' + Trim(param_id) );
-        end;
-
-        var_SQL.Add(' ORDER BY ap.id_articulos ASC, ap.descripcion ASC' );
-
-      { ****************************************************************************
-        Abrimos la tabla
-        **************************************************************************** }
-        var_SQLQuery      := TSQLQuery.Create(nil);
-        var_SQLQuery.Name := 'SQLQuery_Existe_articulo_Proporcion_Ya';
-
-        if UTI_TB_Query_Open( '', '', '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        TRABAJAMOS CON LOS REGISTROS DEVUELTOS
-        ****************************************************************************
-        Si el módulo no se creó, no se permite entrar en él ... Result := False
-        **************************************************************************** }
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-      { ****************************************************************************
-        Cerramos la tabla
-        **************************************************************************** }
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-         on error : Exception do
-         begin
-             UTI_GEN_Error_Log( rs_Existe_articulo_Proporcion_Ya_1 +
-                                rs_Existe_articulo_Proporcion_Ya_2 + var_SQLQuery.Name +
-                                rs_Existe_articulo_Proporcion_Ya_3 + Screen.ActiveForm.Name,
-                                error );
-             try
-                 var_SQL.Free;
-                 var_SQLTransaction.Free;
-                 var_SQLConnector.Free;
-                 var_SQLQuery.Free;
-             except
-             end;
-
-             Result.Fallo_en_Conexion_BD := true;
-         end;
     end;
 end;
 
@@ -2124,10 +1725,12 @@ begin
 end;
 
 procedure Tform_articulos_001.Editar_Registro_Terminales;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_003;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_003;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -2171,9 +1774,21 @@ begin
                 var_Form.ShowModal;
                 if var_Form.public_Pulso_Aceptar = true then
                 begin
-                    var_record_Existe := Existe_Terminal_Ya( FieldByName('id').AsString,
-                                                             FieldByName('id_articulos').AsString,
-                                                             FieldByName('id_terminales').AsString );
+                    SetLength(var_Campos_para_Existe_ya, 2);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_articulos').AsString;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_articulos';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('id_terminales').AsString;
+                    var_Campos_para_Existe_ya[1].Campo_Nombre := 'id_terminales';
+                    var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_terminales',                              // param_nombre_tabla
+                                                              'ORDER BY articulos_terminales.id_articulos ASC, ' +
+                                                                       'articulos_terminales.id_terminales ASC',   // param_order_by
+                                                              FieldByName('id').AsString,                          // param_id_a_no_traer ... Estoy insertando
+                                                              var_Campos_para_Existe_ya );                         // param_Campos_para_Existe_ya
 
                     if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin
@@ -2226,9 +1841,12 @@ begin
 end;
 
 procedure Tform_articulos_001.Insertar_Registro_Composiciones;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_004;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_004;
+  var_record_Existe         : Trecord_Existe;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -2262,9 +1880,21 @@ begin
                         begin
                             var_Form.Free;
 
-                            var_record_Existe := Existe_articulo_Composicion_Ya( '', // Estoy insertando
-                                                                                 FieldByName('id_articulos').AsString,
-                                                                                 FieldByName('id_articulos_composiciones').AsString );
+                            SetLength(var_Campos_para_Existe_ya, 2);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_articulos').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_articulos';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('id_articulos_composiciones').AsString;
+                            var_Campos_para_Existe_ya[1].Campo_Nombre := 'id_articulos_composiciones';
+                            var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_composiciones',                             // param_nombre_tabla
+                                                                      'ORDER BY articulos_composiciones.id_articulos ASC, ' +
+                                                                               'articulos_composiciones.id_articulos_composiciones ASC',         // param_order_by
+                                                                      '',                       // param_id_a_no_traer ... Estoy insertando
+                                                                      var_Campos_para_Existe_ya );                      // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -2310,10 +1940,13 @@ begin
 end;
 
 procedure Tform_articulos_001.Editar_Registro_Composiciones;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_004;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_004;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -2359,9 +1992,22 @@ begin
                     var_Form.ShowModal;
                     if var_Form.public_Pulso_Aceptar = true then
                         begin
-                            var_record_Existe := Existe_articulo_Composicion_Ya( FieldByName('id').AsString,
-                                                                                 FieldByName('id_articulos').AsString,
-                                                                                 FieldByName('id_articulos_composiciones').AsString );
+
+                            SetLength(var_Campos_para_Existe_ya, 2);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_articulos').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_articulos';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('id_articulos_composiciones').AsString;
+                            var_Campos_para_Existe_ya[1].Campo_Nombre := 'id_articulos_composiciones';
+                            var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_composiciones',                                         // param_nombre_tabla
+                                                                      'ORDER BY articulos_composiciones.id_articulos ASC, ' +
+                                                                               'articulos_composiciones.id_articulos_composiciones ASC', // param_order_by
+                                                                      FieldByName('id').AsString,                                        // param_id_a_no_traer ... Estoy insertando
+                                                                      var_Campos_para_Existe_ya );                                       // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -2509,11 +2155,14 @@ begin
 end;
 
 procedure Tform_articulos_001.Insertar_Registro_Proporciones;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_005;
-    var_record_Existe : Trecord_Existe;
-    var_descripcion   : ShortString;
-    var_Fecha_Hora    : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_005;
+  var_record_Existe         : Trecord_Existe;
+  var_descripcion           : ShortString;
+  var_Fecha_Hora            : ShortString;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -2549,9 +2198,21 @@ begin
                         begin
                             var_Form.Free;
 
-                            var_record_Existe := Existe_articulo_Proporcion_Ya( '', // Estoy insertando
-                                                                                FieldByName('id_articulos').AsString,
-                                                                                FieldByName('descripcion').AsString );
+                            SetLength(var_Campos_para_Existe_ya, 2);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_articulos').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_articulos';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('descripcion').AsString;
+                            var_Campos_para_Existe_ya[1].Campo_Nombre := 'descripcion';
+                            var_Campos_para_Existe_ya[1].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_proporciones',                              // param_nombre_tabla
+                                                                      'ORDER BY articulos_proporciones.id_articulos ASC, ' +
+                                                                               'articulos_proporciones.descripcion ASC',     // param_order_by
+                                                                      '',                                                    // param_id_a_no_traer ... Estoy insertando
+                                                                      var_Campos_para_Existe_ya );                           // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -2606,10 +2267,13 @@ begin
 end;
 
 procedure Tform_articulos_001.Editar_Registro_Proporciones;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_005;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_005;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -2655,9 +2319,21 @@ begin
                     var_Form.ShowModal;
                     if var_Form.public_Pulso_Aceptar = true then
                         begin
-                            var_record_Existe := Existe_articulo_Proporcion_Ya( FieldByName('id').AsString,
-                                                                                FieldByName('id_articulos').AsString,
-                                                                                FieldByName('descripcion').AsString );
+                            SetLength(var_Campos_para_Existe_ya, 2);
+
+                            var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_articulos').AsString;
+                            var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_articulos';
+                            var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('descripcion').AsString;
+                            var_Campos_para_Existe_ya[1].Campo_Nombre := 'descripcion';
+                            var_Campos_para_Existe_ya[1].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                            var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_proporciones',                              // param_nombre_tabla
+                                                                      'ORDER BY articulos_proporciones.id_articulos ASC, ' +
+                                                                               'articulos_proporciones.descripcion ASC',     // param_order_by
+                                                                      FieldByName('id').AsString,                            // param_id_a_no_traer ... Estoy insertando
+                                                                      var_Campos_para_Existe_ya );                           // param_Campos_para_Existe_ya
 
                             if var_record_Existe.Fallo_en_Conexion_BD = true then
                                 begin
@@ -2757,10 +2433,13 @@ begin
 end;
 
 procedure Tform_articulos_001.Editar_Registro_Stock;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_008;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_008;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -2993,10 +2672,13 @@ begin
 end;
 
 procedure Tform_articulos_001.Insertar_Registro_Referencias;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_009;
-    var_record_Existe : Trecord_Existe;
-    var_Fecha_Hora    : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_009;
+  var_record_Existe         : Trecord_Existe;
+  var_Fecha_Hora            : ShortString;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -3581,10 +3263,13 @@ begin
 end;
 
 procedure Tform_articulos_001.Editar_Registro_Tarifas;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_002;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_002;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin
@@ -3628,9 +3313,21 @@ begin
                 var_Form.ShowModal;
                 if var_Form.public_Pulso_Aceptar = true then
                 begin
-                    var_record_Existe := Existe_Tarifa_Ya( FieldByName('id').AsString,
-                                                           FieldByName('id_articulos').AsString,
-                                                           FieldByName('id_tarifas').AsString );
+                    SetLength(var_Campos_para_Existe_ya, 2);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_articulos').AsString;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_articulos';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('id_tarifas').AsString;
+                    var_Campos_para_Existe_ya[1].Campo_Nombre := 'id_tarifas';
+                    var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_tarifas',                             // param_nombre_tabla
+                                                              'ORDER BY articulos_tarifas.id_articulos ASC, ' +
+                                                                       'articulos_tarifas.id_tarifas ASC',         // param_order_by
+                                                              FieldByName('id').AsString,                       // param_id_a_no_traer ... Estoy insertando
+                                                              var_Campos_para_Existe_ya );                      // param_Campos_para_Existe_ya
 
                     if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin
@@ -3685,5 +3382,7 @@ end;
 end.
 
 {
+
+
 
 }

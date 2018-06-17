@@ -10,7 +10,7 @@ object form_visitas_001: Tform_visitas_001
   OnActivate = FormActivate
   OnClose = FormClose
   OnCreate = FormCreate
-  LCLVersion = '1.8.0.6'
+  LCLVersion = '1.8.4.0'
   object ButtonPanel1: TButtonPanel
     Left = 6
     Height = 34

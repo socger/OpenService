@@ -84,7 +84,6 @@ type
     procedure SQLQuery_MargenesBeforeEdit(DataSet: TDataSet);
     procedure SQLQuery_MargenesBeforePost(DataSet: TDataSet);
     function  Filtrar_Principal( param_Cambiamos_Filtro : Boolean ) : ShortInt;
-    function  Existe_el_Margen_Ya( param_id, param_mayor_igual_que, param_menor_igual_que : ShortString ) : Trecord_Existe;
 
     private
         { private declarations }
@@ -537,108 +536,16 @@ begin
     SQLQuery_Margenes.Locate('mayor_igual_que', var_mayor_igual_que, []);
 end;
 
-function Tform_margenes_tarifas_000.Existe_el_Margen_Ya( param_id,
-                                                         param_mayor_igual_que,
-                                                         param_menor_igual_que : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-    try
-        // ***************************************************************************************** //
-        // ** Creamos la Transaccion y la conexión con el motor BD, y la abrimos                  ** //
-        // ***************************************************************************************** //
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-        // ***************************************************************************************** //
-        // ** Creamos la SQL Según el motor de BD                                                 ** //
-        // ***************************************************************************************** //
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT mt.*' );
-        var_SQL.Add(  'FROM margenes_tarifas AS mt' );
-        var_SQL.Add(' WHERE mt.mayor_igual_que = ' + Trim(param_mayor_igual_que) );
-        var_SQL.Add(' AND mt.menor_igual_que = ' + Trim(param_menor_igual_que) );
-
-        if Trim(param_id) <> '' then
-        begin
-             var_SQL.Add(  ' AND NOT mt.id = ' + Trim(param_id) );
-        end;
-
-        var_SQL.Add(' ORDER BY mt.mayor_igual_que ASC, mt.menor_igual_que ASC' );
-
-        // ***************************************************************************************** //
-        // ** Abrimos la tabla                                                                    ** //
-        // ***************************************************************************************** //
-        var_SQLQuery      := TSQLQuery.Create(nil);
-        var_SQLQuery.Name := 'SQLQuery_Existe_el_Margen_Ya';
-
-        if UTI_TB_Query_Open( '', '', '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-        // ***************************************************************************************** //
-        // ** TRABAJAMOS CON LOS REGISTROS DEVUELTOS                                              ** //
-        // ***************************************************************************************** //
-        // ** Si el módulo no se creó, no se permite entrar en él ... Result := False             ** //
-        // ***************************************************************************************** //
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-        // ***************************************************************************************** //
-        // ** Cerramos la tabla                                                                   ** //
-        // ***************************************************************************************** //
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-         on error : Exception do
-         begin
-             UTI_GEN_Error_Log( 'Error al comprobar si el margen de tarifa existe ya.' +
-                                'La tabla ha sido ' + var_SQLQuery.Name + ' desde el módulo ' +
-                                Screen.ActiveForm.Name,
-                                error );
-             try
-                 var_SQL.Free;
-                 var_SQLTransaction.Free;
-                 var_SQLConnector.Free;
-                 var_SQLQuery.Free;
-             except
-             end;
-
-             Result.Fallo_en_Conexion_BD := true;
-         end;
-    end;
-end;
-
 procedure Tform_margenes_tarifas_000.Insertar_Registro;
-var var_msg             : TStrings;
-    var_Form            : Tform_margenes_tarifas_001;
-    var_Fecha_Hora      : ShortString;
-    var_record_Existe   : Trecord_Existe;
-    var_mayor_igual_que : String;
-    var_menor_igual_que : String;
+var
+    var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+    var_msg                   : TStrings;
+    var_Form                  : Tform_margenes_tarifas_001;
+    var_Fecha_Hora            : ShortString;
+    var_record_Existe         : Trecord_Existe;
+    var_mayor_igual_que       : String;
+    var_menor_igual_que       : String;
+
 begin
     with SQLQuery_Margenes do
     begin
@@ -676,9 +583,21 @@ begin
                         var_menor_igual_que := FieldByName('mayor_igual_que').asString;
                     end;
 
-                    var_record_Existe := Existe_el_Margen_Ya( '',
-                                                              var_mayor_igual_que,
-                                                              var_menor_igual_que );
+                    SetLength(var_Campos_para_Existe_ya, 2);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := var_mayor_igual_que;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'mayor_igual_que';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_Campos_para_Existe_ya[1].Campo_Valor  := var_menor_igual_que;
+                    var_Campos_para_Existe_ya[1].Campo_Nombre := 'menor_igual_que';
+                    var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'margenes_tarifas',                                 // param_nombre_tabla
+                                                              'ORDER BY margenes_tarifas.mayor_igual_que ASC, ' +
+                                                                       'margenes_tarifas.menor_igual_que ASC',    // param_order_by
+                                                              '',                                                 // param_id_a_no_traer ... Estoy insertando
+                                                              var_Campos_para_Existe_ya );                        // param_Campos_para_Existe_ya
 
                     if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin
@@ -762,12 +681,15 @@ begin
 end;
 
 procedure Tform_margenes_tarifas_000.Editar_Registro;
-var var_msg             : TStrings;
-    var_Form            : Tform_margenes_tarifas_001;
-    var_record_Existe   : Trecord_Existe;
-    var_id              : ShortString;
-    var_mayor_igual_que : String;
-    var_menor_igual_que : String;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_margenes_tarifas_001;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+  var_mayor_igual_que       : String;
+  var_menor_igual_que       : String;
+
 begin
     with SQLQuery_Margenes do
     begin
@@ -821,9 +743,21 @@ begin
                         var_menor_igual_que := FieldByName('mayor_igual_que').asString;
                     end;
 
-                    var_record_Existe := Existe_el_Margen_Ya( FieldByName('id').AsString,
-                                                              var_mayor_igual_que,
-                                                              var_menor_igual_que );
+                    SetLength(var_Campos_para_Existe_ya, 2);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := var_mayor_igual_que;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'mayor_igual_que';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_Campos_para_Existe_ya[1].Campo_Valor  := var_menor_igual_que;
+                    var_Campos_para_Existe_ya[1].Campo_Nombre := 'menor_igual_que';
+                    var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'margenes_tarifas',                                 // param_nombre_tabla
+                                                              'ORDER BY margenes_tarifas.mayor_igual_que ASC, ' +
+                                                                       'margenes_tarifas.menor_igual_que ASC',    // param_order_by
+                                                              FieldByName('id').AsString,                         // param_id_a_no_traer ... Estoy insertando
+                                                              var_Campos_para_Existe_ya );                        // param_Campos_para_Existe_ya
 
                     if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin

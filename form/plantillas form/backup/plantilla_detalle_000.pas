@@ -321,7 +321,9 @@ end;
 
 procedure Tform_plantilla_detalle_000.Antes_del_Post_NO_Principal_Sin_Rellenar_Permitido_NO( p_msg,
                                                                                              p_msg_Comprobar : TStrings );
-var var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_record_Existe         : Trecord_Existe;
 begin
   { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
 
@@ -400,13 +402,32 @@ begin
     // ********************************************************************************************* //
     if SQLQuery_Tabla_no_Principal.State = dsInsert then
     begin
-      var_record_Existe := Existe_la_Cta_Ya( '',
-                                             FieldByName('descripcion').AsString );
+      SetLength(var_Campos_para_Existe_ya, 1);
+
+      var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+      var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+      var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+      var_record_Existe := UTI_RGTRO_Existe_Ya( 'cuenta',                          // param_nombre_tabla
+                                                'ORDER BY cuentas.id_cuentas ASC', // param_order_by
+                                                '',                                // param_id_a_no_traer ... Estoy insertando
+                                                var_Campos_para_Existe_ya );       // param_Campos_para_Existe_ya
     end;
 
     if SQLQuery_Tabla_no_Principal.State = dsEdit then
     begin
-      var_record_Existe := Existe_la_Cta_Ya( FieldByName('id').AsString,
+      SetLength(var_Campos_para_Existe_ya, 1);
+
+      var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+      var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+      var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+      var_record_Existe := UTI_RGTRO_Existe_Ya( 'cuenta',                          // param_nombre_tabla
+                                                'ORDER BY cuentas.id_cuentas ASC', // param_order_by
+                                                FieldByName('id').AsString,        // param_id_a_no_traer ... Estoy insertando
+                                                var_Campos_para_Existe_ya );       // param_Campos_para_Existe_ya
+
+      var_record_Existe := Existe_la_Cta_Ya( ,
                                              FieldByName('descripcion').AsString );
 
     end;

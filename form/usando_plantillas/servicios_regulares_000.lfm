@@ -3378,7 +3378,7 @@ inherited f_servicios_regulares_000: Tf_servicios_regulares_000
     inherited Panel1: TPanel
       Left = 1053
     end
-    object Image_Punto_Rojo: TImage[6]
+    object Image_Punto_Rojo: TImage[7]
       Left = 686
       Height = 41
       Top = 0
@@ -5123,9 +5123,6 @@ inherited f_servicios_regulares_000: Tf_servicios_regulares_000
         Precision = -1
       end>
     left = 88
-  end
-  inherited DataSource_Filtros: TDataSource
-    left = 136
   end
   object SQLQuery_Temporadas: TSQLQuery[9]
     PacketRecords = 20

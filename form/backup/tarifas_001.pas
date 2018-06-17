@@ -46,7 +46,6 @@ type
     procedure CancelButtonClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
-    function  Existe_Margen_Ya( param_id_tarifas, param_id_margenes_tarifas : String ) : Trecord_Existe;
     function  Comprobar_No_Tocar( param_Reproducir_Mensajes, param_Ejecutar_No_Tocar : Boolean ) : Boolean;
 
   private
@@ -330,6 +329,243 @@ begin
     // ********************************************************************************************* //
 end;
 
+function Tform_tarifas_001.Comprobar_No_Tocar( param_Reproducir_Mensajes,
+                                               param_Ejecutar_No_Tocar : Boolean ) : Boolean;
+begin
+    Result := false;
+
+    // ********************************************************************************************* //
+    // ** Si se llamó para solo verlo, pues no se puede tocar                                     ** //
+    // ********************************************************************************************* //
+    if public_Solo_Ver = true then
+    begin
+        Result := true;
+        if param_Ejecutar_No_Tocar = true then no_Tocar;
+    end;
+end;
+
+procedure Tform_tarifas_001.Editar_Registro_Margenes;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_tarifas_002;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
+begin
+    if Comprobar_No_Tocar(true, false) = true then
+    begin
+        Exit;
+    end;
+
+    with form_tarifas_000.SQLQuery_Tarifas_Margenes do
+    begin
+        var_msg := TStringList.Create;
+
+        if (RecordCount > 0) and
+           (Active = true)   then
+        begin
+            var_id := FieldByName('id').AsString;
+
+            if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
+            begin
+                if UTI_RGTRO_isLock( 'tarifas_margenes',
+                                     FieldByName('id').AsString,
+                                     true ) = true then
+                begin
+                    Exit;
+                end else begin
+                    if UTI_RGTRO_Lock( 'tarifas_margenes',
+                                       FieldByName('id').AsString ) = true then
+                         Edit
+                    else Exit;
+                end;
+
+                var_Form := Tform_tarifas_002.Create(nil);
+
+                var_Form.public_Menu_Worked := public_Menu_Worked;
+
+                if public_Solo_Ver = true then
+                begin
+                    var_Form.public_Solo_Ver := true;
+                end;
+
+                var_Form.para_Empezar;
+
+                var_Form.ShowModal;
+                if var_Form.public_Pulso_Aceptar = true then
+                begin
+                    SetLength(var_Campos_para_Existe_ya, 1);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_margenes_tarifas').AsString;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_margenes_tarifas';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'tarifas_margenes',                                  // param_nombre_tabla
+                                                              'ORDER BY tarifas_margenes.id_tarifas ASC, ' +
+                                                                       'tarifas_margenes.id_margenes_tarifas ASC', // param_order_by
+                                                              FieldByName('id_tarifas').AsString,                       // param_id_a_no_traer ... Estoy insertando
+                                                              var_Campos_para_Existe_ya );                      // param_Campos_para_Existe_ya
+
+                    if var_record_Existe.Fallo_en_Conexion_BD = true then
+                    begin
+                        var_Form.Free;
+                        Cancel;
+                    end else begin
+                        if var_record_Existe.Existe = false then
+                        begin
+                            if UTI_DATOS_TABLA_SeCambioAlgoEnRgtro( form_tarifas_000.SQLQuery_Tarifas_Margenes ) = true then
+                            begin
+                                FieldByName('Change_WHEN').Value    := UTI_CN_Fecha_Hora;
+                                FieldByName('Change_Id_User').Value := Form_Menu.public_User;
+
+                                UTI_RGTRO_Grabar_Antes( 'tarifas_margenes',
+                                                        form_tarifas_000.SQLQuery_Tarifas_Margenes );
+                            end else begin
+                                Cancel;
+                            end;
+
+                            var_Form.Free;
+
+                        end else begin
+                            var_Form.Free;
+                            Cancel;
+                            var_msg.Clear;
+                            var_msg.Add( 'Margen repetido para esta tarifa.');
+
+                            if UpperCase(var_record_Existe.deBaja) = 'S' then
+                            begin
+                                var_msg.Add(rs_Rgtro_Borrado);
+                            end;
+
+                            UTI_GEN_Aviso(true, var_msg, rs_Ya_Existe, True, False);
+                        end;
+                    end;
+                end else begin
+                    var_Form.Free;
+                    Cancel;
+                end;
+
+                UTI_RGTRO_UnLock( 'tarifas_margenes', var_id );
+            end;
+        end else begin
+            var_msg.Add(rs_no_Hay_Rgtros);
+            UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
+        end;
+    end;
+
+    var_msg.Free;
+end;
+
+procedure Tform_tarifas_001.Insertar_Registro_Margenes;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_tarifas_002;
+  var_record_Existe         : Trecord_Existe;
+
+begin
+    if Comprobar_No_Tocar(true, false) = true then
+    begin
+        Exit;
+    end;
+
+    with form_tarifas_000.SQLQuery_Tarifas_Margenes do
+    begin
+        var_msg := TStringList.Create;
+
+        if UTI_USR_Permiso_SN(public_Menu_Worked, 'A', True) = True then
+        begin
+            if public_Solo_Ver = True then
+            begin
+                var_msg.Clear;
+                var_msg.Add(rs_Solo_Visualizar);
+                UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
+            end else begin
+                Insert;
+
+                FieldByName('Beneficio_en_Tanto_por_Ciento_SN').AsString := 'S';
+                FieldByName('id_tarifas').AsString                       := form_tarifas_000.SQLQuery_Tarifas.FieldByName('id').AsString;
+
+                var_Form := Tform_tarifas_002.Create(nil);
+
+                var_Form.para_Empezar;
+
+                var_Form.ShowModal;
+                if var_Form.public_Pulso_Aceptar = true then
+                begin
+                    var_Form.Free;
+
+                    SetLength(var_Campos_para_Existe_ya, 1);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_margenes_tarifas').AsString;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_margenes_tarifas';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'tarifas_margenes',                                  // param_nombre_tabla
+                                                              'ORDER BY tarifas_margenes.id_tarifas ASC, ' +
+                                                                       'tarifas_margenes.id_margenes_tarifas ASC', // param_order_by
+                                                              '',                       // param_id_a_no_traer ... Estoy insertando
+                                                              var_Campos_para_Existe_ya );                      // param_Campos_para_Existe_ya
+
+                    if var_record_Existe.Fallo_en_Conexion_BD = true then
+                    begin
+                        // var_Form.Free;
+                        Cancel;
+                    end else begin
+                        if var_record_Existe.Existe = false then
+                        begin
+                            FieldByName('Insert_WHEN').Value    := UTI_CN_Fecha_Hora;
+                            FieldByName('Insert_Id_User').Value := Form_Menu.public_User;
+
+                            UTI_RGTRO_Grabar_Antes( 'tarifas_margenes',
+                                                    form_tarifas_000.SQLQuery_Tarifas_Margenes );
+                        end else begin
+                            Cancel;
+                            var_msg.Clear;
+
+                            var_msg.Add( 'Margen repetido para esta tarifa.');
+
+                            if UpperCase(var_record_Existe.deBaja) = 'S' then
+                            begin
+                                var_msg.Add(rs_Rgtro_Borrado);
+                            end;
+
+                            UTI_GEN_Aviso(true, var_msg, rs_Ya_Existe, True, False);
+                        end;
+                    end;
+                end else begin
+                    var_Form.Free;
+                    Cancel;
+                end;
+            end;
+        end;
+
+        var_msg.Free;
+    end;
+end;
+
+procedure Tform_tarifas_001.Borrar_Registro_Margenes;
+begin
+    if Comprobar_No_Tocar(true, false) = true then
+    begin
+        Exit;
+    end;
+
+    if UTI_USR_Permiso_SN(public_Menu_Worked, 'B', True) = True then
+    begin
+        UTI_RGTRO_Borrar( 'tarifas_margenes',
+                          form_tarifas_000.SQLQuery_Tarifas_Margenes,
+                          public_Solo_Ver,
+                          public_Menu_Worked );
+    end;
+end;
+
+
+
+end.
+
+{
 function Tform_tarifas_001.Existe_Margen_Ya( param_id_tarifas,
                                              param_id_margenes_tarifas : String ) : Trecord_Existe;
 var var_SQL            : TStrings;
@@ -344,8 +580,8 @@ begin
         var_SQLTransaction := TSQLTransaction.Create(nil);
         var_SQLConnector   := TSQLConnector.Create(nil);
 
-        if UTI_CN_Abrir( var_SQLTransaction,
-                         var_SQLConnector ) = False then UTI_GEN_Salir;
+        if UTI_CN_Connector_Open( var_SQLTransaction,
+                                  var_SQLConnector ) = False then UTI_GEN_Salir;
 
         // ***************************************************************************************** //
         // ** Creamos la SQL Según el motor de BD                                                 ** //
@@ -427,215 +663,5 @@ begin
     end;
 end;
 
-function Tform_tarifas_001.Comprobar_No_Tocar( param_Reproducir_Mensajes,
-                                               param_Ejecutar_No_Tocar : Boolean ) : Boolean;
-begin
-    Result := false;
-
-    // ********************************************************************************************* //
-    // ** Si se llamó para solo verlo, pues no se puede tocar                                     ** //
-    // ********************************************************************************************* //
-    if public_Solo_Ver = true then
-    begin
-        Result := true;
-        if param_Ejecutar_No_Tocar = true then no_Tocar;
-    end;
-end;
-
-procedure Tform_tarifas_001.Editar_Registro_Margenes;
-var var_msg           : TStrings;
-    var_Form          : Tform_tarifas_002;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
-begin
-    if Comprobar_No_Tocar(true, false) = true then
-    begin
-        Exit;
-    end;
-
-    with form_tarifas_000.SQLQuery_Tarifas_Margenes do
-    begin
-        var_msg := TStringList.Create;
-
-        if (RecordCount > 0) and
-           (Active = true)   then
-        begin
-            var_id := FieldByName('id').AsString;
-
-            if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
-            begin
-                if UTI_RGTRO_isLock( 'tarifas_margenes',
-                                     FieldByName('id').AsString,
-                                     true ) = true then
-                begin
-                    Exit;
-                end else begin
-                    if UTI_RGTRO_Lock( 'tarifas_margenes',
-                                       FieldByName('id').AsString ) = true then
-                         Edit
-                    else Exit;
-                end;
-
-                var_Form := Tform_tarifas_002.Create(nil);
-
-                var_Form.public_Menu_Worked := public_Menu_Worked;
-
-                if public_Solo_Ver = true then
-                begin
-                    var_Form.public_Solo_Ver := true;
-                end;
-
-                var_Form.para_Empezar;
-
-                var_Form.ShowModal;
-                if var_Form.public_Pulso_Aceptar = true then
-                begin
-                    var_record_Existe := Existe_Margen_Ya( FieldByName('id_tarifas').AsString,
-                                                           FieldByName('id_margenes_tarifas').AsString );
-
-                    if var_record_Existe.Fallo_en_Conexion_BD = true then
-                    begin
-                        var_Form.Free;
-                        Cancel;
-                    end else begin
-                        if var_record_Existe.Existe = false then
-                        begin
-                            if UTI_DATOS_TABLA_SeCambioAlgoEnRgtro( form_tarifas_000.SQLQuery_Tarifas_Margenes ) = true then
-                            begin
-                                FieldByName('Change_WHEN').Value    := UTI_CN_Fecha_Hora;
-                                FieldByName('Change_Id_User').Value := Form_Menu.public_User;
-
-                                UTI_RGTRO_Grabar_Antes( 'tarifas_margenes',
-                                                        form_tarifas_000.SQLQuery_Tarifas_Margenes );
-                            end else begin
-                                Cancel;
-                            end;
-
-                            var_Form.Free;
-
-                        end else begin
-                            var_Form.Free;
-                            Cancel;
-                            var_msg.Clear;
-                            var_msg.Add( 'Margen repetido para esta tarifa.');
-
-                            if UpperCase(var_record_Existe.deBaja) = 'S' then
-                            begin
-                                var_msg.Add(rs_Rgtro_Borrado);
-                            end;
-
-                            UTI_GEN_Aviso(true, var_msg, rs_Ya_Existe, True, False);
-                        end;
-                    end;
-                end else begin
-                    var_Form.Free;
-                    Cancel;
-                end;
-
-                UTI_RGTRO_UnLock( 'tarifas_margenes', var_id );
-            end;
-        end else begin
-            var_msg.Add(rs_no_Hay_Rgtros);
-            UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
-        end;
-    end;
-
-    var_msg.Free;
-end;
-
-procedure Tform_tarifas_001.Insertar_Registro_Margenes;
-var var_msg           : TStrings;
-    var_Form          : Tform_tarifas_002;
-    var_record_Existe : Trecord_Existe;
-begin
-    if Comprobar_No_Tocar(true, false) = true then
-    begin
-        Exit;
-    end;
-
-    with form_tarifas_000.SQLQuery_Tarifas_Margenes do
-    begin
-        var_msg := TStringList.Create;
-
-        if UTI_USR_Permiso_SN(public_Menu_Worked, 'A', True) = True then
-        begin
-            if public_Solo_Ver = True then
-            begin
-                var_msg.Clear;
-                var_msg.Add(rs_Solo_Visualizar);
-                UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
-            end else begin
-                Insert;
-
-                FieldByName('Beneficio_en_Tanto_por_Ciento_SN').AsString := 'S';
-                FieldByName('id_tarifas').AsString                       := form_tarifas_000.SQLQuery_Tarifas.FieldByName('id').AsString;
-
-                var_Form := Tform_tarifas_002.Create(nil);
-
-                var_Form.para_Empezar;
-
-                var_Form.ShowModal;
-                if var_Form.public_Pulso_Aceptar = true then
-                begin
-                    var_Form.Free;
-
-                    var_record_Existe := Existe_Margen_Ya( '', // Estoy insertando/creando y lo que tengo que comprobar es que no exista la pwd en cualquier otro usuario, por lo que el campo id_Users no lo paso
-                                                           FieldByName('id_margenes_tarifas').AsString );
-
-                    if var_record_Existe.Fallo_en_Conexion_BD = true then
-                    begin
-                        // var_Form.Free;
-                        Cancel;
-                    end else begin
-                        if var_record_Existe.Existe = false then
-                        begin
-                            FieldByName('Insert_WHEN').Value    := UTI_CN_Fecha_Hora;
-                            FieldByName('Insert_Id_User').Value := Form_Menu.public_User;
-
-                            UTI_RGTRO_Grabar_Antes( 'tarifas_margenes',
-                                                    form_tarifas_000.SQLQuery_Tarifas_Margenes );
-                        end else begin
-                            Cancel;
-                            var_msg.Clear;
-
-                            var_msg.Add( 'Margen repetido para esta tarifa.');
-
-                            if UpperCase(var_record_Existe.deBaja) = 'S' then
-                            begin
-                                var_msg.Add(rs_Rgtro_Borrado);
-                            end;
-
-                            UTI_GEN_Aviso(true, var_msg, rs_Ya_Existe, True, False);
-                        end;
-                    end;
-                end else begin
-                    var_Form.Free;
-                    Cancel;
-                end;
-            end;
-        end;
-
-        var_msg.Free;
-    end;
-end;
-
-procedure Tform_tarifas_001.Borrar_Registro_Margenes;
-begin
-    if Comprobar_No_Tocar(true, false) = true then
-    begin
-        Exit;
-    end;
-
-    if UTI_USR_Permiso_SN(public_Menu_Worked, 'B', True) = True then
-    begin
-        UTI_RGTRO_Borrar( 'tarifas_margenes',
-                          form_tarifas_000.SQLQuery_Tarifas_Margenes,
-                          public_Solo_Ver,
-                          public_Menu_Worked );
-    end;
-end;
-
-
-
-end.
+}
 

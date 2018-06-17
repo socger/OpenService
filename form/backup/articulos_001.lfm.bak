@@ -11,7 +11,7 @@ object form_articulos_001: Tform_articulos_001
   OnActivate = FormActivate
   OnClose = FormClose
   OnCreate = FormCreate
-  LCLVersion = '1.4.2.0'
+  LCLVersion = '1.8.4.0'
   object ButtonPanel1: TButtonPanel
     Left = 6
     Height = 34
@@ -289,8 +289,8 @@ object form_articulos_001: Tform_articulos_001
     Height = 434
     Top = 192
     Width = 1236
-    ActivePage = TabSheet_Informacion_Adicional
-    TabIndex = 0
+    ActivePage = TabSheet_Composiciones_Proporciones
+    TabIndex = 4
     TabOrder = 10
     object TabSheet_Informacion_Adicional: TTabSheet
       Caption = 'INFORMACIÓN ADICIONAL'
@@ -663,7 +663,6 @@ object form_articulos_001: Tform_articulos_001
           item
             Alignment = taCenter
             Title.Alignment = taCenter
-            Title.Caption = 'CoR'
             Title.Font.CharSet = ANSI_CHARSET
             Title.Font.Color = clBlack
             Title.Font.Height = -15
@@ -671,6 +670,7 @@ object form_articulos_001: Tform_articulos_001
             Title.Font.Pitch = fpVariable
             Title.Font.Quality = fqDraft
             Title.Font.Style = [fsBold]
+            Title.Caption = 'CoR'
             Width = 37
             FieldName = 'COLUMNA_CON_IMAGEN'
           end>
@@ -2222,16 +2222,16 @@ object form_articulos_001: Tform_articulos_001
                 item
                   Color = 8816262
                   Title.Alignment = taCenter
-                  Title.Caption = 'Desde'
                   Title.Color = 8816262
+                  Title.Caption = 'Desde'
                   Width = 90
                   FieldName = 'OT_mayor_igual_que'
                 end              
                 item
                   Color = 8816262
                   Title.Alignment = taCenter
-                  Title.Caption = 'Hasta'
                   Title.Color = 8816262
+                  Title.Caption = 'Hasta'
                   Width = 90
                   FieldName = 'OT_menor_igual_que'
                 end              
@@ -2239,32 +2239,32 @@ object form_articulos_001: Tform_articulos_001
                   Alignment = taRightJustify
                   Color = 13616925
                   Title.Alignment = taCenter
-                  Title.Caption = 'Cantidad'
                   Title.Color = 13616925
+                  Title.Caption = 'Cantidad'
                   Width = 100
                   FieldName = 'OT_Beneficio'
                 end              
                 item
                   Color = 13616925
                   Title.Alignment = taCenter
-                  Title.Caption = '%'
                   Title.Color = 13616925
+                  Title.Caption = '%'
                   Width = 30
                   FieldName = 'OT_Beneficio_en_Tanto_por_Ciento_SN'
                 end              
                 item
                   Color = 8816262
                   Title.Alignment = taCenter
-                  Title.Caption = 'PVP'
                   Title.Color = 8816262
+                  Title.Caption = 'PVP'
                   Width = 100
                   FieldName = 'OT_Importe_Neto_Sugerido'
                 end              
                 item
                   Color = 8816262
                   Title.Alignment = taCenter
-                  Title.Caption = 'PVP+imptos'
                   Title.Color = 8816262
+                  Title.Caption = 'PVP+imptos'
                   Width = 100
                   FieldName = 'OT_Importe_Impuestos_Incluidos_Sugerido'
                 end              
@@ -2277,7 +2277,6 @@ object form_articulos_001: Tform_articulos_001
                   Font.Pitch = fpVariable
                   Font.Quality = fqDraft
                   Title.Alignment = taCenter
-                  Title.Caption = 'PVP'
                   Title.Color = 14913900
                   Title.Font.CharSet = ANSI_CHARSET
                   Title.Font.Color = clWhite
@@ -2286,6 +2285,7 @@ object form_articulos_001: Tform_articulos_001
                   Title.Font.Pitch = fpVariable
                   Title.Font.Quality = fqDraft
                   Title.Font.Style = [fsBold]
+                  Title.Caption = 'PVP'
                   Width = 100
                   FieldName = 'Importe_Neto'
                 end              
@@ -2298,7 +2298,6 @@ object form_articulos_001: Tform_articulos_001
                   Font.Pitch = fpVariable
                   Font.Quality = fqDraft
                   Title.Alignment = taCenter
-                  Title.Caption = 'PVP+imptos'
                   Title.Color = 14913900
                   Title.Font.CharSet = ANSI_CHARSET
                   Title.Font.Color = clWhite
@@ -2307,6 +2306,7 @@ object form_articulos_001: Tform_articulos_001
                   Title.Font.Pitch = fpVariable
                   Title.Font.Quality = fqDraft
                   Title.Font.Style = [fsBold]
+                  Title.Caption = 'PVP+imptos'
                   Width = 100
                   FieldName = 'Importe_Impuestos_Incluidos'
                 end              
@@ -3891,8 +3891,8 @@ object form_articulos_001: Tform_articulos_001
         Height = 334
         Top = 64
         Width = 1214
-        ActivePage = TabSheet_Composiciones
-        TabIndex = 0
+        ActivePage = TabSheet_Proporciones
+        TabIndex = 1
         TabOrder = 0
         object TabSheet_Composiciones: TTabSheet
           Caption = 'COM&POSICION'
@@ -4213,8 +4213,8 @@ object form_articulos_001: Tform_articulos_001
               item
                 Color = clSilver
                 Title.Alignment = taCenter
-                Title.Caption = 'a descontar'
                 Title.Color = clSilver
+                Title.Caption = 'a descontar'
                 Width = 95
                 FieldName = 'Cantidad_Descontar'
               end>
@@ -4415,32 +4415,32 @@ object form_articulos_001: Tform_articulos_001
                     Alignment = taRightJustify
                     Color = 13616925
                     Title.Alignment = taCenter
-                    Title.Caption = 'Cantidad'
                     Title.Color = 13616925
+                    Title.Caption = 'Cantidad'
                     Width = 115
                     FieldName = 'Beneficio'
                   end                
                   item
                     Color = 13616925
                     Title.Alignment = taCenter
-                    Title.Caption = '%'
                     Title.Color = 13616925
+                    Title.Caption = '%'
                     Width = 30
                     FieldName = 'Beneficio_en_Tanto_por_Ciento_SN'
                   end                
                   item
                     Color = 8816262
                     Title.Alignment = taCenter
-                    Title.Caption = 'PVP'
                     Title.Color = 8816262
+                    Title.Caption = 'PVP'
                     Width = 100
                     FieldName = 'Importe_Neto_Sugerido'
                   end                
                   item
                     Color = 8816262
                     Title.Alignment = taCenter
-                    Title.Caption = 'PVP+imptos'
                     Title.Color = 8816262
+                    Title.Caption = 'PVP+imptos'
                     Width = 100
                     FieldName = 'Importe_Impuestos_Incluidos_Sugerido'
                   end                
@@ -4453,7 +4453,6 @@ object form_articulos_001: Tform_articulos_001
                     Font.Pitch = fpVariable
                     Font.Quality = fqDraft
                     Title.Alignment = taCenter
-                    Title.Caption = 'PVP'
                     Title.Color = 14913900
                     Title.Font.CharSet = ANSI_CHARSET
                     Title.Font.Color = clWhite
@@ -4462,6 +4461,7 @@ object form_articulos_001: Tform_articulos_001
                     Title.Font.Pitch = fpVariable
                     Title.Font.Quality = fqDraft
                     Title.Font.Style = [fsBold]
+                    Title.Caption = 'PVP'
                     Width = 100
                     FieldName = 'Importe_Neto'
                   end                
@@ -4474,7 +4474,6 @@ object form_articulos_001: Tform_articulos_001
                     Font.Pitch = fpVariable
                     Font.Quality = fqDraft
                     Title.Alignment = taCenter
-                    Title.Caption = 'PVP+imptos'
                     Title.Color = 14913900
                     Title.Font.CharSet = ANSI_CHARSET
                     Title.Font.Color = clWhite
@@ -4483,6 +4482,7 @@ object form_articulos_001: Tform_articulos_001
                     Title.Font.Pitch = fpVariable
                     Title.Font.Quality = fqDraft
                     Title.Font.Style = [fsBold]
+                    Title.Caption = 'PVP+imptos'
                     Width = 100
                     FieldName = 'Importe_Impuestos_Incluidos'
                   end                

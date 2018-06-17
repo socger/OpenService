@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqldb, db, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   Buttons, ComCtrls, DbCtrls, DBGrids, ButtonPanel, plantilla_000, Grids, Spin, utilidades_datos_tablas,
   types, utilidades_rgtro, utilidades_general, utilidades_bd, utilidades_forms_Filtrar, utilidades_usuarios,
-  utilidades_impresoras;
+  utilidades_Filtros, utilidades_impresoras;
 
 resourcestring
   rs_impr_001 = 'Mantenimiento de impresoras';
@@ -72,7 +72,6 @@ type
 
   private
     { private declarations }
-    function Existe_la_Impresora_Ya( param_id, param_descripcion : ShortString ) : Trecord_Existe;
 
   public
     { public declarations }
@@ -436,6 +435,180 @@ begin
   end;
 end;
 
+procedure Tf_impresoras_000.Antes_del_Post_Principal_Sin_Rellenar_Permitido_SI( p_msg : TStrings );
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  // *********************************************************************************************** //
+  // ** Ahora vienen las comprobaciones de porque no grabamos                                     ** //
+  // *********************************************************************************************** //
+  with SQLQuery_Principal do
+  begin
+    if Trim(DBEdit_Descripcion.Text) <> '' then
+      FieldByName('descripcion').asString := AnsiUpperCase(Trim(FieldByName('descripcion').AsString))
+    else
+    begin
+      p_msg.Add( rs_bcta_006 );
+    end;
+
+    if Trim(FieldByName('id_empresas').AsString) = '' then
+    begin
+      p_msg.Add( rs_bcta_007 );
+    end;
+  end;
+}
+end;
+
+procedure Tf_impresoras_000.Antes_del_Post_Principal_Asignar_Valores;
+begin
+  // *********************************************************************************************** //
+  // ** Asignamos valores si no los tenían                                                        ** //
+  // *********************************************************************************************** //
+  with SQLQuery_Principal do
+  begin
+    if FieldByName('predeterminada_SN').IsNull then
+    begin
+      FieldByName('predeterminada_SN').AsString := 'N';
+    end;
+
+    FieldByName('Copias_a_Imprimir').Value := SpinEdit_Copias.Value;
+
+  end;
+
+end;
+
+procedure Tf_impresoras_000.Antes_del_Post_Principal_Sin_Rellenar_Permitido_NO( p_msg,
+                                                                                p_msg_Comprobar : TStrings );
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_record_Existe         : Trecord_Existe;
+
+begin
+  // *********************************************************************************************** //
+  // ** Ahora vienen las comprobaciones de porque no grabamos                                     ** //
+  // *********************************************************************************************** //
+  with SQLQuery_Principal do
+  begin
+    if Trim(FieldByName('descripcion').AsString) = '' then
+    begin
+      p_msg.Add( rs_impr_005);
+    end;
+
+    // ********************************************************************************************* //
+    // ** Comprobamos que la cuenta contable no esté ya creada para otra cuenta bancaria          ** //
+    // ********************************************************************************************* //
+(*
+    if var_record_Existe.Fallo_en_Conexion_BD = true then
+    begin
+      Result := false;
+    end else
+    begin
+      if var_record_Existe.Existe = true then
+      begin
+        Result := false;
+
+        var_msg := TStringList.Create;
+
+        var_msg.Clear;
+        var_msg.Add( 'Impresora repetida.');
+
+        if UpperCase(var_record_Existe.deBaja) = 'S' then
+        begin
+          var_msg.Add(rs_Rgtro_Borrado);
+        end;
+
+        UTI_GEN_Aviso(true, var_msg, rs_Ya_Existe, True, False);
+
+        var_msg.Free;
+      end;
+    end;
+
+*)
+    if SQLQuery_Principal.State = dsInsert then
+    begin
+      SetLength(var_Campos_para_Existe_ya, 1);
+
+      var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+      var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+      var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+      var_record_Existe := UTI_RGTRO_Existe_Ya( 'impresoras',                          // param_nombre_tabla
+                                                'ORDER BY impresoras.descripcion ASC', // param_order_by
+                                                '',                                    // param_id_a_no_traer ... Estoy insertando
+                                                var_Campos_para_Existe_ya );           // param_Campos_para_Existe_ya
+    end;
+
+    if SQLQuery_Principal.State = dsEdit then
+    begin
+      SetLength(var_Campos_para_Existe_ya, 1);
+
+      var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+      var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+      var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+      var_record_Existe := UTI_RGTRO_Existe_Ya( 'impresoras',                          // param_nombre_tabla
+                                                'ORDER BY impresoras.descripcion ASC', // param_order_by
+                                                FieldByName('id').AsString,            // param_id_a_no_traer ... Estoy insertando
+                                                var_Campos_para_Existe_ya );           // param_Campos_para_Existe_ya
+    end;
+
+    if (SQLQuery_Principal.State = dsInsert) or
+       (SQLQuery_Principal.State = dsEdit)   then
+    begin
+      if var_record_Existe.Fallo_en_Conexion_BD = true then
+      begin
+        p_msg.Add( rs_impr_006 );
+      end
+      else
+      begin
+        if var_record_Existe.Existe = true then
+        begin
+          p_msg.Add( rs_impr_007 );
+
+          if UpperCase(var_record_Existe.deBaja) = 'S' then
+          begin
+            p_msg.Add(rs_Rgtro_Borrado);
+          end;
+        end;
+
+      end;
+    end;
+
+  end;
+
+end;
+
+procedure Tf_impresoras_000.NewRecord_Insert_SQLQuery_Principal;
+begin
+  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
+
+  with SQLQuery_Principal do
+  begin
+    // ********************************************************************************************* //
+    // ** Asignamos valores de iniciosi no los tenían                                             ** //
+    // ********************************************************************************************* //
+    FieldByName('numero_siguiente').AsString := '1';
+
+  end;
+}
+end;
+
+procedure Tf_impresoras_000.Campo_Foco_en_modo_Edicion_Inserccion;
+begin
+  Self.ActiveControl := Boton_Elegir_Impresora;
+end;
+
+function Tf_impresoras_000.Fue_Utilizado_Rgtro_SQLQuery_Principal : ShortInt;
+begin
+  Result := 0;
+
+end;
+
+end.
+
+
+
+{
 function Tf_impresoras_000.Existe_la_Impresora_Ya( param_id,
                                                       param_descripcion : ShortString ) : Trecord_Existe;
 var var_SQL            : TStrings;
@@ -535,159 +708,4 @@ begin
   end;
 end;
 
-procedure Tf_impresoras_000.Antes_del_Post_Principal_Sin_Rellenar_Permitido_SI( p_msg : TStrings );
-begin
-  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
-
-  // *********************************************************************************************** //
-  // ** Ahora vienen las comprobaciones de porque no grabamos                                     ** //
-  // *********************************************************************************************** //
-  with SQLQuery_Principal do
-  begin
-    if Trim(DBEdit_Descripcion.Text) <> '' then
-      FieldByName('descripcion').asString := AnsiUpperCase(Trim(FieldByName('descripcion').AsString))
-    else
-    begin
-      p_msg.Add( rs_bcta_006 );
-    end;
-
-    if Trim(FieldByName('id_empresas').AsString) = '' then
-    begin
-      p_msg.Add( rs_bcta_007 );
-    end;
-  end;
 }
-end;
-
-procedure Tf_impresoras_000.Antes_del_Post_Principal_Asignar_Valores;
-begin
-  // *********************************************************************************************** //
-  // ** Asignamos valores si no los tenían                                                        ** //
-  // *********************************************************************************************** //
-  with SQLQuery_Principal do
-  begin
-    if FieldByName('predeterminada_SN').IsNull then
-    begin
-      FieldByName('predeterminada_SN').AsString := 'N';
-    end;
-
-    FieldByName('Copias_a_Imprimir').Value := SpinEdit_Copias.Value;
-
-  end;
-
-end;
-
-procedure Tf_impresoras_000.Antes_del_Post_Principal_Sin_Rellenar_Permitido_NO( p_msg,
-                                                                                p_msg_Comprobar : TStrings );
-var var_record_Existe : Trecord_Existe;
-begin
-  // *********************************************************************************************** //
-  // ** Ahora vienen las comprobaciones de porque no grabamos                                     ** //
-  // *********************************************************************************************** //
-  with SQLQuery_Principal do
-  begin
-    if Trim(FieldByName('descripcion').AsString) = '' then
-    begin
-      p_msg.Add( rs_impr_005);
-    end;
-
-    // ********************************************************************************************* //
-    // ** Comprobamos que la cuenta contable no esté ya creada para otra cuenta bancaria          ** //
-    // ********************************************************************************************* //
-(*
-    if var_record_Existe.Fallo_en_Conexion_BD = true then
-    begin
-      Result := false;
-    end else
-    begin
-      if var_record_Existe.Existe = true then
-      begin
-        Result := false;
-
-        var_msg := TStringList.Create;
-
-        var_msg.Clear;
-        var_msg.Add( 'Impresora repetida.');
-
-        if UpperCase(var_record_Existe.deBaja) = 'S' then
-        begin
-          var_msg.Add(rs_Rgtro_Borrado);
-        end;
-
-        UTI_GEN_Aviso(true, var_msg, rs_Ya_Existe, True, False);
-
-        var_msg.Free;
-      end;
-    end;
-
-*)
-    if SQLQuery_Principal.State = dsInsert then
-    begin
-      var_record_Existe := Existe_la_Impresora_Ya( '',
-                                                   FieldByName('descripcion').AsString );
-    end;
-
-    if SQLQuery_Principal.State = dsEdit then
-    begin
-      var_record_Existe := Existe_la_Impresora_Ya( FieldByName('id').AsString,
-                                                   FieldByName('descripcion').AsString );
-
-    end;
-
-    if (SQLQuery_Principal.State = dsInsert) or
-       (SQLQuery_Principal.State = dsEdit)   then
-    begin
-      if var_record_Existe.Fallo_en_Conexion_BD = true then
-      begin
-        p_msg.Add( rs_impr_006 );
-      end
-      else
-      begin
-        if var_record_Existe.Existe = true then
-        begin
-          p_msg.Add( rs_impr_007 );
-
-          if UpperCase(var_record_Existe.deBaja) = 'S' then
-          begin
-            p_msg.Add(rs_Rgtro_Borrado);
-          end;
-        end;
-
-      end;
-    end;
-
-  end;
-
-end;
-
-procedure Tf_impresoras_000.NewRecord_Insert_SQLQuery_Principal;
-begin
-  { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
-
-  with SQLQuery_Principal do
-  begin
-    // ********************************************************************************************* //
-    // ** Asignamos valores de iniciosi no los tenían                                             ** //
-    // ********************************************************************************************* //
-    FieldByName('numero_siguiente').AsString := '1';
-
-  end;
-}
-end;
-
-procedure Tf_impresoras_000.Campo_Foco_en_modo_Edicion_Inserccion;
-begin
-  Self.ActiveControl := Boton_Elegir_Impresora;
-end;
-
-function Tf_impresoras_000.Fue_Utilizado_Rgtro_SQLQuery_Principal : ShortInt;
-begin
-  Result := 0;
-
-end;
-
-end.
-
-
-
-

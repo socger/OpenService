@@ -2251,7 +2251,7 @@ begin
 
           var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('nombre').AsString;
           var_Campos_para_Existe_ya[1].Campo_Nombre := 'nombre';
-          var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+          var_Campos_para_Existe_ya[1].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
 
           var_record_Existe := UTI_RGTRO_Existe_Ya( 'clientes_contactos',                             // param_nombre_tabla
                                                     'ORDER BY clientes_contactos.id_clientes ASC, ' +
@@ -2917,6 +2917,7 @@ end;
 function Tf_clientes_000.Fue_Utilizado_Rgtro_SQLQuery_Principal : ShortInt;
 begin
   Result := 0;
+
 end;
 
 end.

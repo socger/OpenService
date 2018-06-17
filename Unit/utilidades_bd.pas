@@ -1200,9 +1200,10 @@ begin
 end;
 
 function UTI_RGTROS_se_uso( param_SQL : TStrings ) : ShortInt;
-var var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
+var
+  var_SQLTransaction : TSQLTransaction;
+  var_SQLConnector   : TSQLConnector;
+  var_SQLQuery       : TSQLQuery;
 begin
   try
     // Creamos la Transaccion y la conexión con el motor BD, y la abrimos

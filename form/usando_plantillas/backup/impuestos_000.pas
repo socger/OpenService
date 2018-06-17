@@ -108,7 +108,6 @@ type
     procedure DBGrid_Impuestos_ComposicionesDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure DBNavigator_Impuestos_ComposicionesBeforeAction(Sender: TObject; Button: TDBNavButtonType);
     function  Filtrar_impuestos_composiciones( p_ver_bajas : ShortInt; p_Cambiamos_Filtro : Boolean; p_Lineas_Filtro, p_Lineas_OrderBy : TStrings ) : ShortInt;
-    function  Existe_Impuesto_Composicion_Ya( p_id_impuestos, p_id_impuestos_al_que_pertenece : ShortString ) : Trecord_Existe;
     procedure SQLQuery_ImptosCompAfterPost(DataSet: TDataSet);
     procedure SQLQuery_ImptosCompBeforeEdit(DataSet: TDataSet);
     procedure SQLQuery_ImptosCompBeforePost(DataSet: TDataSet);
@@ -195,7 +194,7 @@ begin
 
                             p_Cambiamos_Filtro,
                             false,   // param_ver_SQL_despues_Abrir : Boolean;
-                            true ); // jerofa no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
+                            true ); // no cerramos la conexión ... param_no_Cerrar_Conexion : Boolean {= false}
 
   var_a_Filtrar_Plus.Free;
 end;
@@ -453,9 +452,12 @@ begin
 end;
 
 procedure Tf_impuestos_000.Asignar_Impuesto_a_Composiciones;
-var var_Registro      : TRecord_Rgtro_Comun;
-    var_msg           : TStrings;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_Registro              : TRecord_Rgtro_Comun;
+  var_msg                   : TStrings;
+  var_record_Existe         : Trecord_Existe;
+
 begin
   var_msg := TStringList.Create;
 
@@ -489,8 +491,21 @@ begin
           Exit;
         end;
 
-        var_record_Existe := Existe_Impuesto_Composicion_Ya( var_Registro.id_1,
-                                                             SQLQuery_Principal.FieldByName('id').asString );
+        SetLength(var_Campos_para_Existe_ya, 2);
+
+        var_Campos_para_Existe_ya[0].Campo_Valor  := var_Registro.id_1;
+        var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_impuestos_al_que_pertenece';
+        var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+        var_Campos_para_Existe_ya[1].Campo_Valor  := SQLQuery_Principal.FieldByName('id').asString;
+        var_Campos_para_Existe_ya[1].Campo_Nombre := 'id_impuestos';
+        var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+        var_record_Existe := UTI_RGTRO_Existe_Ya( 'impuestos_composiciones',                                               // param_nombre_tabla
+                                                  'ORDER BY impuestos_composiciones.id_impuestos_al_que_pertenece ASC, ' +
+                                                           'impuestos_composiciones.id_impuestos ASC',                     // param_order_by
+                                                  '',                                                                      // param_id_a_no_traer ... Estoy insertando
+                                                  var_Campos_para_Existe_ya );                                             // param_Campos_para_Existe_ya
 
         if var_record_Existe.Fallo_en_Conexion_BD = true then
         begin
@@ -544,94 +559,6 @@ begin
     end;
 
     var_msg.Free;
-  end;
-end;
-
-function Tf_impuestos_000.Existe_Impuesto_Composicion_Ya( p_id_impuestos,
-                                                             p_id_impuestos_al_que_pertenece : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-  try
-    // ********************************************************************************************* //
-    // ** Creamos la Transaccion y la conexión con el motor BD, y la abrimos                      ** //
-    // ********************************************************************************************* //
-    var_SQLTransaction := TSQLTransaction.Create(nil);
-    var_SQLConnector   := TSQLConnector.Create(nil);
-
-    if UTI_CN_Connector_Open( var_SQLTransaction,
-                              var_SQLConnector ) = False then UTI_GEN_Salir;
-
-    // ********************************************************************************************* //
-    // ** Creamos la SQL Según el motor de BD                                                     ** //
-    // ********************************************************************************************* //
-    var_SQL := TStringList.Create;
-
-    var_SQL.Add('SELECT i.*' );
-    var_SQL.Add(  'FROM impuestos_composiciones AS i' );
-
-    var_SQL.Add(' WHERE i.id_impuestos_al_que_pertenece = ' +  Trim(p_id_impuestos_al_que_pertenece) );
-    var_SQL.Add(  ' AND i.id_impuestos = ' +  Trim(p_id_impuestos) );
-
-    var_SQL.Add(' ORDER BY i.id_impuestos_al_que_pertenece ASC, id_impuestos ASC' );
-
-    // ********************************************************************************************* //
-    // ** Abrimos la tabla                                                                        ** //
-    // ********************************************************************************************* //
-    var_SQLQuery      := TSQLQuery.Create(nil);
-    var_SQLQuery.Name := 'SQLQuery_Existe_Impuesto_Composicion_Ya';
-
-    if UTI_TB_Query_Open( '', '', '',
-                          var_SQLConnector,
-                          var_SQLQuery,
-                          -1, // asi me trae todos los registros de golpe
-                          var_SQL.Text ) = False then UTI_GEN_Salir;
-
-    // ********************************************************************************************* //
-    // ** TRABAJAMOS CON LOS REGISTROS DEVUELTOS                                                  ** //
-    // ********************************************************************************************* //
-    // ** Si el módulo no se creó, no se permite entrar en él ... Result := False                 ** //
-    // ********************************************************************************************* //
-    Result.Fallo_en_Conexion_BD := false;
-    Result.Existe               := false;
-    Result.deBaja               := 'N';
-
-    if var_SQLQuery.RecordCount > 0 then
-    begin
-      Result.Existe := true;
-      if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-    end;
-
-    // ********************************************************************************************* //
-    // ** Cerramos la tabla                                                                       ** //
-    // ********************************************************************************************* //
-    if UTI_TB_Cerrar( var_SQLConnector,
-                      var_SQLTransaction,
-                      var_SQLQuery ) = false then UTI_GEN_Salir;
-
-    var_SQLQuery.Free;
-
-    var_SQL.Free;
-
-    var_SQLTransaction.Free;
-    var_SQLConnector.Free;
-  except
-    on error : Exception do
-    begin
-      UTI_GEN_Error_Log( rs_impto_010 + var_SQLQuery.Name + rs_impto_011 + Screen.ActiveForm.Name,
-                         error );
-      try
-        var_SQL.Free;
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-        var_SQLQuery.Free;
-      except
-      end;
-
-      Result.Fallo_en_Conexion_BD := true;
-    end;
   end;
 end;
 
@@ -1057,7 +984,4 @@ begin
 end;
 
 end.
-
-
-
 

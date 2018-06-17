@@ -71,7 +71,6 @@ type
     procedure BitBtn_SALIRClick(Sender: TObject);
     procedure BitBtn_SeleccionarClick(Sender: TObject);
     function  Filtrar_Principal( param_Cambiamos_Filtro : Boolean ) : ShortInt;
-    function  Existe_vehiculos_tipo_cambios_Ya( param_id, param_descripcion : ShortString ) : Trecord_Existe;
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -269,99 +268,6 @@ begin
 
     //Filtrar_tablas_ligadas;
     var_SQL_ADD.Free;
-end;
-
-function Tform_vehiculos_tipo_cambios_000.Existe_vehiculos_tipo_cambios_Ya( param_id,
-                                                                            param_descripcion : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-    try
-        // ***************************************************************************************** //
-        // ** Creamos la Transaccion y la conexión con el motor BD, y la abrimos                  ** //
-        // ***************************************************************************************** //
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-        // ***************************************************************************************** //
-        // ** Creamos la SQL Según el motor de BD                                                 ** //
-        // ***************************************************************************************** //
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT vtc.*' );
-        var_SQL.Add(  'FROM vehiculos_tipo_cambios AS vtc' );
-        var_SQL.Add(' WHERE vtc.descripcion LIKE ' + UTI_GEN_Comillas('%' + Trim(param_descripcion) + '%') );
-
-        if Trim(param_id) <> '' then
-        begin
-             var_SQL.Add(  ' AND NOT vtc.id = ' + Trim(param_id) );
-        end;
-
-        var_SQL.Add(' ORDER BY vtc.descripcion ASC' );
-
-        // ***************************************************************************************** //
-        // ** Abrimos la tabla                                                                    ** //
-        // ***************************************************************************************** //
-        var_SQLQuery      := TSQLQuery.Create(nil);
-        var_SQLQuery.Name := 'SQLQuery_Existe_vehiculos_tipo_cambios_Ya';
-
-        if UTI_TB_Query_Open( '', '', '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-        // ***************************************************************************************** //
-        // ** TRABAJAMOS CON LOS REGISTROS DEVUELTOS                                              ** //
-        // ***************************************************************************************** //
-        // ** Si el módulo no se creó, no se permite entrar en él ... Result := False             ** //
-        // ***************************************************************************************** //
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-        // ***************************************************************************************** //
-        // ** Cerramos la tabla                                                                   ** //
-        // ***************************************************************************************** //
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-         on error : Exception do
-         begin
-             UTI_GEN_Error_Log( 'Error al comprobar si el tipo de cambio de vehículo existe ya.' +
-                                'La tabla ha sido ' + var_SQLQuery.Name + ' desde el módulo ' +
-                                Screen.ActiveForm.Name,
-                                error );
-             try
-                 var_SQL.Free;
-                 var_SQLTransaction.Free;
-                 var_SQLConnector.Free;
-                 var_SQLQuery.Free;
-             except
-             end;
-
-             Result.Fallo_en_Conexion_BD := true;
-         end;
-    end;
 end;
 
 procedure Tform_vehiculos_tipo_cambios_000.BitBtn_FiltrarClick(Sender: TObject);
@@ -652,9 +558,12 @@ begin
 end;
 
 procedure Tform_vehiculos_tipo_cambios_000.Insertar_Registro;
-var var_msg           : TStrings;
-    var_Form          : Tform_vehiculos_tipo_cambios_001;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_vehiculos_tipo_cambios_001;
+  var_record_Existe         : Trecord_Existe;
+
 begin
     with SQLQuery_VTCambios do
     begin
@@ -677,8 +586,16 @@ begin
 
                 if var_Form.public_Pulso_Aceptar = true then
                 begin
-                    var_record_Existe := Existe_vehiculos_tipo_cambios_Ya( '',
-                                                                           FieldByName('descripcion').AsString );
+                    SetLength(var_Campos_para_Existe_ya, 1);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'vehiculos_tipo_cambios',                          // param_nombre_tabla
+                                                              'ORDER BY vehiculos_tipo_cambios.descripcion ASC', // param_order_by
+                                                              '',                                                // param_id_a_no_traer ... Estoy insertando
+                                                              var_Campos_para_Existe_ya );                       // param_Campos_para_Existe_ya
 
                     if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin
@@ -720,10 +637,13 @@ begin
 end;
 
 procedure Tform_vehiculos_tipo_cambios_000.Editar_Registro;
-var var_msg           : TStrings;
-    var_Form          : Tform_vehiculos_tipo_cambios_001;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_vehiculos_tipo_cambios_001;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
     with SQLQuery_VTCambios do
     begin
@@ -762,8 +682,16 @@ begin
 
                 if var_Form.public_Pulso_Aceptar = true then
                 begin
-                    var_record_Existe := Existe_vehiculos_tipo_cambios_Ya( var_id,
-                                                                           FieldByName('descripcion').AsString );
+                    SetLength(var_Campos_para_Existe_ya, 1);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'vehiculos_tipo_cambios',                          // param_nombre_tabla
+                                                              'ORDER BY vehiculos_tipo_cambios.descripcion ASC', // param_order_by
+                                                              var_id,                                            // param_id_a_no_traer ... Estoy insertando
+                                                              var_Campos_para_Existe_ya );                       // param_Campos_para_Existe_ya
 
                     if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin

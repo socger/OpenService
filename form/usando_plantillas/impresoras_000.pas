@@ -72,7 +72,6 @@ type
 
   private
     { private declarations }
-    function Existe_la_Impresora_Ya( param_id, param_descripcion : ShortString ) : Trecord_Existe;
 
   public
     { public declarations }
@@ -436,105 +435,6 @@ begin
   end;
 end;
 
-function Tf_impresoras_000.Existe_la_Impresora_Ya( param_id,
-                                                      param_descripcion : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-  try
-    Result.Fallo_en_Conexion_BD := false;
-    Result.Existe               := false;
-    Result.deBaja               := 'N';
-
-    if Trim(param_descripcion) <> '' then
-    begin
-      // ******************************************************************************************* //
-      // ** Creamos la Transaccion y la conexión con el motor BD, y la abrimos                    ** //
-      // ******************************************************************************************* //
-      var_SQLTransaction := TSQLTransaction.Create(nil);
-      var_SQLConnector   := TSQLConnector.Create(nil);
-
-      if UTI_CN_Connector_Open( var_SQLTransaction,
-                                var_SQLConnector ) = False then UTI_GEN_Salir;
-
-      // ******************************************************************************************* //
-      // ** Creamos la SQL Según el motor de BD                                                   ** //
-      // ******************************************************************************************* //
-      var_SQL := TStringList.Create;
-      var_SQL.Clear;
-
-      var_SQL.Add('SELECT i.*' );
-      var_SQL.Add(  'FROM impresoras AS i' );
-
-      var_SQL.Add(' WHERE i.descripcion LIKE ' + UTI_GEN_Comillas('%' + Trim(param_descripcion) + '%') );
-
-      if Trim(param_id) <> '' then
-      begin
-        var_SQL.Add(  ' AND NOT i.id = ' + Trim(param_id) );
-      end;
-
-      var_SQL.Add(' ORDER BY i.descripcion ASC' );
-
-      // ********************************************************************************************* //
-      // ** Abrimos la tabla                                                                        ** //
-      // ********************************************************************************************* //
-      var_SQLQuery      := TSQLQuery.Create(nil);
-      var_SQLQuery.Name := 'SQLQuery_Existe_la_Impresora_Ya';
-
-      if UTI_TB_Query_Open( '', '', '',
-                            var_SQLConnector,
-                            var_SQLQuery,
-                            -1, // asi me trae todos los registros de golpe
-                            var_SQL.Text ) = False then UTI_GEN_Salir;
-
-      // ********************************************************************************************* //
-      // ** TRABAJAMOS CON LOS REGISTROS DEVUELTOS                                                  ** //
-      // ********************************************************************************************* //
-      if var_SQLQuery.RecordCount > 0 then
-      begin
-        Result.Existe := true;
-        if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then
-        begin
-          Result.deBaja := 'S';
-        end;
-      end;
-
-      // ********************************************************************************************* //
-      // ** Cerramos la tabla                                                                       ** //
-      // ********************************************************************************************* //
-      if UTI_TB_Cerrar( var_SQLConnector,
-                        var_SQLTransaction,
-                        var_SQLQuery ) = false then UTI_GEN_Salir;
-
-      var_SQLQuery.Free;
-
-      var_SQLTransaction.Free;
-      var_SQLConnector.Free;
-
-      var_SQL.Free;
-    end;
-  except
-    on error : Exception do
-    begin
-      UTI_GEN_Error_Log( 'Error al comprobar si la impresora existe ya.' +
-                         'La tabla ha sido ' + var_SQLQuery.Name + ' desde el módulo ' +
-                         Screen.ActiveForm.Name,
-                         error );
-      try
-        var_SQL.Free;
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-        var_SQLQuery.Free;
-      except
-      end;
-
-      Result.Fallo_en_Conexion_BD := true;
-    end;
-  end;
-end;
-
 procedure Tf_impresoras_000.Antes_del_Post_Principal_Sin_Rellenar_Permitido_SI( p_msg : TStrings );
 begin
   { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
@@ -579,7 +479,10 @@ end;
 
 procedure Tf_impresoras_000.Antes_del_Post_Principal_Sin_Rellenar_Permitido_NO( p_msg,
                                                                                 p_msg_Comprobar : TStrings );
-var var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_record_Existe         : Trecord_Existe;
+
 begin
   // *********************************************************************************************** //
   // ** Ahora vienen las comprobaciones de porque no grabamos                                     ** //
@@ -623,15 +526,30 @@ begin
 *)
     if SQLQuery_Principal.State = dsInsert then
     begin
-      var_record_Existe := Existe_la_Impresora_Ya( '',
-                                                   FieldByName('descripcion').AsString );
+      SetLength(var_Campos_para_Existe_ya, 1);
+
+      var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+      var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+      var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+      var_record_Existe := UTI_RGTRO_Existe_Ya( 'impresoras',                          // param_nombre_tabla
+                                                'ORDER BY impresoras.descripcion ASC', // param_order_by
+                                                '',                                    // param_id_a_no_traer ... Estoy insertando
+                                                var_Campos_para_Existe_ya );           // param_Campos_para_Existe_ya
     end;
 
     if SQLQuery_Principal.State = dsEdit then
     begin
-      var_record_Existe := Existe_la_Impresora_Ya( FieldByName('id').AsString,
-                                                   FieldByName('descripcion').AsString );
+      SetLength(var_Campos_para_Existe_ya, 1);
 
+      var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+      var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+      var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+      var_record_Existe := UTI_RGTRO_Existe_Ya( 'impresoras',                          // param_nombre_tabla
+                                                'ORDER BY impresoras.descripcion ASC', // param_order_by
+                                                FieldByName('id').AsString,            // param_id_a_no_traer ... Estoy insertando
+                                                var_Campos_para_Existe_ya );           // param_Campos_para_Existe_ya
     end;
 
     if (SQLQuery_Principal.State = dsInsert) or
@@ -687,7 +605,4 @@ begin
 end;
 
 end.
-
-
-
 

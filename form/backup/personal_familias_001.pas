@@ -38,7 +38,6 @@ type
     procedure Cauto_SubFamilia_Y_Guardo_en_Historico_sus_Cambios( param_id_personal_familias, param_Id, param_descripcion : ShortString );
     procedure Asignar_Familia_Personal_como_SubFamilia;
     function  Asignar_Familia_Personal_como_SubFamilia_2( param_id, param_personal_familias : ShortString ) : Boolean;
-    function  Existe_SubFamilia_Personal_Ya( param_id, param_id_personal_familias : ShortString ) : Trecord_Existe;
     procedure Quitar_SubFamilia_de_Familia;
     procedure Boton_Elegir_Familia_SuperiorClick(Sender: TObject);
     procedure Edit_Descripcion_Familia_SuperiorClick(Sender: TObject);
@@ -430,100 +429,6 @@ begin
     end;
 end;
 
-function Tform_personal_familias_001.Existe_SubFamilia_Personal_Ya( param_id,
-                                                                    param_id_personal_familias : ShortString ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-    try
-      { ****************************************************************************
-        Creamos la Transaccion y la conexión con el motor BD, y la abrimos
-        **************************************************************************** }
-        var_SQLTransaction := TSQLTransaction.Create(nil);
-        var_SQLConnector   := TSQLConnector.Create(nil);
-
-        if UTI_CN_Connector_Open( var_SQLTransaction,
-                                  var_SQLConnector ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        Creamos la SQL Según el motor de BD
-        **************************************************************************** }
-        var_SQL := TStringList.Create;
-
-        var_SQL.Add('SELECT a.*' );
-        var_SQL.Add(  'FROM personal_familias AS a' );
-
-        var_SQL.Add(' WHERE a.id_personal_familias = ' +  Trim(param_id_personal_familias) );
-
-        if Trim(param_id) <> '' then
-        begin
-             var_SQL.Add(  ' AND NOT a.id = ' + Trim(param_id) );
-        end;
-
-        var_SQL.Add(' ORDER BY a.id_personal_familias ASC' );
-
-      { ****************************************************************************
-        Abrimos la tabla
-        **************************************************************************** }
-        var_SQLQuery      := TSQLQuery.Create(nil);
-        var_SQLQuery.Name := 'SQLQuery_Existe_SubFamilia_Personal_Ya';
-
-        if UTI_TB_Query_Open( '', '', '',
-                              var_SQLConnector,
-                              var_SQLQuery,
-                              -1, // asi me trae todos los registros de golpe
-                              var_SQL.Text ) = False then UTI_GEN_Salir;
-
-      { ****************************************************************************
-        TRABAJAMOS CON LOS REGISTROS DEVUELTOS
-        ****************************************************************************
-        Si el módulo no se creó, no se permite entrar en él ... Result := False
-        **************************************************************************** }
-        Result.Fallo_en_Conexion_BD := false;
-        Result.Existe               := false;
-        Result.deBaja               := 'N';
-
-        if var_SQLQuery.RecordCount > 0 then
-        begin
-            Result.Existe := true;
-            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-        end;
-
-      { ****************************************************************************
-        Cerramos la tabla
-        **************************************************************************** }
-        if UTI_TB_Cerrar( var_SQLConnector,
-                          var_SQLTransaction,
-                          var_SQLQuery ) = false then UTI_GEN_Salir;
-
-        var_SQLQuery.Free;
-
-        var_SQL.Free;
-
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-    except
-         on error : Exception do
-         begin
-             UTI_GEN_Error_Log( 'Error al comprobar si la subfamilia existe ya para el tipo de' +
-                                ' personal. La tabla ha sido ' + var_SQLQuery.Name +
-                                ' desde el módulo ' + Screen.ActiveForm.Name,
-                                error );
-             try
-                 var_SQL.Free;
-                 var_SQLTransaction.Free;
-                 var_SQLConnector.Free;
-                 var_SQLQuery.Free;
-             except
-             end;
-
-             Result.Fallo_en_Conexion_BD := true;
-         end;
-    end;
-end;
-
 procedure Tform_personal_familias_001.Cauto_SubFamilia_Y_Guardo_en_Historico_sus_Cambios( param_id_personal_familias,
                                                                                           param_Id,
                                                                                           param_descripcion : ShortString );
@@ -558,9 +463,12 @@ begin
 end;
 
 procedure Tform_personal_familias_001.Asignar_Familia_Personal_como_SubFamilia;
-var var_Registro      : TRecord_Rgtro_Comun;
-    var_msg           : TStrings;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_Registro              : TRecord_Rgtro_Comun;
+  var_msg                   : TStrings;
+  var_record_Existe         : Trecord_Existe;
+
 begin
     with form_personal_familias_000.SQLQuery_Personal_Familias_SubFamilias do
     begin
@@ -572,8 +480,16 @@ begin
 
             if var_Registro.id_1 <> '' then
             begin
-                var_record_Existe := Existe_SubFamilia_Personal_Ya( '', // en realidad es como si fuera un insercción
-                                                                    var_Registro.id_1 );
+                SetLength(var_Campos_para_Existe_ya, 1);
+
+                var_Campos_para_Existe_ya[0].Campo_Valor  := var_Registro.id_1;
+                var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_personal_familias';
+                var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                var_record_Existe := UTI_RGTRO_Existe_Ya( 'personal_familias',                             // param_nombre_tabla
+                                                          'ORDER BY personal_familias.id_personal_familias ASC',         // param_order_by
+                                                          '',                       // param_id_a_no_traer ... Estoy insertando
+                                                          var_Campos_para_Existe_ya );                      // param_Campos_para_Existe_ya
 
                 if var_record_Existe.Fallo_en_Conexion_BD = true then
                     begin
@@ -768,8 +684,8 @@ begin
       { ****************************************************************************
         Cerramos La transacción y la conexión con la BD
         **************************************************************************** }
-        if UTI_CN_Close( var_SQLTransaction,
-                         var_SQLConnector ) = False then UTI_GEN_Salir;
+        if UTI_CN_Connector_Close( var_SQLTransaction,
+                                   var_SQLConnector ) = False then UTI_GEN_Salir;
 
         var_SQLTransaction.Free;
         var_SQLConnector.Free;
@@ -840,4 +756,99 @@ end;
 
 end.
 
+{
+function Tform_personal_familias_001.Existe_SubFamilia_Personal_Ya( param_id,
+                                                                    param_id_personal_familias : ShortString ) : Trecord_Existe;
+var var_SQL            : TStrings;
+    var_SQLTransaction : TSQLTransaction;
+    var_SQLConnector   : TSQLConnector;
+    var_SQLQuery       : TSQLQuery;
+begin
+    try
+      { ****************************************************************************
+        Creamos la Transaccion y la conexión con el motor BD, y la abrimos
+        **************************************************************************** }
+        var_SQLTransaction := TSQLTransaction.Create(nil);
+        var_SQLConnector   := TSQLConnector.Create(nil);
 
+        if UTI_CN_Connector_Open( var_SQLTransaction,
+                                  var_SQLConnector ) = False then UTI_GEN_Salir;
+
+      { ****************************************************************************
+        Creamos la SQL Según el motor de BD
+        **************************************************************************** }
+        var_SQL := TStringList.Create;
+
+        var_SQL.Add('SELECT a.*' );
+        var_SQL.Add(  'FROM personal_familias AS a' );
+
+        var_SQL.Add(' WHERE a.id_personal_familias = ' +  Trim(param_id_personal_familias) );
+
+        if Trim(param_id) <> '' then
+        begin
+             var_SQL.Add(  ' AND NOT a.id = ' + Trim(param_id) );
+        end;
+
+        var_SQL.Add(' ORDER BY a.id_personal_familias ASC' );
+
+      { ****************************************************************************
+        Abrimos la tabla
+        **************************************************************************** }
+        var_SQLQuery      := TSQLQuery.Create(nil);
+        var_SQLQuery.Name := 'SQLQuery_Existe_SubFamilia_Personal_Ya';
+
+        if UTI_TB_Query_Open( '', '', '',
+                              var_SQLConnector,
+                              var_SQLQuery,
+                              -1, // asi me trae todos los registros de golpe
+                              var_SQL.Text ) = False then UTI_GEN_Salir;
+
+      { ****************************************************************************
+        TRABAJAMOS CON LOS REGISTROS DEVUELTOS
+        ****************************************************************************
+        Si el módulo no se creó, no se permite entrar en él ... Result := False
+        **************************************************************************** }
+        Result.Fallo_en_Conexion_BD := false;
+        Result.Existe               := false;
+        Result.deBaja               := 'N';
+
+        if var_SQLQuery.RecordCount > 0 then
+        begin
+            Result.Existe := true;
+            if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
+        end;
+
+      { ****************************************************************************
+        Cerramos la tabla
+        **************************************************************************** }
+        if UTI_TB_Cerrar( var_SQLConnector,
+                          var_SQLTransaction,
+                          var_SQLQuery ) = false then UTI_GEN_Salir;
+
+        var_SQLQuery.Free;
+
+        var_SQL.Free;
+
+        var_SQLTransaction.Free;
+        var_SQLConnector.Free;
+    except
+         on error : Exception do
+         begin
+             UTI_GEN_Error_Log( 'Error al comprobar si la subfamilia existe ya para el tipo de' +
+                                ' personal. La tabla ha sido ' + var_SQLQuery.Name +
+                                ' desde el módulo ' + Screen.ActiveForm.Name,
+                                error );
+             try
+                 var_SQL.Free;
+                 var_SQLTransaction.Free;
+                 var_SQLConnector.Free;
+                 var_SQLQuery.Free;
+             except
+             end;
+
+             Result.Fallo_en_Conexion_BD := true;
+         end;
+    end;
+end;
+
+}

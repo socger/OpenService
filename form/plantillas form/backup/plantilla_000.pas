@@ -1082,16 +1082,20 @@ var
   var_SQL : TStrings;
   v_id    : String;
 begin
-  {
-  jerofa esto hay que implementarlo bien en todos los módulos hijos de esta plantilla,
+{
+  esto hay que implementarlo bien en todos los módulos hijos de esta plantilla,
   pero a lo mejor se podría solucionar creando foreign keys de la tabla principal
 
-  jerofa esto tienes que crearlo en todos los módulos hijos de plantilla_000 pero puede o no usarse
+  esto tienes que crearlo en todos los módulos hijos de plantilla_000 pero puede o no usarse
   este es un ejemplo usandose
   Si no se fa a usar simplemente poner .... Result := 0; para que se pueda borrar el registro
 
   Result := 0;
 }
+
+{
+  esto es por si quieres controlar que ya se usó
+
   v_id    := SQLQuery_Principal.FieldByName('id').AsString;
   var_SQL := TStringList.Create;
 
@@ -1124,6 +1128,8 @@ begin
   Result := UTI_RGTROS_se_uso(var_SQL);
 
   var_SQL.Free;
+}
+
 end;
 
 procedure Tform_plantilla_000.Refrescar_Registros_TablasLigadas;
@@ -1287,7 +1293,10 @@ end;
 
 procedure Tform_plantilla_000.Antes_del_Post_Principal_Sin_Rellenar_Permitido_NO( p_msg,
                                                                                   p_msg_Comprobar : TStrings );
-var var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_record_Existe         : Trecord_Existe;
+
 begin
   { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
 
@@ -1366,14 +1375,30 @@ begin
     // ********************************************************************************************* //
     if SQLQuery_Principal.State = dsInsert then
     begin
-      var_record_Existe := Existe_la_Cta_Ya( '',
-                                             FieldByName('descripcion').AsString );
+      SetLength(var_Campos_para_Existe_ya, 1);
+
+      var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+      var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+      var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+      var_record_Existe := UTI_RGTRO_Existe_Ya( 'cuenta',                          // param_nombre_tabla
+                                                'ORDER BY cuentas.id_cuentas ASC', // param_order_by
+                                                '',                                // param_id_a_no_traer ... Estoy insertando
+                                                var_Campos_para_Existe_ya );       // param_Campos_para_Existe_ya
     end;
 
     if SQLQuery_Principal.State = dsEdit then
     begin
-      var_record_Existe := Existe_la_Cta_Ya( FieldByName('id').AsString,
-                                             FieldByName('descripcion').AsString );
+      SetLength(var_Campos_para_Existe_ya, 1);
+
+      var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+      var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+      var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+      var_record_Existe := UTI_RGTRO_Existe_Ya( 'cuenta',                          // param_nombre_tabla
+                                                'ORDER BY cuentas.id_cuentas ASC', // param_order_by
+                                                FieldByName('id').AsString,        // param_id_a_no_traer ... Estoy insertando
+                                                var_Campos_para_Existe_ya );       // param_Campos_para_Existe_ya
 
     end;
 
@@ -1902,6 +1927,9 @@ Comprobar todos los f_elige
 
 Hay módulos que derivan de las plantillas a los que les pasamos filtros cuando son llamados desde otros módulos,
 así que hay que ver como pueden pasar estos filtros a los filtros reales del módulo llamado.
+
+jerofa hay que cambiar todos los UTI_Abrir_Form() ... hay que poner su correspondiente llamada al módulo
+por ejemplo este es el que llama al módulo 50 ... UTI_Abrir_Modulo_Clientes()
 
 En el init debería de completar los FONT de componentes que todavía no controle
 En el init debería de completar los COLOR de componentes que todavía no controle

@@ -264,7 +264,7 @@ begin
     begin
         if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
         begin
-            var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( true, true, '1' );
+            var_Registro := UTI_Abrir_Modulo_Elegir_cliente_contacto( '', '', true, true, '1' );
             if var_Registro.id_1 <> '' then
             begin
                  FieldByName('id_clientes_contactos').AsString := Trim(var_Registro.id_1);
@@ -495,7 +495,76 @@ procedure Tform_visitas_001.Boton_Elegir_ClienteClick(Sender: TObject);
 var var_Registro         : TRecord_Rgtro_Comun;
     var_Registro_Cliente : TClientes;
     var_msg              : TStrings;
+    var_Filtro           : AnsiString;
 begin
+  var_Filtro := '';
+
+  if Trim(form_visitas_000.public_llamado_desde) <> '' then
+  begin
+    if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_actividad_000' then
+    begin
+      if Trim(var_Filtro) <> '' then
+        var_Filtro := var_Filtro + ' AND ';
+
+      var_Filtro := var_Filtro + 'clientes.id_actividades = ' + form_visitas_000.public_llamado_desde_id;
+    end;
+
+    if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_provincia_000' then
+    begin
+      if Trim(var_Filtro) <> '' then
+        var_Filtro := var_Filtro + ' AND ';
+
+      var_Filtro := var_Filtro + 'clientes.id_provincias = ' + form_visitas_000.public_llamado_desde_id;
+    end;
+
+    if Trim(form_visitas_000.public_llamado_desde) = 'form_visitas_por_tipo_cliente_000' then
+    begin
+      if Trim(var_Filtro) <> '' then
+        var_Filtro := var_Filtro + ' AND ';
+
+      var_Filtro := var_Filtro + 'clientes.id_clientes_tipos = ' + form_visitas_000.public_llamado_desde_id;
+    end;
+
+    if Trim(form_visitas_000.public_llamado_desde) = 'Tform_visitas_por_zona_000' then
+    begin
+      if Trim(var_Filtro) <> '' then
+        var_Filtro := var_Filtro + ' AND ';
+
+      var_Filtro := var_Filtro + 'clientes.id_rutas = ' + form_visitas_000.public_llamado_desde_id;
+    end;
+  end;
+
+  var_Registro := UTI_Abrir_Modulo_Clientes( var_Filtro, '', true, false, '1' );
+  if var_Registro.id_1 <> '' then
+  begin
+    form_visitas_000.SQLQuery_Visitas.FieldByName('id_clientes').AsString := Trim(var_Registro.id_1);
+
+    if Trim(var_Registro.descripcion_1) <> '' then
+      Edit_Descripcion_Cliente.Text := var_Registro.descripcion_1
+    else
+      Edit_Descripcion_Cliente.Text := var_Registro.descripcion_2;
+
+    // FieldByName('OT_descripcion_cliente').AsString := Edit_Descripcion_Cliente.Text;
+
+
+    var_Registro_Cliente := Traer_Clientes_xID( Trim(var_Registro.id_1) );
+
+    if var_Registro_Cliente.id <> '0' then
+    begin
+      Edit_nif.Text                      := var_Registro_Cliente.nif_cif;
+      Edit_Descripcion_Cliente_Tipo.Text := var_Registro_Cliente.OT_descripcion_cliente_tipo;
+      Edit_Descripcion_Ruta.Text         := var_Registro_Cliente.OT_descripcion_ruta;
+      Edit_Descripcion_Provincia.Text    := var_Registro_Cliente.OT_descripcion_provincia;
+      Edit_Descripcion_Actividad.Text    := var_Registro_Cliente.OT_descripcion_actividad;
+      Edit_Descripcion_Poblacion.Text    := var_Registro_Cliente.OT_descripcion_poblacion;
+      Edit_Descripcion_Pais.Text         := var_Registro_Cliente.OT_descripcion_pais;
+      Edit_Descripcion_Tfno1.Text        := var_Registro_Cliente.Tfno_Fijo_1;
+      Edit_Descripcion_Tfno2.Text        := var_Registro_Cliente.Tfno_Fijo_2;
+      Edit_Descripcion_Fax.Text          := var_Registro_Cliente.FAX;
+      Edit_Descripcion_Movil.Text        := var_Registro_Cliente.Movil;
+    end;
+  end;
+
   if UTI_USR_Permiso_SN(50, '', True) = true then
   begin
     { jerofa desde que quité los filtros no puedes hacer esto
@@ -527,6 +596,10 @@ begin
                     end;
                 end;
     }
+
+    jerofa hay que cambiar todos los UTI_Abrir_Form() ... hay que poner su correspondiente llamada al módulo
+    por ejemplo este es el que llama al módulo 50 ... UTI_Abrir_Modulo_Clientes()
+
     var_Registro := UTI_Abrir_Form( '', '', true, true, 'id_clientes' );
 
     if var_Registro.id_1 <> '' then

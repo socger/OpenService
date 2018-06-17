@@ -45,7 +45,6 @@ type
         procedure RadioGroup_BajasClick(Sender: TObject);
         function  Comprobar_No_Tocar( param_Reproducir_Mensajes, param_Ejecutar_No_Tocar : Boolean ) : Boolean;
         procedure Refrescar_Registros;
-        function  Existe_art_Proporciones_Tarifa_Ya( param_id, param_id_articulos_proporciones, param_id_tarifas : ShortString ) : Trecord_Existe;
         procedure Editar_Registro_Proporciones_Tarifas;
         procedure BitBtn_Ver_Situacion_Registro_TarifasClick(Sender: TObject);
         procedure DBGrid_TarifasDblClick(Sender: TObject);
@@ -357,6 +356,159 @@ begin
     var_msg.Free;
 end;
 
+procedure Tform_articulos_005.no_Tocar;
+begin
+    DBMemo_Descripcion.Enabled               := False;
+    DBEdit_Descripcion_para_terminal.Enabled := False;
+    DBEdit_Cantidad_a_Descontar.Enabled      := False;
+end;
+
+procedure Tform_articulos_005.FormActivate(Sender: TObject);
+begin
+    If form_articulos_000.public_Elegimos = true then
+    begin
+        with Self do
+        begin
+            Color := $00B9959C;
+        end;
+    end;
+
+    Comprobar_No_Tocar(true, true);
+end;
+
+function Tform_articulos_005.Comprobar_No_Tocar( param_Reproducir_Mensajes,
+                                                 param_Ejecutar_No_Tocar : Boolean ) : Boolean;
+begin
+    Result := false;
+
+    // ********************************************************************************************* //
+    // ** Si se llamó para solo verlo, pues no se puede tocar                                     ** //
+    // ********************************************************************************************* //
+    if public_Solo_Ver = true then
+    begin
+        Result := true;
+        if param_Ejecutar_No_Tocar = true then no_Tocar;
+    end;
+end;
+
+procedure Tform_articulos_005.Editar_Registro_Proporciones_Tarifas;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tform_articulos_006;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
+begin
+    if Comprobar_No_Tocar(true, false) = true then
+    begin
+        Exit;
+    end;
+
+    with form_articulos_000.SQLQuery_Articulos_Proporciones_Tarifas do
+    begin
+        var_msg := TStringList.Create;
+
+        if RecordCount > 0 then
+        begin
+            var_id := FieldByName('id').AsString;
+
+            if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
+            begin
+                if UTI_RGTRO_isLock( 'articulos_proporciones_tarifas',
+                                     FieldByName('id').AsString,
+                                     true ) = true then
+                begin
+                    Exit;
+                end else begin
+                    if UTI_RGTRO_Lock( 'articulos_proporciones_tarifas',
+                                       FieldByName('id').AsString ) = true then
+                         Edit
+                    else Exit;
+                end;
+
+                var_Form := Tform_articulos_006.Create(nil);
+
+                var_Form.public_Menu_Worked := public_Menu_Worked;
+
+                if public_Solo_Ver = true then
+                begin
+                    var_Form.public_Solo_Ver := true;
+                end;
+
+                var_Form.para_Empezar;
+
+                var_Form.ShowModal;
+                if var_Form.public_Pulso_Aceptar = true then
+                begin
+                    SetLength(var_Campos_para_Existe_ya, 2);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_articulos_proporciones').AsString;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_articulos_proporciones';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('id_tarifas').AsString;
+                    var_Campos_para_Existe_ya[1].Campo_Nombre := 'id_tarifas';
+                    var_Campos_para_Existe_ya[1].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_proporciones_tarifas',                                           // param_nombre_tabla
+                                                              'ORDER BY articulos_proporciones_tarifas.id_articulos_proporciones ASC, ' +
+                                                                       'articulos_proporciones_tarifas.id_tarifas ASC',                   // param_order_by
+                                                              FieldByName('id').AsString,                                                 // param_id_a_no_traer ... Estoy insertando
+                                                              var_Campos_para_Existe_ya );                                                // param_Campos_para_Existe_ya
+
+                    if var_record_Existe.Fallo_en_Conexion_BD = true then
+                    begin
+                        var_Form.Free;
+                        Cancel;
+                    end else begin
+                        if var_record_Existe.Existe = false then
+                        begin
+                            if UTI_DATOS_TABLA_SeCambioAlgoEnRgtro( form_articulos_000.SQLQuery_Articulos_Proporciones_Tarifas ) = true then
+                            begin
+                                FieldByName('Change_WHEN').Value    := UTI_CN_Fecha_Hora;
+                                FieldByName('Change_Id_User').Value := Form_Menu.public_User;
+
+                                UTI_RGTRO_Grabar_Antes( 'articulos_proporciones_tarifas',
+                                                        form_articulos_000.SQLQuery_Articulos_Proporciones_Tarifas );
+                            end else begin
+                                Cancel;
+                            end;
+                            var_Form.Free;
+                        end else begin
+                            var_Form.Free;
+                            Cancel;
+                            var_msg.Clear;
+                            var_msg.Add(rs_Editar_Registro_Proporciones_Tarifas_1);
+
+                            if UpperCase(var_record_Existe.deBaja) = 'S' then
+                            begin
+                                var_msg.Add(rs_Rgtro_Borrado);
+                            end;
+
+                            UTI_GEN_Aviso(true, var_msg, rs_Ya_Existe, True, False);
+                        end;
+                    end;
+                end else begin
+                    var_Form.Free;
+                    Cancel;
+                end;
+
+                UTI_RGTRO_UnLock( 'articulos_proporciones_tarifas',
+                                  var_id );
+            end;
+        end else begin
+            var_msg.Add(rs_no_Hay_Rgtros);
+            UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
+        end;
+    end;
+
+    var_msg.Free;
+end;
+
+end.
+
+{
 function Tform_articulos_005.Existe_art_Proporciones_Tarifa_Ya( param_id,
                                                                 param_id_articulos_proporciones,
                                                                 param_id_tarifas : ShortString ) : Trecord_Existe;
@@ -372,8 +524,8 @@ begin
         var_SQLTransaction := TSQLTransaction.Create(nil);
         var_SQLConnector   := TSQLConnector.Create(nil);
 
-        if UTI_CN_Abrir( var_SQLTransaction,
-                         var_SQLConnector ) = False then UTI_GEN_Salir;
+        if UTI_CN_Connector_Open( var_SQLTransaction,
+                                  var_SQLConnector ) = False then UTI_GEN_Salir;
 
       { ****************************************************************************
         Creamos la SQL Según el motor de BD
@@ -454,141 +606,4 @@ begin
     end;
 end;
 
-procedure Tform_articulos_005.no_Tocar;
-begin
-    DBMemo_Descripcion.Enabled               := False;
-    DBEdit_Descripcion_para_terminal.Enabled := False;
-    DBEdit_Cantidad_a_Descontar.Enabled      := False;
-end;
-
-procedure Tform_articulos_005.FormActivate(Sender: TObject);
-begin
-    If form_articulos_000.public_Elegimos = true then
-    begin
-        with Self do
-        begin
-            Color := $00B9959C;
-        end;
-    end;
-
-    Comprobar_No_Tocar(true, true);
-end;
-
-function Tform_articulos_005.Comprobar_No_Tocar( param_Reproducir_Mensajes,
-                                                 param_Ejecutar_No_Tocar : Boolean ) : Boolean;
-begin
-    Result := false;
-
-    // ********************************************************************************************* //
-    // ** Si se llamó para solo verlo, pues no se puede tocar                                     ** //
-    // ********************************************************************************************* //
-    if public_Solo_Ver = true then
-    begin
-        Result := true;
-        if param_Ejecutar_No_Tocar = true then no_Tocar;
-    end;
-end;
-
-procedure Tform_articulos_005.Editar_Registro_Proporciones_Tarifas;
-var var_msg           : TStrings;
-    var_Form          : Tform_articulos_006;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
-begin
-    if Comprobar_No_Tocar(true, false) = true then
-    begin
-        Exit;
-    end;
-
-    with form_articulos_000.SQLQuery_Articulos_Proporciones_Tarifas do
-    begin
-        var_msg := TStringList.Create;
-
-        if RecordCount > 0 then
-        begin
-            var_id := FieldByName('id').AsString;
-
-            if UTI_USR_Permiso_SN(public_Menu_Worked, 'M', True) = True then
-            begin
-                if UTI_RGTRO_isLock( 'articulos_proporciones_tarifas',
-                                     FieldByName('id').AsString,
-                                     true ) = true then
-                begin
-                    Exit;
-                end else begin
-                    if UTI_RGTRO_Lock( 'articulos_proporciones_tarifas',
-                                       FieldByName('id').AsString ) = true then
-                         Edit
-                    else Exit;
-                end;
-
-                var_Form := Tform_articulos_006.Create(nil);
-
-                var_Form.public_Menu_Worked := public_Menu_Worked;
-
-                if public_Solo_Ver = true then
-                begin
-                    var_Form.public_Solo_Ver := true;
-                end;
-
-                var_Form.para_Empezar;
-
-                var_Form.ShowModal;
-                if var_Form.public_Pulso_Aceptar = true then
-                begin
-                    var_record_Existe := Existe_art_Proporciones_Tarifa_Ya( FieldByName('id').AsString,
-                                                                            FieldByName('id_articulos_proporciones').AsString,
-                                                                            FieldByName('id_tarifas').AsString );
-
-                    if var_record_Existe.Fallo_en_Conexion_BD = true then
-                    begin
-                        var_Form.Free;
-                        Cancel;
-                    end else begin
-                        if var_record_Existe.Existe = false then
-                        begin
-                            if UTI_DATOS_TABLA_SeCambioAlgoEnRgtro( form_articulos_000.SQLQuery_Articulos_Proporciones_Tarifas ) = true then
-                            begin
-                                FieldByName('Change_WHEN').Value    := UTI_CN_Fecha_Hora;
-                                FieldByName('Change_Id_User').Value := Form_Menu.public_User;
-
-                                UTI_RGTRO_Grabar_Antes( 'articulos_proporciones_tarifas',
-                                                        form_articulos_000.SQLQuery_Articulos_Proporciones_Tarifas );
-                            end else begin
-                                Cancel;
-                            end;
-                            var_Form.Free;
-                        end else begin
-                            var_Form.Free;
-                            Cancel;
-                            var_msg.Clear;
-                            var_msg.Add(rs_Editar_Registro_Proporciones_Tarifas_1);
-
-                            if UpperCase(var_record_Existe.deBaja) = 'S' then
-                            begin
-                                var_msg.Add(rs_Rgtro_Borrado);
-                            end;
-
-                            UTI_GEN_Aviso(true, var_msg, rs_Ya_Existe, True, False);
-                        end;
-                    end;
-                end else begin
-                    var_Form.Free;
-                    Cancel;
-                end;
-
-                UTI_RGTRO_UnLock( 'articulos_proporciones_tarifas',
-                                  var_id );
-            end;
-        end else begin
-            var_msg.Add(rs_no_Hay_Rgtros);
-            UTI_GEN_Aviso(true, var_msg, rs_No_Se_Puede, True, False);
-        end;
-    end;
-
-    var_msg.Free;
-end;
-
-end.
-
-
+}

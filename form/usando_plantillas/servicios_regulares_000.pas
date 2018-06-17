@@ -402,7 +402,7 @@ type
     { private declarations }
     private_Order_By_temporadas : array of TOrder_By;
 
-    function  Se_duplico_SN(p_id : String) : Boolean;
+    function  Se_duplico_SN( p_id : String ) : Boolean;
     procedure Borramos_Cliente_Contratante;
     procedure Borrar_Acompanante;
     procedure Rellenar_Datos_Monitor_Elegido(param_id : String);
@@ -411,7 +411,6 @@ type
     procedure Borrar_Registro_Temporadas;
     procedure Insertar_Registro_Temporadas;
     procedure Editar_Registro_Temporadas;
-    function  Existe_Temporada_Ya( p_id, p_id_servicios_regulares, p_desde_fecha, p_hasta_fecha : String ) : Trecord_Existe;
     procedure Pintar_Dibujar_Celda( p_Sender: TObject; p_Dibujamos_Algo : Boolean; const p_Rect : TRect; p_DataCol : Integer; p_Column : TColumn; p_State : TGridDrawState );
     procedure Solo_Pintar_si_esDiaElegido( p_Sender: TObject; p_valor : String; const p_Rect : TRect; p_DataCol : Integer; p_Column : TColumn; p_State : TGridDrawState );
     function  es_Columna_donde_Dibujamos(p_Column : TColumn) : Boolean;
@@ -515,107 +514,7 @@ begin
   end;
 end;
 
-function Tf_servicios_regulares_000.Existe_Temporada_Ya( p_id,
-                                                            p_id_servicios_regulares,
-                                                            p_desde_fecha,
-                                                            p_hasta_fecha : String ) : Trecord_Existe;
-var var_SQL            : TStrings;
-    var_SQLTransaction : TSQLTransaction;
-    var_SQLConnector   : TSQLConnector;
-    var_SQLQuery       : TSQLQuery;
-begin
-  try
-    // ********************************************************************************************* //
-    // ** Creamos la Transaccion y la conexión con el motor BD, y la abrimos                      ** //
-    // ********************************************************************************************* //
-    var_SQLTransaction := TSQLTransaction.Create(nil);
-    var_SQLConnector   := TSQLConnector.Create(nil);
-
-    if UTI_CN_Connector_Open( var_SQLTransaction,
-                              var_SQLConnector ) = False then UTI_GEN_Salir;
-
-    // ********************************************************************************************* //
-    // ** Creamos la SQL Según el motor de BD                                                     ** //
-    // ********************************************************************************************* //
-    var_SQL := TStringList.Create;
-
-    var_SQL.Add('SELECT srt.*' );
-    var_SQL.Add(  'FROM servicios_regulares_periodos AS srt' );
-
-    var_SQL.Add(' WHERE srt.id_servicios_regulares = ' +  Trim(p_id_servicios_regulares) );
-    var_SQL.Add(  ' AND DATE(srt.desde_fecha) = ' +
-                  UTI_GEN_Comillas(UTI_GEN_Format_Fecha_Hora(StrToDate(p_desde_fecha), false)) );
-
-    var_SQL.Add(  ' AND DATE(srt.hasta_fecha) = ' +
-                  UTI_GEN_Comillas(UTI_GEN_Format_Fecha_Hora(StrToDate(p_hasta_fecha), false)) );
-
-    if Trim(p_id) <> '' then
-    begin
-      var_SQL.Add(  ' AND NOT srt.id = ' + Trim(p_id) );
-    end;
-
-    var_SQL.Add(' ORDER BY srt.id_servicios_regulares ASC, srt.desde_fecha ASC, srt.hasta_fecha ASC' );
-
-    // ********************************************************************************************* //
-    // ** Abrimos la tabla                                                                        ** //
-    // ********************************************************************************************* //
-    var_SQLQuery      := TSQLQuery.Create(nil);
-    var_SQLQuery.Name := 'SQLQuery_Existe_Temporada_Ya';
-
-    if UTI_TB_Query_Open( '', '', '',
-                          var_SQLConnector,
-                          var_SQLQuery,
-                          -1, // asi me trae todos los registros de golpe
-                          var_SQL.Text ) = False then UTI_GEN_Salir;
-
-    // ********************************************************************************************* //
-    // ** TRABAJAMOS CON LOS REGISTROS DEVUELTOS                                                  ** //
-    // ********************************************************************************************* //
-    // ** Si el módulo no se creó, no se permite entrar en él ... Result := False                 ** //
-    // ********************************************************************************************* //
-    Result.Fallo_en_Conexion_BD := false;
-    Result.Existe               := false;
-    Result.deBaja               := 'N';
-
-    if var_SQLQuery.RecordCount > 0 then
-    begin
-      Result.Existe := true;
-      if not var_SQLQuery.FieldByName('Del_WHEN').IsNull then Result.deBaja := 'S';
-    end;
-
-    // ********************************************************************************************* //
-    // ** Cerramos la tabla                                                                       ** //
-    // ********************************************************************************************* //
-    if UTI_TB_Cerrar( var_SQLConnector,
-                      var_SQLTransaction,
-                      var_SQLQuery ) = false then UTI_GEN_Salir;
-
-    var_SQLQuery.Free;
-
-    var_SQL.Free;
-
-    var_SQLTransaction.Free;
-    var_SQLConnector.Free;
-  except
-    on error : Exception do
-    begin
-      UTI_GEN_Error_Log( rs_serv_regulares_015 + var_SQLQuery.Name +
-                         rs_serv_regulares_016 + Screen.ActiveForm.Name,
-                         error );
-      try
-        var_SQL.Free;
-        var_SQLTransaction.Free;
-        var_SQLConnector.Free;
-        var_SQLQuery.Free;
-      except
-      end;
-
-      Result.Fallo_en_Conexion_BD := true;
-    end;
-  end;
-end;
-
-function Tf_servicios_regulares_000.Se_duplico_SN(p_id : String) : Boolean;
+function Tf_servicios_regulares_000.Se_duplico_SN( p_id : String ) : Boolean;
 begin
   Label_Duplicandose.Visible := true;
   Result                     := false;
@@ -625,9 +524,7 @@ begin
   Application.ProcessMessages;
 
   if UTI_SERV_Duplicar_Serv_Regular_Cabecera( SQLQuery_Principalid.asString ) = false then
-  begin
     Exit;
-  end;
 
   // Se terminó la duñlicación
   Label_Duplicandose.Visible := false;
@@ -670,18 +567,9 @@ begin
       UTI_GEN_Aviso( true,
                      var_msg,
                      rs_No_Se_Puede, True, False );
-    end else
-    begin
-{ jerofa desde que quitastes los filtros no se puede hacer esto
-
-      Edit_descripcion.Text                := SQLQuery_Principaldescripcion.asString;
-      Edit_filtro_id_clientes.Text         := SQLQuery_Principalid_clientes.asString;
-      Edit_filtro_descripcion_cliente.Text := SQLQuery_PrincipalOT_cliente_descripcion.asString;
-      Edit_filtro_id_empresas.Text         := SQLQuery_Principalid_empresas.asString;
-      Edit_filtro_descripcion_empresa.Text := SQLQuery_PrincipalOT_empresa_descripcion.asString;
-}
+    end
+    else
       Refrescar_registros;
-    end;
   end;
 
   var_msg.Free;
@@ -1635,9 +1523,12 @@ begin
 end;
 
 procedure Tf_servicios_regulares_000.Insertar_Registro_Temporadas;
-var var_msg           : TStrings;
-    var_Form          : Tf_servicios_regulares_001;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tf_servicios_regulares_001;
+  var_record_Existe         : Trecord_Existe;
+
 begin
   if public_Solo_Ver = true then
   begin
@@ -1677,10 +1568,27 @@ begin
         if var_Form.public_Pulso_Aceptar = true then
         begin
           var_Form.Free;
-          var_record_Existe := Existe_Temporada_Ya( '', // Estoy insertando/creando y lo que tengo que comprobar es que no exista la pwd en cualquier otro usuario, por lo que el campo id_Users no lo paso
-                                                    FieldByName('id_servicios_regulares').AsString,
-                                                    FieldByName('desde_fecha').AsString,
-                                                    FieldByName('hasta_fecha').AsString );
+
+          SetLength(var_Campos_para_Existe_ya, 3);
+
+          var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_servicios_regulares').AsString;
+          var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_servicios_regulares';
+          var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+          var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('desde_fecha').AsString;
+          var_Campos_para_Existe_ya[1].Campo_Nombre := 'desde_fecha';
+          var_Campos_para_Existe_ya[1].Campo_Tipo   := 2; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+          var_Campos_para_Existe_ya[2].Campo_Valor  := FieldByName('hasta_fecha').AsString;
+          var_Campos_para_Existe_ya[2].Campo_Nombre := 'hasta_fecha';
+          var_Campos_para_Existe_ya[1].Campo_Tipo   := 2; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+          var_record_Existe := UTI_RGTRO_Existe_Ya( 'servicios_regulares_periodos',                                        // param_nombre_tabla
+                                                    'ORDER BY servicios_regulares_periodos.id_servicios_regulares ASC, ' +
+                                                             'servicios_regulares_periodos.desde_fecha ASC, ' +
+                                                             'servicios_regulares_periodos.hasta_fecha ASC',               // param_order_by
+                                                    '',                                                                    // param_id_a_no_traer ... Estoy insertando
+                                                    var_Campos_para_Existe_ya );                                           // param_Campos_para_Existe_ya
 
           if var_record_Existe.Fallo_en_Conexion_BD = true then
           begin
@@ -1725,10 +1633,13 @@ begin
 end;
 
 procedure Tf_servicios_regulares_000.Editar_Registro_Temporadas;
-var var_msg           : TStrings;
-    var_Form          : Tf_servicios_regulares_001;
-    var_record_Existe : Trecord_Existe;
-    var_id            : ShortString;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_msg                   : TStrings;
+  var_Form                  : Tf_servicios_regulares_001;
+  var_record_Existe         : Trecord_Existe;
+  var_id                    : ShortString;
+
 begin
   if public_Solo_Ver = true then
   begin
@@ -1765,10 +1676,27 @@ begin
         var_Form.ShowModal;
         if var_Form.public_Pulso_Aceptar = true then
         begin
-          var_record_Existe := Existe_Temporada_Ya( FieldByName('id').AsString, // Estoy insertando/creando y lo que tengo que comprobar es que no exista la pwd en cualquier otro usuario, por lo que el campo id_Users no lo paso
-                                                    FieldByName('id_servicios_regulares').AsString,
-                                                    FieldByName('desde_fecha').AsString,
-                                                    FieldByName('hasta_fecha').AsString );
+
+                    SetLength(var_Campos_para_Existe_ya, 3);
+
+                    var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('id_servicios_regulares').AsString;
+                    var_Campos_para_Existe_ya[0].Campo_Nombre := 'id_servicios_regulares';
+                    var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_Campos_para_Existe_ya[1].Campo_Valor  := FieldByName('desde_fecha').AsString;
+                    var_Campos_para_Existe_ya[1].Campo_Nombre := 'desde_fecha';
+                    var_Campos_para_Existe_ya[1].Campo_Tipo   := 2; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_Campos_para_Existe_ya[2].Campo_Valor  := FieldByName('hasta_fecha').AsString;
+                    var_Campos_para_Existe_ya[2].Campo_Nombre := 'hasta_fecha';
+                    var_Campos_para_Existe_ya[1].Campo_Tipo   := 2; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+                    var_record_Existe := UTI_RGTRO_Existe_Ya( 'servicios_regulares_periodos',                                        // param_nombre_tabla
+                                                              'ORDER BY servicios_regulares_periodos.id_servicios_regulares ASC, ' +
+                                                                       'servicios_regulares_periodos.desde_fecha ASC, ' +
+                                                                       'servicios_regulares_periodos.hasta_fecha ASC',               // param_order_by
+                                                              FieldByName('id').AsString,                                            // param_id_a_no_traer ... Estoy insertando
+                                                              var_Campos_para_Existe_ya );                                           // param_Campos_para_Existe_ya
 
           if var_record_Existe.Fallo_en_Conexion_BD = true then
           begin
@@ -2159,5 +2087,4 @@ begin
 end;
 
 end.
-
 

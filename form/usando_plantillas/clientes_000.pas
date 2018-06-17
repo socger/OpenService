@@ -2917,16 +2917,9 @@ end;
 function Tf_clientes_000.Fue_Utilizado_Rgtro_SQLQuery_Principal : ShortInt;
 begin
   Result := 0;
+
 end;
 
 end.
-
-jerofa todo esto es investigación del tsqlquery
-
-SQLQuery_Filtros.RefreshSQL SQL.;
-SQLQuery_Filtros.Prepare;
-SQLQuery_Filtros.Sequence;
-SQLQuery_Filtros.ApplyUpdates;
-SQLQuery_Filtros.PacketRecords:=;
 
 

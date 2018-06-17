@@ -1082,18 +1082,19 @@ var
   var_SQL : TStrings;
   v_id    : String;
 begin
-  {
-  jerofa esto hay que implementarlo bien en todos los módulos hijos de esta plantilla,
+{
+  esto hay que implementarlo bien en todos los módulos hijos de esta plantilla,
   pero a lo mejor se podría solucionar creando foreign keys de la tabla principal
 
-  jerofa esto tienes que crearlo en todos los módulos hijos de plantilla_000 pero puede o no usarse
+  esto tienes que crearlo en todos los módulos hijos de plantilla_000 pero puede o no usarse
   este es un ejemplo usandose
   Si no se fa a usar simplemente poner .... Result := 0; para que se pueda borrar el registro
 
   Result := 0;
 }
 
-  jerofa esto que es ... no es en si el existe_
+{
+  esto es por si quieres controlar que ya se usó
 
   v_id    := SQLQuery_Principal.FieldByName('id').AsString;
   var_SQL := TStringList.Create;
@@ -1127,6 +1128,8 @@ begin
   Result := UTI_RGTROS_se_uso(var_SQL);
 
   var_SQL.Free;
+}
+
 end;
 
 procedure Tform_plantilla_000.Refrescar_Registros_TablasLigadas;
@@ -1290,7 +1293,10 @@ end;
 
 procedure Tform_plantilla_000.Antes_del_Post_Principal_Sin_Rellenar_Permitido_NO( p_msg,
                                                                                   p_msg_Comprobar : TStrings );
-var var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_record_Existe         : Trecord_Existe;
+
 begin
   { Hacer algo parecido a lo de abajo pero en plan hereditario con su inherited y todo
 
@@ -1369,14 +1375,30 @@ begin
     // ********************************************************************************************* //
     if SQLQuery_Principal.State = dsInsert then
     begin
-      var_record_Existe := Existe_la_Cta_Ya( '',
-                                             FieldByName('descripcion').AsString );
+      SetLength(var_Campos_para_Existe_ya, 1);
+
+      var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+      var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+      var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+      var_record_Existe := UTI_RGTRO_Existe_Ya( 'cuenta',                          // param_nombre_tabla
+                                                'ORDER BY cuentas.id_cuentas ASC', // param_order_by
+                                                '',                                // param_id_a_no_traer ... Estoy insertando
+                                                var_Campos_para_Existe_ya );       // param_Campos_para_Existe_ya
     end;
 
     if SQLQuery_Principal.State = dsEdit then
     begin
-      var_record_Existe := Existe_la_Cta_Ya( FieldByName('id').AsString,
-                                             FieldByName('descripcion').AsString );
+      SetLength(var_Campos_para_Existe_ya, 1);
+
+      var_Campos_para_Existe_ya[0].Campo_Valor  := FieldByName('descripcion').AsString;
+      var_Campos_para_Existe_ya[0].Campo_Nombre := 'descripcion';
+      var_Campos_para_Existe_ya[0].Campo_Tipo   := 1; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+
+      var_record_Existe := UTI_RGTRO_Existe_Ya( 'cuenta',                          // param_nombre_tabla
+                                                'ORDER BY cuentas.id_cuentas ASC', // param_order_by
+                                                FieldByName('id').AsString,        // param_id_a_no_traer ... Estoy insertando
+                                                var_Campos_para_Existe_ya );       // param_Campos_para_Existe_ya
 
     end;
 
@@ -1906,6 +1928,9 @@ Comprobar todos los f_elige
 Hay módulos que derivan de las plantillas a los que les pasamos filtros cuando son llamados desde otros módulos,
 así que hay que ver como pueden pasar estos filtros a los filtros reales del módulo llamado.
 
+jerofa hay que cambiar todos los UTI_Abrir_Form() ... hay que poner su correspondiente llamada al módulo
+por ejemplo este es el que llama al módulo 50 ... UTI_Abrir_Modulo_Clientes()
+
 En el init debería de completar los FONT de componentes que todavía no controle
 En el init debería de completar los COLOR de componentes que todavía no controle
 
@@ -1955,6 +1980,14 @@ Ver que todos los f_modulos están funcionando bien con los filtros, porque el o
 Cambiar el diseño del panel de filtros en todos los f_
 En todos los f_ hay que redimensionarlos porque ahora no tenemos el panel filtro arriba por lo que su tamaño sería menor
 
+
+jerofa todo esto es investigación del tsqlquery
+
+SQLQuery_Filtros.RefreshSQL SQL.;
+SQLQuery_Filtros.Prepare;
+SQLQuery_Filtros.Sequence;
+SQLQuery_Filtros.ApplyUpdates;
+SQLQuery_Filtros.PacketRecords:=;
 
 jerofa
 Hay que arreglar todos los f_ que deriven de plantilla_000 .... su redimensionamiento en height porque ya no

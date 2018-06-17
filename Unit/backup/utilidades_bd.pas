@@ -230,7 +230,7 @@ begin
     **************************************************************************** }
     var_SQL := TStringList.Create;
 
-    var_CN_Conexion := UTI_INI_Configuracion_Traerla;
+    var_CN_Conexion := UTI_INI_Configuracion_Inicio;
     if var_CN_Conexion.con_Exito = False then UTI_GEN_Salir;
 
     if UpperCase(Copy(var_CN_Conexion.ConnectorType, 1, 5)) = UpperCase('MySQL') then
@@ -1415,7 +1415,7 @@ begin
         Tag := 0;
     end;
 
-    var_CN_Conexion := UTI_INI_Configuracion_Traerla;
+    var_CN_Conexion := UTI_INI_Configuracion_Inicio;
 
     if var_CN_Conexion.con_Exito = True then
     begin
