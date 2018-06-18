@@ -1131,8 +1131,8 @@ var
 begin
   // Por si queremos hacer algo al hacer doble click en una celda;
 
-  if (p_DBGrid_Filtros.SelectedIndex = 2) or
-     (p_DBGrid_Filtros.SelectedIndex = 4) then
+  if    ( p_DBGrid_Filtros.SelectedIndex = 2 )
+     or ( p_DBGrid_Filtros.SelectedIndex = 4 ) then
   begin
     v_nombre_campo := p_SQLQuery_Filtros.FieldByName('nombre_campo').asString;
 
@@ -1140,10 +1140,10 @@ begin
     begin
       v_Hemos_Llamado := false;
 
-      if (UTI_RGTRO_Campo_es_DiaHora( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
-                                         p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) or
-         (UTI_RGTRO_Campo_es_Dia( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
-                                  p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true)        then
+      if   ( UTI_RGTRO_Campo_es_DiaHora( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
+                                         p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true )
+         or ( UTI_RGTRO_Campo_es_Dia( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
+                                      p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true ) then
       begin
         v_Hemos_Llamado := true;
         if p_CalendarDialog.Execute then
@@ -1155,9 +1155,9 @@ begin
         end;
       end;
 
-      if (UTI_RGTRO_Campo_es_Numero( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
-                                     p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) and
-         (UpperCase(Copy(v_nombre_campo, 1, 3)) = 'ID_')                                                      then
+      if      ( UTI_RGTRO_Campo_es_Numero( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
+                                           p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true )
+          and ( UpperCase(Copy(v_nombre_campo, 1, 3)) = 'ID_' ) then
       begin
         v_Hemos_Llamado := true;
         v_Registro      := UTI_Abrir_Form( '', '', true, true, v_nombre_campo );
@@ -1180,10 +1180,10 @@ begin
     begin
       v_Hemos_Llamado := false;
 
-      if (UTI_RGTRO_Campo_es_DiaHora( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
-                                      p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) or
-         (UTI_RGTRO_Campo_es_Dia( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
-                                  p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true)     then
+      if    ( UTI_RGTRO_Campo_es_DiaHora( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
+                                          p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true )
+         or ( UTI_RGTRO_Campo_es_Dia( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
+                                      p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true ) then
       begin
         v_Hemos_Llamado := true;
         if p_CalendarDialog.Execute then
@@ -1195,9 +1195,9 @@ begin
         end;
       end;
 
-      if (UTI_RGTRO_Campo_es_Numero( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
-                                     p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) and
-         (UpperCase(Copy(v_nombre_campo, 1, 3)) = 'ID_')                                                      then
+      if     ( UTI_RGTRO_Campo_es_Numero( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
+                                          p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true )
+         and ( UpperCase(Copy(v_nombre_campo, 1, 3)) = 'ID_' ) then
       begin
         v_Hemos_Llamado := true;
         v_Registro      := UTI_Abrir_Form( '', '', true, true, v_nombre_campo );
