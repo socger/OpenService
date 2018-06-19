@@ -1281,9 +1281,12 @@ begin
 end;
 
 procedure Tform_articulos_familias_001.Asignar_Familia_como_SubFamilia;
-var var_Registro      : TRecord_Rgtro_Comun;
-    var_msg           : TStrings;
-    var_record_Existe : Trecord_Existe;
+var
+  var_Campos_para_Existe_ya : Array of TCampos_para_Existe_ya;
+  var_Registro              : TRecord_Rgtro_Comun;
+  var_msg                   : TStrings;
+  var_record_Existe         : Trecord_Existe;
+
 begin
     if Comprobar_No_Tocar(true, false) = true then
     begin

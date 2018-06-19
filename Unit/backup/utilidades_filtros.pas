@@ -1140,10 +1140,10 @@ begin
     begin
       v_Hemos_Llamado := false;
 
-      if (UTI_RGTRO_Campo_es_DiaHora( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
-                                         p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true) or
-         (UTI_RGTRO_Campo_es_Dia( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
-                                  p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true)        then
+      if   ( UTI_RGTRO_Campo_es_DiaHora( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
+                                         p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true )
+         or ( UTI_RGTRO_Campo_es_Dia( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
+                                      p_SQLQuery_Filtros.FieldByName('parte_de_SQL_tipoDato').asString ) = true ) then
       begin
         v_Hemos_Llamado := true;
         if p_CalendarDialog.Execute then
@@ -1273,7 +1273,10 @@ var
 begin
   v_nombre_campo := p_SQLQuery_Filtros.FieldByName('nombre_campo').asString;
 
+  JEROFA ESTO DE ABAJO PODRÍA SER ALGO ASÍ Y SERIA PARA PONERLE UN SIZE DEL MISMO TAMAÑO QUE EL CAMPO DE LA TABLA PRINCIPAL
   // p_DBGrid_Filtros.SelectedField.Size:=; Se podría completar si nos interesara
+
+  p_DBGrid_Filtros.SelectedField.Size := p_SQLQuery_Principal.FieldByName(v_nombre_campo).Size;
 
   if p_DBGrid_Filtros.SelectedIndex = 0 then
     p_DBGrid_Filtros.SelectedIndex := p_DBGrid_Filtros.SelectedIndex + 1;

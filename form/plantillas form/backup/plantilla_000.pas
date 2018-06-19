@@ -1928,9 +1928,6 @@ Comprobar todos los f_elige
 Hay módulos que derivan de las plantillas a los que les pasamos filtros cuando son llamados desde otros módulos,
 así que hay que ver como pueden pasar estos filtros a los filtros reales del módulo llamado.
 
-jerofa hay que cambiar todos los UTI_Abrir_Form() ... hay que poner su correspondiente llamada al módulo
-por ejemplo este es el que llama al módulo 50 ... UTI_Abrir_Modulo_Clientes()
-
 En el init debería de completar los FONT de componentes que todavía no controle
 En el init debería de completar los COLOR de componentes que todavía no controle
 
@@ -1980,6 +1977,14 @@ Ver que todos los f_modulos están funcionando bien con los filtros, porque el o
 Cambiar el diseño del panel de filtros en todos los f_
 En todos los f_ hay que redimensionarlos porque ahora no tenemos el panel filtro arriba por lo que su tamaño sería menor
 
+
+jerofa todo esto es investigación del tsqlquery
+
+SQLQuery_Filtros.RefreshSQL SQL.;
+SQLQuery_Filtros.Prepare;
+SQLQuery_Filtros.Sequence;
+SQLQuery_Filtros.ApplyUpdates;
+SQLQuery_Filtros.PacketRecords:=;
 
 jerofa
 Hay que arreglar todos los f_ que deriven de plantilla_000 .... su redimensionamiento en height porque ya no

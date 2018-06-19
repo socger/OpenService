@@ -13,7 +13,7 @@ type
   TCampos_para_Existe_ya = record
       Campo_Valor  : String;
       Campo_Nombre : String;
-      Campo_Tipo   : ShortInteger; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
+      Campo_Tipo   : ShortInt; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
   end;
 
   procedure UTI_RGTRO_where_o_And(var param_where_o_and : ShortString);
@@ -1407,29 +1407,30 @@ begin
       if     ( Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Valor) <> '' )
          and ( Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Nombre) <> '' ) then
       begin
+        UTI_RGTRO_where_o_And(var_where_o_and);
         if param_Campos_para_Existe_ya[var_Contador].Campo_Tipo = 0 then // Numerico
-          var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+          var_SQL.Add( var_where_o_and +
                        var_antes_de_campo +
                        Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Nombre) +
                        ' = ' +
-                       Trim(param_enString) );
+                       Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Valor) );
 
         if param_Campos_para_Existe_ya[var_Contador].Campo_Tipo = 1 then // String
-          var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+          var_SQL.Add( var_where_o_and +
                        var_antes_de_campo +
                        Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Nombre) +
                        ' = ' +
                        UTI_GEN_Comillas(Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Valor)) );
 
         if param_Campos_para_Existe_ya[var_Contador].Campo_Tipo = 2 then // Fecha ó Fecha+Hora
-          var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+          var_SQL.Add( var_where_o_and +
                        var_antes_de_campo +
                        Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Nombre) +
                        ' = ' +
-                       UTI_GEN_Comillas(UTI_GEN_Format_Fecha_Hora(param_Campos_para_Existe_ya[var_Contador].Campo_Valor, true)) );
+                       UTI_GEN_Comillas(UTI_GEN_Format_Fecha_Hora(StrToDateTime(param_Campos_para_Existe_ya[var_Contador].Campo_Valor), true)) );
 
         if param_Campos_para_Existe_ya[var_Contador].Campo_Tipo = 3 then // Hora
-          var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+          var_SQL.Add( var_where_o_and +
                        var_antes_de_campo +
                        Trim(param_Campos_para_Existe_ya[var_Contador].Campo_Nombre) +
                        ' = ' +
@@ -1440,7 +1441,8 @@ begin
 
     if Trim(param_id_a_no_traer) <> '' then
     begin
-      var_SQL.Add( UTI_RGTRO_where_o_And(var_where_o_and) +
+      UTI_RGTRO_where_o_And(var_where_o_and);
+      var_SQL.Add( var_where_o_and +
                    ' NOT ' + var_antes_de_campo + 'id = ' +
                    Trim(param_id_a_no_traer) );
     end;

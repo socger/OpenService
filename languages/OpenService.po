@@ -922,20 +922,6 @@ msgctxt "articulos_000.rs_error"
 msgid "ERROR ... "
 msgstr ""
 
-#: articulos_000.rs_existe_el_articulo_ya_1
-msgid "Error al comprobar si el artículo existe ya."
-msgstr ""
-
-#: articulos_000.rs_existe_el_articulo_ya_2
-msgctxt "articulos_000.rs_existe_el_articulo_ya_2"
-msgid "La tabla ha sido "
-msgstr ""
-
-#: articulos_000.rs_existe_el_articulo_ya_3
-msgctxt "articulos_000.rs_existe_el_articulo_ya_3"
-msgid " desde el módulo "
-msgstr ""
-
 #: articulos_000.rs_para_empezar_1
 msgctxt "articulos_000.rs_para_empezar_1"
 msgid "Por descripción"
@@ -1019,20 +1005,6 @@ msgctxt "articulos_001.rs_existe_articulo_composicion_ya_3"
 msgid " desde el módulo "
 msgstr ""
 
-#: articulos_001.rs_existe_articulo_proporcion_ya_1
-msgid "Error al comprobar si la proporción existe ya para el articulo."
-msgstr ""
-
-#: articulos_001.rs_existe_articulo_proporcion_ya_2
-msgctxt "articulos_001.rs_existe_articulo_proporcion_ya_2"
-msgid "La tabla ha sido "
-msgstr ""
-
-#: articulos_001.rs_existe_articulo_proporcion_ya_3
-msgctxt "articulos_001.rs_existe_articulo_proporcion_ya_3"
-msgid " desde el módulo "
-msgstr ""
-
 #: articulos_001.rs_existe_articulo_referencia_ya_1
 msgid "Error al comprobar si la referencia existe ya para el articulo."
 msgstr ""
@@ -1044,49 +1016,6 @@ msgstr ""
 
 #: articulos_001.rs_existe_articulo_referencia_ya_3
 msgctxt "articulos_001.rs_existe_articulo_referencia_ya_3"
-msgid " desde el módulo "
-msgstr ""
-
-#: articulos_001.rs_existe_stock_ya_1
-msgid "Error al comprobar si el stock existe ya para el articulo."
-msgstr ""
-
-#: articulos_001.rs_existe_stock_ya_2
-msgctxt "articulos_001.rs_existe_stock_ya_2"
-msgid "La tabla ha sido "
-msgstr ""
-
-#: articulos_001.rs_existe_stock_ya_3
-msgctxt "articulos_001.rs_existe_stock_ya_3"
-msgid " desde el módulo "
-msgstr ""
-
-#: articulos_001.rs_existe_tarifa_ya_1
-msgctxt "articulos_001.rs_existe_tarifa_ya_1"
-msgid "Error al comprobar si la tarifa existe ya para el artículo."
-msgstr ""
-
-#: articulos_001.rs_existe_tarifa_ya_2
-msgctxt "articulos_001.rs_existe_tarifa_ya_2"
-msgid "La tabla ha sido "
-msgstr ""
-
-#: articulos_001.rs_existe_tarifa_ya_3
-msgctxt "articulos_001.rs_existe_tarifa_ya_3"
-msgid " desde el módulo "
-msgstr ""
-
-#: articulos_001.rs_existe_terminal_ya_1
-msgid "Error al comprobar si la terminal existe ya para el articulo."
-msgstr ""
-
-#: articulos_001.rs_existe_terminal_ya_2
-msgctxt "articulos_001.rs_existe_terminal_ya_2"
-msgid "La tabla ha sido "
-msgstr ""
-
-#: articulos_001.rs_existe_terminal_ya_3
-msgctxt "articulos_001.rs_existe_terminal_ya_3"
 msgid " desde el módulo "
 msgstr ""
 
@@ -1324,20 +1253,6 @@ msgctxt "articulos_familias_000.rs_error"
 msgid "ERROR ... "
 msgstr ""
 
-#: articulos_familias_000.rs_existe_el_articulo_familia_ya_1
-msgid "Error al comprobar si la familia de artículos existe ya."
-msgstr ""
-
-#: articulos_familias_000.rs_existe_el_articulo_familia_ya_2
-msgctxt "articulos_familias_000.rs_existe_el_articulo_familia_ya_2"
-msgid "La tabla ha sido "
-msgstr ""
-
-#: articulos_familias_000.rs_existe_el_articulo_familia_ya_3
-msgctxt "articulos_familias_000.rs_existe_el_articulo_familia_ya_3"
-msgid " desde el módulo "
-msgstr ""
-
 #: articulos_familias_000.rs_insertar_registro_1
 msgid "Familia de artículo repetida."
 msgstr ""
@@ -1439,46 +1354,6 @@ msgctxt "articulos_familias_001.rs_error"
 msgid "ERROR ... "
 msgstr ""
 
-#: articulos_familias_001.rs_existe_subfamilia_ya_1
-msgid "Error al comprobar si la subfamilia existe ya para la familia de"
-msgstr ""
-
-#: articulos_familias_001.rs_existe_subfamilia_ya_2
-msgid " artículos. La tabla ha sido "
-msgstr ""
-
-#: articulos_familias_001.rs_existe_subfamilia_ya_3
-msgctxt "articulos_familias_001.rs_existe_subfamilia_ya_3"
-msgid " desde el módulo "
-msgstr ""
-
-#: articulos_familias_001.rs_existe_tarifa_ya_1
-msgid "Error al comprobar si la tarifa existe ya para el tipo de artículos."
-msgstr ""
-
-#: articulos_familias_001.rs_existe_tarifa_ya_2
-msgctxt "articulos_familias_001.rs_existe_tarifa_ya_2"
-msgid "La tabla ha sido "
-msgstr ""
-
-#: articulos_familias_001.rs_existe_tarifa_ya_3
-msgctxt "articulos_familias_001.rs_existe_tarifa_ya_3"
-msgid " desde el módulo "
-msgstr ""
-
-#: articulos_familias_001.rs_existe_terminal_ya_1
-msgid "Error al comprobar si la terminal existe ya para la familia de"
-msgstr ""
-
-#: articulos_familias_001.rs_existe_terminal_ya_2
-msgid " articulos. La tabla ha sido "
-msgstr ""
-
-#: articulos_familias_001.rs_existe_terminal_ya_3
-msgctxt "articulos_familias_001.rs_existe_terminal_ya_3"
-msgid " desde el módulo "
-msgstr ""
-
 #: articulos_familias_001.rs_formclose_1
 msgctxt "articulos_familias_001.rs_formclose_1"
 msgid "* La descripción."
@@ -1565,20 +1440,6 @@ msgstr ""
 #: articulos_ofertas_001.rs_editar_registro_aoa_1
 msgctxt "articulos_ofertas_001.rs_editar_registro_aoa_1"
 msgid "Artículo repetido para esta oferta."
-msgstr ""
-
-#: articulos_ofertas_001.rs_existe_aoa_ya_1
-msgid "Error al comprobar si el artículo ya fué puesto para esta oferta."
-msgstr ""
-
-#: articulos_ofertas_001.rs_existe_aoa_ya_2
-msgctxt "articulos_ofertas_001.rs_existe_aoa_ya_2"
-msgid "La tabla ha sido "
-msgstr ""
-
-#: articulos_ofertas_001.rs_existe_aoa_ya_3
-msgctxt "articulos_ofertas_001.rs_existe_aoa_ya_3"
-msgid " desde el módulo "
 msgstr ""
 
 #: articulos_ofertas_001.rs_formclose_1

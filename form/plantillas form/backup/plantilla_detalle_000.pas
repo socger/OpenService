@@ -426,10 +426,6 @@ begin
                                                 'ORDER BY cuentas.id_cuentas ASC', // param_order_by
                                                 FieldByName('id').AsString,        // param_id_a_no_traer ... Estoy insertando
                                                 var_Campos_para_Existe_ya );       // param_Campos_para_Existe_ya
-
-      var_record_Existe := Existe_la_Cta_Ya( ,
-                                             FieldByName('descripcion').AsString );
-
     end;
 
     if (SQLQuery_Tabla_no_Principal.State = dsInsert) or

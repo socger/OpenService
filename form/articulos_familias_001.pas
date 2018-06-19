@@ -1310,7 +1310,7 @@ begin
                 var_Campos_para_Existe_ya[0].Campo_Tipo   := 0; // 0: Numerico, 1: String, 2:Fecha ó Fecha+Hora, 3:Hora
 
                 var_record_Existe := UTI_RGTRO_Existe_Ya( 'articulos_familias',                                     // param_nombre_tabla
-                                                          'ORDER BY articulos_familias.id_articulos_familias ASC' + // param_order_by
+                                                          'ORDER BY articulos_familias.id_articulos_familias ASC',  // param_order_by
                                                           '',                                                       // param_id_a_no_traer ... Estoy insertando
                                                           var_Campos_para_Existe_ya );                              // param_Campos_para_Existe_ya
 

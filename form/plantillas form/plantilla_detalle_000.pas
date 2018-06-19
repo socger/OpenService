@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, ButtonPanel,
-  DbCtrls, ComCtrls, utilidades_general, utilidades_usuarios;
+  DbCtrls, ComCtrls, utilidades_general, utilidades_usuarios, utilidades_rgtro;
 
 type
 

@@ -1273,7 +1273,11 @@ var
 begin
   v_nombre_campo := p_SQLQuery_Filtros.FieldByName('nombre_campo').asString;
 
-  // p_DBGrid_Filtros.SelectedField.Size:=; Se podría completar si nos interesara
+  JEROFA ... CUANDO ESTAS PIDIENDO EL VALOR DESDE O HASTA DEL FILTRO PONERLE UN MAX SIZE SEGUN EL
+             SIZE DEL CAMPO DE LA TABLA PRINCIPAL.
+             VER SI ESTO DE ABAJO PODRÍA SER ALGO ASÍ Y SERIA PARA PONERLE UN SIZE DEL MISMO TAMAÑO
+             QUE EL CAMPO DE LA TABLA PRINCIPAL
+  p_DBGrid_Filtros.SelectedField.Size := p_SQLQuery_Principal.FieldByName(v_nombre_campo).Size;
 
   if p_DBGrid_Filtros.SelectedIndex = 0 then
     p_DBGrid_Filtros.SelectedIndex := p_DBGrid_Filtros.SelectedIndex + 1;

@@ -37,7 +37,7 @@
       <Unit3>
         <Filename Value="Unit\utilidades_bd.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="1196"/>
         <CursorPos X="3" Y="1206"/>
         <ExtraEditorCount Value="1"/>
@@ -63,10 +63,10 @@
       <Unit5>
         <Filename Value="Unit\utilidades_general.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="128"/>
-        <CursorPos X="52" Y="138"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="15" Y="16"/>
         <UsageCount Value="201"/>
+        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="form\avisos.pas"/>
@@ -140,8 +140,7 @@
         <Filename Value="Unit\utilidades_rgtro.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="610"/>
-        <CursorPos X="5" Y="591"/>
+        <CursorPos X="3" Y="13"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit12>
@@ -579,10 +578,12 @@
         <ComponentName Value="form_articulos_familias_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1396"/>
-        <CursorPos X="50" Y="1411"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="1388"/>
+        <CursorPos X="118" Y="1410"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit52>
       <Unit53>
         <Filename Value="dataModule\dm_articulos_familias.pas"/>
@@ -601,10 +602,11 @@
         <ComponentName Value="form_articulos_familias_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1293"/>
-        <CursorPos X="92" Y="1295"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="1291"/>
+        <CursorPos X="116" Y="1313"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit54>
       <Unit55>
         <Filename Value="form\articulos_familias_002.pas"/>
@@ -1852,9 +1854,9 @@
         <ComponentName Value="form_visitas_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="10"/>
-        <TopLine Value="524"/>
-        <CursorPos X="3" Y="566"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="504"/>
+        <CursorPos X="161" Y="518"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -2676,10 +2678,9 @@
         <ComponentName Value="form_plantilla_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="9"/>
-        <TopLine Value="1941"/>
-        <CursorPos X="5" Y="1953"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="1261"/>
+        <CursorPos X="101" Y="1276"/>
         <UsageCount Value="206"/>
         <Bookmarks Count="2">
           <Item0 X="31" Y="1491" ID="8"/>
@@ -2749,7 +2750,7 @@
         <ComponentName Value="f_almacenes_movimientos_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="14"/>
         <TopLine Value="248"/>
         <CursorPos X="9" Y="260"/>
         <UsageCount Value="204"/>
@@ -2761,9 +2762,8 @@
         <ComponentName Value="form_plantilla_detalle_000"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="8"/>
-        <TopLine Value="403"/>
-        <CursorPos X="27" Y="409"/>
+        <EditorIndex Value="9"/>
+        <CursorPos X="79" Y="9"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -2950,7 +2950,7 @@
         <ComponentName Value="form_plantilla_001"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <CursorPos X="82" Y="12"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -2962,7 +2962,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="58"/>
         <CursorPos Y="75"/>
-        <UsageCount Value="77"/>
+        <UsageCount Value="78"/>
         <Loaded Value="True"/>
       </Unit270>
       <Unit271>
@@ -2970,9 +2970,9 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="utilidades_Filtros"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="51"/>
-        <CursorPos X="3" Y="56"/>
-        <UsageCount Value="69"/>
+        <TopLine Value="1122"/>
+        <CursorPos X="51" Y="1214"/>
+        <UsageCount Value="70"/>
         <Loaded Value="True"/>
       </Unit271>
       <Unit272>
@@ -3733,7 +3733,7 @@
         <UsageCount Value="11"/>
       </Unit360>
       <Unit361>
-        <Filename Value="C:\lazarus\lcl\stdctrls.pp"/>
+        <Filename Value="..\lcl\stdctrls.pp"/>
         <UnitName Value="StdCtrls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
@@ -3741,47 +3741,130 @@
         <UsageCount Value="10"/>
       </Unit361>
     </Units>
-    <JumpHistory Count="9" HistoryIndex="8">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="form\visitas_001.pas"/>
-        <Caret Line="528" TopLine="491"/>
-      </Position1>
-      <Position2>
-        <Filename Value="form\visitas_001.pas"/>
-        <Caret Line="506" Column="58" TopLine="494"/>
-      </Position2>
-      <Position3>
-        <Filename Value="form\visitas_001.pas"/>
-        <Caret Line="544" Column="35" TopLine="526"/>
-      </Position3>
-      <Position4>
-        <Filename Value="form\usando_plantillas\almacenes_movimientos_000.pas"/>
-        <Caret Line="1009" Column="39" TopLine="990"/>
-      </Position4>
-      <Position5>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="1436" Column="32" TopLine="1431"/>
-      </Position5>
-      <Position6>
-        <Filename Value="form\usando_plantillas\almacenes_movimientos_000.pas"/>
-        <Caret Line="260" Column="9" TopLine="220"/>
-      </Position6>
-      <Position7>
         <Filename Value="form\usando_plantillas\almacenes_movimientos_000.pas"/>
         <Caret Line="260" Column="9" TopLine="248"/>
-      </Position7>
-      <Position8>
+      </Position1>
+      <Position2>
         <Filename Value="form\plantillas form\plantilla_000.pas"/>
         <Caret Line="1992" TopLine="1976"/>
+      </Position2>
+      <Position3>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="1931" Column="48" TopLine="1917"/>
+      </Position3>
+      <Position4>
+        <Filename Value="Unit\utilidades_filtros.pas"/>
+        <Caret Line="56" Column="3" TopLine="51"/>
+      </Position4>
+      <Position5>
+        <Filename Value="Unit\utilidades_filtros.pas"/>
+        <Caret Line="1163" Column="28" TopLine="1151"/>
+      </Position5>
+      <Position6>
+        <Filename Value="Unit\utilidades_filtros.pas"/>
+        <Caret Line="1203" Column="28" TopLine="1191"/>
+      </Position6>
+      <Position7>
+        <Filename Value="Unit\utilidades_filtros.pas"/>
+        <Caret Line="1163" Column="28" TopLine="1151"/>
+      </Position7>
+      <Position8>
+        <Filename Value="Unit\utilidades_filtros.pas"/>
+        <Caret Line="1203" Column="28" TopLine="1191"/>
       </Position8>
       <Position9>
-        <Filename Value="form\plantillas form\plantilla_000.pas"/>
-        <Caret Line="1931" TopLine="1918"/>
+        <Filename Value="Unit\utilidades_filtros.pas"/>
+        <Caret Line="1163" Column="28" TopLine="1157"/>
       </Position9>
+      <Position10>
+        <Filename Value="Unit\utilidades_filtros.pas"/>
+        <Caret Line="1161" Column="9" TopLine="1155"/>
+      </Position10>
+      <Position11>
+        <Filename Value="Unit\utilidades_filtros.pas"/>
+        <Caret Line="1163" TopLine="1155"/>
+      </Position11>
+      <Position12>
+        <Filename Value="form\visitas_001.pas"/>
+        <Caret Line="513" Column="78" TopLine="497"/>
+      </Position12>
+      <Position13>
+        <Filename Value="form\visitas_001.pas"/>
+        <Caret Line="518" Column="161" TopLine="504"/>
+      </Position13>
+      <Position14>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <Caret Line="13" Column="52"/>
+      </Position14>
+      <Position15>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <Caret Line="1398" Column="63" TopLine="1393"/>
+      </Position15>
+      <Position16>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <Caret Line="1415" Column="82" TopLine="1397"/>
+      </Position16>
+      <Position17>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <Caret Line="1408" Column="61" TopLine="1372"/>
+      </Position17>
+      <Position18>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <Caret Line="1442" Column="39" TopLine="1400"/>
+      </Position18>
+      <Position19>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <Caret Line="1430" Column="135" TopLine="1409"/>
+      </Position19>
+      <Position20>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <Caret Line="1445" Column="35" TopLine="1414"/>
+      </Position20>
+      <Position21>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="1944" Column="38" TopLine="1917"/>
+      </Position21>
+      <Position22>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+      </Position22>
+      <Position23>
+        <Filename Value="form\plantillas form\plantilla_000.pas"/>
+        <Caret Line="1276" Column="101" TopLine="1261"/>
+      </Position23>
+      <Position24>
+        <Filename Value="Unit\utilidades_rgtro.pas"/>
+        <Caret Line="13" Column="3"/>
+      </Position24>
+      <Position25>
+        <Filename Value="form\plantillas form\plantilla_detalle_000.pas"/>
+        <Caret Line="325" Column="40" TopLine="303"/>
+      </Position25>
+      <Position26>
+        <Filename Value="form\plantillas form\plantilla_detalle_000.pas"/>
+        <Caret Line="9" Column="79"/>
+      </Position26>
+      <Position27>
+        <Filename Value="form\articulos_familias_001.pas"/>
+        <Caret Line="1312" Column="38" TopLine="1291"/>
+      </Position27>
+      <Position28>
+        <Filename Value="form\articulos_familias_001.pas"/>
+        <Caret Line="11" Column="43"/>
+      </Position28>
+      <Position29>
+        <Filename Value="form\articulos_familias_001.pas"/>
+        <Caret Line="1313" Column="116" TopLine="1291"/>
+      </Position29>
+      <Position30>
+        <Filename Value="form\articulos_familias_000.pas"/>
+        <Caret Line="1186" Column="118" TopLine="1165"/>
+      </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
-    <BreakPoints Count="1">
+    <BreakPoints Count="3">
       <Item1>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
@@ -3789,6 +3872,20 @@
         <Source Value="form\usando_plantillas\servicios_regulares_000.pas"/>
         <Line Value="1140"/>
       </Item1>
+      <Item2>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="Unit\utilidades_filtros.pas"/>
+        <Line Value="1163"/>
+      </Item2>
+      <Item3>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="Unit\utilidades_filtros.pas"/>
+        <Line Value="1203"/>
+      </Item3>
     </BreakPoints>
     <Watches Count="1">
       <Item1>

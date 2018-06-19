@@ -1923,13 +1923,12 @@ end.
 
 (*
 
+CUANDO ESTAS PIDIENDO EL VALOR DESDE O HASTA DEL FILTRO PONERLE UN MAX SIZE SEGUN EL SIZE DEL CAMPO DE LA TABLA
+
 Comprobar todos los f_elige
 
 Hay módulos que derivan de las plantillas a los que les pasamos filtros cuando son llamados desde otros módulos,
 así que hay que ver como pueden pasar estos filtros a los filtros reales del módulo llamado.
-
-jerofa hay que cambiar todos los UTI_Abrir_Form() ... hay que poner su correspondiente llamada al módulo
-por ejemplo este es el que llama al módulo 50 ... UTI_Abrir_Modulo_Clientes()
 
 En el init debería de completar los FONT de componentes que todavía no controle
 En el init debería de completar los COLOR de componentes que todavía no controle
@@ -1940,6 +1939,7 @@ Hay que ver porque en clientes_tipo cuando entramos en los filtros y cambiamos d
 despues volvemos al debe, pues ya el debe no lo deja escribir ... y tambien porque el hasta no deja
 introducirlo ... además pinta el color de la celda en gris (como si estuviera desactivada)
 
+TENGO QUE VER SI ESTO YA FUNCIONA
 En form_visitas_001 hay una llamada desde el botón de elegir cliente a clientes_000 que antes se hacía a pelo
 en vez de usar utilidades_forms_filtrar ... esto se tiene que solucionar todos deben de llamar a utilidades_forms_filtrar ... pero
 lo que me preocupa es que antes de llamar pasa unos filtros que yo todavía no he preparado para que plantilla_000 los absorva y los
@@ -1952,8 +1952,6 @@ está creando el cliente. Luego en modificaciones del cliente si que se pueden d
 Desde f_impuestos_000 cuando intengas añadir un nuevo impuesto (composición) da errores ... verlos detenídamente.
 Los f_elige cuando son llamados podemos ponerle el public_Menu_Worked que queramos en la llamada, en vez de poner el mismo desde el que son llamados
 ... jerofa comprobar si esto funciona (f_servicios_Regulares_000) con los campos lunes_SN, martes_SN, etc ... en general todos los boolean
-
-CUANDO ESTAS PIDIENDO EL VALOR DESDE O HASTA DEL FILTRO PONERLE UN MAX SIZE SEGUN EL SIZE DEL CAMPO DE LA TABLA
 
 En el módulo f_servicios_regulares_000 uno de los filtros es NO_CAMPO_activo_al
 lo hace sobre la sql que trae los servicios regulares
