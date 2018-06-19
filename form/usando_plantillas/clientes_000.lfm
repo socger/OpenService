@@ -3248,6 +3248,9 @@ inherited f_clientes_000: Tf_clientes_000
               end
             end
           end
+          inherited DBGrid_Filtros: TDBGrid
+            OnSelectEditor = nil
+          end
         end
       end
     end
@@ -4443,8 +4446,8 @@ inherited f_clientes_000: Tf_clientes_000
     top = 96
   end
   inherited DataSource_Filtros: TDataSource
-    left = 112
-    top = 88
+    left = 192
+    top = 96
   end
   object SQLQuery_Clientes_Contactos: TSQLQuery[9]
     PacketRecords = 20

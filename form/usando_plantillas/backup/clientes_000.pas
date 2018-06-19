@@ -2922,12 +2922,4 @@ end;
 
 end.
 
-jerofa todo esto es investigación del tsqlquery
-
-SQLQuery_Filtros.RefreshSQL SQL.;
-SQLQuery_Filtros.Prepare;
-SQLQuery_Filtros.Sequence;
-SQLQuery_Filtros.ApplyUpdates;
-SQLQuery_Filtros.PacketRecords:=;
-
 

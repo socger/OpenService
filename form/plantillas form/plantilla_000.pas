@@ -1923,8 +1923,6 @@ end.
 
 (*
 
-CUANDO ESTAS PIDIENDO EL VALOR DESDE O HASTA DEL FILTRO PONERLE UN MAX SIZE SEGUN EL SIZE DEL CAMPO DE LA TABLA
-
 Comprobar todos los f_elige
 
 Hay módulos que derivan de las plantillas a los que les pasamos filtros cuando son llamados desde otros módulos,
@@ -1986,6 +1984,9 @@ SQLQuery_Filtros.Prepare;
 SQLQuery_Filtros.Sequence;
 SQLQuery_Filtros.ApplyUpdates;
 SQLQuery_Filtros.PacketRecords:=;
+
+los campos de una tabla tienen tambien el .newvalue y el .oldvalue ... ver si me pueden server para
+comprobar si han cambiado sus valores ... los que tenían antes del cambio/modificación
 
 jerofa
 Hay que arreglar todos los f_ que deriven de plantilla_000 .... su redimensionamiento en height porque ya no

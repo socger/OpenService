@@ -1269,15 +1269,10 @@ var
   v_nombre_campo    : String;
   v_es_Hora_o_Fecha : Boolean;
   v_aceptada        : Boolean;
+  v_max_size        : Integer;
 
 begin
   v_nombre_campo := p_SQLQuery_Filtros.FieldByName('nombre_campo').asString;
-
-  JEROFA ... CUANDO ESTAS PIDIENDO EL VALOR DESDE O HASTA DEL FILTRO PONERLE UN MAX SIZE SEGUN EL
-             SIZE DEL CAMPO DE LA TABLA PRINCIPAL.
-             VER SI ESTO DE ABAJO PODRÍA SER ALGO ASÍ Y SERIA PARA PONERLE UN SIZE DEL MISMO TAMAÑO
-             QUE EL CAMPO DE LA TABLA PRINCIPAL
-  p_DBGrid_Filtros.SelectedField.Size := p_SQLQuery_Principal.FieldByName(v_nombre_campo).Size;
 
   if p_DBGrid_Filtros.SelectedIndex = 0 then
     p_DBGrid_Filtros.SelectedIndex := p_DBGrid_Filtros.SelectedIndex + 1;
@@ -1285,6 +1280,13 @@ begin
   if (p_DBGrid_Filtros.SelectedIndex = 1) or    // Desde_Valor
      (p_DBGrid_Filtros.SelectedIndex = 3) then  // Hasta_Valor
   begin
+    // Con esto de a continuación cambiaríamos el size de la columna del grid para desdevalor y
+    // hastavalor. Pero no funciona como quisiera ... aparentemente no hace nada
+    v_max_size                          := p_SQLQuery_Principal.FieldByName(v_nombre_campo).Size;
+    p_DBGrid_Filtros.Columns[1].MaxSize := v_max_size;
+    p_DBGrid_Filtros.Columns[3].MaxSize := v_max_size;
+
+    // A partir de aquí cambiamos el editMask
     v_es_Hora_o_Fecha := false;
 
     if UTI_RGTRO_Campo_es_Hora( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,

@@ -1269,14 +1269,10 @@ var
   v_nombre_campo    : String;
   v_es_Hora_o_Fecha : Boolean;
   v_aceptada        : Boolean;
+  v_max_size        : Integer;
 
 begin
   v_nombre_campo := p_SQLQuery_Filtros.FieldByName('nombre_campo').asString;
-
-  JEROFA ESTO DE ABAJO PODRÍA SER ALGO ASÍ Y SERIA PARA PONERLE UN SIZE DEL MISMO TAMAÑO QUE EL CAMPO DE LA TABLA PRINCIPAL
-  // p_DBGrid_Filtros.SelectedField.Size:=; Se podría completar si nos interesara
-
-  p_DBGrid_Filtros.SelectedField.Size := p_SQLQuery_Principal.FieldByName(v_nombre_campo).Size;
 
   if p_DBGrid_Filtros.SelectedIndex = 0 then
     p_DBGrid_Filtros.SelectedIndex := p_DBGrid_Filtros.SelectedIndex + 1;
@@ -1284,6 +1280,23 @@ begin
   if (p_DBGrid_Filtros.SelectedIndex = 1) or    // Desde_Valor
      (p_DBGrid_Filtros.SelectedIndex = 3) then  // Hasta_Valor
   begin
+{
+    if    (Column.FieldName = 'Desde_Valor')
+       or (Column.FieldName = 'Hasta_Valor') then
+    begin
+      Column.MaxSize := SQLQuery_Principal.FieldByName(SQLQuery_Filtros.FieldByName('nombre_campo').asString).Size;
+      if SQLQuery_Filtros.FieldByName('nombre_campo').asString = 'nombre_propietario' then
+        Column.MaxSize := 2;
+    end;
+
+}
+    v_max_size := p_SQLQuery_Principal.FieldByName(v_nombre_campo).Size;
+    if v_nombre_campo = 'nombre_propietario' then
+      v_max_size := 2;
+
+    p_DBGrid_Filtros.Columns[1].MaxSize := v_max_size;
+    p_DBGrid_Filtros.Columns[3].MaxSize := v_max_size;
+
     v_es_Hora_o_Fecha := false;
 
     if UTI_RGTRO_Campo_es_Hora( p_SQLQuery_Principal.FieldByName(v_nombre_campo).DataType,
